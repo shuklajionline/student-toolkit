@@ -3,19 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Attendance Calculator – 75% College Attendance Tracker</title>
+<title>Smart Attendance Calculator – 75% Tracker</title>
 
-<meta name="description" content="Free 75% attendance calculator for college students. Check how many lectures you must attend or can bunk to maintain minimum attendance.">
-<meta name="keywords" content="attendance calculator, 75 percent attendance calculator, college attendance tracker, how many lectures can I bunk">
-<meta name="author" content="Student Toolkit">
-
-<link rel="canonical" href="https://yourusername.github.io/student-toolkit/">
+<meta name="description" content="Smart colorful 75% attendance calculator for students. Calculate how many lectures to attend or bunk easily.">
+<meta name="keywords" content="attendance calculator, 75 percent attendance, bunk calculator, college attendance tracker">
 
 <style>
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,60 +24,65 @@ body {
 }
 
 .container {
-    background: white;
-    padding: 25px;
-    width: 90%;
-    max-width: 400px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    width: 92%;
+    max-width: 420px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    color: white;
+    animation: fadeIn 0.6s ease-in-out;
 }
 
 h1 {
     text-align: center;
-    font-size: 22px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-size: 24px;
 }
 
 label {
-    font-weight: bold;
     font-size: 14px;
+    font-weight: 600;
 }
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 8px 0 15px 0;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 16px;
+    border-radius: 12px;
+    border: none;
+    font-size: 15px;
+    outline: none;
 }
 
 button {
     width: 100%;
-    padding: 12px;
-    background: #1e88e5;
+    padding: 14px;
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
 button:hover {
-    background: #1565c0;
+    transform: scale(1.03);
 }
 
 .result {
     margin-top: 20px;
     font-size: 15px;
     text-align: center;
+    line-height: 1.6;
 }
 
-.footer {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 12px;
-    color: gray;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 </style>
 </head>
@@ -84,7 +90,7 @@ button:hover {
 <body>
 
 <div class="container">
-    <h1>75% Attendance Calculator</h1>
+    <h1>🎓 Smart Attendance Calculator</h1>
 
     <label>Total Lectures Conducted</label>
     <input type="number" id="total" placeholder="Enter total lectures">
@@ -92,19 +98,20 @@ button:hover {
     <label>Lectures Attended</label>
     <input type="number" id="attended" placeholder="Enter attended lectures">
 
-    <button onclick="calculate()">Calculate</button>
+    <label>No Attendance / Not Counted Lectures</label>
+    <input type="number" id="noattendance" placeholder="Optional (leave 0 if none)" value="0">
+
+    <button onclick="calculate()">Calculate Attendance</button>
 
     <div class="result" id="result"></div>
-
-    <div class="footer">
-        Free College Attendance Tracker Tool
-    </div>
 </div>
 
 <script>
 function calculate() {
     let T = parseInt(document.getElementById("total").value);
     let A = parseInt(document.getElementById("attended").value);
+    let N = parseInt(document.getElementById("noattendance").value) || 0;
+
     let result = document.getElementById("result");
 
     if (!T || !A || A > T) {
@@ -112,18 +119,25 @@ function calculate() {
         return;
     }
 
-    let percentage = (A / T) * 100;
+    let effectiveTotal = T - N;
+
+    if (effectiveTotal <= 0) {
+        result.innerHTML = "Effective total lectures cannot be zero or negative.";
+        return;
+    }
+
+    let percentage = (A / effectiveTotal) * 100;
 
     if (percentage < 75) {
-        let x = Math.ceil((0.75*T - A) / 0.25);
+        let x = Math.ceil((0.75 * effectiveTotal - A) / 0.25);
         result.innerHTML =
-        "Current Attendance: <b>" + percentage.toFixed(2) + "%</b><br><br>" +
-        "You must attend next <b>" + x + "</b> lectures without bunking to reach 75%.";
+        "📊 Current Attendance: <b>" + percentage.toFixed(2) + "%</b><br><br>" +
+        "🔥 You must attend next <b>" + x + "</b> lectures continuously to reach 75%.";
     } else {
-        let x = Math.floor((A / 0.75) - T);
+        let x = Math.floor((A / 0.75) - effectiveTotal);
         result.innerHTML =
-        "Current Attendance: <b>" + percentage.toFixed(2) + "%</b><br><br>" +
-        "You can bunk next <b>" + x + "</b> lectures safely.";
+        "📊 Current Attendance: <b>" + percentage.toFixed(2) + "%</b><br><br>" +
+        "😎 You can bunk next <b>" + x + "</b> lectures safely.";
     }
 }
 </script>
