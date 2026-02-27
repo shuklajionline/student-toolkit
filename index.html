@@ -3,16 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Toolkit – Attendance & CGPA Calculator</title>
-
-<meta name="description" content="Free Student Toolkit with Attendance Calculator and Credit-Based CGPA Calculator. Mobile friendly and easy to use.">
-<meta name="keywords" content="attendance calculator, cgpa calculator, credit based cgpa, student toolkit, bunk calculator">
+<title>Student Toolkit – Smart Academic Tools</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
+* { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
 
 body {
     margin: 0;
@@ -27,7 +21,7 @@ body {
     background: rgba(255,255,255,0.12);
     backdrop-filter: blur(15px);
     width: 95%;
-    max-width: 480px;
+    max-width: 520px;
     padding: 25px;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.25);
@@ -36,20 +30,23 @@ body {
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .tabs {
     display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
     margin-bottom: 20px;
 }
 
 .tab {
-    flex: 1;
+    flex: 1 1 48%;
     text-align: center;
-    padding: 10px;
+    padding: 8px;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 8px;
+    font-size: 13px;
     font-weight: bold;
 }
 
@@ -60,42 +57,37 @@ h1 {
 
 input {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     margin: 6px 0 12px 0;
-    border-radius: 10px;
+    border-radius: 8px;
     border: none;
-    font-size: 14px;
 }
 
 button {
     width: 100%;
-    padding: 14px;
+    padding: 12px;
     background: linear-gradient(45deg, #ff6a00, #ee0979);
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     color: white;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.2s;
-}
-
-button:hover {
-    transform: scale(1.03);
 }
 
 .result {
-    margin-top: 15px;
+    margin-top: 12px;
     font-size: 14px;
     text-align: center;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .hidden { display: none; }
 
-label {
-    font-size: 13px;
-    font-weight: 600;
-}
+.green { color: #00ff88; font-weight: bold; }
+.yellow { color: #ffd000; font-weight: bold; }
+.red { color: #ff4d4d; font-weight: bold; }
+
+label { font-size: 13px; font-weight: 600; }
 </style>
 </head>
 
@@ -106,40 +98,56 @@ label {
 
 <div class="tabs">
     <div class="tab active" onclick="showTab('attendance', this)">Attendance</div>
-    <div class="tab" onclick="showTab('cgpa', this)">CGPA</div>
+    <div class="tab" onclick="showTab('exam', this)">Exam Predictor</div>
+    <div class="tab" onclick="showTab('placement', this)">Placement</div>
 </div>
 
-<!-- Attendance Section -->
+<!-- Attendance -->
 <div id="attendance">
-
 <label>Total Lectures</label>
 <input type="number" id="total">
 
-<label>Lectures Attended</label>
+<label>Attended Lectures</label>
 <input type="number" id="attended">
 
-<label>No Attendance (Not Counted)</label>
-<input type="number" id="noattendance" value="0">
-
-<label>Required Attendance %</label>
+<label>Required %</label>
 <input type="number" id="required" value="75">
 
-<button onclick="calculateAttendance()">Calculate Attendance</button>
-
+<button onclick="calculateAttendance()">Check Status</button>
 <div class="result" id="attendanceResult"></div>
 </div>
 
-<!-- CGPA Section -->
-<div id="cgpa" class="hidden">
+<!-- Exam Predictor -->
+<div id="exam" class="hidden">
+<label>Internal Marks Obtained</label>
+<input type="number" id="internal">
 
-<label>Total Subjects</label>
-<input type="number" id="subjects" oninput="generateFields()">
+<label>Internal Maximum Marks</label>
+<input type="number" id="internalMax">
 
-<div id="subjectFields"></div>
+<label>Final Exam Maximum Marks</label>
+<input type="number" id="finalMax">
 
-<button onclick="calculateCGPA()">Calculate CGPA</button>
+<label>Total Passing Marks</label>
+<input type="number" id="passing">
 
-<div class="result" id="cgpaResult"></div>
+<button onclick="calculateExam()">Predict Required Final Marks</button>
+<div class="result" id="examResult"></div>
+</div>
+
+<!-- Placement Predictor -->
+<div id="placement" class="hidden">
+<label>CGPA</label>
+<input type="number" step="0.01" id="cgpa">
+
+<label>Number of Internships</label>
+<input type="number" id="internships">
+
+<label>Skill Level (1-10)</label>
+<input type="number" id="skills">
+
+<button onclick="calculatePlacement()">Estimate Package Range</button>
+<div class="result" id="placementResult"></div>
 </div>
 
 </div>
@@ -148,7 +156,9 @@ label {
 
 function showTab(id, element) {
     document.getElementById("attendance").classList.add("hidden");
-    document.getElementById("cgpa").classList.add("hidden");
+    document.getElementById("exam").classList.add("hidden");
+    document.getElementById("placement").classList.add("hidden");
+
     document.getElementById(id).classList.remove("hidden");
 
     let tabs = document.querySelectorAll(".tab");
@@ -156,12 +166,11 @@ function showTab(id, element) {
     element.classList.add("active");
 }
 
+/* Attendance + Risk Indicator */
 function calculateAttendance() {
     let T = parseInt(document.getElementById("total").value);
     let A = parseInt(document.getElementById("attended").value);
-    let N = parseInt(document.getElementById("noattendance").value) || 0;
     let R = parseFloat(document.getElementById("required").value) / 100;
-
     let result = document.getElementById("attendanceResult");
 
     if (!T || !A || A > T) {
@@ -169,72 +178,77 @@ function calculateAttendance() {
         return;
     }
 
-    let effectiveTotal = T - N;
+    let percentage = (A / T) * 100;
+    let statusClass = "";
+    let statusText = "";
 
-    if (effectiveTotal <= 0) {
-        result.innerHTML = "Effective total cannot be zero.";
-        return;
-    }
-
-    let percentage = (A / effectiveTotal) * 100;
-
-    if (percentage < R * 100) {
-        let x = Math.ceil((R * effectiveTotal - A) / (1 - R));
-        result.innerHTML =
-        "📊 Current Attendance: <b>" + percentage.toFixed(2) + "%</b><br>" +
-        "🔥 Attend next <b>" + x + "</b> lectures to reach target.";
+    if (percentage >= R*100 + 10) {
+        statusClass = "green";
+        statusText = "SAFE ZONE";
+    } else if (percentage >= R*100) {
+        statusClass = "yellow";
+        statusText = "RISK ZONE";
     } else {
-        let x = Math.floor((A / R) - effectiveTotal);
-        result.innerHTML =
-        "📊 Current Attendance: <b>" + percentage.toFixed(2) + "%</b><br>" +
-        "😎 You can bunk <b>" + x + "</b> lectures safely.";
+        statusClass = "red";
+        statusText = "CRITICAL ZONE";
     }
-}
-
-function generateFields() {
-    let subjects = parseInt(document.getElementById("subjects").value);
-    let container = document.getElementById("subjectFields");
-    container.innerHTML = "";
-
-    for (let i = 1; i <= subjects; i++) {
-        container.innerHTML += `
-            <label>Subject ${i} Grade Point</label>
-            <input type="number" step="0.01" id="grade${i}">
-            <label>Subject ${i} Credit</label>
-            <input type="number" step="0.01" id="credit${i}">
-        `;
-    }
-}
-
-function calculateCGPA() {
-    let subjects = parseInt(document.getElementById("subjects").value);
-    let result = document.getElementById("cgpaResult");
-
-    if (!subjects || subjects <= 0) {
-        result.innerHTML = "Enter valid subject count.";
-        return;
-    }
-
-    let totalCredits = 0;
-    let totalWeightedPoints = 0;
-
-    for (let i = 1; i <= subjects; i++) {
-        let grade = parseFloat(document.getElementById("grade" + i).value);
-        let credit = parseFloat(document.getElementById("credit" + i).value);
-
-        if (isNaN(grade) || isNaN(credit)) {
-            result.innerHTML = "Fill all grade and credit fields.";
-            return;
-        }
-
-        totalCredits += credit;
-        totalWeightedPoints += grade * credit;
-    }
-
-    let cgpa = totalWeightedPoints / totalCredits;
 
     result.innerHTML =
-    "🎯 Your CGPA is: <b>" + cgpa.toFixed(2) + "</b>";
+    "Attendance: <b>" + percentage.toFixed(2) + "%</b><br>" +
+    "Status: <span class='" + statusClass + "'>" + statusText + "</span>";
+}
+
+/* Exam Predictor */
+function calculateExam() {
+    let internal = parseFloat(document.getElementById("internal").value);
+    let internalMax = parseFloat(document.getElementById("internalMax").value);
+    let finalMax = parseFloat(document.getElementById("finalMax").value);
+    let passing = parseFloat(document.getElementById("passing").value);
+    let result = document.getElementById("examResult");
+
+    if (!internal || !internalMax || !finalMax || !passing) {
+        result.innerHTML = "Fill all fields.";
+        return;
+    }
+
+    let requiredFinal = passing - internal;
+
+    if (requiredFinal <= 0) {
+        result.innerHTML = "<span class='green'>You already passed 🎉</span>";
+    } else if (requiredFinal > finalMax) {
+        result.innerHTML = "<span class='red'>Even full marks won't save this. Improve internals next time.</span>";
+    } else {
+        result.innerHTML =
+        "You need <b>" + requiredFinal.toFixed(2) + "</b> out of " + finalMax + " in final exam.";
+    }
+}
+
+/* Placement Predictor */
+function calculatePlacement() {
+    let cgpa = parseFloat(document.getElementById("cgpa").value);
+    let internships = parseInt(document.getElementById("internships").value);
+    let skills = parseInt(document.getElementById("skills").value);
+    let result = document.getElementById("placementResult");
+
+    if (!cgpa || !skills) {
+        result.innerHTML = "Enter valid data.";
+        return;
+    }
+
+    let score = (cgpa * 2) + (internships * 1.5) + (skills * 2);
+
+    let packageEstimate = "";
+
+    if (score >= 35) {
+        packageEstimate = "₹8–15 LPA Range (High Probability)";
+    } else if (score >= 25) {
+        packageEstimate = "₹4–8 LPA Range (Moderate Probability)";
+    } else {
+        packageEstimate = "₹2–4 LPA Range (Needs Improvement)";
+    }
+
+    result.innerHTML =
+    "Estimated Package Range:<br><b>" + packageEstimate + "</b>";
 }
 
 </script>
