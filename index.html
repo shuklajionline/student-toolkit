@@ -117,24 +117,6 @@ label { font-size: 13px; font-weight: 600; }
 <div class="result" id="attendanceResult"></div>
 </div>
 
-<!-- Exam Predictor -->
-<div id="exam" class="hidden">
-<label>Internal Marks Obtained</label>
-<input type="number" id="internal">
-
-<label>Internal Maximum Marks</label>
-<input type="number" id="internalMax">
-
-<label>Final Exam Maximum Marks</label>
-<input type="number" id="finalMax">
-
-<label>Total Passing Marks</label>
-<input type="number" id="passing">
-
-<button onclick="calculateExam()">Predict Required Final Marks</button>
-<div class="result" id="examResult"></div>
-</div>
-
 <!-- Placement Predictor -->
 <div id="placement" class="hidden">
 <label>CGPA</label>
@@ -198,31 +180,6 @@ function calculateAttendance() {
     "Status: <span class='" + statusClass + "'>" + statusText + "</span>";
 }
 
-/* Exam Predictor */
-function calculateExam() {
-    let internal = parseFloat(document.getElementById("internal").value);
-    let internalMax = parseFloat(document.getElementById("internalMax").value);
-    let finalMax = parseFloat(document.getElementById("finalMax").value);
-    let passing = parseFloat(document.getElementById("passing").value);
-    let result = document.getElementById("examResult");
-
-    if (!internal || !internalMax || !finalMax || !passing) {
-        result.innerHTML = "Fill all fields.";
-        return;
-    }
-
-    let requiredFinal = passing - internal;
-
-    if (requiredFinal <= 0) {
-        result.innerHTML = "<span class='green'>You already passed 🎉</span>";
-    } else if (requiredFinal > finalMax) {
-        result.innerHTML = "<span class='red'>Even full marks won't save this. Improve internals next time.</span>";
-    } else {
-        result.innerHTML =
-        "You need <b>" + requiredFinal.toFixed(2) + "</b> out of " + finalMax + " in final exam.";
-    }
-}
-
 /* Placement Predictor */
 function calculatePlacement() {
     let cgpa = parseFloat(document.getElementById("cgpa").value);
@@ -255,3 +212,4 @@ function calculatePlacement() {
 
 </body>
 </html>
+
