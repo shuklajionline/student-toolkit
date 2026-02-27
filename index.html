@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Toolkit – Attendance & CGPA Calculator</title>
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J60HJ54DY0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J60HJ54DY0');
+</script>
+
 <style>
 * { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
 
@@ -99,11 +108,15 @@ label { font-size: 13px; font-weight: 600; }
 
 <!-- Attendance -->
 <div id="attendance">
+
 <label>Total Lectures</label>
 <input type="number" id="total">
 
 <label>Attended Lectures</label>
 <input type="number" id="attended">
+
+<label>No Attendance (Not Counted)</label>
+<input type="number" id="noattendance" value="0">
 
 <label>Required %</label>
 <input type="number" id="required" value="75">
@@ -116,6 +129,7 @@ label { font-size: 13px; font-weight: 600; }
 
 <!-- CGPA -->
 <div id="cgpa" class="hidden">
+
 <label>Total Subjects</label>
 <input type="number" id="subjects" oninput="generateFields()">
 
@@ -141,10 +155,11 @@ function showTab(id, element) {
     element.classList.add("active");
 }
 
-/* ATTENDANCE CALCULATOR */
+/* ATTENDANCE */
 function calculateAttendance() {
     let T = parseInt(document.getElementById("total").value);
     let A = parseInt(document.getElementById("attended").value);
+    let N = parseInt(document.getElementById("noattendance").value) || 0;
     let R = parseFloat(document.getElementById("required").value) / 100;
     let result = document.getElementById("attendanceResult");
 
@@ -153,66 +168,70 @@ function calculateAttendance() {
         return;
     }
 
-    let percentage = (A / T) * 100;
+    let effectiveTotal = T - N;
+    if (effectiveTotal <= 0) {
+        result.innerHTML = "Effective total cannot be zero.";
+        return;
+    }
+
+    let percentage = (A / effectiveTotal) * 100;
     let statusClass = "";
     let statusText = "";
-    let message = "";
 
     if (percentage >= R*100 + 10) {
         statusClass = "green";
         statusText = "SAFE ZONE";
-        message = "You can relax a bit.";
     } else if (percentage >= R*100) {
         statusClass = "yellow";
         statusText = "RISK ZONE";
-        message = "Stay careful.";
     } else {
         statusClass = "red";
         statusText = "CRITICAL ZONE";
-        message = "Attend upcoming lectures seriously.";
     }
 
     result.innerHTML =
     "Attendance: <b>" + percentage.toFixed(2) + "%</b><br>" +
-    "Status: <span class='" + statusClass + "'>" + statusText + "</span><br>" +
-    message;
+    "Status: <span class='" + statusClass + "'>" + statusText + "</span>";
 
-    /* SAVE TO LOCAL STORAGE */
-    localStorage.setItem("attendanceData", JSON.stringify({T,A,R}));
+    localStorage.setItem("attendanceData", JSON.stringify({T,A,N,R}));
+
+    gtag('event', 'attendance_calculated');
 }
 
-/* SHARE BUTTON */
+/* SHARE */
 function shareAttendance() {
     let T = parseInt(document.getElementById("total").value);
     let A = parseInt(document.getElementById("attended").value);
+    let N = parseInt(document.getElementById("noattendance").value) || 0;
     let R = parseFloat(document.getElementById("required").value);
 
     if (!T || !A) return;
 
-    let percentage = (A / T) * 100;
-    let needed = Math.ceil((R/100 * T - A) / (1 - R/100));
+    let effectiveTotal = T - N;
+    let percentage = (A / effectiveTotal) * 100;
 
-    let text = "My attendance is " + percentage.toFixed(2) + 
-    "%. I need " + (needed > 0 ? needed : 0) + 
-    " more lectures to reach " + R + 
+    let text = "My attendance is " + percentage.toFixed(2) +
     "%. Check yours here: " + window.location.href;
 
     navigator.clipboard.writeText(text);
     alert("Copied to clipboard. Share it.");
+
+    gtag('event', 'attendance_shared');
 }
 
-/* LOAD SAVED DATA */
+/* LOAD SAVED */
 window.onload = function() {
     let saved = localStorage.getItem("attendanceData");
     if (saved) {
         let data = JSON.parse(saved);
         document.getElementById("total").value = data.T;
         document.getElementById("attended").value = data.A;
+        document.getElementById("noattendance").value = data.N;
         document.getElementById("required").value = data.R*100;
     }
 }
 
-/* CGPA CALCULATOR */
+/* CGPA */
 function generateFields() {
     let subjects = parseInt(document.getElementById("subjects").value);
     let container = document.getElementById("subjectFields");
@@ -255,8 +274,9 @@ function calculateCGPA() {
 
     let cgpa = totalWeightedPoints / totalCredits;
 
-    result.innerHTML =
-    "Your CGPA is: <b>" + cgpa.toFixed(2) + "</b>";
+    result.innerHTML = "Your CGPA is: <b>" + cgpa.toFixed(2) + "</b>";
+
+    gtag('event', 'cgpa_calculated');
 }
 
 </script>
