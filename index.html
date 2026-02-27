@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Toolkit – Smart Academic Tools</title>
+<title>Student Toolkit – Attendance & CGPA Calculator</title>
 
 <style>
 * { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
@@ -28,25 +28,20 @@ body {
     color: white;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 15px;
-}
+h1 { text-align: center; margin-bottom: 15px; }
 
 .tabs {
     display: flex;
-    flex-wrap: wrap;
     gap: 5px;
     margin-bottom: 20px;
 }
 
 .tab {
-    flex: 1 1 48%;
+    flex: 1;
     text-align: center;
-    padding: 8px;
+    padding: 10px;
     cursor: pointer;
     border-radius: 8px;
-    font-size: 13px;
     font-weight: bold;
 }
 
@@ -66,6 +61,7 @@ input {
 button {
     width: 100%;
     padding: 12px;
+    margin-top: 5px;
     background: linear-gradient(45deg, #ff6a00, #ee0979);
     border: none;
     border-radius: 10px;
@@ -98,8 +94,7 @@ label { font-size: 13px; font-weight: 600; }
 
 <div class="tabs">
     <div class="tab active" onclick="showTab('attendance', this)">Attendance</div>
-    <div class="tab" onclick="showTab('exam', this)">Exam Predictor</div>
-    <div class="tab" onclick="showTab('placement', this)">Placement</div>
+    <div class="tab" onclick="showTab('cgpa', this)">CGPA</div>
 </div>
 
 <!-- Attendance -->
@@ -114,33 +109,31 @@ label { font-size: 13px; font-weight: 600; }
 <input type="number" id="required" value="75">
 
 <button onclick="calculateAttendance()">Check Status</button>
+<button onclick="shareAttendance()">Share My Status</button>
+
 <div class="result" id="attendanceResult"></div>
 </div>
 
-<!-- Placement Predictor -->
-<div id="placement" class="hidden">
-<label>CGPA</label>
-<input type="number" step="0.01" id="cgpa">
+<!-- CGPA -->
+<div id="cgpa" class="hidden">
+<label>Total Subjects</label>
+<input type="number" id="subjects" oninput="generateFields()">
 
-<label>Number of Internships</label>
-<input type="number" id="internships">
+<div id="subjectFields"></div>
 
-<label>Skill Level (1-10)</label>
-<input type="number" id="skills">
+<button onclick="calculateCGPA()">Calculate CGPA</button>
 
-<button onclick="calculatePlacement()">Estimate Package Range</button>
-<div class="result" id="placementResult"></div>
+<div class="result" id="cgpaResult"></div>
 </div>
 
 </div>
 
 <script>
 
+/* TAB SWITCH */
 function showTab(id, element) {
     document.getElementById("attendance").classList.add("hidden");
-    document.getElementById("exam").classList.add("hidden");
-    document.getElementById("placement").classList.add("hidden");
-
+    document.getElementById("cgpa").classList.add("hidden");
     document.getElementById(id).classList.remove("hidden");
 
     let tabs = document.querySelectorAll(".tab");
@@ -148,7 +141,7 @@ function showTab(id, element) {
     element.classList.add("active");
 }
 
-/* Attendance + Risk Indicator */
+/* ATTENDANCE CALCULATOR */
 function calculateAttendance() {
     let T = parseInt(document.getElementById("total").value);
     let A = parseInt(document.getElementById("attended").value);
@@ -163,53 +156,110 @@ function calculateAttendance() {
     let percentage = (A / T) * 100;
     let statusClass = "";
     let statusText = "";
+    let message = "";
 
     if (percentage >= R*100 + 10) {
         statusClass = "green";
         statusText = "SAFE ZONE";
+        message = "You can relax a bit.";
     } else if (percentage >= R*100) {
         statusClass = "yellow";
         statusText = "RISK ZONE";
+        message = "Stay careful.";
     } else {
         statusClass = "red";
         statusText = "CRITICAL ZONE";
+        message = "Attend upcoming lectures seriously.";
     }
 
     result.innerHTML =
     "Attendance: <b>" + percentage.toFixed(2) + "%</b><br>" +
-    "Status: <span class='" + statusClass + "'>" + statusText + "</span>";
+    "Status: <span class='" + statusClass + "'>" + statusText + "</span><br>" +
+    message;
+
+    /* SAVE TO LOCAL STORAGE */
+    localStorage.setItem("attendanceData", JSON.stringify({T,A,R}));
 }
 
-/* Placement Predictor */
-function calculatePlacement() {
-    let cgpa = parseFloat(document.getElementById("cgpa").value);
-    let internships = parseInt(document.getElementById("internships").value);
-    let skills = parseInt(document.getElementById("skills").value);
-    let result = document.getElementById("placementResult");
+/* SHARE BUTTON */
+function shareAttendance() {
+    let T = parseInt(document.getElementById("total").value);
+    let A = parseInt(document.getElementById("attended").value);
+    let R = parseFloat(document.getElementById("required").value);
 
-    if (!cgpa || !skills) {
-        result.innerHTML = "Enter valid data.";
+    if (!T || !A) return;
+
+    let percentage = (A / T) * 100;
+    let needed = Math.ceil((R/100 * T - A) / (1 - R/100));
+
+    let text = "My attendance is " + percentage.toFixed(2) + 
+    "%. I need " + (needed > 0 ? needed : 0) + 
+    " more lectures to reach " + R + 
+    "%. Check yours here: " + window.location.href;
+
+    navigator.clipboard.writeText(text);
+    alert("Copied to clipboard. Share it.");
+}
+
+/* LOAD SAVED DATA */
+window.onload = function() {
+    let saved = localStorage.getItem("attendanceData");
+    if (saved) {
+        let data = JSON.parse(saved);
+        document.getElementById("total").value = data.T;
+        document.getElementById("attended").value = data.A;
+        document.getElementById("required").value = data.R*100;
+    }
+}
+
+/* CGPA CALCULATOR */
+function generateFields() {
+    let subjects = parseInt(document.getElementById("subjects").value);
+    let container = document.getElementById("subjectFields");
+    container.innerHTML = "";
+
+    for (let i = 1; i <= subjects; i++) {
+        container.innerHTML += `
+            <label>Subject ${i} Grade Point</label>
+            <input type="number" step="0.01" id="grade${i}">
+            <label>Subject ${i} Credit</label>
+            <input type="number" step="0.01" id="credit${i}">
+        `;
+    }
+}
+
+function calculateCGPA() {
+    let subjects = parseInt(document.getElementById("subjects").value);
+    let result = document.getElementById("cgpaResult");
+
+    if (!subjects || subjects <= 0) {
+        result.innerHTML = "Enter valid subject count.";
         return;
     }
 
-    let score = (cgpa * 2) + (internships * 1.5) + (skills * 2);
+    let totalCredits = 0;
+    let totalWeightedPoints = 0;
 
-    let packageEstimate = "";
+    for (let i = 1; i <= subjects; i++) {
+        let grade = parseFloat(document.getElementById("grade" + i).value);
+        let credit = parseFloat(document.getElementById("credit" + i).value);
 
-    if (score >= 35) {
-        packageEstimate = "₹8–15 LPA Range (High Probability)";
-    } else if (score >= 25) {
-        packageEstimate = "₹4–8 LPA Range (Moderate Probability)";
-    } else {
-        packageEstimate = "₹2–4 LPA Range (Needs Improvement)";
+        if (isNaN(grade) || isNaN(credit)) {
+            result.innerHTML = "Fill all grade and credit fields.";
+            return;
+        }
+
+        totalCredits += credit;
+        totalWeightedPoints += grade * credit;
     }
 
+    let cgpa = totalWeightedPoints / totalCredits;
+
     result.innerHTML =
-    "Estimated Package Range:<br><b>" + packageEstimate + "</b>";
+    "Your CGPA is: <b>" + cgpa.toFixed(2) + "</b>";
 }
 
 </script>
 
 </body>
 </html>
-
