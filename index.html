@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Toolkit – Attendance & CGPA Calculator</title>
+<title>Student Toolkit – Attendance, CGPA & Study Guides</title>
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J60HJ54DY0"></script>
@@ -15,99 +15,94 @@
 </script>
 
 <style>
-* { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+* { box-sizing: border-box; font-family: Arial, sans-serif; }
 
 body {
     margin: 0;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: #f4f6fb;
+}
+
+header {
+    background: #667eea;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    gap: 20px;
+    background: #fff;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
 }
 
 .container {
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(15px);
     width: 95%;
-    max-width: 520px;
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-    color: white;
-}
-
-h1 { text-align: center; margin-bottom: 15px; }
-
-.tabs {
-    display: flex;
-    gap: 5px;
-    margin-bottom: 20px;
-}
-
-.tab {
-    flex: 1;
-    text-align: center;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 8px;
-    font-weight: bold;
-}
-
-.active {
+    max-width: 900px;
+    margin: 20px auto;
     background: white;
-    color: #764ba2;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 6px 0 12px 0;
-    border-radius: 8px;
-    border: none;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    background: linear-gradient(45deg, #ff6a00, #ee0979);
-    border: none;
+    padding: 20px;
     border-radius: 10px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.result {
-    margin-top: 12px;
-    font-size: 14px;
-    text-align: center;
-    line-height: 1.5;
 }
 
 .hidden { display: none; }
 
-.green { color: #00ff88; font-weight: bold; }
-.yellow { color: #ffd000; font-weight: bold; }
-.red { color: #ff4d4d; font-weight: bold; }
+button {
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    background: #667eea;
+    color: white;
+    cursor: pointer;
+}
 
-label { font-size: 13px; font-weight: 600; }
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 10px 0;
+}
+
+.result {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.blog-card {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.blog-card h3 {
+    margin: 0;
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<header>
 <h1>🎓 Student Toolkit</h1>
+<p>Smart Tools & Study Guides for Students</p>
+</header>
 
-<div class="tabs">
-    <div class="tab active" onclick="showTab('attendance', this)">Attendance</div>
-    <div class="tab" onclick="showTab('cgpa', this)">CGPA</div>
-</div>
+<nav>
+<a href="#" onclick="showPage('tools')">Tools</a>
+<a href="#" onclick="showPage('blog')">Blog</a>
+</nav>
 
-<!-- Attendance -->
-<div id="attendance">
+<div class="container">
+
+<!-- TOOLS PAGE -->
+<div id="tools">
+
+<h2>Attendance Calculator</h2>
 
 <label>Total Lectures</label>
 <input type="number" id="total">
@@ -115,20 +110,17 @@ label { font-size: 13px; font-weight: 600; }
 <label>Attended Lectures</label>
 <input type="number" id="attended">
 
-<label>No Attendance (Not Counted)</label>
+<label>No Attendance</label>
 <input type="number" id="noattendance" value="0">
 
-<label>Required %</label>
-<input type="number" id="required" value="75">
-
-<button onclick="calculateAttendance()">Check Status</button>
+<button onclick="calculateAttendance()">Calculate</button>
 <button onclick="shareAttendance()">Share My Status</button>
 
 <div class="result" id="attendanceResult"></div>
-</div>
 
-<!-- CGPA -->
-<div id="cgpa" class="hidden">
+<hr>
+
+<h2>Credit-Based CGPA Calculator</h2>
 
 <label>Total Subjects</label>
 <input type="number" id="subjects" oninput="generateFields()">
@@ -138,97 +130,102 @@ label { font-size: 13px; font-weight: 600; }
 <button onclick="calculateCGPA()">Calculate CGPA</button>
 
 <div class="result" id="cgpaResult"></div>
+
+</div>
+
+<!-- BLOG LIST PAGE -->
+<div id="blog" class="hidden">
+
+<h2>Student Blog</h2>
+
+<div class="blog-card">
+<h3><a href="#" onclick="openBlog()">How to Maintain 75% Attendance in College</a></h3>
+<p>Complete guide to managing attendance and avoiding shortage issues.</p>
+</div>
+
+</div>
+
+<!-- SINGLE BLOG PAGE -->
+<div id="blogpost" class="hidden">
+
+<button onclick="showPage('blog')">← Back to Blog</button>
+
+<h2>How to Maintain 75% Attendance in College</h2>
+
+<p>
+Maintaining 75% attendance is mandatory in many Indian colleges.
+If your attendance drops below this limit, you may face detention,
+exam restrictions, or internal mark penalties.
+</p>
+
+<p>
+To calculate your attendance percentage:
+Attendance % = (Lectures Attended ÷ Total Lectures) × 100
+</p>
+
+<p>
+If you want to know how many lectures you can safely bunk,
+use our Attendance Calculator above.
+</p>
+
+<p>
+Strategy tips:
+• Avoid continuous bunk streaks  
+• Track attendance weekly  
+• Keep buffer above 80%  
+• Attend important credit-heavy subjects  
+</p>
+
 </div>
 
 </div>
 
 <script>
 
-/* TAB SWITCH */
-function showTab(id, element) {
-    document.getElementById("attendance").classList.add("hidden");
-    document.getElementById("cgpa").classList.add("hidden");
-    document.getElementById(id).classList.remove("hidden");
+function showPage(page) {
+    document.getElementById("tools").classList.add("hidden");
+    document.getElementById("blog").classList.add("hidden");
+    document.getElementById("blogpost").classList.add("hidden");
 
-    let tabs = document.querySelectorAll(".tab");
-    tabs.forEach(tab => tab.classList.remove("active"));
-    element.classList.add("active");
+    document.getElementById(page).classList.remove("hidden");
 }
 
-/* ATTENDANCE */
+function openBlog() {
+    showPage("blogpost");
+}
+
+/* Attendance */
 function calculateAttendance() {
     let T = parseInt(document.getElementById("total").value);
     let A = parseInt(document.getElementById("attended").value);
     let N = parseInt(document.getElementById("noattendance").value) || 0;
-    let R = parseFloat(document.getElementById("required").value) / 100;
-    let result = document.getElementById("attendanceResult");
 
-    if (!T || !A || A > T) {
-        result.innerHTML = "Enter valid numbers.";
-        return;
-    }
+    if (!T || !A || A > T) return;
 
     let effectiveTotal = T - N;
-    if (effectiveTotal <= 0) {
-        result.innerHTML = "Effective total cannot be zero.";
-        return;
-    }
-
     let percentage = (A / effectiveTotal) * 100;
-    let statusClass = "";
-    let statusText = "";
 
-    if (percentage >= R*100 + 10) {
-        statusClass = "green";
-        statusText = "SAFE ZONE";
-    } else if (percentage >= R*100) {
-        statusClass = "yellow";
-        statusText = "RISK ZONE";
-    } else {
-        statusClass = "red";
-        statusText = "CRITICAL ZONE";
-    }
-
-    result.innerHTML =
-    "Attendance: <b>" + percentage.toFixed(2) + "%</b><br>" +
-    "Status: <span class='" + statusClass + "'>" + statusText + "</span>";
-
-    localStorage.setItem("attendanceData", JSON.stringify({T,A,N,R}));
+    document.getElementById("attendanceResult").innerHTML =
+    "Attendance: " + percentage.toFixed(2) + "%";
 
     gtag('event', 'attendance_calculated');
 }
 
-/* SHARE */
 function shareAttendance() {
     let T = parseInt(document.getElementById("total").value);
     let A = parseInt(document.getElementById("attended").value);
-    let N = parseInt(document.getElementById("noattendance").value) || 0;
-    let R = parseFloat(document.getElementById("required").value);
 
     if (!T || !A) return;
 
-    let effectiveTotal = T - N;
-    let percentage = (A / effectiveTotal) * 100;
+    let percentage = (A / T) * 100;
 
     let text = "My attendance is " + percentage.toFixed(2) +
     "%. Check yours here: " + window.location.href;
 
     navigator.clipboard.writeText(text);
-    alert("Copied to clipboard. Share it.");
+    alert("Copied to clipboard.");
 
     gtag('event', 'attendance_shared');
-}
-
-/* LOAD SAVED */
-window.onload = function() {
-    let saved = localStorage.getItem("attendanceData");
-    if (saved) {
-        let data = JSON.parse(saved);
-        document.getElementById("total").value = data.T;
-        document.getElementById("attended").value = data.A;
-        document.getElementById("noattendance").value = data.N;
-        document.getElementById("required").value = data.R*100;
-    }
 }
 
 /* CGPA */
@@ -249,32 +246,23 @@ function generateFields() {
 
 function calculateCGPA() {
     let subjects = parseInt(document.getElementById("subjects").value);
-    let result = document.getElementById("cgpaResult");
-
-    if (!subjects || subjects <= 0) {
-        result.innerHTML = "Enter valid subject count.";
-        return;
-    }
-
     let totalCredits = 0;
-    let totalWeightedPoints = 0;
+    let totalPoints = 0;
 
     for (let i = 1; i <= subjects; i++) {
         let grade = parseFloat(document.getElementById("grade" + i).value);
         let credit = parseFloat(document.getElementById("credit" + i).value);
 
-        if (isNaN(grade) || isNaN(credit)) {
-            result.innerHTML = "Fill all grade and credit fields.";
-            return;
-        }
+        if (!grade || !credit) return;
 
         totalCredits += credit;
-        totalWeightedPoints += grade * credit;
+        totalPoints += grade * credit;
     }
 
-    let cgpa = totalWeightedPoints / totalCredits;
+    let cgpa = totalPoints / totalCredits;
 
-    result.innerHTML = "Your CGPA is: <b>" + cgpa.toFixed(2) + "</b>";
+    document.getElementById("cgpaResult").innerHTML =
+    "CGPA: " + cgpa.toFixed(2);
 
     gtag('event', 'cgpa_calculated');
 }
