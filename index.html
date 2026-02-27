@@ -5,15 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Toolkit – Attendance & CGPA Calculator</title>
 
-<meta name="description" content="All-in-one student toolkit: Attendance calculator, CGPA calculator, and target CGPA predictor. Free and mobile-friendly.">
-<meta name="keywords" content="attendance calculator, cgpa calculator, student toolkit, 75 percent attendance, cgpa predictor">
+<meta name="description" content="Free Student Toolkit with Attendance Calculator and Credit-Based CGPA Calculator. Mobile friendly and easy to use.">
+<meta name="keywords" content="attendance calculator, cgpa calculator, credit based cgpa, student toolkit, bunk calculator">
 
 <style>
-* { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
 
 body {
     margin: 0;
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    background: linear-gradient(135deg, #667eea, #764ba2);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,67 +24,78 @@ body {
 }
 
 .container {
-    background: white;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(15px);
     width: 95%;
-    max-width: 450px;
-    border-radius: 20px;
+    max-width: 480px;
     padding: 25px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    color: white;
 }
 
 h1 {
     text-align: center;
-    font-size: 22px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .tabs {
     display: flex;
-    justify-content: space-between;
     margin-bottom: 20px;
 }
 
 .tab {
     flex: 1;
-    padding: 8px;
     text-align: center;
+    padding: 10px;
     cursor: pointer;
-    border-radius: 8px;
-    font-size: 14px;
+    border-radius: 10px;
     font-weight: bold;
 }
 
 .active {
-    background: #4facfe;
-    color: white;
+    background: white;
+    color: #764ba2;
 }
 
 input {
     width: 100%;
-    padding: 10px;
-    margin: 8px 0 15px 0;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    margin: 6px 0 12px 0;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
 }
 
 button {
     width: 100%;
-    padding: 12px;
-    background: #4facfe;
-    color: white;
+    padding: 14px;
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
+    color: white;
     font-weight: bold;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.03);
 }
 
 .result {
     margin-top: 15px;
     font-size: 14px;
     text-align: center;
+    line-height: 1.6;
 }
 
 .hidden { display: none; }
+
+label {
+    font-size: 13px;
+    font-weight: 600;
+}
 </style>
 </head>
 
@@ -101,61 +115,37 @@ button {
 <label>Total Lectures</label>
 <input type="number" id="total">
 
-<label>Attended Lectures</label>
+<label>Lectures Attended</label>
 <input type="number" id="attended">
 
-<label>No Attendance</label>
+<label>No Attendance (Not Counted)</label>
 <input type="number" id="noattendance" value="0">
 
 <label>Required Attendance %</label>
 <input type="number" id="required" value="75">
 
-<button onclick="calculateAttendance()">Calculate</button>
+<button onclick="calculateAttendance()">Calculate Attendance</button>
 
 <div class="result" id="attendanceResult"></div>
 </div>
 
 <!-- CGPA Section -->
-function calculateCGPA() {
-    let subjects = parseInt(document.getElementById("subjects").value);
-    let target = parseFloat(document.getElementById("target").value);
-    let result = document.getElementById("cgpaResult");
+<div id="cgpa" class="hidden">
 
-    if (!subjects || subjects <= 0) {
-        result.innerHTML = "Enter valid number of subjects.";
-        return;
-    }
+<label>Total Subjects</label>
+<input type="number" id="subjects" oninput="generateFields()">
 
-    let totalCredits = 0;
-    let totalWeightedPoints = 0;
+<div id="subjectFields"></div>
 
-    for (let i = 1; i <= subjects; i++) {
-        let grade = parseFloat(document.getElementById("grade" + i).value);
-        let credit = parseFloat(document.getElementById("credit" + i).value);
+<button onclick="calculateCGPA()">Calculate CGPA</button>
 
-        if (!grade || !credit) {
-            result.innerHTML = "Fill all grade and credit fields.";
-            return;
-        }
+<div class="result" id="cgpaResult"></div>
+</div>
 
-        totalCredits += credit;
-        totalWeightedPoints += grade * credit;
-    }
-
-    let cgpa = totalWeightedPoints / totalCredits;
-
-    if (target) {
-        result.innerHTML =
-        "Current CGPA: <b>" + cgpa.toFixed(2) + "</b><br>" +
-        "Target CGPA feature requires future semester prediction logic.";
-    } else {
-        result.innerHTML =
-        "Current CGPA: <b>" + cgpa.toFixed(2) + "</b>";
-    }
-}
-        
+</div>
 
 <script>
+
 function showTab(id, element) {
     document.getElementById("attendance").classList.add("hidden");
     document.getElementById("cgpa").classList.add("hidden");
@@ -180,48 +170,74 @@ function calculateAttendance() {
     }
 
     let effectiveTotal = T - N;
+
+    if (effectiveTotal <= 0) {
+        result.innerHTML = "Effective total cannot be zero.";
+        return;
+    }
+
     let percentage = (A / effectiveTotal) * 100;
 
     if (percentage < R * 100) {
         let x = Math.ceil((R * effectiveTotal - A) / (1 - R));
         result.innerHTML =
-        "Current: <b>" + percentage.toFixed(2) + "%</b><br>" +
-        "Attend next <b>" + x + "</b> lectures to reach target.";
+        "📊 Current Attendance: <b>" + percentage.toFixed(2) + "%</b><br>" +
+        "🔥 Attend next <b>" + x + "</b> lectures to reach target.";
     } else {
         let x = Math.floor((A / R) - effectiveTotal);
         result.innerHTML =
-        "Current: <b>" + percentage.toFixed(2) + "%</b><br>" +
-        "You can bunk <b>" + x + "</b> lectures safely.";
+        "📊 Current Attendance: <b>" + percentage.toFixed(2) + "%</b><br>" +
+        "😎 You can bunk <b>" + x + "</b> lectures safely.";
+    }
+}
+
+function generateFields() {
+    let subjects = parseInt(document.getElementById("subjects").value);
+    let container = document.getElementById("subjectFields");
+    container.innerHTML = "";
+
+    for (let i = 1; i <= subjects; i++) {
+        container.innerHTML += `
+            <label>Subject ${i} Grade Point</label>
+            <input type="number" step="0.01" id="grade${i}">
+            <label>Subject ${i} Credit</label>
+            <input type="number" step="0.01" id="credit${i}">
+        `;
     }
 }
 
 function calculateCGPA() {
     let subjects = parseInt(document.getElementById("subjects").value);
-    let points = parseFloat(document.getElementById("points").value);
-    let target = parseFloat(document.getElementById("target").value);
-
     let result = document.getElementById("cgpaResult");
 
-    if (!subjects || !points) {
-        result.innerHTML = "Enter valid data.";
+    if (!subjects || subjects <= 0) {
+        result.innerHTML = "Enter valid subject count.";
         return;
     }
 
-    let currentCGPA = points / subjects;
+    let totalCredits = 0;
+    let totalWeightedPoints = 0;
 
-    if (target) {
-        let requiredTotal = target * subjects;
-        let needed = requiredTotal - points;
-        result.innerHTML =
-        "Current CGPA: <b>" + currentCGPA.toFixed(2) + "</b><br>" +
-        "You need <b>" + needed.toFixed(2) + "</b> more grade points to reach target.";
-    } else {
-        result.innerHTML =
-        "Current CGPA: <b>" + currentCGPA.toFixed(2) + "</b>";
+    for (let i = 1; i <= subjects; i++) {
+        let grade = parseFloat(document.getElementById("grade" + i).value);
+        let credit = parseFloat(document.getElementById("credit" + i).value);
+
+        if (isNaN(grade) || isNaN(credit)) {
+            result.innerHTML = "Fill all grade and credit fields.";
+            return;
+        }
+
+        totalCredits += credit;
+        totalWeightedPoints += grade * credit;
     }
+
+    let cgpa = totalWeightedPoints / totalCredits;
+
+    result.innerHTML =
+    "🎯 Your CGPA is: <b>" + cgpa.toFixed(2) + "</b>";
 }
+
 </script>
 
 </body>
 </html>
-
