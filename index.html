@@ -116,23 +116,44 @@ button {
 </div>
 
 <!-- CGPA Section -->
-<div id="cgpa" class="hidden">
+function calculateCGPA() {
+    let subjects = parseInt(document.getElementById("subjects").value);
+    let target = parseFloat(document.getElementById("target").value);
+    let result = document.getElementById("cgpaResult");
 
-<label>Total Subjects</label>
-<input type="number" id="subjects">
+    if (!subjects || subjects <= 0) {
+        result.innerHTML = "Enter valid number of subjects.";
+        return;
+    }
 
-<label>Total Grade Points</label>
-<input type="number" id="points">
+    let totalCredits = 0;
+    let totalWeightedPoints = 0;
 
-<label>Target CGPA</label>
-<input type="number" step="0.01" id="target">
+    for (let i = 1; i <= subjects; i++) {
+        let grade = parseFloat(document.getElementById("grade" + i).value);
+        let credit = parseFloat(document.getElementById("credit" + i).value);
 
-<button onclick="calculateCGPA()">Calculate</button>
+        if (!grade || !credit) {
+            result.innerHTML = "Fill all grade and credit fields.";
+            return;
+        }
 
-<div class="result" id="cgpaResult"></div>
-</div>
+        totalCredits += credit;
+        totalWeightedPoints += grade * credit;
+    }
 
-</div>
+    let cgpa = totalWeightedPoints / totalCredits;
+
+    if (target) {
+        result.innerHTML =
+        "Current CGPA: <b>" + cgpa.toFixed(2) + "</b><br>" +
+        "Target CGPA feature requires future semester prediction logic.";
+    } else {
+        result.innerHTML =
+        "Current CGPA: <b>" + cgpa.toFixed(2) + "</b>";
+    }
+}
+        
 
 <script>
 function showTab(id, element) {
@@ -203,3 +224,4 @@ function calculateCGPA() {
 
 </body>
 </html>
+
