@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attendance Calculator – 75% College Attendance Tracker</title>
+
+<meta name="description" content="Free 75% attendance calculator for college students. Check how many lectures you must attend or can bunk to maintain minimum attendance.">
+<meta name="keywords" content="attendance calculator, 75 percent attendance calculator, college attendance tracker, how many lectures can I bunk">
+<meta name="author" content="Student Toolkit">
+
+<link rel="canonical" href="https://yourusername.github.io/student-toolkit/">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 25px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1565c0;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 12px;
+    color: gray;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>75% Attendance Calculator</h1>
+
+    <label>Total Lectures Conducted</label>
+    <input type="number" id="total" placeholder="Enter total lectures">
+
+    <label>Lectures Attended</label>
+    <input type="number" id="attended" placeholder="Enter attended lectures">
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div class="result" id="result"></div>
+
+    <div class="footer">
+        Free College Attendance Tracker Tool
+    </div>
+</div>
+
+<script>
+function calculate() {
+    let T = parseInt(document.getElementById("total").value);
+    let A = parseInt(document.getElementById("attended").value);
+    let result = document.getElementById("result");
+
+    if (!T || !A || A > T) {
+        result.innerHTML = "Please enter valid numbers.";
+        return;
+    }
+
+    let percentage = (A / T) * 100;
+
+    if (percentage < 75) {
+        let x = Math.ceil((0.75*T - A) / 0.25);
+        result.innerHTML =
+        "Current Attendance: <b>" + percentage.toFixed(2) + "%</b><br><br>" +
+        "You must attend next <b>" + x + "</b> lectures without bunking to reach 75%.";
+    } else {
+        let x = Math.floor((A / 0.75) - T);
+        result.innerHTML =
+        "Current Attendance: <b>" + percentage.toFixed(2) + "%</b><br><br>" +
+        "You can bunk next <b>" + x + "</b> lectures safely.";
+    }
+}
+</script>
+
+</body>
+</html>
