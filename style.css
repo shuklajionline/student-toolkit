@@ -1,135 +1,110 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f0f0f;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f1117;
+  color: #fff;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #1e1e2f, #111);
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #6c63ff;
+  border: none;
+  border-radius: 6px;
   color: white;
+  cursor: pointer;
 }
 
-header {
+.about {
+  padding: 40px 20px;
   text-align: center;
-  padding: 30px 20px;
-}
-
-nav {
-  text-align: center;
-  padding: 10px;
-  background: #1a1a1a;
-}
-
-nav a {
-  margin: 0 15px;
-  color: #00e5ff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.container {
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 10px;
+  max-width: 800px;
+  margin: auto;
 }
 
 .card {
-  background: #1e1e1e;
+  max-width: 700px;
+  margin: 30px auto;
   padding: 25px;
+  background: #1a1c24;
   border-radius: 12px;
-  margin-bottom: 30px;
 }
 
-input {
+label {
+  display: block;
+  margin-top: 15px;
+}
+
+input, select {
   width: 100%;
   padding: 10px;
-  margin: 8px 0;
+  margin-top: 5px;
   border-radius: 6px;
   border: none;
+  background: #2a2d3a;
+  color: white;
 }
 
 button {
   width: 100%;
   padding: 12px;
-  margin-top: 10px;
+  margin-top: 15px;
   border-radius: 6px;
   border: none;
-  background: #00e5ff;
-  font-weight: bold;
+  background: #6c63ff;
+  color: white;
   cursor: pointer;
 }
 
-button:hover {
-  background: #00bcd4;
-}
-
-.meter-wrapper {
-  margin-top: 20px;
-}
-
-.meter-bar {
-  width: 100%;
-  height: 25px;
-  background: #333;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-#meterFill {
-  height: 100%;
-  width: 0%;
-  background: green;
-  transition: width 0.8s ease, background 0.5s ease;
-}
-
-#meterText {
-  text-align: center;
-  margin-top: 10px;
-  font-size: 22px;
-  font-weight: bold;
-}
-
-.risk {
-  text-align: center;
-  margin-top: 15px;
-  font-size: 18px;
-}
-
-.future {
-  margin-top: 15px;
-  background: #2a2a2a;
-  padding: 15px;
-  border-radius: 8px;
-  font-size: 15px;
-}
-
-.cgpa-result {
-  margin-top: 15px;
-  font-size: 20px;
-  text-align: center;
-}
-
-select {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 6px;
-  border: none;
+.results {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
 }
 
 .opportunity-card {
-  background: #2a2a2a;
-  padding: 15px;
-  margin-top: 15px;
-  border-radius: 8px;
+  background: #1e212d;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  position: relative;
 }
 
 .opportunity-card a {
   display: inline-block;
   margin-top: 10px;
-  color: #00e5ff;
+  color: #6c63ff;
   text-decoration: none;
 }
 
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.high { background: #00c853; }
+.medium { background: #ffab00; }
+.low { background: #d50000; }
+
 .alerts {
-  margin-top: 20px;
-  background: #1e1e1e;
-  padding: 15px;
-  border-radius: 8px;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #161822;
+  border-radius: 12px;
 }
