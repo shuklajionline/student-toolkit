@@ -1,50 +1,51 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
+  display: flex;
   background: #f4f6fb;
-  color: #222;
 }
 
-nav {
-  background: #111;
-  padding: 15px;
-  text-align: center;
-}
+/* SIDEBAR */
 
-nav a {
+.sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #5f2cff, #00c6ff);
   color: white;
-  margin: 0 15px;
+  height: 100vh;
+  padding: 25px 15px;
+  position: fixed;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
   text-decoration: none;
-  font-weight: 500;
+  padding: 10px 0;
+  font-size: 14px;
 }
 
-nav a:hover {
-  color: #00c6ff;
+.sidebar a:hover {
+  opacity: 0.8;
 }
 
-.hero {
-  background: linear-gradient(135deg, #5f2cff, #00c6ff);
-  color: white;
-  padding: 70px 20px;
-  text-align: center;
-}
+/* MAIN CONTENT */
 
-.container {
-  width: 90%;
-  max-width: 1000px;
-  margin: 40px auto;
+.main {
+  margin-left: 240px;
+  padding: 40px;
+  width: 100%;
 }
 
 .card {
   background: white;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
   margin-bottom: 30px;
-}
-
-h1, h2, h3 {
-  margin-top: 0;
 }
 
 .opportunity-card {
@@ -59,4 +60,20 @@ h1, h2, h3 {
   color: #5f2cff;
   font-weight: 600;
   text-decoration: none;
+}
+
+/* MOBILE */
+
+@media(max-width: 768px){
+  body {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .main {
+    margin-left: 0;
+  }
 }
