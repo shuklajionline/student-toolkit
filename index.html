@@ -264,7 +264,74 @@ function calculateCGPA() {
 }
 
 </script>
+  
+<script>
+function calculateBunk() {
+  let total = parseInt(document.getElementById("totalLectures").value);
+  let attended = parseInt(document.getElementById("attendedLectures").value);
+  let required = parseFloat(document.getElementById("requiredPercent").value);
 
+  if (!total || !attended || attended > total) {
+    alert("Enter valid numbers");
+    return;
+  }
+
+  let percentage = (attended / total) * 100;
+  let meterFill = document.getElementById("meterFill");
+  let meterText = document.getElementById("meterText");
+  let riskMessage = document.getElementById("riskMessage");
+
+  meterFill.style.width = percentage + "%";
+  meterText.innerText = percentage.toFixed(2) + "%";
+
+  if (percentage >= 80) {
+    meterFill.style.background = "#00c853";
+    riskMessage.innerText = "🟢 Safe Zone – Relax, you're chilling.";
+  } 
+  else if (percentage >= required) {
+    meterFill.style.background = "#ffd600";
+    riskMessage.innerText = "🟡 Warning Zone – Be careful now.";
+  } 
+  else if (percentage >= 70) {
+    meterFill.style.background = "#ff6d00";
+    riskMessage.innerText = "🟠 Danger Zone – One more bunk hurts.";
+  } 
+  else {
+    meterFill.style.background = "#d50000";
+    riskMessage.innerText = "🔴 Critical Zone – You are in serious risk.";
+  }
+
+  futureSimulation(total, attended);
+}
+
+function futureSimulation(total, attended) {
+  let box = document.getElementById("futurePrediction");
+
+  let future1 = ((attended) / (total + 1)) * 100;
+  let future3 = ((attended) / (total + 3)) * 100;
+  let future5 = ((attended) / (total + 5)) * 100;
+
+  box.innerHTML = `
+    <strong>🔮 Future Predictions:</strong><br><br>
+    If you miss 1 more → ${future1.toFixed(2)}%<br>
+    If you miss 3 more → ${future3.toFixed(2)}%<br>
+    If you miss 5 more → ${future5.toFixed(2)}%
+  `;
+}
+
+function shareBunkStatus() {
+  let percent = document.getElementById("meterText").innerText;
+  if (percent === "0%") return;
+
+  let text = "My attendance is " + percent +
+    " 😬 Check your bunk risk at https://studenttoolkit.online";
+
+  navigator.clipboard.writeText(text);
+  alert("Copied to clipboard!");
+}
+</script>
+  
 </body>
 </html>
+
 
