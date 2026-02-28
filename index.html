@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Toolkit – Smart Attendance & CGPA Tools</title>
-<meta name="description" content="Student Toolkit helps students track attendance, predict bunk risk, calculate CGPA and prepare smarter for college.">
+<meta name="description" content="Track attendance, calculate CGPA, predict bunk risk and plan smarter with Student Toolkit.">
 
 <link rel="stylesheet" href="style.css">
 </head>
@@ -24,16 +24,19 @@
 
 <div class="container">
 
-<!-- ================= BUNK METER ================= -->
+<!-- ================= SMART BUNK METER ================= -->
 
 <section id="bunk" class="card">
   <h2>🎯 Smart Bunk Meter</h2>
 
-  <label>Total Lectures</label>
+  <label>Total Lectures Conducted</label>
   <input type="number" id="totalLectures">
 
   <label>Lectures Attended</label>
   <input type="number" id="attendedLectures">
+
+  <label>No Attendance (Not Counted)</label>
+  <input type="number" id="noAttendance" value="0">
 
   <label>Required %</label>
   <input type="number" id="requiredPercent" value="75">
@@ -53,7 +56,7 @@
   <button onclick="shareStatus()">Share My Status</button>
 </section>
 
-<!-- ================= CGPA ================= -->
+<!-- ================= CGPA CALCULATOR ================= -->
 
 <section id="cgpa" class="card">
   <h2>📊 CGPA Calculator</h2>
@@ -71,9 +74,13 @@
 </div>
 
 <script>
+
+/* ================= BUNK METER LOGIC ================= */
+
 function calculateBunk() {
   let total = parseInt(document.getElementById("totalLectures").value);
   let attended = parseInt(document.getElementById("attendedLectures").value);
+  let noAttendance = parseInt(document.getElementById("noAttendance").value) || 0;
   let required = parseFloat(document.getElementById("requiredPercent").value);
 
   if (!total || !attended || attended > total) {
@@ -81,7 +88,14 @@ function calculateBunk() {
     return;
   }
 
-  let percentage = (attended / total) * 100;
+  let effectiveTotal = total - noAttendance;
+
+  if (effectiveTotal <= 0) {
+    alert("Effective total cannot be zero.");
+    return;
+  }
+
+  let percentage = (attended / effectiveTotal) * 100;
 
   let meterFill = document.getElementById("meterFill");
   let meterText = document.getElementById("meterText");
@@ -93,29 +107,32 @@ function calculateBunk() {
   if (percentage >= 80) {
     meterFill.style.background = "#00e676";
     risk.innerHTML = "🟢 Safe Zone – Relax.";
-  } else if (percentage >= required) {
+  } 
+  else if (percentage >= required) {
     meterFill.style.background = "#ffea00";
     risk.innerHTML = "🟡 Warning – Be careful.";
-  } else if (percentage >= 70) {
+  } 
+  else if (percentage >= 70) {
     meterFill.style.background = "#ff9100";
     risk.innerHTML = "🟠 Danger – One more bunk hurts.";
-  } else {
+  } 
+  else {
     meterFill.style.background = "#ff1744";
     risk.innerHTML = "🔴 Critical – Stop bunking.";
   }
 
-  futurePrediction(total, attended);
+  futurePrediction(effectiveTotal, attended);
 }
 
-function futurePrediction(total, attended) {
+function futurePrediction(effectiveTotal, attended) {
   let box = document.getElementById("futureBox");
 
-  let f1 = ((attended) / (total + 1)) * 100;
-  let f3 = ((attended) / (total + 3)) * 100;
-  let f5 = ((attended) / (total + 5)) * 100;
+  let f1 = ((attended) / (effectiveTotal + 1)) * 100;
+  let f3 = ((attended) / (effectiveTotal + 3)) * 100;
+  let f5 = ((attended) / (effectiveTotal + 5)) * 100;
 
   box.innerHTML = `
-    <strong>🔮 Future Prediction</strong><br>
+    <strong>🔮 Future Prediction</strong><br><br>
     If you miss 1 more → ${f1.toFixed(2)}%<br>
     If you miss 3 more → ${f3.toFixed(2)}%<br>
     If you miss 5 more → ${f5.toFixed(2)}%
@@ -133,7 +150,7 @@ function shareStatus() {
   alert("Copied to clipboard!");
 }
 
-/* CGPA */
+/* ================= CGPA LOGIC ================= */
 
 function generateFields() {
   let subjects = parseInt(document.getElementById("subjects").value);
@@ -172,6 +189,7 @@ function calculateCGPA() {
   document.getElementById("cgpaResult").innerHTML =
     "Your CGPA: " + cgpa.toFixed(2);
 }
+
 </script>
 
 </body>
