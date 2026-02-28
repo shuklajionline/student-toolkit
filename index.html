@@ -1,295 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Opportunity Radar for BBA, MBA & Government Exams</title>
-<meta name="description" content="Discover internships, MBA updates, UPSC notifications and State Police recruitment alerts based on your profile. Personalized Student Opportunity Radar.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-
-/* ================= GLOBAL ================= */
-
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #f5f7fb;
-  color: #222;
-}
-
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* ================= HERO ================= */
-
-.hero {
-  background: linear-gradient(135deg, #5f2cff, #00c6ff);
-  color: white;
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 1rem;
-  opacity: 0.95;
-}
-
-/* ================= CARD ================= */
-
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 14px;
-  margin-top: -40px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-input, select {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-}
-
-button {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
-  background: #5f2cff;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-button:hover {
-  background: #4b20d1;
-}
-
-/* ================= RESULTS ================= */
-
-.opportunity-card {
-  background: #fafafa;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 15px;
-  border-left: 6px solid #5f2cff;
-}
-
-.badge {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.high { background: #00c853; color: white; }
-.medium { background: #ffb300; color: white; }
-.low { background: #d50000; color: white; }
-
-.opportunity-card a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #5f2cff;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.alerts {
-  margin-top: 25px;
-  padding: 15px;
-  background: #eef3ff;
-  border-radius: 10px;
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  .hero h1 { font-size: 2.8rem; }
-}
-
-</style>
+<title>Student Opportunity Radar | BBA, MBA, UPSC & BTech</title>
+<meta name="description" content="Find internships, MBA admissions, UPSC notifications and BTech opportunities in one place.">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<nav>
+<a href="index.html">Home</a>
+<a href="bba-opportunities.html">BBA</a>
+<a href="mba-admissions.html">MBA</a>
+<a href="upsc-notifications.html">UPSC</a>
+<a href="btech-internships.html">BTech</a>
+</nav>
+
 <section class="hero">
-  <div class="container">
-    <h1>Discover Opportunities Tailored To You</h1>
-    <p>Internships, MBA Updates, UPSC & State Police Notifications Based On Your Profile</p>
-  </div>
+<h1>Student Opportunity Radar</h1>
+<p>Your hub for internships, admissions & government exam notifications.</p>
 </section>
 
 <div class="container">
 
 <div class="card">
-
-<h2>Build Your Student Profile</h2>
-
-<select id="degree">
-  <option value="">Select Degree</option>
-  <option value="BBA">BBA</option>
-  <option value="MBA">MBA</option>
-  <option value="UPSC">UPSC Aspirant</option>
-  <option value="Police">State Police Aspirant</option>
-</select>
-
-<select id="year">
-  <option value="">Select Year</option>
-  <option value="1">1st Year</option>
-  <option value="2">2nd Year</option>
-  <option value="3">Final Year / Graduate</option>
-</select>
-
-<input type="text" id="state" placeholder="Enter State (e.g. Gujarat)">
-
-<select id="interest">
-  <option value="">Select Interest</option>
-  <option value="Marketing">Marketing</option>
-  <option value="Finance">Finance</option>
-  <option value="Government">Government Jobs</option>
-</select>
-
-<button onclick="saveProfile()">Save Profile</button>
-<button onclick="findOpportunities()">Find My Opportunities</button>
-
-<div id="results"></div>
-<div id="alerts" class="alerts"></div>
-
-</div>
+<h2>Explore Opportunities By Category</h2>
+<p>Select your category above to explore detailed listings, deadlines and official application links.</p>
 </div>
 
-<script>
-
-/* ================= DATASET ================= */
-
-const opportunities = [
-  {
-    title: "UPSC Civil Services Examination 2026 Notification",
-    degree: "UPSC",
-    year: "3",
-    state: "All",
-    interest: "Government",
-    deadline: "10 May 2026",
-    link: "https://www.upsc.gov.in/examinations/civil-services-examination"
-  },
-  {
-    title: "Gujarat State Police Recruitment 2026",
-    degree: "Police",
-    year: "3",
-    state: "Gujarat",
-    interest: "Government",
-    deadline: "15 April 2026",
-    link: "https://police.gujarat.gov.in/"
-  },
-  {
-    title: "Marketing Internship – AICTE Program",
-    degree: "BBA",
-    year: "2",
-    state: "All",
-    interest: "Marketing",
-    deadline: "30 March 2026",
-    link: "https://internship.aicte-india.org/"
-  }
-];
-
-/* ================= SAVE PROFILE ================= */
-
-function saveProfile() {
-  const profile = {
-    degree: document.getElementById("degree").value,
-    year: document.getElementById("year").value,
-    state: document.getElementById("state").value,
-    interest: document.getElementById("interest").value
-  };
-
-  localStorage.setItem("studentProfile", JSON.stringify(profile));
-  alert("Profile Saved!");
-}
-
-/* ================= LOAD PROFILE ================= */
-
-window.onload = function() {
-  const saved = localStorage.getItem("studentProfile");
-  if (saved) {
-    const profile = JSON.parse(saved);
-    document.getElementById("degree").value = profile.degree;
-    document.getElementById("year").value = profile.year;
-    document.getElementById("state").value = profile.state;
-    document.getElementById("interest").value = profile.interest;
-  }
-};
-
-/* ================= MATCH LOGIC ================= */
-
-function calculateMatch(profile, item) {
-  let score = 0;
-
-  if (profile.degree === item.degree) score += 40;
-  if (profile.year === item.year) score += 30;
-  if (item.state === "All" || profile.state === item.state) score += 20;
-  if (profile.interest === item.interest) score += 10;
-
-  return score;
-}
-
-/* ================= FIND OPPORTUNITIES ================= */
-
-function findOpportunities() {
-
-  const profile = {
-    degree: document.getElementById("degree").value,
-    year: document.getElementById("year").value,
-    state: document.getElementById("state").value,
-    interest: document.getElementById("interest").value
-  };
-
-  const resultsDiv = document.getElementById("results");
-  const alertsDiv = document.getElementById("alerts");
-
-  resultsDiv.innerHTML = "";
-  alertsDiv.innerHTML = "";
-
-  opportunities.forEach(item => {
-
-    const score = calculateMatch(profile, item);
-
-    let badgeClass = "low";
-    let badgeText = "Low Match";
-
-    if (score >= 80) { badgeClass = "high"; badgeText = "High Match 🔥"; }
-    else if (score >= 60) { badgeClass = "medium"; badgeText = "Good Match ⭐"; }
-
-    resultsDiv.innerHTML += `
-      <div class="opportunity-card">
-        <span class="badge ${badgeClass}">${badgeText}</span>
-        <h3>${item.title}</h3>
-        <p><strong>Deadline:</strong> ${item.deadline}</p>
-        <a href="${item.link}" target="_blank">Apply / View Official Notification</a>
-      </div>
-    `;
-  });
-
-  alertsDiv.innerHTML = `
-    <h3>🔔 Personalized Alerts</h3>
-    <p>Government exam notifications typically release between January and March.</p>
-    <p>MBA admission cycles usually open November to January.</p>
-    <p>Internship peak season for management students is March–June.</p>
-  `;
-}
-
-</script>
+</div>
 
 </body>
 </html>
