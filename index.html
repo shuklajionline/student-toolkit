@@ -3,268 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Toolkit – Attendance & CGPA Calculator</title>
-<meta name="description" content="Free Student Toolkit for students. Calculate attendance, CGPA and read academic guides.">
+<title>Student Toolkit – Smart Attendance & CGPA Tools</title>
+<meta name="description" content="Student Toolkit helps students track attendance, predict bunk risk, calculate CGPA and prepare smarter for college.">
 
 <link rel="stylesheet" href="style.css">
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J60HJ54DY0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-J60HJ54DY0');
-</script>
-
 </head>
+
 <body>
-  
-<script>
-function calculateBunk() {
-  let total = parseInt(document.getElementById("totalLectures").value);
-  let attended = parseInt(document.getElementById("attendedLectures").value);
-  let required = parseFloat(document.getElementById("requiredPercent").value);
 
-  if (!total || !attended || attended > total) {
-    alert("Enter valid numbers");
-    return;
-  }
-
-  let percentage = (attended / total) * 100;
-  let meterFill = document.getElementById("meterFill");
-  let meterText = document.getElementById("meterText");
-  let riskMessage = document.getElementById("riskMessage");
-
-  meterFill.style.width = percentage + "%";
-  meterText.innerText = percentage.toFixed(2) + "%";
-
-  if (percentage >= 80) {
-    meterFill.style.background = "#00c853";
-    riskMessage.innerText = "🟢 Safe Zone – Relax, you're chilling.";
-  } 
-  else if (percentage >= required) {
-    meterFill.style.background = "#ffd600";
-    riskMessage.innerText = "🟡 Warning Zone – Be careful now.";
-  } 
-  else if (percentage >= 70) {
-    meterFill.style.background = "#ff6d00";
-    riskMessage.innerText = "🟠 Danger Zone – One more bunk hurts.";
-  } 
-  else {
-    meterFill.style.background = "#d50000";
-    riskMessage.innerText = "🔴 Critical Zone – You are in serious risk.";
-  }
-
-  futureSimulation(total, attended);
-}
-
-function futureSimulation(total, attended) {
-  let box = document.getElementById("futurePrediction");
-
-  let future1 = ((attended) / (total + 1)) * 100;
-  let future3 = ((attended) / (total + 3)) * 100;
-  let future5 = ((attended) / (total + 5)) * 100;
-
-  box.innerHTML = `
-    <strong>🔮 Future Predictions:</strong><br><br>
-    If you miss 1 more → ${future1.toFixed(2)}%<br>
-    If you miss 3 more → ${future3.toFixed(2)}%<br>
-    If you miss 5 more → ${future5.toFixed(2)}%
-  `;
-}
-
-function shareBunkStatus() {
-  let percent = document.getElementById("meterText").innerText;
-  if (percent === "0%") return;
-
-  let text = "My attendance is " + percent +
-    " 😬 Check your bunk risk at https://studenttoolkit.online";
-
-  navigator.clipboard.writeText(text);
-  alert("Copied to clipboard!");
-}
-</script>
-  
 <header>
-<h1>🎓 Student Toolkit</h1>
-<p>Smart Academic Tools for Students</p>
+  <h1>🎓 Student Toolkit</h1>
+  <p>Smart Tools for Smarter Students</p>
 </header>
 
 <nav>
-<a href="#attendance">Attendance</a>
-<a href="#cgpa">CGPA</a>
-<a href="blog/index.html">Blog</a>
+  <a href="#bunk">Bunk Meter</a>
+  <a href="#cgpa">CGPA</a>
+  <a href="blog/index.html">Blog</a>
 </nav>
 
 <div class="container">
 
-<!-- Attendance Section -->
-<section id="attendance">
-<h2>Attendance Calculator</h2>
+<!-- ================= BUNK METER ================= -->
 
-<label>Total Lectures</label>
-<input type="number" id="total">
+<section id="bunk" class="card">
+  <h2>🎯 Smart Bunk Meter</h2>
 
-<label>Attended Lectures</label>
-<input type="number" id="attended">
+  <label>Total Lectures</label>
+  <input type="number" id="totalLectures">
 
-<label>No Attendance (Not Counted)</label>
-<input type="number" id="noattendance" value="0">
+  <label>Lectures Attended</label>
+  <input type="number" id="attendedLectures">
 
-<label>Required Percentage</label>
-<input type="number" id="required" value="75">
+  <label>Required %</label>
+  <input type="number" id="requiredPercent" value="75">
 
-<button onclick="calculateAttendance()">Check Status</button>
-<button onclick="shareAttendance()">Share My Status</button>
+  <button onclick="calculateBunk()">Check My Status</button>
 
-<div class="result" id="attendanceResult"></div>
+  <div class="meter-wrapper">
+    <div class="meter-bar">
+      <div id="meterFill"></div>
+    </div>
+    <div id="meterText">0%</div>
+  </div>
+
+  <div id="riskMessage" class="risk"></div>
+  <div id="futureBox" class="future"></div>
+
+  <button onclick="shareStatus()">Share My Status</button>
 </section>
 
-<hr>
+<!-- ================= CGPA ================= -->
 
-<!-- CGPA Section -->
-<section id="cgpa">
-<h2>Credit-Based CGPA Calculator</h2>
+<section id="cgpa" class="card">
+  <h2>📊 CGPA Calculator</h2>
 
-<label>Total Subjects</label>
-<input type="number" id="subjects" oninput="generateFields()">
+  <label>Number of Subjects</label>
+  <input type="number" id="subjects" oninput="generateFields()">
 
-<div id="subjectFields"></div>
+  <div id="subjectFields"></div>
 
-<button onclick="calculateCGPA()">Calculate CGPA</button>
+  <button onclick="calculateCGPA()">Calculate CGPA</button>
 
-<div class="result" id="cgpaResult"></div>
-</section>
-
-<hr>
-
-<section>
-<h2>Student Guides</h2>
-<p>Read practical guides for managing attendance and improving academic performance.</p>
-
-<div class="blog-card">
-<a href="blog/how-to-maintain-75-attendance.html">
-How to Maintain 75% Attendance in College (India Guide)
-</a>
-</div>
-
-<div class="blog-card">
-<a href="blog/index.html">
-View All Articles →
-</a>
-</div>
-
+  <div id="cgpaResult" class="cgpa-result"></div>
 </section>
 
 </div>
 
-<script>
-
-/* Attendance Calculator */
-function calculateAttendance() {
-    let T = parseInt(document.getElementById("total").value);
-    let A = parseInt(document.getElementById("attended").value);
-    let N = parseInt(document.getElementById("noattendance").value) || 0;
-    let R = parseFloat(document.getElementById("required").value) / 100;
-
-    if (!T || !A || A > T) {
-        document.getElementById("attendanceResult").innerHTML = "Enter valid numbers.";
-        return;
-    }
-
-    let effectiveTotal = T - N;
-    if (effectiveTotal <= 0) {
-        document.getElementById("attendanceResult").innerHTML = "Effective total cannot be zero.";
-        return;
-    }
-
-    let percentage = (A / effectiveTotal) * 100;
-
-    document.getElementById("attendanceResult").innerHTML =
-    "Attendance: " + percentage.toFixed(2) + "%";
-
-    localStorage.setItem("attendanceData", JSON.stringify({T,A,N,R}));
-
-    gtag('event', 'attendance_calculated');
-}
-
-/* Share Button */
-function shareAttendance() {
-    let T = parseInt(document.getElementById("total").value);
-    let A = parseInt(document.getElementById("attended").value);
-    let N = parseInt(document.getElementById("noattendance").value) || 0;
-
-    if (!T || !A) return;
-
-    let effectiveTotal = T - N;
-    let percentage = (A / effectiveTotal) * 100;
-
-    let text = "My attendance is " + percentage.toFixed(2) +
-    "%. Check yours here: " + window.location.href;
-
-    navigator.clipboard.writeText(text);
-    alert("Copied to clipboard.");
-
-    gtag('event', 'attendance_shared');
-}
-
-/* Load Saved Attendance */
-window.onload = function() {
-    let saved = localStorage.getItem("attendanceData");
-    if (saved) {
-        let data = JSON.parse(saved);
-        document.getElementById("total").value = data.T;
-        document.getElementById("attended").value = data.A;
-        document.getElementById("noattendance").value = data.N;
-        document.getElementById("required").value = data.R*100;
-    }
-}
-
-/* CGPA Calculator */
-function generateFields() {
-    let subjects = parseInt(document.getElementById("subjects").value);
-    let container = document.getElementById("subjectFields");
-    container.innerHTML = "";
-
-    for (let i = 1; i <= subjects; i++) {
-        container.innerHTML += `
-            <label>Subject ${i} Grade Point</label>
-            <input type="number" step="0.01" id="grade${i}">
-            <label>Subject ${i} Credit</label>
-            <input type="number" step="0.01" id="credit${i}">
-        `;
-    }
-}
-
-function calculateCGPA() {
-    let subjects = parseInt(document.getElementById("subjects").value);
-    let totalCredits = 0;
-    let totalPoints = 0;
-
-    for (let i = 1; i <= subjects; i++) {
-        let grade = parseFloat(document.getElementById("grade" + i).value);
-        let credit = parseFloat(document.getElementById("credit" + i).value);
-
-        if (isNaN(grade) || isNaN(credit)) {
-            document.getElementById("cgpaResult").innerHTML = "Fill all fields.";
-            return;
-        }
-
-        totalCredits += credit;
-        totalPoints += grade * credit;
-    }
-
-    let cgpa = totalPoints / totalCredits;
-
-    document.getElementById("cgpaResult").innerHTML =
-    "CGPA: " + cgpa.toFixed(2);
-
-    gtag('event', 'cgpa_calculated');
-}
-
-</script>
-  
 <script>
 function calculateBunk() {
   let total = parseInt(document.getElementById("totalLectures").value);
@@ -277,49 +82,47 @@ function calculateBunk() {
   }
 
   let percentage = (attended / total) * 100;
+
   let meterFill = document.getElementById("meterFill");
   let meterText = document.getElementById("meterText");
-  let riskMessage = document.getElementById("riskMessage");
+  let risk = document.getElementById("riskMessage");
 
   meterFill.style.width = percentage + "%";
   meterText.innerText = percentage.toFixed(2) + "%";
 
   if (percentage >= 80) {
-    meterFill.style.background = "#00c853";
-    riskMessage.innerText = "🟢 Safe Zone – Relax, you're chilling.";
-  } 
-  else if (percentage >= required) {
-    meterFill.style.background = "#ffd600";
-    riskMessage.innerText = "🟡 Warning Zone – Be careful now.";
-  } 
-  else if (percentage >= 70) {
-    meterFill.style.background = "#ff6d00";
-    riskMessage.innerText = "🟠 Danger Zone – One more bunk hurts.";
-  } 
-  else {
-    meterFill.style.background = "#d50000";
-    riskMessage.innerText = "🔴 Critical Zone – You are in serious risk.";
+    meterFill.style.background = "#00e676";
+    risk.innerHTML = "🟢 Safe Zone – Relax.";
+  } else if (percentage >= required) {
+    meterFill.style.background = "#ffea00";
+    risk.innerHTML = "🟡 Warning – Be careful.";
+  } else if (percentage >= 70) {
+    meterFill.style.background = "#ff9100";
+    risk.innerHTML = "🟠 Danger – One more bunk hurts.";
+  } else {
+    meterFill.style.background = "#ff1744";
+    risk.innerHTML = "🔴 Critical – Stop bunking.";
   }
 
-  futureSimulation(total, attended);
+  futurePrediction(total, attended);
 }
 
-function futureSimulation(total, attended) {
-  let box = document.getElementById("futurePrediction");
+function futurePrediction(total, attended) {
+  let box = document.getElementById("futureBox");
 
-  let future1 = ((attended) / (total + 1)) * 100;
-  let future3 = ((attended) / (total + 3)) * 100;
-  let future5 = ((attended) / (total + 5)) * 100;
+  let f1 = ((attended) / (total + 1)) * 100;
+  let f3 = ((attended) / (total + 3)) * 100;
+  let f5 = ((attended) / (total + 5)) * 100;
 
   box.innerHTML = `
-    <strong>🔮 Future Predictions:</strong><br><br>
-    If you miss 1 more → ${future1.toFixed(2)}%<br>
-    If you miss 3 more → ${future3.toFixed(2)}%<br>
-    If you miss 5 more → ${future5.toFixed(2)}%
+    <strong>🔮 Future Prediction</strong><br>
+    If you miss 1 more → ${f1.toFixed(2)}%<br>
+    If you miss 3 more → ${f3.toFixed(2)}%<br>
+    If you miss 5 more → ${f5.toFixed(2)}%
   `;
 }
 
-function shareBunkStatus() {
+function shareStatus() {
   let percent = document.getElementById("meterText").innerText;
   if (percent === "0%") return;
 
@@ -329,9 +132,47 @@ function shareBunkStatus() {
   navigator.clipboard.writeText(text);
   alert("Copied to clipboard!");
 }
+
+/* CGPA */
+
+function generateFields() {
+  let subjects = parseInt(document.getElementById("subjects").value);
+  let container = document.getElementById("subjectFields");
+  container.innerHTML = "";
+
+  for (let i = 1; i <= subjects; i++) {
+    container.innerHTML += `
+      <label>Subject ${i} Grade Point</label>
+      <input type="number" step="0.01" id="grade${i}">
+      <label>Subject ${i} Credit</label>
+      <input type="number" step="0.01" id="credit${i}">
+    `;
+  }
+}
+
+function calculateCGPA() {
+  let subjects = parseInt(document.getElementById("subjects").value);
+  let totalCredits = 0;
+  let totalPoints = 0;
+
+  for (let i = 1; i <= subjects; i++) {
+    let grade = parseFloat(document.getElementById("grade" + i).value);
+    let credit = parseFloat(document.getElementById("credit" + i).value);
+
+    if (isNaN(grade) || isNaN(credit)) {
+      alert("Fill all fields.");
+      return;
+    }
+
+    totalCredits += credit;
+    totalPoints += grade * credit;
+  }
+
+  let cgpa = totalPoints / totalCredits;
+  document.getElementById("cgpaResult").innerHTML =
+    "Your CGPA: " + cgpa.toFixed(2);
+}
 </script>
-  
+
 </body>
 </html>
-
-
