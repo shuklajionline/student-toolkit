@@ -3,159 +3,200 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Opportunity Radar – Internships, Scholarships & Exam Alerts</title>
-<meta name="description" content="Discover internships, scholarships, government exams and certifications based on your degree, year and interests. Personalized student opportunity radar.">
+
+<title>Student Opportunity Radar for BBA, MBA & Government Exams</title>
+<meta name="description" content="Discover internships, MBA updates, UPSC and State Police recruitment alerts tailored to your degree, year and state. Personalized Student Opportunity Radar.">
+
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+<header class="hero">
   <h1>🎓 Student Opportunity Radar</h1>
-  <p>Discover Internships, Scholarships & Exams Based On Your Profile</p>
+  <p>Internships • MBA Updates • UPSC • State Police Alerts</p>
+  <button onclick="scrollToProfile()">Build My Profile</button>
 </header>
 
-<div class="container">
+<section class="about">
+  <h2>Find Personalized Opportunities</h2>
+  <p>
+    Student Opportunity Radar helps BBA, MBA and Government Exam aspirants discover relevant internships,
+    scholarships and official recruitment notifications. Save your profile and get opportunities matched
+    to your degree, year and state.
+  </p>
+</section>
 
-<!-- ================= HERO OPPORTUNITY SECTION ================= -->
+<section id="profile" class="card">
+  <h2>Create Your Profile</h2>
 
-<section class="card">
-  <h2>Find Opportunities For You</h2>
-
-  <label>Degree</label>
+  <label>Focus Area</label>
   <select id="degree">
-    <option value="">Select Degree</option>
+    <option value="">Select</option>
     <option value="BBA">BBA</option>
-    <option value="BCom">BCom</option>
     <option value="MBA">MBA</option>
+    <option value="UPSC">UPSC Aspirant</option>
+    <option value="Police">State Police Exams</option>
   </select>
 
   <label>Year</label>
   <select id="year">
-    <option value="">Select Year</option>
+    <option value="">Select</option>
     <option value="1">1st Year</option>
     <option value="2">2nd Year</option>
-    <option value="3">3rd Year</option>
+    <option value="3">Final Year</option>
+    <option value="Graduate">Graduate</option>
   </select>
 
   <label>State</label>
-  <select id="state">
-    <option value="">All India</option>
-    <option value="All">All</option>
-    <option value="Gujarat">Gujarat</option>
-    <option value="Maharashtra">Maharashtra</option>
-  </select>
+  <input type="text" id="state" placeholder="e.g. Gujarat">
 
   <label>Interest</label>
-  <select id="interest">
-    <option value="">Select Interest</option>
-    <option value="Marketing">Marketing</option>
-    <option value="Finance">Finance</option>
-    <option value="Government">Government Exams</option>
-  </select>
+  <input type="text" id="interest" placeholder="Marketing / Finance / Govt Jobs">
 
+  <button onclick="saveProfile()">Save Profile</button>
   <button onclick="findOpportunities()">Find My Opportunities</button>
+</section>
 
+<section id="resultsSection" class="results">
+  <h2>Your Matched Opportunities</h2>
   <div id="results"></div>
-  <div id="alerts" class="alerts"></div>
-
 </section>
 
-<!-- ================= YOUR EXISTING TOOLS BELOW ================= -->
-
-<section class="card">
-  <h2>🎯 Smart Bunk Meter</h2>
-  <p>(Tool remains below as secondary feature)</p>
-</section>
-
-<section class="card">
-  <h2>📊 CGPA Calculator</h2>
-  <p>(Tool remains below as secondary feature)</p>
-</section>
-
-</div>
+<section id="alerts" class="alerts"></section>
 
 <script>
 
-/* ================= OPPORTUNITY DATASET ================= */
+/* ================= DATASET ================= */
 
 const opportunities = [
   {
-    title: "AICTE Internship Program 2026",
+    title: "AICTE Internship 2026",
     type: "Internship",
     degree: "BBA",
     year: "2",
     state: "All",
     interest: "Marketing",
     deadline: "30 March 2026",
-    link: "https://www.aicte-india.org/"
+    link: "https://www.aicte-india.org/opportunity-page"
   },
   {
-    title: "National Scholarship Portal 2026",
-    type: "Scholarship",
-    degree: "BCom",
-    year: "1",
-    state: "All",
-    interest: "Finance",
-    deadline: "15 April 2026",
-    link: "https://scholarships.gov.in/"
-  },
-  {
-    title: "UPSC Civil Services Notification",
+    title: "UPSC Civil Services Notification 2026",
     type: "Government Exam",
-    degree: "BBA",
-    year: "3",
+    degree: "UPSC",
+    year: "Graduate",
     state: "All",
-    interest: "Government",
+    interest: "Govt",
     deadline: "10 May 2026",
-    link: "https://www.upsc.gov.in/"
+    link: "https://www.upsc.gov.in/examinations"
+  },
+  {
+    title: "Gujarat Police Recruitment 2026",
+    type: "State Police",
+    degree: "Police",
+    year: "Graduate",
+    state: "Gujarat",
+    interest: "Govt",
+    deadline: "20 April 2026",
+    link: "https://police.gujarat.gov.in/recruitment"
   }
 ];
 
-/* ================= FILTER FUNCTION ================= */
+/* ================= PROFILE FUNCTIONS ================= */
+
+function saveProfile() {
+  const profile = {
+    degree: document.getElementById("degree").value,
+    year: document.getElementById("year").value,
+    state: document.getElementById("state").value,
+    interest: document.getElementById("interest").value
+  };
+
+  localStorage.setItem("studentProfile", JSON.stringify(profile));
+  alert("Profile Saved!");
+}
+
+function loadProfile() {
+  const saved = localStorage.getItem("studentProfile");
+  if (saved) {
+    const profile = JSON.parse(saved);
+    document.getElementById("degree").value = profile.degree;
+    document.getElementById("year").value = profile.year;
+    document.getElementById("state").value = profile.state;
+    document.getElementById("interest").value = profile.interest;
+  }
+}
+
+window.onload = loadProfile;
+
+/* ================= MATCH SCORING ================= */
+
+function calculateMatch(user, item) {
+  let score = 0;
+
+  if (user.degree === item.degree) score += 40;
+  if (user.year === item.year) score += 30;
+  if (user.state.toLowerCase() === item.state.toLowerCase() || item.state === "All") score += 20;
+  if (user.interest.toLowerCase().includes(item.interest.toLowerCase())) score += 10;
+
+  return score;
+}
+
+/* ================= FILTER ================= */
 
 function findOpportunities() {
 
-  let degree = document.getElementById("degree").value;
-  let year = document.getElementById("year").value;
-  let state = document.getElementById("state").value;
-  let interest = document.getElementById("interest").value;
+  const user = {
+    degree: document.getElementById("degree").value,
+    year: document.getElementById("year").value,
+    state: document.getElementById("state").value,
+    interest: document.getElementById("interest").value
+  };
 
-  let results = document.getElementById("results");
-  let alerts = document.getElementById("alerts");
+  const results = document.getElementById("results");
+  const alerts = document.getElementById("alerts");
 
   results.innerHTML = "";
   alerts.innerHTML = "";
 
-  let filtered = opportunities.filter(item =>
-    (degree === "" || item.degree === degree) &&
-    (year === "" || item.year === year) &&
-    (state === "" || item.state === state || item.state === "All") &&
-    (interest === "" || item.interest === interest)
-  );
+  opportunities.forEach(item => {
+    let matchScore = calculateMatch(user, item);
 
-  if (filtered.length === 0) {
-    results.innerHTML = "<p>No matching opportunities found.</p>";
-    return;
-  }
+    if (matchScore > 0) {
 
-  filtered.forEach(item => {
-    results.innerHTML += `
-      <div class="opportunity-card">
-        <h3>${item.title}</h3>
-        <p><strong>Type:</strong> ${item.type}</p>
-        <p><strong>Deadline:</strong> ${item.deadline}</p>
-        <a href="${item.link}" target="_blank">Apply / View Official Link</a>
-      </div>
-    `;
+      let badge = "Low Match";
+      let badgeClass = "low";
+
+      if (matchScore >= 80) {
+        badge = "🔥 High Match";
+        badgeClass = "high";
+      } else if (matchScore >= 50) {
+        badge = "⭐ Good Match";
+        badgeClass = "medium";
+      }
+
+      results.innerHTML += `
+        <div class="opportunity-card">
+          <span class="badge ${badgeClass}">${badge}</span>
+          <h3>${item.title}</h3>
+          <p><strong>Type:</strong> ${item.type}</p>
+          <p><strong>Deadline:</strong> ${item.deadline}</p>
+          <a href="${item.link}" target="_blank">View Official Notification</a>
+        </div>
+      `;
+    }
   });
 
   alerts.innerHTML = `
-    <h3>🔔 Personalized Academic Alerts</h3>
-    <p>Placement season for ${degree || "your degree"} students usually begins mid-year.</p>
-    <p>Government exam notifications often release between January–March.</p>
-    <p>Keep checking weekly for updated opportunities.</p>
+    <h3>🔔 Academic Alerts</h3>
+    <p>UPSC notifications typically release January–March.</p>
+    <p>MBA admission cycles open November–January.</p>
+    <p>State Police recruitment depends on state announcements.</p>
   `;
+}
+
+function scrollToProfile() {
+  document.getElementById("profile").scrollIntoView({ behavior: "smooth" });
 }
 
 </script>
