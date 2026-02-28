@@ -104,3 +104,32 @@ button:hover {
   font-size: 20px;
   text-align: center;
 }
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: none;
+}
+
+.opportunity-card {
+  background: #2a2a2a;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 8px;
+}
+
+.opportunity-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #00e5ff;
+  text-decoration: none;
+}
+
+.alerts {
+  margin-top: 20px;
+  background: #1e1e1e;
+  padding: 15px;
+  border-radius: 8px;
+}
