@@ -92,3 +92,38 @@ body {
     margin-top: 30px;
   }
 }
+.news-section {
+  background: #ffffff;
+  padding: 60px 0;
+}
+
+.news-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.news-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.news-card {
+  min-width: 280px;
+  background: #f9f9ff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-card a {
+  color: #5f2cff;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 10px;
+}
