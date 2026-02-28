@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Toolkit – Attendance & CGPA Calculator</title>
-<meta name="description" content="Free Student Toolkit with Attendance Calculator, CGPA Calculator and student guides.">
+<meta name="description" content="Free Student Toolkit for students. Calculate attendance, CGPA and read academic guides.">
+
+<link rel="stylesheet" href="style.css">
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J60HJ54DY0"></script>
@@ -15,87 +17,7 @@
   gtag('config', 'G-J60HJ54DY0');
 </script>
 
-<style>
-* { box-sizing: border-box; font-family: Arial, sans-serif; }
-
-body {
-    margin: 0;
-    background: #f4f6fb;
-}
-
-header {
-    background: #667eea;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    background: white;
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-}
-
-nav a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #333;
-}
-
-.container {
-    width: 95%;
-    max-width: 900px;
-    margin: 25px auto;
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-h2 {
-    margin-top: 0;
-}
-
-input {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0 10px 0;
-}
-
-button {
-    padding: 10px;
-    margin-top: 5px;
-    border: none;
-    background: #667eea;
-    color: white;
-    cursor: pointer;
-}
-
-.result {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-.blog-section {
-    margin-top: 40px;
-}
-
-.blog-card {
-    border-bottom: 1px solid #ddd;
-    padding: 15px 0;
-}
-
-.blog-card a {
-    text-decoration: none;
-    color: #667eea;
-    font-weight: bold;
-}
-</style>
 </head>
-
 <body>
 
 <header>
@@ -106,7 +28,7 @@ button {
 <nav>
 <a href="#attendance">Attendance</a>
 <a href="#cgpa">CGPA</a>
-<a href="#blog">Blog</a>
+<a href="blog/index.html">Blog</a>
 </nav>
 
 <div class="container">
@@ -151,15 +73,20 @@ button {
 
 <hr>
 
-<!-- Blog Section -->
-<section id="blog" class="blog-section">
+<section>
 <h2>Student Guides</h2>
+<p>Read practical guides for managing attendance and improving academic performance.</p>
 
 <div class="blog-card">
 <a href="blog/how-to-maintain-75-attendance.html">
 How to Maintain 75% Attendance in College (India Guide)
 </a>
-<p>Complete guide to managing attendance and avoiding shortage issues.</p>
+</div>
+
+<div class="blog-card">
+<a href="blog/index.html">
+View All Articles →
+</a>
 </div>
 
 </section>
@@ -175,10 +102,16 @@ function calculateAttendance() {
     let N = parseInt(document.getElementById("noattendance").value) || 0;
     let R = parseFloat(document.getElementById("required").value) / 100;
 
-    if (!T || !A || A > T) return;
+    if (!T || !A || A > T) {
+        document.getElementById("attendanceResult").innerHTML = "Enter valid numbers.";
+        return;
+    }
 
     let effectiveTotal = T - N;
-    if (effectiveTotal <= 0) return;
+    if (effectiveTotal <= 0) {
+        document.getElementById("attendanceResult").innerHTML = "Effective total cannot be zero.";
+        return;
+    }
 
     let percentage = (A / effectiveTotal) * 100;
 
@@ -210,7 +143,7 @@ function shareAttendance() {
     gtag('event', 'attendance_shared');
 }
 
-/* Load Saved Data */
+/* Load Saved Attendance */
 window.onload = function() {
     let saved = localStorage.getItem("attendanceData");
     if (saved) {
@@ -222,7 +155,7 @@ window.onload = function() {
     }
 }
 
-/* CGPA */
+/* CGPA Calculator */
 function generateFields() {
     let subjects = parseInt(document.getElementById("subjects").value);
     let container = document.getElementById("subjectFields");
@@ -247,7 +180,10 @@ function calculateCGPA() {
         let grade = parseFloat(document.getElementById("grade" + i).value);
         let credit = parseFloat(document.getElementById("credit" + i).value);
 
-        if (isNaN(grade) || isNaN(credit)) return;
+        if (isNaN(grade) || isNaN(credit)) {
+            document.getElementById("cgpaResult").innerHTML = "Fill all fields.";
+            return;
+        }
 
         totalCredits += credit;
         totalPoints += grade * credit;
