@@ -1,78 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Student Opportunity Radar Dashboard</title>
-<meta name="description" content="Find BBA internships, MBA admissions, UPSC notifications and BTech opportunities.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Toolkit – Internships, MBA, UPSC & Academic Tools</title>
+<meta name="description" content="Student Toolkit helps BBA, MBA, UPSC and BTech students discover official opportunities, internships and use smart academic planning tools.">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="sidebar" id="sidebar">
-  <h2>🎓 Radar</h2>
+<header class="navbar">
+  <div class="logo">🎓 Student Toolkit</div>
+  <nav>
+    <a href="bba-opportunities.html">BBA</a>
+    <a href="mba-admissions.html">MBA</a>
+    <a href="upsc-notifications.html">UPSC</a>
+    <a href="btech-internships.html">BTech</a>
+    <a href="tools/attendance.html">Tools</a>
+    <a href="blog/index.html">Blog</a>
+  </nav>
+</header>
 
-  <a href="index.html"><div class="icon"></div><span class="text">Dashboard</span></a>
-  <a href="bba-opportunities.html"><div class="icon"></div><span class="text">BBA</span></a>
-  <a href="mba-admissions.html"><div class="icon"></div><span class="text">MBA</span></a>
-  <a href="upsc-notifications.html"><div class="icon"></div><span class="text">UPSC</span></a>
-  <a href="btech-internships.html"><div class="icon"></div><span class="text">BTech</span></a>
+<section class="hero">
+  <div class="hero-content">
+    <h1>Everything a Student Needs. In One Toolkit.</h1>
+    <p>Discover verified internships, MBA updates, UPSC notifications and use powerful academic tools designed for serious students.</p>
+    <a href="bba-opportunities.html" class="cta-btn">Explore Opportunities</a>
+  </div>
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b" alt="Student studying laptop">
+  </div>
+</section>
 
-  <h3 style="margin-top:20px;">Tools</h3>
-  <a href="tools/attendance.html"><div class="icon"></div><span class="text">Attendance</span></a>
-  <a href="tools/cgpa.html"><div class="icon"></div><span class="text">CGPA</span></a>
+<section class="features container">
 
-  <a href="blog/index.html"><div class="icon"></div><span class="text">Blog</span></a>
-</div>
+  <div class="feature-card">
+    <h3>🎓 Verified Opportunities</h3>
+    <p>Direct official links for BBA, MBA, UPSC and BTech students. No fake listings.</p>
+  </div>
 
-<button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+  <div class="feature-card">
+    <h3>📊 Smart Academic Tools</h3>
+    <p>Attendance calculator and CGPA tools built for real college scenarios.</p>
+  </div>
 
-<div class="main">
+  <div class="feature-card">
+    <h3>📈 Structured Career Path</h3>
+    <p>Clear updates, deadlines and insights to help you plan smarter.</p>
+  </div>
 
-<div class="card">
-<h1>Welcome to Student Opportunity Radar</h1>
-<p>This platform helps BBA, MBA, UPSC aspirants and BTech students discover verified opportunities, official notifications and application links in one place.</p>
-</div>
+</section>
 
-<div class="card">
-<h2>Latest Featured Opportunities</h2>
+<section class="categories container">
+  <h2>Explore by Category</h2>
 
-<div class="opportunity-grid">
+  <div class="category-grid">
 
-<div class="opportunity-card">
-<span class="badge high">High Priority 🔥</span>
-<h3>UPSC Civil Services 2026</h3>
-<a href="https://www.upsc.gov.in/examinations/civil-services-examination" target="_blank">
-View Official Notification
-</a>
-</div>
+    <a href="bba-opportunities.html" class="category-card">
+      <h3>BBA Opportunities</h3>
+      <p>Marketing & Finance internships for management students.</p>
+    </a>
 
-<div class="opportunity-card">
-<span class="badge medium">Trending ⭐</span>
-<h3>CAT 2026 MBA Entrance</h3>
-<a href="https://iimcat.ac.in/" target="_blank">
-Visit Official CAT Portal
-</a>
-</div>
+    <a href="mba-admissions.html" class="category-card">
+      <h3>MBA Admissions</h3>
+      <p>CAT updates, entrance exams and admission timelines.</p>
+    </a>
 
-<div class="opportunity-card">
-<span class="badge medium">Internship</span>
-<h3>AICTE Internship Program</h3>
-<a href="https://internship.aicte-india.org/" target="_blank">
-Apply Officially
-</a>
-</div>
+    <a href="upsc-notifications.html" class="category-card">
+      <h3>UPSC Notifications</h3>
+      <p>Civil services updates with official links.</p>
+    </a>
 
-</div>
-</div>
+    <a href="btech-internships.html" class="category-card">
+      <h3>BTech Internships</h3>
+      <p>Engineering internships and tech opportunities.</p>
+    </a>
 
-</div>
+  </div>
+</section>
 
-<script>
-function toggleSidebar(){
-  document.getElementById("sidebar").classList.toggle("collapsed");
-}
-</script>
+<footer class="footer">
+  <p>© 2026 Student Toolkit | Built for serious students.</p>
+</footer>
 
 </body>
 </html>
