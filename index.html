@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Student Toolkit – Smart Attendance & CGPA Tools</title>
-<meta name="description" content="Track attendance, calculate CGPA, predict bunk risk and plan smarter with Student Toolkit.">
-
+<meta name="description" content="Track attendance, predict bunk risk, calculate CGPA and plan smarter with Student Toolkit.">
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -81,13 +80,14 @@ function calculateBunk() {
   let total = parseInt(document.getElementById("totalLectures").value);
   let attended = parseInt(document.getElementById("attendedLectures").value);
   let noAttendance = parseInt(document.getElementById("noAttendance").value) || 0;
-  let required = parseFloat(document.getElementById("requiredPercent").value);
+  let requiredPercent = parseFloat(document.getElementById("requiredPercent").value);
 
   if (!total || !attended || attended > total) {
     alert("Enter valid numbers");
     return;
   }
 
+  let required = requiredPercent / 100;
   let effectiveTotal = total - noAttendance;
 
   if (effectiveTotal <= 0) {
@@ -108,7 +108,7 @@ function calculateBunk() {
     meterFill.style.background = "#00e676";
     risk.innerHTML = "🟢 Safe Zone – Relax.";
   } 
-  else if (percentage >= required) {
+  else if (percentage >= requiredPercent) {
     meterFill.style.background = "#ffea00";
     risk.innerHTML = "🟡 Warning – Be careful.";
   } 
@@ -121,23 +121,65 @@ function calculateBunk() {
     risk.innerHTML = "🔴 Critical – Stop bunking.";
   }
 
-  futurePrediction(effectiveTotal, attended);
+  /* ===== Required Lectures to Reach Target ===== */
+
+  let requiredLectures = 0;
+
+  if (percentage < requiredPercent) {
+    let numerator = (required * effectiveTotal) - attended;
+    let denominator = 1 - required;
+    requiredLectures = Math.ceil(numerator / denominator);
+    if (requiredLectures < 0) requiredLectures = 0;
+  }
+
+  /* ===== Maximum Bunks Remaining ===== */
+
+  let maxBunks = 0;
+
+  if (percentage >= requiredPercent) {
+    let numerator = attended - (required * effectiveTotal);
+    let denominator = required;
+    maxBunks = Math.floor(numerator / required);
+    if (maxBunks < 0) maxBunks = 0;
+  }
+
+  futurePrediction(effectiveTotal, attended, requiredLectures, maxBunks);
 }
 
-function futurePrediction(effectiveTotal, attended) {
+
+function futurePrediction(effectiveTotal, attended, requiredLectures, maxBunks) {
+
   let box = document.getElementById("futureBox");
 
   let f1 = ((attended) / (effectiveTotal + 1)) * 100;
   let f3 = ((attended) / (effectiveTotal + 3)) * 100;
   let f5 = ((attended) / (effectiveTotal + 5)) * 100;
 
+  let recoveryText = "";
+  let bunkText = "";
+
+  if (requiredLectures > 0) {
+    recoveryText = `📈 You must attend <strong>${requiredLectures}</strong> more consecutive lectures to reach required attendance.<br><br>`;
+  } else {
+    recoveryText = `✅ You already meet the required attendance.<br><br>`;
+  }
+
+  if (maxBunks > 0) {
+    bunkText = `🎉 You can bunk <strong>${maxBunks}</strong> more lectures safely.`;
+  } else if (requiredLectures === 0) {
+    bunkText = `⚠ You cannot bunk any more without entering risk zone.`;
+  }
+
   box.innerHTML = `
     <strong>🔮 Future Prediction</strong><br><br>
     If you miss 1 more → ${f1.toFixed(2)}%<br>
     If you miss 3 more → ${f3.toFixed(2)}%<br>
-    If you miss 5 more → ${f5.toFixed(2)}%
+    If you miss 5 more → ${f5.toFixed(2)}%<br><br>
+    ${recoveryText}
+    ${bunkText}
   `;
 }
+
 
 function shareStatus() {
   let percent = document.getElementById("meterText").innerText;
@@ -150,7 +192,7 @@ function shareStatus() {
   alert("Copied to clipboard!");
 }
 
-/* ================= CGPA LOGIC ================= */
+/* ================= CGPA CALCULATOR ================= */
 
 function generateFields() {
   let subjects = parseInt(document.getElementById("subjects").value);
