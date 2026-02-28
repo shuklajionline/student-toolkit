@@ -1,22 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Attendance Calculator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attendance Calculator – Student Toolkit</title>
+<meta name="description" content="Free attendance calculator for college students. Calculate required lectures to reach 75% attendance.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
 
-<div class="sidebar">
-  <h2>🎓 Student Radar</h2>
-  <a href="../index.html">Dashboard</a>
-</div>
+<header class="navbar">
+  <div class="logo">🎓 Student Toolkit</div>
+  <nav>
+    <a href="../index.html">Home</a>
+  </nav>
+</header>
 
-<div class="main">
-<div class="card">
+<section class="container">
 <h1>Attendance Calculator</h1>
-<p>Your existing attendance tool goes here.</p>
+<p>This attendance calculator helps students calculate how many more lectures they must attend to maintain the required 75% attendance rule followed by most Indian universities.</p>
+
+<div class="feature-card">
+
+<input type="number" id="total" placeholder="Total Lectures Conducted">
+<input type="number" id="attended" placeholder="Lectures Attended">
+<input type="number" id="required" placeholder="Required % (Default 75)" value="75">
+
+<button class="cta-btn" onclick="calculateAttendance()">Calculate</button>
+
+<h3 id="result"></h3>
+
 </div>
-</div>
+</section>
+
+<script>
+function calculateAttendance(){
+  let total = parseInt(document.getElementById("total").value);
+  let attended = parseInt(document.getElementById("attended").value);
+  let requiredPercent = parseFloat(document.getElementById("required").value);
+
+  if(!total || !attended || attended > total){
+    document.getElementById("result").innerHTML = "Enter valid numbers.";
+    return;
+  }
+
+  let current = (attended / total) * 100;
+
+  if(current >= requiredPercent){
+    document.getElementById("result").innerHTML =
+      "Your attendance is " + current.toFixed(2) + "%. You are safe.";
+  } else {
+    let required = requiredPercent / 100;
+    let numerator = (required * total) - attended;
+    let denominator = 1 - required;
+    let lecturesNeeded = Math.ceil(numerator / denominator);
+
+    document.getElementById("result").innerHTML =
+      "Your attendance is " + current.toFixed(2) + "%. You must attend " +
+      lecturesNeeded + " more lectures to reach " + requiredPercent + "%.";
+  }
+}
+</script>
 
 </body>
 </html>
