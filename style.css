@@ -1,110 +1,62 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0f1117;
-  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  background: #f4f6fb;
+  color: #222;
+}
+
+nav {
+  background: #111;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #00c6ff;
 }
 
 .hero {
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #1e1e2f, #111);
-}
-
-.hero h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
-}
-
-.hero button {
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #6c63ff;
-  border: none;
-  border-radius: 6px;
+  background: linear-gradient(135deg, #5f2cff, #00c6ff);
   color: white;
-  cursor: pointer;
+  padding: 70px 20px;
+  text-align: center;
 }
 
-.about {
-  padding: 40px 20px;
-  text-align: center;
-  max-width: 800px;
-  margin: auto;
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto;
 }
 
 .card {
-  max-width: 700px;
-  margin: 30px auto;
+  background: white;
   padding: 25px;
-  background: #1a1c24;
   border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
 }
 
-label {
-  display: block;
-  margin-top: 15px;
-}
-
-input, select {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 6px;
-  border: none;
-  background: #2a2d3a;
-  color: white;
-}
-
-button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  border-radius: 6px;
-  border: none;
-  background: #6c63ff;
-  color: white;
-  cursor: pointer;
-}
-
-.results {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
+h1, h2, h3 {
+  margin-top: 0;
 }
 
 .opportunity-card {
-  background: #1e212d;
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 20px;
-  position: relative;
+  background: #fafafa;
+  padding: 15px;
+  border-left: 5px solid #5f2cff;
+  border-radius: 8px;
+  margin-top: 15px;
 }
 
 .opportunity-card a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #6c63ff;
+  color: #5f2cff;
+  font-weight: 600;
   text-decoration: none;
-}
-
-.badge {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-}
-
-.high { background: #00c853; }
-.medium { background: #ffab00; }
-.low { background: #d50000; }
-
-.alerts {
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 20px;
-  background: #161822;
-  border-radius: 12px;
 }
