@@ -1,49 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Student Opportunity Radar</title>
-<meta name="description" content="Discover internships, MBA admissions, UPSC notifications and more.">
+<title>Student Opportunity Radar Dashboard</title>
+<meta name="description" content="Find BBA internships, MBA admissions, UPSC notifications and BTech opportunities.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="sidebar">
-  <h2>🎓 Student Radar</h2>
+<div class="sidebar" id="sidebar">
+  <h2>🎓 Radar</h2>
 
-  <a href="index.html">Dashboard</a>
-  <a href="bba-opportunities.html">BBA</a>
-  <a href="mba-admissions.html">MBA</a>
-  <a href="upsc-notifications.html">UPSC</a>
-  <a href="btech-internships.html">BTech</a>
+  <a href="index.html"><div class="icon"></div><span class="text">Dashboard</span></a>
+  <a href="bba-opportunities.html"><div class="icon"></div><span class="text">BBA</span></a>
+  <a href="mba-admissions.html"><div class="icon"></div><span class="text">MBA</span></a>
+  <a href="upsc-notifications.html"><div class="icon"></div><span class="text">UPSC</span></a>
+  <a href="btech-internships.html"><div class="icon"></div><span class="text">BTech</span></a>
 
   <h3 style="margin-top:20px;">Tools</h3>
-  <a href="tools/attendance.html">Attendance Calculator</a>
-  <a href="tools/cgpa.html">CGPA Calculator</a>
+  <a href="tools/attendance.html"><div class="icon"></div><span class="text">Attendance</span></a>
+  <a href="tools/cgpa.html"><div class="icon"></div><span class="text">CGPA</span></a>
 
-  <a href="blog/index.html" style="margin-top:20px;">Blog</a>
+  <a href="blog/index.html"><div class="icon"></div><span class="text">Blog</span></a>
 </div>
+
+<button class="toggle-btn" onclick="toggleSidebar()">☰</button>
 
 <div class="main">
 
 <div class="card">
-<h1>Dashboard</h1>
-<p>Welcome to your personalized Student Opportunity Radar platform.</p>
+<h1>Welcome to Student Opportunity Radar</h1>
+<p>This platform helps BBA, MBA, UPSC aspirants and BTech students discover verified opportunities, official notifications and application links in one place.</p>
 </div>
 
 <div class="card">
-<h2>Latest Highlights</h2>
+<h2>Latest Featured Opportunities</h2>
+
+<div class="opportunity-grid">
 
 <div class="opportunity-card">
+<span class="badge high">High Priority 🔥</span>
 <h3>UPSC Civil Services 2026</h3>
 <a href="https://www.upsc.gov.in/examinations/civil-services-examination" target="_blank">
 View Official Notification
 </a>
 </div>
 
+<div class="opportunity-card">
+<span class="badge medium">Trending ⭐</span>
+<h3>CAT 2026 MBA Entrance</h3>
+<a href="https://iimcat.ac.in/" target="_blank">
+Visit Official CAT Portal
+</a>
+</div>
+
+<div class="opportunity-card">
+<span class="badge medium">Internship</span>
+<h3>AICTE Internship Program</h3>
+<a href="https://internship.aicte-india.org/" target="_blank">
+Apply Officially
+</a>
 </div>
 
 </div>
+</div>
+
+</div>
+
+<script>
+function toggleSidebar(){
+  document.getElementById("sidebar").classList.toggle("collapsed");
+}
+</script>
 
 </body>
 </html>
