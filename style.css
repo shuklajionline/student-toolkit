@@ -21,9 +21,11 @@ body {
   font-weight: 500;
 }
 
-.logo {
-  font-weight: 700;
-  font-size: 18px;
+.logo img {
+  height: 45px;        /* Controls actual visible size */
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .hero {
