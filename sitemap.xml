@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://studenttoolkit.online/</loc>
@@ -7,22 +7,42 @@
   </url>
 
   <url>
-    <loc>https://studenttoolkit.online/blog/</loc>
+    <loc>https://studenttoolkit.online/bba-opportunities.html</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://studenttoolkit.online/blog/how-to-maintain-75-attendance.html</loc>
+    <loc>https://studenttoolkit.online/mba-admissions.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://studenttoolkit.online/upsc-notifications.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://studenttoolkit.online/btech-internships.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://studenttoolkit.online/tools/attendance.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://studenttoolkit.online/tools/cgpa.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://studenttoolkit.online/blog/</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://studenttoolkit.online/blog/how-many-lectures-can-i-bunk.html</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://studenttoolkit.online/blog/how-to-improve-cgpa-in-one-semester.html</loc>
+    <loc>https://studenttoolkit.online/blog/how-to-prepare-for-upsc-after-graduation.html</loc>
     <priority>0.8</priority>
   </url>
 
