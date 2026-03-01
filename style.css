@@ -18,7 +18,7 @@ body {
 }
 
 .logo img {
-  height: 48px;        /* Controls actual visible size */
+  height: 54px;        /* Controls actual visible size */
   width: auto;
   display: block;
   object-fit: contain;
