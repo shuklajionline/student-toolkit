@@ -247,3 +247,19 @@ body {
 .container a:hover {
   text-decoration: underline;
 }
+
+.blog-content {
+  background: #ffffff;
+  padding: 60px 50px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+
+.blog-content p:first-of-type::first-letter {
+  font-size: 42px;
+  font-weight: 700;
+  float: left;
+  line-height: 1;
+  padding-right: 8px;
+  color: #5f2cff;
+}
