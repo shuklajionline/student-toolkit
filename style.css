@@ -187,3 +187,63 @@ body {
   font-weight: 600;
   color: #5f2cff;
 }
+/* ===== BLOG TYPOGRAPHY ===== */
+
+.container {
+  max-width: 850px;
+  margin: 80px auto;
+  line-height: 1.8;
+}
+
+.container h1 {
+  font-size: 34px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.container h2 {
+  font-size: 26px;
+  margin-top: 50px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #111;
+}
+
+.container h3 {
+  font-size: 20px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.container p {
+  font-size: 17px;
+  margin-bottom: 18px;
+  color: #444;
+}
+
+.container ul {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.container li {
+  margin-bottom: 10px;
+  font-size: 17px;
+  color: #444;
+}
+
+.container strong {
+  color: #111;
+}
+
+.container a {
+  color: #5f2cff;
+  font-weight: 600;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
