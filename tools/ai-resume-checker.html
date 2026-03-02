@@ -3,10 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Resume Checker Online | ATS Resume Score Tool | Student Toolkit</title>
-<meta name="description" content="Free ATS resume checker. Get resume score, strengths, weaknesses and improvement tips instantly.">
+<title>Advanced Resume Checker | ATS Resume Score Tool | Student Toolkit</title>
+<meta name="description" content="Advanced free ATS resume checker with keyword density, AI detection, formatting analysis and downloadable PDF report.">
 
 <link rel="stylesheet" href="../style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 
 <body>
@@ -21,28 +23,32 @@
 
 <section class="container blog-content">
 
-<h1>Free Resume Checker (ATS Score Tool)</h1>
+<h1>Advanced Resume Checker</h1>
 
-<p>Paste your resume content below and get instant analysis including structure score, keyword strength and improvement suggestions.</p>
+<p>Get detailed ATS score, keyword density analysis, AI-likeness detection and improvement insights instantly.</p>
 
-<textarea id="resumeText" rows="10" style="width:100%; padding:10px;"></textarea>
+<textarea id="resumeText" rows="12" style="width:100%; padding:12px;"></textarea>
 
 <br><br>
 
 <button onclick="analyzeResume()" class="primary-btn">Analyze Resume</button>
+<button onclick="downloadPDF()" class="secondary-btn">Download PDF Report</button>
+<button onclick="downloadScoreCard()" class="secondary-btn">Download Score Card</button>
 
-<div id="analysisResult" style="margin-top:30px;"></div>
+<div id="analysisResult" style="margin-top:40px;"></div>
 
 </section>
 
 <script>
 
+let globalReport = "";
+
 function analyzeResume() {
 
   let text = document.getElementById("resumeText").value;
 
-  if(text.length < 100) {
-    document.getElementById("analysisResult").innerHTML = "Resume too short.";
+  if(text.length < 200){
+    document.getElementById("analysisResult").innerHTML = "Resume too short for analysis.";
     return;
   }
 
@@ -50,58 +56,154 @@ function analyzeResume() {
   let pros = [];
   let cons = [];
 
-  // Word count
-  let words = text.split(" ").length;
-  if(words > 250 && words < 800) {
-    score += 20;
-    pros.push("Good resume length.");
+  let words = text.trim().split(/\s+/).length;
+
+  // Length scoring
+  if(words > 300 && words < 900){
+    score += 15;
+    pros.push("Optimal resume length.");
   } else {
-    cons.push("Resume length may not be optimal.");
+    cons.push("Resume length not optimal (ideal 350–800 words).");
+  }
+
+  // Sections
+  const sections = ["education","skills","experience","projects","certifications"];
+  let sectionScore = 0;
+
+  sections.forEach(sec=>{
+    if(text.toLowerCase().includes(sec)){
+      sectionScore += 10;
+    } else {
+      cons.push(`Missing ${sec} section.`);
+    }
+  });
+
+  score += sectionScore;
+
+  if(sectionScore >= 30){
+    pros.push("Strong structural completeness.");
   }
 
   // Action verbs
-  const actionWords = ["led", "managed", "developed", "created", "designed", "implemented", "optimized"];
+  const actionWords = ["led","managed","developed","created","implemented","designed","optimized","built","improved"];
   let actionCount = 0;
 
-  actionWords.forEach(word => {
-    if(text.toLowerCase().includes(word)) {
+  actionWords.forEach(word=>{
+    if(text.toLowerCase().includes(word)){
       actionCount++;
     }
   });
 
-  if(actionCount >= 3) {
-    score += 20;
-    pros.push("Strong action verbs used.");
+  if(actionCount >= 4){
+    score += 15;
+    pros.push("Strong impact-driven action verbs used.");
   } else {
-    cons.push("Add more action verbs.");
+    cons.push("Add more action verbs to show impact.");
   }
 
-  // Sections check
-  if(text.toLowerCase().includes("education")) score += 15;
-  else cons.push("Missing Education section.");
+  // Email check
+  if(text.includes("@")){
+    score += 5;
+  } else {
+    cons.push("Missing professional email.");
+  }
 
-  if(text.toLowerCase().includes("skills")) score += 15;
-  else cons.push("Missing Skills section.");
+  // ATS formatting check
+  if(!text.includes("|") && !text.includes("❖") && !text.includes("★")){
+    score += 10;
+    pros.push("ATS-friendly formatting detected.");
+  } else {
+    cons.push("Remove special characters for ATS compatibility.");
+  }
 
-  if(text.toLowerCase().includes("experience")) score += 15;
-  else cons.push("Missing Experience section.");
+  // AI-likeness detection
+  let aiIndicators = 0;
+  const aiPhrases = ["highly motivated individual","detail-oriented professional","results-driven","team player","passionate about"];
+  aiPhrases.forEach(p=>{
+    if(text.toLowerCase().includes(p)){
+      aiIndicators++;
+    }
+  });
 
-  if(text.includes("@")) score += 5;
-  else cons.push("Missing email contact.");
+  let aiVerdict = "";
+  if(aiIndicators >= 3){
+    aiVerdict = "Likely AI-Generated Tone";
+    cons.push("Content appears generic. Add more personalization.");
+  } else {
+    aiVerdict = "Likely Human-Written";
+    pros.push("Personalized tone detected.");
+  }
 
-  let finalScore = Math.min(score, 100);
+  score = Math.min(score,100);
 
-  let output = `<h2>Resume Score: ${finalScore}/100</h2>`;
+  // Keyword Density
+  let wordArray = text.toLowerCase().match(/\b\w+\b/g);
+  let freq = {};
+  wordArray.forEach(w=>{
+    freq[w] = (freq[w] || 0) + 1;
+  });
 
-  output += "<h3>Strengths:</h3><ul>";
-  pros.forEach(p => output += `<li>${p}</li>`);
-  output += "</ul>";
+  let sortedKeywords = Object.entries(freq)
+    .filter(([word,count])=>word.length > 4)
+    .sort((a,b)=>b[1]-a[1])
+    .slice(0,5);
 
-  output += "<h3>Improvements:</h3><ul>";
-  cons.forEach(c => output += `<li>${c}</li>`);
-  output += "</ul>";
+  let keywordHTML = "<h3>Top Keywords:</h3><ul>";
+  sortedKeywords.forEach(k=>{
+    keywordHTML += `<li>${k[0]} (${k[1]} times)</li>`;
+  });
+  keywordHTML += "</ul>";
+
+  let output = `
+  <h2>Resume Score: ${score}/100</h2>
+  <p><strong>AI Detection:</strong> ${aiVerdict}</p>
+  <h3>Strengths</h3>
+  <ul>${pros.map(p=>"<li>"+p+"</li>").join("")}</ul>
+  <h3>Improvements</h3>
+  <ul>${cons.map(c=>"<li>"+c+"</li>").join("")}</ul>
+  ${keywordHTML}
+  `;
+
+  globalReport = output;
 
   document.getElementById("analysisResult").innerHTML = output;
+}
+
+function downloadPDF(){
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  doc.text(globalReport.replace(/<[^>]*>/g,''), 10, 10);
+  doc.save("resume-analysis.pdf");
+}
+
+function downloadScoreCard(){
+
+  let canvas = document.createElement("canvas");
+  canvas.width = 600;
+  canvas.height = 400;
+  let ctx = canvas.getContext("2d");
+
+  ctx.fillStyle = "#f7f9fc";
+  ctx.fillRect(0,0,600,400);
+
+  ctx.font = "30px Arial";
+  ctx.fillStyle = "#111";
+  ctx.textAlign = "center";
+  ctx.fillText("Student Toolkit Resume Score",300,60);
+
+  let scoreMatch = globalReport.match(/Resume Score: (\d+)/);
+  let score = scoreMatch ? scoreMatch[1] : "0";
+
+  ctx.font = "60px Arial";
+  ctx.fillText(score+"/100",300,200);
+
+  ctx.font = "18px Arial";
+  ctx.fillText("studenttoolkit.online",300,360);
+
+  let link = document.createElement("a");
+  link.download = "resume-score-card.png";
+  link.href = canvas.toDataURL();
+  link.click();
 }
 
 </script>
