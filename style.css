@@ -325,3 +325,22 @@ img {
   }
 
 }
+.footer-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.social-links {
+  margin: 20px 0;
+}
+
+.social-links a {
+  margin: 0 15px;
+  color: #bbb;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #5f2cff;
+}
