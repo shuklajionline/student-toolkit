@@ -6,20 +6,10 @@
 <title>Smart Attendance & Bunk Meter | Student Toolkit</title>
 <link rel="stylesheet" href="../style.css">
 <style>
-.meter-container {
-  text-align: center;
-  margin-top: 40px;
-}
-
-canvas {
-  max-width: 200px;
-}
-
-#result {
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: 600;
-}
+.meter-container { text-align:center; margin-top:40px; }
+canvas { max-width:200px; }
+#result { margin-top:20px; font-size:18px; font-weight:600; }
+input { display:block; margin:10px 0; padding:8px; width:100%; max-width:300px; }
 </style>
 </head>
 <body>
@@ -42,10 +32,11 @@ canvas {
 <label>Attended Lectures:</label>
 <input type="number" id="attended">
 
-<label>No Attendance:</label>
+<label>No Attendance (neutral classes):</label>
 <input type="number" id="noAttendance">
 
-<br><br>
+<label>If You Miss More Lectures (Future Bunks):</label>
+<input type="number" id="futureMiss">
 
 <button onclick="calculateAttendance()" class="primary-btn">Calculate</button>
 
@@ -56,15 +47,28 @@ canvas {
 <div id="result"></div>
 
 <br>
-
 <button onclick="downloadImage()" class="secondary-btn">Download Result</button>
 <button onclick="shareAttendance()" class="secondary-btn">Share</button>
 
 </section>
 
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
 <script>
 let finalText = "";
 let finalPercentage = 0;
+
+function animateCount(target) {
+  let current = 0;
+  let interval = setInterval(() => {
+    if(current >= target) {
+      clearInterval(interval);
+    } else {
+      current += 1;
+      drawCircle(current);
+    }
+  }, 15);
+}
 
 function drawCircle(percent) {
   const canvas = document.getElementById("progressCanvas");
@@ -74,22 +78,22 @@ function drawCircle(percent) {
 
   const center = canvas.width / 2;
   const radius = 80;
-  const startAngle = -0.5 * Math.PI;
-  const endAngle = startAngle + (percent / 100) * 2 * Math.PI;
+  const start = -0.5 * Math.PI;
+  const end = start + (percent/100)*2*Math.PI;
 
   ctx.lineWidth = 15;
 
   ctx.beginPath();
   ctx.strokeStyle = "#eee";
-  ctx.arc(center, center, radius, 0, 2 * Math.PI);
+  ctx.arc(center, center, radius, 0, 2*Math.PI);
   ctx.stroke();
 
   ctx.beginPath();
   ctx.strokeStyle = percent >= 75 ? "#5f2cff" : "#ff4d4d";
-  ctx.arc(center, center, radius, startAngle, endAngle);
+  ctx.arc(center, center, radius, start, end);
   ctx.stroke();
 
-  ctx.font = "20px Poppins";
+  ctx.font = "22px Poppins";
   ctx.fillStyle = "#111";
   ctx.textAlign = "center";
   ctx.fillText(percent + "%", center, center + 8);
@@ -98,26 +102,41 @@ function drawCircle(percent) {
 function calculateAttendance() {
   let total = parseInt(document.getElementById("total").value) || 0;
   let attended = parseInt(document.getElementById("attended").value) || 0;
-  let noAtt = parseInt(document.getElementById("noAttendance").value) || 0;
+  let neutral = parseInt(document.getElementById("noAttendance").value) || 0;
+  let futureMiss = parseInt(document.getElementById("futureMiss").value) || 0;
 
-  total = total - noAtt;
+  total = total - neutral;
 
-  if(total <= 0) return;
-
-  let percentage = ((attended / total) * 100).toFixed(2);
-  finalPercentage = percentage;
-
-  let needed = Math.ceil((0.75 * total - attended));
-
-  if(percentage >= 75) {
-    let bunk = Math.floor((attended / 0.75) - total);
-    finalText = `Attendance: ${percentage}% | You can bunk ${bunk} lectures safely.`;
-  } else {
-    finalText = `Attendance: ${percentage}% | Need ${needed} more lectures for 75%.`;
+  if(total <= 0 || attended > total) {
+    document.getElementById("result").innerHTML = "Invalid input.";
+    return;
   }
 
+  let percentage = (attended / total) * 100;
+  finalPercentage = percentage.toFixed(1);
+
+  let requiredAttendance = 0.75 * total;
+  let needed = Math.ceil(requiredAttendance - attended);
+
+  let bunkAllowed = Math.floor((attended / 0.75) - total);
+
+  let futureTotal = total + futureMiss;
+  let futurePercentage = (attended / futureTotal) * 100;
+
+  finalText = `Current: ${finalPercentage}% | `;
+
+  if(percentage >= 75) {
+    finalText += `You can bunk ${bunkAllowed} lectures.`;
+    confetti();
+  } else {
+    finalText += `Need ${needed} more lectures to reach 75%.`;
+  }
+
+  finalText += ` | If you miss ${futureMiss} more, attendance becomes ${futurePercentage.toFixed(1)}%`;
+
   document.getElementById("result").innerHTML = finalText;
-  drawCircle(percentage);
+
+  animateCount(Math.round(percentage));
 
   localStorage.setItem("attendanceResult", finalText);
 }
@@ -129,34 +148,38 @@ function shareAttendance() {
 
 function downloadImage() {
   const canvas = document.createElement("canvas");
-  canvas.width = 400;
-  canvas.height = 400;
+  canvas.width = 500;
+  canvas.height = 500;
   const ctx = canvas.getContext("2d");
 
   ctx.fillStyle = "#f7f9fc";
-  ctx.fillRect(0,0,400,400);
+  ctx.fillRect(0,0,500,500);
 
-  ctx.font = "22px Poppins";
+  ctx.font = "28px Poppins";
   ctx.fillStyle = "#111";
   ctx.textAlign = "center";
-  ctx.fillText("Student Toolkit", 200, 60);
+  ctx.fillText("Student Toolkit", 250, 60);
 
   ctx.font = "18px Poppins";
-  ctx.fillText(finalText, 200, 120);
+  ctx.fillText(finalText, 250, 120);
 
   ctx.beginPath();
-  ctx.arc(200, 230, 80, 0, 2 * Math.PI);
+  ctx.arc(250, 280, 100, 0, 2*Math.PI);
   ctx.strokeStyle = "#eee";
-  ctx.lineWidth = 15;
+  ctx.lineWidth = 18;
   ctx.stroke();
 
   ctx.beginPath();
   ctx.strokeStyle = finalPercentage >= 75 ? "#5f2cff" : "#ff4d4d";
-  ctx.arc(200, 230, 80, -0.5*Math.PI, -0.5*Math.PI + (finalPercentage/100)*2*Math.PI);
+  ctx.arc(250, 280, 100, -0.5*Math.PI, -0.5*Math.PI + (finalPercentage/100)*2*Math.PI);
   ctx.stroke();
 
-  ctx.font = "24px Poppins";
-  ctx.fillText(finalPercentage + "%", 200, 240);
+  ctx.font = "30px Poppins";
+  ctx.fillText(finalPercentage + "%", 250, 295);
+
+  ctx.font = "14px Poppins";
+  ctx.fillStyle = "rgba(0,0,0,0.4)";
+  ctx.fillText("studenttoolkit.online", 250, 470);
 
   let link = document.createElement("a");
   link.download = "attendance-result.png";
