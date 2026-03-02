@@ -1,77 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CGPA Calculator – Student Toolkit</title>
-<meta name="description" content="Free CGPA calculator for college students. Credit-based CGPA calculation tool.">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>CGPA Calculator | Student Toolkit</title>
 <link rel="stylesheet" href="../style.css">
 </head>
-
 <body>
 
 <header class="navbar">
-  <div class="logo">🎓 Student Toolkit</div>
-  <nav>
-    <a href="../index.html">Home</a>
-  </nav>
+  <div class="logo">
+    <a href="../index.html">
+      <img src="../student-toolkit-logo.png">
+    </a>
+  </div>
 </header>
 
-<section class="container">
+<section class="container blog-content">
+
 <h1>CGPA Calculator</h1>
-<p>Use this credit-based CGPA calculator to calculate your semester or overall CGPA easily.</p>
 
-<div class="feature-card">
-
-<input type="number" id="subjects" placeholder="Number of Subjects">
-<button class="cta-btn" onclick="generateFields()">Add Subjects</button>
-
-<div id="fields"></div>
-
-<button class="cta-btn" onclick="calculateCGPA()">Calculate CGPA</button>
-
-<h3 id="cgpaResult"></h3>
-
+<div id="subjects">
+  <div>
+    Marks: <input type="number" class="marks">
+    Credits: <input type="number" class="credits">
+  </div>
 </div>
+
+<button onclick="addSubject()" class="secondary-btn">Add Subject</button>
+<button onclick="calculateCGPA()" class="primary-btn">Calculate CGPA</button>
+
+<div id="cgpaResult"></div>
+
+<button onclick="shareCGPA()" class="secondary-btn">Share Result</button>
+
 </section>
 
 <script>
-function generateFields(){
-  let subjects = document.getElementById("subjects").value;
-  let container = document.getElementById("fields");
-  container.innerHTML = "";
-
-  for(let i=1; i<=subjects; i++){
-    container.innerHTML += `
-      <input type="number" step="0.01" placeholder="Subject ${i} Grade Point" id="grade${i}">
-      <input type="number" step="0.01" placeholder="Subject ${i} Credit" id="credit${i}">
-    `;
-  }
+function addSubject() {
+  let div = document.createElement("div");
+  div.innerHTML = `
+    Marks: <input type="number" class="marks">
+    Credits: <input type="number" class="credits">
+  `;
+  document.getElementById("subjects").appendChild(div);
 }
 
-function calculateCGPA(){
-  let subjects = document.getElementById("subjects").value;
-  let totalCredits = 0;
+function calculateCGPA() {
+  let marks = document.querySelectorAll(".marks");
+  let credits = document.querySelectorAll(".credits");
+
   let totalPoints = 0;
+  let totalCredits = 0;
 
-  for(let i=1; i<=subjects; i++){
-    let grade = parseFloat(document.getElementById("grade"+i).value);
-    let credit = parseFloat(document.getElementById("credit"+i).value);
-
-    if(isNaN(grade) || isNaN(credit)){
-      document.getElementById("cgpaResult").innerHTML = "Fill all fields correctly.";
-      return;
-    }
-
-    totalCredits += credit;
-    totalPoints += grade * credit;
+  for(let i = 0; i < marks.length; i++) {
+    let m = parseFloat(marks[i].value) || 0;
+    let c = parseFloat(credits[i].value) || 0;
+    totalPoints += (m * c);
+    totalCredits += c;
   }
 
-  let cgpa = totalPoints / totalCredits;
+  let cgpa = (totalPoints / totalCredits).toFixed(2);
+  let result = `Your CGPA is ${cgpa}`;
 
-  document.getElementById("cgpaResult").innerHTML =
-    "Your CGPA is: " + cgpa.toFixed(2);
+  document.getElementById("cgpaResult").innerHTML = result;
+  localStorage.setItem("cgpaResult", result);
+}
+
+function shareCGPA() {
+  let text = localStorage.getItem("cgpaResult");
+  if(!text) return;
+
+  navigator.clipboard.writeText(text + " Calculate yours at: https://studenttoolkit.online");
+  alert("Copied to clipboard!");
+}
+
+window.onload = function() {
+  let saved = localStorage.getItem("cgpaResult");
+  if(saved) {
+    document.getElementById("cgpaResult").innerHTML = saved;
+  }
 }
 </script>
 
