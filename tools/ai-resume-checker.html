@@ -4,10 +4,42 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Advanced Resume Checker | Student Toolkit</title>
-<meta name="description" content="Free ATS resume checker with email capture, keyword matching and resume improvement suggestions.">
+<meta name="description" content="Free advanced ATS resume checker with job-role matching, AI detection, keyword density analysis and downloadable report.">
 
 <link rel="stylesheet" href="../style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+.score-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+.analysis-panel {
+  background: #f9f9ff;
+  padding: 30px;
+  border-radius: 20px;
+}
+textarea, select, input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+@media(max-width:900px){
+  .dashboard-container{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -24,35 +56,31 @@
 
 <h1>Advanced Resume Checker</h1>
 
-<!-- EMAIL CAPTURE -->
 <div id="emailGate">
-  <p>Enter your email to unlock full resume analysis.</p>
-  <input type="email" id="userEmail" placeholder="Enter your email" style="width:100%;padding:10px;">
-  <br><br>
-  <button onclick="unlockTool()" class="primary-btn">Unlock Analysis</button>
+  <p>Enter your email to unlock detailed resume analysis.</p>
+  <input type="email" id="userEmail" placeholder="Enter your email">
+  <button onclick="unlockTool()" class="primary-btn">Unlock</button>
 </div>
 
-<!-- TOOL SECTION -->
 <div id="toolSection" style="display:none;">
 
-<select id="jobRole" style="width:100%;padding:10px;">
+<select id="jobRole">
   <option value="marketing">Marketing</option>
   <option value="software">Software Developer</option>
   <option value="finance">Finance</option>
   <option value="hr">HR</option>
 </select>
 
-<br><br>
-
-<textarea id="resumeText" rows="12" style="width:100%; padding:12px;"></textarea>
-
-<br><br>
+<textarea id="resumeText" rows="12" placeholder="Paste your resume content here..."></textarea>
 
 <button onclick="analyzeResume()" class="primary-btn">Analyze Resume</button>
 <button onclick="downloadPDF()" class="secondary-btn">Download PDF</button>
 <button onclick="downloadScoreCard()" class="secondary-btn">Download Score Card</button>
 
-<div id="analysisResult" style="margin-top:40px;"></div>
+<div class="dashboard-container">
+  <div class="score-card" id="scorePanel"></div>
+  <div class="analysis-panel" id="analysisPanel"></div>
+</div>
 
 </div>
 
@@ -60,18 +88,25 @@
 
 <script>
 
-let globalReport = "";
 let globalScore = 0;
+let globalText = "";
 
 function unlockTool(){
   let email = document.getElementById("userEmail").value;
-  if(email.includes("@")){
-    localStorage.setItem("resumeUserEmail", email);
-    document.getElementById("emailGate").style.display = "none";
-    document.getElementById("toolSection").style.display = "block";
-  } else {
+
+  if(!email.includes("@")){
     alert("Enter valid email.");
+    return;
   }
+
+  // Send email to Google Sheets backend
+  fetch(https://script.google.com/macros/s/AKfycbwSi01PgOoz7PIpA2VlLX4Yp7Pd1rMJcUqqwPNIwfpDeL_cdjhfEUc2WrWKCsSQrCJdgg/exec, {
+    method: "POST",
+    body: JSON.stringify({ email: email })
+  });
+
+  document.getElementById("emailGate").style.display="none";
+  document.getElementById("toolSection").style.display="block";
 }
 
 function analyzeResume(){
@@ -80,22 +115,23 @@ function analyzeResume(){
   let role = document.getElementById("jobRole").value;
 
   if(text.length < 200){
-    document.getElementById("analysisResult").innerHTML = "Resume too short.";
+    alert("Resume too short.");
     return;
   }
 
+  globalText = text;
   let score = 0;
   let pros = [];
   let cons = [];
   let improvements = [];
 
-  let words = text.split(/\s+/).length;
+  let words = text.trim().split(/\s+/).length;
 
   if(words > 300 && words < 900){
     score += 15;
-    pros.push("Good resume length.");
+    pros.push("Optimal resume length.");
   } else {
-    cons.push("Resume length not ideal.");
+    cons.push("Resume length should be 350–800 words.");
   }
 
   const sections = ["education","skills","experience","projects"];
@@ -107,23 +143,17 @@ function analyzeResume(){
     }
   });
 
-  const actionWords = ["led","managed","developed","created","implemented","built"];
-  let actionCount = 0;
-  actionWords.forEach(w=>{
-    if(text.toLowerCase().includes(w)){
-      actionCount++;
-    }
-  });
+  const actionWords = ["led","managed","developed","created","implemented","built","optimized"];
+  let actionCount = actionWords.filter(w=>text.toLowerCase().includes(w)).length;
 
   if(actionCount >= 3){
     score += 15;
     pros.push("Strong action verbs detected.");
   } else {
-    cons.push("Add strong action verbs.");
-    improvements.push("Rewrite bullet points using impact verbs like 'Led', 'Optimized', 'Improved'.");
+    cons.push("Add more measurable action verbs.");
+    improvements.push("Rewrite bullet points using strong verbs like Led, Improved, Optimized.");
   }
 
-  // JOB ROLE KEYWORD MATCHING
   const roleKeywords = {
     marketing:["seo","campaign","branding","analytics","engagement"],
     software:["javascript","react","api","database","backend"],
@@ -131,35 +161,33 @@ function analyzeResume(){
     hr:["recruitment","onboarding","talent","employee","training"]
   };
 
-  let keywordMatch = 0;
-  roleKeywords[role].forEach(k=>{
-    if(text.toLowerCase().includes(k)){
-      keywordMatch++;
-    }
-  });
+  let keywordMatch = roleKeywords[role].filter(k=>text.toLowerCase().includes(k)).length;
 
   if(keywordMatch >= 3){
     score += 20;
     pros.push("Strong job-role keyword alignment.");
   } else {
-    cons.push("Low keyword match for selected job role.");
-    improvements.push("Add relevant "+role+" keywords.");
+    cons.push("Low keyword alignment for selected role.");
+    improvements.push("Add role-specific keywords for "+role+".");
   }
 
-  // AI detection heuristic
-  const aiPhrases = ["highly motivated","detail-oriented","results-driven","team player"];
-  let aiScore = 0;
-  aiPhrases.forEach(p=>{
-    if(text.toLowerCase().includes(p)){
-      aiScore++;
-    }
-  });
+  if(text.includes("@")) score += 5;
+  else cons.push("Missing professional email.");
 
-  let aiVerdict = aiScore >= 2 ? "Likely AI-like generic tone" : "Likely human-written";
+  if(!text.includes("|") && !text.includes("★") && !text.includes("❖")){
+    score += 10;
+  } else {
+    cons.push("Remove special characters for ATS compatibility.");
+  }
+
+  const aiPhrases = ["highly motivated","detail-oriented","results-driven","team player"];
+  let aiScore = aiPhrases.filter(p=>text.toLowerCase().includes(p)).length;
+
+  let aiVerdict = aiScore >= 2 ? "Likely AI-like generic tone" : "Likely Human-Written";
 
   if(aiScore >= 2){
     cons.push("Tone appears generic.");
-    improvements.push("Add measurable achievements with numbers.");
+    improvements.push("Add measurable results (numbers, percentages).");
   } else {
     pros.push("Personalized tone detected.");
   }
@@ -167,54 +195,80 @@ function analyzeResume(){
   score = Math.min(score,100);
   globalScore = score;
 
-  let output = `
-  <h2>Resume Score: ${score}/100</h2>
-  <p><strong>AI Detection:</strong> ${aiVerdict}</p>
+  let percentile;
+  if(score >= 85) percentile="Top 10%";
+  else if(score >= 70) percentile="Top 30%";
+  else if(score >= 50) percentile="Top 60%";
+  else percentile="Below Average";
 
-  <h3>Strengths</h3>
-  <ul>${pros.map(p=>"<li>"+p+"</li>").join("")}</ul>
+  let wordArray = text.toLowerCase().match(/\b\w+\b/g);
+  let freq={};
+  wordArray.forEach(w=>freq[w]=(freq[w]||0)+1);
 
-  <h3>Improvements</h3>
-  <ul>${cons.map(c=>"<li>"+c+"</li>").join("")}</ul>
+  let sortedKeywords = Object.entries(freq)
+    .filter(([w,c])=>w.length>4)
+    .sort((a,b)=>b[1]-a[1])
+    .slice(0,5);
 
-  <h3>Auto Improvement Suggestions</h3>
-  <ul>${improvements.map(i=>"<li>"+i+"</li>").join("")}</ul>
+  let keywordHTML="<ul>";
+  sortedKeywords.forEach(k=>{
+    keywordHTML += `<li>${k[0]} (${k[1]} times)</li>`;
+  });
+  keywordHTML+="</ul>";
+
+  document.getElementById("scorePanel").innerHTML=`
+    <h2>Score: ${score}/100</h2>
+    <p><strong>Benchmark:</strong> ${percentile}</p>
+    <p><strong>AI Detection:</strong> ${aiVerdict}</p>
   `;
 
-  globalReport = output;
-  document.getElementById("analysisResult").innerHTML = output;
+  document.getElementById("analysisPanel").innerHTML=`
+    <h3>Strengths</h3>
+    <ul>${pros.map(p=>"<li>"+p+"</li>").join("")}</ul>
+    <h3>Improvements</h3>
+    <ul>${cons.map(c=>"<li>"+c+"</li>").join("")}</ul>
+    <h3>Auto Improvement Suggestions</h3>
+    <ul>${improvements.map(i=>"<li>"+i+"</li>").join("")}</ul>
+    <h3>Top Keywords</h3>
+    ${keywordHTML}
+  `;
+
+  if(typeof gtag !== "undefined"){
+    gtag('event','resume_analysis',{event_category:'Resume Tool'});
+  }
 }
 
 function downloadPDF(){
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
   doc.text("Resume Score: "+globalScore+"/100",10,10);
+  doc.text("Generated by Student Toolkit",10,20);
   doc.save("resume-analysis.pdf");
 }
 
 function downloadScoreCard(){
-  let canvas = document.createElement("canvas");
-  canvas.width = 600;
-  canvas.height = 400;
-  let ctx = canvas.getContext("2d");
+  let canvas=document.createElement("canvas");
+  canvas.width=600;
+  canvas.height=400;
+  let ctx=canvas.getContext("2d");
 
-  ctx.fillStyle = "#f7f9fc";
+  ctx.fillStyle="#f7f9fc";
   ctx.fillRect(0,0,600,400);
 
-  ctx.font = "30px Arial";
-  ctx.fillStyle = "#111";
-  ctx.textAlign = "center";
+  ctx.font="30px Arial";
+  ctx.fillStyle="#111";
+  ctx.textAlign="center";
   ctx.fillText("Student Toolkit Resume Score",300,60);
 
-  ctx.font = "60px Arial";
+  ctx.font="60px Arial";
   ctx.fillText(globalScore+"/100",300,200);
 
-  ctx.font = "18px Arial";
+  ctx.font="18px Arial";
   ctx.fillText("studenttoolkit.online",300,360);
 
-  let link = document.createElement("a");
-  link.download = "resume-score.png";
-  link.href = canvas.toDataURL();
+  let link=document.createElement("a");
+  link.download="resume-score.png";
+  link.href=canvas.toDataURL();
   link.click();
 }
 
