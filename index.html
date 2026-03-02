@@ -1,191 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Toolkit – Internships, MBA, UPSC & Academic Tools</title>
-<meta name="description" content="Student Toolkit helps BBA, MBA, UPSC and BTech students discover official opportunities, internships and use smart academic planning tools.">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-
-<!-- Global Organization Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Student Toolkit",
-  "url": "https://studenttoolkit.online",
-  "logo": "https://studenttoolkit.online/logo.png",
-  "description": "Student Toolkit provides verified internships, MBA admission updates, UPSC notifications and smart academic planning tools for students in India.",
-  "sameAs": [
-    "https://www.linkedin.com/",
-    "https://twitter.com/"
-  ]
-}
-</script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudentToolkit</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+<body>
 
-  <script>
-let slider = document.getElementById("newsSlider");
-
-let scrollAmount = 0;
-
-setInterval(() => {
-  scrollAmount += 1;
-  slider.scrollLeft += 1;
-  if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
-    slider.scrollLeft = 0;
-  }
-}, 30);
-</script>
-  
-  <body>
-
-<header class="navbar">
-  <div class="logo">
-  <a href="index.html">
-    <img src="student-toolkit-logo.png" alt="Student Toolkit Logo">
-  </a>
-</div>
-  <nav>
-    <a href="bba-opportunities.html">BBA</a>
-    <a href="mba-admissions.html">MBA</a>
-    <a href="upsc-notifications.html">UPSC</a>
-    <a href="btech-internships.html">BTech</a>
-    <a href="resources/index.html">Resources</a>
-    <a href="tools/attendance.html">Tools</a>
-    <a href="blog/index.html">Blog</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="hero-content">
-    <h1>Everything a Student Needs. In One Toolkit.</h1>
-    <p>Discover verified internships, MBA updates, UPSC notifications and use powerful academic tools designed for serious students.</p>
-    <a href="bba-opportunities.html" class="cta-btn">Explore Opportunities</a>
-  </div>
-  <div class="hero-image">
-    <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=800&q=80"
-     alt="Student studying laptop"
-     loading="lazy">
-  </div>
-</section>
-
-  <section class="news-section">
-  <div class="container">
-    <h2>📰 This Week in Education</h2>
-
-    <div class="news-slider" id="newsSlider">
-      <div class="news-card">
-        <h4>UPSC 2026 Notification Released</h4>
-        <p>Civil Services calender announced for 2026.</p>
-        <a href="https://upsc.gov.in/examinations/exam-calendar" target="_blank">Read Official Notice</a>
-      </div>
-
-      <div class="news-card">
-        <h4>CAT 2026 Registration Opens</h4>
-        <p>MBA entrance registration starts in July.</p>
-        <a href="https://iimcat.ac.in/" target="_blank">Visit CAT Portal</a>
-      </div>
-
-      <div class="news-card">
-        <h4>AICTE Internship Update</h4>
-        <p>New internship listings added for management students.</p>
-        <a href="https://internship.aicte-india.org/" target="_blank">Explore Now</a>
-      </div>
-
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+      <div class="logo">StudentToolkit</div>
+      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+      <nav class="nav" id="nav">
+        <ul>
+          <li><a href="#">Academics</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="#">Productivity</a></li>
+          <li><a href="#">Opportunities</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Submit</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-</section>
-  
-<section class="features container">
+  </header>
 
-  <div class="feature-card">
-    <h3>🎓 Verified Opportunities</h3>
-    <p>Direct official links for BBA, MBA, UPSC and BTech students. No fake listings.</p>
-  </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Everything a Student Needs. Organized.</h1>
+      <p>Notes, skill roadmaps, productivity tools, and real opportunities.</p>
+      <a href="#" class="btn-primary">Explore Resources</a>
+    </div>
+  </section>
 
-  <div class="feature-card">
-    <h3>📊 Smart Academic Tools</h3>
-    <p>Attendance calculator and CGPA tools built for real college scenarios.</p>
-  </div>
+  <!-- CORE SECTIONS -->
+  <section class="sections">
+    <div class="container grid">
+      <div class="card">
+        <h3>Academics</h3>
+        <p>Semester notes, assignments & exam guides.</p>
+      </div>
+      <div class="card">
+        <h3>Skills</h3>
+        <p>Digital marketing, AI tools & career skills.</p>
+      </div>
+      <div class="card">
+        <h3>Productivity</h3>
+        <p>Study systems, planners & focus tools.</p>
+      </div>
+      <div class="card">
+        <h3>Opportunities</h3>
+        <p>Internships, scholarships & certifications.</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="feature-card">
-    <h3>📈 Structured Career Path</h3>
-    <p>Clear updates, deadlines and insights to help you plan smarter.</p>
-  </div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 StudentToolkit. Built for students.</p>
+    </div>
+  </footer>
 
-</section>
-
-<section class="categories container">
-  <h2>Explore by Category</h2>
-
-  <div class="category-grid">
-
-    <a href="bba-opportunities.html" class="category-card">
-      <h3>BBA Opportunities</h3>
-      <p>Marketing & Finance internships for management students.</p>
-    </a>
-
-    <a href="mba-admissions.html" class="category-card">
-      <h3>MBA Admissions</h3>
-      <p>CAT updates, entrance exams and admission timelines.</p>
-    </a>
-
-    <a href="upsc-notifications.html" class="category-card">
-      <h3>UPSC Notifications</h3>
-      <p>Civil services updates with official links.</p>
-    </a>
-
-    <a href="btech-internships.html" class="category-card">
-      <h3>BTech Internships</h3>
-      <p>Engineering internships and tech opportunities.</p>
-    </a>
-
-    <a href="resources/upsc/upsc-syllabus.html" class="category-card">
-      <h3>UPSC Syllabus 2026</h3>
-      <p>Prelims & Mains structured breakdown.</p>
-    </a>
-
-    <a href="resources/mba/cat-syllabus.html" class="category-card">
-      <h3>CAT MBA Syllabus</h3>
-      <p>Section-wise syllabus for CAT 2026.</p>
-    </a>
-
-    <a href="resources/btech/cse-syllabus.html" class="category-card">
-      <h3>BTech CSE Syllabus</h3>
-      <p>Core subjects and semester structure.</p>
-    </a>
-
-    <a href="resources/bba/semester-1-syllabus.html" class="category-card">
-      <h3>BBA Semester 1 Syllabus</h3>
-      <p>Foundation management subjects.</p>
-    </a>
-
-  </div>
-</section>
-    
-  </div>
-</section>
-
-    <footer class="footer">
-  <div class="container">
-    <h3>Student Toolkit</h3>
-    <p>Verified opportunities. Smart academic tools. Structured growth.</p>
-    <p>© 2026 Student Toolkit. All rights reserved.</p>
-  </div>
-</footer>
-
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
