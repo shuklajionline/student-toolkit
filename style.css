@@ -344,3 +344,22 @@ img {
 .social-links a:hover {
   color: #5f2cff;
 }
+
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.score-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+
+.analysis-panel {
+  background: #f9f9ff;
+  padding: 30px;
+  border-radius: 20px;
+}
