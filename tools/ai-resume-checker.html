@@ -3,274 +3,176 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Advanced Resume Checker | Student Toolkit</title>
-<meta name="description" content="Free advanced ATS resume checker with job-role matching, AI detection, keyword density analysis and downloadable report.">
+<title>Career Dashboard | Resume Analyzer | Student Toolkit</title>
+<meta name="description" content="Advanced resume checker with login, ATS score, industry keyword matching and resume improvement tracking.">
 
 <link rel="stylesheet" href="../style.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <style>
-.dashboard-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-top: 40px;
-}
-.score-card {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-}
-.analysis-panel {
-  background: #f9f9ff;
-  padding: 30px;
-  border-radius: 20px;
-}
-textarea, select, input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-}
-@media(max-width:900px){
-  .dashboard-container{
-    grid-template-columns:1fr;
-  }
-}
+body { background:#f5f7fb; }
+.dashboard { display:grid; grid-template-columns:1fr 2fr; gap:40px; margin-top:40px; }
+.card { background:#fff; padding:30px; border-radius:18px; box-shadow:0 20px 50px rgba(0,0,0,0.08); }
+textarea, select { width:100%; padding:12px; margin:10px 0; border-radius:8px; border:1px solid #ddd; }
+button { padding:12px 18px; border:none; border-radius:8px; cursor:pointer; }
+.primary-btn { background:#4f46e5; color:#fff; }
+.secondary-btn { background:#e5e7eb; }
+#historyList li { margin-bottom:8px; font-size:14px; }
+@media(max-width:900px){ .dashboard{grid-template-columns:1fr;} }
 </style>
-</head>
 
+</head>
 <body>
 
 <header class="navbar">
   <div class="logo">
     <a href="../index.html">
-      <img src="../student-toolkit-logo.png">
+      <img src="../student-toolkit-logo.png" style="height:40px;">
     </a>
   </div>
 </header>
 
-<section class="container blog-content">
+<section class="container">
 
-<h1>Advanced Resume Checker</h1>
+<h1>Career Dashboard</h1>
 
-<div id="emailGate">
-  <p>Enter your email to unlock detailed resume analysis.</p>
-  <input type="email" id="userEmail" placeholder="Enter your email">
-  <button onclick="unlockTool()" class="primary-btn">Unlock</button>
+<div id="authSection">
+  <button id="loginBtn" class="primary-btn">Login with Google</button>
+  <button id="logoutBtn" class="secondary-btn" style="display:none;">Logout</button>
 </div>
 
-<div id="toolSection" style="display:none;">
+<div id="dashboard" style="display:none;" class="dashboard">
 
-<select id="jobRole">
-  <option value="marketing">Marketing</option>
-  <option value="software">Software Developer</option>
-  <option value="finance">Finance</option>
-  <option value="hr">HR</option>
-</select>
+  <div class="card">
+    <h3>Your Resume History</h3>
+    <ul id="historyList"></ul>
+  </div>
 
-<textarea id="resumeText" rows="12" placeholder="Paste your resume content here..."></textarea>
+  <div class="card">
+    <h3>Resume Analyzer</h3>
 
-<button onclick="analyzeResume()" class="primary-btn">Analyze Resume</button>
-<button onclick="downloadPDF()" class="secondary-btn">Download PDF</button>
-<button onclick="downloadScoreCard()" class="secondary-btn">Download Score Card</button>
+    <select id="industryTemplate">
+      <option value="marketing">Marketing</option>
+      <option value="software">Software Developer</option>
+      <option value="finance">Finance</option>
+      <option value="hr">HR</option>
+    </select>
 
-<div class="dashboard-container">
-  <div class="score-card" id="scorePanel"></div>
-  <div class="analysis-panel" id="analysisPanel"></div>
-</div>
+    <textarea id="resumeText" rows="10" placeholder="Paste your resume here..."></textarea>
+
+    <button id="analyzeBtn" class="primary-btn">Analyze Resume</button>
+
+    <div id="result" style="margin-top:20px;"></div>
+  </div>
 
 </div>
 
 </section>
 
-<script>
+<script type="module">
 
-let globalScore = 0;
-let globalText = "";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } 
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getFirestore, collection, addDoc, query, where, getDocs } 
+from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-function unlockTool(){
-  let email = document.getElementById("userEmail").value;
+/* 🔥 YOUR FIREBASE CONFIG */
+const firebaseConfig = {
+  apiKey: "AIzaSyD77pvCaMXNVwtMp5zDj0qDlS8ydgEC1_0",
+  authDomain: "student-toolkit-92267.firebaseapp.com",
+  projectId: "student-toolkit-92267",
+  storageBucket: "student-toolkit-92267.firebasestorage.app",
+  messagingSenderId: "526923865363",
+  appId: "1:526923865363:web:208f58f7a8bb01bc65cee6",
+  measurementId: "G-FNP1E4Q42K"
+};
 
-  if(!email.includes("@")){
-    alert("Enter valid email.");
-    return;
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const provider = new GoogleAuthProvider();
+
+const loginBtn = document.getElementById("loginBtn");
+const logoutBtn = document.getElementById("logoutBtn");
+const dashboard = document.getElementById("dashboard");
+const historyList = document.getElementById("historyList");
+
+loginBtn.onclick = () => signInWithPopup(auth, provider);
+logoutBtn.onclick = () => signOut(auth);
+
+onAuthStateChanged(auth, async (user)=>{
+  if(user){
+    dashboard.style.display="grid";
+    loginBtn.style.display="none";
+    logoutBtn.style.display="inline-block";
+    loadHistory(user.uid);
+  } else {
+    dashboard.style.display="none";
+    loginBtn.style.display="inline-block";
+    logoutBtn.style.display="none";
   }
+});
 
-  // Send email to Google Sheets backend
-  fetch(https://script.google.com/macros/s/AKfycbwSi01PgOoz7PIpA2VlLX4Yp7Pd1rMJcUqqwPNIwfpDeL_cdjhfEUc2WrWKCsSQrCJdgg/exec, {
-    method: "POST",
-    body: JSON.stringify({ email: email })
+async function loadHistory(uid){
+  const q = query(collection(db,"resumes"), where("uid","==",uid));
+  const snapshot = await getDocs(q);
+  historyList.innerHTML="";
+  snapshot.forEach(doc=>{
+    let li=document.createElement("li");
+    li.textContent = "Score: "+doc.data().score+" | "+doc.data().date;
+    historyList.appendChild(li);
   });
-
-  document.getElementById("emailGate").style.display="none";
-  document.getElementById("toolSection").style.display="block";
 }
 
-function analyzeResume(){
+document.getElementById("analyzeBtn").onclick = async function(){
 
-  let text = document.getElementById("resumeText").value;
-  let role = document.getElementById("jobRole").value;
+  const text=document.getElementById("resumeText").value;
+  const industry=document.getElementById("industryTemplate").value;
+  const user=auth.currentUser;
 
-  if(text.length < 200){
-    alert("Resume too short.");
-    return;
-  }
+  if(!user){ alert("Login first."); return; }
+  if(text.length<200){ alert("Resume too short."); return; }
 
-  globalText = text;
-  let score = 0;
-  let pros = [];
-  let cons = [];
-  let improvements = [];
+  let score=0;
+  let pros=[], cons=[];
 
-  let words = text.trim().split(/\s+/).length;
+  if(text.length>400) score+=15;
+  else cons.push("Increase resume depth.");
 
-  if(words > 300 && words < 900){
-    score += 15;
-    pros.push("Optimal resume length.");
-  } else {
-    cons.push("Resume length should be 350–800 words.");
-  }
-
-  const sections = ["education","skills","experience","projects"];
+  const sections=["education","skills","experience","projects"];
   sections.forEach(sec=>{
-    if(text.toLowerCase().includes(sec)){
-      score += 10;
-    } else {
-      cons.push("Missing "+sec+" section.");
-    }
+    if(text.toLowerCase().includes(sec)) score+=10;
+    else cons.push("Missing "+sec+" section.");
   });
 
-  const actionWords = ["led","managed","developed","created","implemented","built","optimized"];
-  let actionCount = actionWords.filter(w=>text.toLowerCase().includes(w)).length;
-
-  if(actionCount >= 3){
-    score += 15;
-    pros.push("Strong action verbs detected.");
-  } else {
-    cons.push("Add more measurable action verbs.");
-    improvements.push("Rewrite bullet points using strong verbs like Led, Improved, Optimized.");
-  }
-
-  const roleKeywords = {
-    marketing:["seo","campaign","branding","analytics","engagement"],
-    software:["javascript","react","api","database","backend"],
-    finance:["financial","analysis","budget","forecast","investment"],
-    hr:["recruitment","onboarding","talent","employee","training"]
+  const roleKeywords={
+    marketing:["seo","campaign","branding","analytics"],
+    software:["javascript","react","api","database"],
+    finance:["financial","analysis","budget","investment"],
+    hr:["recruitment","training","talent","onboarding"]
   };
 
-  let keywordMatch = roleKeywords[role].filter(k=>text.toLowerCase().includes(k)).length;
+  let match=roleKeywords[industry].filter(k=>text.toLowerCase().includes(k)).length;
+  if(match>=2) score+=20;
+  else cons.push("Low keyword alignment for "+industry+".");
 
-  if(keywordMatch >= 3){
-    score += 20;
-    pros.push("Strong job-role keyword alignment.");
-  } else {
-    cons.push("Low keyword alignment for selected role.");
-    improvements.push("Add role-specific keywords for "+role+".");
-  }
+  score=Math.min(score,100);
 
-  if(text.includes("@")) score += 5;
-  else cons.push("Missing professional email.");
+  let percentile = score>=85?"Top 10%":score>=70?"Top 30%":"Needs Improvement";
 
-  if(!text.includes("|") && !text.includes("★") && !text.includes("❖")){
-    score += 10;
-  } else {
-    cons.push("Remove special characters for ATS compatibility.");
-  }
+  document.getElementById("result").innerHTML=
+  `<h3>Score: ${score}/100</h3>
+   <p>Benchmark: ${percentile}</p>
+   <ul>${cons.map(c=>"<li>"+c+"</li>").join("")}</ul>`;
 
-  const aiPhrases = ["highly motivated","detail-oriented","results-driven","team player"];
-  let aiScore = aiPhrases.filter(p=>text.toLowerCase().includes(p)).length;
-
-  let aiVerdict = aiScore >= 2 ? "Likely AI-like generic tone" : "Likely Human-Written";
-
-  if(aiScore >= 2){
-    cons.push("Tone appears generic.");
-    improvements.push("Add measurable results (numbers, percentages).");
-  } else {
-    pros.push("Personalized tone detected.");
-  }
-
-  score = Math.min(score,100);
-  globalScore = score;
-
-  let percentile;
-  if(score >= 85) percentile="Top 10%";
-  else if(score >= 70) percentile="Top 30%";
-  else if(score >= 50) percentile="Top 60%";
-  else percentile="Below Average";
-
-  let wordArray = text.toLowerCase().match(/\b\w+\b/g);
-  let freq={};
-  wordArray.forEach(w=>freq[w]=(freq[w]||0)+1);
-
-  let sortedKeywords = Object.entries(freq)
-    .filter(([w,c])=>w.length>4)
-    .sort((a,b)=>b[1]-a[1])
-    .slice(0,5);
-
-  let keywordHTML="<ul>";
-  sortedKeywords.forEach(k=>{
-    keywordHTML += `<li>${k[0]} (${k[1]} times)</li>`;
+  await addDoc(collection(db,"resumes"),{
+    uid:user.uid,
+    score:score,
+    date:new Date().toLocaleString()
   });
-  keywordHTML+="</ul>";
 
-  document.getElementById("scorePanel").innerHTML=`
-    <h2>Score: ${score}/100</h2>
-    <p><strong>Benchmark:</strong> ${percentile}</p>
-    <p><strong>AI Detection:</strong> ${aiVerdict}</p>
-  `;
-
-  document.getElementById("analysisPanel").innerHTML=`
-    <h3>Strengths</h3>
-    <ul>${pros.map(p=>"<li>"+p+"</li>").join("")}</ul>
-    <h3>Improvements</h3>
-    <ul>${cons.map(c=>"<li>"+c+"</li>").join("")}</ul>
-    <h3>Auto Improvement Suggestions</h3>
-    <ul>${improvements.map(i=>"<li>"+i+"</li>").join("")}</ul>
-    <h3>Top Keywords</h3>
-    ${keywordHTML}
-  `;
-
-  if(typeof gtag !== "undefined"){
-    gtag('event','resume_analysis',{event_category:'Resume Tool'});
-  }
-}
-
-function downloadPDF(){
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF();
-  doc.text("Resume Score: "+globalScore+"/100",10,10);
-  doc.text("Generated by Student Toolkit",10,20);
-  doc.save("resume-analysis.pdf");
-}
-
-function downloadScoreCard(){
-  let canvas=document.createElement("canvas");
-  canvas.width=600;
-  canvas.height=400;
-  let ctx=canvas.getContext("2d");
-
-  ctx.fillStyle="#f7f9fc";
-  ctx.fillRect(0,0,600,400);
-
-  ctx.font="30px Arial";
-  ctx.fillStyle="#111";
-  ctx.textAlign="center";
-  ctx.fillText("Student Toolkit Resume Score",300,60);
-
-  ctx.font="60px Arial";
-  ctx.fillText(globalScore+"/100",300,200);
-
-  ctx.font="18px Arial";
-  ctx.fillText("studenttoolkit.online",300,360);
-
-  let link=document.createElement("a");
-  link.download="resume-score.png";
-  link.href=canvas.toDataURL();
-  link.click();
-}
+  loadHistory(user.uid);
+};
 
 </script>
 
