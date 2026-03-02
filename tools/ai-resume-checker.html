@@ -3,21 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Career Dashboard | Resume Analyzer | Student Toolkit</title>
-<meta name="description" content="Advanced resume checker with login, ATS score, industry keyword matching and resume improvement tracking.">
+<title>Advanced Resume Analyzer | Student Toolkit</title>
+<meta name="description" content="Brutally honest resume checker with strict scoring, recruiter-style feedback, industry keyword analysis and history tracking.">
 
 <link rel="stylesheet" href="../style.css">
 
 <style>
-body { background:#f5f7fb; }
-.dashboard { display:grid; grid-template-columns:1fr 2fr; gap:40px; margin-top:40px; }
-.card { background:#fff; padding:30px; border-radius:18px; box-shadow:0 20px 50px rgba(0,0,0,0.08); }
-textarea, select { width:100%; padding:12px; margin:10px 0; border-radius:8px; border:1px solid #ddd; }
-button { padding:12px 18px; border:none; border-radius:8px; cursor:pointer; }
+body { background:#f4f6fb; font-family: Arial, sans-serif; }
+
+.dashboard {
+  display:grid;
+  grid-template-columns: 1fr 2fr;
+  gap:40px;
+  margin-top:40px;
+}
+
+.card {
+  background:#fff;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.08);
+}
+
+textarea, select {
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:8px;
+  border:1px solid #ddd;
+}
+
+button {
+  padding:12px 18px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  margin-right:10px;
+}
+
 .primary-btn { background:#4f46e5; color:#fff; }
 .secondary-btn { background:#e5e7eb; }
-#historyList li { margin-bottom:8px; font-size:14px; }
-@media(max-width:900px){ .dashboard{grid-template-columns:1fr;} }
+
+#historyList li {
+  margin-bottom:8px;
+  font-size:14px;
+}
+
+@media(max-width:900px){
+  .dashboard { grid-template-columns:1fr; }
+}
 </style>
 
 </head>
@@ -48,7 +82,7 @@ button { padding:12px 18px; border:none; border-radius:8px; cursor:pointer; }
   </div>
 
   <div class="card">
-    <h3>Resume Analyzer</h3>
+    <h3>Brutal Resume Audit</h3>
 
     <select id="industryTemplate">
       <option value="marketing">Marketing</option>
@@ -57,11 +91,11 @@ button { padding:12px 18px; border:none; border-radius:8px; cursor:pointer; }
       <option value="hr">HR</option>
     </select>
 
-    <textarea id="resumeText" rows="10" placeholder="Paste your resume here..."></textarea>
+    <textarea id="resumeText" rows="12" placeholder="Paste your resume here..."></textarea>
 
-    <button id="analyzeBtn" class="primary-btn">Analyze Resume</button>
+    <button id="analyzeBtn" class="primary-btn">Run Strict Audit</button>
 
-    <div id="result" style="margin-top:20px;"></div>
+    <div id="result" style="margin-top:25px;"></div>
   </div>
 
 </div>
@@ -71,9 +105,9 @@ button { padding:12px 18px; border:none; border-radius:8px; cursor:pointer; }
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } 
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged }
 from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import { getFirestore, collection, addDoc, query, where, getDocs } 
+import { getFirestore, collection, addDoc, query, where, getDocs }
 from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 /* 🔥 YOUR FIREBASE CONFIG */
@@ -131,39 +165,79 @@ document.getElementById("analyzeBtn").onclick = async function(){
   const user=auth.currentUser;
 
   if(!user){ alert("Login first."); return; }
-  if(text.length<200){ alert("Resume too short."); return; }
+  if(text.length < 300){ alert("Resume too weak for serious audit."); return; }
 
   let score=0;
-  let pros=[], cons=[];
+  let pros=[], cons=[], suggestions=[];
+  const lower=text.toLowerCase();
+  const wordCount=text.trim().split(/\s+/).length;
 
-  if(text.length>400) score+=15;
-  else cons.push("Increase resume depth.");
+  /* LENGTH */
+  if(wordCount>=450 && wordCount<=800){ score+=10; pros.push("Professional resume length."); }
+  else{ cons.push("Length outside 450–800 words."); }
 
+  /* STRUCTURE */
   const sections=["education","skills","experience","projects"];
-  sections.forEach(sec=>{
-    if(text.toLowerCase().includes(sec)) score+=10;
-    else cons.push("Missing "+sec+" section.");
-  });
+  let structureScore=0;
+  sections.forEach(s=>{ if(lower.includes(s)) structureScore+=5; });
+  score+=structureScore;
+  if(structureScore<15) cons.push("Structural weakness detected.");
 
+  /* METRICS */
+  const metricRegex=/\d+%|\d+\s?(years|projects|clients|users|growth|revenue)/gi;
+  const metrics=text.match(metricRegex);
+  if(metrics && metrics.length>=3){ score+=20; pros.push("Strong quantified achievements."); }
+  else if(metrics){ score+=8; cons.push("Insufficient measurable impact."); }
+  else cons.push("No measurable achievements.");
+
+  /* ACTION VERBS */
+  const verbs=["led","built","developed","optimized","increased","reduced","implemented","launched"];
+  let verbCount=verbs.filter(v=>lower.includes(v)).length;
+  if(verbCount>=4){ score+=15; pros.push("Strong execution language."); }
+  else cons.push("Weak action verbs.");
+
+  /* INDUSTRY MATCH */
   const roleKeywords={
-    marketing:["seo","campaign","branding","analytics"],
-    software:["javascript","react","api","database"],
-    finance:["financial","analysis","budget","investment"],
-    hr:["recruitment","training","talent","onboarding"]
+    marketing:["seo","campaign","branding","conversion","analytics"],
+    software:["javascript","react","api","backend","database","python"],
+    finance:["financial","analysis","forecast","investment","budget"],
+    hr:["recruitment","talent","onboarding","employee","training"]
   };
+  let match=roleKeywords[industry].filter(k=>lower.includes(k)).length;
+  if(match>=4){ score+=20; pros.push("High industry alignment."); }
+  else cons.push("Low industry keyword optimization.");
 
-  let match=roleKeywords[industry].filter(k=>text.toLowerCase().includes(k)).length;
-  if(match>=2) score+=20;
-  else cons.push("Low keyword alignment for "+industry+".");
+  /* GENERIC PENALTY */
+  const generic=["highly motivated","team player","detail-oriented","hardworking"];
+  let genericCount=generic.filter(p=>lower.includes(p)).length;
+  if(genericCount>=2){ score-=10; cons.push("Excessive buzzwords."); }
 
-  score=Math.min(score,100);
+  /* ATS */
+  if(!text.includes("|")&&!text.includes("★")&&!text.includes("❖")){ score+=15; }
+  else cons.push("ATS formatting risk.");
 
-  let percentile = score>=85?"Top 10%":score>=70?"Top 30%":"Needs Improvement";
+  score=Math.max(0,Math.min(score,100));
 
-  document.getElementById("result").innerHTML=
-  `<h3>Score: ${score}/100</h3>
-   <p>Benchmark: ${percentile}</p>
-   <ul>${cons.map(c=>"<li>"+c+"</li>").join("")}</ul>`;
+  let grade = score>=90?"Elite Resume":
+              score>=80?"Strong Competitive":
+              score>=65?"Average":
+              score>=50?"Below Competitive":"Recruiter Rejection Risk";
+
+  let percentile = score>=90?"Top 5%":
+                   score>=80?"Top 15%":
+                   score>=65?"Top 40%":"Below Industry Median";
+
+  document.getElementById("result").innerHTML=`
+    <h3>Resume Score: ${score}/100</h3>
+    <p><strong>Grade:</strong> ${grade}</p>
+    <p><strong>Market Position:</strong> ${percentile}</p>
+
+    <h4>Strategic Strengths</h4>
+    <ul>${pros.map(p=>"<li>"+p+"</li>").join("")}</ul>
+
+    <h4>Critical Weaknesses</h4>
+    <ul>${cons.map(c=>"<li>"+c+"</li>").join("")}</ul>
+  `;
 
   await addDoc(collection(db,"resumes"),{
     uid:user.uid,
