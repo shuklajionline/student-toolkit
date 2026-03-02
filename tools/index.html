@@ -1,35 +1,163 @@
-<section class="container blog-content">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Toolkit Tools | Academic & Career Utilities</title>
+<meta name="description" content="Explore powerful academic and career tools including Resume Checker, Attendance Calculator, CGPA Calculator and Bunk Meter.">
 
-<h1>Student Toolkit – Smart Tools</h1>
+<link rel="stylesheet" href="../style.css">
 
-<p>Free academic and career tools designed for students. Improve attendance, calculate CGPA and optimize your resume instantly.</p>
+<style>
+body {
+  background: linear-gradient(135deg,#eef2ff,#f8fafc);
+}
 
-<div class="grid-3">
+.tools-hero {
+  text-align:center;
+  padding:60px 20px 40px;
+}
+
+.tools-hero h1 {
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.tools-hero p {
+  color:#555;
+  max-width:600px;
+  margin:auto;
+}
+
+.tools-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+  margin-top:50px;
+}
+
+.tool-card {
+  background:#fff;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.08);
+  transition:all 0.3s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.tool-card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 30px 60px rgba(0,0,0,0.12);
+}
+
+.tool-icon {
+  font-size:30px;
+  margin-bottom:15px;
+}
+
+.tool-card h3 {
+  margin-bottom:10px;
+}
+
+.tool-card p {
+  color:#666;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.tool-card a {
+  text-decoration:none;
+  font-weight:600;
+  color:#4f46e5;
+}
+
+.tool-badge {
+  position:absolute;
+  top:15px;
+  right:15px;
+  background:#4f46e5;
+  color:#fff;
+  padding:4px 10px;
+  font-size:12px;
+  border-radius:20px;
+}
+
+.category-title {
+  margin-top:60px;
+  font-size:24px;
+  font-weight:600;
+}
+
+@media(max-width:768px){
+  .tools-hero h1 { font-size:28px; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <a href="../index.html">
+      <img src="../student-toolkit-logo.png" style="height:40px;">
+    </a>
+  </div>
+</header>
+
+<section class="container">
+
+<div class="tools-hero">
+  <h1>Student Toolkit – Tools Hub</h1>
+  <p>Smart academic calculators and career intelligence tools designed for serious students.</p>
+</div>
+
+<h2 class="category-title">🎓 Academic Tools</h2>
+
+<div class="tools-grid">
 
   <div class="tool-card">
+    <div class="tool-icon">📊</div>
     <h3>Attendance & Bunk Meter</h3>
-    <p>Dynamic 75% calculation with future prediction.</p>
+    <p>Track attendance percentage, predict bunk impact and calculate required lectures.</p>
     <a href="attendance.html">Open Tool →</a>
   </div>
 
   <div class="tool-card">
+    <div class="tool-icon">📈</div>
     <h3>CGPA Calculator</h3>
-    <p>Credit-based CGPA calculator for university students.</p>
+    <p>Credit-based CGPA calculator built for university students.</p>
     <a href="cgpa.html">Open Tool →</a>
   </div>
 
+</div>
+
+<h2 class="category-title">💼 Career Intelligence Tools</h2>
+
+<div class="tools-grid">
+
   <div class="tool-card">
-    <h3>Resume Checker</h3>
-    <p>Free ATS resume score analyzer.</p>
-    <a href="ai-resume-checker.html">Check Resume →</a>
+    <div class="tool-badge">Flagship</div>
+    <div class="tool-icon">🧠</div>
+    <h3>Brutal Resume Audit</h3>
+    <p>Strict recruiter-style resume analysis with industry benchmarking and improvement roadmap.</p>
+    <a href="ai-resume-checker.html">Run Audit →</a>
   </div>
 
   <div class="tool-card">
+    <div class="tool-icon">🤖</div>
     <h3>AI Resume Builder</h3>
-    <p>AI-powered professional resume generator (Launching Soon).</p>
-    <a href="ai-resume-generator.html">View Details →</a>
+    <p>Professional ATS-friendly resume generator. Launching soon.</p>
+    <a href="ai-resume-generator.html">Coming Soon →</a>
   </div>
 
 </div>
 
 </section>
+
+<footer class="footer">
+  <p>© 2026 Student Toolkit | Built for serious students.</p>
+</footer>
+
+</body>
+</html>
