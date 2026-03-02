@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Advanced Resume Checker | ATS Resume Score Tool | Student Toolkit</title>
-<meta name="description" content="Advanced free ATS resume checker with keyword density, AI detection, formatting analysis and downloadable PDF report.">
+<title>Advanced Resume Checker | Student Toolkit</title>
+<meta name="description" content="Free ATS resume checker with email capture, keyword matching and resume improvement suggestions.">
 
 <link rel="stylesheet" href="../style.css">
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 
@@ -25,159 +24,175 @@
 
 <h1>Advanced Resume Checker</h1>
 
-<p>Get detailed ATS score, keyword density analysis, AI-likeness detection and improvement insights instantly.</p>
+<!-- EMAIL CAPTURE -->
+<div id="emailGate">
+  <p>Enter your email to unlock full resume analysis.</p>
+  <input type="email" id="userEmail" placeholder="Enter your email" style="width:100%;padding:10px;">
+  <br><br>
+  <button onclick="unlockTool()" class="primary-btn">Unlock Analysis</button>
+</div>
+
+<!-- TOOL SECTION -->
+<div id="toolSection" style="display:none;">
+
+<select id="jobRole" style="width:100%;padding:10px;">
+  <option value="marketing">Marketing</option>
+  <option value="software">Software Developer</option>
+  <option value="finance">Finance</option>
+  <option value="hr">HR</option>
+</select>
+
+<br><br>
 
 <textarea id="resumeText" rows="12" style="width:100%; padding:12px;"></textarea>
 
 <br><br>
 
 <button onclick="analyzeResume()" class="primary-btn">Analyze Resume</button>
-<button onclick="downloadPDF()" class="secondary-btn">Download PDF Report</button>
+<button onclick="downloadPDF()" class="secondary-btn">Download PDF</button>
 <button onclick="downloadScoreCard()" class="secondary-btn">Download Score Card</button>
 
 <div id="analysisResult" style="margin-top:40px;"></div>
+
+</div>
 
 </section>
 
 <script>
 
 let globalReport = "";
+let globalScore = 0;
 
-function analyzeResume() {
+function unlockTool(){
+  let email = document.getElementById("userEmail").value;
+  if(email.includes("@")){
+    localStorage.setItem("resumeUserEmail", email);
+    document.getElementById("emailGate").style.display = "none";
+    document.getElementById("toolSection").style.display = "block";
+  } else {
+    alert("Enter valid email.");
+  }
+}
+
+function analyzeResume(){
 
   let text = document.getElementById("resumeText").value;
+  let role = document.getElementById("jobRole").value;
 
   if(text.length < 200){
-    document.getElementById("analysisResult").innerHTML = "Resume too short for analysis.";
+    document.getElementById("analysisResult").innerHTML = "Resume too short.";
     return;
   }
 
   let score = 0;
   let pros = [];
   let cons = [];
+  let improvements = [];
 
-  let words = text.trim().split(/\s+/).length;
+  let words = text.split(/\s+/).length;
 
-  // Length scoring
   if(words > 300 && words < 900){
     score += 15;
-    pros.push("Optimal resume length.");
+    pros.push("Good resume length.");
   } else {
-    cons.push("Resume length not optimal (ideal 350–800 words).");
+    cons.push("Resume length not ideal.");
   }
 
-  // Sections
-  const sections = ["education","skills","experience","projects","certifications"];
-  let sectionScore = 0;
-
+  const sections = ["education","skills","experience","projects"];
   sections.forEach(sec=>{
     if(text.toLowerCase().includes(sec)){
-      sectionScore += 10;
+      score += 10;
     } else {
-      cons.push(`Missing ${sec} section.`);
+      cons.push("Missing "+sec+" section.");
     }
   });
 
-  score += sectionScore;
-
-  if(sectionScore >= 30){
-    pros.push("Strong structural completeness.");
-  }
-
-  // Action verbs
-  const actionWords = ["led","managed","developed","created","implemented","designed","optimized","built","improved"];
+  const actionWords = ["led","managed","developed","created","implemented","built"];
   let actionCount = 0;
-
-  actionWords.forEach(word=>{
-    if(text.toLowerCase().includes(word)){
+  actionWords.forEach(w=>{
+    if(text.toLowerCase().includes(w)){
       actionCount++;
     }
   });
 
-  if(actionCount >= 4){
+  if(actionCount >= 3){
     score += 15;
-    pros.push("Strong impact-driven action verbs used.");
+    pros.push("Strong action verbs detected.");
   } else {
-    cons.push("Add more action verbs to show impact.");
+    cons.push("Add strong action verbs.");
+    improvements.push("Rewrite bullet points using impact verbs like 'Led', 'Optimized', 'Improved'.");
   }
 
-  // Email check
-  if(text.includes("@")){
-    score += 5;
-  } else {
-    cons.push("Missing professional email.");
-  }
+  // JOB ROLE KEYWORD MATCHING
+  const roleKeywords = {
+    marketing:["seo","campaign","branding","analytics","engagement"],
+    software:["javascript","react","api","database","backend"],
+    finance:["financial","analysis","budget","forecast","investment"],
+    hr:["recruitment","onboarding","talent","employee","training"]
+  };
 
-  // ATS formatting check
-  if(!text.includes("|") && !text.includes("❖") && !text.includes("★")){
-    score += 10;
-    pros.push("ATS-friendly formatting detected.");
-  } else {
-    cons.push("Remove special characters for ATS compatibility.");
-  }
-
-  // AI-likeness detection
-  let aiIndicators = 0;
-  const aiPhrases = ["highly motivated individual","detail-oriented professional","results-driven","team player","passionate about"];
-  aiPhrases.forEach(p=>{
-    if(text.toLowerCase().includes(p)){
-      aiIndicators++;
+  let keywordMatch = 0;
+  roleKeywords[role].forEach(k=>{
+    if(text.toLowerCase().includes(k)){
+      keywordMatch++;
     }
   });
 
-  let aiVerdict = "";
-  if(aiIndicators >= 3){
-    aiVerdict = "Likely AI-Generated Tone";
-    cons.push("Content appears generic. Add more personalization.");
+  if(keywordMatch >= 3){
+    score += 20;
+    pros.push("Strong job-role keyword alignment.");
   } else {
-    aiVerdict = "Likely Human-Written";
+    cons.push("Low keyword match for selected job role.");
+    improvements.push("Add relevant "+role+" keywords.");
+  }
+
+  // AI detection heuristic
+  const aiPhrases = ["highly motivated","detail-oriented","results-driven","team player"];
+  let aiScore = 0;
+  aiPhrases.forEach(p=>{
+    if(text.toLowerCase().includes(p)){
+      aiScore++;
+    }
+  });
+
+  let aiVerdict = aiScore >= 2 ? "Likely AI-like generic tone" : "Likely human-written";
+
+  if(aiScore >= 2){
+    cons.push("Tone appears generic.");
+    improvements.push("Add measurable achievements with numbers.");
+  } else {
     pros.push("Personalized tone detected.");
   }
 
   score = Math.min(score,100);
-
-  // Keyword Density
-  let wordArray = text.toLowerCase().match(/\b\w+\b/g);
-  let freq = {};
-  wordArray.forEach(w=>{
-    freq[w] = (freq[w] || 0) + 1;
-  });
-
-  let sortedKeywords = Object.entries(freq)
-    .filter(([word,count])=>word.length > 4)
-    .sort((a,b)=>b[1]-a[1])
-    .slice(0,5);
-
-  let keywordHTML = "<h3>Top Keywords:</h3><ul>";
-  sortedKeywords.forEach(k=>{
-    keywordHTML += `<li>${k[0]} (${k[1]} times)</li>`;
-  });
-  keywordHTML += "</ul>";
+  globalScore = score;
 
   let output = `
   <h2>Resume Score: ${score}/100</h2>
   <p><strong>AI Detection:</strong> ${aiVerdict}</p>
+
   <h3>Strengths</h3>
   <ul>${pros.map(p=>"<li>"+p+"</li>").join("")}</ul>
+
   <h3>Improvements</h3>
   <ul>${cons.map(c=>"<li>"+c+"</li>").join("")}</ul>
-  ${keywordHTML}
+
+  <h3>Auto Improvement Suggestions</h3>
+  <ul>${improvements.map(i=>"<li>"+i+"</li>").join("")}</ul>
   `;
 
   globalReport = output;
-
   document.getElementById("analysisResult").innerHTML = output;
 }
 
 function downloadPDF(){
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
-  doc.text(globalReport.replace(/<[^>]*>/g,''), 10, 10);
+  doc.text("Resume Score: "+globalScore+"/100",10,10);
   doc.save("resume-analysis.pdf");
 }
 
 function downloadScoreCard(){
-
   let canvas = document.createElement("canvas");
   canvas.width = 600;
   canvas.height = 400;
@@ -191,17 +206,14 @@ function downloadScoreCard(){
   ctx.textAlign = "center";
   ctx.fillText("Student Toolkit Resume Score",300,60);
 
-  let scoreMatch = globalReport.match(/Resume Score: (\d+)/);
-  let score = scoreMatch ? scoreMatch[1] : "0";
-
   ctx.font = "60px Arial";
-  ctx.fillText(score+"/100",300,200);
+  ctx.fillText(globalScore+"/100",300,200);
 
   ctx.font = "18px Arial";
   ctx.fillText("studenttoolkit.online",300,360);
 
   let link = document.createElement("a");
-  link.download = "resume-score-card.png";
+  link.download = "resume-score.png";
   link.href = canvas.toDataURL();
   link.click();
 }
