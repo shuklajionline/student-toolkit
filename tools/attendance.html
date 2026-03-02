@@ -3,8 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Attendance & Bunk Meter | Student Toolkit</title>
+<title>Smart Attendance & Bunk Meter | Student Toolkit</title>
 <link rel="stylesheet" href="../style.css">
+<style>
+.meter-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+canvas {
+  max-width: 200px;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+</style>
 </head>
 <body>
 
@@ -26,18 +42,59 @@
 <label>Attended Lectures:</label>
 <input type="number" id="attended">
 
-<label>No Attendance (Neither present nor absent):</label>
+<label>No Attendance:</label>
 <input type="number" id="noAttendance">
+
+<br><br>
 
 <button onclick="calculateAttendance()" class="primary-btn">Calculate</button>
 
+<div class="meter-container">
+  <canvas id="progressCanvas" width="200" height="200"></canvas>
+</div>
+
 <div id="result"></div>
 
-<button onclick="shareAttendance()" class="secondary-btn">Share My Status</button>
+<br>
+
+<button onclick="downloadImage()" class="secondary-btn">Download Result</button>
+<button onclick="shareAttendance()" class="secondary-btn">Share</button>
 
 </section>
 
 <script>
+let finalText = "";
+let finalPercentage = 0;
+
+function drawCircle(percent) {
+  const canvas = document.getElementById("progressCanvas");
+  const ctx = canvas.getContext("2d");
+
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  const center = canvas.width / 2;
+  const radius = 80;
+  const startAngle = -0.5 * Math.PI;
+  const endAngle = startAngle + (percent / 100) * 2 * Math.PI;
+
+  ctx.lineWidth = 15;
+
+  ctx.beginPath();
+  ctx.strokeStyle = "#eee";
+  ctx.arc(center, center, radius, 0, 2 * Math.PI);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.strokeStyle = percent >= 75 ? "#5f2cff" : "#ff4d4d";
+  ctx.arc(center, center, radius, startAngle, endAngle);
+  ctx.stroke();
+
+  ctx.font = "20px Poppins";
+  ctx.fillStyle = "#111";
+  ctx.textAlign = "center";
+  ctx.fillText(percent + "%", center, center + 8);
+}
+
 function calculateAttendance() {
   let total = parseInt(document.getElementById("total").value) || 0;
   let attended = parseInt(document.getElementById("attended").value) || 0;
@@ -45,41 +102,66 @@ function calculateAttendance() {
 
   total = total - noAtt;
 
-  if(total <= 0) {
-    document.getElementById("result").innerHTML = "Invalid data.";
-    return;
-  }
+  if(total <= 0) return;
 
   let percentage = ((attended / total) * 100).toFixed(2);
-  let needed = Math.ceil((0.75 * total - attended));
+  finalPercentage = percentage;
 
-  let message = "";
+  let needed = Math.ceil((0.75 * total - attended));
 
   if(percentage >= 75) {
     let bunk = Math.floor((attended / 0.75) - total);
-    message = `Attendance: ${percentage}%<br>You can bunk ${bunk} lectures safely.`;
+    finalText = `Attendance: ${percentage}% | You can bunk ${bunk} lectures safely.`;
   } else {
-    message = `Attendance: ${percentage}%<br>You need ${needed} more lectures to reach 75%.`;
+    finalText = `Attendance: ${percentage}% | Need ${needed} more lectures for 75%.`;
   }
 
-  document.getElementById("result").innerHTML = message;
+  document.getElementById("result").innerHTML = finalText;
+  drawCircle(percentage);
 
-  localStorage.setItem("attendanceResult", message);
+  localStorage.setItem("attendanceResult", finalText);
 }
 
 function shareAttendance() {
-  let text = localStorage.getItem("attendanceResult");
-  if(!text) return;
-
-  navigator.clipboard.writeText(text + " Check yours at: https://studenttoolkit.online");
+  navigator.clipboard.writeText(finalText + " Check yours at https://studenttoolkit.online");
   alert("Copied to clipboard!");
 }
 
-window.onload = function() {
-  let saved = localStorage.getItem("attendanceResult");
-  if(saved) {
-    document.getElementById("result").innerHTML = saved;
-  }
+function downloadImage() {
+  const canvas = document.createElement("canvas");
+  canvas.width = 400;
+  canvas.height = 400;
+  const ctx = canvas.getContext("2d");
+
+  ctx.fillStyle = "#f7f9fc";
+  ctx.fillRect(0,0,400,400);
+
+  ctx.font = "22px Poppins";
+  ctx.fillStyle = "#111";
+  ctx.textAlign = "center";
+  ctx.fillText("Student Toolkit", 200, 60);
+
+  ctx.font = "18px Poppins";
+  ctx.fillText(finalText, 200, 120);
+
+  ctx.beginPath();
+  ctx.arc(200, 230, 80, 0, 2 * Math.PI);
+  ctx.strokeStyle = "#eee";
+  ctx.lineWidth = 15;
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.strokeStyle = finalPercentage >= 75 ? "#5f2cff" : "#ff4d4d";
+  ctx.arc(200, 230, 80, -0.5*Math.PI, -0.5*Math.PI + (finalPercentage/100)*2*Math.PI);
+  ctx.stroke();
+
+  ctx.font = "24px Poppins";
+  ctx.fillText(finalPercentage + "%", 200, 240);
+
+  let link = document.createElement("a");
+  link.download = "attendance-result.png";
+  link.href = canvas.toDataURL();
+  link.click();
 }
 </script>
 
