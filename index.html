@@ -1,69 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StudentToolkit</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Toolkit – Academic Resources & Opportunities</title>
+<meta name="description" content="Student Toolkit provides structured syllabus, verified opportunities, academic tools and career guidance for UPSC, MBA, BBA and BTech students.">
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container nav-container">
-      <div class="logo">StudentToolkit</div>
-      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
-      <nav class="nav" id="nav">
-        <ul>
-          <li><a href="#">Academics</a></li>
-          <li><a href="#">Skills</a></li>
-          <li><a href="#">Productivity</a></li>
-          <li><a href="#">Opportunities</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Submit</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header class="navbar">
+  <div class="logo">
+    <a href="index.html">
+      <img src="student-toolkit-logo.png" alt="Student Toolkit Logo">
+    </a>
+  </div>
+  <nav>
+    <a href="resources/index.html">Resources</a>
+    <a href="bba-opportunities.html">BBA</a>
+    <a href="mba-admissions.html">MBA</a>
+    <a href="upsc-notifications.html">UPSC</a>
+    <a href="btech-internships.html">BTech</a>
+    <a href="tools/attendance.html">Tools</a>
+    <a href="blog/index.html">Blog</a>
+  </nav>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <h1>Everything a Student Needs. Organized.</h1>
-      <p>Notes, skill roadmaps, productivity tools, and real opportunities.</p>
-      <a href="#" class="btn-primary">Explore Resources</a>
+<!-- HERO PANEL -->
+<section class="hero-panel">
+  <div class="hero-content">
+    <h1>India’s Structured Academic Platform</h1>
+    <p>Syllabus • Verified Opportunities • Smart Tools • Career Guidance</p>
+    <div class="hero-buttons">
+      <a href="resources/index.html" class="primary-btn">Explore Syllabus</a>
+      <a href="blog/index.html" class="secondary-btn">Read Guides</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CORE SECTIONS -->
-  <section class="sections">
-    <div class="container grid">
-      <div class="card">
-        <h3>Academics</h3>
-        <p>Semester notes, assignments & exam guides.</p>
-      </div>
-      <div class="card">
-        <h3>Skills</h3>
-        <p>Digital marketing, AI tools & career skills.</p>
-      </div>
-      <div class="card">
-        <h3>Productivity</h3>
-        <p>Study systems, planners & focus tools.</p>
-      </div>
-      <div class="card">
-        <h3>Opportunities</h3>
-        <p>Internships, scholarships & certifications.</p>
-      </div>
+<!-- CORE VERTICALS PANEL -->
+<section class="panel">
+  <h2>Explore By Career Path</h2>
+
+  <div class="grid-4">
+
+    <div class="panel-card">
+      <h3>🎓 UPSC</h3>
+      <p>Structured syllabus, exam updates and preparation roadmap.</p>
+      <a href="resources/upsc/upsc-syllabus.html">View Syllabus →</a>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2026 StudentToolkit. Built for students.</p>
+    <div class="panel-card">
+      <h3>💼 MBA (CAT)</h3>
+      <p>CAT syllabus, MBA admissions and entrance timeline.</p>
+      <a href="resources/mba/cat-syllabus.html">View Syllabus →</a>
     </div>
-  </footer>
 
-  <script src="assets/js/script.js"></script>
+    <div class="panel-card">
+      <h3>📘 BBA</h3>
+      <p>Semester-wise syllabus and internship guidance.</p>
+      <a href="resources/bba/bba-all-sem-syllabus.html">View Syllabus →</a>
+    </div>
+
+    <div class="panel-card">
+      <h3>💻 BTech</h3>
+      <p>Engineering syllabus and specialization insights.</p>
+      <a href="resources/btech/cse-syllabus.html">View Syllabus →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- TOOLS PANEL -->
+<section class="panel light">
+  <h2>Smart Academic Tools</h2>
+
+  <div class="grid-3">
+
+    <div class="tool-card">
+      <h3>Attendance Calculator</h3>
+      <p>Track required lectures to maintain 75% attendance.</p>
+      <a href="tools/attendance.html">Use Tool →</a>
+    </div>
+
+    <div class="tool-card">
+      <h3>CGPA Calculator</h3>
+      <p>Calculate semester CGPA instantly.</p>
+      <a href="tools/cgpa.html">Use Tool →</a>
+    </div>
+
+    <div class="tool-card">
+      <h3>Bunk Meter</h3>
+      <p>Predict how many classes you can safely skip.</p>
+      <a href="tools/attendance.html">Use Tool →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION RADAR PANEL -->
+<section class="panel">
+  <h2>Weekly Education Radar</h2>
+  <p>Latest verified updates from government portals, entrance exams and internship platforms.</p>
+  <a href="upsc-notifications.html" class="primary-btn">Check Latest Updates</a>
+</section>
+
+<footer class="footer">
+  <p>© 2026 Student Toolkit | Built for Serious Students</p>
+</footer>
+
 </body>
 </html>
