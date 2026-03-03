@@ -1,31 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Homepage -->
   <url>
     <loc>https://studenttoolkit.online/</loc>
     <priority>1.0</priority>
   </url>
 
+  <!-- Main Category Pages -->
   <url>
     <loc>https://studenttoolkit.online/bba-opportunities.html</loc>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://studenttoolkit.online/mba-admissions.html</loc>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://studenttoolkit.online/upsc-notifications.html</loc>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://studenttoolkit.online/btech-internships.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Tools Hub -->
+  <url>
+    <loc>https://studenttoolkit.online/tools/index.html</loc>
     <priority>0.9</priority>
   </url>
 
+  <!-- Academic Tools -->
   <url>
     <loc>https://studenttoolkit.online/tools/attendance.html</loc>
     <priority>0.7</priority>
@@ -36,9 +45,26 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Career Tools -->
   <url>
-    <loc>https://studenttoolkit.online/blog/</loc>
+    <loc>https://studenttoolkit.online/tools/ai-resume-checker.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://studenttoolkit.online/tools/ai-resume-generator.html</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Blog Section -->
+  <url>
+    <loc>https://studenttoolkit.online/blog/index.html</loc>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://studenttoolkit.online/blog/brutal-resume-checker-guide.html</loc>
+    <priority>0.9</priority>
   </url>
 
   <url>
@@ -51,4 +77,25 @@
    <priority>0.8</priority>
   </url>
   
+  <!-- Resources Section -->
+  <url>
+    <loc>https://studenttoolkit.online/resources/index.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://studenttoolkit.online/resources/bba-syllabus.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://studenttoolkit.online/resources/cat-syllabus.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://studenttoolkit.online/resources/btech-cse-syllabus.html</loc>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
