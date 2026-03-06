@@ -1204,7 +1204,7 @@
   /* ── HOMEPAGE NEWS TEASER ── */
   (async () => {
     try {
-      const res = await fetch('https://content.guardianapis.com/search?section=education&show-fields=headline,trailText&page-size=3&order-by=newest&api-key=test');
+      const res = await fetch('https://content.guardianapis.com/search?section=education&show-fields=headline,trailText&page-size=3&order-by=newest&api-key=038ee300-ba86-447a-89a9-d16a7771e8aa');
       if (!res.ok) return;
       const data = await res.json();
       const articles = data.response?.results || [];
