@@ -365,7 +365,7 @@
 // ════════════════════════════════════════════════════════
 //  CONFIGURATION
 // ════════════════════════════════════════════════════════
-const GUARDIAN_KEY = '038ee300-ba86-447a-89a9-d16a7771e8aa'; // Replace with your free key from open-platform.theguardian.com
+const GUARDIAN_KEY = '038ee300-ba86-447a-89a9-d16a7771e8aa';
 // ^ The Guardian's "test" key works for development — get a free production key at:
 //   https://open-platform.theguardian.com/access/ (completely free, instant approval)
 
@@ -404,7 +404,7 @@ async function fetchNews(category) {
     return cache[category].data;
   }
   const cat = CATEGORIES[category];
-  const url = `${GUARDIAN_BASE}?section=${cat.section}&show-fields=trailText,thumbnail,headline&page-size=12&order-by=newest&api-key=${038ee300-ba86-447a-89a9-d16a7771e8aa}`;
+  const url = `${GUARDIAN_BASE}?section=${cat.section}&show-fields=trailText,thumbnail,headline&page-size=12&order-by=newest&api-key=${GUARDIAN_KEY}`;
 
   try {
     const res = await fetch(url);
