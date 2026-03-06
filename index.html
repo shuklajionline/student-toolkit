@@ -278,12 +278,9 @@
     }
     .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.07); }
     .nav-logo {
-      font-family: 'Instrument Serif', serif;
-      font-size: 22px; font-weight: 400;
-      color: var(--ink); text-decoration: none;
-      letter-spacing: -0.02em;
+      display: flex; align-items: center;
+      text-decoration: none; flex-shrink: 0;
     }
-    .nav-logo span { color: var(--accent); font-style: italic; }
     .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
     .nav-links a {
       font-size: 13.5px; font-weight: 500;
@@ -603,11 +600,8 @@
       gap: 40px;
     }
     .footer-logo {
-      font-family: 'Instrument Serif', serif;
-      font-size: 22px; color: #fff; text-decoration: none;
-      display: block; margin-bottom: 12px;
+      display: block; text-decoration: none;
     }
-    .footer-logo span { color: #a5b4fc; font-style: italic; }
     .footer-brand p { font-size: 13.5px; line-height: 1.65; max-width: 270px; }
     .footer-col h4 {
       font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em;
@@ -674,7 +668,7 @@
 <header role="banner">
   <nav class="navbar" id="navbar" aria-label="Main navigation">
     <a class="nav-logo" href="https://studenttoolkit.online/" aria-label="Student Toolkit Home">
-      Student<span>Toolkit</span>
+      <img src="logo-light.png" alt="Student Toolkit" height="36" style="display:block; height:36px; width:auto;"/>
     </a>
     <ul class="nav-links" role="list">
       <li><a href="#tools">Tools</a></li>
@@ -989,7 +983,7 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <a class="footer-logo" href="https://studenttoolkit.online/" aria-label="Student Toolkit Home">
-        Student<span>Toolkit</span>
+        <img src="logo-dark.png" alt="Student Toolkit" height="48" style="display:block; height:48px; width:auto; margin-bottom:14px;"/>
       </a>
       <p>Free, practical tools built for college and university students. Attendance calculator, CGPA calculator, resume checker, and letter writer — no sign-up, no cost, ever.</p>
     </div>
