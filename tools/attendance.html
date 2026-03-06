@@ -1,237 +1,937 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Attendance & Bunk Meter | Student Toolkit</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<link rel="stylesheet" href="../style.css">
+  <!-- ═══════════════════════════════════════════════
+       PRIMARY SEO META TAGS
+  ═══════════════════════════════════════════════════ -->
+  <title>Free Attendance Calculator – Check % & Safe Bunks | Student Toolkit</title>
+  <meta name="description" content="Free online attendance calculator for students. Instantly find your attendance percentage, how many classes you can skip safely, and how many you need to reach 75%. No sign-up needed."/>
+  <meta name="keywords" content="attendance calculator, attendance percentage calculator, bunk calculator, how many classes can I skip, safe bunk calculator, attendance tracker for students, 75 percent attendance calculator, college attendance calculator, university attendance tool, free attendance calculator online"/>
+  <meta name="author" content="Student Toolkit"/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  <meta name="theme-color" content="#4f46e5"/>
+  <link rel="canonical" href="https://studenttoolkit.online/tools/attendance.html"/>
 
-<style>
-.tool-wrapper {
-  max-width: 500px;
-  margin: auto;
-  text-align: center;
-}
+  <!-- ═══════════════════════════════════════════════
+       OPEN GRAPH
+  ═══════════════════════════════════════════════════ -->
+  <meta property="og:type"        content="website"/>
+  <meta property="og:url"         content="https://studenttoolkit.online/tools/attendance.html"/>
+  <meta property="og:title"       content="Free Attendance Calculator – Find Safe Bunks & % | Student Toolkit"/>
+  <meta property="og:description" content="Calculate your attendance percentage instantly. See how many classes you can skip and still stay safe. 100% free, no sign-up."/>
+  <meta property="og:image"       content="https://studenttoolkit.online/logo-icon.png"/>
+  <meta property="og:site_name"   content="Student Toolkit"/>
+  <meta property="og:locale"      content="en_US"/>
+  <meta name="twitter:card"        content="summary_large_image"/>
+  <meta name="twitter:title"       content="Free Attendance Calculator for Students"/>
+  <meta name="twitter:description" content="Check your attendance %, safe bunks and classes needed to reach 75% — instantly free."/>
+  <meta name="twitter:image"       content="https://studenttoolkit.online/logo-icon.png"/>
 
-input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-}
+  <!-- ═══════════════════════════════════════════════
+       SCHEMA — SoftwareApplication
+  ═══════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Free Attendance Calculator",
+    "url": "https://studenttoolkit.online/tools/attendance.html",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Web Browser",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Free online attendance calculator for students. Calculate attendance percentage, safe bunks remaining, and classes needed to reach 75% minimum attendance requirement.",
+    "featureList": [
+      "Attendance percentage calculator",
+      "Safe bunk meter — how many classes you can skip",
+      "Classes needed to reach 75% calculator",
+      "Future absence impact simulator",
+      "Neutral class exclusion support",
+      "Shareable result card"
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Student Toolkit",
+      "url": "https://studenttoolkit.online/"
+    }
+  }
+  </script>
 
-button {
-  margin: 10px 5px;
-}
+  <!-- ═══════════════════════════════════════════════
+       SCHEMA — BreadcrumbList
+  ═══════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",  "item": "https://studenttoolkit.online/" },
+      { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://studenttoolkit.online/tools/index.html" },
+      { "@type": "ListItem", "position": 3, "name": "Attendance Calculator", "item": "https://studenttoolkit.online/tools/attendance.html" }
+    ]
+  }
+  </script>
 
-.meter-container {
-  margin-top: 40px;
-}
+  <!-- ═══════════════════════════════════════════════
+       SCHEMA — FAQPage
+  ═══════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is attendance percentage calculated?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Attendance percentage is calculated as: (Classes Attended ÷ Effective Classes Conducted) × 100. Effective classes exclude any neutral sessions where attendance was not marked. For example, if 40 classes were held, 5 were neutral, and you attended 30, your effective attendance is 30 ÷ 35 × 100 = 85.7%." }
+      },
+      {
+        "@type": "Question",
+        "name": "How many classes can I skip and still maintain 75% attendance?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The formula for safe bunks is: Safe Bunks = floor((Attended − 0.75 × Effective Conducted) ÷ 0.75). If this number is zero or negative, you cannot skip any more classes and may need to attend additional ones to recover. Use our free attendance calculator above to get your exact number instantly." }
+      },
+      {
+        "@type": "Question",
+        "name": "How many classes do I need to attend to reach 75%?",
+        "acceptedAnswer": { "@type": "Answer", "text": "If your attendance is below 75%, use the formula: Classes Needed = ceil((0.75 × Effective Conducted − Attended) ÷ 0.25). This gives you the minimum number of consecutive classes you must attend without skipping any, to bring your percentage back up to 75%." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the minimum attendance required in most colleges?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Most colleges and universities require a minimum of 75% attendance to be eligible to sit for final examinations. Some institutions require 80% or higher. Always check your specific institution's attendance policy as it may vary by department or course." }
+      },
+      {
+        "@type": "Question",
+        "name": "What are neutral classes in the attendance calculator?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Neutral classes are sessions that were held but where attendance was not recorded — for example, cancelled classes that were still marked as conducted, or special sessions exempt from attendance tracking. These are excluded from the effective conducted count to give you a more accurate percentage." }
+      }
+    ]
+  }
+  </script>
 
-canvas {
-  max-width: 220px;
-}
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
-#result {
-  margin-top: 20px;
-  font-weight: 600;
-  font-size: 18px;
-}
-</style>
+  <style>
+    /* ── DESIGN SYSTEM ── */
+    :root {
+      --bg:        #f7f6f2;
+      --bg2:       #eeecea;
+      --bg3:       #e5e2dc;
+      --ink:       #1a1916;
+      --ink2:      #4a4843;
+      --ink3:      #8a8680;
+      --accent:    #4f46e5;
+      --accent-h:  #4338ca;
+      --accent-l:  #eef2ff;
+      --success:   #16a34a;
+      --success-l: #dcfce7;
+      --danger:    #dc2626;
+      --danger-l:  #fee2e2;
+      --warn:      #d97706;
+      --warn-l:    #fef3c7;
+      --border:    #d8d4cc;
+      --white:     #ffffff;
+      --shadow:    0 1px 3px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.05);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.10);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Geist', sans-serif;
+      background: var(--bg); color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden; min-height: 100vh;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(247,246,242,0.94);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 62px; transition: box-shadow 0.2s;
+    }
+    .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.07); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+    .nav-links a { font-size: 13.5px; font-weight: 500; color: var(--ink2); text-decoration: none; padding: 7px 13px; border-radius: 7px; transition: all 0.15s; }
+    .nav-links a:hover { background: var(--bg2); color: var(--ink); }
+    .nav-cta { background: var(--accent) !important; color: #fff !important; box-shadow: 0 2px 8px rgba(79,70,229,0.28) !important; border-radius: 7px; }
+    .nav-cta:hover { background: var(--accent-h) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: all 0.25s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 62px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--border); padding: 12px 24px 24px; z-index: 199; box-shadow: var(--shadow-lg); }
+    .mobile-menu.open { display: block; animation: slideDown 0.2s ease; }
+    @keyframes slideDown { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
+    .mobile-menu a { display: flex; align-items: center; gap: 10px; padding: 13px 4px; font-size: 15px; font-weight: 500; color: var(--ink2); text-decoration: none; border-bottom: 1px solid var(--bg2); transition: color 0.15s; }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--accent); }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb { max-width: 1080px; margin: 80px auto 0; padding: 18px 24px 0; display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink3); }
+    .breadcrumb a { color: var(--ink3); text-decoration: none; transition: color 0.15s; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { color: var(--border); }
+
+    /* ── PAGE HEADER ── */
+    .page-header { max-width: 1080px; margin: 0 auto; padding: 28px 24px 36px; }
+    .tool-eyebrow { display: inline-flex; align-items: center; gap: 7px; background: var(--accent-l); border: 1px solid #c7d2fe; border-radius: 20px; padding: 5px 14px; font-size: 12px; font-weight: 600; color: var(--accent); margin-bottom: 16px; }
+    .page-header h1 { font-family: 'Instrument Serif', serif; font-size: clamp(28px, 4.5vw, 48px); font-weight: 400; color: var(--ink); line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 12px; }
+    .page-header h1 em { font-style: italic; color: var(--accent); }
+    .page-header p { font-size: 16px; color: var(--ink3); font-weight: 300; max-width: 580px; line-height: 1.65; }
+    .header-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .hchip { font-size: 12px; font-weight: 500; padding: 4px 11px; border-radius: 20px; border: 1px solid var(--border); background: var(--white); color: var(--ink2); }
+
+    /* ── TOOL LAYOUT ── */
+    .tool-layout { max-width: 1080px; margin: 0 auto 80px; padding: 0 24px; display: grid; grid-template-columns: 420px 1fr; gap: 22px; align-items: start; }
+
+    /* ── CARDS ── */
+    .card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
+    .output-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; position: sticky; top: 80px; }
+    .card-head { padding: 16px 22px; border-bottom: 1px solid var(--bg2); display: flex; align-items: center; gap: 10px; }
+    .card-head-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--bg2); display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+    .card-head h2 { font-size: 14px; font-weight: 600; color: var(--ink); }
+    .card-head p { font-size: 12px; color: var(--ink3); margin-top: 1px; }
+    .card-body { padding: 20px 22px 24px; }
+
+    /* ── FIELDS ── */
+    .field { margin-bottom: 16px; }
+    .field label { display: block; font-size: 12.5px; font-weight: 500; color: var(--ink2); margin-bottom: 6px; }
+    .field label span { color: var(--ink3); font-weight: 400; font-size: 11.5px; }
+    .field input { width: 100%; background: var(--bg); border: 1.5px solid var(--border); border-radius: 8px; padding: 11px 13px; font-size: 15px; color: var(--ink); font-family: 'Geist', sans-serif; outline: none; transition: border-color 0.16s, box-shadow 0.16s; -webkit-appearance: none; }
+    .field input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(79,70,229,0.1); background: var(--white); }
+    .field input::placeholder { color: var(--ink3); }
+
+    /* ── THRESHOLD SELECTOR ── */
+    .threshold-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; margin-bottom: 16px; }
+    .thresh-btn { padding: 9px 6px; border-radius: 8px; border: 1.5px solid var(--border); background: var(--bg); cursor: pointer; text-align: center; transition: all 0.16s; font-family: 'Geist', sans-serif; }
+    .thresh-btn:hover { border-color: var(--accent); background: var(--accent-l); }
+    .thresh-btn.active { border-color: var(--accent); background: var(--accent-l); box-shadow: 0 0 0 3px rgba(79,70,229,0.08); }
+    .thresh-pct { font-size: 17px; font-weight: 700; display: block; color: var(--ink); }
+    .thresh-btn.active .thresh-pct { color: var(--accent); }
+    .thresh-label { font-size: 11px; color: var(--ink3); display: block; margin-top: 1px; }
+    .thresh-btn.active .thresh-label { color: var(--accent); }
+
+    /* ── CALCULATE BUTTON ── */
+    .calc-btn { width: 100%; background: var(--accent); color: #fff; border: none; border-radius: 10px; padding: 14px; font-size: 15px; font-weight: 600; font-family: 'Geist', sans-serif; cursor: pointer; transition: all 0.18s; box-shadow: 0 3px 12px rgba(79,70,229,0.3); display: flex; align-items: center; justify-content: center; gap: 9px; margin-top: 4px; }
+    .calc-btn:hover { background: var(--accent-h); transform: translateY(-1px); box-shadow: 0 5px 18px rgba(79,70,229,0.4); }
+    .calc-btn:active { transform: translateY(0); }
+    .error-box { background: var(--danger-l); border: 1px solid #fca5a5; border-radius: 8px; padding: 12px 14px; font-size: 13px; color: var(--danger); display: none; margin-top: 10px; line-height: 1.5; }
+
+    /* ── OUTPUT HEAD ── */
+    .output-head { padding: 15px 20px; border-bottom: 1px solid var(--bg2); display: flex; align-items: center; justify-content: space-between; }
+    .output-head-left { display: flex; align-items: center; gap: 10px; }
+    .output-head h2 { font-size: 14px; font-weight: 600; color: var(--ink); }
+    .out-actions { display: flex; gap: 7px; }
+    .act-btn { display: flex; align-items: center; gap: 5px; padding: 6px 12px; border-radius: 7px; border: 1.5px solid var(--border); background: var(--bg); font-size: 12px; font-weight: 500; color: var(--ink2); cursor: pointer; font-family: 'Geist', sans-serif; transition: all 0.15s; }
+    .act-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-l); }
+    .output-body { padding: 24px; min-height: 480px; }
+
+    /* ── EMPTY STATE ── */
+    .empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 440px; text-align: center; gap: 14px; }
+    .empty-icon { width: 64px; height: 64px; border-radius: 16px; background: var(--bg2); display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .empty-state h3 { font-family: 'Instrument Serif', serif; font-size: 20px; font-weight: 400; color: var(--ink2); }
+    .empty-state p { font-size: 13.5px; color: var(--ink3); max-width: 260px; line-height: 1.55; }
+    .how-steps { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; width: 100%; max-width: 280px; }
+    .how-step { display: flex; align-items: flex-start; gap: 9px; text-align: left; }
+    .step-num { width: 20px; height: 20px; border-radius: 50%; background: var(--bg3); display: flex; align-items: center; justify-content: center; font-size: 10.5px; font-weight: 600; color: var(--ink2); flex-shrink: 0; margin-top: 1px; }
+    .how-step p { font-size: 12.5px; color: var(--ink3); }
+
+    /* ── RESULT DISPLAY ── */
+    .result-wrap { display: none; }
+
+    /* Gauge */
+    .gauge-section { display: flex; align-items: center; gap: 22px; padding: 18px; background: var(--bg); border-radius: 12px; margin-bottom: 20px; }
+    .gauge-wrap { position: relative; flex-shrink: 0; }
+    .gauge-wrap svg { display: block; }
+    .gauge-bg  { fill: none; stroke: var(--bg3); stroke-width: 9; stroke-linecap: round; }
+    .gauge-fill { fill: none; stroke-width: 9; stroke-linecap: round; transition: stroke-dashoffset 1.1s cubic-bezier(0.4,0,0.2,1); }
+    .gauge-num { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-48%); text-align: center; }
+    .gauge-num strong { font-family: 'Instrument Serif', serif; font-size: 28px; font-weight: 400; display: block; line-height: 1; }
+    .gauge-num span { font-size: 11px; color: var(--ink3); }
+    .gauge-meta { flex: 1; }
+    .gauge-status { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+    .gauge-msg { font-size: 13.5px; color: var(--ink2); line-height: 1.55; font-weight: 300; }
+
+    /* Stat cards */
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+    .stat-card { padding: 14px 16px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); }
+    .stat-card.highlight { background: var(--accent-l); border-color: #c7d2fe; }
+    .stat-card.safe { background: var(--success-l); border-color: #86efac; }
+    .stat-card.danger { background: var(--danger-l); border-color: #fca5a5; }
+    .stat-card.warn { background: var(--warn-l); border-color: #fcd34d; }
+    .stat-label { font-size: 11px; font-weight: 500; color: var(--ink3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 5px; }
+    .stat-val { font-family: 'Instrument Serif', serif; font-size: 26px; font-weight: 400; color: var(--ink); line-height: 1; }
+    .stat-val.safe-val { color: var(--success); }
+    .stat-val.danger-val { color: var(--danger); }
+    .stat-val.warn-val { color: var(--warn); }
+    .stat-sub { font-size: 11.5px; color: var(--ink3); margin-top: 3px; font-weight: 300; }
+
+    /* Future impact */
+    .future-bar { margin-bottom: 18px; }
+    .future-bar h3 { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+    .fbar-track { height: 10px; background: var(--bg3); border-radius: 10px; overflow: hidden; margin-bottom: 6px; position: relative; }
+    .fbar-fill { height: 100%; border-radius: 10px; transition: width 1s ease; }
+    .fbar-labels { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--ink3); }
+    .threshold-line { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--danger); opacity: 0.6; }
+
+    /* Advice box */
+    .advice-box { padding: 14px 16px; border-radius: 10px; font-size: 14px; line-height: 1.6; margin-bottom: 16px; display: flex; gap: 10px; align-items: flex-start; }
+    .advice-box.safe-advice   { background: var(--success-l); color: #14532d; border: 1px solid #86efac; }
+    .advice-box.danger-advice { background: var(--danger-l);  color: #7f1d1d; border: 1px solid #fca5a5; }
+    .advice-box.warn-advice   { background: var(--warn-l);    color: #78350f; border: 1px solid #fcd34d; }
+    .advice-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── FORMULA BOX ── */
+    .formula-strip { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; margin-top: 18px; }
+    .formula-strip h3 { font-size: 12px; font-weight: 600; color: var(--ink3); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .formula-item { font-size: 12.5px; color: var(--ink2); margin-bottom: 4px; font-family: 'Geist', monospace; }
+
+    /* ── FAQ ── */
+    .faq-section { max-width: 1080px; margin: 0 auto 80px; padding: 0 24px; }
+    .faq-label { font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; display: block; }
+    .faq-section h2 { font-family: 'Instrument Serif', serif; font-size: clamp(24px, 3.5vw, 36px); font-weight: 400; color: var(--ink); margin-bottom: 6px; letter-spacing: -0.02em; }
+    .faq-section h2 em { font-style: italic; color: var(--accent); }
+    .faq-sub { font-size: 15px; color: var(--ink3); margin-bottom: 32px; font-weight: 300; }
+    .faq-list { max-width: 720px; }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
+    .faq-item:first-child { padding-top: 0; }
+    .faq-item h3 { font-size: 15.5px; font-weight: 600; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; line-height: 1.4; user-select: none; }
+    .faq-item h3::after { content: '+'; font-size: 20px; font-weight: 300; color: var(--accent); flex-shrink: 0; transition: transform 0.2s; }
+    .faq-item.open h3::after { transform: rotate(45deg); }
+    .faq-answer { font-size: 14.5px; color: var(--ink3); font-weight: 300; line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.25s; }
+    .faq-item.open .faq-answer { max-height: 300px; padding-top: 12px; }
+
+    /* ── OTHER TOOLS ── */
+    .other-tools { max-width: 1080px; margin: 0 auto 80px; padding: 0 24px; }
+    .other-tools h2 { font-family: 'Instrument Serif', serif; font-size: 26px; font-weight: 400; color: var(--ink); margin-bottom: 20px; letter-spacing: -0.02em; }
+    .other-tools h2 em { font-style: italic; color: var(--accent); }
+    .tools-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+    .mini-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-decoration: none; color: inherit; transition: all 0.2s; display: flex; align-items: center; gap: 14px; }
+    .mini-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: #c8c4f8; }
+    .mini-card-icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .mini-card h3 { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+    .mini-card p  { font-size: 12px; color: var(--ink3); font-weight: 300; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 48px 32px 28px; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px; }
+    .footer-logo { display: block; text-decoration: none; }
+    .footer-brand p { font-size: 13.5px; line-height: 1.65; max-width: 270px; margin-top: 4px; }
+    .footer-col h4 { font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.38); margin-bottom: 16px; }
+    .footer-col a { display: block; font-size: 14px; color: rgba(255,255,255,0.52); text-decoration: none; margin-bottom: 9px; transition: color 0.15s; }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom { max-width: 1080px; margin: 32px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; font-size: 12.5px; flex-wrap: wrap; gap: 12px; }
+    .social-links { display: flex; gap: 8px; }
+    .social-link { width: 32px; height: 32px; border-radius: 7px; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; transition: background 0.15s; text-decoration: none; }
+    .social-link:hover { background: rgba(255,255,255,0.15); }
+    .social-link img { width: 14px; height: 14px; filter: brightness(0) invert(1); opacity: 0.65; }
+
+    /* ── ANIMATIONS ── */
+    .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 820px) {
+      .tool-layout { grid-template-columns: 1fr; }
+      .output-card { position: static; }
+      .navbar { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 480px) {
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+      .threshold-row { grid-template-columns: 1fr 1fr 1fr; }
+    }
+  </style>
 </head>
 
-<body>
+<body itemscope itemtype="https://schema.org/WebPage">
 
-<header class="navbar">
-  <div class="logo">
-    <a href="../index.html">
-      <img src="../student-toolkit-logo.png" alt="Student Toolkit Logo">
+<!-- ── NAVBAR ── -->
+<header role="banner">
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <a class="nav-logo" href="../index.html" aria-label="Student Toolkit Home">
+      <img src="../logo-light.png" alt="Student Toolkit" height="34" style="height:34px;width:auto;"/>
     </a>
+    <ul class="nav-links" role="list">
+      <li><a href="../index.html#tools">Tools</a></li>
+      <li><a href="../index.html#blog">Blog</a></li>
+      <li><a href="../index.html#suggest">Suggest</a></li>
+      <li><a href="ai-resume-checker.html" class="nav-cta">Resume Checker →</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="../index.html">🏠 &nbsp;Home</a>
+    <a href="attendance.html">📊 &nbsp;Attendance Calculator</a>
+    <a href="cgpa.html">📈 &nbsp;CGPA Calculator</a>
+    <a href="ai-resume-checker.html">🧠 &nbsp;Resume Checker</a>
+    <a href="letter-writer.html">✍️ &nbsp;Letter Writer</a>
+    <a href="../index.html#blog">📝 &nbsp;Blog</a>
   </div>
 </header>
 
-<section class="container blog-content">
+<main role="main">
 
-<div class="tool-wrapper">
+  <!-- ── BREADCRUMB ── -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="index.html">Tools</a>
+    <span>›</span>
+    <span aria-current="page">Attendance Calculator</span>
+  </nav>
 
-<h1>Smart Attendance & Bunk Meter</h1>
+  <!-- ── PAGE HEADER ── -->
+  <div class="page-header">
+    <div class="tool-eyebrow">📊 Free · Instant · No Sign-Up</div>
+    <h1>Free <em>Attendance Calculator</em><br/>& Bunk Meter</h1>
+    <p>Find your attendance percentage instantly, see exactly how many classes you can skip safely, or how many you need to attend to reach 75%.</p>
+    <div class="header-chips">
+      <span class="hchip">✅ 100% Free</span>
+      <span class="hchip">⚡ Instant Results</span>
+      <span class="hchip">🎯 Safe Bunk Counter</span>
+      <span class="hchip">📉 Future Impact Simulator</span>
+      <span class="hchip">📱 Mobile Friendly</span>
+    </div>
+  </div>
 
-<label>Total Lectures Conducted So Far</label>
-<input type="number" id="total">
+  <!-- ── TOOL ── -->
+  <div class="tool-layout">
 
-<label>Lectures Attended So Far</label>
-<input type="number" id="attended">
+    <!-- LEFT: INPUTS -->
+    <div class="card fade-up">
+      <div class="card-head">
+        <div class="card-head-icon">📋</div>
+        <div>
+          <h2>Enter Your Attendance</h2>
+          <p>Fill in your numbers below</p>
+        </div>
+      </div>
+      <div class="card-body">
 
-<label>Neutral Classes (No Attendance Counted)</label>
-<input type="number" id="noAttendance">
+        <div class="field">
+          <label for="total">Total Classes Conducted <span>(all held so far)</span></label>
+          <input type="number" id="total" placeholder="e.g. 60" min="1" inputmode="numeric"/>
+        </div>
 
-<label>If You Miss More Lectures</label>
-<input type="number" id="futureMiss">
+        <div class="field">
+          <label for="attended">Classes Attended <span>(how many you went to)</span></label>
+          <input type="number" id="attended" placeholder="e.g. 48" min="0" inputmode="numeric"/>
+        </div>
 
-<button onclick="calculateAttendance()" class="primary-btn">Calculate</button>
+        <div class="field">
+          <label for="noAttendance">Neutral Classes <span>(cancelled / attendance not marked)</span></label>
+          <input type="number" id="noAttendance" placeholder="e.g. 2 (or leave 0)" min="0" value="0" inputmode="numeric"/>
+        </div>
 
-<div class="meter-container">
-  <canvas id="progressCanvas" width="220" height="220"></canvas>
-</div>
+        <div class="field">
+          <label for="futureMiss">Planning to Miss <span>(future classes you'll skip)</span></label>
+          <input type="number" id="futureMiss" placeholder="e.g. 3 (or leave 0)" min="0" value="0" inputmode="numeric"/>
+        </div>
 
-<div id="result"></div>
+        <div class="field">
+          <label>Minimum Required Attendance</label>
+          <div class="threshold-row">
+            <button class="thresh-btn" data-val="70" onclick="setThreshold(this)">
+              <span class="thresh-pct">70%</span>
+              <span class="thresh-label">Some colleges</span>
+            </button>
+            <button class="thresh-btn active" data-val="75" onclick="setThreshold(this)">
+              <span class="thresh-pct">75%</span>
+              <span class="thresh-label">Most common</span>
+            </button>
+            <button class="thresh-btn" data-val="80" onclick="setThreshold(this)">
+              <span class="thresh-pct">80%</span>
+              <span class="thresh-label">Strict colleges</span>
+            </button>
+          </div>
+        </div>
 
-<br>
+        <button class="calc-btn" onclick="calculateAttendance()" aria-label="Calculate attendance">
+          📊 &nbsp;Calculate Attendance
+        </button>
 
-<button onclick="downloadImage()" class="secondary-btn">Download Result</button>
-<button onclick="shareAttendance()" class="secondary-btn">Share</button>
+        <div class="error-box" id="error-box"></div>
 
-</div>
-</section>
+        <!-- Formula reference -->
+        <div class="formula-strip">
+          <h3>How it's calculated</h3>
+          <div class="formula-item">% = (Attended ÷ Effective) × 100</div>
+          <div class="formula-item">Safe Bunks = ⌊(Attended − T% × Effective) ÷ T%⌋</div>
+          <div class="formula-item">Classes Needed = ⌈(T% × Effective − Attended) ÷ (1−T%)⌉</div>
+        </div>
 
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+      </div>
+    </div>
 
+    <!-- RIGHT: OUTPUT -->
+    <div class="output-card fade-up" style="transition-delay:0.1s;">
+      <div class="output-head">
+        <div class="output-head-left">
+          <div class="card-head-icon">📊</div>
+          <h2>Your Results</h2>
+        </div>
+        <div class="out-actions" id="out-actions" style="display:none;">
+          <button class="act-btn" onclick="shareResult()">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            Share
+          </button>
+          <button class="act-btn" onclick="resetTool()">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+            Reset
+          </button>
+        </div>
+      </div>
+
+      <div class="output-body">
+
+        <!-- Empty state -->
+        <div class="empty-state" id="empty-state">
+          <div class="empty-icon">🎯</div>
+          <h3>Results appear here</h3>
+          <p>Enter your attendance numbers and hit Calculate.</p>
+          <div class="how-steps">
+            <div class="how-step"><div class="step-num">1</div><p>Enter total classes conducted</p></div>
+            <div class="how-step"><div class="step-num">2</div><p>Enter how many you attended</p></div>
+            <div class="how-step"><div class="step-num">3</div><p>Set neutral classes and future misses</p></div>
+            <div class="how-step"><div class="step-num">4</div><p>Hit Calculate for instant results</p></div>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="result-wrap" id="result-wrap">
+
+          <!-- Gauge + status -->
+          <div class="gauge-section">
+            <div class="gauge-wrap">
+              <!-- SVG arc gauge (half-circle) -->
+              <svg width="120" height="120" viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="gauge-bg" cx="60" cy="60" r="48"/>
+                <circle class="gauge-fill" id="gauge-fill" cx="60" cy="60" r="48"
+                  stroke-dasharray="301.6" stroke-dashoffset="301.6"
+                  transform="rotate(-90 60 60)"/>
+              </svg>
+              <div class="gauge-num">
+                <strong id="pct-display">0</strong>
+                <span>%</span>
+              </div>
+            </div>
+            <div class="gauge-meta">
+              <div class="gauge-status" id="gauge-status">—</div>
+              <div class="gauge-msg" id="gauge-msg">—</div>
+            </div>
+          </div>
+
+          <!-- Stat cards -->
+          <div class="stat-grid" id="stat-grid">
+            <!-- filled by JS -->
+          </div>
+
+          <!-- Future impact bar -->
+          <div class="future-bar" id="future-bar" style="display:none;">
+            <h3>Future Impact <span id="future-label" style="font-weight:300;color:var(--ink3);font-size:12px;"></span></h3>
+            <div class="fbar-track">
+              <div class="fbar-fill" id="fbar-now" style="width:0%"></div>
+            </div>
+            <div class="fbar-labels">
+              <span id="fbar-now-label">Now: 0%</span>
+              <span id="fbar-after-label">After: 0%</span>
+            </div>
+          </div>
+
+          <!-- Advice -->
+          <div class="advice-box" id="advice-box">
+            <span class="advice-icon" id="advice-icon">ℹ️</span>
+            <div id="advice-text">—</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tool-layout -->
+
+  <!-- ── FAQ ── -->
+  <section class="faq-section fade-up" aria-labelledby="faq-heading">
+    <span class="faq-label">FAQ</span>
+    <h2 id="faq-heading">Everything about <em>attendance</em></h2>
+    <p class="faq-sub">Common questions students ask about attendance calculations.</p>
+    <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name" onclick="toggleFaq(this)">How is attendance percentage calculated?</h3>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Attendance % = (Classes Attended ÷ Effective Conducted) × 100. Effective conducted classes exclude neutral sessions where no attendance was marked. For example: 30 attended out of 35 effective = 85.7%.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name" onclick="toggleFaq(this)">How many classes can I skip and still stay at 75%?</h3>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Safe Bunks = floor((Attended − 0.75 × Effective) ÷ 0.75). If this is zero or negative, you cannot skip any more classes. Our calculator shows this instantly. The formula assumes you attend all remaining classes and only counts how many you can safely miss from here.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name" onclick="toggleFaq(this)">How many classes do I need to attend to reach 75%?</h3>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">If your attendance is below the required threshold, use: Classes Needed = ceil((T% × Effective − Attended) ÷ (1 − T%)), where T% is your minimum threshold (e.g. 0.75). This gives the minimum consecutive classes to attend without skipping any more.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name" onclick="toggleFaq(this)">What is the minimum attendance in most colleges?</h3>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Most colleges and universities require a minimum of 75% attendance to be eligible for final exams. Some require 80% or higher. Our calculator supports 70%, 75%, and 80% thresholds — always verify with your institution's official policy.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name" onclick="toggleFaq(this)">What are neutral classes?</h3>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Neutral classes are sessions that were held but where attendance was not formally recorded — such as cancelled classes still marked as conducted, or special exempt sessions. These are excluded from the effective count so your percentage is calculated accurately.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── OTHER TOOLS ── -->
+  <section class="other-tools fade-up" aria-label="More free student tools">
+    <h2>More <em>Free Tools</em></h2>
+    <div class="tools-row">
+      <a href="cgpa.html" class="mini-card">
+        <div class="mini-card-icon" style="background:#f0fdf4;">📈</div>
+        <div><h3>CGPA Calculator</h3><p>Calculate semester GPA instantly</p></div>
+      </a>
+      <a href="ai-resume-checker.html" class="mini-card">
+        <div class="mini-card-icon" style="background:#fef9c3;">🧠</div>
+        <div><h3>Resume Checker</h3><p>Free ATS score + feedback</p></div>
+      </a>
+      <a href="letter-writer.html" class="mini-card">
+        <div class="mini-card-icon" style="background:#fdf4ff;">✍️</div>
+        <div><h3>Letter Writer</h3><p>Leave applications & emails</p></div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="footer-logo" href="../index.html" aria-label="Student Toolkit Home">
+        <img src="../logo-dark.png" alt="Student Toolkit" height="44" style="height:44px;width:auto;margin-bottom:12px;"/>
+      </a>
+      <p>Free tools for students — attendance calculator, CGPA calculator, resume checker, and letter writer. No sign-up, no cost, ever.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Free Tools</h4>
+      <a href="attendance.html">Attendance Calculator</a>
+      <a href="cgpa.html">CGPA Calculator</a>
+      <a href="ai-resume-checker.html">AI Resume Checker</a>
+      <a href="letter-writer.html">Letter &amp; Email Writer</a>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="../index.html">Home</a>
+      <a href="../blog/brutal-resume-checker-guide.html">Resume Guide</a>
+      <a href="../blog/best-free-tools-for-students.html">Best Free Tools</a>
+      <a href="../index.html#suggest">Suggest a Tool</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Student Toolkit · <a href="../index.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">studenttoolkit.online</a></span>
+    <div class="social-links">
+      <a href="https://instagram.com/studenttoolkit" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="14" height="14" loading="lazy"/>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════════ -->
 <script>
-let finalText = "";
-let finalPercentage = 0;
+  let threshold = 75;
+  let lastResult = null;
 
-function animateCount(target) {
-  let current = 0;
-  let interval = setInterval(() => {
-    if(current >= target) {
-      clearInterval(interval);
+  // ── THRESHOLD SELECTOR ────────────────────────
+  function setThreshold(btn) {
+    document.querySelectorAll('.thresh-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    threshold = parseInt(btn.dataset.val);
+  }
+
+  // ── MAIN CALCULATE ────────────────────────────
+  function calculateAttendance() {
+    const T = parseInt(document.getElementById('total').value)        || 0;
+    const A = parseInt(document.getElementById('attended').value)     || 0;
+    const N = parseInt(document.getElementById('noAttendance').value) || 0;
+    const F = parseInt(document.getElementById('futureMiss').value)   || 0;
+    const thresh = threshold / 100;
+
+    // Validation
+    if (!T || T <= 0)        { showError('Please enter total classes conducted.'); return; }
+    if (A < 0)               { showError('Attended classes cannot be negative.'); return; }
+    if (N < 0)               { showError('Neutral classes cannot be negative.'); return; }
+    const E = T - N;
+    if (E <= 0)              { showError('Effective classes (Total − Neutral) must be greater than 0.'); return; }
+    if (A > E)               { showError('Attended classes cannot exceed effective conducted classes.'); return; }
+    hideError();
+
+    const pct       = (A / E) * 100;
+    const safeBunks = Math.max(0, Math.floor((A - thresh * E) / thresh));
+    const needed    = pct < threshold ? Math.ceil((thresh * E - A) / (1 - thresh)) : 0;
+
+    // Future projection
+    const futureE   = E + F;
+    const futurePct = F > 0 ? (A / futureE) * 100 : null;
+
+    lastResult = { pct, safeBunks, needed, E, A, threshold, futurePct, F };
+    displayResults(lastResult);
+
+    // Save to localStorage
+    localStorage.setItem('attendanceData', JSON.stringify({ T, A, N, F, threshold }));
+  }
+
+  // ── DISPLAY RESULTS ───────────────────────────
+  function displayResults(r) {
+    document.getElementById('empty-state').style.display = 'none';
+    document.getElementById('result-wrap').style.display = 'block';
+    document.getElementById('out-actions').style.display = 'flex';
+
+    const pct = r.pct;
+    const thresh = r.threshold;
+    const isSafe    = pct >= thresh;
+    const isWarning = pct >= thresh && pct < thresh + 5;
+    const isDanger  = pct < thresh;
+
+    // ── Gauge animation ──
+    const gauge = document.getElementById('gauge-fill');
+    const circumference = 301.6;
+    const fillPct = Math.min(pct, 100) / 100;
+    setTimeout(() => {
+      gauge.style.strokeDashoffset = circumference * (1 - fillPct);
+      gauge.style.stroke = isDanger ? 'var(--danger)' : isWarning ? 'var(--warn)' : 'var(--success)';
+    }, 60);
+
+    // Count-up
+    const pctEl = document.getElementById('pct-display');
+    pctEl.style.color = isDanger ? 'var(--danger)' : isWarning ? 'var(--warn)' : 'var(--success)';
+    let cur = 0;
+    const target = parseFloat(pct.toFixed(1));
+    const step = Math.max(0.5, target / 50);
+    const timer = setInterval(() => {
+      cur = Math.min(parseFloat((cur + step).toFixed(1)), target);
+      pctEl.textContent = cur.toFixed(1);
+      if (cur >= target) { pctEl.textContent = target.toFixed(1); clearInterval(timer); }
+    }, 20);
+
+    // Status label
+    const statusEl = document.getElementById('gauge-status');
+    const msgEl    = document.getElementById('gauge-msg');
+    if (isDanger) {
+      statusEl.textContent = '⚠ Below ' + thresh + '%';
+      statusEl.style.color = 'var(--danger)';
+      msgEl.textContent    = 'You need to attend ' + r.needed + ' consecutive classes without missing any.';
+    } else if (isWarning) {
+      statusEl.textContent = '⚠ Just Safe';
+      statusEl.style.color = 'var(--warn)';
+      msgEl.textContent    = 'You\'re above ' + thresh + '% but very close to the boundary. Don\'t miss more classes.';
     } else {
-      current++;
-      drawCircle(current);
+      statusEl.textContent = '✅ You\'re Safe';
+      statusEl.style.color = 'var(--success)';
+      msgEl.textContent    = 'You have ' + r.safeBunks + ' safe bunk' + (r.safeBunks !== 1 ? 's' : '') + ' remaining above ' + thresh + '%.';
     }
-  }, 15);
-}
 
-function drawCircle(percent) {
-  const canvas = document.getElementById("progressCanvas");
-  const ctx = canvas.getContext("2d");
+    // ── Stat Cards ──
+    const statGrid = document.getElementById('stat-grid');
+    const stats = [
+      {
+        label: 'Attendance',
+        val: pct.toFixed(1) + '%',
+        sub: r.A + ' of ' + r.E + ' effective classes',
+        cls: isDanger ? 'danger' : isWarning ? 'warn' : 'safe',
+        valCls: isDanger ? 'danger-val' : isWarning ? 'warn-val' : 'safe-val'
+      },
+      {
+        label: isDanger ? 'Classes Needed' : 'Safe Bunks Left',
+        val: isDanger ? r.needed : r.safeBunks,
+        sub: isDanger ? 'to reach ' + thresh + '%' : 'before hitting ' + thresh + '%',
+        cls: isDanger ? 'danger' : r.safeBunks <= 2 ? 'warn' : 'safe',
+        valCls: isDanger ? 'danger-val' : r.safeBunks <= 2 ? 'warn-val' : 'safe-val'
+      },
+      {
+        label: 'Threshold',
+        val: thresh + '%',
+        sub: 'your minimum requirement',
+        cls: '', valCls: ''
+      },
+      {
+        label: 'Effective Classes',
+        val: r.E,
+        sub: 'excluding neutral sessions',
+        cls: 'highlight', valCls: ''
+      }
+    ];
+    statGrid.innerHTML = stats.map(s => `
+      <div class="stat-card ${s.cls}">
+        <div class="stat-label">${s.label}</div>
+        <div class="stat-val ${s.valCls}">${s.val}</div>
+        <div class="stat-sub">${s.sub}</div>
+      </div>`).join('');
 
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // ── Future Impact Bar ──
+    const futureBar = document.getElementById('future-bar');
+    if (r.futurePct !== null && r.F > 0) {
+      futureBar.style.display = 'block';
+      document.getElementById('future-label').textContent = '(if you miss ' + r.F + ' more class' + (r.F !== 1 ? 'es' : '') + ')';
+      const nowW   = Math.min(pct, 100);
+      const afterW = Math.min(r.futurePct, 100);
+      const barColor = r.futurePct < thresh ? 'var(--danger)' : r.futurePct < thresh + 5 ? 'var(--warn)' : 'var(--success)';
+      const fbar = document.getElementById('fbar-now');
+      fbar.style.background = barColor;
+      setTimeout(() => { fbar.style.width = afterW + '%'; }, 100);
+      document.getElementById('fbar-now-label').textContent  = 'Now: ' + pct.toFixed(1) + '%';
+      document.getElementById('fbar-after-label').textContent = 'After: ' + r.futurePct.toFixed(1) + '%';
+    } else {
+      futureBar.style.display = 'none';
+    }
 
-  const center = canvas.width / 2;
-  const radius = 90;
-  const start = -0.5 * Math.PI;
-  const end = start + (percent / 100) * 2 * Math.PI;
+    // ── Advice Box ──
+    const adviceBox  = document.getElementById('advice-box');
+    const adviceIcon = document.getElementById('advice-icon');
+    const adviceText = document.getElementById('advice-text');
+    adviceBox.className = 'advice-box';
 
-  ctx.lineWidth = 15;
+    if (isDanger) {
+      adviceBox.classList.add('danger-advice');
+      adviceIcon.textContent = '🚨';
+      adviceText.innerHTML = '<strong>Action required.</strong> You must attend the next <strong>' + r.needed + ' consecutive classes</strong> without skipping a single one to recover to ' + thresh + '%. Talk to your professor if you have a medical or emergency excuse — many colleges allow condonation.';
+    } else if (isWarning) {
+      adviceBox.classList.add('warn-advice');
+      adviceIcon.textContent = '⚠️';
+      adviceText.innerHTML = '<strong>Proceed carefully.</strong> You\'re safe but dangerously close. You can afford at most <strong>' + r.safeBunks + ' more absence' + (r.safeBunks !== 1 ? 's' : '') + '</strong>. One unexpected sickness could drop you below ' + thresh + '%.';
+    } else {
+      adviceBox.classList.add('safe-advice');
+      adviceIcon.textContent = '✅';
+      adviceText.innerHTML = '<strong>You\'re safe!</strong> You have <strong>' + r.safeBunks + ' bunk' + (r.safeBunks !== 1 ? 's' : '') + ' remaining</strong> before falling below ' + thresh + '%. Use them wisely — unexpected situations like illness can eat into this buffer quickly.';
+    }
 
-  ctx.beginPath();
-  ctx.strokeStyle = "#eee";
-  ctx.arc(center, center, radius, 0, 2 * Math.PI);
-  ctx.stroke();
-
-  ctx.beginPath();
-  ctx.strokeStyle = percent >= 75 ? "#5f2cff" : "#ff4d4d";
-  ctx.arc(center, center, radius, start, end);
-  ctx.stroke();
-
-  ctx.font = "24px Poppins";
-  ctx.fillStyle = "#111";
-  ctx.textAlign = "center";
-  ctx.fillText(percent + "%", center, center + 8);
-}
-
-function calculateAttendance() {
-
-  let T = parseInt(document.getElementById("total").value) || 0;
-  let A = parseInt(document.getElementById("attended").value) || 0;
-  let N = parseInt(document.getElementById("noAttendance").value) || 0;
-  let F = parseInt(document.getElementById("futureMiss").value) || 0;
-
-  let E = T - N; // effective conducted lectures
-
-  if(E <= 0 || A > E) {
-    document.getElementById("result").innerHTML = "Invalid input.";
-    return;
+    // Scroll on mobile
+    if (window.innerWidth < 820) {
+      document.querySelector('.output-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
-  let percentage = (A / E) * 100;
-  finalPercentage = percentage.toFixed(1);
+  // ── SHARE ─────────────────────────────────────
+  async function shareResult() {
+    if (!lastResult) return;
+    const r = lastResult;
+    const text = `My Attendance: ${r.pct.toFixed(1)}% | Safe Bunks: ${r.safeBunks} | ${r.pct >= r.threshold ? '✅ Safe' : '⚠ Need ' + r.needed + ' more classes'} — Check yours at https://studenttoolkit.online/tools/attendance.html`;
+    try { await navigator.clipboard.writeText(text); }
+    catch { const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); }
+    const btn = document.querySelector('[onclick="shareResult()"]');
+    const orig = btn.innerHTML;
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => { btn.innerHTML = orig; }, 2000);
+  }
 
-  // Correct formula: X = 3E - 4A
-  let X = Math.ceil((3 * E) - (4 * A));
-  if(X < 0) X = 0;
-
-  let futureTotal = E + F;
-  let futurePercentage = (A / futureTotal) * 100;
-
-  finalText = `Current Attendance: ${finalPercentage}% | `;
-
-  if(percentage >= 75) {
-    finalText += `You are safe above 75%.`;
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 }
+  // ── RESET ─────────────────────────────────────
+  function resetTool() {
+    ['total','attended','noAttendance','futureMiss'].forEach(id => {
+      document.getElementById(id).value = id === 'noAttendance' || id === 'futureMiss' ? '0' : '';
     });
-  } else {
-    finalText += `Attend ${X} consecutive lectures to reach 75%.`;
+    document.getElementById('result-wrap').style.display  = 'none';
+    document.getElementById('empty-state').style.display  = 'flex';
+    document.getElementById('out-actions').style.display  = 'none';
+    hideError();
+    lastResult = null;
   }
 
-  finalText += ` | If you miss ${F} more lectures, attendance becomes ${futurePercentage.toFixed(1)}%.`;
+  // ── ERRORS ───────────────────────────────────
+  function showError(msg) { const el = document.getElementById('error-box'); el.textContent = '⚠ ' + msg; el.style.display = 'block'; }
+  function hideError()    { document.getElementById('error-box').style.display = 'none'; }
 
-  document.getElementById("result").innerHTML = finalText;
+  // ── RESTORE FROM LOCALSTORAGE ─────────────────
+  window.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem('attendanceData');
+    if (saved) {
+      try {
+        const d = JSON.parse(saved);
+        if (d.T) document.getElementById('total').value           = d.T;
+        if (d.A) document.getElementById('attended').value        = d.A;
+        if (d.N !== undefined) document.getElementById('noAttendance').value = d.N;
+        if (d.F !== undefined) document.getElementById('futureMiss').value   = d.F;
+        if (d.threshold) {
+          threshold = d.threshold;
+          document.querySelectorAll('.thresh-btn').forEach(b => {
+            b.classList.toggle('active', parseInt(b.dataset.val) === d.threshold);
+          });
+        }
+      } catch(e) {}
+    }
+  });
 
-  animateCount(Math.round(percentage));
+  // ── ENTER KEY ─────────────────────────────────
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Enter') calculateAttendance();
+  });
 
-  localStorage.setItem("attendanceResult", finalText);
-}
+  // ── NAVBAR ────────────────────────────────────
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
 
-function shareAttendance() {
-  navigator.clipboard.writeText(finalText + " Check yours at https://studenttoolkit.online");
-  alert("Copied to clipboard!");
-}
-
-function downloadImage() {
-
-  const canvas = document.createElement("canvas");
-  canvas.width = 600;
-  canvas.height = 600;
-  const ctx = canvas.getContext("2d");
-
-  ctx.fillStyle = "#f7f9fc";
-  ctx.fillRect(0, 0, 600, 600);
-
-  ctx.font = "32px Poppins";
-  ctx.fillStyle = "#111";
-  ctx.textAlign = "center";
-  ctx.fillText("Student Toolkit", 300, 70);
-
-  ctx.font = "18px Poppins";
-  ctx.fillText(finalText, 300, 140);
-
-  ctx.beginPath();
-  ctx.arc(300, 350, 120, 0, 2 * Math.PI);
-  ctx.strokeStyle = "#eee";
-  ctx.lineWidth = 18;
-  ctx.stroke();
-
-  ctx.beginPath();
-  ctx.strokeStyle = finalPercentage >= 75 ? "#5f2cff" : "#ff4d4d";
-  ctx.arc(300, 350, 120, -0.5 * Math.PI, -0.5 * Math.PI + (finalPercentage / 100) * 2 * Math.PI);
-  ctx.stroke();
-
-  ctx.font = "36px Poppins";
-  ctx.fillText(finalPercentage + "%", 300, 365);
-
-  ctx.font = "16px Poppins";
-  ctx.fillStyle = "rgba(0,0,0,0.4)";
-  ctx.fillText("studenttoolkit.online", 300, 560);
-
-  let link = document.createElement("a");
-  link.download = "attendance-result.png";
-  link.href = canvas.toDataURL();
-  link.click();
-}
-
-window.onload = function() {
-  let saved = localStorage.getItem("attendanceResult");
-  if(saved) {
-    document.getElementById("result").innerHTML = saved;
+  function toggleMenu() {
+    const hb = document.getElementById('hamburger');
+    const mm = document.getElementById('mobile-menu');
+    const open = mm.classList.toggle('open');
+    hb.classList.toggle('open', open);
+    hb.setAttribute('aria-expanded', open);
   }
-}
+  document.addEventListener('click', e => {
+    const hb = document.getElementById('hamburger');
+    const mm = document.getElementById('mobile-menu');
+    if (!hb.contains(e.target) && !mm.contains(e.target)) {
+      hb.classList.remove('open'); mm.classList.remove('open');
+    }
+  });
+
+  // ── FAQ ───────────────────────────────────────
+  function toggleFaq(h3) {
+    const item = h3.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  // ── SCROLL ANIMATIONS ─────────────────────────
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
 </script>
 
 </body>
