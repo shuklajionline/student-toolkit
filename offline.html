@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>You're Offline – Student Toolkit</title>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#4f46e5"/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --bg:#f7f6f2; --ink:#1a1916; --ink3:#8a8680; --accent:#4f46e5; --border:#d8d4cc; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:'Geist',sans-serif; background:var(--bg); color:var(--ink); min-height:100vh; display:flex; align-items:center; justify-content:center; padding:24px; -webkit-font-smoothing:antialiased; }
+    .card { background:#fff; border:1px solid var(--border); border-radius:20px; padding:48px 36px; max-width:400px; width:100%; text-align:center; box-shadow:0 8px 40px rgba(0,0,0,.08); }
+    .icon { font-size:52px; display:block; margin-bottom:20px; }
+    h1 { font-family:'Instrument Serif',serif; font-size:28px; font-weight:400; color:var(--ink); margin-bottom:10px; letter-spacing:-.02em; }
+    p { font-size:15px; color:var(--ink3); font-weight:300; line-height:1.65; margin-bottom:28px; }
+    .btn { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff; padding:13px 24px; border-radius:10px; font-size:14px; font-weight:600; text-decoration:none; font-family:'Geist',sans-serif; border:none; cursor:pointer; transition:all .18s; }
+    .btn:hover { background:#4338ca; transform:translateY(-1px); }
+    .tools { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:28px; }
+    .tool-btn { background:var(--bg); border:1.5px solid var(--border); border-radius:10px; padding:12px; text-decoration:none; color:var(--ink); font-size:13px; font-weight:500; text-align:center; transition:all .15s; }
+    .tool-btn:hover { border-color:var(--accent); color:var(--accent); }
+    .tool-btn span { font-size:20px; display:block; margin-bottom:4px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <span class="icon">📶</span>
+    <h1>You're Offline</h1>
+    <p>No internet connection right now. But don't worry — if you've visited Student Toolkit before, the tools may still work from your local cache.</p>
+    <button class="btn" onclick="window.location.reload()">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+      Try Again
+    </button>
+    <div class="tools">
+      <a href="/tools/attendance.html" class="tool-btn"><span>📊</span>Attendance</a>
+      <a href="/tools/cgpa.html"       class="tool-btn"><span>📈</span>CGPA</a>
+      <a href="/tools/ai-resume-checker.html" class="tool-btn"><span>🧠</span>Resume</a>
+      <a href="/tools/letter-writer.html"     class="tool-btn"><span>✍️</span>Letters</a>
+    </div>
+  </div>
+</body>
+</html>
