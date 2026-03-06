@@ -925,44 +925,166 @@
   </div>
 </section>
 
-<!-- ── LIVE NEWS TEASER ── -->
-<section class="section" id="news-teaser" aria-labelledby="news-teaser-heading" style="background:var(--ink);padding:56px 24px;">
-  <div class="section-inner">
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:28px;">
-      <div>
-        <div style="display:inline-flex;align-items:center;gap:7px;background:var(--danger);color:#fff;border-radius:20px;padding:4px 13px;font-size:11.5px;font-weight:700;letter-spacing:.05em;margin-bottom:12px;">
-          <span style="width:6px;height:6px;border-radius:50%;background:#fff;animation:pulse 1.2s infinite;display:inline-block;"></span>LIVE NOW
-        </div>
-        <h2 style="font-family:'Instrument Serif',serif;font-size:clamp(24px,3.5vw,38px);font-weight:400;color:#fff;letter-spacing:-.02em;line-height:1.1;" id="news-teaser-heading">
-          Latest News &amp; <em style="font-style:italic;color:#fca5a5;">Scores</em>
-        </h2>
-        <p style="font-size:14px;color:rgba(255,255,255,.5);margin-top:6px;font-weight:300;">Education headlines and sports scores, updated every 5 minutes.</p>
+<!-- ══════════════════════════════════════════════════════
+     HOMEPAGE NEWS PORTAL
+════════════════════════════════════════════════════════ -->
+<section id="news-portal" aria-labelledby="news-portal-heading" style="background:var(--ink);padding:60px 0 0;">
+
+  <!-- PORTAL HEADER -->
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px 28px;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+    <div>
+      <div style="display:inline-flex;align-items:center;gap:7px;background:var(--danger);color:#fff;border-radius:20px;padding:4px 14px;font-size:11px;font-weight:700;letter-spacing:.06em;margin-bottom:12px;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#fff;display:inline-block;animation:pulse 1.2s infinite;"></span>LIVE INDIA NEWS
       </div>
-      <a href="news.html" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;padding:11px 20px;border-radius:10px;font-size:13.5px;font-weight:600;text-decoration:none;transition:all .18s;white-space:nowrap;" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
-        View All News &amp; Scores →
+      <h2 id="news-portal-heading" style="font-family:'Instrument Serif',serif;font-size:clamp(26px,3.5vw,42px);font-weight:400;color:#fff;letter-spacing:-.025em;line-height:1.1;">
+        India News &amp; <em style="font-style:italic;color:#fca5a5;">Sports</em>
+      </h2>
+      <p style="font-size:13.5px;color:rgba(255,255,255,.45);margin-top:7px;font-weight:300;">From NDTV, Times of India, The Hindu &amp; more · Refreshes every 5 min</p>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+      <span id="hp-portal-updated" style="font-size:12px;color:rgba(255,255,255,.3);"></span>
+      <button onclick="hpRefreshAll()" style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:9px 16px;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Geist',sans-serif;transition:all .18s;" onmouseover="this.style.background='rgba(255,255,255,.14)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg> Refresh
+      </button>
+      <a href="news.html" style="display:inline-flex;align-items:center;gap:6px;background:var(--danger);color:#fff;padding:9px 18px;border-radius:9px;font-size:13px;font-weight:600;text-decoration:none;transition:all .18s;" onmouseover="this.style.background='#b91c1c'" onmouseout="this.style.background='var(--danger)'">
+        Full Portal →
       </a>
     </div>
+  </div>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;" id="hp-news-grid">
-      <!-- skeleton -->
-      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:10px;">
-        <div style="height:10px;border-radius:6px;background:rgba(255,255,255,.1);width:40%;"></div>
-        <div style="height:14px;border-radius:6px;background:rgba(255,255,255,.08);width:90%;"></div>
-        <div style="height:14px;border-radius:6px;background:rgba(255,255,255,.06);width:70%;"></div>
-      </div>
-      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:10px;">
-        <div style="height:10px;border-radius:6px;background:rgba(255,255,255,.1);width:40%;"></div>
-        <div style="height:14px;border-radius:6px;background:rgba(255,255,255,.08);width:90%;"></div>
-        <div style="height:14px;border-radius:6px;background:rgba(255,255,255,.06);width:70%;"></div>
-      </div>
-      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:10px;">
-        <div style="height:10px;border-radius:6px;background:rgba(255,255,255,.1);width:40%;"></div>
-        <div style="height:14px;border-radius:6px;background:rgba(255,255,255,.08);width:90%;"></div>
-        <div style="height:14px;border-radius:6px;background:rgba(255,255,255,.06);width:70%;"></div>
+  <!-- ROLLING TICKER -->
+  <div style="background:rgba(255,255,255,.05);border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);height:34px;display:flex;align-items:center;overflow:hidden;margin-bottom:28px;">
+    <div style="background:var(--danger);color:#fff;padding:0 16px;height:100%;display:flex;align-items:center;font-size:10.5px;font-weight:700;letter-spacing:.1em;flex-shrink:0;white-space:nowrap;">BREAKING</div>
+    <div style="overflow:hidden;flex:1;position:relative;">
+      <div id="hp-ticker" style="display:flex;white-space:nowrap;animation:ticker 50s linear infinite;">
+        <span style="padding:0 40px;font-size:12.5px;color:rgba(255,255,255,.5);">Loading latest headlines...</span>
       </div>
     </div>
   </div>
+
+  <!-- CATEGORY TABS -->
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;">
+    <button class="hp-tab active" onclick="hpSwitchTab('top')"       data-tab="top">🇮🇳 Top News</button>
+    <button class="hp-tab"        onclick="hpSwitchTab('education')"  data-tab="education">🎓 Education</button>
+    <button class="hp-tab"        onclick="hpSwitchTab('tech')"       data-tab="tech">💻 Tech</button>
+    <button class="hp-tab"        onclick="hpSwitchTab('business')"   data-tab="business">📊 Business</button>
+    <button class="hp-tab"        onclick="hpSwitchTab('sports')"     data-tab="sports">🏏 Cricket</button>
+    <button class="hp-tab"        onclick="hpSwitchTab('science')"    data-tab="science">🔬 Science</button>
+  </div>
+
+  <!-- MAIN PORTAL GRID -->
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px 0;display:grid;grid-template-columns:1fr 300px;gap:20px;align-items:start;">
+
+    <!-- NEWS FEED -->
+    <div>
+      <div id="hp-news-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <!-- skeletons -->
+        <div style="grid-column:1/-1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;height:200px;display:flex;align-items:center;justify-content:center;"><div style="width:40px;height:40px;border:3px solid rgba(255,255,255,.15);border-top-color:var(--danger);border-radius:50%;animation:spin .8s linear infinite;"></div></div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;height:140px;"></div>
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;height:140px;"></div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR: SCORES + TRENDING -->
+    <div style="display:flex;flex-direction:column;gap:14px;">
+
+      <!-- LIVE SCORES -->
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;">
+        <div style="padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-size:13px;font-weight:700;color:#fff;">🏏 Live Scores</span>
+          <span style="font-size:10px;font-weight:700;background:var(--danger);color:#fff;padding:2px 8px;border-radius:10px;">LIVE</span>
+        </div>
+        <div id="hp-scores" style="padding:8px 0;">
+          <div style="padding:16px;text-align:center;font-size:12.5px;color:rgba(255,255,255,.3);">Loading scores...</div>
+        </div>
+      </div>
+
+      <!-- TRENDING -->
+      <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;">
+        <div style="padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px;font-weight:700;color:#fff;">🔥 Trending India</div>
+        <div id="hp-trending" style="padding:4px 0;">
+          <div style="padding:16px;text-align:center;font-size:12.5px;color:rgba(255,255,255,.3);">Loading...</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- VIEW ALL STRIP -->
+  <div style="max-width:1200px;margin:28px auto 0;padding:20px 24px;border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+    <span style="font-size:13px;color:rgba(255,255,255,.35);">More categories: World · Bollywood · Politics · Science · Health</span>
+    <a href="news.html" style="font-size:13.5px;font-weight:600;color:var(--danger);text-decoration:none;">View Full News Portal →</a>
+  </div>
 </section>
+
+<style>
+  /* ── PORTAL STYLES ── */
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .hp-tab {
+    padding: 8px 16px; font-size: 13px; font-weight: 500;
+    color: rgba(255,255,255,.5); background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1); border-radius: 20px;
+    cursor: pointer; font-family: 'Geist', sans-serif;
+    transition: all .15s; white-space: nowrap;
+  }
+  .hp-tab:hover { color: #fff; background: rgba(255,255,255,.12); }
+  .hp-tab.active { color: #fff; background: var(--danger); border-color: var(--danger); }
+
+  /* featured news card dark */
+  .hp-card-featured {
+    grid-column: 1 / -1;
+    display: grid; grid-template-columns: 1.2fr 1fr;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+    border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit;
+    min-height: 200px; transition: all .2s;
+  }
+  .hp-card-featured:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.2); transform: translateY(-2px); }
+  .hp-card-featured-img { background: linear-gradient(135deg,#1e1b4b,#312e81); display: flex; align-items: center; justify-content: center; font-size: 48px; min-height: 200px; overflow: hidden; }
+  .hp-card-featured-img img { width: 100%; height: 100%; object-fit: cover; }
+  .hp-card-featured-body { padding: 22px 20px; display: flex; flex-direction: column; justify-content: space-between; }
+  .hp-card-source { font-size: 10.5px; font-weight: 700; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+  .hp-card-featured-body h3 { font-family: 'Instrument Serif', serif; font-size: clamp(16px,2vw,22px); font-weight: 400; color: #fff; line-height: 1.35; margin-bottom: 10px; }
+  .hp-card-featured-body p { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.6; font-weight: 300; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hp-card-time { font-size: 11.5px; color: rgba(255,255,255,.3); margin-top: 14px; }
+
+  /* small news card dark */
+  .hp-card {
+    background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.09);
+    border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit;
+    display: flex; flex-direction: column; transition: all .2s;
+  }
+  .hp-card:hover { background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.18); transform: translateY(-2px); }
+  .hp-card-img { height: 90px; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+  .hp-card-img img { width: 100%; height: 100%; object-fit: cover; }
+  .hp-card-body { padding: 12px 14px; flex: 1; display: flex; flex-direction: column; }
+  .hp-card-body h3 { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.9); line-height: 1.4; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .hp-card-body .hp-card-time { font-size: 11px; color: rgba(255,255,255,.3); margin-top: 8px; }
+
+  /* score rows */
+  .hp-match { padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,.06); display: flex; align-items: center; gap: 8px; }
+  .hp-match:last-child { border-bottom: none; }
+  .hp-team { flex: 1; font-size: 12px; font-weight: 500; color: rgba(255,255,255,.7); }
+  .hp-team.r { text-align: right; }
+  .hp-score { font-family: 'Instrument Serif', serif; font-size: 20px; color: #fff; min-width: 22px; text-align: center; }
+  .hp-sep { font-size: 11px; color: rgba(255,255,255,.2); }
+
+  /* trending items */
+  .hp-trend { display: flex; align-items: flex-start; gap: 10px; padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,.06); text-decoration: none; color: inherit; transition: background .15s; }
+  .hp-trend:last-child { border-bottom: none; }
+  .hp-trend:hover { background: rgba(255,255,255,.05); }
+  .hp-trend-num { font-family: 'Instrument Serif', serif; font-size: 18px; color: rgba(255,255,255,.2); flex-shrink: 0; width: 20px; line-height: 1; }
+  .hp-trend-text { font-size: 12.5px; color: rgba(255,255,255,.7); font-weight: 500; line-height: 1.4; }
+  .hp-trend-src { font-size: 11px; color: rgba(255,255,255,.3); margin-top: 2px; }
+
+  @media (max-width: 900px) {
+    #news-portal > div:nth-child(5) { grid-template-columns: 1fr !important; }
+    #news-portal > div:nth-child(5) > div:last-child { display: none; }
+    .hp-card-featured { grid-template-columns: 1fr !important; }
+    .hp-card-featured-img { min-height: 120px !important; font-size: 36px !important; }
+    #hp-news-grid { grid-template-columns: 1fr !important; }
+  }
+</style>
 
 <!-- ── BLOG SECTION ── -->
 <section class="section blog-section" id="blog" aria-labelledby="blog-heading">
@@ -1201,34 +1323,185 @@
     });
   });
 
-  /* ── HOMEPAGE NEWS TEASER ── */
-  (async () => {
-    try {
-      const res = await fetch('https://content.guardianapis.com/search?q=India%20education%20students%20university&show-fields=headline,trailText&page-size=3&order-by=newest&api-key=038ee300-ba86-447a-89a9-d16a7771e8aa');
-      if (!res.ok) return;
-      const data = await res.json();
-      const articles = data.response?.results || [];
-      if (!articles.length) return;
+  /* ══════════════════════════════════════════════
+     HOMEPAGE NEWS PORTAL — NewsData.io
+  ══════════════════════════════════════════════ */
+  const HP_KEY  = 'pub_f1385a4dcd7242e5aa90489200656bb3';
+  const HP_BASE = 'https://newsdata.io/api/1/latest';
 
-      const grid = document.getElementById('hp-news-grid');
-      grid.innerHTML = articles.map(a => {
-        const diff = (Date.now() - new Date(a.webPublicationDate)) / 1000;
-        const when = diff < 3600 ? Math.floor(diff/60)+'m ago' : Math.floor(diff/3600)+'h ago';
-        const title = (a.fields?.headline || a.webTitle).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-        const trail = (a.fields?.trailText||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').substring(0,100);
-        return `
-          <a href="${a.webUrl}" target="_blank" rel="noopener noreferrer"
-             style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:18px 20px;display:block;text-decoration:none;transition:all .18s;"
-             onmouseover="this.style.background='rgba(255,255,255,.1)';this.style.borderColor='rgba(255,255,255,.2)'"
-             onmouseout="this.style.background='rgba(255,255,255,.05)';this.style.borderColor='rgba(255,255,255,.1)'">
-            <div style="font-size:10.5px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">🎓 Education · ${when}</div>
-            <div style="font-size:14px;font-weight:600;color:#fff;line-height:1.45;margin-bottom:6px;">${title}</div>
-            ${trail ? `<div style="font-size:12.5px;color:rgba(255,255,255,.45);font-weight:300;line-height:1.5;">${trail}…</div>` : ''}
-          </a>`;
-      }).join('');
-    } catch(e) {
-      // Silently fail — teaser is non-critical
+  const HP_CATS = {
+    top:       { q: '',                                             emoji: '🇮🇳', bg: 'linear-gradient(135deg,#138808,#0a4f08)' },
+    education: { q: 'education university college students exam',   emoji: '🎓', bg: 'linear-gradient(135deg,#312e81,#1e1b4b)' },
+    tech:      { q: 'technology startup AI software app',          emoji: '💻', bg: 'linear-gradient(135deg,#1e3a5f,#1e40af)' },
+    business:  { q: 'business economy market sensex nifty finance', emoji: '📊', bg: 'linear-gradient(135deg,#78350f,#92400e)' },
+    sports:    { q: 'cricket IPL football kabaddi sports India',    emoji: '🏏', bg: 'linear-gradient(135deg,#1c1917,#292524)' },
+    science:   { q: 'science ISRO space research health medicine',  emoji: '🔬', bg: 'linear-gradient(135deg,#134e4a,#0f766e)' },
+  };
+
+  const hpCache = {};
+  let hpCurrentTab = 'top';
+
+  function hpEsc(s) {
+    if (!s) return '';
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  function hpTimeAgo(iso) {
+    if (!iso) return '';
+    const d = (Date.now() - new Date(iso)) / 1000;
+    if (d < 60) return 'Just now';
+    if (d < 3600) return Math.floor(d/60) + 'm ago';
+    if (d < 86400) return Math.floor(d/3600) + 'h ago';
+    return Math.floor(d/86400) + 'd ago';
+  }
+
+  async function hpFetch(cat) {
+    if (hpCache[cat] && Date.now() - hpCache[cat].ts < 5*60*1000) return hpCache[cat].data;
+    const cfg = HP_CATS[cat];
+    const p = new URLSearchParams({ apikey: HP_KEY, country: 'in', language: 'english', ...(cfg.q ? { q: cfg.q } : {}) });
+    try {
+      const r = await fetch(`${HP_BASE}?${p}`);
+      if (!r.ok) throw new Error(r.status);
+      const d = await r.json();
+      if (d.status !== 'success') throw new Error(d.message);
+      hpCache[cat] = { data: d.results || [], ts: Date.now() };
+      return hpCache[cat].data;
+    } catch(e) { console.warn('[HP News]', e); return null; }
+  }
+
+  function hpRenderNews(articles, cat) {
+    const grid = document.getElementById('hp-news-grid');
+    const cfg  = HP_CATS[cat];
+    if (!articles || !articles.length) {
+      grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:40px;color:rgba(255,255,255,.4);font-size:14px;">${cfg.emoji} No articles found. Try refreshing.</div>`;
+      return;
     }
+    const [f, ...rest] = articles;
+    const featHtml = `
+      <a href="${hpEsc(f.link)}" target="_blank" rel="noopener noreferrer" class="hp-card-featured">
+        <div class="hp-card-featured-img" style="background:${cfg.bg};">
+          ${f.image_url ? `<img src="${hpEsc(f.image_url)}" alt="" loading="lazy" onerror="this.parentElement.textContent='${cfg.emoji}'"/>` : cfg.emoji}
+        </div>
+        <div class="hp-card-featured-body">
+          <div class="hp-card-source">${hpEsc(f.source_name || 'India News')}</div>
+          <h3>${hpEsc(f.title)}</h3>
+          <p>${hpEsc(f.description || '')}</p>
+          <div class="hp-card-time">${hpTimeAgo(f.pubDate)}</div>
+        </div>
+      </a>`;
+    const cardsHtml = rest.slice(0,5).map(a => `
+      <a href="${hpEsc(a.link)}" target="_blank" rel="noopener noreferrer" class="hp-card">
+        <div class="hp-card-img" style="background:${cfg.bg}18;">
+          ${a.image_url ? `<img src="${hpEsc(a.image_url)}" alt="" loading="lazy" onerror="this.parentElement.textContent='${cfg.emoji}'"/>` : cfg.emoji}
+        </div>
+        <div class="hp-card-body">
+          <div class="hp-card-source" style="font-size:10px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;">${hpEsc(a.source_name||'News')}</div>
+          <h3>${hpEsc(a.title)}</h3>
+          <div class="hp-card-time">${hpTimeAgo(a.pubDate)}</div>
+        </div>
+      </a>`).join('');
+    grid.innerHTML = featHtml + cardsHtml;
+  }
+
+  function hpRenderTicker(articles) {
+    if (!articles || !articles.length) return;
+    const items = [...articles, ...articles].slice(0,16).map(a =>
+      `<span style="padding:0 36px;font-size:12px;color:rgba(255,255,255,.55);">● ${hpEsc(a.title)}</span>`
+    ).join('');
+    document.getElementById('hp-ticker').innerHTML = items;
+  }
+
+  function hpRenderTrending(articles) {
+    if (!articles || !articles.length) return;
+    document.getElementById('hp-trending').innerHTML = articles.slice(0,6).map((a,i) => `
+      <a href="${hpEsc(a.link)}" target="_blank" rel="noopener noreferrer" class="hp-trend">
+        <div class="hp-trend-num">${i+1}</div>
+        <div>
+          <div class="hp-trend-text">${hpEsc(a.title)}</div>
+          <div class="hp-trend-src">${hpEsc(a.source_name||'')} · ${hpTimeAgo(a.pubDate)}</div>
+        </div>
+      </a>`).join('');
+  }
+
+  async function hpFetchScores() {
+    const feeds = [
+      { label:'Cricket',   emoji:'🏏', url:'https://site.api.espn.com/apis/site/v2/sports/cricket/scoreboard' },
+      { label:'ISL',       emoji:'⚽', url:'https://site.api.espn.com/apis/site/v2/sports/soccer/ind.1/scoreboard' },
+      { label:'Champions', emoji:'🏆', url:'https://site.api.espn.com/apis/site/v2/sports/soccer/UEFA.CHAMPIONS/scoreboard' },
+    ];
+    const box = document.getElementById('hp-scores');
+    box.innerHTML = '';
+    let any = false;
+    for (const f of feeds) {
+      try {
+        const r = await fetch(f.url);
+        if (!r.ok) continue;
+        const d = await r.json();
+        const evs = (d.events||[]).slice(0,2);
+        if (!evs.length) continue;
+        any = true;
+        const header = `<div style="padding:6px 16px 4px;font-size:10.5px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.08em;">${f.emoji} ${f.label}</div>`;
+        const rows = evs.map(ev => {
+          const teams = ev.competitions?.[0]?.competitors||[];
+          const isLive = ev.status?.type?.state==='in';
+          const isFT   = ev.status?.type?.completed;
+          const home   = teams.find(t=>t.homeAway==='home')||teams[0];
+          const away   = teams.find(t=>t.homeAway==='away')||teams[1];
+          if (!home||!away) return '';
+          return `<div class="hp-match">
+            <div class="hp-team">${hpEsc(home.team?.shortDisplayName||'Home')}</div>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <span class="hp-score">${home.score??'—'}</span>
+              <span class="hp-sep">:</span>
+              <span class="hp-score">${away.score??'—'}</span>
+            </div>
+            <div class="hp-team r">${hpEsc(away.team?.shortDisplayName||'Away')}</div>
+          </div>
+          <div style="text-align:center;font-size:10px;padding:0 0 6px;color:${isLive?'#f87171':'rgba(255,255,255,.25)'};">${isLive?'🔴 LIVE':isFT?'Full Time':'Upcoming'}</div>`;
+        }).join('');
+        box.innerHTML += header + rows;
+      } catch(e) {}
+    }
+    if (!any) box.innerHTML = `<div style="padding:16px;text-align:center;font-size:12px;color:rgba(255,255,255,.3);">🏏 No live matches right now</div>`;
+  }
+
+  const hpLoadedTabs = new Set();
+  async function hpSwitchTab(tab) {
+    hpCurrentTab = tab;
+    document.querySelectorAll('.hp-tab').forEach(b =>
+      b.classList.toggle('active', b.dataset.tab === tab)
+    );
+    if (!hpLoadedTabs.has(tab)) {
+      hpLoadedTabs.add(tab);
+      document.getElementById('hp-news-grid').innerHTML = `<div style="grid-column:1/-1;display:flex;align-items:center;justify-content:center;padding:60px;"><div style="width:36px;height:36px;border:3px solid rgba(255,255,255,.15);border-top-color:var(--danger);border-radius:50%;animation:spin .8s linear infinite;"></div></div>`;
+      const data = await hpFetch(tab);
+      hpRenderNews(data, tab);
+    }
+  }
+
+  async function hpRefreshAll() {
+    Object.keys(hpCache).forEach(k => delete hpCache[k]);
+    hpLoadedTabs.clear();
+    const data = await hpFetch(hpCurrentTab);
+    hpRenderNews(data, hpCurrentTab);
+    hpLoadedTabs.add(hpCurrentTab);
+    hpRenderTicker(data);
+    hpRenderTrending(data);
+    hpFetchScores();
+    document.getElementById('hp-portal-updated').textContent =
+      'Updated ' + new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+  }
+
+  // ── INIT ──
+  (async () => {
+    const data = await hpFetch('top');
+    hpRenderNews(data, 'top');
+    hpLoadedTabs.add('top');
+    hpRenderTicker(data);
+    hpRenderTrending(data);
+    hpFetchScores();
+    document.getElementById('hp-portal-updated').textContent =
+      'Updated ' + new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+    setInterval(hpRefreshAll, 5*60*1000);
   })();
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
