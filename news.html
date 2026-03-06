@@ -273,8 +273,8 @@
   <div class="page-header">
     <div class="page-header-left">
       <div class="live-badge"><span class="live-dot"></span>LIVE UPDATES</div>
-      <h1 style="margin-top:10px;">News & <em>Sports</em></h1>
-      <p>Live education news, world headlines, and real-time sports scores. Updated every 5 minutes.</p>
+      <h1 style="margin-top:10px;">India News &amp; <em>Sports</em></h1>
+      <p>Live Indian education news, India headlines, cricket scores and more. Updated every 5 minutes.</p>
     </div>
     <div style="text-align:right;">
       <div id="last-updated" class="refresh-info">Fetching latest...</div>
@@ -288,11 +288,11 @@
   <!-- ── TABS ── -->
   <div class="tab-bar">
     <button class="tab-btn active" onclick="switchTab('education')">🎓 Education</button>
-    <button class="tab-btn" onclick="switchTab('world')">🌍 World</button>
+    <button class="tab-btn" onclick="switchTab('world')">🇮🇳 India</button>
     <button class="tab-btn" onclick="switchTab('tech')">💻 Tech</button>
     <button class="tab-btn" onclick="switchTab('business')">📊 Business</button>
-    <button class="tab-btn" onclick="switchTab('science')">🔬 Science</button>
-    <button class="tab-btn" onclick="switchTab('sports-news')">⚽ Sports News</button>
+    <button class="tab-btn" onclick="switchTab('science')">🔬 Science & ISRO</button>
+    <button class="tab-btn" onclick="switchTab('sports-news')">🏏 Cricket & Sports</button>
   </div>
 
   <!-- ── MAIN GRID ── -->
@@ -366,28 +366,26 @@
 //  CONFIGURATION
 // ════════════════════════════════════════════════════════
 const GUARDIAN_KEY = '038ee300-ba86-447a-89a9-d16a7771e8aa';
-// ^ The Guardian's "test" key works for development — get a free production key at:
-//   https://open-platform.theguardian.com/access/ (completely free, instant approval)
 
 const GUARDIAN_BASE = 'https://content.guardianapis.com/search';
 
-// Category → Guardian section/query mapping + emoji
+// India-focused categories — all queries include India keyword
 const CATEGORIES = {
-  education:    { query: 'education students university',  section: 'education',    emoji: '🎓', label: 'Education' },
-  world:        { query: 'world news',                     section: 'world',        emoji: '🌍', label: 'World' },
-  tech:         { query: 'technology artificial intelligence', section: 'technology', emoji: '💻', label: 'Tech' },
-  business:     { query: 'business economy finance',       section: 'business',     emoji: '📊', label: 'Business' },
-  science:      { query: 'science research discovery',     section: 'science',      emoji: '🔬', label: 'Science' },
-  'sports-news':{ query: 'sports football cricket',        section: 'sport',        emoji: '⚽', label: 'Sports' }
+  education:    { query: 'India education students university colleges',  section: 'education',   emoji: '🎓', label: 'Education' },
+  world:        { query: 'India news politics government',                section: 'world',        emoji: '🇮🇳', label: 'India' },
+  tech:         { query: 'India technology startups AI Bengaluru',        section: 'technology',   emoji: '💻', label: 'Tech' },
+  business:     { query: 'India economy business market finance GDP',     section: 'business',     emoji: '📊', label: 'Business' },
+  science:      { query: 'India science research ISRO space discovery',  section: 'science',      emoji: '🔬', label: 'Science' },
+  'sports-news':{ query: 'India cricket IPL football kabaddi sports',    section: 'sport',        emoji: '🏏', label: 'Sports' }
 };
 
 // Category emoji backgrounds
 const BG_COLORS = {
-  education: 'linear-gradient(135deg,#312e81,#1e1b4b)',
-  world:     'linear-gradient(135deg,#14532d,#166534)',
-  tech:      'linear-gradient(135deg,#1e3a5f,#1e40af)',
-  business:  'linear-gradient(135deg,#78350f,#92400e)',
-  science:   'linear-gradient(135deg,#134e4a,#0f766e)',
+  education:    'linear-gradient(135deg,#312e81,#1e1b4b)',
+  world:        'linear-gradient(135deg,#138808,#0a4f08)',
+  tech:         'linear-gradient(135deg,#1e3a5f,#1e40af)',
+  business:     'linear-gradient(135deg,#78350f,#92400e)',
+  science:      'linear-gradient(135deg,#134e4a,#0f766e)',
   'sports-news':'linear-gradient(135deg,#1c1917,#292524)'
 };
 
@@ -404,7 +402,8 @@ async function fetchNews(category) {
     return cache[category].data;
   }
   const cat = CATEGORIES[category];
-  const url = `${GUARDIAN_BASE}?section=${cat.section}&show-fields=trailText,thumbnail,headline&page-size=12&order-by=newest&api-key=${GUARDIAN_KEY}`;
+  // q= forces India-specific keyword search; tag=world/india boosts Indian articles
+  const url = `${GUARDIAN_BASE}?q=${encodeURIComponent(cat.query)}&show-fields=trailText,thumbnail,headline&page-size=12&order-by=newest&api-key=${GUARDIAN_KEY}`;
 
   try {
     const res = await fetch(url);
@@ -509,10 +508,10 @@ function renderTrending(articles) {
 //  SPORTS SCORES (via free ESPN API — no key needed)
 // ════════════════════════════════════════════════════════
 const SPORTS_FEEDS = [
-  { id: 'soccer-epl',   label: 'Premier League', emoji: '⚽', url: 'https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard' },
-  { id: 'soccer-ucl',   label: 'Champions League',emoji: '🏆', url: 'https://site.api.espn.com/apis/site/v2/sports/soccer/UEFA.CHAMPIONS/scoreboard' },
-  { id: 'cricket',      label: 'Cricket',         emoji: '🏏', url: 'https://site.api.espn.com/apis/site/v2/sports/cricket/scoreboard' },
-  { id: 'basketball',   label: 'NBA',             emoji: '🏀', url: 'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard' },
+  { id: 'cricket-test',  label: 'Cricket',          emoji: '🏏', url: 'https://site.api.espn.com/apis/site/v2/sports/cricket/scoreboard' },
+  { id: 'soccer-isl',   label: 'ISL Football',      emoji: '⚽', url: 'https://site.api.espn.com/apis/site/v2/sports/soccer/ind.1/scoreboard' },
+  { id: 'soccer-ucl',   label: 'Champions League',  emoji: '🏆', url: 'https://site.api.espn.com/apis/site/v2/sports/soccer/UEFA.CHAMPIONS/scoreboard' },
+  { id: 'basketball',   label: 'NBA',               emoji: '🏀', url: 'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard' },
 ];
 
 async function fetchScores() {
