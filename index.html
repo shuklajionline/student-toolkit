@@ -1324,24 +1324,17 @@
   });
 
   /* ══════════════════════════════════════════════
-     HOMEPAGE NEWS PORTAL — RSS Feeds (CORS-free)
-     Sources: NDTV, Times of India, The Hindu
+     HOMEPAGE NEWS PORTAL — Cloudflare Worker Proxy
   ══════════════════════════════════════════════ */
-  const HP_RSS2JSON = 'https://api.rss2json.com/v1/api.json';
+  const HP_PROXY = 'https://misty-rain-83f9.rs2584328.workers.dev';
 
   const HP_CATS = {
-    top:       { emoji: '🇮🇳', bg: 'linear-gradient(135deg,#138808,#0a4f08)',
-                 feeds: ['https://www.ndtv.com/india/rss','https://timesofindia.indiatimes.com/rssfeeds/296589292.cms'] },
-    education: { emoji: '🎓', bg: 'linear-gradient(135deg,#312e81,#1e1b4b)',
-                 feeds: ['https://www.thehindu.com/education/feeder/default.rss','https://www.ndtv.com/education/rss'] },
-    tech:      { emoji: '💻', bg: 'linear-gradient(135deg,#1e3a5f,#1e40af)',
-                 feeds: ['https://timesofindia.indiatimes.com/rssfeeds/66949542.cms','https://www.ndtv.com/gadgets360rss/rss'] },
-    business:  { emoji: '📊', bg: 'linear-gradient(135deg,#78350f,#92400e)',
-                 feeds: ['https://timesofindia.indiatimes.com/rssfeeds/1898055.cms','https://www.thehindu.com/business/feeder/default.rss'] },
-    sports:    { emoji: '🏏', bg: 'linear-gradient(135deg,#1c1917,#292524)',
-                 feeds: ['https://www.ndtv.com/cricket/rss','https://timesofindia.indiatimes.com/rssfeeds/4719148.cms'] },
-    science:   { emoji: '🔬', bg: 'linear-gradient(135deg,#134e4a,#0f766e)',
-                 feeds: ['https://www.thehindu.com/sci-tech/science/feeder/default.rss','https://www.ndtv.com/science/rss'] },
+    top:       { emoji: '🇮🇳', bg: 'linear-gradient(135deg,#138808,#0a4f08)', cat: 'top'       },
+    education: { emoji: '🎓', bg: 'linear-gradient(135deg,#312e81,#1e1b4b)', cat: 'education' },
+    tech:      { emoji: '💻', bg: 'linear-gradient(135deg,#1e3a5f,#1e40af)', cat: 'tech'      },
+    business:  { emoji: '📊', bg: 'linear-gradient(135deg,#78350f,#92400e)', cat: 'business'  },
+    sports:    { emoji: '🏏', bg: 'linear-gradient(135deg,#1c1917,#292524)', cat: 'sports'    },
+    science:   { emoji: '🔬', bg: 'linear-gradient(135deg,#134e4a,#0f766e)', cat: 'science'   },
   };
 
   const hpCache = {};
@@ -1349,29 +1342,18 @@
 
   function hpEsc(s) { if(!s)return''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
   function hpTimeAgo(d) { if(!d)return''; const s=(Date.now()-new Date(d))/1000; if(s<60)return'Just now'; if(s<3600)return Math.floor(s/60)+'m ago'; if(s<86400)return Math.floor(s/3600)+'h ago'; return Math.floor(s/86400)+'d ago'; }
-  function hpStrip(h) { return (h||'').replace(/<[^>]*>/g,'').replace(/&nbsp;/g,' ').trim().substring(0,160); }
-  function hpDomain(url) { try{return new URL(url).hostname.replace('www.','');}catch{return'News';} }
 
-  async function hpFetch(cat) {
-    if (hpCache[cat] && Date.now() - hpCache[cat].ts < 5*60*1000) return hpCache[cat].data;
-    const feeds = HP_CATS[cat].feeds;
-    for (const feedUrl of feeds) {
-      try {
-        const r = await fetch(`${HP_RSS2JSON}?rss_url=${encodeURIComponent(feedUrl)}&count=12`);
-        if (!r.ok) continue;
-        const d = await r.json();
-        if (d.status !== 'ok' || !d.items?.length) continue;
-        const articles = d.items.map(i => ({
-          title: i.title||'', description: hpStrip(i.description||i.content||''),
-          link: i.link||'#', image_url: i.thumbnail||i.enclosure?.link||null,
-          source_name: d.feed?.title || hpDomain(feedUrl), pubDate: i.pubDate||''
-        })).filter(a => a.title);
-        if (!articles.length) continue;
-        hpCache[cat] = { data: articles, ts: Date.now() };
-        return articles;
-      } catch(e) { console.warn('[HP RSS]', e.message); }
-    }
-    return null;
+  async function hpFetch(tab) {
+    if (hpCache[tab] && Date.now() - hpCache[tab].ts < 5*60*1000) return hpCache[tab].data;
+    const cat = HP_CATS[tab]?.cat || tab;
+    try {
+      const r = await fetch(`${HP_PROXY}?cat=${cat}`);
+      if (!r.ok) throw new Error(r.status);
+      const d = await r.json();
+      if (d.status !== 'ok' || !d.items?.length) throw new Error(d.message || 'No items');
+      hpCache[tab] = { data: d.items, ts: Date.now() };
+      return d.items;
+    } catch(e) { console.warn('[HP News]', e.message); return null; }
   }
 
   function hpRenderNews(articles, cat) {
