@@ -1324,77 +1324,84 @@
   });
 
   /* ══════════════════════════════════════════════
-     HOMEPAGE NEWS PORTAL — NewsData.io
+     HOMEPAGE NEWS PORTAL — RSS Feeds (CORS-free)
+     Sources: NDTV, Times of India, The Hindu
   ══════════════════════════════════════════════ */
-  const HP_KEY  = 'pub_f1385a4dcd7242e5aa90489200656bb3';
-  const HP_BASE = 'https://newsdata.io/api/1/latest';
+  const HP_RSS2JSON = 'https://api.rss2json.com/v1/api.json';
 
   const HP_CATS = {
-    top:       { q: '',                                             emoji: '🇮🇳', bg: 'linear-gradient(135deg,#138808,#0a4f08)' },
-    education: { q: 'education university college students exam',   emoji: '🎓', bg: 'linear-gradient(135deg,#312e81,#1e1b4b)' },
-    tech:      { q: 'technology startup AI software app',          emoji: '💻', bg: 'linear-gradient(135deg,#1e3a5f,#1e40af)' },
-    business:  { q: 'business economy market sensex nifty finance', emoji: '📊', bg: 'linear-gradient(135deg,#78350f,#92400e)' },
-    sports:    { q: 'cricket IPL football kabaddi sports India',    emoji: '🏏', bg: 'linear-gradient(135deg,#1c1917,#292524)' },
-    science:   { q: 'science ISRO space research health medicine',  emoji: '🔬', bg: 'linear-gradient(135deg,#134e4a,#0f766e)' },
+    top:       { emoji: '🇮🇳', bg: 'linear-gradient(135deg,#138808,#0a4f08)',
+                 feeds: ['https://www.ndtv.com/india/rss','https://timesofindia.indiatimes.com/rssfeeds/296589292.cms'] },
+    education: { emoji: '🎓', bg: 'linear-gradient(135deg,#312e81,#1e1b4b)',
+                 feeds: ['https://www.thehindu.com/education/feeder/default.rss','https://www.ndtv.com/education/rss'] },
+    tech:      { emoji: '💻', bg: 'linear-gradient(135deg,#1e3a5f,#1e40af)',
+                 feeds: ['https://timesofindia.indiatimes.com/rssfeeds/66949542.cms','https://www.ndtv.com/gadgets360rss/rss'] },
+    business:  { emoji: '📊', bg: 'linear-gradient(135deg,#78350f,#92400e)',
+                 feeds: ['https://timesofindia.indiatimes.com/rssfeeds/1898055.cms','https://www.thehindu.com/business/feeder/default.rss'] },
+    sports:    { emoji: '🏏', bg: 'linear-gradient(135deg,#1c1917,#292524)',
+                 feeds: ['https://www.ndtv.com/cricket/rss','https://timesofindia.indiatimes.com/rssfeeds/4719148.cms'] },
+    science:   { emoji: '🔬', bg: 'linear-gradient(135deg,#134e4a,#0f766e)',
+                 feeds: ['https://www.thehindu.com/sci-tech/science/feeder/default.rss','https://www.ndtv.com/science/rss'] },
   };
 
   const hpCache = {};
   let hpCurrentTab = 'top';
 
-  function hpEsc(s) {
-    if (!s) return '';
-    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
-  function hpTimeAgo(iso) {
-    if (!iso) return '';
-    const d = (Date.now() - new Date(iso)) / 1000;
-    if (d < 60) return 'Just now';
-    if (d < 3600) return Math.floor(d/60) + 'm ago';
-    if (d < 86400) return Math.floor(d/3600) + 'h ago';
-    return Math.floor(d/86400) + 'd ago';
-  }
+  function hpEsc(s) { if(!s)return''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function hpTimeAgo(d) { if(!d)return''; const s=(Date.now()-new Date(d))/1000; if(s<60)return'Just now'; if(s<3600)return Math.floor(s/60)+'m ago'; if(s<86400)return Math.floor(s/3600)+'h ago'; return Math.floor(s/86400)+'d ago'; }
+  function hpStrip(h) { return (h||'').replace(/<[^>]*>/g,'').replace(/&nbsp;/g,' ').trim().substring(0,160); }
+  function hpDomain(url) { try{return new URL(url).hostname.replace('www.','');}catch{return'News';} }
 
   async function hpFetch(cat) {
     if (hpCache[cat] && Date.now() - hpCache[cat].ts < 5*60*1000) return hpCache[cat].data;
-    const cfg = HP_CATS[cat];
-    const p = new URLSearchParams({ apikey: HP_KEY, country: 'in', language: 'english', ...(cfg.q ? { q: cfg.q } : {}) });
-    try {
-      const r = await fetch(`${HP_BASE}?${p}`);
-      if (!r.ok) throw new Error(r.status);
-      const d = await r.json();
-      if (d.status !== 'success') throw new Error(d.message);
-      hpCache[cat] = { data: d.results || [], ts: Date.now() };
-      return hpCache[cat].data;
-    } catch(e) { console.warn('[HP News]', e); return null; }
+    const feeds = HP_CATS[cat].feeds;
+    for (const feedUrl of feeds) {
+      try {
+        const r = await fetch(`${HP_RSS2JSON}?rss_url=${encodeURIComponent(feedUrl)}&count=12`);
+        if (!r.ok) continue;
+        const d = await r.json();
+        if (d.status !== 'ok' || !d.items?.length) continue;
+        const articles = d.items.map(i => ({
+          title: i.title||'', description: hpStrip(i.description||i.content||''),
+          link: i.link||'#', image_url: i.thumbnail||i.enclosure?.link||null,
+          source_name: d.feed?.title || hpDomain(feedUrl), pubDate: i.pubDate||''
+        })).filter(a => a.title);
+        if (!articles.length) continue;
+        hpCache[cat] = { data: articles, ts: Date.now() };
+        return articles;
+      } catch(e) { console.warn('[HP RSS]', e.message); }
+    }
+    return null;
   }
 
   function hpRenderNews(articles, cat) {
     const grid = document.getElementById('hp-news-grid');
     const cfg  = HP_CATS[cat];
-    if (!articles || !articles.length) {
-      grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:40px;color:rgba(255,255,255,.4);font-size:14px;">${cfg.emoji} No articles found. Try refreshing.</div>`;
+    if (!articles?.length) {
+      grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:40px;color:rgba(255,255,255,.4);">
+        ${cfg.emoji} No articles found. Try refreshing.</div>`;
       return;
     }
     const [f, ...rest] = articles;
     const featHtml = `
       <a href="${hpEsc(f.link)}" target="_blank" rel="noopener noreferrer" class="hp-card-featured">
         <div class="hp-card-featured-img" style="background:${cfg.bg};">
-          ${f.image_url ? `<img src="${hpEsc(f.image_url)}" alt="" loading="lazy" onerror="this.parentElement.textContent='${cfg.emoji}'"/>` : cfg.emoji}
+          ${f.image_url ? `<img src="${hpEsc(f.image_url)}" alt="" loading="lazy" onerror="this.parentElement.innerHTML='<span style=font-size:48px>${cfg.emoji}</span>'"/>` : `<span style="font-size:48px;">${cfg.emoji}</span>`}
         </div>
         <div class="hp-card-featured-body">
-          <div class="hp-card-source">${hpEsc(f.source_name || 'India News')}</div>
+          <div class="hp-card-source">${hpEsc(f.source_name)}</div>
           <h3>${hpEsc(f.title)}</h3>
-          <p>${hpEsc(f.description || '')}</p>
+          <p>${hpEsc(f.description)}</p>
           <div class="hp-card-time">${hpTimeAgo(f.pubDate)}</div>
         </div>
       </a>`;
     const cardsHtml = rest.slice(0,5).map(a => `
       <a href="${hpEsc(a.link)}" target="_blank" rel="noopener noreferrer" class="hp-card">
         <div class="hp-card-img" style="background:${cfg.bg}18;">
-          ${a.image_url ? `<img src="${hpEsc(a.image_url)}" alt="" loading="lazy" onerror="this.parentElement.textContent='${cfg.emoji}'"/>` : cfg.emoji}
+          ${a.image_url ? `<img src="${hpEsc(a.image_url)}" alt="" loading="lazy" onerror="this.parentElement.innerHTML='<span style=font-size:24px>${cfg.emoji}</span>'"/>` : `<span style="font-size:24px;">${cfg.emoji}</span>`}
         </div>
         <div class="hp-card-body">
-          <div class="hp-card-source" style="font-size:10px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;">${hpEsc(a.source_name||'News')}</div>
+          <div class="hp-card-source" style="font-size:10px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;">${hpEsc(a.source_name)}</div>
           <h3>${hpEsc(a.title)}</h3>
           <div class="hp-card-time">${hpTimeAgo(a.pubDate)}</div>
         </div>
@@ -1403,43 +1410,42 @@
   }
 
   function hpRenderTicker(articles) {
-    if (!articles || !articles.length) return;
-    const items = [...articles, ...articles].slice(0,16).map(a =>
+    if (!articles?.length) return;
+    const items = [...articles,...articles].slice(0,16).map(a =>
       `<span style="padding:0 36px;font-size:12px;color:rgba(255,255,255,.55);">● ${hpEsc(a.title)}</span>`
     ).join('');
     document.getElementById('hp-ticker').innerHTML = items;
   }
 
   function hpRenderTrending(articles) {
-    if (!articles || !articles.length) return;
+    if (!articles?.length) return;
     document.getElementById('hp-trending').innerHTML = articles.slice(0,6).map((a,i) => `
       <a href="${hpEsc(a.link)}" target="_blank" rel="noopener noreferrer" class="hp-trend">
         <div class="hp-trend-num">${i+1}</div>
         <div>
           <div class="hp-trend-text">${hpEsc(a.title)}</div>
-          <div class="hp-trend-src">${hpEsc(a.source_name||'')} · ${hpTimeAgo(a.pubDate)}</div>
+          <div class="hp-trend-src">${hpEsc(a.source_name)} · ${hpTimeAgo(a.pubDate)}</div>
         </div>
       </a>`).join('');
   }
 
   async function hpFetchScores() {
     const feeds = [
-      { label:'Cricket',   emoji:'🏏', url:'https://site.api.espn.com/apis/site/v2/sports/cricket/scoreboard' },
-      { label:'ISL',       emoji:'⚽', url:'https://site.api.espn.com/apis/site/v2/sports/soccer/ind.1/scoreboard' },
-      { label:'Champions', emoji:'🏆', url:'https://site.api.espn.com/apis/site/v2/sports/soccer/UEFA.CHAMPIONS/scoreboard' },
+      { label:'Cricket', emoji:'🏏', url:'https://site.api.espn.com/apis/site/v2/sports/cricket/scoreboard' },
+      { label:'ISL',     emoji:'⚽', url:'https://site.api.espn.com/apis/site/v2/sports/soccer/ind.1/scoreboard' },
+      { label:'UCL',     emoji:'🏆', url:'https://site.api.espn.com/apis/site/v2/sports/soccer/UEFA.CHAMPIONS/scoreboard' },
     ];
     const box = document.getElementById('hp-scores');
     box.innerHTML = '';
     let any = false;
     for (const f of feeds) {
       try {
-        const r = await fetch(f.url);
-        if (!r.ok) continue;
+        const r = await fetch(f.url); if (!r.ok) continue;
         const d = await r.json();
         const evs = (d.events||[]).slice(0,2);
         if (!evs.length) continue;
         any = true;
-        const header = `<div style="padding:6px 16px 4px;font-size:10.5px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.08em;">${f.emoji} ${f.label}</div>`;
+        const header = `<div style="padding:6px 16px 2px;font-size:10px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.08em;">${f.emoji} ${f.label}</div>`;
         const rows = evs.map(ev => {
           const teams = ev.competitions?.[0]?.competitors||[];
           const isLive = ev.status?.type?.state==='in';
@@ -1449,17 +1455,15 @@
           if (!home||!away) return '';
           return `<div class="hp-match">
             <div class="hp-team">${hpEsc(home.team?.shortDisplayName||'Home')}</div>
-            <div style="display:flex;align-items:center;gap:6px;">
-              <span class="hp-score">${home.score??'—'}</span>
-              <span class="hp-sep">:</span>
-              <span class="hp-score">${away.score??'—'}</span>
+            <div style="display:flex;align-items:center;gap:5px;">
+              <span class="hp-score">${home.score??'—'}</span><span class="hp-sep">:</span><span class="hp-score">${away.score??'—'}</span>
             </div>
             <div class="hp-team r">${hpEsc(away.team?.shortDisplayName||'Away')}</div>
           </div>
-          <div style="text-align:center;font-size:10px;padding:0 0 6px;color:${isLive?'#f87171':'rgba(255,255,255,.25)'};">${isLive?'🔴 LIVE':isFT?'Full Time':'Upcoming'}</div>`;
+          <div style="text-align:center;font-size:10px;padding:0 0 6px;color:${isLive?'#f87171':'rgba(255,255,255,.25)'};">${isLive?'🔴 LIVE':isFT?'FT':'Soon'}</div>`;
         }).join('');
         box.innerHTML += header + rows;
-      } catch(e) {}
+      } catch(e){}
     }
     if (!any) box.innerHTML = `<div style="padding:16px;text-align:center;font-size:12px;color:rgba(255,255,255,.3);">🏏 No live matches right now</div>`;
   }
@@ -1467,12 +1471,12 @@
   const hpLoadedTabs = new Set();
   async function hpSwitchTab(tab) {
     hpCurrentTab = tab;
-    document.querySelectorAll('.hp-tab').forEach(b =>
-      b.classList.toggle('active', b.dataset.tab === tab)
-    );
+    document.querySelectorAll('.hp-tab').forEach(b => b.classList.toggle('active', b.dataset.tab===tab));
     if (!hpLoadedTabs.has(tab)) {
       hpLoadedTabs.add(tab);
-      document.getElementById('hp-news-grid').innerHTML = `<div style="grid-column:1/-1;display:flex;align-items:center;justify-content:center;padding:60px;"><div style="width:36px;height:36px;border:3px solid rgba(255,255,255,.15);border-top-color:var(--danger);border-radius:50%;animation:spin .8s linear infinite;"></div></div>`;
+      document.getElementById('hp-news-grid').innerHTML = `<div style="grid-column:1/-1;display:flex;align-items:center;justify-content:center;padding:60px;gap:12px;">
+        <div style="width:32px;height:32px;border:3px solid rgba(255,255,255,.15);border-top-color:var(--danger);border-radius:50%;animation:spin .8s linear infinite;"></div>
+        <span style="color:rgba(255,255,255,.4);font-size:14px;">Loading...</span></div>`;
       const data = await hpFetch(tab);
       hpRenderNews(data, tab);
     }
@@ -1491,7 +1495,6 @@
       'Updated ' + new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
   }
 
-  // ── INIT ──
   (async () => {
     const data = await hpFetch('top');
     hpRenderNews(data, 'top');
@@ -1503,6 +1506,7 @@
       'Updated ' + new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
     setInterval(hpRefreshAll, 5*60*1000);
   })();
+
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('/service-worker.js')
