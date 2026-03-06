@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Letter & Email Writer | Student Toolkit</title>
+  <meta name="description" content="Free student letter and email writer. Generate leave applications, professor emails, internship requests and more instantly — no sign up, no AI, no cost."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:       #f7f6f2;
+      --bg2:      #eeecea;
+      --bg3:      #e5e2dc;
+      --ink:      #1a1916;
+      --ink2:     #4a4843;
+      --ink3:     #8a8680;
+      --accent:   #2563eb;
+      --accent-h: #1d4ed8;
+      --success:  #16a34a;
+      --border:   #d8d4cc;
+      --white:    #ffffff;
+      --shadow:   0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Geist', sans-serif;
+      background: var(--bg); color: var(--ink);
+      min-height: 100vh; -webkit-font-smoothing: antialiased;
+    }
+
+    /* HEADER */
+    .page-header { text-align: center; padding: 52px 20px 40px; position: relative; }
+    .page-header::after {
+      content: ''; position: absolute; bottom: 0; left: 50%;
+      transform: translateX(-50%); width: 48px; height: 2px;
+      background: var(--accent); border-radius: 2px;
+    }
+    .tool-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 20px; padding: 5px 14px;
+      font-size: 12px; font-weight: 500; color: var(--ink2); margin-bottom: 18px;
+    }
+    .page-header h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(32px, 5vw, 50px); font-weight: 400;
+      color: var(--ink); line-height: 1.12;
+      letter-spacing: -0.02em; margin-bottom: 12px;
+    }
+    .page-header h1 em { font-style: italic; color: var(--accent); }
+    .page-header p {
+      font-size: 16px; color: var(--ink3); font-weight: 300;
+      max-width: 500px; margin: 0 auto; line-height: 1.6;
+    }
+
+    /* QUICK CHIPS */
+    .examples-strip { max-width: 1080px; margin: 36px auto 32px; padding: 0 24px; }
+    .examples-strip h3 {
+      font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--ink3); margin-bottom: 10px;
+    }
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip {
+      padding: 7px 14px; background: var(--white);
+      border: 1.5px solid var(--border); border-radius: 20px;
+      font-size: 13px; color: var(--ink2); cursor: pointer;
+      transition: all 0.16s; font-family: 'Geist', sans-serif;
+      user-select: none;
+    }
+    .chip:hover { border-color: var(--accent); color: var(--accent); background: #eff6ff; }
+    .chip.active { border-color: var(--accent); color: var(--accent); background: #eff6ff; }
+
+    /* LAYOUT */
+    .tool-wrap {
+      max-width: 1080px; margin: 0 auto 80px; padding: 0 24px;
+      display: grid; grid-template-columns: 390px 1fr;
+      gap: 24px; align-items: start;
+    }
+
+    /* PANELS */
+    .panel, .output-panel {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; box-shadow: var(--shadow); overflow: hidden;
+    }
+    .output-panel { position: sticky; top: 20px; }
+    .panel { animation: fadeUp 0.4s ease both; }
+    .output-panel { animation: fadeUp 0.4s ease 0.08s both; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .panel-head {
+      padding: 16px 22px; border-bottom: 1px solid var(--bg2);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .panel-head-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: var(--bg2); display: flex; align-items: center;
+      justify-content: center; font-size: 15px; flex-shrink: 0;
+    }
+    .panel-head h2 { font-size: 14px; font-weight: 600; color: var(--ink); }
+    .panel-head p  { font-size: 12px; color: var(--ink3); margin-top: 1px; }
+    .panel-body { padding: 20px 22px 24px; }
+
+    /* TYPE GRID */
+    .type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 18px; }
+    .type-btn {
+      padding: 10px 8px; border-radius: 8px;
+      border: 1.5px solid var(--border); background: var(--bg);
+      cursor: pointer; transition: all 0.16s; text-align: center;
+    }
+    .type-btn:hover { border-color: var(--accent); background: #eff6ff; }
+    .type-btn.active {
+      border-color: var(--accent); background: #eff6ff;
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.09);
+    }
+    .type-btn-icon { font-size: 19px; display: block; margin-bottom: 3px; }
+    .type-btn-label { font-size: 11.5px; font-weight: 500; color: var(--ink2); display: block; line-height: 1.3; }
+    .type-btn.active .type-btn-label { color: var(--accent); }
+
+    /* FIELDS */
+    .field { margin-bottom: 14px; }
+    .field label { display: block; font-size: 12.5px; font-weight: 500; color: var(--ink2); margin-bottom: 5px; }
+    .field label span { color: var(--ink3); font-weight: 400; font-size: 11px; }
+    .field input, .field select, .field textarea {
+      width: 100%; background: var(--bg); border: 1.5px solid var(--border);
+      border-radius: 8px; padding: 9px 12px; font-size: 14px; color: var(--ink);
+      font-family: 'Geist', sans-serif; outline: none;
+      transition: border-color 0.16s, box-shadow 0.16s; -webkit-appearance: none;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); background: var(--white);
+    }
+    .field textarea { resize: vertical; min-height: 72px; line-height: 1.5; }
+
+    /* TONE */
+    .tone-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+    .tone-opt {
+      padding: 8px 4px; border-radius: 7px;
+      border: 1.5px solid var(--border); background: var(--bg);
+      cursor: pointer; text-align: center; transition: all 0.16s;
+    }
+    .tone-opt:hover { border-color: var(--accent); }
+    .tone-opt.active { border-color: var(--accent); background: #eff6ff; }
+    .tone-opt-emoji { font-size: 15px; display: block; margin-bottom: 2px; }
+    .tone-opt span.label { font-size: 11.5px; font-weight: 500; color: var(--ink2); display: block; }
+    .tone-opt.active span.label { color: var(--accent); }
+
+    /* GENERATE BTN */
+    .gen-btn {
+      width: 100%; background: var(--accent); color: #fff;
+      border: none; border-radius: 10px; padding: 13px;
+      font-size: 14px; font-weight: 600; font-family: 'Geist', sans-serif;
+      cursor: pointer; transition: all 0.16s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      box-shadow: 0 2px 8px rgba(37,99,235,0.28); margin-top: 6px;
+    }
+    .gen-btn:hover { background: var(--accent-h); box-shadow: 0 4px 16px rgba(37,99,235,0.38); transform: translateY(-1px); }
+    .gen-btn:active { transform: translateY(0); }
+
+    /* ERROR */
+    .error-box {
+      background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px;
+      padding: 12px 14px; font-size: 13px; color: #b91c1c;
+      display: none; margin-top: 10px; line-height: 1.5;
+    }
+
+    /* OUTPUT HEAD */
+    .output-head {
+      padding: 15px 20px; border-bottom: 1px solid var(--bg2);
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .output-head-left { display: flex; align-items: center; gap: 10px; }
+    .output-head h2 { font-size: 14px; font-weight: 600; color: var(--ink); }
+    .out-actions { display: flex; gap: 7px; }
+    .act-btn {
+      display: flex; align-items: center; gap: 5px;
+      padding: 6px 11px; border-radius: 7px;
+      border: 1.5px solid var(--border); background: var(--bg);
+      font-size: 12px; font-weight: 500; color: var(--ink2);
+      cursor: pointer; font-family: 'Geist', sans-serif; transition: all 0.15s;
+    }
+    .act-btn:hover { border-color: var(--accent); color: var(--accent); background: #eff6ff; }
+    .act-btn.copied { border-color: var(--success); color: var(--success); background: #f0fdf4; }
+
+    /* OUTPUT BODY */
+    .output-body { padding: 26px; min-height: 420px; }
+
+    /* EMPTY STATE */
+    .empty-state {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; min-height: 380px; text-align: center; gap: 14px;
+    }
+    .empty-icon {
+      width: 60px; height: 60px; border-radius: 14px; background: var(--bg2);
+      display: flex; align-items: center; justify-content: center; font-size: 26px;
+    }
+    .empty-state h3 { font-family: 'Instrument Serif', serif; font-size: 19px; font-weight: 400; color: var(--ink2); }
+    .empty-state p { font-size: 13px; color: var(--ink3); max-width: 240px; line-height: 1.55; }
+    .steps { display: flex; flex-direction: column; gap: 9px; margin-top: 4px; }
+    .step { display: flex; align-items: flex-start; gap: 9px; text-align: left; }
+    .step-num {
+      width: 20px; height: 20px; border-radius: 50%; background: var(--bg3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10.5px; font-weight: 600; color: var(--ink2); flex-shrink: 0; margin-top: 1px;
+    }
+    .step p { font-size: 12.5px; color: var(--ink3); }
+
+    /* LETTER RESULT */
+    .letter-result { display: none; }
+    .letter-meta { display: flex; align-items: center; gap: 7px; margin-bottom: 18px; flex-wrap: wrap; }
+    .ltag {
+      font-size: 11px; font-weight: 500; padding: 3px 9px;
+      border-radius: 20px; background: #eff6ff; color: var(--accent); border: 1px solid #bfdbfe;
+    }
+    .ltag.tone { background: #f0fdf4; color: var(--success); border-color: #bbf7d0; }
+    #letter-text {
+      font-family: 'Instrument Serif', serif; font-size: 16px;
+      line-height: 1.88; color: var(--ink); white-space: pre-wrap; word-break: break-word;
+    }
+    .letter-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 14px; border-top: 1px solid var(--bg2); margin-top: 18px;
+    }
+    .wc { font-size: 11.5px; color: var(--ink3); font-family: 'Geist', monospace; }
+
+    /* RESPONSIVE */
+    @media (max-width: 820px) {
+      .tool-wrap { grid-template-columns: 1fr; }
+      .output-panel { position: static; }
+    }
+    @media (max-width: 480px) { .page-header { padding: 36px 16px 32px; } }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div class="tool-badge">⚡ 100% Free · No Sign Up · Instant</div>
+  <h1>Student <em>Letter & Email</em> Writer</h1>
+  <p>Fill in your details and get a professionally written letter instantly — no AI, no cost, works offline.</p>
+</div>
+
+<!-- QUICK START -->
+<div class="examples-strip">
+  <h3>Quick Start — click to auto-fill an example</h3>
+  <div class="chips">
+    <div class="chip" onclick="fillExample('leave')">🤒 Sick Leave</div>
+    <div class="chip" onclick="fillExample('professor')">📚 Professor Extension</div>
+    <div class="chip" onclick="fillExample('internship')">💼 Internship Request</div>
+    <div class="chip" onclick="fillExample('recommendation')">⭐ Recommendation</div>
+    <div class="chip" onclick="fillExample('scholarship')">🎓 Scholarship</div>
+    <div class="chip" onclick="fillExample('grievance')">📢 Grievance</div>
+  </div>
+</div>
+
+<!-- TOOL -->
+<div class="tool-wrap">
+
+  <!-- FORM -->
+  <div class="panel">
+    <div class="panel-head">
+      <div class="panel-head-icon">✍️</div>
+      <div><h2>Your Details</h2><p>Fill in once, generate instantly</p></div>
+    </div>
+    <div class="panel-body">
+
+      <div class="field">
+        <label>Letter Type</label>
+        <div class="type-grid">
+          <button class="type-btn active" data-type="leave" onclick="setType(this)">
+            <span class="type-btn-icon">🏥</span>
+            <span class="type-btn-label">Leave Application</span>
+          </button>
+          <button class="type-btn" data-type="professor" onclick="setType(this)">
+            <span class="type-btn-icon">🎓</span>
+            <span class="type-btn-label">Professor Email</span>
+          </button>
+          <button class="type-btn" data-type="internship" onclick="setType(this)">
+            <span class="type-btn-icon">💼</span>
+            <span class="type-btn-label">Internship Request</span>
+          </button>
+          <button class="type-btn" data-type="recommendation" onclick="setType(this)">
+            <span class="type-btn-icon">⭐</span>
+            <span class="type-btn-label">Recommendation</span>
+          </button>
+          <button class="type-btn" data-type="scholarship" onclick="setType(this)">
+            <span class="type-btn-icon">🏆</span>
+            <span class="type-btn-label">Scholarship Inquiry</span>
+          </button>
+          <button class="type-btn" data-type="grievance" onclick="setType(this)">
+            <span class="type-btn-icon">📢</span>
+            <span class="type-btn-label">Academic Grievance</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Your Full Name</label>
+        <input type="text" id="f-name" placeholder="e.g. Aisha Khan"/>
+      </div>
+
+      <div class="field">
+        <label>Your Roll No / ID <span>(optional)</span></label>
+        <input type="text" id="f-rollno" placeholder="e.g. BS-CS-F21-101"/>
+      </div>
+
+      <div class="field">
+        <label>Department / Program <span>(optional)</span></label>
+        <input type="text" id="f-dept" placeholder="e.g. BS Computer Science, 5th Semester"/>
+      </div>
+
+      <div class="field">
+        <label id="lbl-recipient">Recipient Name & Title</label>
+        <input type="text" id="f-recipient" placeholder="e.g. Prof. Dr. Ali Hassan"/>
+      </div>
+
+      <div class="field" id="wrap-subject">
+        <label id="lbl-subject">Subject / Reason</label>
+        <input type="text" id="f-subject" placeholder="e.g. 3 days medical leave due to fever"/>
+      </div>
+
+      <div class="field" id="wrap-dates">
+        <label id="lbl-dates">Dates / Duration</label>
+        <input type="text" id="f-dates" placeholder="e.g. March 10 – March 12, 2026"/>
+      </div>
+
+      <div class="field" id="wrap-extra">
+        <label id="lbl-extra">Extra Details <span>(optional)</span></label>
+        <textarea id="f-extra" placeholder="e.g. I have a medical certificate. I will complete all missed work upon return."></textarea>
+      </div>
+
+      <div class="field">
+        <label>Tone</label>
+        <div class="tone-row">
+          <div class="tone-opt active" data-tone="formal" onclick="setTone(this)">
+            <span class="tone-opt-emoji">🤝</span><span class="label">Formal</span>
+          </div>
+          <div class="tone-opt" data-tone="polite" onclick="setTone(this)">
+            <span class="tone-opt-emoji">😊</span><span class="label">Polite</span>
+          </div>
+          <div class="tone-opt" data-tone="confident" onclick="setTone(this)">
+            <span class="tone-opt-emoji">💪</span><span class="label">Confident</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="gen-btn" onclick="generateLetter()">✨ &nbsp;Generate Letter</button>
+      <div class="error-box" id="error-box"></div>
+
+    </div>
+  </div>
+
+  <!-- OUTPUT -->
+  <div class="output-panel">
+    <div class="output-head">
+      <div class="output-head-left">
+        <div class="panel-head-icon">📄</div>
+        <h2>Your Letter</h2>
+      </div>
+      <div class="out-actions" id="out-actions" style="display:none;">
+        <button class="act-btn" id="copy-btn" onclick="copyLetter()">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy
+        </button>
+        <button class="act-btn" onclick="resetLetter()">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+          Reset
+        </button>
+      </div>
+    </div>
+    <div class="output-body">
+
+      <!-- Empty -->
+      <div class="empty-state" id="empty-state">
+        <div class="empty-icon">📬</div>
+        <h3>Your letter appears here</h3>
+        <p>Fill in your details and click Generate.</p>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><p>Pick the letter type</p></div>
+          <div class="step"><div class="step-num">2</div><p>Enter your name, recipient & reason</p></div>
+          <div class="step"><div class="step-num">3</div><p>Hit Generate — done in 1 second ✨</p></div>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div class="letter-result" id="letter-result">
+        <div class="letter-meta">
+          <span class="ltag" id="tag-type">Leave Application</span>
+          <span class="ltag tone" id="tag-tone">🤝 Formal</span>
+        </div>
+        <div id="letter-text"></div>
+        <div class="letter-footer">
+          <span class="wc" id="wc"></span>
+          <span style="font-size:11.5px;color:var(--ink3);">Review before sending ✓</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // ─────────────────────────────────────────────
+  //  STATE
+  // ─────────────────────────────────────────────
+  let currentType = 'leave';
+  let currentTone = 'formal';
+
+  const typeLabels = {
+    leave:          'Leave Application',
+    professor:      'Professor Email',
+    internship:     'Internship Request',
+    recommendation: 'Recommendation Request',
+    scholarship:    'Scholarship Inquiry',
+    grievance:      'Academic Grievance'
+  };
+
+  const toneLabels = {
+    formal:    '🤝 Formal',
+    polite:    '😊 Polite',
+    confident: '💪 Confident'
+  };
+
+  // Field label/placeholder config per type
+  const fieldConfig = {
+    leave: {
+      recipient:  { label: 'Recipient Name & Title',    ph: 'e.g. Prof. Dr. Ali Hassan / The Principal' },
+      subject:    { label: 'Reason for Leave',           ph: 'e.g. High fever and flu' },
+      dates:      { label: 'Leave Dates / Duration',     ph: 'e.g. March 10 – March 12, 2026' },
+      extra:      { label: 'Extra Details (optional)',   ph: 'e.g. I have a medical certificate. I will complete all missed work on return.' }
+    },
+    professor: {
+      recipient:  { label: 'Professor\'s Name & Title', ph: 'e.g. Prof. Dr. Sarah Naqvi' },
+      subject:    { label: 'Subject / Course Name',      ph: 'e.g. CS-301 Data Structures' },
+      dates:      { label: 'New Deadline / Dates',       ph: 'e.g. Original: March 15 → Requesting: March 18' },
+      extra:      { label: 'Reason & Details (optional)', ph: 'e.g. I have been unwell and also had two exams this week.' }
+    },
+    internship: {
+      recipient:  { label: 'Recipient (HR / Manager)',   ph: 'e.g. HR Manager, TechBridge Solutions' },
+      subject:    { label: 'Role / Department',          ph: 'e.g. Software Development Internship' },
+      dates:      { label: 'Availability Period',        ph: 'e.g. June 1 – August 31, 2026' },
+      extra:      { label: 'Skills & Background (optional)', ph: 'e.g. React, Python, 3rd year CS student at FAST-NUCES' }
+    },
+    recommendation: {
+      recipient:  { label: 'Professor\'s Name & Title', ph: 'e.g. Prof. Dr. Kamran Iqbal' },
+      subject:    { label: 'Purpose of Recommendation', ph: 'e.g. MSc application at TU Berlin, Germany' },
+      dates:      { label: 'Deadline for Letter',        ph: 'e.g. Required by April 30, 2026' },
+      extra:      { label: 'Your Achievements in Their Course', ph: 'e.g. Scored A in Advanced Algorithms, Fall 2024. Completed research project on ML.' }
+    },
+    scholarship: {
+      recipient:  { label: 'Scholarship Committee / Authority', ph: 'e.g. Scholarship Committee, HEC' },
+      subject:    { label: 'Scholarship Name / Type',    ph: 'e.g. Need-based Undergraduate Scholarship 2026' },
+      dates:      { label: 'Application Deadline',       ph: 'e.g. March 31, 2026' },
+      extra:      { label: 'Your Academic & Financial Background', ph: 'e.g. CGPA: 3.8, need-based, family income below threshold, first-generation student' }
+    },
+    grievance: {
+      recipient:  { label: 'Authority (Dean / HoD)',     ph: 'e.g. Dean of Student Affairs' },
+      subject:    { label: 'Issue / Complaint',          ph: 'e.g. Unfair grading in Mid-term examination' },
+      dates:      { label: 'Date of Incident',           ph: 'e.g. February 28, 2026' },
+      extra:      { label: 'Evidence & What You\'re Requesting', ph: 'e.g. Course: MGT-201, Semester 4. Requesting re-evaluation per official marking scheme.' }
+    }
+  };
+
+  // ─────────────────────────────────────────────
+  //  LETTER TEMPLATES
+  // ─────────────────────────────────────────────
+  function buildLetter(type, tone, data) {
+    const { name, rollno, dept, recipient, subject, dates, extra } = data;
+    const rollStr  = rollno ? `\nRoll No: ${rollno}` : '';
+    const deptStr  = dept   ? `\n${dept}`            : '';
+    const extraStr = extra  ? `\n\n${extra}`          : '';
+    const today    = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+
+    const openers = {
+      formal:    { greeting: 'Respected', open: 'I am writing to respectfully bring to your attention', close1: 'I would be highly grateful for your kind consideration of this matter.', close2: 'Yours sincerely' },
+      polite:    { greeting: 'Dear',      open: 'I hope this letter finds you in good health. I am writing to kindly request', close1: 'I would greatly appreciate your understanding and support in this regard.', close2: 'With warm regards' },
+      confident: { greeting: 'Dear',      open: 'I am writing with confidence to formally request', close1: 'I am fully committed to fulfilling all requirements and look forward to a positive response.', close2: 'Regards' }
+    };
+    const o = openers[tone];
+
+    // ── LEAVE APPLICATION ──
+    if (type === 'leave') {
+      return `${today}
+
+${o.greeting} ${recipient},
+
+Subject: Application for Leave — ${subject}
+
+${o.open} a leave of absence from ${dates} on account of ${subject}.
+
+Due to this situation, I am unable to attend my classes during the aforementioned period. I assure you that I will make up for all missed lectures, assignments, and coursework promptly upon my return.${extraStr}
+
+${o.close1}
+
+${o.close2},
+${name}${rollStr}${deptStr}`;
+    }
+
+    // ── PROFESSOR EMAIL ──
+    if (type === 'professor') {
+      return `${today}
+
+${o.greeting} ${recipient},
+
+Subject: Request for Assignment Extension — ${subject}
+
+${o.open} a short extension for the ${subject} assignment. I am currently facing ${extra || 'unforeseen academic and personal challenges'} that have significantly impacted my ability to complete the assignment to the standard I hold myself to.
+
+I would like to respectfully request an extension until ${dates}. I want to assure you that I take this course very seriously and will submit a thorough and well-prepared assignment within the requested time.
+
+${o.close1}
+
+${o.close2},
+${name}${rollStr}${deptStr}`;
+    }
+
+    // ── INTERNSHIP REQUEST ──
+    if (type === 'internship') {
+      return `${today}
+
+${o.greeting} ${recipient},
+
+Subject: Application for ${subject}
+
+${o.open} an internship opportunity in the role of ${subject} at your esteemed organisation.
+
+I am ${deptStr.trim() || 'a university student'} with a strong passion for learning and contributing meaningfully to a professional environment. ${extra ? extra : 'I am eager to apply my academic knowledge in a real-world setting and am committed to delivering quality work.'}
+
+I am available to join from ${dates} and am willing to work full-time during this period. I am confident that this internship will allow me to grow professionally while providing value to your team.
+
+${o.close1}
+
+${o.close2},
+${name}${rollStr}${deptStr}`;
+    }
+
+    // ── RECOMMENDATION ──
+    if (type === 'recommendation') {
+      return `${today}
+
+${o.greeting} ${recipient},
+
+Subject: Request for Letter of Recommendation — ${subject}
+
+I hope this message finds you well. I am writing to respectfully request a letter of recommendation in support of my application for ${subject}.
+
+Having had the privilege of being your student, I believe you are best placed to speak to my academic abilities, dedication, and potential. ${extra ? extra : 'I have consistently worked hard in your course and have a genuine passion for the subject.'}
+
+The letter is required by ${dates}. I will gladly provide any supporting documents, my CV, statement of purpose, or any other information you may need to make the process as easy as possible.
+
+${o.close1}
+
+${o.close2},
+${name}${rollStr}${deptStr}`;
+    }
+
+    // ── SCHOLARSHIP ──
+    if (type === 'scholarship') {
+      return `${today}
+
+${o.greeting} ${recipient},
+
+Subject: Inquiry / Application for ${subject}
+
+${o.open} the ${subject}. I am currently enrolled as ${deptStr.trim() || 'a student'} and am sincerely seeking financial support to continue my academic journey without interruption.
+
+${extra ? extra : 'I am a dedicated student with a strong academic record and a genuine need for financial assistance. I am committed to making the most of this opportunity and giving back to my institution and community.'}
+
+The application deadline is ${dates}. I would be grateful if you could provide me with further details about the application process, required documents, and eligibility criteria.
+
+${o.close1}
+
+${o.close2},
+${name}${rollStr}${deptStr}`;
+    }
+
+    // ── ACADEMIC GRIEVANCE ──
+    if (type === 'grievance') {
+      return `${today}
+
+${o.greeting} ${recipient},
+
+Subject: Formal Grievance Regarding — ${subject}
+
+${o.open} a formal concern regarding ${subject}, which took place on ${dates}.
+
+${extra ? extra : 'I believe the matter has not been addressed appropriately and I am seeking a fair and transparent review of the situation in accordance with the institution\'s established academic policies and procedures.'}
+
+I respectfully request that this grievance be reviewed at the earliest convenience. I am fully willing to cooperate with any formal process, provide supporting evidence, and attend any meetings required to resolve this matter fairly.
+
+${o.close1}
+
+${o.close2},
+${name}${rollStr}${deptStr}`;
+    }
+
+    return 'Letter type not found.';
+  }
+
+  // ─────────────────────────────────────────────
+  //  UI INTERACTIONS
+  // ─────────────────────────────────────────────
+  function setType(btn) {
+    document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentType = btn.dataset.type;
+    updateFieldLabels();
+  }
+
+  function setTone(el) {
+    document.querySelectorAll('.tone-opt').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    currentTone = el.dataset.tone;
+  }
+
+  function updateFieldLabels() {
+    const cfg = fieldConfig[currentType];
+    if (!cfg) return;
+    document.getElementById('f-recipient').placeholder = cfg.recipient.ph;
+    document.getElementById('f-subject').placeholder   = cfg.subject.ph;
+    document.getElementById('f-dates').placeholder     = cfg.dates.ph;
+    document.getElementById('f-extra').placeholder     = cfg.extra.ph;
+    document.querySelector('label[for="f-recipient"]') && (document.querySelector('#wrap-subject label') ? null : null);
+    document.getElementById('lbl-subject').textContent = cfg.subject.label;
+    document.getElementById('lbl-dates').textContent   = cfg.dates.label;
+    document.getElementById('lbl-extra').textContent   = cfg.extra.label;
+  }
+
+  function fillExample(key) {
+    const exs = {
+      leave:          { type: 'leave',          tone: 'formal',    name: 'Zara Ahmed',       rollno: 'BS-CS-F22-045', dept: 'BS Computer Science, 5th Semester', recipient: 'Prof. Dr. Usman Malik',           subject: 'high fever and severe flu',                     dates: 'March 10 – March 12, 2026',  extra: 'I have a medical certificate from the campus health centre. I will complete all missed assignments upon my return.' },
+      professor:      { type: 'professor',      tone: 'polite',    name: 'Hassan Raza',       rollno: 'BS-SE-F21-078', dept: 'BS Software Engineering, 6th Semester', recipient: 'Prof. Dr. Sarah Naqvi',           subject: 'CS-301 Data Structures',                        dates: 'Original: March 15 → Requesting: March 18, 2026', extra: 'I have been unwell this week and also had two other examinations on back-to-back days.' },
+      internship:     { type: 'internship',     tone: 'confident', name: 'Fatima Siddiqui',   rollno: 'BS-CS-F22-102', dept: 'BS Computer Science, 5th Semester, FAST-NUCES', recipient: 'HR Manager, TechBridge Solutions', subject: 'Software Development Internship',                dates: 'June 1 – August 31, 2026',   extra: 'Proficient in React.js, Python, and REST APIs. I have completed two personal projects and a university capstone in web development.' },
+      recommendation: { type: 'recommendation', tone: 'formal',    name: 'Ali Nawaz',         rollno: 'BS-CS-F21-033', dept: 'BS Computer Science, 7th Semester',     recipient: 'Prof. Dr. Kamran Iqbal',          subject: 'MSc Computer Science application at TU Berlin, Germany', dates: 'Required by April 30, 2026', extra: 'I scored an A in your Advanced Algorithms course in Fall 2024 and completed a research project on ML-based optimisation under your supervision.' },
+      scholarship:    { type: 'scholarship',    tone: 'polite',    name: 'Mariam Tariq',      rollno: 'BS-EE-F23-019', dept: 'BS Electrical Engineering, 3rd Semester', recipient: 'Scholarship Committee, HEC',      subject: 'Need-Based Undergraduate Scholarship 2026',     dates: 'March 31, 2026',             extra: 'CGPA: 3.82. I am a first-generation university student. My family income is below the eligibility threshold and I am seeking support to continue my education.' },
+      grievance:      { type: 'grievance',      tone: 'formal',    name: 'Omar Sheikh',       rollno: 'BBA-F22-055',   dept: 'BBA, 4th Semester',                    recipient: 'Dean of Student Affairs',         subject: 'Unfair grading in MGT-201 Mid-term examination', dates: 'February 28, 2026',          extra: 'I believe my paper was not marked in accordance with the official marking scheme. I am requesting a formal re-evaluation and transparency in the grading process.' }
+    };
+    const ex = exs[key];
+    if (!ex) return;
+
+    // set type
+    const btn = document.querySelector(`.type-btn[data-type="${ex.type}"]`);
+    if (btn) setType(btn);
+
+    // set tone
+    const toneEl = document.querySelector(`.tone-opt[data-tone="${ex.tone}"]`);
+    if (toneEl) setTone(toneEl);
+
+    // fill fields
+    document.getElementById('f-name').value      = ex.name;
+    document.getElementById('f-rollno').value    = ex.rollno;
+    document.getElementById('f-dept').value      = ex.dept;
+    document.getElementById('f-recipient').value = ex.recipient;
+    document.getElementById('f-subject').value   = ex.subject;
+    document.getElementById('f-dates').value     = ex.dates;
+    document.getElementById('f-extra').value     = ex.extra;
+
+    // highlight active chip
+    document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+    const chipMap = { leave:'🤒 Sick Leave', professor:'📚 Professor Extension', internship:'💼 Internship Request', recommendation:'⭐ Recommendation', scholarship:'🎓 Scholarship', grievance:'📢 Grievance' };
+    document.querySelectorAll('.chip').forEach(c => { if (c.textContent.trim().includes(chipMap[key]?.slice(2,8))) c.classList.add('active'); });
+
+    document.querySelector('.tool-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function generateLetter() {
+    const name      = document.getElementById('f-name').value.trim();
+    const recipient = document.getElementById('f-recipient').value.trim();
+    const subject   = document.getElementById('f-subject').value.trim();
+
+    if (!name)      { showError('Please enter your full name.'); return; }
+    if (!recipient) { showError('Please enter the recipient\'s name.'); return; }
+    if (!subject)   { showError('Please enter the subject or reason for this letter.'); return; }
+    hideError();
+
+    const data = {
+      name,
+      rollno:    document.getElementById('f-rollno').value.trim(),
+      dept:      document.getElementById('f-dept').value.trim(),
+      recipient,
+      subject,
+      dates:     document.getElementById('f-dates').value.trim() || 'the aforementioned period',
+      extra:     document.getElementById('f-extra').value.trim()
+    };
+
+    const letter = buildLetter(currentType, currentTone, data);
+
+    // Show result
+    document.getElementById('empty-state').style.display  = 'none';
+    const result = document.getElementById('letter-result');
+    result.style.display = 'block';
+    document.getElementById('out-actions').style.display  = 'flex';
+    document.getElementById('tag-type').textContent       = typeLabels[currentType];
+    document.getElementById('tag-tone').textContent       = toneLabels[currentTone];
+
+    // Typewriter effect
+    const el = document.getElementById('letter-text');
+    el.textContent = '';
+    let i = 0;
+    const speed = Math.max(5, Math.min(14, 2400 / letter.length));
+    (function type() {
+      if (i < letter.length) { el.textContent += letter[i++]; setTimeout(type, speed); }
+      else { document.getElementById('wc').textContent = letter.trim().split(/\s+/).length + ' words'; }
+    })();
+
+    if (window.innerWidth < 820) {
+      document.querySelector('.output-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  async function copyLetter() {
+    const text = document.getElementById('letter-text').textContent;
+    try { await navigator.clipboard.writeText(text); }
+    catch {
+      const ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); document.body.removeChild(ta);
+    }
+    const btn = document.getElementById('copy-btn');
+    btn.classList.add('copied');
+    btn.innerHTML = `<svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Copied!`;
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = `<svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy`;
+    }, 2200);
+  }
+
+  function resetLetter() {
+    document.getElementById('letter-result').style.display = 'none';
+    document.getElementById('out-actions').style.display   = 'none';
+    document.getElementById('empty-state').style.display   = 'flex';
+    document.getElementById('letter-text').textContent     = '';
+    document.getElementById('wc').textContent              = '';
+    document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  }
+
+  function showError(msg) {
+    const el = document.getElementById('error-box');
+    el.textContent = '⚠ ' + msg; el.style.display = 'block';
+  }
+  function hideError() { document.getElementById('error-box').style.display = 'none'; }
+
+  // Init field labels
+  updateFieldLabels();
+</script>
+
+</body>
+</html>
