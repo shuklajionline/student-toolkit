@@ -3,17 +3,25 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Education Under Fire: How Middle East Wars Are Destroying a Generation of Students | Student Toolkit</title>
-
+  <title>Students Affected by War: Gaza, Yemen, Syria Education Crisis Explained (2026 Report)</title>
   <!-- SEO -->
-  <meta name="description" content="A data-driven investigation into how wars in Gaza, Yemen, Syria, Iraq and Lebanon have killed, displaced, and denied education to millions of students. The full, unsparing truth."/>
-  <meta name="keywords" content="students affected by war Middle East, Gaza students killed, education under attack, Yemen school destruction, Syria student refugees, war and education, scholasticide Gaza, students in conflict zones"/>
+  <meta name="description" content="A detailed 2026 report on how wars in Gaza, Yemen, Syria and Iraq are destroying education systems. Data on student deaths, school destruction, and global education crises."/>
+  <meta name="keywords" content="
+  students affected by war,
+  education crisis in Gaza,
+  how war affects education,
+  Gaza schools destroyed,
+  Yemen children out of school,
+  Syria student refugees,
+  education under attack report,
+  students in conflict zones
+  "/>
   <meta name="author" content="Student Toolkit Editorial"/>
   <meta name="robots" content="index, follow"/>
   <meta property="og:title" content="Education Under Fire: How Middle East Wars Are Destroying a Generation of Students"/>
   <meta property="og:description" content="From Gaza's obliterated universities to Yemen's collapsed classrooms — the devastating, data-backed truth about what war does to students."/>
   <meta property="og:type" content="article"/>
-  <link rel="canonical" href="https://studenttoolkit.com/blog/students-affected-middle-east-wars"/>
+ <link rel="canonical" href="https://studenttoolkit.online/blog/students-affected-middle-east-wars.html"/>
 
   <!-- Schema -->
   <script type="application/ld+json">
@@ -1125,6 +1133,20 @@
     obs.observe(el);
   });
 </script>
+
+<h2>Tools That Help Students Continue Learning</h2>
+
+<p>
+Even when global crises disrupt education, digital tools can help students
+continue building their careers. Platforms like <strong>Student Toolkit</strong>
+provide free tools for students including:
+</p>
+
+<ul>
+<li><a href="/tools/resume-checker.html">Free Resume Checker with ATS Score</a></li>
+<li><a href="/tools/attendance.html">College Attendance Calculator</a></li>
+<li><a href="/tools/cgpa-calculator.html">CGPA Calculator for Students</a></li>
+</ul>
 
 </body>
 </html>
