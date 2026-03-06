@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Career Path Finder for Indian Students — Free Tool | Student Toolkit</title>
+<meta name="description" content="Discover the best career options based on your stream, subjects and interests. Free AI-powered career guidance for Class 10, 12 and college students in India."/>
+<meta name="keywords" content="career path finder India, career after 12th, career guidance for students, best career options India, career after graduation, stream selector, PCM careers, PCB careers, commerce careers, arts careers"/>
+<link rel="canonical" href="https://studenttoolkit.online/tools/career-path-finder.html"/>
+
+<!-- Open Graph -->
+<meta property="og:title" content="AI Career Path Finder — Free Career Guidance for Indian Students"/>
+<meta property="og:description" content="Tell us your stream, subjects and interests — get instant AI-powered career recommendations tailored for India."/>
+<meta property="og:url" content="https://studenttoolkit.online/tools/career-path-finder.html"/>
+<meta property="og:type" content="website"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+
+<style>
+/* ── RESET & BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #0d0d0f;
+  --bg2:      #141416;
+  --bg3:      #1c1c20;
+  --border:   rgba(255,255,255,.08);
+  --border2:  rgba(255,255,255,.14);
+  --ink:      #ffffff;
+  --ink2:     rgba(255,255,255,.7);
+  --ink3:     rgba(255,255,255,.4);
+  --ink4:     rgba(255,255,255,.2);
+  --accent:   #f97316;
+  --accent2:  #fb923c;
+  --green:    #22c55e;
+  --blue:     #3b82f6;
+  --purple:   #a855f7;
+  --red:      #ef4444;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── NAVBAR ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 32px;
+  background: rgba(13,13,15,.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800; font-size: 18px;
+  color: var(--ink); text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+}
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-links a {
+  font-size: 13.5px; font-weight: 500;
+  color: var(--ink3); text-decoration: none;
+  transition: color .15s;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-cta {
+  background: var(--accent) !important;
+  color: #fff !important;
+  padding: 8px 18px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+}
+
+/* ── HERO ── */
+.hero {
+  padding: 140px 24px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 500px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(249,115,22,.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(249,115,22,.1);
+  border: 1px solid rgba(249,115,22,.3);
+  color: var(--accent2);
+  padding: 6px 16px; border-radius: 20px;
+  font-size: 12px; font-weight: 600; letter-spacing: .06em;
+  text-transform: uppercase; margin-bottom: 24px;
+}
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 800; line-height: 1.1;
+  letter-spacing: -.03em;
+  margin-bottom: 20px;
+}
+.hero h1 em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--accent), #fbbf24);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero p {
+  font-size: clamp(15px, 2vw, 18px);
+  color: var(--ink3); max-width: 580px;
+  margin: 0 auto 40px; font-weight: 300; line-height: 1.7;
+}
+.hero-stats {
+  display: flex; align-items: center; justify-content: center;
+  gap: 32px; flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+.hero-stat { text-align: center; }
+.hero-stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px; font-weight: 800;
+  color: var(--accent);
+}
+.hero-stat-label {
+  font-size: 12px; color: var(--ink3);
+  font-weight: 400;
+}
+
+/* ── MAIN TOOL ── */
+.tool-wrap {
+  max-width: 860px; margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+/* ── STEP INDICATOR ── */
+.steps {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; margin-bottom: 40px;
+}
+.step {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  position: relative;
+}
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute; top: 18px; left: calc(50% + 18px);
+  width: calc(100% - 4px); height: 1px;
+  background: var(--border2);
+}
+.step:not(:last-child) { margin-right: 60px; }
+.step-circle {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700;
+  border: 2px solid var(--border2);
+  background: var(--bg2); color: var(--ink3);
+  transition: all .3s; position: relative; z-index: 1;
+}
+.step.active .step-circle {
+  border-color: var(--accent);
+  background: rgba(249,115,22,.15);
+  color: var(--accent);
+}
+.step.done .step-circle {
+  border-color: var(--green);
+  background: rgba(34,197,94,.15);
+  color: var(--green);
+}
+.step-label {
+  font-size: 11px; color: var(--ink4); font-weight: 500;
+  white-space: nowrap;
+}
+.step.active .step-label { color: var(--ink2); }
+
+/* ── FORM CARD ── */
+.form-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.form-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), #fbbf24);
+}
+
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px; font-weight: 700;
+  margin-bottom: 6px;
+}
+.section-sub {
+  font-size: 14px; color: var(--ink3);
+  margin-bottom: 28px; font-weight: 300;
+}
+
+/* ── OPTION GRID (pills) ── */
+.option-grid {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin-bottom: 28px;
+}
+.option-pill {
+  padding: 10px 18px;
+  border: 1.5px solid var(--border2);
+  border-radius: 10px;
+  background: var(--bg3);
+  color: var(--ink2);
+  font-size: 13.5px; font-weight: 500;
+  cursor: pointer;
+  transition: all .18s;
+  user-select: none;
+  display: flex; align-items: center; gap: 8px;
+}
+.option-pill:hover {
+  border-color: var(--accent);
+  color: var(--ink);
+  background: rgba(249,115,22,.08);
+}
+.option-pill.selected {
+  border-color: var(--accent);
+  background: rgba(249,115,22,.15);
+  color: var(--accent2);
+}
+.option-pill .pill-icon { font-size: 16px; }
+
+/* ── FORM FIELDS ── */
+.field-group { margin-bottom: 24px; }
+.field-label {
+  display: block;
+  font-size: 13px; font-weight: 600;
+  color: var(--ink2); margin-bottom: 10px;
+  letter-spacing: .02em;
+}
+.field-label span { color: var(--accent); }
+textarea, select, input[type=text] {
+  width: 100%; padding: 13px 16px;
+  background: var(--bg3);
+  border: 1.5px solid var(--border2);
+  border-radius: 10px;
+  color: var(--ink); font-family: 'DM Sans', sans-serif;
+  font-size: 14px; line-height: 1.5;
+  transition: border-color .18s;
+  outline: none; resize: vertical;
+}
+textarea:focus, select:focus, input[type=text]:focus {
+  border-color: var(--accent);
+}
+textarea { min-height: 90px; }
+select option { background: #1c1c20; }
+
+/* ── SLIDER ── */
+.slider-wrap { position: relative; }
+input[type=range] {
+  width: 100%; height: 6px;
+  -webkit-appearance: none;
+  background: linear-gradient(90deg, var(--accent) var(--val, 50%), var(--bg3) var(--val, 50%));
+  border-radius: 3px; outline: none; cursor: pointer;
+  border: none; padding: 0;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--accent);
+  cursor: pointer;
+}
+.slider-labels {
+  display: flex; justify-content: space-between;
+  font-size: 11px; color: var(--ink4); margin-top: 8px;
+}
+
+/* ── CHECKBOXES ── */
+.check-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 8px; margin-bottom: 24px;
+}
+.check-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px;
+  background: var(--bg3);
+  border: 1.5px solid var(--border);
+  border-radius: 9px; cursor: pointer;
+  transition: all .15s;
+}
+.check-item:hover { border-color: var(--border2); }
+.check-item.checked {
+  border-color: var(--accent);
+  background: rgba(249,115,22,.08);
+}
+.check-item input { display: none; }
+.check-box {
+  width: 18px; height: 18px; border-radius: 5px;
+  border: 2px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all .15s;
+  font-size: 11px;
+}
+.check-item.checked .check-box {
+  background: var(--accent); border-color: var(--accent);
+}
+.check-label { font-size: 13px; font-weight: 500; color: var(--ink2); }
+
+/* ── SUBMIT BUTTON ── */
+.btn-primary {
+  width: 100%; padding: 16px 32px;
+  background: linear-gradient(135deg, var(--accent), #ea580c);
+  border: none; border-radius: 12px;
+  color: #fff; font-family: 'Syne', sans-serif;
+  font-size: 16px; font-weight: 700;
+  cursor: pointer; transition: all .2s;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  letter-spacing: .02em;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(249,115,22,.35);
+}
+.btn-primary:disabled {
+  opacity: .5; cursor: not-allowed; transform: none; box-shadow: none;
+}
+.btn-secondary {
+  padding: 12px 24px;
+  background: transparent;
+  border: 1.5px solid var(--border2);
+  border-radius: 10px;
+  color: var(--ink2); font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 500;
+  cursor: pointer; transition: all .2s;
+}
+.btn-secondary:hover { border-color: var(--ink2); color: var(--ink); }
+
+/* ── LOADING ── */
+.loading-wrap {
+  text-align: center; padding: 60px 20px;
+  display: none;
+}
+.loading-wrap.show { display: block; }
+.loader-orbit {
+  width: 60px; height: 60px; margin: 0 auto 24px;
+  border-radius: 50%;
+  border: 3px solid var(--bg3);
+  border-top-color: var(--accent);
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.loading-text {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 700; color: var(--ink);
+  margin-bottom: 8px;
+}
+.loading-sub { font-size: 13px; color: var(--ink3); }
+.loading-dots span {
+  animation: blink 1.4s infinite;
+  font-size: 20px; color: var(--accent);
+}
+.loading-dots span:nth-child(2) { animation-delay: .2s; }
+.loading-dots span:nth-child(3) { animation-delay: .4s; }
+@keyframes blink { 0%,80%,100%{opacity:0} 40%{opacity:1} }
+
+/* ── RESULTS ── */
+.results-wrap { display: none; }
+.results-wrap.show { display: block; }
+
+.results-header {
+  text-align: center; margin-bottom: 36px;
+}
+.results-header h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 800; margin-bottom: 8px;
+}
+.results-header p { font-size: 14px; color: var(--ink3); }
+
+/* career cards */
+.careers-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px; margin-bottom: 28px;
+}
+.career-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px; padding: 24px;
+  position: relative; overflow: hidden;
+  transition: all .2s;
+}
+.career-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.4);
+}
+.career-card.top-pick {
+  border-color: rgba(249,115,22,.4);
+  background: rgba(249,115,22,.05);
+}
+.career-card.top-pick::before {
+  content: '⭐ Top Pick';
+  position: absolute; top: 12px; right: 12px;
+  background: var(--accent);
+  color: #fff; font-size: 10px; font-weight: 700;
+  padding: 3px 10px; border-radius: 20px;
+  letter-spacing: .05em;
+}
+.career-icon {
+  font-size: 32px; margin-bottom: 14px;
+  display: block;
+}
+.career-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 17px; font-weight: 700;
+  margin-bottom: 8px; color: var(--ink);
+}
+.career-desc {
+  font-size: 13px; color: var(--ink3);
+  line-height: 1.6; margin-bottom: 14px;
+  font-weight: 300;
+}
+.career-tags {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-bottom: 14px;
+}
+.career-tag {
+  font-size: 11px; font-weight: 600;
+  padding: 3px 10px; border-radius: 20px;
+  letter-spacing: .04em;
+}
+.tag-salary { background: rgba(34,197,94,.12); color: #4ade80; }
+.tag-demand { background: rgba(59,130,246,.12); color: #60a5fa; }
+.tag-duration { background: rgba(168,85,247,.12); color: #c084fc; }
+.career-match {
+  display: flex; align-items: center; gap: 8px;
+}
+.match-bar-bg {
+  flex: 1; height: 5px; background: var(--bg3);
+  border-radius: 3px; overflow: hidden;
+}
+.match-bar-fill {
+  height: 100%; border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), #fbbf24);
+  transition: width 1s ease;
+}
+.match-pct {
+  font-size: 12px; font-weight: 700;
+  color: var(--accent2); min-width: 36px;
+  text-align: right;
+}
+
+/* analysis section */
+.analysis-box {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px; padding: 28px;
+  margin-bottom: 20px;
+}
+.analysis-box h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px; font-weight: 700;
+  margin-bottom: 14px;
+  display: flex; align-items: center; gap: 8px;
+}
+.analysis-content {
+  font-size: 14px; color: var(--ink2);
+  line-height: 1.8; font-weight: 300;
+}
+.analysis-content strong { color: var(--ink); font-weight: 600; }
+
+/* next steps */
+.next-steps {
+  background: linear-gradient(135deg, rgba(249,115,22,.1), rgba(251,191,36,.05));
+  border: 1px solid rgba(249,115,22,.2);
+  border-radius: 16px; padding: 28px;
+  margin-bottom: 24px;
+}
+.next-steps h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px; font-weight: 700;
+  margin-bottom: 16px; color: var(--accent2);
+}
+.next-step-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  margin-bottom: 12px;
+}
+.next-step-num {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--accent); color: #fff;
+  font-size: 12px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.next-step-text { font-size: 14px; color: var(--ink2); line-height: 1.6; }
+
+/* action buttons */
+.result-actions {
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+
+/* ── TOOLS PROMO ── */
+.tools-promo {
+  margin-top: 60px; padding: 32px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  text-align: center;
+}
+.tools-promo h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px; font-weight: 700;
+  margin-bottom: 8px;
+}
+.tools-promo p { font-size: 13px; color: var(--ink3); margin-bottom: 20px; }
+.promo-links {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+}
+.promo-link {
+  padding: 9px 18px;
+  background: var(--bg3); border: 1px solid var(--border2);
+  border-radius: 9px; color: var(--ink2);
+  font-size: 13px; font-weight: 500;
+  text-decoration: none; transition: all .15s;
+}
+.promo-link:hover { border-color: var(--accent); color: var(--accent2); }
+
+/* ── FAQ ── */
+.faq-section { margin-top: 60px; }
+.faq-section h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 24px; font-weight: 800;
+  margin-bottom: 24px; text-align: center;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+}
+.faq-q {
+  font-weight: 600; font-size: 15px;
+  cursor: pointer; display: flex;
+  justify-content: space-between; align-items: center;
+  color: var(--ink2); transition: color .15s;
+}
+.faq-q:hover { color: var(--ink); }
+.faq-a {
+  font-size: 14px; color: var(--ink3);
+  line-height: 1.7; margin-top: 10px;
+  display: none; font-weight: 300;
+}
+.faq-item.open .faq-a { display: block; }
+.faq-item.open .faq-q { color: var(--accent2); }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 24px;
+  text-align: center;
+  font-size: 13px; color: var(--ink4);
+}
+footer a { color: var(--ink3); text-decoration: none; }
+footer a:hover { color: var(--ink); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  nav { padding: 14px 20px; }
+  .nav-links { display: none; }
+  .form-card { padding: 24px 20px; }
+  .steps .step:not(:last-child) { margin-right: 30px; }
+  .careers-grid { grid-template-columns: 1fr; }
+  .result-actions { flex-direction: column; }
+  .result-actions button { width: 100%; }
+}
+
+/* animations */
+@keyframes fadeUp {
+  from { opacity:0; transform: translateY(20px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp .5s ease both; }
+.delay-1 { animation-delay: .1s; }
+.delay-2 { animation-delay: .2s; }
+.delay-3 { animation-delay: .3s; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="../index.html" class="nav-logo">Student<span>Toolkit</span></a>
+  <div class="nav-links">
+    <a href="../index.html#tools">Tools</a>
+    <a href="../news.html">News</a>
+    <a href="../blog/index.html">Blog</a>
+    <a href="ai-resume-checker.html" class="nav-cta">Resume Checker →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">✨ AI-Powered · Free Forever · Made for India</div>
+  <h1>Find Your Perfect<br/><em>Career Path</em></h1>
+  <p>Tell us your stream, subjects and interests — our AI analyses 50+ Indian career options and gives you a personalised roadmap in seconds.</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">50+</div>
+      <div class="hero-stat-label">Career Options</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">100%</div>
+      <div class="hero-stat-label">Free & AI Powered</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">30s</div>
+      <div class="hero-stat-label">To Get Results</div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL -->
+<div class="tool-wrap">
+
+  <!-- STEP INDICATOR -->
+  <div class="steps" id="stepIndicator">
+    <div class="step active" id="step1">
+      <div class="step-circle">1</div>
+      <div class="step-label">Your Profile</div>
+    </div>
+    <div class="step" id="step2">
+      <div class="step-circle">2</div>
+      <div class="step-label">Interests</div>
+    </div>
+    <div class="step" id="step3">
+      <div class="step-circle">3</div>
+      <div class="step-label">Results</div>
+    </div>
+  </div>
+
+  <!-- STEP 1: PROFILE -->
+  <div id="formStep1" class="form-card fade-up">
+    <div class="section-title">Tell us about yourself</div>
+    <div class="section-sub">This helps us give you the most relevant career options for your situation.</div>
+
+    <!-- Level -->
+    <div class="field-group">
+      <label class="field-label">I am currently in <span>*</span></label>
+      <div class="option-grid" id="levelGrid">
+        <div class="option-pill" data-val="class10" onclick="selectPill(this,'levelGrid')"><span class="pill-icon">📚</span> Class 10 (Choosing Stream)</div>
+        <div class="option-pill" data-val="class11-12-pcm" onclick="selectPill(this,'levelGrid')"><span class="pill-icon">🔬</span> Class 11-12 PCM</div>
+        <div class="option-pill" data-val="class11-12-pcb" onclick="selectPill(this,'levelGrid')"><span class="pill-icon">🧬</span> Class 11-12 PCB</div>
+        <div class="option-pill" data-val="class11-12-commerce" onclick="selectPill(this,'levelGrid')"><span class="pill-icon">📊</span> Class 11-12 Commerce</div>
+        <div class="option-pill" data-val="class11-12-arts" onclick="selectPill(this,'levelGrid')"><span class="pill-icon">🎨</span> Class 11-12 Arts/Humanities</div>
+        <div class="option-pill" data-val="college-engineering" onclick="selectPill(this,'levelGrid')"><span class="pill-icon">⚙️</span> College — Engineering</div>
+        <div class="option-pill" data-val="college-commerce" onclick="selectPill(this,'levelGrid')"><span class="pill-icon">🏦</span> College — Commerce/BBA</div>
+        <div class="option-pill" data-val="college-science" onclick="selectPill(this,'levelGrid')"><span class="pill-icon">🔭</span> College — Science (BSc)</div>
+        <div class="option-pill" data-val="college-arts" onclick="selectPill(this,'levelGrid')"><span class="pill-icon">📖</span> College — Arts/BA</div>
+        <div class="option-pill" data-val="college-other" onclick="selectPill(this,'levelGrid')"><span class="pill-icon">🎓</span> College — Other</div>
+      </div>
+    </div>
+
+    <!-- Marks -->
+    <div class="field-group">
+      <label class="field-label">Your approximate marks / percentage <span>*</span></label>
+      <div class="slider-wrap">
+        <input type="range" id="marksSlider" min="40" max="100" value="75"
+          oninput="updateSlider(this); document.getElementById('marksVal').textContent=this.value+'%'"/>
+        <div style="text-align:center;margin-top:10px;">
+          <span style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--accent)" id="marksVal">75%</span>
+        </div>
+        <div class="slider-labels"><span>40%</span><span>60%</span><span>80%</span><span>100%</span></div>
+      </div>
+    </div>
+
+    <!-- Favourite subjects -->
+    <div class="field-group">
+      <label class="field-label">Favourite / strongest subjects <span>*</span> <span style="color:var(--ink4);font-weight:400;">(pick all that apply)</span></label>
+      <div class="check-grid" id="subjectsGrid">
+        <label class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-label">Mathematics</span></label>
+        <label class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-label">Physics</span></label>
+        <label class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-label">Chemistry</span></label>
+        <label class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-label">Biology</span></label>
+        <label class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-label">Computer Science</span></label>
+        <label class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-label">Economics</span></label>
+        <label class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-label">Accountancy</span></label>
+        <label class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-label">Business Studies</span></label>
+        <label class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-label">History / Pol. Science</span></label>
+        <label class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-label">English / Literature</span></label>
+        <label class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-label">Psychology</span></label>
+        <label class="check-item" onclick="toggleCheck(this)"><div class="check-box">✓</div><span class="check-label">Fine Arts / Design</span></label>
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="goStep2()">
+      Continue to Interests →
+    </button>
+  </div>
+
+  <!-- STEP 2: INTERESTS -->
+  <div id="formStep2" class="form-card fade-up" style="display:none;">
+    <div class="section-title">What excites you?</div>
+    <div class="section-sub">Be honest — there are no wrong answers. This is about what YOU enjoy, not what sounds impressive.</div>
+
+    <!-- Interest areas -->
+    <div class="field-group">
+      <label class="field-label">I enjoy or am curious about <span>*</span> <span style="color:var(--ink4);font-weight:400;">(pick up to 5)</span></label>
+      <div class="option-grid" id="interestsGrid">
+        <div class="option-pill" data-val="coding" onclick="selectMulti(this,'interestsGrid',5)"><span class="pill-icon">💻</span> Coding & Tech</div>
+        <div class="option-pill" data-val="business" onclick="selectMulti(this,'interestsGrid',5)"><span class="pill-icon">💼</span> Business & Startups</div>
+        <div class="option-pill" data-val="medicine" onclick="selectMulti(this,'interestsGrid',5)"><span class="pill-icon">🏥</span> Medicine & Healthcare</div>
+        <div class="option-pill" data-val="design" onclick="selectMulti(this,'interestsGrid',5)"><span class="pill-icon">🎨</span> Design & Creativity</div>
+        <div class="option-pill" data-val="finance" onclick="selectMulti(this,'interestsGrid',5)"><span class="pill-icon">📈</span> Finance & Investing</div>
+        <div class="option-pill" data-val="law" onclick="selectMulti(this,'interestsGrid',5)"><span class="pill-icon">⚖️</span> Law & Justice</div>
+        <div class="option-pill" data-val="teaching" onclick="selectMulti(this,'interestsGrid',5)"><span class="pill-icon">📚</span> Teaching & Education</div>
+        <div class="option-pill" data-val="government" onclick="selectMulti(this,'interestsGrid',5)"><span class="pill-icon">🏛️</span> Government & UPSC</div>
+        <div class="option-pill" data-val="media" onclick="selectMulti(this,'interestsGrid',5)"><span class="pill-icon">📰</span> Media & Journalism</div>
+        <div class="option-pill" data-val="science" onclick="selectMulti(this,'interestsGrid',5)"><span class="pill-icon">🔬</span> Research & Science</div>
+        <div class="option-pill" data-val="arts" onclick="selectMulti(this,'interestsGrid',5)"><span class="pill-icon">🎭</span> Arts & Entertainment</div>
+        <div class="option-pill" data-val="sports" onclick="selectMulti(this,'interestsGrid',5)"><span class="pill-icon">⚽</span> Sports & Fitness</div>
+        <div class="option-pill" data-val="travel" onclick="selectMulti(this,'interestsGrid',5)"><span class="pill-icon">✈️</span> Travel & Hospitality</div>
+        <div class="option-pill" data-val="environment" onclick="selectMulti(this,'interestsGrid',5)"><span class="pill-icon">🌱</span> Environment & Nature</div>
+        <div class="option-pill" data-val="social" onclick="selectMulti(this,'interestsGrid',5)"><span class="pill-icon">🤝</span> Social Work & NGO</div>
+        <div class="option-pill" data-val="defence" onclick="selectMulti(this,'interestsGrid',5)"><span class="pill-icon">🎖️</span> Defence & Army</div>
+      </div>
+    </div>
+
+    <!-- Work style -->
+    <div class="field-group">
+      <label class="field-label">I prefer working <span>*</span></label>
+      <div class="option-grid" id="workStyleGrid">
+        <div class="option-pill" data-val="indoors-desk" onclick="selectPill(this,'workStyleGrid')"><span class="pill-icon">🖥️</span> Indoors at a desk</div>
+        <div class="option-pill" data-val="outdoors" onclick="selectPill(this,'workStyleGrid')"><span class="pill-icon">🌍</span> Outdoors / on the move</div>
+        <div class="option-pill" data-val="people" onclick="selectPill(this,'workStyleGrid')"><span class="pill-icon">👥</span> With people constantly</div>
+        <div class="option-pill" data-val="independent" onclick="selectPill(this,'workStyleGrid')"><span class="pill-icon">🧘</span> Independently / solo</div>
+        <div class="option-pill" data-val="creative" onclick="selectPill(this,'workStyleGrid')"><span class="pill-icon">💡</span> Creative freedom</div>
+        <div class="option-pill" data-val="structured" onclick="selectPill(this,'workStyleGrid')"><span class="pill-icon">📋</span> Structured routine</div>
+      </div>
+    </div>
+
+    <!-- Priority -->
+    <div class="field-group">
+      <label class="field-label">What matters most to you in a career? <span>*</span></label>
+      <div class="option-grid" id="priorityGrid">
+        <div class="option-pill" data-val="high-salary" onclick="selectPill(this,'priorityGrid')"><span class="pill-icon">💰</span> High salary</div>
+        <div class="option-pill" data-val="job-security" onclick="selectPill(this,'priorityGrid')"><span class="pill-icon">🛡️</span> Job security</div>
+        <div class="option-pill" data-val="passion" onclick="selectPill(this,'priorityGrid')"><span class="pill-icon">❤️</span> Passion & purpose</div>
+        <div class="option-pill" data-val="growth" onclick="selectPill(this,'priorityGrid')"><span class="pill-icon">🚀</span> Fast growth / promotions</div>
+        <div class="option-pill" data-val="work-life" onclick="selectPill(this,'priorityGrid')"><span class="pill-icon">⚖️</span> Work-life balance</div>
+        <div class="option-pill" data-val="status" onclick="selectPill(this,'priorityGrid')"><span class="pill-icon">🏆</span> Social status / respect</div>
+      </div>
+    </div>
+
+    <!-- Extra context -->
+    <div class="field-group">
+      <label class="field-label">Anything else you want the AI to know? <span style="color:var(--ink4);font-weight:400;">(optional)</span></label>
+      <textarea id="extraContext" placeholder="E.g. I want to work abroad, my parents want me to do engineering, I hate memorising, I'm good at debating..."></textarea>
+    </div>
+
+    <div style="display:flex;gap:12px;">
+      <button class="btn-secondary" onclick="goStep1()">← Back</button>
+      <button class="btn-primary" onclick="generateCareerPath()" id="generateBtn" style="flex:1;">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Find My Career Path
+      </button>
+    </div>
+  </div>
+
+  <!-- LOADING -->
+  <div class="loading-wrap" id="loadingWrap">
+    <div class="loader-orbit"></div>
+    <div class="loading-text">Analysing your profile<span class="loading-dots"><span>.</span><span>.</span><span>.</span></span></div>
+    <div class="loading-sub" id="loadingMsg">Matching with 50+ Indian career options...</div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-wrap" id="resultsWrap">
+    <div class="results-header">
+      <div class="hero-badge" style="margin:0 auto 16px;">✅ Your Personalised Career Report</div>
+      <h2>Your Top Career Matches</h2>
+      <p id="resultSubtitle">Based on your stream, interests and priorities</p>
+    </div>
+
+    <div class="careers-grid" id="careersGrid"></div>
+
+    <div id="analysisBox" class="analysis-box">
+      <h3>🧠 AI Analysis</h3>
+      <div class="analysis-content" id="analysisContent"></div>
+    </div>
+
+    <div id="nextStepsBox" class="next-steps">
+      <h3>📍 Your Next Steps</h3>
+      <div id="nextStepsContent"></div>
+    </div>
+
+    <div class="result-actions">
+      <button class="btn-primary" onclick="resetTool()" style="flex:1;max-width:300px;">
+        🔄 Try Again with Different Inputs
+      </button>
+      <button class="btn-secondary" onclick="window.print()">
+        🖨️ Save / Print Results
+      </button>
+    </div>
+  </div>
+
+  <!-- TOOLS PROMO -->
+  <div class="tools-promo">
+    <h3>More Free Student Tools</h3>
+    <p>Everything you need to manage your student life — all free, no login.</p>
+    <div class="promo-links">
+      <a href="attendance.html" class="promo-link">📊 Attendance Calculator</a>
+      <a href="cgpa.html" class="promo-link">📈 CGPA Calculator</a>
+      <a href="ai-resume-checker.html" class="promo-link">🧠 Resume Checker</a>
+      <a href="../news.html" class="promo-link">📰 India News Portal</a>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Which is the best career after 12th PCM in India?
+        <span>+</span>
+      </div>
+      <div class="faq-a">
+        After 12th PCM, top careers include Engineering (B.Tech/BE), Architecture, Data Science, Merchant Navy, and Defence. With JEE preparation, IIT/NIT admissions open doors to top tech companies with ₹10-50 LPA packages. Our AI tool analyses your specific interests within PCM to give you personalised recommendations.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        What are the best careers after 12th Commerce without Maths?
+        <span>+</span>
+      </div>
+      <div class="faq-a">
+        Commerce without Maths opens doors to CA (Chartered Accountancy), Company Secretary, BBA, Hotel Management, Fashion Design, Mass Communication, and Law (BA LLB). Many of these careers offer excellent salary growth and are in high demand across India.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Is career guidance from AI reliable?
+        <span>+</span>
+      </div>
+      <div class="faq-a">
+        Our AI analyses your inputs against real Indian career data including salary ranges, job demand, and educational requirements. It's a starting point for exploration — not a final decision. We recommend using these results to research further and speak with professionals in fields that interest you.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Which careers have highest salary in India for freshers?
+        <span>+</span>
+      </div>
+      <div class="faq-a">
+        In 2025-26, highest paying fresher careers in India include Software Engineering (₹4-20 LPA), Investment Banking (₹6-15 LPA), Data Science (₹5-12 LPA), IAS/IPS (₹7-10 LPA + perks), Medicine (after residency: ₹8-20 LPA), and CA (₹6-15 LPA).
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        What if I don't know what I want to do?
+        <span>+</span>
+      </div>
+      <div class="faq-a">
+        That's completely normal — most students don't! Just fill in what you enjoy doing, not what you think you should do. Our AI is specifically designed to help undecided students discover careers they might never have considered. Try multiple combinations and see what resonates.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Student Toolkit · <a href="../index.html">Home</a> · <a href="../blog/index.html">Blog</a> · <a href="ai-resume-checker.html">Resume Checker</a></p>
+  <p style="margin-top:6px;">Free career guidance for Indian students — Class 10, 11, 12 and College</p>
+</footer>
+
+<script>
+// ════════════════════════════════════════
+//  STATE
+// ════════════════════════════════════════
+const state = {
+  level: null, marks: 75, subjects: [],
+  interests: [], workStyle: null,
+  priority: null, extraContext: ''
+};
+
+// ════════════════════════════════════════
+//  UI HELPERS
+// ════════════════════════════════════════
+function selectPill(el, gridId) {
+  document.querySelectorAll(`#${gridId} .option-pill`).forEach(p => p.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function selectMulti(el, gridId, max) {
+  const selected = document.querySelectorAll(`#${gridId} .option-pill.selected`);
+  if (el.classList.contains('selected')) {
+    el.classList.remove('selected');
+  } else {
+    if (selected.length >= max) {
+      // deselect first
+      selected[0].classList.remove('selected');
+    }
+    el.classList.add('selected');
+  }
+}
+
+function toggleCheck(el) {
+  el.classList.toggle('checked');
+}
+
+function updateSlider(input) {
+  const pct = ((input.value - input.min) / (input.max - input.min)) * 100;
+  input.style.setProperty('--val', pct + '%');
+}
+
+// Init slider
+updateSlider(document.getElementById('marksSlider'));
+
+// ════════════════════════════════════════
+//  STEP NAVIGATION
+// ════════════════════════════════════════
+function setStep(n) {
+  [1,2,3].forEach(i => {
+    const s = document.getElementById('step' + i);
+    s.classList.remove('active','done');
+    if (i < n) s.classList.add('done');
+    if (i === n) s.classList.add('active');
+  });
+}
+
+function goStep2() {
+  // Validate step 1
+  state.level = document.querySelector('#levelGrid .option-pill.selected')?.dataset.val;
+  if (!state.level) { alert('Please select your current level.'); return; }
+
+  state.marks = parseInt(document.getElementById('marksSlider').value);
+  state.subjects = [...document.querySelectorAll('#subjectsGrid .check-item.checked')]
+    .map(el => el.querySelector('.check-label').textContent);
+
+  if (!state.subjects.length) { alert('Please select at least one subject.'); return; }
+
+  document.getElementById('formStep1').style.display = 'none';
+  document.getElementById('formStep2').style.display = 'block';
+  setStep(2);
+  window.scrollTo({ top: 200, behavior: 'smooth' });
+}
+
+function goStep1() {
+  document.getElementById('formStep2').style.display = 'none';
+  document.getElementById('formStep1').style.display = 'block';
+  setStep(1);
+  window.scrollTo({ top: 200, behavior: 'smooth' });
+}
+
+// ════════════════════════════════════════
+//  GENERATE VIA ANTHROPIC API
+// ════════════════════════════════════════
+async function generateCareerPath() {
+  // Validate step 2
+  state.interests = [...document.querySelectorAll('#interestsGrid .option-pill.selected')]
+    .map(el => el.dataset.val);
+  state.workStyle = document.querySelector('#workStyleGrid .option-pill.selected')?.dataset.val;
+  state.priority  = document.querySelector('#priorityGrid .option-pill.selected')?.dataset.val;
+  state.extraContext = document.getElementById('extraContext').value.trim();
+
+  if (!state.interests.length) { alert('Please select at least one interest area.'); return; }
+  if (!state.workStyle) { alert('Please select your preferred work style.'); return; }
+  if (!state.priority) { alert('Please select what matters most to you.'); return; }
+
+  // Show loading
+  document.getElementById('formStep2').style.display = 'none';
+  document.getElementById('loadingWrap').classList.add('show');
+  setStep(3);
+  window.scrollTo({ top: 200, behavior: 'smooth' });
+
+  const msgs = [
+    'Matching with 50+ Indian career options...',
+    'Analysing salary trends and job demand...',
+    'Calculating your compatibility scores...',
+    'Building your personalised roadmap...',
+  ];
+  let mi = 0;
+  const msgInterval = setInterval(() => {
+    mi = (mi + 1) % msgs.length;
+    document.getElementById('loadingMsg').textContent = msgs[mi];
+  }, 2000);
+
+  const prompt = `You are an expert Indian career counsellor with deep knowledge of Indian education system, job market, and career paths.
+
+A student has provided this profile:
+- Current level: ${state.level}
+- Marks/Percentage: ${state.marks}%
+- Favourite subjects: ${state.subjects.join(', ')}
+- Interest areas: ${state.interests.join(', ')}
+- Work style preference: ${state.workStyle}
+- Career priority: ${state.priority}
+${state.extraContext ? `- Additional context: ${state.extraContext}` : ''}
+
+Give a comprehensive career guidance response in this EXACT JSON format (no markdown, no extra text, just raw JSON):
+
+{
+  "careers": [
+    {
+      "name": "Career Name",
+      "icon": "single emoji",
+      "description": "2-3 sentence description specific to India, including what the job involves day to day",
+      "matchScore": 92,
+      "topPick": true,
+      "salaryRange": "₹X - ₹Y LPA",
+      "demandLevel": "Very High / High / Moderate",
+      "courseDuration": "X years",
+      "entranceExams": "JEE / NEET / CAT / UPSC / None etc",
+      "topColleges": "IIT, NIT, AIIMS etc"
+    }
+  ],
+  "analysis": "3-4 sentences of personalised analysis explaining WHY these careers suit this student specifically, referencing their subjects and interests",
+  "nextSteps": [
+    "Specific actionable next step 1 for Indian context",
+    "Specific actionable next step 2",
+    "Specific actionable next step 3",
+    "Specific actionable next step 4"
+  ],
+  "subtitle": "One line summarising their profile e.g. 'PCM student with a passion for tech and high earning potential'"
+}
+
+Rules:
+- Give exactly 6 career options
+- Mark the best 2 as topPick: true
+- matchScore should be between 65-98, varying realistically
+- Be specific to India — mention Indian exams, colleges, salary in LPA
+- nextSteps must be actionable and specific to their level (class 10/12/college)
+- Keep descriptions concise but informative`;
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    const data = await response.json();
+    const text = data.content?.[0]?.text || '';
+
+    // Parse JSON
+    let result;
+    try {
+      const clean = text.replace(/```json|```/g, '').trim();
+      result = JSON.parse(clean);
+    } catch(e) {
+      // Try to extract JSON from response
+      const match = text.match(/\{[\s\S]*\}/);
+      if (match) result = JSON.parse(match[0]);
+      else throw new Error('Could not parse response');
+    }
+
+    clearInterval(msgInterval);
+    document.getElementById('loadingWrap').classList.remove('show');
+    renderResults(result);
+
+  } catch(err) {
+    clearInterval(msgInterval);
+    console.error(err);
+    document.getElementById('loadingWrap').classList.remove('show');
+    // Fallback
+    document.getElementById('formStep2').style.display = 'block';
+    setStep(2);
+    alert('Something went wrong. Please try again.');
+  }
+}
+
+// ════════════════════════════════════════
+//  RENDER RESULTS
+// ════════════════════════════════════════
+function renderResults(data) {
+  document.getElementById('resultSubtitle').textContent = data.subtitle || '';
+
+  // Career cards
+  const grid = document.getElementById('careersGrid');
+  grid.innerHTML = data.careers.map((c, i) => `
+    <div class="career-card ${c.topPick ? 'top-pick' : ''} fade-up" style="animation-delay:${i*0.08}s">
+      <span class="career-icon">${c.icon}</span>
+      <div class="career-name">${c.name}</div>
+      <div class="career-desc">${c.description}</div>
+      <div class="career-tags">
+        <span class="career-tag tag-salary">💰 ${c.salaryRange}</span>
+        <span class="career-tag tag-demand">📈 ${c.demandLevel}</span>
+        <span class="career-tag tag-duration">🎓 ${c.courseDuration}</span>
+      </div>
+      ${c.entranceExams && c.entranceExams !== 'None' ? `
+        <div style="font-size:12px;color:var(--ink3);margin-bottom:10px;">
+          <strong style="color:var(--ink2);">Exams:</strong> ${c.entranceExams}
+        </div>` : ''}
+      ${c.topColleges ? `
+        <div style="font-size:12px;color:var(--ink3);margin-bottom:14px;">
+          <strong style="color:var(--ink2);">Top Colleges:</strong> ${c.topColleges}
+        </div>` : ''}
+      <div class="career-match">
+        <div class="match-bar-bg">
+          <div class="match-bar-fill" style="width:0%" data-target="${c.matchScore}"></div>
+        </div>
+        <div class="match-pct">${c.matchScore}%</div>
+      </div>
+    </div>`).join('');
+
+  // Animate match bars after render
+  setTimeout(() => {
+    document.querySelectorAll('.match-bar-fill').forEach(bar => {
+      bar.style.width = bar.dataset.target + '%';
+    });
+  }, 300);
+
+  // Analysis
+  document.getElementById('analysisContent').innerHTML = data.analysis;
+
+  // Next steps
+  document.getElementById('nextStepsContent').innerHTML = data.nextSteps.map((step, i) => `
+    <div class="next-step-item">
+      <div class="next-step-num">${i+1}</div>
+      <div class="next-step-text">${step}</div>
+    </div>`).join('');
+
+  document.getElementById('resultsWrap').classList.add('show');
+  window.scrollTo({ top: 200, behavior: 'smooth' });
+}
+
+// ════════════════════════════════════════
+//  RESET
+// ════════════════════════════════════════
+function resetTool() {
+  document.getElementById('resultsWrap').classList.remove('show');
+  document.querySelectorAll('.option-pill.selected').forEach(p => p.classList.remove('selected'));
+  document.querySelectorAll('.check-item.checked').forEach(c => c.classList.remove('checked'));
+  document.getElementById('extraContext').value = '';
+  document.getElementById('marksSlider').value = 75;
+  updateSlider(document.getElementById('marksSlider'));
+  document.getElementById('marksVal').textContent = '75%';
+  document.getElementById('formStep1').style.display = 'block';
+  document.getElementById('formStep2').style.display = 'none';
+  setStep(1);
+  window.scrollTo({ top: 200, behavior: 'smooth' });
+}
+
+// ════════════════════════════════════════
+//  FAQ
+// ════════════════════════════════════════
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(f => {
+    f.classList.remove('open');
+    f.querySelector('.faq-q span').textContent = '+';
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    el.querySelector('span').textContent = '−';
+  }
+}
+
+// ════════════════════════════════════════
+//  NAVBAR SCROLL
+// ════════════════════════════════════════
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.background =
+    window.scrollY > 20 ? 'rgba(13,13,15,.95)' : 'rgba(13,13,15,.8)';
+}, { passive: true });
+</script>
+
+</body>
+</html>
