@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Live News & Sports Scores | Student Toolkit</title>
-  <meta name="description" content="Live education news, world news, and real-time sports scores for students. Updated every 5 minutes. Free, no sign-up."/>
+  <meta name="description" content="Live Indian news from NDTV, Times of India, The Hindu and more. Real-time cricket scores, ISL football and sports updates for students. Updated every 5 minutes."/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://studenttoolkit.online/news.html"/>
   <link rel="manifest" href="/manifest.json"/>
@@ -352,7 +352,7 @@
 
 <footer role="contentinfo">
   <div class="footer-inner">
-    <p>© 2026 Student Toolkit · News powered by <strong>The Guardian</strong> (free API) · Sports via live data</p>
+    <p>© 2026 Student Toolkit · News powered by <strong>NewsData.io</strong> · Indian sources: NDTV, Times of India, The Hindu &amp; more</p>
     <div style="display:flex;gap:16px;">
       <a href="index.html">Home</a>
       <a href="blog/index.html">Blog</a>
@@ -363,115 +363,121 @@
 
 <script>
 // ════════════════════════════════════════════════════════
-//  CONFIGURATION
+//  CONFIGURATION — NewsData.io (Real Indian Sources)
+//  Sources: NDTV, Times of India, The Hindu, India Today,
+//           Zee News, ANI, Hindustan Times, Indian Express
 // ════════════════════════════════════════════════════════
-const GUARDIAN_KEY = '038ee300-ba86-447a-89a9-d16a7771e8aa';
+const ND_KEY  = 'pub_f1385a4dcd7242e5aa90489200656bb3';
+const ND_BASE = 'https://newsdata.io/api/1/latest';
 
-const GUARDIAN_BASE = 'https://content.guardianapis.com/search';
-
-// India-focused categories — all queries include India keyword
+// Category config — country=in gives real Indian sources
 const CATEGORIES = {
-  education:    { query: 'India education students university colleges',  section: 'education',   emoji: '🎓', label: 'Education' },
-  world:        { query: 'India news politics government',                section: 'world',        emoji: '🇮🇳', label: 'India' },
-  tech:         { query: 'India technology startups AI Bengaluru',        section: 'technology',   emoji: '💻', label: 'Tech' },
-  business:     { query: 'India economy business market finance GDP',     section: 'business',     emoji: '📊', label: 'Business' },
-  science:      { query: 'India science research ISRO space discovery',  section: 'science',      emoji: '🔬', label: 'Science' },
-  'sports-news':{ query: 'India cricket IPL football kabaddi sports',    section: 'sport',        emoji: '🏏', label: 'Sports' }
+  education:    { q: 'education university college students exam',  emoji: '🎓', label: 'Education',       bg: 'linear-gradient(135deg,#312e81,#1e1b4b)' },
+  world:        { q: '',                                            emoji: '🇮🇳', label: 'India Top News',  bg: 'linear-gradient(135deg,#138808,#0a4f08)' },
+  tech:         { q: 'technology startup AI software app',         emoji: '💻', label: 'Tech & Startups',  bg: 'linear-gradient(135deg,#1e3a5f,#1e40af)' },
+  business:     { q: 'business economy market finance sensex nifty',emoji: '📊', label: 'Business',        bg: 'linear-gradient(135deg,#78350f,#92400e)' },
+  science:      { q: 'science ISRO space research health medicine', emoji: '🔬', label: 'Science & ISRO',  bg: 'linear-gradient(135deg,#134e4a,#0f766e)' },
+  'sports-news':{ q: 'cricket IPL football kabaddi hockey sports',  emoji: '🏏', label: 'Cricket & Sports', bg: 'linear-gradient(135deg,#1c1917,#292524)' }
 };
 
-// Category emoji backgrounds
-const BG_COLORS = {
-  education:    'linear-gradient(135deg,#312e81,#1e1b4b)',
-  world:        'linear-gradient(135deg,#138808,#0a4f08)',
-  tech:         'linear-gradient(135deg,#1e3a5f,#1e40af)',
-  business:     'linear-gradient(135deg,#78350f,#92400e)',
-  science:      'linear-gradient(135deg,#134e4a,#0f766e)',
-  'sports-news':'linear-gradient(135deg,#1c1917,#292524)'
-};
-
-// Cache to avoid re-fetching
 const cache = {};
 let currentTab = 'education';
-let refreshTimer;
 
 // ════════════════════════════════════════════════════════
-//  GUARDIAN NEWS FETCH
+//  NEWSDATA.IO FETCH
 // ════════════════════════════════════════════════════════
 async function fetchNews(category) {
+  // Return cache if fresh (5 min)
   if (cache[category] && (Date.now() - cache[category].ts) < 5 * 60 * 1000) {
     return cache[category].data;
   }
+
   const cat = CATEGORIES[category];
-  // q= forces India-specific keyword search; tag=world/india boosts Indian articles
-  const url = `${GUARDIAN_BASE}?q=${encodeURIComponent(cat.query)}&show-fields=trailText,thumbnail,headline&page-size=12&order-by=newest&api-key=${GUARDIAN_KEY}`;
+  const params = new URLSearchParams({
+    apikey:   ND_KEY,
+    country:  'in',        // ← India only
+    language: 'english',
+    ...(cat.q ? { q: cat.q } : {})
+  });
 
   try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error('Guardian API ' + res.status);
+    const res  = await fetch(`${ND_BASE}?${params}`);
+    if (!res.ok) throw new Error('NewsData ' + res.status);
     const data = await res.json();
-    const articles = data.response.results || [];
+    if (data.status !== 'success') throw new Error(data.message || 'API error');
+    const articles = data.results || [];
     cache[category] = { data: articles, ts: Date.now() };
     return articles;
   } catch (err) {
-    console.error('[News] Fetch error:', err);
+    console.error('[NewsData] Fetch error:', err);
     return null;
   }
 }
 
 // ════════════════════════════════════════════════════════
-//  RENDER NEWS
+//  RENDER NEWS — NewsData.io field names
 // ════════════════════════════════════════════════════════
 function timeAgo(iso) {
+  if (!iso) return '';
   const diff = (Date.now() - new Date(iso)) / 1000;
-  if (diff < 60)   return 'Just now';
-  if (diff < 3600) return Math.floor(diff/60) + 'm ago';
-  if (diff < 86400)return Math.floor(diff/3600) + 'h ago';
-  return Math.floor(diff/86400) + 'd ago';
+  if (diff < 60)    return 'Just now';
+  if (diff < 3600)  return Math.floor(diff / 60) + 'm ago';
+  if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
+  return Math.floor(diff / 86400) + 'd ago';
 }
 
 function renderNews(articles, gridId, category) {
   const grid = document.getElementById(gridId);
   const cat  = CATEGORIES[category];
-  const bg   = BG_COLORS[category] || BG_COLORS.world;
 
   if (!articles) {
-    grid.innerHTML = `<div class="fetch-error" style="grid-column:1/-1">⚠️ Could not load news. Check your internet connection or <a href="https://open-platform.theguardian.com/access/" target="_blank" style="color:var(--warn);text-decoration:underline;">get a free Guardian API key</a>.</div>`;
+    grid.innerHTML = `<div class="fetch-error" style="grid-column:1/-1">
+      ⚠️ Could not load news right now. Check your connection and try refreshing.
+    </div>`;
     return;
   }
   if (!articles.length) {
-    grid.innerHTML = `<div class="empty-news" style="grid-column:1/-1"><span>${cat.emoji}</span>No articles found right now. Try refreshing.</div>`;
+    grid.innerHTML = `<div class="empty-news" style="grid-column:1/-1">
+      <span>${cat.emoji}</span>No articles found. Try refreshing.
+    </div>`;
     return;
   }
 
   const [featured, ...rest] = articles;
 
+  // NewsData fields: title, description, link, source_name, pubDate, image_url
   const featuredHtml = `
-    <a href="${featured.webUrl}" target="_blank" rel="noopener noreferrer" class="news-card-featured">
-      <div class="news-card-featured-img" style="background:${bg}">${cat.emoji}</div>
+    <a href="${escHtml(featured.link)}" target="_blank" rel="noopener noreferrer" class="news-card-featured">
+      ${featured.image_url
+        ? `<div class="news-card-featured-img" style="background:#000;padding:0;">
+             <img src="${escHtml(featured.image_url)}" alt="" style="width:100%;height:100%;object-fit:cover;opacity:.85;" loading="lazy" onerror="this.parentElement.innerHTML='${cat.emoji}'"/>
+           </div>`
+        : `<div class="news-card-featured-img" style="background:${cat.bg};font-size:52px;">${cat.emoji}</div>`
+      }
       <div class="news-card-featured-body">
-        <div class="news-source-badge">The Guardian · ${cat.label}</div>
-        <h2>${escHtml(featured.fields?.headline || featured.webTitle)}</h2>
-        <p>${escHtml(featured.fields?.trailText || '')}</p>
-        <div class="news-meta">${timeAgo(featured.webPublicationDate)}</div>
+        <div class="news-source-badge">${escHtml(featured.source_name || 'India News')} · ${cat.label}</div>
+        <h2>${escHtml(featured.title)}</h2>
+        <p>${escHtml(featured.description || '')}</p>
+        <div class="news-meta">${timeAgo(featured.pubDate)}</div>
       </div>
     </a>`;
 
-  const cardsHtml = rest.slice(0, 10).map(a => {
-    const title  = escHtml(a.fields?.headline || a.webTitle);
-    const trail  = escHtml(a.fields?.trailText || '');
-    const when   = timeAgo(a.webPublicationDate);
-    return `
-      <a href="${a.webUrl}" target="_blank" rel="noopener noreferrer" class="news-card">
-        <div class="news-card-emoji" style="background:${bg}20;">${cat.emoji}</div>
-        <div class="news-card-body">
-          <div class="news-source-badge">The Guardian</div>
-          <h3>${title}</h3>
-          ${trail ? `<p>${trail}</p>` : ''}
-          <div class="news-meta">${when} &middot; ${cat.label}</div>
-          <div class="news-read-link">Read full article →</div>
-        </div>
-      </a>`;
-  }).join('');
+  const cardsHtml = rest.slice(0, 10).map(a => `
+    <a href="${escHtml(a.link)}" target="_blank" rel="noopener noreferrer" class="news-card">
+      ${a.image_url
+        ? `<div class="news-card-emoji" style="background:#000;height:80px;padding:0;overflow:hidden;">
+             <img src="${escHtml(a.image_url)}" alt="" style="width:100%;height:100%;object-fit:cover;" loading="lazy" onerror="this.parentElement.style.background='${cat.bg}20';this.parentElement.innerHTML='${cat.emoji}'"/>
+           </div>`
+        : `<div class="news-card-emoji" style="background:${cat.bg}18;">${cat.emoji}</div>`
+      }
+      <div class="news-card-body">
+        <div class="news-source-badge">${escHtml(a.source_name || 'India News')}</div>
+        <h3>${escHtml(a.title)}</h3>
+        ${a.description ? `<p>${escHtml(a.description)}</p>` : ''}
+        <div class="news-meta">${timeAgo(a.pubDate)} · ${cat.label}</div>
+        <div class="news-read-link">Read full article →</div>
+      </div>
+    </a>`).join('');
 
   grid.innerHTML = featuredHtml + cardsHtml;
 }
@@ -482,49 +488,46 @@ function renderNews(articles, gridId, category) {
 function updateTicker(articles) {
   if (!articles || !articles.length) return;
   const items = articles.slice(0, 8).map(a =>
-    `<div class="ticker-item"><span>●</span>${escHtml(a.fields?.headline || a.webTitle)}</div>`
+    `<div class="ticker-item"><span>●</span>${escHtml(a.title)}</div>`
   ).join('');
-  // Duplicate for seamless loop
   document.getElementById('ticker-track').innerHTML = items + items;
 }
 
 // ════════════════════════════════════════════════════════
-//  TRENDING
+//  TRENDING SIDEBAR
 // ════════════════════════════════════════════════════════
 function renderTrending(articles) {
   if (!articles || !articles.length) return;
-  const list = articles.slice(0, 6);
-  document.getElementById('trending-list').innerHTML = list.map((a, i) => `
-    <a href="${a.webUrl}" target="_blank" rel="noopener noreferrer" class="trending-item">
+  document.getElementById('trending-list').innerHTML = articles.slice(0, 6).map((a, i) => `
+    <a href="${escHtml(a.link)}" target="_blank" rel="noopener noreferrer" class="trending-item">
       <div class="trending-num">${i + 1}</div>
       <div>
-        <div class="trending-text">${escHtml(a.fields?.headline || a.webTitle)}</div>
-        <div class="trending-src">${timeAgo(a.webPublicationDate)}</div>
+        <div class="trending-text">${escHtml(a.title)}</div>
+        <div class="trending-src">${escHtml(a.source_name || '')} · ${timeAgo(a.pubDate)}</div>
       </div>
     </a>`).join('');
 }
 
 // ════════════════════════════════════════════════════════
-//  SPORTS SCORES (via free ESPN API — no key needed)
+//  SPORTS SCORES — ESPN free API (no key needed)
 // ════════════════════════════════════════════════════════
 const SPORTS_FEEDS = [
-  { id: 'cricket-test',  label: 'Cricket',          emoji: '🏏', url: 'https://site.api.espn.com/apis/site/v2/sports/cricket/scoreboard' },
-  { id: 'soccer-isl',   label: 'ISL Football',      emoji: '⚽', url: 'https://site.api.espn.com/apis/site/v2/sports/soccer/ind.1/scoreboard' },
-  { id: 'soccer-ucl',   label: 'Champions League',  emoji: '🏆', url: 'https://site.api.espn.com/apis/site/v2/sports/soccer/UEFA.CHAMPIONS/scoreboard' },
-  { id: 'basketball',   label: 'NBA',               emoji: '🏀', url: 'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard' },
+  { label: 'Cricket',         emoji: '🏏', url: 'https://site.api.espn.com/apis/site/v2/sports/cricket/scoreboard' },
+  { label: 'ISL Football',    emoji: '⚽', url: 'https://site.api.espn.com/apis/site/v2/sports/soccer/ind.1/scoreboard' },
+  { label: 'Champions League',emoji: '🏆', url: 'https://site.api.espn.com/apis/site/v2/sports/soccer/UEFA.CHAMPIONS/scoreboard' },
+  { label: 'NBA',             emoji: '🏀', url: 'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard' },
 ];
 
 async function fetchScores() {
   const section = document.getElementById('scores-section');
   section.innerHTML = '';
-
   let anyLoaded = false;
 
   for (const sport of SPORTS_FEEDS) {
     try {
-      const res  = await fetch(sport.url);
+      const res    = await fetch(sport.url);
       if (!res.ok) continue;
-      const data = await res.json();
+      const data   = await res.json();
       const events = (data.events || []).slice(0, 3);
       if (!events.length) continue;
 
@@ -532,23 +535,15 @@ async function fetchScores() {
       const block = document.createElement('div');
       block.className = 'sport-block';
 
-      const matchRows = events.map(ev => {
+      const rows = events.map(ev => {
         const comps  = ev.competitions?.[0];
         const teams  = comps?.competitors || [];
-        const status = ev.status?.type?.description || '';
         const isLive = ev.status?.type?.state === 'in';
         const isFT   = ev.status?.type?.completed;
         const clock  = ev.status?.displayClock || '';
         const home   = teams.find(t => t.homeAway === 'home') || teams[0];
         const away   = teams.find(t => t.homeAway === 'away') || teams[1];
         if (!home || !away) return '';
-
-        const badge = isLive
-          ? `<span class="sport-badge badge-live">LIVE ${clock}</span>`
-          : isFT
-          ? `<span class="sport-badge badge-ft">FT</span>`
-          : `<span class="sport-badge badge-soon">Soon</span>`;
-
         return `
           <div class="match-row">
             <div class="team">${escHtml(home.team?.shortDisplayName || home.team?.name || 'Home')}</div>
@@ -558,24 +553,26 @@ async function fetchScores() {
               <span class="score">${away.score ?? '—'}</span>
             </div>
             <div class="team right">${escHtml(away.team?.shortDisplayName || away.team?.name || 'Away')}</div>
+          </div>
+          <div style="text-align:center;font-size:10.5px;padding:2px 0 8px;color:${isLive?'var(--danger)':'var(--ink3)'};">
+            ${isLive ? `🔴 LIVE ${clock}` : isFT ? 'Full Time' : 'Upcoming'}
           </div>`;
       }).join('');
 
-      if (!matchRows.trim()) continue;
-
+      if (!rows.trim()) continue;
       block.innerHTML = `
         <div class="sport-block-head">
           <div class="sport-block-title">${sport.emoji} ${sport.label}</div>
-        </div>
-        ${matchRows}`;
+        </div>${rows}`;
       section.appendChild(block);
     } catch(e) {
-      console.warn('[Scores] Failed:', sport.label, e);
+      console.warn('[Scores]', sport.label, e);
     }
   }
 
   if (!anyLoaded) {
-    section.innerHTML = `<div class="no-matches">⚽ No live matches right now.<br><span style="font-size:11px;color:var(--ink3);">Check back during match times.</span></div>`;
+    section.innerHTML = `<div class="no-matches">🏏 No live matches right now.<br>
+      <span style="font-size:11px;color:var(--ink3);">Check back during match times.</span></div>`;
   }
 }
 
@@ -586,9 +583,9 @@ const loadedTabs = new Set();
 
 async function switchTab(tab) {
   currentTab = tab;
-  document.querySelectorAll('.tab-btn').forEach((b, i) => {
-    b.classList.toggle('active', b.textContent.toLowerCase().includes(tab.replace('-news','')) || b.getAttribute('onclick').includes(tab));
-  });
+  document.querySelectorAll('.tab-btn').forEach(b =>
+    b.classList.toggle('active', b.getAttribute('onclick').includes(`'${tab}'`))
+  );
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('tab-' + tab).classList.add('active');
 
@@ -605,16 +602,13 @@ async function switchTab(tab) {
 async function refreshAll() {
   Object.keys(cache).forEach(k => delete cache[k]);
   loadedTabs.clear();
-
   const articles = await fetchNews('education');
   renderNews(articles, 'grid-education', 'education');
   loadedTabs.add('education');
   updateTicker(articles);
   renderTrending(articles);
-
-  await fetchScores();
+  fetchScores();
   updateLastUpdated();
-
   if (currentTab !== 'education') {
     const cur = await fetchNews(currentTab);
     renderNews(cur, 'grid-' + currentTab, currentTab);
@@ -624,7 +618,7 @@ async function refreshAll() {
 
 function updateLastUpdated() {
   document.getElementById('last-updated').textContent =
-    'Updated ' + new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+    'Updated ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 }
 
 // ════════════════════════════════════════════════════════
@@ -632,26 +626,21 @@ function updateLastUpdated() {
 // ════════════════════════════════════════════════════════
 function escHtml(str) {
   if (!str) return '';
-  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
 // ════════════════════════════════════════════════════════
 //  INIT
 // ════════════════════════════════════════════════════════
 (async () => {
-  // Load default tab
   const articles = await fetchNews('education');
   renderNews(articles, 'grid-education', 'education');
   loadedTabs.add('education');
   updateTicker(articles);
   renderTrending(articles);
   updateLastUpdated();
-
-  // Load scores simultaneously
   fetchScores();
-
-  // Auto-refresh every 5 minutes
-  refreshTimer = setInterval(refreshAll, 5 * 60 * 1000);
+  setInterval(refreshAll, 5 * 60 * 1000);
 })();
 
 // ── NAVBAR ──────────────────────────────────────────────
@@ -670,7 +659,8 @@ document.addEventListener('click', e => {
   const hb = document.getElementById('hamburger');
   const mm = document.getElementById('mobile-menu');
   if (!hb.contains(e.target) && !mm.contains(e.target)) {
-    hb.classList.remove('open'); mm.classList.remove('open');
+    hb.classList.remove('open');
+    mm.classList.remove('open');
   }
 });
 </script>
