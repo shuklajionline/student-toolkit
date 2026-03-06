@@ -1,100 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Homepage -->
+  <!-- ═══════════════════════════════════════
+       HOMEPAGE
+  ═══════════════════════════════════════ -->
   <url>
     <loc>https://studenttoolkit.online/</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Main Category Pages -->
-  <url>
-    <loc>https://studenttoolkit.online/bba-opportunities.html</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://studenttoolkit.online/mba-admissions.html</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://studenttoolkit.online/upsc-notifications.html</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://studenttoolkit.online/btech-internships.html</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Tools Hub -->
+  <!-- ═══════════════════════════════════════
+       TOOLS INDEX
+  ═══════════════════════════════════════ -->
   <url>
     <loc>https://studenttoolkit.online/tools/index.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Academic Tools -->
+  <!-- ═══════════════════════════════════════
+       INDIVIDUAL TOOLS
+  ═══════════════════════════════════════ -->
   <url>
     <loc>https://studenttoolkit.online/tools/attendance.html</loc>
-    <priority>0.7</priority>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://studenttoolkit.online/tools/cgpa.html</loc>
-    <priority>0.7</priority>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
-  <!-- Career Tools -->
   <url>
     <loc>https://studenttoolkit.online/tools/ai-resume-checker.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://studenttoolkit.online/tools/ai-resume-generator.html</loc>
-    <priority>0.6</priority>
+    <loc>https://studenttoolkit.online/tools/letter-writer.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
-  <!-- Blog Section -->
+  <!-- ═══════════════════════════════════════
+       BLOG INDEX
+  ═══════════════════════════════════════ -->
   <url>
     <loc>https://studenttoolkit.online/blog/index.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- ═══════════════════════════════════════
+       BLOG POSTS
+  ═══════════════════════════════════════ -->
   <url>
     <loc>https://studenttoolkit.online/blog/brutal-resume-checker-guide.html</loc>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://studenttoolkit.online/blog/how-to-prepare-for-upsc-after-graduation.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <url>
-   <loc>https://studenttoolkit.online/blog/btech-specializations-and-career-scope-2026.html</loc>
-   <priority>0.8</priority>
-  </url>
-  
-  <!-- Resources Section -->
-  <url>
-    <loc>https://studenttoolkit.online/resources/index.html</loc>
+    <loc>https://studenttoolkit.online/blog/best-free-tools-for-students.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://studenttoolkit.online/resources/bba-syllabus.html</loc>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://studenttoolkit.online/resources/cat-syllabus.html</loc>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://studenttoolkit.online/resources/btech-cse-syllabus.html</loc>
+    <loc>https://studenttoolkit.online/blog/students-affected-middle-east-wars.html</loc>
+    <lastmod>2026-03-06</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
