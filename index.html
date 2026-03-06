@@ -236,6 +236,14 @@
   <!-- PRELOAD critical resources -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap"/>
 
+  <!-- ── PWA ── -->
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="StudentToolkit"/>
+  <link rel="apple-touch-icon" href="/logo-icon.png"/>
+
   <style>
     /* ── RESET & ROOT ── */
     :root {
@@ -396,6 +404,49 @@
       display: inline-flex; align-items: center; gap: 8px;
     }
     .btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+    /* ── PWA INSTALL BUTTON ── */
+    .btn-install {
+      background: #0f172a; color: #fff;
+      padding: 14px 26px; border-radius: 10px;
+      font-size: 15px; font-weight: 600;
+      border: none; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Geist', sans-serif;
+      transition: all 0.18s;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.2);
+      animation: installPulse 2.5s ease-in-out infinite;
+    }
+    .btn-install:hover { background: #1e293b; transform: translateY(-2px); box-shadow: 0 6px 22px rgba(0,0,0,0.3); }
+    @keyframes installPulse { 0%,100%{box-shadow:0 3px 14px rgba(0,0,0,.2)} 50%{box-shadow:0 3px 22px rgba(79,70,229,.45)} }
+
+    /* ── PWA INSTALL BANNER (bottom of screen on mobile) ── */
+    .install-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 300;
+      background: var(--ink); color: #fff;
+      padding: 16px 20px;
+      display: none; align-items: center; gap: 14px;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .install-banner.show { display: flex; animation: slideUp 0.3s ease; }
+    @keyframes slideUp { from{transform:translateY(100%)} to{transform:translateY(0)} }
+    .install-banner-icon { font-size: 32px; flex-shrink: 0; }
+    .install-banner-text { flex: 1; }
+    .install-banner-text strong { font-size: 14px; display: block; margin-bottom: 2px; }
+    .install-banner-text span { font-size: 12px; color: rgba(255,255,255,0.55); }
+    .install-banner-btn {
+      background: var(--accent); color: #fff; border: none;
+      border-radius: 8px; padding: 10px 18px;
+      font-size: 13px; font-weight: 600; cursor: pointer;
+      font-family: 'Geist', sans-serif; white-space: nowrap;
+      transition: background 0.15s; flex-shrink: 0;
+    }
+    .install-banner-btn:hover { background: var(--accent-h); }
+    .install-banner-close {
+      background: none; border: none; color: rgba(255,255,255,0.4);
+      font-size: 20px; cursor: pointer; padding: 4px; flex-shrink: 0;
+    }
 
     /* hero trust strip */
     .hero-trust {
@@ -721,6 +772,10 @@
       <a href="tools/ai-resume-checker.html" class="btn-secondary" aria-label="Check your resume for free">
         🧠 Check My Resume Free
       </a>
+      <!-- PWA Install Button — shown only when installable -->
+      <button class="btn-install" id="installBtn" style="display:none;" aria-label="Install Student Toolkit as an app">
+        📲 Install Free App
+      </button>
     </div>
 
     <!-- Trust signals — boosts CTR and dwell time -->
@@ -943,6 +998,13 @@
         </div>
       </div>
 
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name" onclick="toggleFaq(this)">Are all Student Toolkit tools really free forever?</h3>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Yes. All tools on Student Toolkit are completely free with no hidden paywalls, no premium tiers, no subscription fees, and no sign-up required. We are committed to keeping every tool free for students permanently.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -978,7 +1040,7 @@
       <a class="footer-logo" href="https://studenttoolkit.online/" aria-label="Student Toolkit Home">
         <img src="logo-dark.png" alt="Student Toolkit" height="48" style="display:block; height:48px; width:auto; margin-bottom:14px;"/>
       </a>
-      <p>Free, practical tools built for college and university students. Attendance calculator, CGPA calculator, resume checker, and letter writer — no cost.</p>
+      <p>Free, practical tools built for college and university students. Attendance calculator, CGPA calculator, resume checker, and letter writer — no sign-up, no cost, ever.</p>
     </div>
     <div class="footer-col">
       <h4>Free Tools</h4>
@@ -1075,8 +1137,72 @@
       }
     });
   });
+
+  /* ── PWA: SERVICE WORKER REGISTRATION ── */
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(reg => console.log('[SW] Registered:', reg.scope))
+        .catch(err => console.log('[SW] Error:', err));
+    });
+  }
+
+  /* ── PWA: INSTALL PROMPT ── */
+  let deferredPrompt = null;
+  const installBtn    = document.getElementById('installBtn');
+  const installBanner = document.getElementById('installBanner');
+  const bannerInstall = document.getElementById('bannerInstall');
+  const bannerClose   = document.getElementById('bannerClose');
+
+  // Catch the browser's install prompt
+  window.addEventListener('beforeinstallprompt', e => {
+    e.preventDefault();
+    deferredPrompt = e;
+
+    // Show hero button
+    installBtn.style.display = 'inline-flex';
+
+    // Show bottom banner after 3 seconds on mobile
+    if (window.innerWidth < 768) {
+      setTimeout(() => {
+        if (deferredPrompt) installBanner.classList.add('show');
+      }, 3000);
+    }
+  });
+
+  async function triggerInstall() {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log('[PWA] Install outcome:', outcome);
+    deferredPrompt = null;
+    installBtn.style.display    = 'none';
+    installBanner.classList.remove('show');
+  }
+
+  if (installBtn)    installBtn.addEventListener('click', triggerInstall);
+  if (bannerInstall) bannerInstall.addEventListener('click', triggerInstall);
+  if (bannerClose)   bannerClose.addEventListener('click', () => installBanner.classList.remove('show'));
+
+  // Hide everything once installed
+  window.addEventListener('appinstalled', () => {
+    installBtn.style.display = 'none';
+    installBanner.classList.remove('show');
+    deferredPrompt = null;
+    console.log('[PWA] App installed!');
+  });
 </script>
+
+<!-- ── PWA INSTALL BANNER (mobile bottom sheet) ── -->
+<div class="install-banner" id="installBanner" role="dialog" aria-label="Install Student Toolkit app">
+  <span class="install-banner-icon">📲</span>
+  <div class="install-banner-text">
+    <strong>Install Student Toolkit</strong>
+    <span>Add to home screen — works offline, no browser bar</span>
+  </div>
+  <button class="install-banner-btn" id="bannerInstall">Install Free</button>
+  <button class="install-banner-close" id="bannerClose" aria-label="Dismiss">✕</button>
+</div>
 
 </body>
 </html>
-
