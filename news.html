@@ -363,115 +363,53 @@
 
 <script>
 // ════════════════════════════════════════════════════════
-//  INDIAN NEWS ENGINE — RSS Feeds via rss2json.com
-//  Real Indian sources: NDTV, Times of India, The Hindu,
-//  India Today, Zee News, Indian Express, Hindustan Times
-//  ✅ No CORS issues  ✅ No domain whitelist needed
-//  ✅ Free forever    ✅ Works on any live domain
+//  INDIAN NEWS ENGINE — Cloudflare Worker Proxy
+//  Proxy URL: https://misty-rain-83f9.rs2584328.workers.dev
+//  ✅ No CORS   ✅ Server-side fetch   ✅ 100k req/day free
 // ════════════════════════════════════════════════════════
 
-const RSS2JSON = 'https://api.rss2json.com/v1/api.json';
+const PROXY = 'https://misty-rain-83f9.rs2584328.workers.dev';
 
-// Each category has multiple RSS feeds — tries them in order
 const CATEGORIES = {
-  education: {
-    emoji: '🎓', label: 'Education', bg: 'linear-gradient(135deg,#312e81,#1e1b4b)',
-    feeds: [
-      'https://www.thehindu.com/education/feeder/default.rss',
-      'https://www.ndtv.com/education/rss',
-      'https://timesofindia.indiatimes.com/rssfeeds/913168846.cms',
-    ]
-  },
-  world: {
-    emoji: '🇮🇳', label: 'India News', bg: 'linear-gradient(135deg,#138808,#0a4f08)',
-    feeds: [
-      'https://www.ndtv.com/india/rss',
-      'https://timesofindia.indiatimes.com/rssfeeds/296589292.cms',
-      'https://www.thehindu.com/news/national/feeder/default.rss',
-    ]
-  },
-  tech: {
-    emoji: '💻', label: 'Tech & Startups', bg: 'linear-gradient(135deg,#1e3a5f,#1e40af)',
-    feeds: [
-      'https://timesofindia.indiatimes.com/rssfeeds/66949542.cms',
-      'https://www.ndtv.com/gadgets360rss/rss',
-      'https://feeds.feedburner.com/TheHackersNews',
-    ]
-  },
-  business: {
-    emoji: '📊', label: 'Business', bg: 'linear-gradient(135deg,#78350f,#92400e)',
-    feeds: [
-      'https://timesofindia.indiatimes.com/rssfeeds/1898055.cms',
-      'https://www.thehindu.com/business/feeder/default.rss',
-      'https://www.ndtv.com/business/rss',
-    ]
-  },
-  science: {
-    emoji: '🔬', label: 'Science & ISRO', bg: 'linear-gradient(135deg,#134e4a,#0f766e)',
-    feeds: [
-      'https://www.thehindu.com/sci-tech/science/feeder/default.rss',
-      'https://timesofindia.indiatimes.com/rssfeeds/53457.cms',
-      'https://www.ndtv.com/science/rss',
-    ]
-  },
-  'sports-news': {
-    emoji: '🏏', label: 'Cricket & Sports', bg: 'linear-gradient(135deg,#1c1917,#292524)',
-    feeds: [
-      'https://www.ndtv.com/cricket/rss',
-      'https://timesofindia.indiatimes.com/rssfeeds/4719148.cms',
-      'https://www.thehindu.com/sport/feeder/default.rss',
-    ]
-  }
+  education:    { emoji: '🎓', label: 'Education',        bg: 'linear-gradient(135deg,#312e81,#1e1b4b)' },
+  world:        { emoji: '🇮🇳', label: 'India News',      bg: 'linear-gradient(135deg,#138808,#0a4f08)' },
+  tech:         { emoji: '💻', label: 'Tech & Startups',  bg: 'linear-gradient(135deg,#1e3a5f,#1e40af)' },
+  business:     { emoji: '📊', label: 'Business',         bg: 'linear-gradient(135deg,#78350f,#92400e)' },
+  science:      { emoji: '🔬', label: 'Science & ISRO',   bg: 'linear-gradient(135deg,#134e4a,#0f766e)' },
+  'sports-news':{ emoji: '🏏', label: 'Cricket & Sports', bg: 'linear-gradient(135deg,#1c1917,#292524)' },
 };
 
 const cache = {};
 let currentTab = 'education';
 
 // ════════════════════════════════════════════════════════
-//  FETCH via rss2json (handles CORS automatically)
+//  FETCH via Cloudflare Worker proxy
 // ════════════════════════════════════════════════════════
 async function fetchNews(category) {
   if (cache[category] && (Date.now() - cache[category].ts) < 5 * 60 * 1000) {
     return cache[category].data;
   }
+  // Map tab names to worker ?cat= param
+  const catMap = { world: 'top', 'sports-news': 'sports' };
+  const cat = catMap[category] || category;
 
-  const feeds = CATEGORIES[category].feeds;
-
-  for (const feedUrl of feeds) {
-    try {
-      const url = `${RSS2JSON}?rss_url=${encodeURIComponent(feedUrl)}&count=12`;
-      const res = await fetch(url);
-      if (!res.ok) continue;
-      const data = await res.json();
-      if (data.status !== 'ok' || !data.items?.length) continue;
-
-      // Normalize RSS items to consistent shape
-      const articles = data.items.map(item => ({
-        title:       item.title || '',
-        description: stripHtml(item.description || item.content || ''),
-        link:        item.link || item.url || '#',
-        image_url:   item.thumbnail || item.enclosure?.link || null,
-        source_name: data.feed?.title || extractDomain(feedUrl),
-        pubDate:     item.pubDate || '',
-      })).filter(a => a.title);
-
-      if (!articles.length) continue;
-      cache[category] = { data: articles, ts: Date.now() };
-      return articles;
-    } catch(e) {
-      console.warn('[RSS] Failed feed:', feedUrl, e.message);
-    }
+  try {
+    const res = await fetch(`${PROXY}?cat=${cat}`);
+    if (!res.ok) throw new Error('Worker returned ' + res.status);
+    const data = await res.json();
+    if (data.status !== 'ok' || !data.items?.length) throw new Error(data.message || 'No items');
+    cache[category] = { data: data.items, ts: Date.now() };
+    return data.items;
+  } catch(e) {
+    console.error('[News] Worker fetch failed:', e.message);
+    return null;
   }
-
-  return null; // all feeds failed
 }
 
 function stripHtml(html) {
-  return html.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').trim().substring(0, 200);
+  return (html||'').replace(/<[^>]*>/g,'').replace(/&nbsp;/g,' ').trim().substring(0,200);
 }
-function extractDomain(url) {
-  try { return new URL(url).hostname.replace('www.','').replace('feeds.feedburner.com/',''); } catch { return 'News'; }
-}
+
 
 // ════════════════════════════════════════════════════════
 //  RENDER
