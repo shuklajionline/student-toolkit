@@ -1,401 +1,1094 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ═══════════════════════════════════════════════════
+       PRIMARY SEO META TAGS
+  ═══════════════════════════════════════════════════ -->
+  <title>Student Toolkit – Free Online Tools for Students | Attendance, CGPA, Resume & More</title>
+  <meta name="description" content="Student Toolkit offers 100% free online tools for college and university students — attendance calculator, CGPA calculator, AI resume checker, and letter writer. No sign-up needed."/>
+  <meta name="keywords" content="free student tools, attendance calculator, CGPA calculator, resume checker for students, student toolkit, free tools for college students, AI resume analyzer, letter writer for students, online tools for university students, free academic tools"/>
+  <meta name="author" content="Student Toolkit"/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  <meta name="googlebot" content="index, follow"/>
+  <meta name="theme-color" content="#4f46e5"/>
 
-<title>Student Toolkit – Smart Tools for Students</title>
+  <!-- ═══════════════════════════════════════════════════
+       CANONICAL & LANGUAGE
+  ═══════════════════════════════════════════════════ -->
+  <link rel="canonical" href="https://studenttoolkit.online/"/>
+  <meta http-equiv="content-language" content="en"/>
 
-<meta name="description" content="Student Toolkit provides powerful tools for students including attendance planner, CGPA calculator and resume analyzer.">
+  <!-- ═══════════════════════════════════════════════════
+       OPEN GRAPH (Facebook, WhatsApp, LinkedIn)
+  ═══════════════════════════════════════════════════ -->
+  <meta property="og:type"        content="website"/>
+  <meta property="og:url"         content="https://studenttoolkit.online/"/>
+  <meta property="og:title"       content="Student Toolkit – Free Online Tools for Students"/>
+  <meta property="og:description" content="Free attendance calculator, CGPA calculator, AI resume checker & letter writer for college students. 100% free, no sign-up, works instantly."/>
+  <meta property="og:image"       content="https://studenttoolkit.online/og-image.png"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height"content="630"/>
+  <meta property="og:site_name"   content="Student Toolkit"/>
+  <meta property="og:locale"      content="en_US"/>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- ═══════════════════════════════════════════════════
+       TWITTER CARD
+  ═══════════════════════════════════════════════════ -->
+  <meta name="twitter:card"        content="summary_large_image"/>
+  <meta name="twitter:site"        content="@studenttoolkit"/>
+  <meta name="twitter:title"       content="Student Toolkit – Free Online Tools for Students"/>
+  <meta name="twitter:description" content="Free attendance calculator, CGPA calculator, AI resume checker & letter writer. No sign-up. 100% free."/>
+  <meta name="twitter:image"       content="https://studenttoolkit.online/og-image.png"/>
 
-<style>
+  <!-- ═══════════════════════════════════════════════════
+       STRUCTURED DATA — WebSite + Sitelinks Searchbox
+  ═══════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Student Toolkit",
+    "alternateName": "StudentToolkit.online",
+    "url": "https://studenttoolkit.online/",
+    "description": "Free online tools for college and university students — attendance calculator, CGPA calculator, AI resume checker, and letter writer.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://studenttoolkit.online/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 
-body{
-font-family:Poppins;
-margin:0;
-background:#f5f7fb;
-color:#222;
-}
+  <!-- ═══════════════════════════════════════════════════
+       STRUCTURED DATA — Organization
+  ═══════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Student Toolkit",
+    "url": "https://studenttoolkit.online/",
+    "logo": "https://studenttoolkit.online/logo.png",
+    "sameAs": [
+      "https://instagram.com/studenttoolkit"
+    ],
+    "description": "Student Toolkit provides 100% free academic tools for college and university students worldwide.",
+    "foundingDate": "2025",
+    "audience": {
+      "@type": "EducationalAudience",
+      "educationalRole": "student"
+    }
+  }
+  </script>
 
-/* container */
+  <!-- ═══════════════════════════════════════════════════
+       STRUCTURED DATA — SoftwareApplication (each tool)
+  ═══════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Free Student Tools",
+    "description": "A collection of free online tools designed for college and university students.",
+    "url": "https://studenttoolkit.online/#tools",
+    "numberOfItems": 4,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Attendance Calculator",
+          "alternateName": "Attendance Planner",
+          "url": "https://studenttoolkit.online/tools/attendance.html",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Web Browser",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Free online attendance calculator for students. Calculate your attendance percentage, find out how many classes you can safely skip, and stay above the minimum requirement.",
+          "featureList": ["Attendance percentage calculator", "Safe bunk calculator", "Classes needed calculator"]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "CGPA Calculator",
+          "url": "https://studenttoolkit.online/tools/cgpa.html",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Web Browser",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Free CGPA calculator for university students. Calculate semester CGPA based on subject grades and credit hours instantly.",
+          "featureList": ["CGPA calculator", "GPA calculator", "Credit hour based grading"]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "AI Resume Checker",
+          "alternateName": "ATS Resume Analyzer",
+          "url": "https://studenttoolkit.online/tools/ai-resume-checker.html",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Web Browser",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Free AI-powered resume checker for students with ATS score and recruiter-style feedback. Improve your resume before applying for internships and jobs.",
+          "featureList": ["ATS resume score", "Recruiter feedback", "Resume improvement tips", "AI-powered analysis"]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": "Student Letter & Email Writer",
+          "url": "https://studenttoolkit.online/tools/letter-writer.html",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Web Browser",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "description": "Free letter and email writer for students. Generate leave applications, professor emails, internship request letters, scholarship inquiries and more instantly.",
+          "featureList": ["Leave application generator", "Professor email writer", "Internship request letter", "Recommendation letter", "Scholarship inquiry letter"]
+        }
+      }
+    ]
+  }
+  </script>
 
-.container{
-width:90%;
-max-width:1100px;
-margin:auto;
-}
+  <!-- ═══════════════════════════════════════════════════
+       STRUCTURED DATA — FAQPage (triggers featured snippets)
+  ═══════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Student Toolkit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Student Toolkit is a free website that provides online tools for college and university students, including an attendance calculator, CGPA calculator, AI resume checker, and letter writer. All tools are completely free and require no sign-up."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the attendance calculator work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The attendance calculator lets you enter your total classes and attended classes to calculate your current attendance percentage. It also tells you how many classes you can safely skip while staying above the minimum required percentage, or how many classes you need to attend to reach the minimum."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the CGPA calculator free to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the CGPA calculator on Student Toolkit is 100% free. You can calculate your semester CGPA by entering your subject grades and credit hours. No registration or sign-up is required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the AI resume checker work for students?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The AI resume checker analyzes your resume like a recruiter would, checking for ATS compatibility, keyword optimization, formatting, and content quality. It gives you a score out of 100 and detailed feedback on exactly what to improve before applying for jobs or internships."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I generate a leave application letter for free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The Student Toolkit Letter Writer generates professional leave applications, professor emails, internship request letters, scholarship inquiries, recommendation request letters, and academic grievance letters for free — instantly, with no sign-up needed."
+        }
+      }
+    ]
+  }
+  </script>
 
-/* sidebar */
+  <!-- ═══════════════════════════════════════════════════
+       STRUCTURED DATA — BreadcrumbList
+  ═══════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",  "item": "https://studenttoolkit.online/" },
+      { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://studenttoolkit.online/tools/index.html" },
+      { "@type": "ListItem", "position": 3, "name": "Blog",  "item": "https://studenttoolkit.online/blog/index.html" }
+    ]
+  }
+  </script>
 
-.sidebar{
-position:fixed;
-left:-260px;
-top:0;
-width:260px;
-height:100%;
-background:#111827;
-color:white;
-padding:30px;
-transition:0.3s;
-z-index:1000;
-}
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
-.sidebar h2{
-margin-top:0;
-}
+  <!-- PRELOAD critical resources -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap"/>
 
-.sidebar a{
-display:block;
-color:white;
-text-decoration:none;
-margin:14px 0;
-}
+  <style>
+    /* ── RESET & ROOT ── */
+    :root {
+      --bg:       #f7f6f2;
+      --bg2:      #eeecea;
+      --bg3:      #e5e2dc;
+      --ink:      #1a1916;
+      --ink2:     #4a4843;
+      --ink3:     #8a8680;
+      --accent:   #4f46e5;
+      --accent-h: #4338ca;
+      --accent-l: #eef2ff;
+      --border:   #d8d4cc;
+      --white:    #ffffff;
+      --shadow:   0 1px 3px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.05);
+      --shadow-lg:0 8px 40px rgba(0,0,0,0.10);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Geist', sans-serif;
+      background: var(--bg); color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      /* Core Web Vitals: avoid layout shifts */
+      min-height: 100vh;
+    }
+    img { max-width: 100%; height: auto; display: block; }
 
-.sidebar.open{
-left:0;
-}
+    /* ── NAVBAR ── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(247,246,242,0.94);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 62px;
+      transition: box-shadow 0.2s;
+    }
+    .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.07); }
+    .nav-logo {
+      font-family: 'Instrument Serif', serif;
+      font-size: 22px; font-weight: 400;
+      color: var(--ink); text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--accent); font-style: italic; }
+    .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+    .nav-links a {
+      font-size: 13.5px; font-weight: 500;
+      color: var(--ink2); text-decoration: none;
+      padding: 7px 13px; border-radius: 7px; transition: all 0.15s;
+    }
+    .nav-links a:hover { background: var(--bg2); color: var(--ink); }
+    .nav-cta {
+      background: var(--accent) !important; color: #fff !important;
+      box-shadow: 0 2px 8px rgba(79,70,229,0.28) !important;
+    }
+    .nav-cta:hover { background: var(--accent-h) !important; }
 
-.menu-btn{
-position:fixed;
-top:20px;
-left:20px;
-font-size:22px;
-background:#4f46e5;
-color:white;
-border:none;
-padding:10px 14px;
-border-radius:6px;
-cursor:pointer;
-z-index:1100;
-}
+    /* HAMBURGER */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+      z-index: 201;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--ink); border-radius: 2px; transition: all 0.25s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* hero */
+    /* MOBILE MENU */
+    .mobile-menu {
+      display: none; position: fixed;
+      top: 62px; left: 0; right: 0;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 12px 24px 24px; z-index: 199;
+      box-shadow: var(--shadow-lg);
+    }
+    .mobile-menu.open { display: block; animation: slideDown 0.2s ease; }
+    @keyframes slideDown { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:translateY(0); } }
+    .mobile-menu a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 13px 4px; font-size: 15px; font-weight: 500;
+      color: var(--ink2); text-decoration: none;
+      border-bottom: 1px solid var(--bg2); transition: color 0.15s;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--accent); }
 
-.hero{
-padding:130px 20px 90px;
-text-align:center;
-background:linear-gradient(120deg,#eef2ff,#f9fafb);
-}
+    /* ── HERO ── */
+    .hero {
+      padding: 110px 24px 80px;
+      text-align: center;
+      background: linear-gradient(160deg, #eef2ff 0%, #f7f6f2 55%, #ecfdf5 100%);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: rgba(79,70,229,0.07);
+      top: -200px; left: -150px; pointer-events: none;
+      filter: blur(80px);
+    }
+    .hero::after {
+      content: ''; position: absolute;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: rgba(16,185,129,0.06);
+      bottom: -100px; right: -80px; pointer-events: none;
+      filter: blur(60px);
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
 
-.hero h1{
-font-size:48px;
-margin-bottom:20px;
-}
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 20px; padding: 6px 16px;
+      font-size: 12.5px; font-weight: 500; color: var(--ink2);
+      margin-bottom: 28px; box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    .pulse-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
 
-.hero p{
-font-size:18px;
-color:#555;
-max-width:600px;
-margin:auto;
-}
+    /* H1 — primary keyword in first heading, critical for rankings */
+    h1.hero-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(38px, 7vw, 72px);
+      font-weight: 400; line-height: 1.07;
+      letter-spacing: -0.03em; color: var(--ink);
+      margin-bottom: 20px;
+    }
+    h1.hero-title em { font-style: italic; color: var(--accent); }
 
-.hero-buttons{
-margin-top:30px;
-}
+    .hero-sub {
+      font-size: clamp(16px, 2.2vw, 19px);
+      color: var(--ink3); font-weight: 300;
+      max-width: 560px; margin: 0 auto 36px; line-height: 1.65;
+    }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--accent); color: #fff;
+      padding: 14px 26px; border-radius: 10px;
+      font-size: 15px; font-weight: 600; text-decoration: none;
+      box-shadow: 0 3px 14px rgba(79,70,229,0.35);
+      transition: all 0.18s; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover { background: var(--accent-h); transform: translateY(-2px); box-shadow: 0 6px 22px rgba(79,70,229,0.4); }
+    .btn-secondary {
+      background: var(--white); color: var(--ink);
+      padding: 14px 26px; border-radius: 10px;
+      font-size: 15px; font-weight: 600; text-decoration: none;
+      border: 1.5px solid var(--border); transition: all 0.18s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
 
-.hero-buttons a{
-text-decoration:none;
-margin:8px;
-padding:14px 20px;
-border-radius:8px;
-font-weight:600;
-display:inline-block;
-}
+    /* hero trust strip */
+    .hero-trust {
+      margin-top: 52px;
+      display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+    }
+    .trust-chip {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 20px; padding: 7px 14px;
+      font-size: 12.5px; font-weight: 500; color: var(--ink2);
+      display: flex; align-items: center; gap: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
 
-.primary-btn{
-background:#4f46e5;
-color:white;
-}
+    /* ── SECTION ── */
+    .section { padding: 80px 24px; }
+    .section-inner { max-width: 1080px; margin: 0 auto; }
+    .section-label {
+      font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+      display: block;
+    }
+    /* H2 — keyword-rich section headings */
+    h2.section-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(26px, 4vw, 40px); font-weight: 400;
+      color: var(--ink); line-height: 1.18; letter-spacing: -0.025em;
+      margin-bottom: 12px;
+    }
+    h2.section-title em { font-style: italic; color: var(--accent); }
+    .section-sub {
+      font-size: 16px; color: var(--ink3); font-weight: 300;
+      max-width: 520px; line-height: 1.6; margin-bottom: 44px;
+    }
 
-.secondary-btn{
-background:#e5e7eb;
-color:#222;
-}
+    /* ── TOOLS GRID ── */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .tool-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 14px; padding: 26px;
+      text-decoration: none; color: inherit;
+      box-shadow: var(--shadow); transition: all 0.22s;
+      display: flex; flex-direction: column; gap: 14px;
+      position: relative; overflow: hidden;
+    }
+    .tool-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px; background: var(--accent);
+      transform: scaleX(0); transform-origin: left; transition: transform 0.25s;
+    }
+    .tool-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: #c8c4f8; }
+    .tool-card:hover::after { transform: scaleX(1); }
+    .tool-icon-wrap {
+      width: 50px; height: 50px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; font-size: 22px;
+    }
+    /* H3 for tool names — semantic hierarchy */
+    .tool-card h3 {
+      font-size: 16.5px; font-weight: 600;
+      color: var(--ink); letter-spacing: -0.01em; margin-bottom: 4px;
+    }
+    .tool-card p { font-size: 13.5px; color: var(--ink3); font-weight: 300; line-height: 1.6; flex: 1; }
+    .tool-card-foot {
+      display: flex; align-items: center; justify-content: space-between; margin-top: 4px;
+    }
+    .tbadge {
+      font-size: 11px; font-weight: 500;
+      padding: 3px 9px; border-radius: 20px;
+    }
+    .tbadge-free { background: #dcfce7; color: #166534; }
+    .tbadge-ai   { background: var(--accent-l); color: var(--accent); }
+    .tbadge-new  { background: #fef9c3; color: #854d0e; }
+    .tool-arrow {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--bg2); display: flex; align-items: center; justify-content: center;
+      transition: background 0.18s, color 0.18s;
+    }
+    .tool-card:hover .tool-arrow { background: var(--accent); color: #fff; }
 
-/* tools section */
+    /* ── STATS STRIP ── */
+    .stats-strip {
+      background: var(--ink); color: #fff;
+      padding: 52px 24px;
+    }
+    .stats-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 24px; text-align: center;
+    }
+    .stat-item {}
+    .stat-num {
+      font-family: 'Instrument Serif', serif;
+      font-size: 42px; font-weight: 400; color: #fff;
+      display: block; line-height: 1;
+    }
+    .stat-num span { color: #a5b4fc; }
+    .stat-desc { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 6px; font-weight: 300; }
 
-.tools-section{
-margin-top:70px;
-}
+    /* ── BLOG SECTION ── */
+    .blog-section { background: var(--white); }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+    .blog-card {
+      border: 1px solid var(--border); border-radius: 14px; overflow: hidden;
+      text-decoration: none; color: inherit;
+      transition: all 0.22s; display: flex; flex-direction: column;
+      background: var(--bg);
+    }
+    .blog-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: #c8c4f8; }
+    .blog-card-img {
+      height: 160px; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 44px;
+    }
+    .blog-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; gap: 7px; }
+    .blog-tag {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--accent);
+    }
+    /* H3 blog headings for semantic structure */
+    .blog-card h3 { font-size: 16px; font-weight: 600; color: var(--ink); line-height: 1.35; }
+    .blog-card p  { font-size: 13px; color: var(--ink3); font-weight: 300; line-height: 1.55; flex: 1; }
+    .blog-read {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 13px; font-weight: 600; color: var(--accent); margin-top: 8px;
+    }
 
-.section-title{
-text-align:center;
-font-size:30px;
-margin-bottom:10px;
-}
+    /* ── FAQ SECTION — triggers Google featured snippets ── */
+    .faq-section { background: var(--bg); }
+    .faq-list { max-width: 720px; }
+    .faq-item {
+      border-bottom: 1px solid var(--border); padding: 20px 0;
+    }
+    .faq-item:first-child { padding-top: 0; }
+    /* H3 for FAQ questions — important for featured snippets */
+    .faq-item h3 {
+      font-size: 16.5px; font-weight: 600; color: var(--ink);
+      cursor: pointer; display: flex; justify-content: space-between;
+      align-items: flex-start; gap: 12px; line-height: 1.4;
+      user-select: none;
+    }
+    .faq-item h3::after {
+      content: '+'; font-size: 20px; font-weight: 300;
+      color: var(--accent); flex-shrink: 0; transition: transform 0.2s;
+    }
+    .faq-item.open h3::after { transform: rotate(45deg); }
+    .faq-answer {
+      font-size: 15px; color: var(--ink3); font-weight: 300;
+      line-height: 1.7; max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding-top: 12px; }
 
-.section-sub{
-text-align:center;
-color:#666;
-margin-bottom:40px;
-}
+    /* ── SUGGEST ── */
+    .suggest-section { background: var(--white); }
+    .suggest-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 16px; padding: 48px;
+      max-width: 640px; margin: 0 auto;
+      text-align: center;
+    }
+    .suggest-icon { font-size: 38px; display: block; margin-bottom: 14px; }
+    /* H2 for suggest section */
+    .suggest-card h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 28px; font-weight: 400; color: var(--ink);
+      margin-bottom: 10px; letter-spacing: -0.02em;
+    }
+    .suggest-card p { font-size: 15px; color: var(--ink3); font-weight: 300; margin-bottom: 22px; }
+    .suggest-card textarea {
+      width: 100%; background: var(--white);
+      border: 1.5px solid var(--border); border-radius: 10px;
+      padding: 14px 16px; font-size: 14px; color: var(--ink);
+      font-family: 'Geist', sans-serif; outline: none; resize: vertical;
+      min-height: 96px; line-height: 1.55; margin-bottom: 14px;
+      transition: border-color 0.16s, box-shadow 0.16s;
+    }
+    .suggest-card textarea:focus {
+      border-color: var(--accent); box-shadow: 0 0 0 3px rgba(79,70,229,0.1);
+    }
+    .suggest-btn {
+      background: var(--accent); color: #fff; border: none;
+      border-radius: 10px; padding: 13px 28px;
+      font-size: 14px; font-weight: 600; font-family: 'Geist', sans-serif;
+      cursor: pointer; box-shadow: 0 2px 8px rgba(79,70,229,0.28);
+      transition: all 0.18s;
+    }
+    .suggest-btn:hover { background: var(--accent-h); transform: translateY(-1px); }
+    .suggest-thanks { display: none; margin-top: 14px; font-size: 14px; color: #16a34a; font-weight: 500; }
 
-.tools-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink); color: rgba(255,255,255,0.5);
+      padding: 52px 32px 32px;
+    }
+    .footer-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer-logo {
+      font-family: 'Instrument Serif', serif;
+      font-size: 22px; color: #fff; text-decoration: none;
+      display: block; margin-bottom: 12px;
+    }
+    .footer-logo span { color: #a5b4fc; font-style: italic; }
+    .footer-brand p { font-size: 13.5px; line-height: 1.65; max-width: 270px; }
+    .footer-col h4 {
+      font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.38);
+      margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block; font-size: 14px; color: rgba(255,255,255,0.52);
+      text-decoration: none; margin-bottom: 9px; transition: color 0.15s;
+    }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      max-width: 1080px; margin: 36px auto 0;
+      padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 12.5px; flex-wrap: wrap; gap: 12px;
+    }
+    .social-links { display: flex; gap: 8px; }
+    .social-link {
+      width: 34px; height: 34px; border-radius: 8px;
+      background: rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.15s; text-decoration: none;
+    }
+    .social-link:hover { background: rgba(255,255,255,0.16); }
+    .social-link img { width: 15px; height: 15px; filter: brightness(0) invert(1); opacity: 0.65; }
 
-.tool-card{
-background:white;
-padding:28px;
-border-radius:14px;
-box-shadow:0 12px 30px rgba(0,0,0,0.07);
-transition:0.25s;
-}
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0; transform: translateY(22px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.08s; }
+    .delay-2 { transition-delay: 0.16s; }
+    .delay-3 { transition-delay: 0.24s; }
 
-.tool-card:hover{
-transform:translateY(-5px);
-}
-
-.tool-icon{
-font-size:30px;
-margin-bottom:10px;
-}
-
-.tool-card h3{
-margin:6px 0;
-}
-
-.tool-card p{
-color:#666;
-font-size:14px;
-}
-
-.tool-card a{
-color:#4f46e5;
-text-decoration:none;
-font-weight:600;
-}
-
-/* blog */
-
-.blog-feature{
-margin-top:80px;
-background:white;
-padding:40px;
-border-radius:16px;
-box-shadow:0 12px 30px rgba(0,0,0,0.07);
-}
-
-/* suggestion */
-
-.suggest-box{
-margin-top:80px;
-background:white;
-padding:40px;
-border-radius:16px;
-box-shadow:0 12px 30px rgba(0,0,0,0.07);
-}
-
-textarea{
-width:100%;
-padding:12px;
-border-radius:6px;
-border:1px solid #ccc;
-margin-top:10px;
-}
-
-button{
-background:#4f46e5;
-color:white;
-border:none;
-padding:12px 18px;
-border-radius:6px;
-margin-top:10px;
-cursor:pointer;
-}
-
-/* footer */
-
-footer{
-margin-top:80px;
-background:#111827;
-color:white;
-padding:40px;
-text-align:center;
-}
-
-.footer-icons img{
-width:28px;
-margin:8px;
-}
-
-/* mobile */
-
-@media(max-width:768px){
-
-.hero h1{
-font-size:36px;
-}
-
-}
-
-</style>
-
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .navbar { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero { padding: 90px 20px 60px; }
+      .section { padding: 56px 20px; }
+      .stats-inner { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .suggest-card { padding: 32px 20px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 480px) {
+      .hero-btns { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-secondary { width: 100%; max-width: 300px; justify-content: center; }
+      .tools-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .hero-trust { gap: 6px; }
+    }
+  </style>
 </head>
 
-<body>
+<!-- semantic role for main landmark -->
+<body itemscope itemtype="https://schema.org/WebPage">
 
-<button class="menu-btn" onclick="toggleMenu()">☰</button>
+<!-- ── NAVBAR ── -->
+<header role="banner">
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <a class="nav-logo" href="https://studenttoolkit.online/" aria-label="Student Toolkit Home">
+      Student<span>Toolkit</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#suggest">Suggest</a></li>
+      <li><a href="tools/ai-resume-checker.html" class="nav-cta">Free Resume Check →</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="#tools"   onclick="closeMenu()">🛠 &nbsp;All Tools</a>
+    <a href="tools/attendance.html"       onclick="closeMenu()">📊 &nbsp;Attendance Calculator</a>
+    <a href="tools/cgpa.html"             onclick="closeMenu()">📈 &nbsp;CGPA Calculator</a>
+    <a href="tools/ai-resume-checker.html"onclick="closeMenu()">🧠 &nbsp;AI Resume Checker</a>
+    <a href="tools/letter-writer.html"    onclick="closeMenu()">✍️ &nbsp;Letter Writer</a>
+    <a href="#blog"    onclick="closeMenu()">📝 &nbsp;Blog</a>
+    <a href="#suggest" onclick="closeMenu()">💡 &nbsp;Suggest a Tool</a>
+  </div>
+</header>
 
-<div class="sidebar" id="sidebar">
+<!-- ── HERO ── -->
+<!-- role=main wraps the primary content Google should index -->
+<main role="main">
 
-<h2>Student Toolkit</h2>
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-inner">
+    <div class="hero-badge" aria-hidden="true">
+      <span class="pulse-dot"></span>
+      Free tools for college &amp; university students
+    </div>
 
-<h3>Tools</h3>
+    <!-- PRIMARY KEYWORD in H1 — most important on-page SEO signal -->
+    <h1 class="hero-title" id="hero-heading">
+      Free Online Tools<br/>for <em>Students</em>
+    </h1>
 
-<a href="tools/attendance.html">Attendance Planner</a>
-<a href="tools/cgpa.html">CGPA Calculator</a>
-<a href="tools/ai-resume-checker.html">Resume Analyzer</a>
-<a href="tools/letter-writer.html">Letter/Application Writer</a>
+    <p class="hero-sub">
+      Attendance calculator, CGPA calculator, AI resume checker &amp; letter writer — 
+      all 100% free, no sign-up, works instantly in your browser.
+    </p>
 
-  
-<h3>Blog</h3>
+    <div class="hero-btns">
+      <a href="#tools" class="btn-primary" aria-label="Explore all free student tools">
+        Explore Free Tools
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="tools/ai-resume-checker.html" class="btn-secondary" aria-label="Check your resume for free">
+        🧠 Check My Resume Free
+      </a>
+    </div>
 
-<a href="blog/index.html">All Blogs</a>
-<a href="blog/brutal-resume-checker-guide.html">Resume Checker Guide</a>
-
-</div>
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="container">
-
-<h1>The Ultimate Toolkit for Students</h1>
-
-<p>Smart tools to manage attendance, calculate CGPA and build stronger resumes for your career.</p>
-
-<div class="hero-buttons">
-
-<a href="tools/index.html" class="primary-btn">Explore Tools</a>
-
-<a href="tools/ai-resume-checker.html" class="secondary-btn">Run Resume Audit</a>
-
-</div>
-
-</div>
-
+    <!-- Trust signals — boosts CTR and dwell time -->
+    <div class="hero-trust" aria-label="Trust indicators">
+      <span class="trust-chip">✅ 100% Free Forever</span>
+      <span class="trust-chip">⚡ No Sign-Up Required</span>
+      <span class="trust-chip">📱 Mobile Friendly</span>
+      <span class="trust-chip">🔒 No Data Stored</span>
+    </div>
+  </div>
 </section>
 
+<!-- ── TOOLS SECTION ── -->
+<section class="section" id="tools" aria-labelledby="tools-heading">
+  <div class="section-inner">
+    <span class="section-label">Free Student Tools</span>
+    <!-- H2 with keyword variation -->
+    <h2 class="section-title" id="tools-heading">
+      Tools that <em>actually</em> solve student problems
+    </h2>
+    <p class="section-sub">
+      Every tool is free, instant, and built around what students actually need — 
+      not what looks good on a features list.
+    </p>
 
-<!-- TOOLS -->
+    <!-- Semantic list for tools — better crawlability -->
+    <ul class="tools-grid" role="list" style="list-style:none; padding:0;">
 
-<section class="tools-section container">
+      <li>
+        <a href="tools/attendance.html" class="tool-card fade-up"
+           aria-label="Open free attendance calculator"
+           title="Free Attendance Calculator for Students">
+          <div class="tool-icon-wrap" style="background:#eff6ff;" aria-hidden="true">📊</div>
+          <div>
+            <h3>Attendance Calculator</h3>
+            <p>Calculate your attendance percentage instantly. Find how many classes you can skip safely, or how many you need to attend to meet the minimum requirement.</p>
+          </div>
+          <div class="tool-card-foot">
+            <span class="tbadge tbadge-free">Free</span>
+            <div class="tool-arrow" aria-hidden="true">
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </a>
+      </li>
 
-<h2 class="section-title">Student Tools</h2>
+      <li>
+        <a href="tools/cgpa.html" class="tool-card fade-up delay-1"
+           aria-label="Open free CGPA calculator"
+           title="Free CGPA Calculator for University Students">
+          <div class="tool-icon-wrap" style="background:#f0fdf4;" aria-hidden="true">📈</div>
+          <div>
+            <h3>CGPA Calculator</h3>
+            <p>Calculate your semester CGPA based on subject grades and credit hours. Works for all university grading systems — fast and accurate.</p>
+          </div>
+          <div class="tool-card-foot">
+            <span class="tbadge tbadge-free">Free</span>
+            <div class="tool-arrow" aria-hidden="true">
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </a>
+      </li>
 
-<p class="section-sub">Powerful utilities designed to solve real student problems.</p>
+      <li>
+        <a href="tools/ai-resume-checker.html" class="tool-card fade-up delay-2"
+           aria-label="Open free AI resume checker"
+           title="Free AI Resume Checker with ATS Score for Students">
+          <div class="tool-icon-wrap" style="background:#fef9c3;" aria-hidden="true">🧠</div>
+          <div>
+            <h3>AI Resume Checker</h3>
+            <p>Get a free ATS resume score and recruiter-style feedback. Know exactly what's holding your resume back before applying for internships and jobs.</p>
+          </div>
+          <div class="tool-card-foot">
+            <span class="tbadge tbadge-ai">AI-Powered</span>
+            <div class="tool-arrow" aria-hidden="true">
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </a>
+      </li>
 
-<div class="tools-grid">
+      <li>
+        <a href="tools/letter-writer.html" class="tool-card fade-up delay-3"
+           aria-label="Open free student letter writer"
+           title="Free Letter and Email Writer for Students">
+          <div class="tool-icon-wrap" style="background:#fdf4ff;" aria-hidden="true">✍️</div>
+          <div>
+            <h3>Letter &amp; Email Writer</h3>
+            <p>Generate professional leave applications, professor emails, internship request letters, and scholarship inquiries in seconds — completely free.</p>
+          </div>
+          <div class="tool-card-foot">
+            <span class="tbadge tbadge-new">New</span>
+            <div class="tool-arrow" aria-hidden="true">
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </a>
+      </li>
 
-<div class="tool-card">
-<div class="tool-icon">📊</div>
-<h3>Attendance Planner</h3>
-<p>Calculate attendance percentage and predict safe bunks.</p>
-<a href="tools/attendance.html">Open Tool →</a>
-</div>
-
-<div class="tool-card">
-<div class="tool-icon">📈</div>
-<h3>CGPA Calculator</h3>
-<p>Calculate semester CGPA based on subject credits.</p>
-<a href="tools/cgpa.html">Open Tool →</a>
-</div>
-
-<div class="tool-card">
-<div class="tool-icon">🧠</div>
-<h3>Resume Audit</h3>
-<p>Strict ATS resume checker with recruiter-style feedback.</p>
-<a href="tools/ai-resume-checker.html">Run Audit →</a>
-</div>
-
-</div>
-
+    </ul>
+  </div>
 </section>
 
-
-<!-- BLOG -->
-
-<section class="blog-feature container">
-
-<h2>Featured Blog</h2>
-
-<h3>Free Resume Checker with ATS Score</h3>
-
-<p>Understand how our strict resume scoring system works and how to improve your resume using recruiter-style feedback.</p>
-
-<a href="blog/brutal-resume-checker-guide.html">Read Full Guide →</a>
-
+<!-- ── STATS STRIP ── -->
+<section class="stats-strip" aria-label="Student Toolkit statistics">
+  <div class="stats-inner">
+    <div class="stat-item fade-up">
+      <span class="stat-num">4<span>+</span></span>
+      <div class="stat-desc">Free Student Tools</div>
+    </div>
+    <div class="stat-item fade-up delay-1">
+      <span class="stat-num">0</span>
+      <div class="stat-desc">Sign-ups or Logins Needed</div>
+    </div>
+    <div class="stat-item fade-up delay-2">
+      <span class="stat-num">100<span>%</span></span>
+      <div class="stat-desc">Free — No Hidden Costs</div>
+    </div>
+    <div class="stat-item fade-up delay-3">
+      <span class="stat-num">∞</span>
+      <div class="stat-desc">Uses Per Day, Per Student</div>
+    </div>
+  </div>
 </section>
 
+<!-- ── BLOG SECTION ── -->
+<section class="section blog-section" id="blog" aria-labelledby="blog-heading">
+  <div class="section-inner">
+    <span class="section-label">Student Toolkit Blog</span>
+    <h2 class="section-title" id="blog-heading">Guides worth <em>reading</em></h2>
+    <p class="section-sub">
+      Practical, research-backed content to help you study smarter, 
+      build better habits, and kickstart your career.
+    </p>
 
-<!-- SUGGESTION -->
+    <div class="blog-grid">
+      <article class="blog-card fade-up">
+        <a href="blog/brutal-resume-checker-guide.html" aria-label="Read the resume checker guide">
+          <div class="blog-card-img" style="background:linear-gradient(135deg,#eef2ff,#e0e7ff);">📄</div>
+          <div class="blog-card-body">
+            <span class="blog-tag">Resume · Career</span>
+            <h3>Free ATS Resume Checker — How to Score 90+</h3>
+            <p>Understand how our strict resume scoring works and improve your resume with real recruiter-style feedback before your next application.</p>
+            <span class="blog-read">Read Guide →</span>
+          </div>
+        </a>
+      </article>
 
-<section class="suggest-box container">
+      <article class="blog-card fade-up delay-1">
+        <a href="blog/best-free-tools-for-students.html" aria-label="Read the best free tools for students guide">
+          <div class="blog-card-img" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);">🛠</div>
+          <div class="blog-card-body">
+            <span class="blog-tag">Productivity · Tools</span>
+            <h3>15 Best Free Tools for College Students in 2025</h3>
+            <p>From Notion to Anki — the complete guide to free tools that actually improve your grades and save your time.</p>
+            <span class="blog-read">Read Guide →</span>
+          </div>
+        </a>
+      </article>
 
-<h2>Suggest a Tool</h2>
-
-<p>Tell us what tools you want us to build next.</p>
-
-<textarea id="suggestion" rows="4" placeholder="Example: Study planner, productivity timer..."></textarea>
-
-<button onclick="submitSuggestion()">Submit Suggestion</button>
-
-<p id="thanksMessage" style="color:green;margin-top:10px;"></p>
-
+      <article class="blog-card fade-up delay-2">
+        <a href="blog/students-affected-middle-east-wars.html" aria-label="Read about students affected by wars">
+          <div class="blog-card-img" style="background:linear-gradient(135deg,#fff7ed,#fef3c7);">🌍</div>
+          <div class="blog-card-body">
+            <span class="blog-tag">World · Education</span>
+            <h3>Education Under Fire: Students Affected by Middle East Wars</h3>
+            <p>A data-driven investigation into how ongoing conflicts have killed, displaced, and denied education to millions of students.</p>
+            <span class="blog-read">Read Investigation →</span>
+          </div>
+        </a>
+      </article>
+    </div>
+  </div>
 </section>
 
+<!-- ── FAQ SECTION — Schema-driven, targets featured snippets ── -->
+<section class="section faq-section" id="faq" aria-labelledby="faq-heading">
+  <div class="section-inner">
+    <span class="section-label">FAQ</span>
+    <h2 class="section-title" id="faq-heading">
+      Frequently Asked <em>Questions</em>
+    </h2>
+    <p class="section-sub">Everything students ask about Student Toolkit.</p>
 
-<!-- FOOTER -->
+    <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
 
-<footer>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name" onclick="toggleFaq(this)">What is Student Toolkit and what tools does it offer?</h3>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Student Toolkit is a free website offering online tools for college and university students. Current tools include a free attendance calculator, CGPA calculator, AI-powered resume checker, and a professional letter &amp; email writer. All tools are completely free, require no sign-up, and work instantly in your browser.</p>
+        </div>
+      </div>
 
-<p>© 2026 Student Toolkit</p>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name" onclick="toggleFaq(this)">How does the free attendance calculator work?</h3>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Enter your total number of classes and the number you have attended. The calculator instantly shows your current attendance percentage, how many more classes you can safely skip while staying above the minimum, or how many classes you need to attend to reach the required percentage.</p>
+        </div>
+      </div>
 
-<div class="footer-icons">
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name" onclick="toggleFaq(this)">Is the CGPA calculator free and accurate?</h3>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Yes — the CGPA calculator is 100% free, requires no sign-up, and works for all university grading systems. Enter your subject grades and credit hours and it calculates your semester CGPA instantly. It supports custom grade scales used by different institutions.</p>
+        </div>
+      </div>
 
-<a href="https://instagram.com/studenttoolkit">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
-</a>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name" onclick="toggleFaq(this)">How does the AI resume checker help students?</h3>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">The AI resume checker analyzes your resume against ATS (Applicant Tracking System) standards used by real employers. It gives you a score out of 100 and detailed, recruiter-style feedback on what to improve — keyword gaps, formatting issues, weak bullet points, and missing sections — so you can fix your resume before applying for internships or jobs.</p>
+        </div>
+      </div>
 
-<a href="#">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733547.png">
-</a>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name" onclick="toggleFaq(this)">Can I generate a leave application or professor email for free?</h3>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Yes. The free Letter &amp; Email Writer generates professional leave applications, professor emails, internship request letters, recommendation request letters, scholarship inquiry letters, and academic grievance letters. Enter your details, pick a tone, and your letter is ready in seconds — completely free, no sign-up needed.</p>
+        </div>
+      </div>
 
-</div>
+      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <h3 itemprop="name" onclick="toggleFaq(this)">Are all Student Toolkit tools really free forever?</h3>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Yes. All tools on Student Toolkit are completely free with no hidden paywalls, no premium tiers, no subscription fees, and no sign-up required. We are committed to keeping every tool free for students permanently.</p>
+        </div>
+      </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ── SUGGEST ── -->
+<section class="section suggest-section" id="suggest" aria-labelledby="suggest-heading">
+  <div class="section-inner">
+    <div class="suggest-card fade-up">
+      <span class="suggest-icon" aria-hidden="true">💡</span>
+      <h2 id="suggest-heading">Suggest a Tool</h2>
+      <p>What student problem should we solve next? Tell us — we build what students actually need.</p>
+      <label for="suggestion" class="sr-only">Your tool suggestion</label>
+      <textarea id="suggestion" name="suggestion" rows="4"
+        placeholder="e.g. Pomodoro study timer, deadline tracker, citation generator, GPA to percentage converter...">
+      </textarea>
+      <br/>
+      <button class="suggest-btn" onclick="submitSuggestion()" aria-label="Submit your tool suggestion">
+        Submit Suggestion
+      </button>
+      <p class="suggest-thanks" id="thanksMessage" role="alert" aria-live="polite">
+        ✅ Thank you! We'll consider it for our next build.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer role="contentinfo" aria-label="Site footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="footer-logo" href="https://studenttoolkit.online/" aria-label="Student Toolkit Home">
+        Student<span>Toolkit</span>
+      </a>
+      <p>Free, practical tools built for college and university students. Attendance calculator, CGPA calculator, resume checker, and letter writer — no sign-up, no cost, ever.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Free Tools</h4>
+      <a href="tools/attendance.html">Attendance Calculator</a>
+      <a href="tools/cgpa.html">CGPA Calculator</a>
+      <a href="tools/ai-resume-checker.html">AI Resume Checker</a>
+      <a href="tools/letter-writer.html">Letter &amp; Email Writer</a>
+    </div>
+    <div class="footer-col">
+      <h4>Blog</h4>
+      <a href="blog/brutal-resume-checker-guide.html">Resume Checker Guide</a>
+      <a href="blog/best-free-tools-for-students.html">Best Free Tools 2025</a>
+      <a href="blog/students-affected-middle-east-wars.html">Education Under Fire</a>
+      <a href="blog/index.html">All Blog Posts →</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Student Toolkit · Free Online Tools for Students · <a href="https://studenttoolkit.online/" style="color:rgba(255,255,255,0.4); text-decoration:none;">studenttoolkit.online</a></span>
+    <div class="social-links">
+      <a href="https://instagram.com/studenttoolkit" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Student Toolkit on Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="15" height="15" loading="lazy"/>
+      </a>
+      <a href="#" class="social-link" aria-label="Student Toolkit on Twitter">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Twitter" width="15" height="15" loading="lazy"/>
+      </a>
+      <a href="#" class="social-link" aria-label="Student Toolkit on Facebook">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Facebook" width="15" height="15" loading="lazy"/>
+      </a>
+    </div>
+  </div>
 </footer>
 
+<!-- VISUALLY HIDDEN utility class -->
+<style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}</style>
 
 <script>
+  /* ── NAVBAR SCROLL ── */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
 
-function toggleMenu(){
-document.getElementById("sidebar").classList.toggle("open");
-}
+  /* ── MOBILE MENU ── */
+  function toggleMenu() {
+    const hb = document.getElementById('hamburger');
+    const mm = document.getElementById('mobile-menu');
+    const isOpen = mm.classList.toggle('open');
+    hb.classList.toggle('open', isOpen);
+    hb.setAttribute('aria-expanded', isOpen);
+  }
+  function closeMenu() {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('hamburger').setAttribute('aria-expanded', 'false');
+    document.getElementById('mobile-menu').classList.remove('open');
+  }
+  document.addEventListener('click', e => {
+    const hb = document.getElementById('hamburger');
+    const mm = document.getElementById('mobile-menu');
+    if (!hb.contains(e.target) && !mm.contains(e.target)) closeMenu();
+  });
 
-function submitSuggestion(){
+  /* ── SCROLL ANIMATIONS (IntersectionObserver) ── */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
 
-let text=document.getElementById("suggestion").value;
+  /* ── FAQ ACCORDION ── */
+  function toggleFaq(h3) {
+    const item = h3.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
 
-if(text.trim()=="") return;
+  /* ── SUGGEST ── */
+  function submitSuggestion() {
+    const val = document.getElementById('suggestion').value.trim();
+    if (!val) return;
+    document.getElementById('suggestion').value = '';
+    const msg = document.getElementById('thanksMessage');
+    msg.style.display = 'block';
+    setTimeout(() => { msg.style.display = 'none'; }, 4500);
+  }
 
-document.getElementById("thanksMessage").innerText="Thank you for suggestion!";
-
-document.getElementById("suggestion").value="";
-
-}
-
+  /* ── SMOOTH ANCHOR SCROLL for nav links (handles fixed header offset) ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 72;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
 </script>
 
 </body>
 </html>
-
-
