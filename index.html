@@ -723,6 +723,7 @@
     </a>
     <ul class="nav-links" role="list">
       <li><a href="#tools">Tools</a></li>
+      <li><a href="news.html" style="display:inline-flex;align-items:center;gap:5px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--danger);display:inline-block;animation:pulse 1.5s infinite;"></span>News</a></li>
       <li><a href="#blog">Blog</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#suggest">Suggest</a></li>
@@ -738,6 +739,7 @@
     <a href="tools/cgpa.html"             onclick="closeMenu()">📈 &nbsp;CGPA Calculator</a>
     <a href="tools/ai-resume-checker.html"onclick="closeMenu()">🧠 &nbsp;AI Resume Checker</a>
     <a href="tools/letter-writer.html"    onclick="closeMenu()">✍️ &nbsp;Letter Writer</a>
+    <a href="news.html"                   onclick="closeMenu()" style="color:var(--danger);">📰 &nbsp;Live News &amp; Sports <span style="font-size:10px;background:var(--danger);color:#fff;padding:2px 7px;border-radius:10px;margin-left:4px;font-weight:700;">LIVE</span></a>
     <a href="#blog"    onclick="closeMenu()">📝 &nbsp;Blog</a>
     <a href="#suggest" onclick="closeMenu()">💡 &nbsp;Suggest a Tool</a>
   </div>
@@ -876,6 +878,27 @@
         </a>
       </li>
 
+      <li>
+        <a href="news.html" class="tool-card fade-up"
+           aria-label="Open live news and sports scores"
+           title="Live News and Sports Scores for Students"
+           style="border-color:#fca5a5;">
+          <div class="tool-icon-wrap" style="background:#fee2e2;" aria-hidden="true">📰</div>
+          <div>
+            <h3>Live News &amp; Sports</h3>
+            <p>Real-time education news, world headlines, and live sports scores — Premier League, Cricket, NBA and more. Updated every 5 minutes.</p>
+          </div>
+          <div class="tool-card-foot">
+            <span class="tbadge" style="background:#fee2e2;color:var(--danger);border-color:#fca5a5;">
+              <span style="width:5px;height:5px;border-radius:50%;background:var(--danger);display:inline-block;animation:pulse 1.2s infinite;margin-right:4px;"></span>LIVE
+            </span>
+            <div class="tool-arrow" aria-hidden="true">
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </a>
+      </li>
+
     </ul>
   </div>
 </section>
@@ -898,6 +921,45 @@
     <div class="stat-item fade-up delay-3">
       <span class="stat-num">∞</span>
       <div class="stat-desc">Uses Per Day, Per Student</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LIVE NEWS TEASER ── -->
+<section class="section" id="news-teaser" aria-labelledby="news-teaser-heading" style="background:var(--ink);padding:56px 24px;">
+  <div class="section-inner">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:28px;">
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:7px;background:var(--danger);color:#fff;border-radius:20px;padding:4px 13px;font-size:11.5px;font-weight:700;letter-spacing:.05em;margin-bottom:12px;">
+          <span style="width:6px;height:6px;border-radius:50%;background:#fff;animation:pulse 1.2s infinite;display:inline-block;"></span>LIVE NOW
+        </div>
+        <h2 style="font-family:'Instrument Serif',serif;font-size:clamp(24px,3.5vw,38px);font-weight:400;color:#fff;letter-spacing:-.02em;line-height:1.1;" id="news-teaser-heading">
+          Latest News &amp; <em style="font-style:italic;color:#fca5a5;">Scores</em>
+        </h2>
+        <p style="font-size:14px;color:rgba(255,255,255,.5);margin-top:6px;font-weight:300;">Education headlines and sports scores, updated every 5 minutes.</p>
+      </div>
+      <a href="news.html" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;padding:11px 20px;border-radius:10px;font-size:13.5px;font-weight:600;text-decoration:none;transition:all .18s;white-space:nowrap;" onmouseover="this.style.background='rgba(255,255,255,.15)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+        View All News &amp; Scores →
+      </a>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;" id="hp-news-grid">
+      <!-- skeleton -->
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:10px;">
+        <div style="height:10px;border-radius:6px;background:rgba(255,255,255,.1);width:40%;"></div>
+        <div style="height:14px;border-radius:6px;background:rgba(255,255,255,.08);width:90%;"></div>
+        <div style="height:14px;border-radius:6px;background:rgba(255,255,255,.06);width:70%;"></div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:10px;">
+        <div style="height:10px;border-radius:6px;background:rgba(255,255,255,.1);width:40%;"></div>
+        <div style="height:14px;border-radius:6px;background:rgba(255,255,255,.08);width:90%;"></div>
+        <div style="height:14px;border-radius:6px;background:rgba(255,255,255,.06);width:70%;"></div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:10px;">
+        <div style="height:10px;border-radius:6px;background:rgba(255,255,255,.1);width:40%;"></div>
+        <div style="height:14px;border-radius:6px;background:rgba(255,255,255,.08);width:90%;"></div>
+        <div style="height:14px;border-radius:6px;background:rgba(255,255,255,.06);width:70%;"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1048,9 +1110,10 @@
       <a href="tools/cgpa.html">CGPA Calculator</a>
       <a href="tools/ai-resume-checker.html">AI Resume Checker</a>
       <a href="tools/letter-writer.html">Letter &amp; Email Writer</a>
+      <a href="news.html">📰 Live News &amp; Sports</a>
     </div>
     <div class="footer-col">
-      <h4>Blog</h4>
+      <h4>Blog &amp; More</h4>
       <a href="blog/brutal-resume-checker-guide.html">Resume Checker Guide</a>
       <a href="blog/best-free-tools-for-students.html">Best Free Tools 2025</a>
       <a href="blog/students-affected-middle-east-wars.html">Education Under Fire</a>
@@ -1138,7 +1201,35 @@
     });
   });
 
-  /* ── PWA: SERVICE WORKER REGISTRATION ── */
+  /* ── HOMEPAGE NEWS TEASER ── */
+  (async () => {
+    try {
+      const res = await fetch('https://content.guardianapis.com/search?section=education&show-fields=headline,trailText&page-size=3&order-by=newest&api-key=test');
+      if (!res.ok) return;
+      const data = await res.json();
+      const articles = data.response?.results || [];
+      if (!articles.length) return;
+
+      const grid = document.getElementById('hp-news-grid');
+      grid.innerHTML = articles.map(a => {
+        const diff = (Date.now() - new Date(a.webPublicationDate)) / 1000;
+        const when = diff < 3600 ? Math.floor(diff/60)+'m ago' : Math.floor(diff/3600)+'h ago';
+        const title = (a.fields?.headline || a.webTitle).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        const trail = (a.fields?.trailText||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').substring(0,100);
+        return `
+          <a href="${a.webUrl}" target="_blank" rel="noopener noreferrer"
+             style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:18px 20px;display:block;text-decoration:none;transition:all .18s;"
+             onmouseover="this.style.background='rgba(255,255,255,.1)';this.style.borderColor='rgba(255,255,255,.2)'"
+             onmouseout="this.style.background='rgba(255,255,255,.05)';this.style.borderColor='rgba(255,255,255,.1)'">
+            <div style="font-size:10.5px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">🎓 Education · ${when}</div>
+            <div style="font-size:14px;font-weight:600;color:#fff;line-height:1.45;margin-bottom:6px;">${title}</div>
+            ${trail ? `<div style="font-size:12.5px;color:rgba(255,255,255,.45);font-weight:300;line-height:1.5;">${trail}…</div>` : ''}
+          </a>`;
+      }).join('');
+    } catch(e) {
+      // Silently fail — teaser is non-critical
+    }
+  })();
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('/service-worker.js')
