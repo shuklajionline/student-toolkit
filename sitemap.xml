@@ -69,4 +69,11 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://studenttoolkit.online/blog/career-path-finder-india.html</loc>
+    <lastmod>2026-03-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
