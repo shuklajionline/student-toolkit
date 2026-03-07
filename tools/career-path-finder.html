@@ -595,13 +595,21 @@ Return ONLY raw JSON (absolutely no markdown, no backticks, no extra text):
 Rules: exactly 6 careers, exactly 2 with topPick true, matchScore 65-98 (vary realistically), salaryFresher/Mid/Senior as plain numbers in LPA, roadmap exactly 5 steps, all India-specific (IIT/NEET/CAT/UPSC/IIM etc.), entranceExams and topColleges as arrays. Cover all relevant streams based on the student profile.`;
 
   try{
-    const WORKER='https://student-news.rs2584328.workers.dev';
-    const r=await fetch(WORKER+'/ai',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:8000,messages:[{role:'user',content:prompt}]})});
+    const GEMINI_KEY='AIzaSyAvynKE6pT293ftsE8DKb2JAitPqxdYDrs';
+    const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+GEMINI_KEY,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:0.7,maxOutputTokens:8000}})
+    });
     const d=await r.json();
-    console.log('[Career AI] response:',JSON.stringify(d).substring(0,200));if(d.error)throw new Error(d.error.message);const txt=d.content?.[0]?.text||'';
+    console.log('[Career AI] Gemini:',JSON.stringify(d).substring(0,200));
+    if(d.error)throw new Error(d.error.message);
+    const txt=d.candidates?.[0]?.content?.parts?.[0]?.text||'';
+    if(!txt)throw new Error('Empty response from Gemini');
     let result;
     try{result=JSON.parse(txt.replace(/```json|```/g,'').trim())}
-    catch(e){const m=txt.match(/\{[\s\S]*\}/);if(m)result=JSON.parse(m[0]);else throw new Error('parse')}
+    catch(e){const m=txt.match(/\{[\s\S]*\}/);if(m)result=JSON.parse(m[0]);else throw new Error('JSON parse failed')}
+    if(!result.careers?.length)throw new Error('No careers in response');
     clearInterval(iv);
     document.getElementById('load').classList.remove('show');
     render(result);
@@ -610,7 +618,8 @@ Rules: exactly 6 careers, exactly 2 with topPick true, matchScore 65-98 (vary re
     document.getElementById('load').classList.remove('show');
     document.getElementById('s2').style.display='block';
     setStep(2);
-    console.error('[Career AI]',err);alert('Error: '+err.message);
+    console.error('[Career AI]',err);
+    alert('Error: '+err.message);
   }
 }
 
