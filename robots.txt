@@ -1,13 +1,4 @@
-# robots.txt — studenttoolkit.online
-# Generated: March 2026
-
 User-agent: *
 Allow: /
 
-# Block any future admin or config folders
-Disallow: /admin/
-Disallow: /private/
-Disallow: /.git/
-
-# Sitemap location — submitted to Google Search Console
 Sitemap: https://studenttoolkit.online/sitemap.xml
