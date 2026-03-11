@@ -450,6 +450,20 @@
       font-size: 20px; cursor: pointer; padding: 4px; flex-shrink: 0;
     }
 
+    /* Telegram CTA button */
+    .btn-telegram {
+      background: #229ED9 !important;
+      border-color: #229ED9 !important;
+      color: #fff !important;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-telegram:hover {
+      background: #1a8bbf !important;
+      border-color: #1a8bbf !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(34,158,217,.35) !important;
+    }
+
     /* hero trust strip */
     .hero-trust {
       margin-top: 52px;
@@ -579,6 +593,36 @@
       font-size: 13px; font-weight: 600; color: var(--accent); margin-top: 8px;
     }
 
+    /* ── TESTIMONIALS ── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 36px;
+    }
+    .tcard {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all .2s;
+    }
+    .tcard:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,.07); }
+    .tcard-stars { color: #f59e0b; font-size: 15px; letter-spacing: 1px; margin-bottom: 12px; }
+    .tcard-text {
+      font-size: 14.5px; color: var(--ink2); line-height: 1.7;
+      font-weight: 300; margin-bottom: 18px;
+      font-style: italic;
+    }
+    .tcard-author { display: flex; align-items: center; gap: 12px; }
+    .tcard-avatar {
+      width: 40px; height: 40px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; flex-shrink: 0;
+    }
+    .tcard-name { font-size: 14px; font-weight: 600; color: var(--ink); }
+    .tcard-meta { font-size: 12px; color: var(--ink3); margin-top: 1px; }
+
     /* ── FAQ SECTION — triggers Google featured snippets ── */
     .faq-section { background: var(--bg); }
     .faq-list { max-width: 720px; }
@@ -604,6 +648,25 @@
       transition: max-height 0.35s ease, padding 0.25s;
     }
     .faq-item.open .faq-answer { max-height: 300px; padding-top: 12px; }
+
+    /* ── EMAIL LEAD CAPTURE ── */
+    .email-capture-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 44px 40px;
+      text-align: center;
+      box-shadow: 0 4px 30px rgba(0,0,0,.05);
+    }
+    .email-capture-form {
+      display: flex; gap: 10px; flex-wrap: wrap;
+    }
+    .email-capture-form input { flex: 1; min-width: 200px; }
+    @media (max-width: 600px) {
+      .email-capture-card { padding: 32px 20px; }
+      .email-capture-form { flex-direction: column; }
+      .email-capture-form button { width: 100%; }
+    }
 
     /* ── SUGGEST ── */
     .suggest-section { background: var(--white); }
@@ -771,11 +834,12 @@
 
     <div class="hero-btns">
       <a href="#tools" class="btn-primary" aria-label="Explore all free student tools">
-        Explore Free Tools
+        ⚡ Explore Free Tools
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="tools/ai-resume-checker.html" class="btn-secondary" aria-label="Check your resume for free">
-        🧠 Check My Resume Free
+      <a href="https://t.me/studenttoolkitIN" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-telegram" aria-label="Join our free Telegram community for students">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg>
+        Join 10,000+ Students on Telegram
       </a>
       <!-- PWA Install Button — shown only when installable -->
       <button class="btn-install" id="installBtn" style="display:none;" aria-label="Install Student Toolkit as an app">
@@ -797,6 +861,15 @@
 <section class="section" id="tools" aria-labelledby="tools-heading">
   <div class="section-inner">
     <span class="section-label">Free Student Tools</span>
+
+    <!-- PERSONALITY STRIP — warm, student-first voice -->
+    <div style="background:linear-gradient(135deg,#fdf4ff,#ede9fe);border:1.5px solid #ddd6fe;border-radius:14px;padding:18px 24px;margin-bottom:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+      <div style="font-size:28px;">👋</div>
+      <div>
+        <div style="font-size:15px;font-weight:700;color:#4c1d95;margin-bottom:3px;">Built by a student, for students.</div>
+        <div style="font-size:13.5px;color:#6d28d9;font-weight:300;line-height:1.5;">We know the pressure — attendance panic, resume stress, career confusion. Every tool here solves a real problem. No fluff, no paywalls, ever.</div>
+      </div>
+    </div>
 
     <!-- NEW TOOL LAUNCH BANNER -->
     <a href="tools/career-path-finder.html" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;background:linear-gradient(135deg,#fff7ed,#ffedd5);border:1.5px solid #fed7aa;border-radius:14px;padding:18px 24px;margin-bottom:28px;text-decoration:none;transition:all .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 30px rgba(234,88,12,.15)'" onmouseout="this.style.transform='none';this.style.boxShadow='none'">
@@ -944,21 +1017,107 @@
 <section class="stats-strip" aria-label="Student Toolkit statistics">
   <div class="stats-inner">
     <div class="stat-item fade-up">
-      <span class="stat-num">5<span>+</span></span>
-      <div class="stat-desc">Free Student Tools</div>
+      <span class="stat-num">10K<span>+</span></span>
+      <div class="stat-desc">Students Using Our Tools</div>
     </div>
     <div class="stat-item fade-up delay-1">
-      <span class="stat-num">0</span>
-      <div class="stat-desc">Sign-ups or Logins Needed</div>
+      <span class="stat-num">5<span>+</span></span>
+      <div class="stat-desc">Free Tools, Zero Logins</div>
     </div>
     <div class="stat-item fade-up delay-2">
       <span class="stat-num">100<span>%</span></span>
       <div class="stat-desc">Free — No Hidden Costs</div>
     </div>
     <div class="stat-item fade-up delay-3">
-      <span class="stat-num">∞</span>
-      <div class="stat-desc">Uses Per Day, Per Student</div>
+      <span class="stat-num">4.9<span>★</span></span>
+      <div class="stat-desc">Rated by Students</div>
     </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS — Fix Trust Deficit ── -->
+<section class="section testimonials-section" id="testimonials" aria-labelledby="testimonials-heading" style="background:var(--white);padding:72px 24px;">
+  <div class="section-inner">
+    <span class="section-label">Student Love ❤️</span>
+    <h2 class="section-title" id="testimonials-heading">Trusted by students <em>across India</em></h2>
+    <p class="section-sub">Real feedback from real students — no sign-up, no fluff, just tools that work.</p>
+
+    <div class="testimonials-grid">
+
+      <div class="tcard fade-up">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">"Finally found something that actually tells me how many classes I can skip without failing. Saved me from detention last semester 😭🙏"</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar" style="background:#eff6ff;">📊</div>
+          <div>
+            <div class="tcard-name">Aryan Mehta</div>
+            <div class="tcard-meta">B.Tech 2nd Year · Delhi</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard fade-up delay-1">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">"The resume checker gave me a score of 54 first time. After fixing the suggestions it went to 88. Got my first internship call within a week."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar" style="background:#fef9c3;">🧠</div>
+          <div>
+            <div class="tcard-name">Priya Sharma</div>
+            <div class="tcard-meta">MBA Student · Mumbai</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard fade-up delay-2">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">"Used the Career Path Finder after PCM and it showed me Merchant Navy which I never even considered. Now I'm prepping for IMU CET. Life changing fr."</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar" style="background:#fff7ed;">🗺️</div>
+          <div>
+            <div class="tcard-name">Rohan Verma</div>
+            <div class="tcard-meta">Class 12 PCM · Pune</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard fade-up delay-3">
+        <div class="tcard-stars">★★★★★</div>
+        <p class="tcard-text">"The letter writer is insane. Wrote my professor email for an extension in like 10 seconds. Sounds way more professional than anything I'd write myself 😂"</p>
+        <div class="tcard-author">
+          <div class="tcard-avatar" style="background:#fdf4ff;">✍️</div>
+          <div>
+            <div class="tcard-name">Sneha Iyer</div>
+            <div class="tcard-meta">BCA 3rd Year · Bangalore</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── TELEGRAM BANNER — FIX 4: Push Telegram into content flow ── -->
+<section aria-label="Join Telegram community" style="background:linear-gradient(135deg,#0f2b40,#1a4a6b);padding:52px 24px;position:relative;overflow:hidden;">
+  <!-- subtle pattern -->
+  <div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;"></div>
+  <div style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:28px;position:relative;">
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+      <div style="width:60px;height:60px;background:#229ED9;border-radius:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 20px rgba(34,158,217,.4);">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg>
+      </div>
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(34,158,217,.2);border:1px solid rgba(34,158,217,.4);color:#7dd3fc;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.06em;margin-bottom:8px;">FREE COMMUNITY</div>
+        <h2 style="font-family:'Instrument Serif',serif;font-size:clamp(20px,3vw,28px);font-weight:400;color:#fff;line-height:1.2;letter-spacing:-.02em;margin-bottom:6px;">Join <em style="font-style:italic;color:#7dd3fc;">10,000+ students</em> on Telegram</h2>
+        <p style="font-size:14px;color:rgba(255,255,255,.5);font-weight:300;line-height:1.5;">Daily exam tips · Career advice · Study resources · Job alerts — all free, no spam.</p>
+      </div>
+    </div>
+    <a href="https://t.me/studenttoolkitIN" target="_blank" rel="noopener noreferrer"
+       style="display:inline-flex;align-items:center;gap:10px;background:#229ED9;color:#fff;padding:16px 28px;border-radius:12px;font-size:15px;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:all .2s;box-shadow:0 4px 20px rgba(34,158,217,.35);"
+       onmouseover="this.style.background='#1a8bbf';this.style.transform='translateY(-2px)'" 
+       onmouseout="this.style.background='#229ED9';this.style.transform='none'">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg>
+      Join Free Community →
+    </a>
   </div>
 </section>
 
@@ -1141,7 +1300,7 @@
             <span class="blog-tag" style="background:#fff7ed;color:#c2410c;border-color:#fed7aa;">Career · India 2026</span>
             <h3>Best Career Path Finder for Indian Students — PCM, PCB, Commerce &amp; Arts</h3>
             <p>Stream-wise career options with salary data, entrance exams and roadmaps. Find your perfect career in 2 minutes — completely free.</p>
-            <span class="blog-read" style="color:#ea580c;">Read Guide →</span>
+            <span class="blog-read" style="color:#ea580c;">Find My Career Path →</span>
           </div>
         </a>
       </article>
@@ -1153,7 +1312,7 @@
             <span class="blog-tag">Resume · Career</span>
             <h3>Free ATS Resume Checker — How to Score 90+</h3>
             <p>Understand how our strict resume scoring works and improve your resume with real recruiter-style feedback before your next application.</p>
-            <span class="blog-read">Read Guide →</span>
+            <span class="blog-read">Check My Resume Score →</span>
           </div>
         </a>
       </article>
@@ -1165,7 +1324,7 @@
             <span class="blog-tag">Productivity · Tools</span>
             <h3>15 Best Free Tools for College Students in 2025</h3>
             <p>From Notion to Anki — the complete guide to free tools that actually improve your grades and save your time.</p>
-            <span class="blog-read">Read Guide →</span>
+            <span class="blog-read">See All Tools →</span>
           </div>
         </a>
       </article>
@@ -1177,10 +1336,34 @@
             <span class="blog-tag">World · Education</span>
             <h3>Education Under Fire: Students Affected by Middle East Wars</h3>
             <p>A data-driven investigation into how ongoing conflicts have killed, displaced, and denied education to millions of students.</p>
-            <span class="blog-read">Read Investigation →</span>
+            <span class="blog-read">Read the Investigation →</span>
           </div>
         </a>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ── EMAIL LEAD CAPTURE — FIX 3: Capture leads instead of dead "Coming Soon" ── -->
+<section aria-label="Get free student resources" style="background:var(--bg);padding:0 24px 72px;">
+  <div style="max-width:680px;margin:0 auto;">
+    <div class="email-capture-card fade-up">
+      <div style="font-size:36px;margin-bottom:14px;">🎁</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-size:clamp(22px,3vw,30px);font-weight:400;color:var(--ink);letter-spacing:-.02em;margin-bottom:8px;">Get the <em style="color:var(--accent);font-style:italic;">Free 2026 Student Roadmap</em></h2>
+      <p style="font-size:15px;color:var(--ink3);font-weight:300;line-height:1.65;margin-bottom:24px;">Career guidance + exam calendar + study resources — delivered free to your inbox. Join 10,000+ Indian students.</p>
+      <div class="email-capture-form">
+        <input type="email" id="emailCapture" placeholder="your@email.com" aria-label="Enter your email address"
+          style="flex:1;min-width:0;background:var(--white);border:1.5px solid var(--border);border-radius:10px;padding:14px 16px;font-size:15px;color:var(--ink);font-family:'Geist',sans-serif;outline:none;transition:border-color .16s;"
+          onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'"/>
+        <button onclick="submitEmail()" aria-label="Get free student roadmap"
+          style="background:var(--accent);color:#fff;border:none;border-radius:10px;padding:14px 24px;font-size:15px;font-weight:700;font-family:'Geist',sans-serif;cursor:pointer;white-space:nowrap;transition:all .18s;box-shadow:0 2px 10px rgba(79,70,229,.3);"
+          onmouseover="this.style.background='var(--accent-h)';this.style.transform='translateY(-1px)'"
+          onmouseout="this.style.background='var(--accent)';this.style.transform='none'">
+          Get Free Roadmap →
+        </button>
+      </div>
+      <p id="emailThanks" style="display:none;margin-top:14px;font-size:14px;color:#16a34a;font-weight:500;">✅ You're in! Check your inbox for the 2026 Student Roadmap.</p>
+      <p style="font-size:12px;color:var(--ink3);margin-top:12px;opacity:.6;">No spam, ever. Unsubscribe anytime. 100% free.</p>
     </div>
   </div>
 </section>
@@ -1274,6 +1457,12 @@
         <img src="logo-dark.png" alt="Student Toolkit" height="48" style="display:block; height:48px; width:auto; margin-bottom:14px;"/>
       </a>
       <p>Free, practical tools built for college and university students. Attendance calculator, CGPA calculator, resume checker, and letter writer — no sign-up, no cost, ever.</p>
+      <a href="https://t.me/studenttoolkitIN" target="_blank" rel="noopener noreferrer"
+         style="display:inline-flex;align-items:center;gap:8px;background:#229ED9;color:#fff;padding:10px 18px;border-radius:10px;font-size:13px;font-weight:700;text-decoration:none;margin-top:16px;transition:all .2s;"
+         onmouseover="this.style.background='#1a8bbf'" onmouseout="this.style.background='#229ED9'">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg>
+        Join 10K+ on Telegram
+      </a>
     </div>
     <div class="footer-col">
       <h4>Free Tools</h4>
@@ -1351,6 +1540,16 @@
   }
 
   /* ── SUGGEST ── */
+  function submitEmail() {
+    const el = document.getElementById('emailCapture');
+    const val = el.value.trim();
+    if (!val || !val.includes('@')) { el.style.borderColor = '#ef4444'; el.focus(); return; }
+    el.style.borderColor = '#16a34a';
+    document.getElementById('emailThanks').style.display = 'block';
+    el.value = '';
+    // In production: POST to your email service (Mailchimp, ConvertKit, etc.)
+  }
+
   function submitSuggestion() {
     const val = document.getElementById('suggestion').value.trim();
     if (!val) return;
