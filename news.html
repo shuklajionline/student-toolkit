@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
+<meta http-equiv="Cache-Control" content="public, max-age=1800"/>
+<meta http-equiv="Pragma" content="cache"/>
+<meta name="version" content="2026.03"/>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
   <meta http-equiv="Pragma" content="no-cache"/>
   <meta http-equiv="Expires" content="0"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Live News & Sports Scores | Student Toolkit</title>
-  <meta name="description" content="Live Indian news from NDTV, Times of India, The Hindu and more. Detailed live cricket scorecards — batting, bowling, run rates, ball-by-ball. Updated every 5 minutes."/>
+  <meta name="description" content="Live Indian news from NDTV, Times of India, The Hindu and more. Education, world, tech, business headlines. Updated every 5 minutes."/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://studenttoolkit.online/news.html"/>
   <link rel="manifest" href="/manifest.json"/>
@@ -142,7 +145,7 @@
     .sk-line.mid  { width: 65%; }
     .sk-line.short{ width: 40%; }
 
-    /* ── CRICKET SCORES ── */
+    /* ── SPORTS SCORES ── */
     .scores-section { display: flex; flex-direction: column; gap: 12px; }
     .sport-block { background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
     .sport-block-head { padding: 12px 16px; border-bottom: 1px solid var(--bg2); display: flex; align-items: center; justify-content: space-between; }
@@ -152,70 +155,7 @@
     .badge-ft    { background: var(--bg3); color: var(--ink3); }
     .badge-soon  { background: var(--warn-l); color: var(--warn); }
 
-    /* Match header */
-    .cricket-series { padding: 7px 14px 5px; font-size: 10px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--ink3); background: var(--bg); border-bottom: 1px solid var(--bg2); }
-    .cricket-teams { display: grid; grid-template-columns: 1fr auto 1fr; gap: 6px; padding: 12px 14px 8px; align-items: center; }
-    .cricket-team { display: flex; flex-direction: column; gap: 1px; }
-    .cricket-team.right { text-align: right; align-items: flex-end; }
-    .ct-name { font-size: 12.5px; font-weight: 700; color: var(--ink); }
-    .ct-score-line { display: flex; align-items: baseline; gap: 3px; }
-    .cricket-team.right .ct-score-line { justify-content: flex-end; }
-    .ct-runs { font-family: 'Instrument Serif', serif; font-size: 21px; color: var(--ink); line-height: 1.1; font-weight: 400; }
-    .ct-wkts { font-size: 13px; color: var(--ink3); }
-    .ct-overs { font-size: 10px; color: var(--ink3); margin-top: 1px; }
-    .ct-inns-label { font-size: 9.5px; color: var(--ink3); text-transform: uppercase; letter-spacing: .06em; }
-    .cricket-vs-block { text-align: center; }
-    .cricket-vs { font-size: 10px; font-weight: 700; color: var(--ink3); background: var(--bg2); border-radius: 4px; padding: 3px 6px; }
 
-    /* Status bar */
-    .cricket-status { margin: 0 12px 10px; padding: 7px 10px; border-radius: 7px; font-size: 11.5px; font-weight: 600; text-align: center; line-height: 1.4; }
-    .cs-live { background: #fef2f2; color: var(--danger); border: 1px solid #fecaca; }
-    .cs-result { background: var(--bg); color: var(--ink3); border: 1px solid var(--border); font-weight: 400; font-size: 11px; }
-    .cs-upcoming { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
-
-    /* Section headings */
-    .cricket-section-head { padding: 5px 14px; font-size: 9.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink3); background: var(--bg2); border-top: 1px solid var(--bg2); border-bottom: 1px solid var(--bg2); display: flex; justify-content: space-between; }
-    .csh-cols { display: flex; gap: 16px; font-size: 9px; }
-
-    /* Batting rows */
-    .cricket-bat-row { display: grid; grid-template-columns: 1fr 30px 30px 38px; gap: 2px; padding: 5px 14px; border-bottom: 1px solid var(--bg2); align-items: center; }
-    .cricket-bat-row:last-child { border-bottom: none; }
-    .cbr-name { font-size: 12px; color: var(--ink); font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .cbr-name.batting { font-weight: 700; }
-    .cbr-name.batting::after { content: '*'; color: var(--danger); font-size: 9px; vertical-align: super; }
-    .cbr-runs { font-size: 12.5px; font-weight: 700; color: var(--ink); text-align: right; }
-    .cbr-balls { font-size: 11px; color: var(--ink3); text-align: right; }
-    .cbr-sr { font-size: 10.5px; color: var(--ink3); text-align: right; }
-
-    /* Bowling rows */
-    .cricket-bowl-row { display: grid; grid-template-columns: 1fr 26px 20px 26px 22px; gap: 2px; padding: 5px 14px; border-bottom: 1px solid var(--bg2); align-items: center; }
-    .cricket-bowl-row:last-child { border-bottom: none; }
-    .cbow-name { font-size: 12px; color: var(--ink); font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .cbow-num { font-size: 11.5px; text-align: right; color: var(--ink3); }
-    .cbow-wkt { font-size: 12.5px; font-weight: 700; color: var(--danger); text-align: right; }
-
-    /* Recent balls */
-    .cricket-recent { padding: 8px 14px 10px; }
-    .recent-label { font-size: 9.5px; color: var(--ink3); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 5px; }
-    .balls-row { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
-    .ball { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; border: 1.5px solid; flex-shrink: 0; }
-    .ball-dot { background: var(--bg2); color: var(--ink3); border-color: var(--border); }
-    .ball-run { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
-    .ball-four { background: #f0fdf4; color: #15803d; border-color: #bbf7d0; font-size: 9px; }
-    .ball-six  { background: #fef9c3; color: #a16207; border-color: #fde68a; font-size: 9px; }
-    .ball-wkt  { background: #fef2f2; color: var(--danger); border-color: #fecaca; }
-    .ball-wide { background: var(--bg); color: var(--ink3); border-color: var(--border); font-size: 8px; }
-    .ball-nb   { background: #fff7ed; color: #c2410c; border-color: #fed7aa; font-size: 8px; }
-
-    /* CRR / RRR */
-    .cricket-rates { display: flex; gap: 8px; padding: 6px 14px 10px; }
-    .rate-chip { flex: 1; background: var(--bg); border: 1px solid var(--border); border-radius: 7px; padding: 5px 8px; text-align: center; }
-    .rate-val { font-size: 14px; font-weight: 700; color: var(--ink); font-family: 'Instrument Serif', serif; }
-    .rate-lbl { font-size: 9px; color: var(--ink3); text-transform: uppercase; letter-spacing: .06em; margin-top: 1px; }
-
-    /* Partnership */
-    .cricket-partnership { padding: 5px 14px 8px; font-size: 11px; color: var(--ink3); border-top: 1px solid var(--bg2); }
-    .pship-val { color: var(--ink); font-weight: 600; }
 
     .match-row { padding: 12px 16px; border-bottom: 1px solid var(--bg2); display: flex; align-items: center; gap: 10px; }
     .match-row:last-child { border-bottom: none; }
@@ -345,7 +285,7 @@
     <div class="page-header-left">
       <div class="live-badge"><span class="live-dot"></span>LIVE UPDATES</div>
       <h1 style="margin-top:10px;">India News &amp; <em>Sports</em></h1>
-      <p>Live Indian education news, India headlines, cricket scores and more. Updated every 5 minutes.</p>
+      <p>Live Indian education news, India headlines, sports scores and more. Updated every 5 minutes.</p>
     </div>
     <div style="text-align:right;">
       <div id="last-updated" class="refresh-info">Fetching latest...</div>
@@ -363,7 +303,7 @@
     <button class="tab-btn" onclick="switchTab('tech')">💻 Tech</button>
     <button class="tab-btn" onclick="switchTab('business')">📊 Business</button>
     <button class="tab-btn" onclick="switchTab('science')">🔬 Science & ISRO</button>
-    <button class="tab-btn" onclick="switchTab('sports-news')">🏏 Cricket & Sports</button>
+    <button class="tab-btn" onclick="switchTab('sports-news')">🏏 Sports</button>
   </div>
 
   <!-- ── MAIN GRID ── -->
@@ -390,14 +330,6 @@
     <!-- RIGHT: SIDEBAR -->
     <aside class="sidebar">
 
-      <!-- Live Cricket Scores -->
-      <div class="sidebar-card">
-        <div class="sidebar-head">🏏 Live Cricket <span class="sport-badge badge-live" style="margin-left:auto;">LIVE</span></div>
-        <div class="scores-section" id="scores-section">
-          <div class="no-matches">Loading cricket scores...</div>
-        </div>
-      </div>
-
       <!-- Trending -->
       <div class="sidebar-card">
         <div class="sidebar-head">🔥 Trending Now</div>
@@ -423,7 +355,7 @@
 
 <footer role="contentinfo">
   <div class="footer-inner">
-    <p>© 2026 Student Toolkit · News from <strong>NDTV, Times of India, The Hindu</strong> &amp; more Indian sources · Cricket scorecards via ESPN</p>
+    <p>© 2026 Student Toolkit · News from <strong>NDTV, Times of India, The Hindu</strong> &amp; more Indian sources · Sports scores via ESPN</p>
     <div style="display:flex;gap:16px;">
       <a href="index.html">Home</a>
       <a href="blog/index.html">Blog</a>
@@ -447,7 +379,7 @@ const CATEGORIES = {
   tech:         { emoji: '💻', label: 'Tech & Startups',  bg: 'linear-gradient(135deg,#1e3a5f,#1e40af)' },
   business:     { emoji: '📊', label: 'Business',         bg: 'linear-gradient(135deg,#78350f,#92400e)' },
   science:      { emoji: '🔬', label: 'Science & ISRO',   bg: 'linear-gradient(135deg,#134e4a,#0f766e)' },
-  'sports-news':{ emoji: '🏏', label: 'Cricket & Sports', bg: 'linear-gradient(135deg,#1c1917,#292524)' },
+  'sports-news':{ emoji: '🏏', label: 'Sports', bg: 'linear-gradient(135deg,#1c1917,#292524)' },
 };
 
 const cache = {};
@@ -582,156 +514,12 @@ function renderTrending(articles) {
     </a>`).join('');
 }
 
-// ════════════════════════════════════════════════════════
-//  DETAILED CRICKET SCORES — ESPN API
-// ════════════════════════════════════════════════════════
-const CRICKET_FEEDS = [
-  { label: 'International', url: 'https://site.api.espn.com/apis/site/v2/sports/cricket/scoreboard' },
-  { label: 'IPL',           url: 'https://site.api.espn.com/apis/site/v2/sports/cricket/8039/scoreboard' },
-];
 
-function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-
-function renderBall(b) {
-  if (b==='W')  return '<div class="ball ball-wkt">W</div>';
-  if (b==='4')  return '<div class="ball ball-four">4</div>';
-  if (b==='6')  return '<div class="ball ball-six">6</div>';
-  if (b==='wd') return '<div class="ball ball-wide">wd</div>';
-  if (b==='nb') return '<div class="ball ball-nb">nb</div>';
-  if (b==='0')  return '<div class="ball ball-dot">&middot;</div>';
-  return '<div class="ball ball-run">'+b+'</div>';
-}
-
-function buildCricketCard(ev) {
-  const comps   = ev.competitions?.[0] || {};
-  const teams   = comps.competitors || [];
-  const status  = ev.status || {};
-  const isLive  = status.type?.state === 'in';
-  const isFT    = status.type?.completed;
-  const detail  = status.type?.shortDetail || status.type?.description || '';
-  const note    = ev.notes?.[0]?.headline || comps.notes?.[0]?.headline || '';
-  const home    = teams.find(t=>t.homeAway==='home') || teams[0] || {};
-  const away    = teams.find(t=>t.homeAway==='away') || teams[1] || {};
-
-  function inningsDisplay(team) {
-    const scores = team.linescores || [];
-    if (!scores.length) {
-      const sc = team.score ?? '—';
-      return '<div class="ct-score-line"><span class="ct-runs">'+sc+'</span></div>';
-    }
-    return scores.map(s =>
-      '<div class="ct-score-line"><span class="ct-runs">'+
-      (s.value ?? s.runs ?? '—')+'</span>'+
-      (s.wickets!==undefined && s.wickets!=='' ? '<span class="ct-wkts">/'+s.wickets+'</span>' : '')+
-      '</div>'+
-      (s.overs ? '<div class="ct-overs">('+s.overs+' ov)</div>' : '')
-    ).join('');
-  }
-
-  let statusHtml = '';
-  if (isLive) {
-    statusHtml = '<div class="cricket-status cs-live">&#128994; LIVE'+(detail?' &middot; '+esc(detail):'')+'</div>';
-  } else if (isFT) {
-    statusHtml = '<div class="cricket-status cs-result">'+esc(note||detail||'Match Complete')+'</div>';
-  } else {
-    const t = ev.date ? new Date(ev.date).toLocaleString('en-IN',{dateStyle:'short',timeStyle:'short'}) : 'Upcoming';
-    statusHtml = '<div class="cricket-status cs-upcoming">&#128197; '+esc(t)+'</div>';
-  }
-
-  const sit = comps.situation || {};
-  const batters = sit.batters || [];
-  const bowler  = sit.bowler  || null;
-
-  let battingHtml = '';
-  if (batters.length && isLive) {
-    battingHtml = '<div class="cricket-section-head">Batting<div class="csh-cols"><span>R</span><span>B</span><span>SR</span></div></div>';
-    battingHtml += batters.map(b =>
-      '<div class="cricket-bat-row">'+
-      '<div class="cbr-name'+(b.batting||b.onCourt?' batting':'')+'">'+esc(b.athlete?.shortName||b.athlete?.displayName||'?')+'</div>'+
-      '<div class="cbr-runs">'+(b.runs??b.score??'—')+'</div>'+
-      '<div class="cbr-balls">'+(b.balls??b.ballsFaced??'—')+'</div>'+
-      '<div class="cbr-sr">'+(b.strikeRate?Number(b.strikeRate).toFixed(1):'—')+'</div>'+
-      '</div>'
-    ).join('');
-  }
-
-  let bowlingHtml = '';
-  if (bowler && isLive) {
-    bowlingHtml = '<div class="cricket-section-head">Bowling<div class="csh-cols"><span>O</span><span>M</span><span>R</span><span>W</span></div></div>';
-    bowlingHtml += '<div class="cricket-bowl-row">'+
-      '<div class="cbow-name">'+esc(bowler.athlete?.shortName||bowler.athlete?.displayName||'?')+'</div>'+
-      '<div class="cbow-num">'+(bowler.overs??'—')+'</div>'+
-      '<div class="cbow-num">'+(bowler.maidens??'—')+'</div>'+
-      '<div class="cbow-num">'+(bowler.runs??'—')+'</div>'+
-      '<div class="cbow-wkt">'+(bowler.wickets??'—')+'</div>'+
-      '</div>';
-  }
-
-  let ratesHtml = '';
-  if (isLive && (sit.runRate || sit.requiredRunRate)) {
-    ratesHtml = '<div class="cricket-rates">';
-    if (sit.runRate) ratesHtml += '<div class="rate-chip"><div class="rate-val">'+Number(sit.runRate).toFixed(2)+'</div><div class="rate-lbl">CRR</div></div>';
-    if (sit.requiredRunRate) ratesHtml += '<div class="rate-chip"><div class="rate-val">'+Number(sit.requiredRunRate).toFixed(2)+'</div><div class="rate-lbl">RRR</div></div>';
-    if (sit.balls) ratesHtml += '<div class="rate-chip"><div class="rate-val">'+sit.balls+'</div><div class="rate-lbl">Balls Left</div></div>';
-    ratesHtml += '</div>';
-  }
-
-  let recentHtml = '';
-  if (isLive && sit.currentOver) {
-    const balls = String(sit.currentOver).split(',').map(b=>b.trim()).filter(Boolean);
-    const ballHtml = balls.map(b=>{
-      if (b.toUpperCase()==='W') return renderBall('W');
-      if (b==='4') return renderBall('4');
-      if (b==='6') return renderBall('6');
-      if (b==='wd'||b==='wide') return renderBall('wd');
-      if (b==='nb') return renderBall('nb');
-      if (b==='0'||b==='.') return renderBall('0');
-      return renderBall(b);
-    }).join('');
-    recentHtml = '<div class="cricket-recent"><div class="recent-label">This Over</div><div class="balls-row">'+ballHtml+'</div></div>';
-  }
-
-  const pship = sit.partnership ? '<div class="cricket-partnership">Partnership: <span class="pship-val">'+esc(String(sit.partnership))+'</span></div>' : '';
-  const series = ev.competitions?.[0]?.series?.name || ev.season?.slug || ev.name || 'Cricket';
-  const badge = isLive ? '<span class="sport-badge badge-live">LIVE</span>' : isFT ? '<span class="sport-badge badge-ft">FT</span>' : '<span class="sport-badge badge-soon">Soon</span>';
-
-  return '<div class="sport-block">'+
-    '<div class="sport-block-head"><div class="sport-block-title">&#127955; '+esc(series)+'</div>'+badge+'</div>'+
-    '<div class="cricket-match">'+
-    '<div class="cricket-teams">'+
-    '<div class="cricket-team">'+inningsDisplay(home)+'<div class="ct-name">'+esc(home.team?.shortDisplayName||home.team?.name||'Home')+'</div></div>'+
-    '<div class="cricket-vs-block"><span class="cricket-vs">vs</span></div>'+
-    '<div class="cricket-team right"><div class="ct-name">'+esc(away.team?.shortDisplayName||away.team?.name||'Away')+'</div>'+inningsDisplay(away)+'</div>'+
-    '</div>'+
-    statusHtml+ratesHtml+battingHtml+bowlingHtml+pship+recentHtml+
-    '</div></div>';
-}
+// scores section removed — sidebar now shows trending only
 
 async function fetchScores() {
   const section = document.getElementById('scores-section');
-  section.innerHTML = '<div class="no-matches">Loading cricket scores...</div>';
-  let html = '';
-  let loaded = 0;
-
-  for (const feed of CRICKET_FEEDS) {
-    try {
-      const res = await fetch(feed.url);
-      if (!res.ok) continue;
-      const data = await res.json();
-      const events = (data.events || []).slice(0, 4);
-      if (!events.length) continue;
-      for (const ev of events) {
-        html += buildCricketCard(ev);
-        loaded++;
-      }
-    } catch(e) { console.warn('[Cricket]', feed.label, e); }
-  }
-
-  if (loaded === 0) {
-    section.innerHTML = '<div class="no-matches">&#127955; No live cricket right now.<br><span style="font-size:11px;color:var(--ink3)">Check back during match times.</span></div>';
-  } else {
-    section.innerHTML = html;
-  }
+  if (section) section.style.display = 'none';
 }
 
 // ════════════════════════════════════════════════════════
