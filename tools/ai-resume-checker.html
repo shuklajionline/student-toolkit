@@ -1,1210 +1,913 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8"/>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Free ATS Resume Checker for Students — Score Out of 100 | Student Toolkit</title>
+<meta name="description" content="Free ATS resume checker for Indian students. Get a score out of 100 with detailed breakdown — keywords, structure, metrics, action verbs, formatting. Industry-specific analysis for Tech, Finance, Consulting, Marketing and more. No sign-up."/>
+<meta name="keywords" content="free ATS resume checker, resume score checker India, resume analyzer students, ATS resume score, resume feedback free, resume checker for freshers India, internship resume checker"/>
+<link rel="canonical" href="https://studenttoolkit.online/tools/ai-resume-checker.html"/>
+<meta property="og:title" content="Free ATS Resume Checker — Score Out of 100"/>
+<meta property="og:description" content="Paste your resume. Get a detailed score with specific fixes. Industry-specific analysis. Free, no sign-up."/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
 
-  <!-- ═══════════════════════════════════════════════
-       PRIMARY SEO META TAGS
-  ═══════════════════════════════════════════════════ -->
-  <title>Free ATS Resume Checker with Score | Student Toolkit</title>
-  <meta name="description" content="Free AI-powered resume checker for students. Get an ATS compatibility score, recruiter-style feedback, and industry keyword analysis instantly. No sign-up needed."/>
-  <meta name="keywords" content="free resume checker, ATS resume checker, resume score, resume analyzer for students, free resume feedback, ATS score checker, resume checker online free, student resume review, resume keyword checker, resume improvement tool"/>
-  <meta name="author" content="Student Toolkit"/>
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
-  <meta name="theme-color" content="#4f46e5"/>
-  <link rel="canonical" href="https://studenttoolkit.online/tools/ai-resume-checker.html"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ATS Resume Checker for Students","applicationCategory":"EducationalApplication","operatingSystem":"Web","url":"https://studenttoolkit.online/tools/ai-resume-checker.html","description":"Free ATS resume checker for students. Scores resume out of 100 based on keyword analysis, structure, action verbs, quantified achievements, and industry fit. Provides specific improvement tips.","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["ATS compatibility score out of 100","8 industry profiles","Keyword gap analysis","Action verb checker","Quantified achievement detector","Rewrite suggestions","WhatsApp share"],"audience":{"@type":"EducationalAudience","educationalRole":"student"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an ATS resume checker?","acceptedAnswer":{"@type":"Answer","text":"An ATS (Applicant Tracking System) resume checker analyzes your resume the way automated hiring software does — checking keyword alignment, structure, formatting, and content quality. Most companies use ATS to filter resumes before a human sees them. Our checker scores your resume out of 100 and tells you exactly what to fix."}},{"@type":"Question","name":"What ATS score is good enough for job applications?","acceptedAnswer":{"@type":"Answer","text":"A score of 80+ is competitive — your resume will pass most ATS filters. 65-79 may pass basic filters but won't stand out. Below 65 is high risk of rejection before any human sees it. Fix the specific issues flagged to improve your score before applying."}},{"@type":"Question","name":"How do I make my resume ATS-friendly?","acceptedAnswer":{"@type":"Answer","text":"Key ATS rules: Use standard section headers (Education, Experience, Skills). Include industry keywords from the job description. Start bullets with action verbs. Add specific metrics (%, numbers, LPA). Avoid tables, columns, and special symbols. Keep it 450-700 words. Include email and LinkedIn URL."}},{"@type":"Question","name":"Is this resume checker free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no sign-up required, unlimited uses. Student Toolkit's resume checker is built for Indian students applying for internships and first jobs."}}]}</script>
 
-  <!-- ═══════════════════════════════════════════════
-       OPEN GRAPH
-  ═══════════════════════════════════════════════════ -->
-  <meta property="og:type"         content="website"/>
-  <meta property="og:url"          content="https://studenttoolkit.online/tools/ai-resume-checker.html"/>
-  <meta property="og:title"        content="Free ATS Resume Checker with Score — Student Toolkit"/>
-  <meta property="og:description"  content="Paste your resume and get an ATS score, recruiter-style feedback, and keyword analysis in seconds. 100% free, no sign-up."/>
-  <meta property="og:image"        content="https://studenttoolkit.online/logo-icon.png"/>
-  <meta property="og:site_name"    content="Student Toolkit"/>
-  <meta property="og:locale"       content="en_US"/>
-  <meta name="twitter:card"        content="summary_large_image"/>
-  <meta name="twitter:title"       content="Free ATS Resume Checker — Student Toolkit"/>
-  <meta name="twitter:description" content="Get your ATS resume score instantly. Free recruiter-style feedback for students."/>
-  <meta name="twitter:image"       content="https://studenttoolkit.online/logo-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* ── RESET & BASE ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#ffffff;--bg2:#f9f9f7;--bg3:#f3f2ee;--bg4:#ece9e2;
+  --border:#e5e2da;--border2:#d6d2c8;
+  --ink:#111111;--ink2:#333333;--ink3:#666666;--ink4:#999999;
+  --accent:#e63000;--accent-l:#fff2ee;--accent2:#ff4517;
+  --success:#16a34a;--success-l:#f0fdf4;
+  --warn:#d97706;--warn-l:#fffbeb;
+  --danger:#dc2626;--danger-l:#fef2f2;
+  --info:#2563eb;--info-l:#eff6ff;
+  --purple:#7c3aed;--purple-l:#f5f3ff;
+  --teal:#0f766e;--teal-l:#f0fdfa;
+  --r:12px;--rs:8px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Geist',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-  <!-- ═══════════════════════════════════════════════
-       SCHEMA — SoftwareApplication
-  ═══════════════════════════════════════════════════ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Free ATS Resume Checker",
-    "url": "https://studenttoolkit.online/tools/ai-resume-checker.html",
-    "applicationCategory": "EducationalApplication",
-    "operatingSystem": "Web Browser",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "description": "Free AI-powered resume checker for students with ATS score and recruiter-style feedback. Analyze resume keywords, structure, action verbs, and industry alignment instantly.",
-    "featureList": [
-      "ATS compatibility score out of 100",
-      "Recruiter-style strengths and weaknesses",
-      "Industry keyword analysis",
-      "Action verb checker",
-      "Quantified achievement detector",
-      "Generic buzzword penalty",
-      "Formatting risk detector"
-    ],
-    "publisher": {
-      "@type": "Organization",
-      "name": "Student Toolkit",
-      "url": "https://studenttoolkit.online/"
-    }
-  }
-  </script>
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Instrument Serif',serif;font-size:20px;font-weight:400;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo-dot{color:var(--accent);font-size:24px;line-height:1}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a{font-size:13px;font-weight:500;color:var(--ink3);padding:6px 12px;border-radius:6px;text-decoration:none;transition:all .15s}
+.nav-links a:hover{background:var(--bg3);color:var(--ink)}
+.nav-cta{background:var(--accent)!important;color:#fff!important;font-weight:600!important}
+.nav-cta:hover{background:var(--accent2)!important}
+@media(max-width:600px){.nav-links .nav-hide{display:none}}
 
-  <!-- ═══════════════════════════════════════════════
-       SCHEMA — BreadcrumbList
-  ═══════════════════════════════════════════════════ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home",  "item": "https://studenttoolkit.online/" },
-      { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://studenttoolkit.online/tools/index.html" },
-      { "@type": "ListItem", "position": 3, "name": "ATS Resume Checker", "item": "https://studenttoolkit.online/tools/ai-resume-checker.html" }
-    ]
-  }
-  </script>
+/* ── PAGE HEADER ── */
+.page-header{background:var(--bg2);border-bottom:1px solid var(--border);padding:32px 24px 28px}
+.page-header-inner{max-width:1100px;margin:0 auto}
+.tool-eyebrow{display:inline-flex;align-items:center;gap:7px;background:var(--accent-l);border:1px solid rgba(230,48,0,.15);color:var(--accent);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:.04em;margin-bottom:12px}
+.page-header h1{font-family:'Instrument Serif',serif;font-size:clamp(26px,4vw,40px);font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:8px}
+.page-header h1 em{font-style:italic;color:var(--accent)}
+.page-header p{font-size:15px;color:var(--ink3);max-width:600px}
+.trust-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.trust-chip{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;color:var(--ink3);background:var(--bg3);border:1px solid var(--border);padding:4px 10px;border-radius:20px}
 
-  <!-- ═══════════════════════════════════════════════
-       SCHEMA — FAQPage
-  ═══════════════════════════════════════════════════ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is an ATS resume checker?",
-        "acceptedAnswer": { "@type": "Answer", "text": "An ATS (Applicant Tracking System) resume checker analyzes your resume the way automated hiring software does. It checks for keyword alignment, formatting issues, section structure, and content quality — giving you a score and telling you exactly what to fix before submitting your resume to employers." }
-      },
-      {
-        "@type": "Question",
-        "name": "Is this resume checker really free?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Student Toolkit's resume checker is 100% free with no sign-up, no email required, and no hidden paywalls. Paste your resume text and get instant feedback." }
-      },
-      {
-        "@type": "Question",
-        "name": "How is the resume score calculated?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The score is calculated across 7 dimensions: resume length (ideal 450–800 words), section structure (Education, Skills, Experience, Projects), quantified achievements, action verb strength, industry keyword match, generic buzzword penalties, and ATS formatting safety. Each dimension contributes to a final score out of 100." }
-      },
-      {
-        "@type": "Question",
-        "name": "What industries does the resume checker support?",
-        "acceptedAnswer": { "@type": "Answer", "text": "The resume checker supports four industry profiles: Software & Tech, Marketing & Growth, Finance & Business, and HR & People. Each profile checks for the specific keywords that recruiters and ATS systems look for in that field." }
-      },
-      {
-        "@type": "Question",
-        "name": "What is a good ATS resume score?",
-        "acceptedAnswer": { "@type": "Answer", "text": "A score of 80 or above is considered strong and competitive. Scores between 65–79 are average and will pass most ATS filters but may not stand out. Scores below 65 risk being filtered out by automated systems before a human recruiter sees your resume." }
-      }
-    ]
-  }
-  </script>
+/* ── TOOL LAYOUT ── */
+.tool-layout{max-width:1100px;margin:0 auto;padding:24px 24px 60px;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+@media(max-width:900px){.tool-layout{grid-template-columns:1fr}}
 
-  <!-- FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+/* ── CARDS ── */
+.card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.card-head{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;background:var(--bg2)}
+.card-head-icon{width:36px;height:36px;border-radius:var(--rs);background:var(--accent-l);border:1px solid rgba(230,48,0,.15);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.card-head h2{font-size:16px;font-weight:600;color:var(--ink)}
+.card-head p{font-size:12.5px;color:var(--ink3);margin-top:1px}
+.card-body{padding:20px}
+.output-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;position:sticky;top:72px}
+.output-head{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--bg2)}
+.output-head-left{display:flex;align-items:center;gap:10px}
+.output-head-left h2{font-size:15px;font-weight:600;color:var(--ink)}
+.output-body{padding:0}
 
-  <style>
-    /* ── DESIGN SYSTEM (matches homepage) ── */
-    :root {
-      --bg:        #f7f6f2;
-      --bg2:       #eeecea;
-      --bg3:       #e5e2dc;
-      --ink:       #1a1916;
-      --ink2:      #4a4843;
-      --ink3:      #8a8680;
-      --accent:    #4f46e5;
-      --accent-h:  #4338ca;
-      --accent-l:  #eef2ff;
-      --success:   #16a34a;
-      --success-l: #dcfce7;
-      --danger:    #dc2626;
-      --danger-l:  #fee2e2;
-      --warn:      #d97706;
-      --warn-l:    #fef3c7;
-      --border:    #d8d4cc;
-      --white:     #ffffff;
-      --shadow:    0 1px 3px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.05);
-      --shadow-lg: 0 8px 40px rgba(0,0,0,0.10);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Geist', sans-serif;
-      background: var(--bg); color: var(--ink);
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden; min-height: 100vh;
-    }
-    img { max-width: 100%; height: auto; display: block; }
+/* ── INDUSTRY GRID ── */
+.field{margin-bottom:18px}
+.field label{display:block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
+.field label span{font-weight:400;text-transform:none;letter-spacing:0;margin-left:4px}
+.industry-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+@media(max-width:500px){.industry-grid{grid-template-columns:repeat(2,1fr)}}
+.ind-btn{padding:10px 6px;background:var(--bg3);border:1.5px solid var(--border);border-radius:var(--rs);cursor:pointer;text-align:center;transition:all .15s;font-family:'Geist',sans-serif}
+.ind-btn:hover{border-color:var(--accent);background:var(--accent-l)}
+.ind-btn.active{border-color:var(--accent);background:var(--accent-l)}
+.ind-btn-icon{font-size:18px;display:block;margin-bottom:4px}
+.ind-btn-label{font-size:11px;font-weight:600;color:var(--ink2);line-height:1.3}
+.ind-btn.active .ind-btn-label{color:var(--accent)}
 
-    /* ── NAVBAR ── */
-    .navbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      background: rgba(247,246,242,0.94);
-      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 32px;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 62px; transition: box-shadow 0.2s;
-    }
-    .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.07); }
-    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
-    .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
-    .nav-links a {
-      font-size: 13.5px; font-weight: 500; color: var(--ink2);
-      text-decoration: none; padding: 7px 13px; border-radius: 7px; transition: all 0.15s;
-    }
-    .nav-links a:hover { background: var(--bg2); color: var(--ink); }
-    .nav-cta { background: var(--accent) !important; color: #fff !important; box-shadow: 0 2px 8px rgba(79,70,229,0.28) !important; }
-    .nav-cta:hover { background: var(--accent-h) !important; }
-    .hamburger {
-      display: none; flex-direction: column; gap: 5px;
-      background: none; border: none; cursor: pointer; padding: 4px;
-    }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: all 0.25s; }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-menu {
-      display: none; position: fixed; top: 62px; left: 0; right: 0;
-      background: var(--white); border-bottom: 1px solid var(--border);
-      padding: 12px 24px 24px; z-index: 199; box-shadow: var(--shadow-lg);
-    }
-    .mobile-menu.open { display: block; animation: slideDown 0.2s ease; }
-    @keyframes slideDown { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
-    .mobile-menu a {
-      display: flex; align-items: center; gap: 10px; padding: 13px 4px;
-      font-size: 15px; font-weight: 500; color: var(--ink2);
-      text-decoration: none; border-bottom: 1px solid var(--bg2); transition: color 0.15s;
-    }
-    .mobile-menu a:last-child { border-bottom: none; }
-    .mobile-menu a:hover { color: var(--accent); }
+/* ── TEXTAREA ── */
+textarea{width:100%;min-height:300px;background:var(--bg3);border:1.5px solid var(--border2);border-radius:var(--rs);padding:14px;font-size:13.5px;font-family:'Geist',sans-serif;color:var(--ink);resize:vertical;outline:none;transition:border-color .15s;line-height:1.7}
+textarea:focus{border-color:var(--accent);background:var(--bg)}
+textarea::placeholder{color:var(--ink4)}
+.char-count{font-size:12px;color:var(--ink4);text-align:right;margin-top:5px}
 
-    /* ── BREADCRUMB ── */
-    .breadcrumb {
-      max-width: 1080px; margin: 80px auto 0; padding: 18px 24px 0;
-      display: flex; align-items: center; gap: 6px;
-      font-size: 13px; color: var(--ink3);
-    }
-    .breadcrumb a { color: var(--ink3); text-decoration: none; transition: color 0.15s; }
-    .breadcrumb a:hover { color: var(--accent); }
-    .breadcrumb span { color: var(--border); }
+/* ── BUTTONS ── */
+.analyze-btn{width:100%;padding:14px 20px;background:var(--accent);color:#fff;border:none;border-radius:var(--rs);font-family:'Geist',sans-serif;font-size:15px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;transition:all .15s;letter-spacing:.01em}
+.analyze-btn:hover{background:var(--accent2);transform:translateY(-1px)}
+.analyze-btn:active{transform:none}
+.btn-spinner{width:16px;height:16px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.analyze-btn.loading .btn-spinner{display:block}
+.analyze-btn.loading #btn-text{opacity:.6}
+.act-btn{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;font-size:12px;font-weight:500;cursor:pointer;color:var(--ink2);transition:all .15s;font-family:'Geist',sans-serif}
+.act-btn:hover{background:var(--bg4);color:var(--ink)}
+.error-box{margin-top:10px;padding:10px 14px;background:var(--danger-l);border:1px solid #fecaca;border-radius:var(--rs);font-size:13px;color:var(--danger);display:none}
 
-    /* ── PAGE HEADER ── */
-    .page-header {
-      max-width: 1080px; margin: 0 auto;
-      padding: 32px 24px 40px;
-    }
-    .tool-eyebrow {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: var(--accent-l); border: 1px solid #c7d2fe;
-      border-radius: 20px; padding: 5px 14px;
-      font-size: 12px; font-weight: 600; color: var(--accent);
-      margin-bottom: 16px;
-    }
-    .page-header h1 {
-      font-family: 'Instrument Serif', serif;
-      font-size: clamp(30px, 4.5vw, 48px); font-weight: 400;
-      color: var(--ink); line-height: 1.1; letter-spacing: -0.025em;
-      margin-bottom: 12px;
-    }
-    .page-header h1 em { font-style: italic; color: var(--accent); }
-    .page-header p {
-      font-size: 16px; color: var(--ink3); font-weight: 300;
-      max-width: 580px; line-height: 1.65;
-    }
-    .header-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
-    .hchip {
-      font-size: 12px; font-weight: 500; padding: 4px 11px;
-      border-radius: 20px; border: 1px solid var(--border);
-      background: var(--white); color: var(--ink2);
-    }
+/* ── EMPTY STATE ── */
+.empty-state{padding:48px 24px;text-align:center}
+.empty-icon{font-size:48px;margin-bottom:12px;display:block}
+.empty-state h3{font-family:'Instrument Serif',serif;font-size:22px;font-weight:400;color:var(--ink2);margin-bottom:8px}
+.empty-state p{font-size:14px;color:var(--ink3);max-width:280px;margin:0 auto 24px}
+.how-steps{display:grid;grid-template-columns:1fr 1fr;gap:8px;text-align:left}
+@media(max-width:400px){.how-steps{grid-template-columns:1fr}}
+.how-step{display:flex;align-items:flex-start;gap:8px;padding:10px 12px;background:var(--bg2);border-radius:var(--rs);font-size:12.5px;color:var(--ink3)}
+.step-num{width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 
-    /* ── MAIN LAYOUT ── */
-    .tool-layout {
-      max-width: 1080px; margin: 0 auto 80px;
-      padding: 0 24px;
-      display: grid; grid-template-columns: 420px 1fr;
-      gap: 22px; align-items: start;
-    }
+/* ── SCORE SECTION ── */
+.result-wrap{display:none}
+.score-section{padding:24px;display:flex;align-items:center;gap:20px;border-bottom:1px solid var(--border)}
+.score-ring-wrap{position:relative;flex-shrink:0}
+.score-ring-bg{fill:none;stroke:var(--bg4);stroke-width:8}
+.score-ring-fill{fill:none;stroke-width:8;stroke-linecap:round;transform:rotate(-90deg);transform-origin:center;transition:stroke-dashoffset 1.2s cubic-bezier(.25,.46,.45,.94)}
+.score-num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.score-num strong{font-size:28px;font-weight:700;line-height:1}
+.score-num span{font-size:11px;color:var(--ink4)}
+.score-meta{flex:1}
+.score-grade{font-size:16px;font-weight:700;margin-bottom:4px}
+.score-percentile{font-size:12.5px;color:var(--ink3);margin-bottom:10px}
+.score-bar-row{display:flex;flex-direction:column;gap:4px}
+.mini-bar-wrap{display:grid;grid-template-columns:90px 1fr 32px;gap:6px;align-items:center}
+.mini-bar-label{font-size:11px;color:var(--ink3);text-align:right}
+.mini-bar-track{height:5px;background:var(--bg4);border-radius:10px;overflow:hidden}
+.mini-bar-fill{height:100%;border-radius:10px;transition:width 1s ease}
+.mini-bar-pts{font-size:11px;font-weight:600;color:var(--ink2)}
 
-    /* ── CARDS ── */
-    .card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 14px; box-shadow: var(--shadow); overflow: hidden;
-    }
-    .card-head {
-      padding: 16px 22px; border-bottom: 1px solid var(--bg2);
-      display: flex; align-items: center; gap: 10px;
-    }
-    .card-head-icon {
-      width: 32px; height: 32px; border-radius: 8px;
-      background: var(--bg2); display: flex; align-items: center;
-      justify-content: center; font-size: 15px; flex-shrink: 0;
-    }
-    .card-head h2 { font-size: 14px; font-weight: 600; color: var(--ink); }
-    .card-head p  { font-size: 12px; color: var(--ink3); margin-top: 1px; }
-    .card-body { padding: 20px 22px 24px; }
+/* ── BREAKDOWN GRID ── */
+.breakdown{padding:16px 20px;border-bottom:1px solid var(--border)}
+.breakdown h3{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:10px}
+.breakdown-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+@media(max-width:480px){.breakdown-grid{grid-template-columns:repeat(2,1fr)}}
+.bd-cell{padding:10px 12px;border-radius:var(--rs);border:1px solid transparent}
+.bd-cell.pass{background:var(--success-l);border-color:#bbf7d0}
+.bd-cell.warn{background:var(--warn-l);border-color:#fde68a}
+.bd-cell.fail{background:var(--danger-l);border-color:#fecaca}
+.bd-label{font-size:10.5px;font-weight:600;color:var(--ink3);margin-bottom:3px}
+.bd-val{font-size:13px;font-weight:600}
+.bd-cell.pass .bd-val{color:var(--success)}
+.bd-cell.warn .bd-val{color:var(--warn)}
+.bd-cell.fail .bd-val{color:var(--danger)}
+.bd-pts{font-size:10px;color:var(--ink4);margin-top:1px}
 
-    /* ── FORM ELEMENTS ── */
-    .field { margin-bottom: 16px; }
-    .field label { display: block; font-size: 12.5px; font-weight: 500; color: var(--ink2); margin-bottom: 6px; }
-    .field label span { color: var(--ink3); font-weight: 400; font-size: 11.5px; }
-    .field select, .field textarea {
-      width: 100%; background: var(--bg);
-      border: 1.5px solid var(--border); border-radius: 8px;
-      padding: 10px 13px; font-size: 14px; color: var(--ink);
-      font-family: 'Geist', sans-serif; outline: none;
-      transition: border-color 0.16s, box-shadow 0.16s; -webkit-appearance: none;
-    }
-    .field select:focus, .field textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(79,70,229,0.1);
-      background: var(--white);
-    }
-    .field textarea { resize: vertical; min-height: 220px; line-height: 1.6; }
-    .char-count { font-size: 11.5px; color: var(--ink3); margin-top: 5px; text-align: right; }
+/* ── KEYWORDS ── */
+.kw-section{padding:14px 20px;border-bottom:1px solid var(--border)}
+.kw-section h3{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
+.kw-chips{display:flex;flex-wrap:wrap;gap:5px}
+.kw-chip{padding:3px 9px;border-radius:20px;font-size:11.5px;font-weight:500}
+.kw-found{background:var(--success-l);color:var(--success);border:1px solid #bbf7d0}
+.kw-missing{background:var(--danger-l);color:var(--danger);border:1px solid #fecaca;text-decoration:line-through;opacity:.7}
 
-    /* ── INDUSTRY GRID ── */
-    .industry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 16px; }
-    .ind-btn {
-      padding: 10px 8px; border-radius: 8px; border: 1.5px solid var(--border);
-      background: var(--bg); cursor: pointer; text-align: center; transition: all 0.16s;
-    }
-    .ind-btn:hover { border-color: var(--accent); background: var(--accent-l); }
-    .ind-btn.active { border-color: var(--accent); background: var(--accent-l); box-shadow: 0 0 0 3px rgba(79,70,229,0.08); }
-    .ind-btn-icon { font-size: 18px; display: block; margin-bottom: 3px; }
-    .ind-btn-label { font-size: 11.5px; font-weight: 500; color: var(--ink2); display: block; line-height: 1.3; }
-    .ind-btn.active .ind-btn-label { color: var(--accent); }
+/* ── FEEDBACK SECTIONS ── */
+.feedback-section{padding:14px 20px;border-bottom:1px solid var(--border)}
+.feedback-section:last-of-type{border-bottom:none}
+.feedback-section h3{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.feedback-badge{font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:10px}
+.fb-list{display:flex;flex-direction:column;gap:6px}
+.fb-item{font-size:13px;color:var(--ink2);line-height:1.6;padding:8px 12px;border-radius:var(--rs);display:flex;align-items:flex-start;gap:8px}
+.fb-item.good{background:var(--success-l)}
+.fb-item.bad{background:var(--danger-l)}
+.fb-item.tip{background:var(--info-l)}
+.fb-dot{font-size:14px;flex-shrink:0;margin-top:1px}
 
-    /* ── ANALYZE BUTTON ── */
-    .analyze-btn {
-      width: 100%; background: var(--accent); color: #fff;
-      border: none; border-radius: 10px; padding: 14px;
-      font-size: 15px; font-weight: 600; font-family: 'Geist', sans-serif;
-      cursor: pointer; transition: all 0.18s;
-      display: flex; align-items: center; justify-content: center; gap: 9px;
-      box-shadow: 0 3px 12px rgba(79,70,229,0.3); margin-top: 4px;
-    }
-    .analyze-btn:hover:not(:disabled) { background: var(--accent-h); transform: translateY(-1px); box-shadow: 0 5px 18px rgba(79,70,229,0.4); }
-    .analyze-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-    .btn-spinner {
-      width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3);
-      border-top-color: #fff; border-radius: 50%;
-      animation: spin 0.7s linear infinite; display: none;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
+/* ── REWRITE SUGGESTIONS ── */
+.rewrite-section{padding:14px 20px;border-bottom:1px solid var(--border);background:var(--purple-l)}
+.rewrite-section h3{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.rewrite-item{margin-bottom:10px;border:1px solid rgba(124,58,237,.2);border-radius:var(--rs);overflow:hidden}
+.rewrite-item:last-child{margin-bottom:0}
+.rw-before{padding:8px 12px;background:var(--danger-l);font-size:12.5px;color:var(--danger);line-height:1.5}
+.rw-after{padding:8px 12px;background:var(--success-l);font-size:12.5px;color:var(--success);line-height:1.5}
+.rw-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+.rw-copy-btn{display:block;width:100%;padding:6px;background:rgba(124,58,237,.08);border:none;border-top:1px solid rgba(124,58,237,.15);font-size:11.5px;font-weight:600;color:var(--purple);cursor:pointer;font-family:'Geist',sans-serif;transition:background .15s}
+.rw-copy-btn:hover{background:rgba(124,58,237,.14)}
 
-    /* ── ERROR ── */
-    .error-box {
-      background: var(--danger-l); border: 1px solid #fca5a5;
-      border-radius: 8px; padding: 12px 14px;
-      font-size: 13px; color: var(--danger);
-      display: none; margin-top: 10px; line-height: 1.5;
-    }
+/* ── SCORE BADGE ── */
+.score-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12.5px;font-weight:600}
+.sb-elite{background:#f0fdf4;color:#15803d;border:1px solid #86efac}
+.sb-strong{background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe}
+.sb-avg{background:#fffbeb;color:#b45309;border:1px solid #fde68a}
+.sb-low{background:#fff7ed;color:#c2410c;border:1px solid #fed7aa}
+.sb-risk{background:#fef2f2;color:#dc2626;border:1px solid #fecaca}
 
-    /* ── OUTPUT PANEL (sticky) ── */
-    .output-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 14px; box-shadow: var(--shadow); overflow: hidden;
-      position: sticky; top: 80px;
-    }
-    .output-head {
-      padding: 15px 20px; border-bottom: 1px solid var(--bg2);
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .output-head-left { display: flex; align-items: center; gap: 10px; }
-    .output-head h2 { font-size: 14px; font-weight: 600; color: var(--ink); }
-    .out-actions { display: flex; gap: 7px; }
-    .act-btn {
-      display: flex; align-items: center; gap: 5px;
-      padding: 6px 12px; border-radius: 7px;
-      border: 1.5px solid var(--border); background: var(--bg);
-      font-size: 12px; font-weight: 500; color: var(--ink2);
-      cursor: pointer; font-family: 'Geist', sans-serif; transition: all 0.15s;
-    }
-    .act-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-l); }
-    .output-body { padding: 24px; min-height: 480px; }
+/* ── OUT ACTIONS ── */
+.out-actions{display:flex;gap:6px}
 
-    /* ── EMPTY STATE ── */
-    .empty-state {
-      display: flex; flex-direction: column; align-items: center;
-      justify-content: center; min-height: 440px; text-align: center; gap: 14px;
-    }
-    .empty-icon {
-      width: 64px; height: 64px; border-radius: 16px;
-      background: var(--bg2); display: flex;
-      align-items: center; justify-content: center; font-size: 28px;
-    }
-    .empty-state h3 {
-      font-family: 'Instrument Serif', serif;
-      font-size: 20px; font-weight: 400; color: var(--ink2);
-    }
-    .empty-state p { font-size: 13.5px; color: var(--ink3); max-width: 260px; line-height: 1.55; }
-    .how-steps { display: flex; flex-direction: column; gap: 9px; margin-top: 4px; width: 100%; max-width: 280px; }
-    .how-step { display: flex; align-items: flex-start; gap: 9px; text-align: left; }
-    .step-num {
-      width: 20px; height: 20px; border-radius: 50%; background: var(--bg3);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 10.5px; font-weight: 600; color: var(--ink2); flex-shrink: 0; margin-top: 1px;
-    }
-    .how-step p { font-size: 12.5px; color: var(--ink3); }
+/* ── WA SHARE ROW ── */
+.wa-share-row{padding:14px 20px;border-top:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;background:var(--bg2)}
+.wa-btn-main{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 16px;background:#25d366;color:#fff;border:none;border-radius:var(--rs);font-size:13.5px;font-weight:700;cursor:pointer;transition:background .15s;font-family:'Geist',sans-serif}
+.wa-btn-main:hover{background:#1ebe5d}
+.copy-main-btn{display:flex;align-items:center;justify-content:center;gap:7px;padding:11px 16px;background:var(--bg3);color:var(--ink2);border:1px solid var(--border2);border-radius:var(--rs);font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;font-family:'Geist',sans-serif}
+.copy-main-btn:hover{background:var(--bg4)}
 
-    /* ── SCORE DISPLAY ── */
-    .result-wrap { display: none; }
+/* ── NEXT STEPS ── */
+.next-steps{padding:16px 20px;border-top:1px solid var(--border);background:var(--success-l)}
+.next-steps h3{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--success);margin-bottom:10px}
+.ns-link{display:flex;align-items:center;gap:10px;padding:9px 12px;background:#fff;border:1px solid #bbf7d0;border-radius:var(--rs);text-decoration:none;color:var(--ink);margin-bottom:6px;transition:background .15s}
+.ns-link:last-child{margin-bottom:0}
+.ns-link:hover{background:var(--bg2)}
+.ns-icon{font-size:18px;flex-shrink:0}
+.ns-text{font-size:13px;font-weight:600}
+.ns-sub{font-size:11.5px;color:var(--ink3);font-weight:400}
 
-    /* Score ring */
-    .score-section {
-      display: flex; align-items: center; gap: 24px;
-      padding: 20px; background: var(--bg); border-radius: 12px;
-      margin-bottom: 20px;
-    }
-    .score-ring-wrap { position: relative; flex-shrink: 0; }
-    .score-ring-wrap svg { transform: rotate(-90deg); }
-    .score-ring-bg { fill: none; stroke: var(--bg3); stroke-width: 8; }
-    .score-ring-fill { fill: none; stroke-width: 8; stroke-linecap: round; transition: stroke-dashoffset 1.2s cubic-bezier(0.4,0,0.2,1); }
-    .score-num {
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-    .score-num strong {
-      font-family: 'Instrument Serif', serif;
-      font-size: 30px; font-weight: 400; display: block; line-height: 1;
-    }
-    .score-num span { font-size: 11px; color: var(--ink3); font-weight: 400; }
-    .score-meta { flex: 1; }
-    .score-grade {
-      font-size: 17px; font-weight: 700; margin-bottom: 4px;
-    }
-    .score-percentile { font-size: 13px; color: var(--ink3); margin-bottom: 12px; }
-    .score-bar-row { display: flex; flex-direction: column; gap: 7px; }
-    .sbar-item {}
-    .sbar-label { font-size: 11.5px; color: var(--ink2); margin-bottom: 3px; display: flex; justify-content: space-between; }
-    .sbar-track {
-      height: 5px; background: var(--bg3); border-radius: 10px; overflow: hidden;
-    }
-    .sbar-fill { height: 100%; border-radius: 10px; transition: width 1s ease; }
+/* ── FAQ ── */
+.faq-section{max-width:1100px;margin:0 auto;padding:48px 24px;border-top:1px solid var(--border)}
+.faq-section h2{font-family:'Instrument Serif',serif;font-size:28px;font-weight:400;color:var(--ink);margin-bottom:6px}
+.faq-section h2 em{font-style:italic;color:var(--accent)}
+.faq-list{margin-top:20px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.fi{border-bottom:1px solid var(--border)}
+.fi:last-child{border-bottom:none}
+.fi h3{padding:16px 20px;font-size:15px;font-weight:500;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;user-select:none;transition:background .15s}
+.fi h3:hover{background:var(--bg2)}
+.fi h3::after{content:'+';font-size:20px;font-weight:300;color:var(--accent);flex-shrink:0;transition:transform .2s}
+.fi.open h3::after{transform:rotate(45deg)}
+.fi-ans{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .2s}
+.fi.open .fi-ans{max-height:200px;padding-bottom:16px}
+.fi-ans p{padding:0 20px;font-size:14px;color:var(--ink3);line-height:1.75}
 
-    /* ── FEEDBACK SECTIONS ── */
-    .feedback-section { margin-bottom: 18px; }
-    .feedback-section h3 {
-      font-size: 13px; font-weight: 600; margin-bottom: 10px;
-      display: flex; align-items: center; gap: 7px;
-    }
-    .feedback-badge {
-      font-size: 10.5px; font-weight: 500; padding: 2px 8px;
-      border-radius: 10px;
-    }
-    .fb-list { display: flex; flex-direction: column; gap: 7px; }
-    .fb-item {
-      display: flex; align-items: flex-start; gap: 9px;
-      padding: 10px 12px; border-radius: 8px;
-      font-size: 13.5px; line-height: 1.5;
-    }
-    .fb-item.pro  { background: var(--success-l); color: #14532d; }
-    .fb-item.con  { background: var(--danger-l);  color: #7f1d1d; }
-    .fb-item.tip  { background: var(--warn-l);    color: #78350f; }
-    .fb-icon { flex-shrink: 0; font-size: 14px; margin-top: 1px; }
+/* ── OTHER TOOLS ── */
+.other-tools{max-width:1100px;margin:0 auto;padding:0 24px 56px;border-top:1px solid var(--border)}
+.ot-head{padding:32px 0 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.ot-head h2{font-family:'Instrument Serif',serif;font-size:22px;font-weight:400;color:var(--ink)}
+.tools-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.mini-card{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);text-decoration:none;color:var(--ink);transition:all .15s}
+.mini-card:hover{background:var(--bg3);border-color:var(--border2);transform:translateY(-1px)}
+.mini-card-icon{width:36px;height:36px;border-radius:var(--rs);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.mini-card h3{font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:2px}
+.mini-card p{font-size:11.5px;color:var(--ink3)}
 
-    /* ── KEYWORD CHIPS ── */
-    .kw-section { margin-bottom: 18px; }
-    .kw-section h3 { font-size: 13px; font-weight: 600; margin-bottom: 10px; }
-    .kw-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-    .kw-chip {
-      font-size: 12px; font-weight: 500; padding: 4px 10px;
-      border-radius: 20px; border: 1.5px solid;
-    }
-    .kw-found   { background: var(--success-l); color: #166534; border-color: #86efac; }
-    .kw-missing { background: var(--bg2); color: var(--ink3); border-color: var(--border); text-decoration: line-through; }
+/* ── FOOTER ── */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:28px 24px}
+.footer-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--ink3)}
+.footer-inner a{color:var(--ink3);text-decoration:none}
+.footer-inner a:hover{color:var(--ink)}
 
-    /* ── SCORE BREAKDOWN TABLE ── */
-    .breakdown { margin-bottom: 18px; }
-    .breakdown h3 { font-size: 13px; font-weight: 600; margin-bottom: 10px; }
-    .breakdown-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-    .bd-item {
-      padding: 10px 12px; border-radius: 8px;
-      background: var(--bg); border: 1px solid var(--border);
-    }
-    .bd-label { font-size: 11px; color: var(--ink3); margin-bottom: 3px; }
-    .bd-val { font-size: 15px; font-weight: 700; }
-    .bd-val.pass { color: var(--success); }
-    .bd-val.fail { color: var(--danger); }
-    .bd-val.warn { color: var(--warn); }
-
-    /* ── FAQ SECTION ── */
-    .faq-section { max-width: 1080px; margin: 0 auto 80px; padding: 0 24px; }
-    .faq-section h2 {
-      font-family: 'Instrument Serif', serif;
-      font-size: clamp(24px, 3.5vw, 36px); font-weight: 400;
-      color: var(--ink); margin-bottom: 6px; letter-spacing: -0.02em;
-    }
-    .faq-section h2 em { font-style: italic; color: var(--accent); }
-    .faq-sub { font-size: 15px; color: var(--ink3); margin-bottom: 32px; font-weight: 300; }
-    .faq-label { font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; display: block; }
-    .faq-list { max-width: 720px; }
-    .faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
-    .faq-item:first-child { padding-top: 0; }
-    .faq-item h3 {
-      font-size: 15.5px; font-weight: 600; color: var(--ink);
-      cursor: pointer; display: flex; justify-content: space-between;
-      align-items: flex-start; gap: 12px; line-height: 1.4; user-select: none;
-    }
-    .faq-item h3::after { content: '+'; font-size: 20px; font-weight: 300; color: var(--accent); flex-shrink: 0; transition: transform 0.2s; }
-    .faq-item.open h3::after { transform: rotate(45deg); }
-    .faq-answer { font-size: 14.5px; color: var(--ink3); font-weight: 300; line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.25s; }
-    .faq-item.open .faq-answer { max-height: 300px; padding-top: 12px; }
-
-    /* ── OTHER TOOLS ── */
-    .other-tools { max-width: 1080px; margin: 0 auto 80px; padding: 0 24px; }
-    .other-tools h2 {
-      font-family: 'Instrument Serif', serif;
-      font-size: 26px; font-weight: 400; color: var(--ink);
-      margin-bottom: 20px; letter-spacing: -0.02em;
-    }
-    .other-tools h2 em { font-style: italic; color: var(--accent); }
-    .tools-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
-    .mini-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 12px; padding: 20px;
-      text-decoration: none; color: inherit; transition: all 0.2s;
-      display: flex; align-items: center; gap: 14px;
-    }
-    .mini-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: #c8c4f8; }
-    .mini-card-icon {
-      width: 42px; height: 42px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px; flex-shrink: 0;
-    }
-    .mini-card h3 { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
-    .mini-card p  { font-size: 12px; color: var(--ink3); font-weight: 300; }
-
-    /* ── FOOTER ── */
-    footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 48px 32px 28px; }
-    .footer-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px; }
-    .footer-logo { display: block; text-decoration: none; }
-    .footer-brand p { font-size: 13.5px; line-height: 1.65; max-width: 270px; margin-top: 4px; }
-    .footer-col h4 { font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.38); margin-bottom: 16px; }
-    .footer-col a { display: block; font-size: 14px; color: rgba(255,255,255,0.52); text-decoration: none; margin-bottom: 9px; transition: color 0.15s; }
-    .footer-col a:hover { color: #fff; }
-    .footer-bottom { max-width: 1080px; margin: 32px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; font-size: 12.5px; flex-wrap: wrap; gap: 12px; }
-    .social-links { display: flex; gap: 8px; }
-    .social-link { width: 32px; height: 32px; border-radius: 7px; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; transition: background 0.15s; text-decoration: none; }
-    .social-link:hover { background: rgba(255,255,255,0.15); }
-    .social-link img { width: 14px; height: 14px; filter: brightness(0) invert(1); opacity: 0.65; }
-
-    /* ── ANIMATIONS ── */
-    .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 820px) {
-      .tool-layout { grid-template-columns: 1fr; }
-      .output-card { position: static; }
-      .navbar { padding: 0 20px; }
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-    }
-    @media (max-width: 540px) {
-      .industry-grid { grid-template-columns: 1fr 1fr; }
-      .breakdown-grid { grid-template-columns: 1fr 1fr; }
-      .score-section { flex-direction: column; text-align: center; }
-    }
-  </style>
+.fade-up{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.fade-up.visible{opacity:1;transform:none}
+</style>
 </head>
 
-<body itemscope itemtype="https://schema.org/WebPage">
+<body>
 
-<!-- ── NAVBAR ── -->
-<header role="banner">
-  <nav class="navbar" id="navbar" aria-label="Main navigation">
-    <a class="nav-logo" href="../index.html" aria-label="Student Toolkit Home">
-      <img src="../logo-light.png" alt="Student Toolkit" height="34" style="height:34px;width:auto;"/>
-    </a>
-    <ul class="nav-links" role="list">
-      <li><a href="../index.html#tools">Tools</a></li>
-      <li><a href="../index.html#blog">Blog</a></li>
-      <li><a href="../index.html#faq">FAQ</a></li>
-      <li><a href="../index.html#suggest">Suggest</a></li>
-      <li><a href="ai-resume-checker.html" class="nav-cta">Resume Checker</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="../index.html">🏠 &nbsp;Home</a>
-    <a href="attendance.html">📊 &nbsp;Attendance Calculator</a>
-    <a href="cgpa.html">📈 &nbsp;CGPA Calculator</a>
-    <a href="ai-resume-checker.html">🧠 &nbsp;Resume Checker</a>
-    <a href="letter-writer.html">✍️ &nbsp;Letter Writer</a>
-    <a href="../index.html#blog">📝 &nbsp;Blog</a>
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-logo">Student<span class="nav-logo-dot">.</span>Toolkit</a>
+  <div class="nav-links">
+    <a href="../index.html#tools" class="nav-hide">Tools</a>
+    <a href="../colleges/" class="nav-hide">Colleges</a>
+    <a href="college-predictor.html" class="nav-hide">Predictor</a>
+    <a href="../blog/index.html" class="nav-hide">Blog</a>
+    <a href="attendance.html" class="nav-cta">Attendance Calc</a>
   </div>
-</header>
+</nav>
 
-<main role="main">
-
-  <!-- ── BREADCRUMB ── -->
-  <nav class="breadcrumb" aria-label="Breadcrumb">
-    <a href="../index.html">Home</a>
-    <span>›</span>
-    <a href="index.html">Tools</a>
-    <span>›</span>
-    <span aria-current="page">ATS Resume Checker</span>
-  </nav>
-
-  <!-- ── PAGE HEADER ── -->
-  <div class="page-header">
-    <div class="tool-eyebrow">🧠 ATS-Powered · Free · No Sign-Up</div>
-    <h1>Free <em>Resume Checker</em><br/>with ATS Score</h1>
-    <p>Paste your resume and get a score out of 100, industry keyword analysis, recruiter-style feedback, and exactly what to fix — in under 5 seconds.</p>
-    <div class="header-chips">
-      <span class="hchip">✅ 100% Free</span>
-      <span class="hchip">⚡ Instant Results</span>
-      <span class="hchip">🎯 7-Dimension Analysis</span>
-      <span class="hchip">🏭 4 Industry Profiles</span>
-      <span class="hchip">📱 Mobile Friendly</span>
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="tool-eyebrow">🎯 ATS Analyser · 8 Industry Profiles · Free</div>
+    <h1>Resume Checker<br/>Score out of <em>100</em></h1>
+    <p>Paste your resume. Get a detailed breakdown — keywords, structure, metrics, action verbs, formatting — with specific rewrite suggestions.</p>
+    <div class="trust-chips">
+      <span class="trust-chip">✓ 100% Free</span>
+      <span class="trust-chip">✓ No Sign-Up</span>
+      <span class="trust-chip">✓ Instant Results</span>
+      <span class="trust-chip">✓ 8 Industries</span>
+      <span class="trust-chip">✓ Indian Job Market Focus</span>
     </div>
   </div>
+</div>
 
-  <!-- ── TOOL LAYOUT ── -->
-  <div class="tool-layout">
+<main>
+<div class="tool-layout">
 
-    <!-- LEFT — INPUT FORM -->
-    <div class="card fade-up">
-      <div class="card-head">
-        <div class="card-head-icon">📋</div>
-        <div>
-          <h2>Your Resume</h2>
-          <p>Paste plain text — no formatting needed</p>
+  <!-- LEFT: INPUT -->
+  <div class="card fade-up">
+    <div class="card-head">
+      <div class="card-head-icon">📋</div>
+      <div>
+        <h2>Your Resume</h2>
+        <p>Paste plain text — no formatting needed</p>
+      </div>
+    </div>
+    <div class="card-body">
+
+      <!-- INDUSTRY SELECT -->
+      <div class="field">
+        <label>Target Industry <span>— affects keyword matching</span></label>
+        <div class="industry-grid" id="industryGrid">
+          <button class="ind-btn active" data-ind="software" onclick="setIndustry(this)"><span class="ind-btn-icon">💻</span><span class="ind-btn-label">Software & Tech</span></button>
+          <button class="ind-btn" data-ind="consulting" onclick="setIndustry(this)"><span class="ind-btn-icon">📊</span><span class="ind-btn-label">Consulting & Strategy</span></button>
+          <button class="ind-btn" data-ind="finance" onclick="setIndustry(this)"><span class="ind-btn-icon">💰</span><span class="ind-btn-label">Finance & Banking</span></button>
+          <button class="ind-btn" data-ind="marketing" onclick="setIndustry(this)"><span class="ind-btn-icon">📣</span><span class="ind-btn-label">Marketing & Growth</span></button>
+          <button class="ind-btn" data-ind="data" onclick="setIndustry(this)"><span class="ind-btn-icon">🔬</span><span class="ind-btn-label">Data & Analytics</span></button>
+          <button class="ind-btn" data-ind="product" onclick="setIndustry(this)"><span class="ind-btn-icon">🎯</span><span class="ind-btn-label">Product Management</span></button>
+          <button class="ind-btn" data-ind="hr" onclick="setIndustry(this)"><span class="ind-btn-icon">🤝</span><span class="ind-btn-label">HR & People</span></button>
+          <button class="ind-btn" data-ind="operations" onclick="setIndustry(this)"><span class="ind-btn-icon">⚙️</span><span class="ind-btn-label">Operations & Supply</span></button>
         </div>
       </div>
-      <div class="card-body">
 
-        <div class="field">
-          <label>Industry Profile <span>(choose what you're applying for)</span></label>
-          <div class="industry-grid">
-            <button class="ind-btn active" data-ind="software" onclick="setIndustry(this)">
-              <span class="ind-btn-icon">💻</span>
-              <span class="ind-btn-label">Software & Tech</span>
-            </button>
-            <button class="ind-btn" data-ind="marketing" onclick="setIndustry(this)">
-              <span class="ind-btn-icon">📣</span>
-              <span class="ind-btn-label">Marketing & Growth</span>
-            </button>
-            <button class="ind-btn" data-ind="finance" onclick="setIndustry(this)">
-              <span class="ind-btn-icon">📊</span>
-              <span class="ind-btn-label">Finance & Business</span>
-            </button>
-            <button class="ind-btn" data-ind="hr" onclick="setIndustry(this)">
-              <span class="ind-btn-icon">🤝</span>
-              <span class="ind-btn-label">HR & People</span>
-            </button>
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="resumeText">
-            Resume Text
-            <span>(paste everything — work experience, skills, education)</span>
-          </label>
-          <textarea
-            id="resumeText"
-            placeholder="Paste your full resume here...
+      <!-- RESUME TEXT -->
+      <div class="field">
+        <label for="resumeText">Resume Text <span>— paste everything including skills and education</span></label>
+        <textarea id="resumeText" placeholder="Paste your full resume here...
 
 Example:
-John Smith | john@email.com | linkedin.com/in/johnsmith
+Priya Sharma | priya@email.com | linkedin.com/in/priya | +91-98765-43210
 
 EDUCATION
-BS Computer Science — FAST-NUCES (2021–2025) | CGPA: 3.7
+B.Com (Hons) — SSCBS Delhi University (2022–2025) | CGPA: 8.4
 
 EXPERIENCE
-Software Engineer Intern — TechCorp (Summer 2024)
-• Developed REST APIs using Node.js serving 10,000+ daily users
-• Reduced page load time by 40% through frontend optimization..."
-            oninput="updateCount(this)"
-            aria-label="Paste your resume text here"
-          ></textarea>
-          <div class="char-count" id="char-count">0 words</div>
-        </div>
+Finance Intern — HDFC Bank (May–Jul 2024)
+• Analyzed loan portfolios worth ₹2.5 crore, identifying 12% risk reduction opportunity
+• Built Excel dashboard tracking 150+ client accounts, reducing review time by 30%
 
-        <button class="analyze-btn" id="analyzeBtn" onclick="analyzeResume()">
-          <span id="btn-icon">🔍</span>
-          <span id="btn-text">Analyze My Resume</span>
-          <div class="btn-spinner" id="btn-spinner"></div>
-        </button>
+SKILLS
+Excel, Tally, SAP, Financial Modelling, Python (basics), Bloomberg Terminal
 
-        <div class="error-box" id="error-box"></div>
-
-      </div>
-    </div>
-
-    <!-- RIGHT — OUTPUT -->
-    <div class="output-card fade-up" style="transition-delay:0.1s">
-      <div class="output-head">
-        <div class="output-head-left">
-          <div class="card-head-icon">📊</div>
-          <h2>Your Results</h2>
-        </div>
-        <div class="out-actions" id="out-actions" style="display:none;">
-          <button class="act-btn" onclick="copyResults()">
-            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-            Copy
-          </button>
-          <button class="act-btn" onclick="resetTool()">
-            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
-            Reset
-          </button>
-        </div>
-      </div>
-      <div class="output-body">
-
-        <!-- Empty state -->
-        <div class="empty-state" id="empty-state">
-          <div class="empty-icon">🎯</div>
-          <h3>Your score appears here</h3>
-          <p>Paste your resume, pick an industry, and hit Analyze.</p>
-          <div class="how-steps">
-            <div class="how-step"><div class="step-num">1</div><p>Paste your resume text on the left</p></div>
-            <div class="how-step"><div class="step-num">2</div><p>Choose your target industry profile</p></div>
-            <div class="how-step"><div class="step-num">3</div><p>Hit Analyze — results in under 5 seconds</p></div>
-            <div class="how-step"><div class="step-num">4</div><p>Fix the issues and re-analyze to improve your score</p></div>
-          </div>
-        </div>
-
-        <!-- Results -->
-        <div class="result-wrap" id="result-wrap">
-
-          <!-- Score ring + grade -->
-          <div class="score-section">
-            <div class="score-ring-wrap">
-              <svg width="110" height="110" viewBox="0 0 110 110" aria-hidden="true">
-                <circle class="score-ring-bg" cx="55" cy="55" r="46"/>
-                <circle class="score-ring-fill" id="score-ring" cx="55" cy="55" r="46"
-                        stroke-dasharray="289" stroke-dashoffset="289"/>
-              </svg>
-              <div class="score-num">
-                <strong id="score-display">0</strong>
-                <span>/100</span>
-              </div>
-            </div>
-            <div class="score-meta">
-              <div class="score-grade" id="score-grade">—</div>
-              <div class="score-percentile" id="score-percentile">—</div>
-              <div class="score-bar-row" id="score-bars"></div>
-            </div>
-          </div>
-
-          <!-- Score breakdown -->
-          <div class="breakdown" id="breakdown-section">
-            <h3>Score Breakdown</h3>
-            <div class="breakdown-grid" id="breakdown-grid"></div>
-          </div>
-
-          <!-- Keywords found / missing -->
-          <div class="kw-section" id="kw-section">
-            <h3>Industry Keywords</h3>
-            <div class="kw-chips" id="kw-chips"></div>
-          </div>
-
-          <!-- Strengths -->
-          <div class="feedback-section" id="pros-section">
-            <h3>
-              ✅ Strengths
-              <span class="feedback-badge" id="pros-badge" style="background:var(--success-l);color:#166534;"></span>
-            </h3>
-            <div class="fb-list" id="pros-list"></div>
-          </div>
-
-          <!-- Weaknesses -->
-          <div class="feedback-section" id="cons-section">
-            <h3>
-              ❌ Critical Issues
-              <span class="feedback-badge" id="cons-badge" style="background:var(--danger-l);color:var(--danger);"></span>
-            </h3>
-            <div class="fb-list" id="cons-list"></div>
-          </div>
-
-          <!-- Tips -->
-          <div class="feedback-section" id="tips-section">
-            <h3>
-              💡 How to Improve
-              <span class="feedback-badge" style="background:var(--warn-l);color:var(--warn);">Action items</span>
-            </h3>
-            <div class="fb-list" id="tips-list"></div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /tool-layout -->
-
-  <!-- ── FAQ ── -->
-  <section class="faq-section fade-up" aria-labelledby="faq-heading">
-    <span class="faq-label">FAQ</span>
-    <h2 id="faq-heading">Everything about <em>resume scoring</em></h2>
-    <p class="faq-sub">Common questions students ask about ATS and resume optimization.</p>
-    <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
-
-      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <h3 itemprop="name" onclick="toggleFaq(this)">What is an ATS resume checker?</h3>
-        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">An ATS (Applicant Tracking System) resume checker analyzes your resume the way automated hiring software does. It checks for keyword alignment with the job, section structure, content quality, and formatting compatibility — giving you a score and telling you exactly what to fix before submitting to employers.</p>
-        </div>
+PROJECTS
+Budget Forecasting Model — Built a 3-year DCF model for a startup client project" oninput="updateCount(this)"></textarea>
+        <div class="char-count" id="char-count">0 words · aim for 400–700</div>
       </div>
 
-      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <h3 itemprop="name" onclick="toggleFaq(this)">How is the resume score calculated?</h3>
-        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">Your score is calculated across 7 dimensions: resume length (ideal 450–800 words), section structure, quantified achievements, action verb strength, industry keyword match for your chosen field, generic buzzword penalties, and ATS formatting safety. Each dimension contributes points toward your final score out of 100.</p>
-        </div>
-      </div>
+      <!-- ANALYZE BUTTON -->
+      <button class="analyze-btn" id="analyzeBtn" onclick="analyzeResume()">
+        <span id="btn-icon">🔍</span>
+        <span id="btn-text">Analyze My Resume</span>
+        <div class="btn-spinner" id="btn-spinner"></div>
+      </button>
 
-      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <h3 itemprop="name" onclick="toggleFaq(this)">What is a good ATS score for a student resume?</h3>
-        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">A score of 80+ is strong and competitive — your resume will pass most ATS filters. Scores 65–79 are average and may pass automated screening but won't stand out. Below 65 is a risk zone — many ATS systems will filter your resume out before any human sees it. Aim for 80+ before submitting.</p>
-        </div>
-      </div>
+      <div class="error-box" id="error-box"></div>
 
-      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <h3 itemprop="name" onclick="toggleFaq(this)">Why should I avoid buzzwords on my resume?</h3>
-        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">Phrases like "highly motivated," "team player," and "detail-oriented" appear on millions of resumes and add zero signal for recruiters. They waste space that could show real achievements. Our checker penalizes these because experienced recruiters skip past them — and so do ATS algorithms.</p>
-        </div>
-      </div>
-
-      <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-        <h3 itemprop="name" onclick="toggleFaq(this)">What industries does this resume checker support?</h3>
-        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <p itemprop="text">Currently four profiles: Software & Tech (checks for JavaScript, React, APIs, Python, etc.), Marketing & Growth (SEO, campaigns, analytics, conversion), Finance & Business (financial analysis, forecasting, investment, budgets), and HR & People (recruitment, talent, onboarding, employee relations). More industries coming soon.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── OTHER TOOLS ── -->
-  <section class="other-tools fade-up" aria-label="Other free student tools">
-    <h2>More <em>Free Tools</em></h2>
-    <div class="tools-row">
-      <a href="attendance.html" class="mini-card" title="Free Attendance Calculator">
-        <div class="mini-card-icon" style="background:#eff6ff;">📊</div>
-        <div><h3>Attendance Calculator</h3><p>Track & plan your attendance</p></div>
-      </a>
-      <a href="cgpa.html" class="mini-card" title="Free CGPA Calculator">
-        <div class="mini-card-icon" style="background:#f0fdf4;">📈</div>
-        <div><h3>CGPA Calculator</h3><p>Calculate semester GPA instantly</p></div>
-      </a>
-      <a href="letter-writer.html" class="mini-card" title="Free Student Letter Writer">
-        <div class="mini-card-icon" style="background:#fdf4ff;">✍️</div>
-        <div><h3>Letter Writer</h3><p>Leave, emails, internship letters</p></div>
-      </a>
-    </div>
-  </section>
-
-</main>
-
-<!-- ── FOOTER ── -->
-<footer role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <a class="footer-logo" href="../index.html" aria-label="Student Toolkit Home">
-        <img src="../logo-dark.png" alt="Student Toolkit" height="44" style="height:44px;width:auto;margin-bottom:12px;"/>
-      </a>
-      <p>Free tools for students — attendance calculator, CGPA calculator, resume checker, and letter writer. No sign-up, no cost, ever.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Free Tools</h4>
-      <a href="attendance.html">Attendance Calculator</a>
-      <a href="cgpa.html">CGPA Calculator</a>
-      <a href="ai-resume-checker.html">AI Resume Checker</a>
-      <a href="letter-writer.html">Letter &amp; Email Writer</a>
-    </div>
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <a href="../index.html">Home</a>
-      <a href="../blog/brutal-resume-checker-guide.html">Resume Guide</a>
-      <a href="../blog/best-free-tools-for-students.html">Best Free Tools</a>
-      <a href="../index.html#suggest">Suggest a Tool</a>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>© 2026 Student Toolkit · <a href="../index.html" style="color:rgba(255,255,255,0.4);text-decoration:none;">studenttoolkit.online</a></span>
-    <div class="social-links">
-      <a href="https://instagram.com/studenttoolkit" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="14" height="14" loading="lazy"/>
-      </a>
+
+  <!-- RIGHT: OUTPUT -->
+  <div class="output-card fade-up" style="transition-delay:.1s">
+    <div class="output-head">
+      <div class="output-head-left">
+        <div class="card-head-icon">📊</div>
+        <h2>Your Score</h2>
+      </div>
+      <div class="out-actions" id="out-actions" style="display:none">
+        <button class="act-btn" onclick="copyResults()">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy
+        </button>
+        <button class="act-btn" onclick="resetTool()">
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+          Reset
+        </button>
+      </div>
+    </div>
+
+    <!-- EMPTY STATE -->
+    <div class="empty-state" id="empty-state">
+      <span class="empty-icon">🎯</span>
+      <h3>Your score appears here</h3>
+      <p>Paste your resume, pick your target industry, and hit Analyze.</p>
+      <div class="how-steps">
+        <div class="how-step"><div class="step-num">1</div><p>Paste your resume text on the left</p></div>
+        <div class="how-step"><div class="step-num">2</div><p>Choose your target industry</p></div>
+        <div class="how-step"><div class="step-num">3</div><p>Hit Analyze — results in 2 seconds</p></div>
+        <div class="how-step"><div class="step-num">4</div><p>Fix issues and re-analyze to improve</p></div>
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="result-wrap" id="result-wrap">
+
+      <!-- Score ring -->
+      <div class="score-section">
+        <div class="score-ring-wrap">
+          <svg width="110" height="110" viewBox="0 0 110 110">
+            <circle class="score-ring-bg" cx="55" cy="55" r="46"/>
+            <circle class="score-ring-fill" id="score-ring" cx="55" cy="55" r="46" stroke-dasharray="289" stroke-dashoffset="289"/>
+          </svg>
+          <div class="score-num">
+            <strong id="score-display">0</strong>
+            <span>/100</span>
+          </div>
+        </div>
+        <div class="score-meta">
+          <div class="score-grade" id="score-grade"></div>
+          <div class="score-percentile" id="score-percentile"></div>
+          <div class="score-bar-row" id="score-bars"></div>
+        </div>
+      </div>
+
+      <!-- Breakdown grid -->
+      <div class="breakdown" id="breakdown-section">
+        <h3>Score Breakdown</h3>
+        <div class="breakdown-grid" id="breakdown-grid"></div>
+      </div>
+
+      <!-- Keywords -->
+      <div class="kw-section" id="kw-section">
+        <h3>Industry Keywords</h3>
+        <div class="kw-chips" id="kw-chips"></div>
+      </div>
+
+      <!-- Rewrite suggestions -->
+      <div class="rewrite-section" id="rewrite-section" style="display:none">
+        <h3>✏️ Suggested Rewrites</h3>
+        <div id="rewrite-list"></div>
+      </div>
+
+      <!-- Strengths -->
+      <div class="feedback-section" id="pros-section">
+        <h3>✅ Strengths <span class="feedback-badge" id="pros-badge" style="background:var(--success-l);color:var(--success)"></span></h3>
+        <div class="fb-list" id="pros-list"></div>
+      </div>
+
+      <!-- Issues -->
+      <div class="feedback-section" id="cons-section">
+        <h3>❌ Issues to Fix <span class="feedback-badge" id="cons-badge" style="background:var(--danger-l);color:var(--danger)"></span></h3>
+        <div class="fb-list" id="cons-list"></div>
+      </div>
+
+      <!-- Tips -->
+      <div class="feedback-section" id="tips-section">
+        <h3>💡 How to Improve <span class="feedback-badge" style="background:var(--info-l);color:var(--info)">Action items</span></h3>
+        <div class="fb-list" id="tips-list"></div>
+      </div>
+
+      <!-- WhatsApp share -->
+      <div class="wa-share-row">
+        <button class="wa-btn-main" onclick="shareWA()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Share Result on WhatsApp
+        </button>
+        <button class="copy-main-btn" id="copyMainBtn" onclick="copyResults()">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+          Copy
+        </button>
+      </div>
+
+      <!-- Next steps -->
+      <div class="next-steps" id="next-steps">
+        <h3>What to do next</h3>
+        <a href="letter-writer.html" class="ns-link">
+          <span class="ns-icon">✍️</span>
+          <div><div class="ns-text">Write Your Application Letter</div><div class="ns-sub">Internship request, cold email, leave application — free generator</div></div>
+        </a>
+        <a href="../blog/first-internship-zero-experience.html" class="ns-link">
+          <span class="ns-icon">📖</span>
+          <div><div class="ns-text">First Internship Guide (Zero Experience)</div><div class="ns-sub">Where to apply, what to say, LinkedIn scripts</div></div>
+        </a>
+        <a href="college-predictor.html" class="ns-link">
+          <span class="ns-icon">🏛</span>
+          <div><div class="ns-text">Check Your MBA College Options</div><div class="ns-sub">College Predictor — CUET, CAT, JEE cutoffs 2026</div></div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section fade-up">
+  <div style="max-width:580px">
+    <h2>Everything about <em>resume scoring</em></h2>
+  </div>
+  <div class="faq-list" style="max-width:700px;margin-top:20px" itemscope itemtype="https://schema.org/FAQPage">
+    <div class="fi" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name" onclick="toggleFaq(this)">What is an ATS score and why does it matter?</h3>
+      <div class="fi-ans" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Most large companies use ATS (Applicant Tracking System) software to filter resumes before any human sees them. The software scans for keywords, structure, and formatting. Resumes scoring below ~60% are often auto-rejected. Our checker simulates this scan and tells you exactly what to fix.</p></div>
+    </div>
+    <div class="fi" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name" onclick="toggleFaq(this)">What score should I aim for before applying?</h3>
+      <div class="fi-ans" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Aim for 80+ before submitting. 80–89 is competitive and will pass most ATS filters. 90+ is excellent — top 5% of applicants. Scores below 65 carry real rejection risk from automated screening. Fix the specific issues flagged and re-analyze until you hit 80+.</p></div>
+    </div>
+    <div class="fi" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name" onclick="toggleFaq(this)">How do I improve my score quickly?</h3>
+      <div class="fi-ans" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Three fastest wins: (1) Add numbers to every achievement — "increased sales" becomes "increased sales by 35% in Q3". (2) Start every bullet point with an action verb (Led, Built, Optimized, Delivered). (3) Add the top 5–8 missing keywords from the keyword analysis section into your skills or bullet points naturally.</p></div>
+    </div>
+    <div class="fi" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name" onclick="toggleFaq(this)">Is this resume checker free?</h3>
+      <div class="fi-ans" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><p itemprop="text">Yes — completely free, no sign-up, no email required, unlimited uses. Student Toolkit is built for Indian students and everything on the platform is permanently free.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OTHER TOOLS -->
+<section class="other-tools fade-up">
+  <div class="ot-head">
+    <h2>Other Free Tools</h2>
+    <a href="../index.html#tools" style="font-size:13px;color:var(--accent);text-decoration:none;font-weight:600">View all →</a>
+  </div>
+  <div class="tools-row">
+    <a href="attendance.html" class="mini-card"><div class="mini-card-icon" style="background:#f0fdf4">📊</div><div><h3>Attendance Calculator</h3><p>Safe skips & 75% rule</p></div></a>
+    <a href="cgpa.html" class="mini-card"><div class="mini-card-icon" style="background:#eff6ff">📈</div><div><h3>CGPA Calculator</h3><p>Semester & cumulative</p></div></a>
+    <a href="college-predictor.html" class="mini-card"><div class="mini-card-icon" style="background:#f5f3ff">🏛</div><div><h3>College Predictor</h3><p>CUET, CAT, JEE cutoffs</p></div></a>
+    <a href="letter-writer.html" class="mini-card"><div class="mini-card-icon" style="background:#fdf4ff">✍️</div><div><h3>Letter Writer</h3><p>Leave, emails, applications</p></div></a>
+    <a href="career-path-finder.html" class="mini-card"><div class="mini-card-icon" style="background:#fff7ed">🎯</div><div><h3>Career Path Finder</h3><p>PCM, PCB, Commerce, Arts</p></div></a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 Student Toolkit — Free tools for Indian students. No sign-up, no cost, ever.</span>
+    <div style="display:flex;gap:16px;flex-wrap:wrap">
+      <a href="../index.html">Home</a>
+      <a href="../colleges/">College Directory</a>
+      <a href="../blog/index.html">Blog</a>
+      <a href="college-predictor.html">College Predictor</a>
     </div>
   </div>
 </footer>
 
-<!-- ════════════════════════════════════════════════
-     JAVASCRIPT — Full Analysis Engine
-════════════════════════════════════════════════ -->
 <script>
-  // ── STATE ──────────────────────────────────────
-  let selectedIndustry = 'software';
+'use strict';
 
-  const industryKeywords = {
-    software:  { label: 'Software & Tech',     keys: ['javascript','react','python','api','backend','frontend','database','node','sql','git','cloud','aws','docker','typescript','css','html','algorithms','data structures','rest','agile'] },
-    marketing: { label: 'Marketing & Growth',  keys: ['seo','campaign','branding','conversion','analytics','content','social media','email','ppc','ctr','roi','growth','funnel','ab testing','copywriting','strategy','digital','audience','engagement'] },
-    finance:   { label: 'Finance & Business',  keys: ['financial','analysis','forecast','investment','budget','accounting','excel','valuation','audit','reporting','cash flow','model','equity','revenue','compliance','risk','cost','profit','tax','portfolio'] },
-    hr:        { label: 'HR & People',         keys: ['recruitment','talent','onboarding','employee','training','performance','hr','culture','engagement','compensation','compliance','interviewing','sourcing','payroll','diversity','benefits','relations','workforce','development','retention'] }
-  };
+// ── STATE ──────────────────────────────────────────────────────────────
+let selectedIndustry = 'software';
+let lastResult = null;
 
-  const ACTION_VERBS = ['led','built','developed','optimized','increased','reduced','implemented','launched','managed','created','designed','delivered','improved','achieved','drove','deployed','automated','scaled','collaborated','mentored','negotiated','researched','analyzed','established','coordinated','spearheaded','streamlined','executed'];
+// ── INDUSTRY DATA — expanded to 8 profiles ────────────────────────────
+const INDUSTRIES = {
+  software:    { label:'Software & Tech',      keys:['javascript','react','python','node','sql','api','git','docker','aws','typescript','backend','frontend','database','algorithms','data structures','rest','microservices','agile','scrum','ci/cd','cloud','kubernetes','linux','java','c++','html','css','mongodb','redis','graphql'] },
+  consulting:  { label:'Consulting & Strategy', keys:['problem solving','stakeholder','presentation','analysis','strategic','recommendation','client','framework','hypothesis','structured','excel','powerpoint','case','business','process','data-driven','insight','deliverable','engagement','benchmarking','mckinsey','bcg','bain','consulting','strategy','transformation','implementation'] },
+  finance:     { label:'Finance & Banking',     keys:['financial model','valuation','dcf','excel','bloomberg','equity','investment','portfolio','audit','accounting','budget','forecast','cash flow','p&l','balance sheet','revenue','compliance','risk','credit','derivatives','fund','capital market','fixed income','ipo','m&a','private equity','venture capital','irr','npv'] },
+  marketing:   { label:'Marketing & Growth',    keys:['seo','sem','campaign','branding','conversion','analytics','content','social media','email marketing','ppc','ctr','roi','growth hacking','funnel','a/b testing','copywriting','digital marketing','audience','engagement','google analytics','meta ads','influencer','retention','churn','lifetime value','brand','positioning'] },
+  data:        { label:'Data & Analytics',      keys:['python','sql','machine learning','tableau','power bi','statistics','data analysis','regression','classification','pandas','numpy','scikit-learn','tensorflow','deep learning','neural network','nlp','data pipeline','etl','spark','hadoop','visualization','hypothesis testing','a/b testing','jupyter','r','predictive model'] },
+  product:     { label:'Product Management',    keys:['product roadmap','user story','agile','sprint','backlog','stakeholder','ux','metrics','kpi','conversion','retention','feature','prioritization','launch','go-to-market','competitive analysis','customer discovery','mvp','okr','product strategy','wireframe','prototype','user research','funnel','a/b test','jira','figma'] },
+  hr:          { label:'HR & People',           keys:['recruitment','talent acquisition','onboarding','employee engagement','training','performance management','hr','culture','compensation','payroll','compliance','interviewing','sourcing','linkedin recruiter','diversity','inclusion','benefits','workforce planning','succession','retention','exit interview','hrbp','organizational development','learning & development'] },
+  operations:  { label:'Operations & Supply',   keys:['supply chain','logistics','inventory','procurement','vendor','warehouse','process improvement','lean','six sigma','quality','operations','scheduling','demand planning','erp','sap','forecasting','capacity planning','cost reduction','efficiency','throughput','delivery','fulfilment','inbound','outbound','kpi','sla','continuous improvement'] },
+};
 
-  const GENERIC_PHRASES = ['highly motivated','team player','detail-oriented','hardworking','passionate about','go-getter','results-driven','self-starter','dynamic individual','strong communication','excellent written'];
+const ACTION_VERBS = [
+  'led','built','developed','optimized','increased','reduced','implemented','launched',
+  'managed','created','designed','delivered','improved','achieved','drove','deployed',
+  'automated','scaled','collaborated','mentored','negotiated','analyzed','established',
+  'coordinated','spearheaded','streamlined','executed','engineered','architected',
+  'conceptualized','pioneered','transformed','accelerated','generated','facilitated',
+  'oversaw','supervised','negotiated','secured','devised','formulated','restructured',
+  'revamped','initiated','championed','owned','shipped','grew','closed','trained'
+];
 
-  const SECTIONS = ['education','experience','skills','projects','achievements','certifications','summary','objective','work experience','professional experience'];
+const GENERIC_PHRASES = [
+  'highly motivated','team player','detail-oriented','hardworking','passionate about',
+  'go-getter','results-driven','self-starter','dynamic individual','strong communication',
+  'excellent communication','excellent written','quick learner','fast learner',
+  'good work ethic','out-of-the-box','think outside','synergy','leverage','proactive'
+];
 
-  // ── UI ─────────────────────────────────────────
-  function setIndustry(btn) {
-    document.querySelectorAll('.ind-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    selectedIndustry = btn.dataset.ind;
+const SECTIONS_REQUIRED = ['education','experience','skills'];
+const SECTIONS_BONUS = ['projects','achievements','certifications','summary','objective','internship'];
+
+// ── UI HELPERS ─────────────────────────────────────────────────────────
+function setIndustry(btn){
+  document.querySelectorAll('.ind-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  selectedIndustry = btn.dataset.ind;
+}
+
+function updateCount(el){
+  const wc = el.value.trim() ? el.value.trim().split(/\s+/).length : 0;
+  const el2 = document.getElementById('char-count');
+  el2.textContent = wc+' words · aim for 400–700';
+  el2.style.color = wc<200?'var(--danger)':wc>800?'var(--warn)':'var(--ink3)';
+}
+
+function setLoading(on){
+  const btn = document.getElementById('analyzeBtn');
+  btn.classList.toggle('loading',on);
+  btn.disabled = on;
+  document.getElementById('btn-spinner').style.display = on?'block':'none';
+  document.getElementById('btn-text').textContent = on?'Analyzing…':'Analyze My Resume';
+}
+
+function showError(msg){ const e=document.getElementById('error-box');e.textContent='⚠ '+msg;e.style.display='block'; }
+function hideError(){ document.getElementById('error-box').style.display='none'; }
+
+// ── MAIN ENTRY ─────────────────────────────────────────────────────────
+function analyzeResume(){
+  const text = document.getElementById('resumeText').value.trim();
+  if(text.length<100){ showError('Please paste your full resume text (at least 100 characters).'); return; }
+  hideError();
+  setLoading(true);
+  setTimeout(()=>{ const r=runAnalysis(text,selectedIndustry); lastResult=r; displayResults(r); setLoading(false); },800);
+}
+
+// ── ANALYSIS ENGINE ────────────────────────────────────────────────────
+function runAnalysis(text, industry){
+  const lower = text.toLowerCase();
+  const words = text.trim().split(/\s+/);
+  const wc = words.length;
+  const ind = INDUSTRIES[industry];
+  let score=0, pros=[], cons=[], tips=[], breakdown={}, rewrites=[];
+
+  // 1. LENGTH (0–10pts)
+  if(wc>=400&&wc<=750){
+    score+=10; pros.push(`Resume length is ideal (${wc} words — professional range for ATS).`);
+    breakdown.length={label:'Length',val:`${wc} words ✓`,cls:'pass',pts:10,max:10};
+  } else if(wc>=250&&wc<400){
+    score+=5; cons.push(`Resume is short (${wc} words). Aim for 450–700 words.`);
+    tips.push('Expand each bullet point with outcomes, tools used, and team sizes. Add a Projects section if missing.');
+    breakdown.length={label:'Length',val:`${wc} words — short`,cls:'warn',pts:5,max:10};
+  } else if(wc>750){
+    score+=5; cons.push(`Resume is long (${wc} words). Trim to 450–700 for ATS compatibility.`);
+    tips.push('Remove outdated experience (>5 yrs), cut redundant bullets, delete "References available on request".');
+    breakdown.length={label:'Length',val:`${wc} words — long`,cls:'warn',pts:5,max:10};
+  } else {
+    cons.push(`Resume is very short (${wc} words) — major red flag. Recruiters will skip it.`);
+    tips.push('Add 3–5 bullet points per role with outcomes. Include Skills section. Add Projects section.');
+    breakdown.length={label:'Length',val:`${wc} words — critical`,cls:'fail',pts:0,max:10};
   }
 
-  function updateCount(el) {
-    const wc = el.value.trim() ? el.value.trim().split(/\s+/).length : 0;
-    const cc = document.getElementById('char-count');
-    cc.textContent = wc + ' words';
-    cc.style.color = wc < 200 ? 'var(--danger)' : wc > 800 ? 'var(--warn)' : 'var(--ink3)';
+  // 2. REQUIRED SECTIONS (0–15pts)
+  const foundRequired = SECTIONS_REQUIRED.filter(s=>lower.includes(s));
+  const foundBonus = SECTIONS_BONUS.filter(s=>lower.includes(s));
+  const sectionPts = (foundRequired.length/3)*12 + Math.min(3, foundBonus.length);
+  score += Math.round(sectionPts);
+  if(foundRequired.length===3){
+    pros.push(`All 3 core sections found: Education, Experience, Skills.`);
+    if(foundBonus.length>0) pros.push(`Bonus sections found: ${foundBonus.map(s=>s.charAt(0).toUpperCase()+s.slice(1)).join(', ')} — strengthens profile.`);
+  } else {
+    const miss = SECTIONS_REQUIRED.filter(s=>!lower.includes(s));
+    cons.push(`Missing critical section(s): ${miss.map(s=>s.charAt(0).toUpperCase()+s.slice(1)).join(', ')}.`);
+    tips.push(`Add explicit section headers: ${miss.join(', ')}. ATS systems scan for these labels.`);
+  }
+  breakdown.sections={label:'Sections',val:`${foundRequired.length}/3 core + ${foundBonus.length} bonus`,cls:foundRequired.length===3?'pass':foundRequired.length===2?'warn':'fail',pts:Math.round(sectionPts),max:15};
+
+  // 3. QUANTIFIED METRICS (0–20pts)
+  const metricRegex = /\d+[\s]?(%|percent|lpa|lac|lakh|crore|cr|k\b|users|clients|students|projects|hours|days|weeks|months|years|x\b|times|members|employees|revenue|sales|leads|accounts|customers|campaigns|tickets|bugs|features|transactions|views|downloads|installs|subscribers|followers|orders|shipments|units)/gi;
+  const metrics = text.match(metricRegex)||[];
+  const uniqueMetrics = [...new Set(metrics.map(m=>m.toLowerCase()))];
+  if(uniqueMetrics.length>=5){
+    score+=20; pros.push(`Excellent quantified achievements — ${uniqueMetrics.length} unique metrics found. Recruiters love this.`);
+    breakdown.metrics={label:'Metrics',val:`${uniqueMetrics.length} found ✓`,cls:'pass',pts:20,max:20};
+  } else if(uniqueMetrics.length>=3){
+    score+=12; cons.push(`Only ${uniqueMetrics.length} quantified metrics found. More data points = more credibility.`);
+    tips.push('Target: every bullet point should have at least one number. "Managed a project" → "Led 4-person team delivering ₹12L project 2 weeks early."');
+    breakdown.metrics={label:'Metrics',val:`${uniqueMetrics.length} found`,cls:'warn',pts:12,max:20};
+  } else if(uniqueMetrics.length>=1){
+    score+=5; cons.push(`Very few quantified achievements (${uniqueMetrics.length}). This is the #1 weakness on student resumes.`);
+    tips.push('Add numbers everywhere: users served, percentage improvements, revenue handled, team sizes, deadlines met. Estimate if exact figures unavailable.');
+    breakdown.metrics={label:'Metrics',val:`${uniqueMetrics.length} found`,cls:'fail',pts:5,max:20};
+    // Rewrite suggestion
+    rewrites.push({before:'Led the social media team and increased engagement.',after:'Led 3-person social media team, growing Instagram engagement by 47% (8K→11.7K followers) in 3 months.'});
+  } else {
+    cons.push('No quantified achievements found — this will almost certainly hurt your application.');
+    tips.push('Quantify everything. Use estimates if needed (e.g. "~500 users", "team of 4"). Numbers create credibility.');
+    breakdown.metrics={label:'Metrics',val:'0 found',cls:'fail',pts:0,max:20};
+    rewrites.push({before:'Responsible for managing social media accounts.',after:'Managed 3 social media accounts, growing combined following by 2,400+ in 6 months through consistent content strategy.'});
+    rewrites.push({before:'Helped reduce costs in the supply chain project.',after:'Identified ₹3.2L annual cost reduction opportunity in procurement process by renegotiating with 2 vendors.'});
   }
 
-  // ── ANALYZE ────────────────────────────────────
-  function analyzeResume() {
-    const text = document.getElementById('resumeText').value.trim();
-    if (text.length < 150) { showError('Please paste your full resume text (at least 150 characters).'); return; }
-    hideError();
-    setLoading(true);
-
-    // Small timeout for perceived performance
-    setTimeout(() => {
-      const result = runAnalysis(text, selectedIndustry);
-      displayResults(result);
-      setLoading(false);
-    }, 600);
+  // 4. ACTION VERBS (0–15pts)
+  const foundVerbs = ACTION_VERBS.filter(v=>lower.includes(v));
+  const uniqueVerbs = [...new Set(foundVerbs)];
+  if(uniqueVerbs.length>=8){
+    score+=15; pros.push(`Strong action verb variety — ${uniqueVerbs.length} unique verbs (${uniqueVerbs.slice(0,4).join(', ')}…).`);
+    breakdown.verbs={label:'Action Verbs',val:`${uniqueVerbs.length} found ✓`,cls:'pass',pts:15,max:15};
+  } else if(uniqueVerbs.length>=4){
+    score+=8; cons.push(`Moderate action verb usage (${uniqueVerbs.length} unique). Needs more variety.`);
+    tips.push('Start every bullet with a strong, varied action verb. Don\'t repeat the same verb twice.');
+    breakdown.verbs={label:'Action Verbs',val:`${uniqueVerbs.length} found`,cls:'warn',pts:8,max:15};
+  } else if(uniqueVerbs.length>=1){
+    score+=3; cons.push(`Very few action verbs (${uniqueVerbs.length}). Bullet points sound passive.`);
+    tips.push('Rewrite bullets to start with verbs: "Responsible for X" → "Led X", "Was involved in Y" → "Drove Y resulting in Z".');
+    breakdown.verbs={label:'Action Verbs',val:`${uniqueVerbs.length} found`,cls:'fail',pts:3,max:15};
+    rewrites.push({before:'Was responsible for customer support tickets.',after:'Resolved 25+ customer support tickets weekly, maintaining 4.8/5 satisfaction rating.'});
+  } else {
+    cons.push('No action verbs found. Every bullet point should start with one.');
+    tips.push('Use: Led, Built, Developed, Managed, Designed, Implemented, Optimized, Delivered, Launched, Analyzed, Created.');
+    breakdown.verbs={label:'Action Verbs',val:'None found',cls:'fail',pts:0,max:15};
+    rewrites.push({before:'Helped with market research for the team.',after:'Conducted competitive market research across 8 companies, identifying 3 untapped segments worth ₹50Cr+'});
   }
 
-  // ── CORE ANALYSIS ENGINE ───────────────────────
-  function runAnalysis(text, industry) {
-    const lower   = text.toLowerCase();
-    const words   = text.trim().split(/\s+/);
-    const wc      = words.length;
-    const indData = industryKeywords[industry];
-    let score = 0;
-    let pros = [], cons = [], tips = [];
-    let breakdown = {};
-
-    // 1. LENGTH (0–10pts)
-    if (wc >= 450 && wc <= 800) {
-      score += 10; pros.push('Resume length is ideal ('+wc+' words — professional range).');
-      breakdown.length = { label: 'Length', val: '✓ Ideal', cls: 'pass', pts: 10 };
-    } else if (wc >= 300 && wc < 450) {
-      score += 5; cons.push('Resume is a bit short ('+wc+' words). Aim for 450–800 words.');
-      tips.push('Expand your bullet points with specific outcomes, tools used, and team sizes.');
-      breakdown.length = { label: 'Length', val: '⚠ Short', cls: 'warn', pts: 5 };
-    } else if (wc > 800) {
-      score += 5; cons.push('Resume is too long ('+wc+' words). Trim to 450–800 for ATS.');
-      tips.push('Remove outdated experience, shorten paragraphs, and delete "References available on request."');
-      breakdown.length = { label: 'Length', val: '⚠ Too long', cls: 'warn', pts: 5 };
-    } else {
-      cons.push('Resume is very short ('+wc+' words). This is a major red flag.');
-      tips.push('Add detailed bullet points for each role. Quantify achievements. Expand your skills section.');
-      breakdown.length = { label: 'Length', val: '✗ Too short', cls: 'fail', pts: 0 };
-    }
-
-    // 2. SECTIONS (0–20pts)
-    const foundSections = SECTIONS.filter(s => lower.includes(s));
-    const criticalSections = ['education','skills','experience'];
-    const foundCritical = criticalSections.filter(s => lower.includes(s));
-    const sectionScore = Math.min(20, foundSections.length * 4);
-    score += sectionScore;
-    if (foundCritical.length === 3) {
-      pros.push('All 3 critical sections found: Education, Experience, Skills.');
-    } else {
-      const missing = criticalSections.filter(s => !lower.includes(s));
-      cons.push('Missing critical section(s): ' + missing.map(s => s.charAt(0).toUpperCase()+s.slice(1)).join(', ') + '.');
-      tips.push('Every professional resume needs Education, Experience, and Skills sections. Add these headers explicitly.');
-    }
-    if (lower.includes('projects')) pros.push('Projects section found — great for student resumes.');
-    breakdown.sections = { label: 'Sections', val: foundSections.length + '/' + SECTIONS.length, cls: sectionScore >= 16 ? 'pass' : sectionScore >= 8 ? 'warn' : 'fail', pts: sectionScore };
-
-    // 3. QUANTIFIED METRICS (0–20pts)
-    const metricRegex = /\d+\s*(%|percent|users|clients|students|projects|hours|days|months|years|x|times|k\b|members|employees|revenue|sales|reduction|increase|growth|improvement)/gi;
-    const metrics = text.match(metricRegex) || [];
-    if (metrics.length >= 4) {
-      score += 20; pros.push('Excellent quantified achievements ('+metrics.length+' metrics found).');
-      breakdown.metrics = { label: 'Metrics', val: metrics.length + ' found', cls: 'pass', pts: 20 };
-    } else if (metrics.length >= 2) {
-      score += 10; cons.push('Only '+metrics.length+' quantified achievements. Recruiters want data.');
-      tips.push('Add numbers to every achievement. "Increased sales" → "Increased sales by 35% in Q3 2024."');
-      breakdown.metrics = { label: 'Metrics', val: metrics.length + ' found', cls: 'warn', pts: 10 };
-    } else {
-      cons.push('No measurable achievements found. This is the #1 weakness on student resumes.');
-      tips.push('Quantify everything: users served, percentage improvements, project sizes, team members managed, deadlines met.');
-      breakdown.metrics = { label: 'Metrics', val: '0 found', cls: 'fail', pts: 0 };
-    }
-
-    // 4. ACTION VERBS (0–15pts)
-    const foundVerbs = ACTION_VERBS.filter(v => lower.includes(v));
-    if (foundVerbs.length >= 6) {
-      score += 15; pros.push('Strong action verb usage ('+foundVerbs.length+' unique verbs: '+foundVerbs.slice(0,4).join(', ')+'…).');
-      breakdown.verbs = { label: 'Action Verbs', val: foundVerbs.length + ' found', cls: 'pass', pts: 15 };
-    } else if (foundVerbs.length >= 3) {
-      score += 8;
-      cons.push('Moderate action verb usage ('+foundVerbs.length+' found). More variety needed.');
-      tips.push('Start every bullet point with a strong action verb. Vary them: Led, Built, Optimized, Delivered, Scaled, Automated.');
-      breakdown.verbs = { label: 'Action Verbs', val: foundVerbs.length + ' found', cls: 'warn', pts: 8 };
-    } else {
-      cons.push('Very few action verbs found. Bullet points sound passive and weak.');
-      tips.push('Rewrite every bullet point to start with a verb: "Responsible for X" → "Built X that achieved Y."');
-      breakdown.verbs = { label: 'Action Verbs', val: foundVerbs.length + ' found', cls: 'fail', pts: 0 };
-    }
-
-    // 5. INDUSTRY KEYWORDS (0–20pts)
-    const foundKeys  = indData.keys.filter(k => lower.includes(k));
-    const missingKeys = indData.keys.filter(k => !lower.includes(k));
-    const keyScore = Math.min(20, foundKeys.length * 2);
-    score += keyScore;
-    if (foundKeys.length >= 8) {
-      pros.push('Strong '+indData.label+' keyword density ('+foundKeys.length+'/'+indData.keys.length+' keywords matched).');
-      breakdown.keywords = { label: 'Keywords', val: foundKeys.length+'/'+indData.keys.length, cls: 'pass', pts: keyScore };
-    } else if (foundKeys.length >= 4) {
-      cons.push('Moderate keyword match for '+indData.label+' ('+foundKeys.length+'/'+indData.keys.length+'). Missing important terms.');
-      tips.push('Add missing keywords naturally into your bullet points: ' + missingKeys.slice(0,5).join(', ') + '.');
-      breakdown.keywords = { label: 'Keywords', val: foundKeys.length+'/'+indData.keys.length, cls: 'warn', pts: keyScore };
-    } else {
-      cons.push('Poor keyword alignment for '+indData.label+' (only '+foundKeys.length+'/'+indData.keys.length+'). ATS will likely reject this.');
-      tips.push('Tailor your resume to the industry. Missing key terms: ' + missingKeys.slice(0,6).join(', ') + '.');
-      breakdown.keywords = { label: 'Keywords', val: foundKeys.length+'/'+indData.keys.length, cls: 'fail', pts: keyScore };
-    }
-
-    // 6. GENERIC BUZZWORD PENALTY (-10 to 0pts)
-    const foundGeneric = GENERIC_PHRASES.filter(p => lower.includes(p));
-    if (foundGeneric.length >= 2) {
-      score = Math.max(0, score - 10);
-      cons.push('Generic buzzwords detected ('+foundGeneric.length+' found). These hurt more than they help.');
-      tips.push('Delete "'+foundGeneric.slice(0,2).join('", "')+'" and replace with specific, measurable proof.');
-      breakdown.buzzwords = { label: 'Buzzwords', val: foundGeneric.length + ' found', cls: 'fail', pts: -10 };
-    } else if (foundGeneric.length === 1) {
-      score = Math.max(0, score - 4);
-      cons.push('Generic phrase detected: "'+foundGeneric[0]+'". Cut it and show, don\'t tell.');
-      breakdown.buzzwords = { label: 'Buzzwords', val: '1 found', cls: 'warn', pts: -4 };
-    } else {
-      pros.push('No generic buzzwords found. Good — show, don\'t tell.');
-      breakdown.buzzwords = { label: 'Buzzwords', val: 'Clean ✓', cls: 'pass', pts: 0 };
-    }
-
-    // 7. ATS FORMATTING (0–15pts)
-    const badChars = ['★','●','◆','❖','►','▶','✦','⚫','⬛'];
-    const hasBadChars = badChars.some(c => text.includes(c));
-    const hasTables = text.includes('|') && text.split('|').length > 4;
-    if (!hasBadChars && !hasTables) {
-      score += 15; pros.push('ATS-safe formatting — no special characters or tables detected.');
-      breakdown.formatting = { label: 'Formatting', val: 'ATS Safe ✓', cls: 'pass', pts: 15 };
-    } else {
-      score += 5;
-      cons.push('ATS formatting risk: ' + (hasBadChars ? 'special symbols detected. ' : '') + (hasTables ? 'table-like structure detected.' : ''));
-      tips.push('Remove special symbols (★, ●, ◆) and table formatting. ATS systems parse plain text only.');
-      breakdown.formatting = { label: 'Formatting', val: 'Risk ⚠', cls: 'warn', pts: 5 };
-    }
-
-    // 8. CONTACT INFO (bonus check)
-    const hasEmail = /@[a-z]+\.[a-z]/i.test(text);
-    const hasPhone = /\d{4}[\s-]\d{3,4}[\s-]\d{3,4}|\(\d{3}\)|\d{10,11}/.test(text);
-    const hasLinkedIn = lower.includes('linkedin');
-    if (hasEmail) pros.push('Email address found.');
-    else { cons.push('No email address detected. Always include your email.'); tips.push('Add your email, phone number, and LinkedIn URL at the top of your resume.'); }
-    if (hasLinkedIn) pros.push('LinkedIn profile mentioned — good for credibility.');
-
-    score = Math.max(0, Math.min(100, score));
-
-    // Grade & percentile
-    let grade, percentile, gradeColor;
-    if (score >= 90) { grade = '🏆 Elite Resume'; percentile = 'Top 5% of applicants'; gradeColor = '#16a34a'; }
-    else if (score >= 80) { grade = '💪 Strong & Competitive'; percentile = 'Top 15% of applicants'; gradeColor = '#2563eb'; }
-    else if (score >= 65) { grade = '📋 Average Resume'; percentile = 'Top 40% of applicants'; gradeColor = '#d97706'; }
-    else if (score >= 50) { grade = '⚠ Below Competitive'; percentile = 'Below industry median'; gradeColor = '#ea580c'; }
-    else { grade = '🚨 Rejection Risk'; percentile = 'Bottom 30% — needs major work'; gradeColor = '#dc2626'; }
-
-    return { score, grade, percentile, gradeColor, pros, cons, tips, breakdown, foundKeys, missingKeys: missingKeys.slice(0,12), industry: indData.label };
+  // 5. INDUSTRY KEYWORDS (0–20pts)
+  const foundKeys  = ind.keys.filter(k=>lower.includes(k.toLowerCase()));
+  const missingKeys = ind.keys.filter(k=>!lower.includes(k.toLowerCase()));
+  const keyPts = Math.min(20, Math.round((foundKeys.length/Math.min(ind.keys.length,20))*20));
+  score += keyPts;
+  if(foundKeys.length>=10){
+    pros.push(`Strong ${ind.label} keyword density (${foundKeys.length}/${ind.keys.length} matched). ATS will recognize domain expertise.`);
+    breakdown.keywords={label:'Keywords',val:`${foundKeys.length}/${ind.keys.length} ✓`,cls:'pass',pts:keyPts,max:20};
+  } else if(foundKeys.length>=5){
+    cons.push(`Moderate ${ind.label} keyword match (${foundKeys.length}/${ind.keys.length}). Missing high-value terms.`);
+    tips.push(`Add these keywords naturally into bullet points or skills: ${missingKeys.slice(0,6).join(', ')}.`);
+    breakdown.keywords={label:'Keywords',val:`${foundKeys.length}/${ind.keys.length}`,cls:'warn',pts:keyPts,max:20};
+  } else {
+    cons.push(`Poor keyword alignment for ${ind.label} (${foundKeys.length}/${ind.keys.length}). ATS may reject before human review.`);
+    tips.push(`Critical missing keywords: ${missingKeys.slice(0,8).join(', ')}. Weave these into your skills and bullet points.`);
+    breakdown.keywords={label:'Keywords',val:`${foundKeys.length}/${ind.keys.length}`,cls:'fail',pts:keyPts,max:20};
   }
 
-  // ── DISPLAY RESULTS ────────────────────────────
-  function displayResults(r) {
-    document.getElementById('empty-state').style.display = 'none';
-    document.getElementById('result-wrap').style.display = 'block';
-    document.getElementById('out-actions').style.display = 'flex';
+  // 6. CONTACT COMPLETENESS (0–5pts)
+  const hasEmail = /@[a-z0-9]+\.[a-z]/i.test(text);
+  const hasPhone = /(\+91[\s-]?)?[6-9]\d{9}|\d{3,4}[\s-]\d{3,4}[\s-]\d{3,4}/.test(text);
+  const hasLinkedIn = lower.includes('linkedin');
+  const hasGitHub = lower.includes('github');
+  let contactPts = 0;
+  if(hasEmail){contactPts+=2; pros.push('Email address found.');}
+  else{cons.push('No email address detected. Always include professional email at the top.'); tips.push('Add email, phone, and LinkedIn URL in the header section of your resume.');}
+  if(hasPhone){contactPts+=1;}
+  else{tips.push('Add your Indian phone number: +91 XXXXX XXXXX');}
+  if(hasLinkedIn){contactPts+=1; pros.push('LinkedIn profile included — builds credibility.');}
+  else{tips.push('Add your LinkedIn URL. Many recruiters check this before interviews.');}
+  if(hasGitHub&&(industry==='software'||industry==='data')){contactPts+=1; pros.push('GitHub link included — essential for tech roles.');}
+  else if(!hasGitHub&&(industry==='software'||industry==='data')){tips.push('Add your GitHub profile link — mandatory for tech resumes.');}
+  score+=contactPts;
+  breakdown.contact={label:'Contact Info',val:`${contactPts}/5 complete`,cls:contactPts>=4?'pass':contactPts>=2?'warn':'fail',pts:contactPts,max:5};
 
-    // Animate score ring
-    const ring = document.getElementById('score-ring');
-    const circumference = 289;
-    const offset = circumference - (r.score / 100) * circumference;
-    ring.style.stroke = r.gradeColor;
-    setTimeout(() => { ring.style.strokeDashoffset = offset; }, 50);
+  // 7. GENERIC BUZZWORDS PENALTY (0 to -10pts)
+  const foundGeneric = GENERIC_PHRASES.filter(p=>lower.includes(p));
+  if(foundGeneric.length>=3){
+    score=Math.max(0,score-10);
+    cons.push(`Buzzword overload: "${foundGeneric.slice(0,3).join('", "')}" and ${foundGeneric.length-3} more. These are red flags for experienced recruiters.`);
+    tips.push(`Delete all generic phrases and replace with specific evidence. Instead of "highly motivated", prove it: "Completed 3 personal projects while maintaining 8.4 CGPA."`);
+    breakdown.buzzwords={label:'Buzzwords',val:`${foundGeneric.length} found`,cls:'fail',pts:-10,max:0};
+    rewrites.push({before:`"Highly motivated team player with strong communication skills."`,after:`"Delivered 3 client-facing presentations to 50+ attendees, consistently receiving 4.5+/5 feedback."`});
+  } else if(foundGeneric.length>=1){
+    score=Math.max(0,score-4);
+    cons.push(`Generic phrase: "${foundGeneric[0]}". Cut it — show evidence instead.`);
+    breakdown.buzzwords={label:'Buzzwords',val:`${foundGeneric.length} found`,cls:'warn',pts:-4,max:0};
+  } else {
+    pros.push('No generic buzzwords. Your resume shows rather than tells.');
+    breakdown.buzzwords={label:'Buzzwords',val:'None ✓',cls:'pass',pts:0,max:0};
+  }
 
-    // Count-up animation
-    const scoreEl = document.getElementById('score-display');
-    let current = 0;
-    const step = Math.ceil(r.score / 40);
-    const timer = setInterval(() => {
-      current = Math.min(current + step, r.score);
-      scoreEl.textContent = current;
-      if (current >= r.score) clearInterval(timer);
-    }, 25);
-    scoreEl.style.color = r.gradeColor;
+  // 8. ATS FORMATTING (0–10pts)
+  const badChars = ['★','●','◆','❖','►','▶','✦','⚫','⬛','□','■','▪','▫'];
+  const hasBadChars = badChars.some(c=>text.includes(c));
+  const hasColumns = (text.match(/\|/g)||[]).length>6;
+  const hasAllCaps = (text.match(/\b[A-Z]{5,}\b/g)||[]).length>10;
+  const hasProfessionalEmail = /@gmail|@yahoo|@hotmail|@outlook|@proton/i.test(text);
+  const hasPersonalEmail = /@hotboy|@coolkid|@gamer|@swag|@love/i.test(text);
+  let fmtPts=10, fmtIssues=[];
+  if(hasBadChars){fmtPts-=4; fmtIssues.push('special symbols (★,●,◆)');}
+  if(hasColumns){fmtPts-=3; fmtIssues.push('table/column structure');}
+  if(hasAllCaps){fmtPts-=2; fmtIssues.push('excessive ALL CAPS');}
+  if(hasPersonalEmail){fmtPts-=3; fmtIssues.push('unprofessional email address');}
+  fmtPts = Math.max(0,fmtPts);
+  score += fmtPts;
+  if(!fmtIssues.length){
+    pros.push('ATS-safe formatting — no symbols, tables, or formatting issues detected.');
+    breakdown.formatting={label:'Formatting',val:'ATS Safe ✓',cls:'pass',pts:10,max:10};
+  } else {
+    cons.push(`ATS formatting issues: ${fmtIssues.join(', ')}.`);
+    if(hasBadChars) tips.push('Remove all special symbols (★ ● ◆ etc). ATS systems misread or reject these.');
+    if(hasColumns) tips.push('Remove column layouts and tables. Use a single-column format — ATS systems can\'t parse multi-column resumes.');
+    if(hasPersonalEmail) tips.push('Use a professional email: firstname.lastname@gmail.com or firstname@domain.com.');
+    breakdown.formatting={label:'Formatting',val:`${fmtIssues.length} issue${fmtIssues.length>1?'s':''}`,cls:fmtPts>=7?'warn':'fail',pts:fmtPts,max:10};
+  }
 
-    document.getElementById('score-grade').textContent = r.grade;
-    document.getElementById('score-grade').style.color = r.gradeColor;
-    document.getElementById('score-percentile').textContent = r.percentile;
+  // 9. EDUCATION QUALITY (0–5pts bonus)
+  const hasCGPA = /cgpa|gpa|cumulative/i.test(text);
+  const hasYear = /20(1[8-9]|2[0-9])/i.test(text);
+  const hasUni = /university|college|institute|iit|nit|iim|bits|vit|srm/i.test(lower);
+  let eduPts = 0;
+  if(hasCGPA){eduPts+=2; pros.push('CGPA/GPA included in education — important for Indian recruiters.');}
+  if(hasYear){eduPts+=1;}
+  if(hasUni){eduPts+=2;}
+  score = Math.min(100, score+eduPts);
+  breakdown.education={label:'Education',val:hasCGPA&&hasUni?'Complete ✓':'Needs detail',cls:eduPts>=4?'pass':eduPts>=2?'warn':'fail',pts:eduPts,max:5};
 
-    // Mini bar rows
-    const barData = [
-      { label: 'Strengths', count: r.pros.length, max: 8, color: '#16a34a' },
-      { label: 'Issues',    count: r.cons.length, max: 8, color: '#dc2626' },
-    ];
-    document.getElementById('score-bars').innerHTML = barData.map(b => `
-      <div class="sbar-item">
-        <div class="sbar-label"><span>${b.label}</span><span>${b.count}</span></div>
-        <div class="sbar-track">
-          <div class="sbar-fill" style="width:0%;background:${b.color}"
-               data-target="${Math.min(100, (b.count/b.max)*100)}%"></div>
-        </div>
+  score = Math.max(0, Math.min(100, score));
+
+  // Grade
+  let grade, percentile, gradeColor, badgeCls;
+  if(score>=90){grade='🏆 Elite Resume';percentile='Top 5% of applicants';gradeColor='#15803d';badgeCls='sb-elite';}
+  else if(score>=80){grade='💪 Strong & Competitive';percentile='Top 15% of applicants';gradeColor='#1d4ed8';badgeCls='sb-strong';}
+  else if(score>=65){grade='📋 Average Resume';percentile='Top 35% — passes basic filters';gradeColor='#b45309';badgeCls='sb-avg';}
+  else if(score>=50){grade='⚠ Below Average';percentile='High rejection risk at top companies';gradeColor='#c2410c';badgeCls='sb-low';}
+  else{grade='🚨 Critical — Needs Major Work';percentile='Bottom 30% — likely auto-rejected';gradeColor='#dc2626';badgeCls='sb-risk';}
+
+  return {score,grade,percentile,gradeColor,badgeCls,pros,cons,tips,breakdown,rewrites,foundKeys,missingKeys:missingKeys.slice(0,14),industry:ind.label};
+}
+
+// ── DISPLAY ────────────────────────────────────────────────────────────
+function displayResults(r){
+  document.getElementById('empty-state').style.display='none';
+  document.getElementById('result-wrap').style.display='block';
+  document.getElementById('out-actions').style.display='flex';
+
+  // Animate score ring
+  const ring = document.getElementById('score-ring');
+  const offset = 289-(r.score/100)*289;
+  ring.style.stroke = r.gradeColor;
+  setTimeout(()=>{ ring.style.strokeDashoffset=offset; },50);
+
+  // Count-up
+  const el = document.getElementById('score-display');
+  el.style.color = r.gradeColor;
+  let cur=0; const step=Math.ceil(r.score/40);
+  const t = setInterval(()=>{ cur=Math.min(cur+step,r.score); el.textContent=cur; if(cur>=r.score)clearInterval(t); },20);
+
+  document.getElementById('score-grade').innerHTML = `<span class="score-badge ${r.badgeCls}">${r.grade}</span>`;
+  document.getElementById('score-percentile').textContent = r.percentile;
+
+  // Mini bars
+  const barKeys = ['metrics','keywords','verbs','sections','formatting','length','contact','education'];
+  const barColors = {'pass':'var(--success)','warn':'var(--warn)','fail':'var(--danger)'};
+  document.getElementById('score-bars').innerHTML = barKeys
+    .filter(k=>r.breakdown[k])
+    .map(k=>{
+      const b=r.breakdown[k];
+      const pct = b.max>0 ? Math.max(0,Math.min(100,(b.pts/b.max)*100)) : 0;
+      return `<div class="mini-bar-wrap">
+        <span class="mini-bar-label">${b.label}</span>
+        <div class="mini-bar-track"><div class="mini-bar-fill" style="width:${pct}%;background:${barColors[b.cls]||'var(--ink3)'}"></div></div>
+        <span class="mini-bar-pts">${b.pts>0?'+'+b.pts:b.pts}</span>
+      </div>`;
+    }).join('');
+
+  // Breakdown grid
+  document.getElementById('breakdown-grid').innerHTML = Object.values(r.breakdown)
+    .map(b=>`<div class="bd-cell ${b.cls}"><div class="bd-label">${b.label}</div><div class="bd-val">${b.val}</div><div class="bd-pts">${b.pts>0?'+'+b.pts+'pts':b.pts<0?b.pts+'pts':''}</div></div>`)
+    .join('');
+
+  // Keywords
+  const kwHtml = [
+    ...r.foundKeys.map(k=>`<span class="kw-chip kw-found">✓ ${esc(k)}</span>`),
+    ...r.missingKeys.slice(0,10).map(k=>`<span class="kw-chip kw-missing">${esc(k)}</span>`)
+  ].join('');
+  document.getElementById('kw-chips').innerHTML = kwHtml || '<span style="font-size:13px;color:var(--ink3)">No industry keywords detected.</span>';
+
+  // Rewrite suggestions
+  const rwSec = document.getElementById('rewrite-section');
+  if(r.rewrites.length){
+    document.getElementById('rewrite-list').innerHTML = r.rewrites.slice(0,3).map((rw,i)=>`
+      <div class="rewrite-item">
+        <div class="rw-before"><div class="rw-label">❌ Before</div>${esc(rw.before)}</div>
+        <div class="rw-after"><div class="rw-label">✅ After</div>${esc(rw.after)}</div>
+        <button class="rw-copy-btn" onclick="copyRewrite(this,'${esc(rw.after)}')">Copy improved version →</button>
       </div>`).join('');
-    setTimeout(() => {
-      document.querySelectorAll('.sbar-fill').forEach(el => {
-        el.style.width = el.dataset.target;
-      });
-    }, 200);
-
-    // Breakdown grid
-    document.getElementById('breakdown-grid').innerHTML =
-      Object.values(r.breakdown).map(b => `
-        <div class="bd-item">
-          <div class="bd-label">${b.label}</div>
-          <div class="bd-val ${b.cls}">${b.val}</div>
-        </div>`).join('');
-
-    // Keywords
-    const kwHtml = [
-      ...r.foundKeys.slice(0,10).map(k => `<span class="kw-chip kw-found">✓ ${k}</span>`),
-      ...r.missingKeys.slice(0,8).map(k => `<span class="kw-chip kw-missing">${k}</span>`)
-    ].join('');
-    document.getElementById('kw-chips').innerHTML = kwHtml;
-
-    // Pros
-    document.getElementById('pros-badge').textContent = r.pros.length + ' found';
-    document.getElementById('pros-list').innerHTML =
-      r.pros.map(p => `<div class="fb-item pro"><span class="fb-icon">✅</span>${p}</div>`).join('');
-
-    // Cons
-    document.getElementById('cons-badge').textContent = r.cons.length + ' found';
-    document.getElementById('cons-list').innerHTML =
-      r.cons.map(c => `<div class="fb-item con"><span class="fb-icon">❌</span>${c}</div>`).join('') ||
-      '<div class="fb-item pro"><span class="fb-icon">🎉</span>No critical issues found!</div>';
-
-    // Tips
-    document.getElementById('tips-list').innerHTML =
-      r.tips.length
-        ? r.tips.map(t => `<div class="fb-item tip"><span class="fb-icon">💡</span>${t}</div>`).join('')
-        : '<div class="fb-item pro"><span class="fb-icon">🏆</span>Your resume is already in great shape!</div>';
-
-    // Scroll to results on mobile
-    if (window.innerWidth < 820) {
-      document.querySelector('.output-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    rwSec.style.display='block';
+  } else {
+    rwSec.style.display='none';
   }
 
-  // ── HELPERS ────────────────────────────────────
-  function setLoading(on) {
-    const btn = document.getElementById('analyzeBtn');
-    btn.disabled = on;
-    document.getElementById('btn-spinner').style.display = on ? 'block' : 'none';
-    document.getElementById('btn-icon').style.display    = on ? 'none' : 'inline';
-    document.getElementById('btn-text').textContent      = on ? 'Analyzing...' : 'Analyze My Resume';
-  }
+  // Feedback lists
+  const mkFB = (items,cls,icon) => items.map(t=>`<div class="fb-item ${cls}"><span class="fb-dot">${icon}</span><span>${esc(t)}</span></div>`).join('');
+  document.getElementById('pros-list').innerHTML = mkFB(r.pros,'good','✅');
+  document.getElementById('cons-list').innerHTML = mkFB(r.cons,'bad','❌');
+  document.getElementById('tips-list').innerHTML = mkFB(r.tips,'tip','💡');
+  document.getElementById('pros-badge').textContent = r.pros.length+' found';
+  document.getElementById('cons-badge').textContent = r.cons.length+' to fix';
 
-  function showError(msg) {
-    const el = document.getElementById('error-box');
-    el.textContent = '⚠ ' + msg; el.style.display = 'block';
-  }
-  function hideError() { document.getElementById('error-box').style.display = 'none'; }
+  // Scroll result into view
+  document.getElementById('result-wrap').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
 
-  function resetTool() {
-    document.getElementById('resumeText').value = '';
-    document.getElementById('char-count').textContent = '0 words';
-    document.getElementById('result-wrap').style.display = 'none';
-    document.getElementById('empty-state').style.display = 'flex';
-    document.getElementById('out-actions').style.display = 'none';
-    hideError();
-  }
+// ── SHARE / COPY ────────────────────────────────────────────────────────
+function shareWA(){
+  if(!lastResult) return;
+  const r = lastResult;
+  const safe = r.score>=80?'✅':'⚠';
+  const text = `${safe} My resume scored ${r.score}/100 on Student Toolkit!\n\n📊 Grade: ${r.grade}\n👥 ${r.percentile}\n🔑 Keywords matched: ${r.foundKeys.length}\n\n🔗 Check yours free (no login):\nhttps://studenttoolkit.online/tools/ai-resume-checker.html`;
+  window.open('https://wa.me/?text='+encodeURIComponent(text),'_blank');
+}
 
-  async function copyResults() {
-    const score = document.getElementById('score-display').textContent;
-    const grade = document.getElementById('score-grade').textContent;
-    const pros  = [...document.querySelectorAll('#pros-list .fb-item')].map(e=>e.textContent.trim()).join('\n');
-    const cons  = [...document.querySelectorAll('#cons-list .fb-item')].map(e=>e.textContent.trim()).join('\n');
-    const tips  = [...document.querySelectorAll('#tips-list .fb-item')].map(e=>e.textContent.trim()).join('\n');
-    const out = `Resume Score: ${score}/100\nGrade: ${grade}\n\nStrengths:\n${pros}\n\nIssues:\n${cons}\n\nHow to Improve:\n${tips}`;
-    try { await navigator.clipboard.writeText(out); }
-    catch { const ta = document.createElement('textarea'); ta.value=out; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); }
-    const btn = event.target.closest('.act-btn');
-    btn.textContent = '✓ Copied!';
-    setTimeout(() => { btn.innerHTML = '<svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy'; }, 2000);
-  }
-
-  // ── NAV ────────────────────────────────────────
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
-  }, { passive: true });
-
-  function toggleMenu() {
-    const hb = document.getElementById('hamburger');
-    const mm = document.getElementById('mobile-menu');
-    const open = mm.classList.toggle('open');
-    hb.classList.toggle('open', open);
-    hb.setAttribute('aria-expanded', open);
-  }
-  document.addEventListener('click', e => {
-    const hb = document.getElementById('hamburger');
-    const mm = document.getElementById('mobile-menu');
-    if (!hb.contains(e.target) && !mm.contains(e.target)) {
-      hb.classList.remove('open'); mm.classList.remove('open');
-      hb.setAttribute('aria-expanded', 'false');
-    }
+function copyResults(){
+  if(!lastResult) return;
+  const r = lastResult;
+  const txt = `Resume Score: ${r.score}/100\nGrade: ${r.grade}\n${r.percentile}\n\nStrengths:\n${r.pros.map(p=>'• '+p).join('\n')}\n\nIssues:\n${r.cons.map(c=>'• '+c).join('\n')}\n\nHow to Improve:\n${r.tips.map(t=>'• '+t).join('\n')}\n\nhttps://studenttoolkit.online/tools/ai-resume-checker.html`;
+  navigator.clipboard.writeText(txt).then(()=>{
+    const btn=document.getElementById('copyMainBtn');
+    btn.textContent='✓ Copied!';
+    setTimeout(()=>{btn.innerHTML='<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy';},2000);
   });
+}
 
-  // ── FAQ ────────────────────────────────────────
-  function toggleFaq(h3) {
-    const item = h3.closest('.faq-item');
-    const wasOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-    if (!wasOpen) item.classList.add('open');
-  }
+function copyRewrite(btn, text){
+  navigator.clipboard.writeText(text).then(()=>{
+    btn.textContent='✓ Copied to clipboard!';
+    setTimeout(()=>{ btn.textContent='Copy improved version →'; },2000);
+  });
+}
 
-  // ── SCROLL ANIMATIONS ──────────────────────────
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+function resetTool(){
+  document.getElementById('resumeText').value='';
+  document.getElementById('char-count').textContent='0 words · aim for 400–700';
+  document.getElementById('empty-state').style.display='block';
+  document.getElementById('result-wrap').style.display='none';
+  document.getElementById('out-actions').style.display='none';
+  document.getElementById('error-box').style.display='none';
+  lastResult=null;
+}
+
+function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+// ── FAQ TOGGLE ──────────────────────────────────────────────────────────
+function toggleFaq(h3){
+  const item=h3.closest('.fi');
+  const open=item.classList.contains('open');
+  document.querySelectorAll('.fi.open').forEach(i=>i.classList.remove('open'));
+  if(!open) item.classList.add('open');
+}
+
+// ── SCROLL ANIMATIONS ──────────────────────────────────────────────────
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }});
+},{threshold:.08});
+document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
 </script>
 
 </body>
