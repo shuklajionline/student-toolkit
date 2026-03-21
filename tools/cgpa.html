@@ -191,6 +191,7 @@ footer a:hover{color:var(--ink)}
     <button class="tab-btn active" onclick="switchTab('semester',this)">📊 Semester CGPA</button>
     <button class="tab-btn" onclick="switchTab('cumulative',this)">📈 Cumulative CGPA</button>
     <button class="tab-btn" onclick="switchTab('convert',this)">🔢 CGPA → %</button>
+    <button class="tab-btn" onclick="switchTab('goal',this)">🎯 Goal Tracker</button>
   </div>
 
   <!-- TAB 1: SEMESTER CGPA -->
@@ -326,6 +327,71 @@ footer a:hover{color:var(--ink)}
               <div class="conv-row" style="padding:12px 16px"><span class="conv-cgpa">Anna University<br/><span style="font-size:11px;color:var(--ink4)">(CGPA × 10 − 0.5)</span></span><span class="conv-pct" id="cv-au">—</span></div>
               <div class="conv-row" style="padding:12px 16px"><span class="conv-cgpa">Simple (×10)</span><span class="conv-pct" id="cv-simple">—</span></div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4: GOAL TRACKER -->
+  <div class="tab-panel" id="tab-goal">
+    <div class="card">
+      <div class="card-head"><h2>🎯 Current vs Goal CGPA</h2></div>
+      <div class="card-body">
+        <p style="font-size:13.5px;color:var(--ink3);margin-bottom:18px">Enter your current CGPA and your target. See exactly what GPA you need in remaining credits to reach your goal.</p>
+        <div class="grading-row">
+          <div>
+            <label style="font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);display:block;margin-bottom:6px">Current CGPA</label>
+            <input type="number" class="sub-input" id="goalCurrent" placeholder="e.g. 6.8" min="0" max="10" step="0.01" oninput="calcGoal()"/>
+          </div>
+          <div>
+            <label style="font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);display:block;margin-bottom:6px">Target CGPA</label>
+            <input type="number" class="sub-input" id="goalTarget" placeholder="e.g. 8.0" min="0" max="10" step="0.01" oninput="calcGoal()"/>
+          </div>
+        </div>
+        <div class="grading-row" style="margin-top:0">
+          <div>
+            <label style="font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);display:block;margin-bottom:6px">Credits Completed</label>
+            <input type="number" class="sub-input" id="goalCredits" placeholder="e.g. 80" min="0" max="400" oninput="calcGoal()"/>
+          </div>
+          <div>
+            <label style="font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3);display:block;margin-bottom:6px">Credits Remaining</label>
+            <input type="number" class="sub-input" id="goalRemaining" placeholder="e.g. 80" min="0" max="400" oninput="calcGoal()"/>
+          </div>
+        </div>
+        <div class="result-box" id="goalResult">
+          <div style="margin-bottom:16px">
+            <div style="display:flex;justify-content:space-between;margin-bottom:5px">
+              <span style="font-size:11px;font-weight:600;color:var(--ink3)">Current</span>
+              <span style="font-size:11px;font-weight:600;color:var(--ink3)">Target</span>
+            </div>
+            <div style="height:10px;background:var(--bg4);border-radius:10px;overflow:hidden;position:relative">
+              <div id="goalBarTarget" style="position:absolute;left:0;top:0;height:100%;background:rgba(34,197,94,.25);border-radius:10px;transition:width .6s ease"></div>
+              <div id="goalBarCurrent" style="position:absolute;left:0;top:0;height:100%;background:var(--green);border-radius:10px;transition:width .6s ease"></div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin-bottom:16px;text-align:center">
+            <div>
+              <div style="font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--ink)" id="goalCurrentDisplay">—</div>
+              <div style="font-size:10px;color:var(--ink3);text-transform:uppercase;letter-spacing:.07em;font-weight:600">Current</div>
+            </div>
+            <div>
+              <div id="goalArrow" style="font-size:22px">→</div>
+              <div id="goalGap" style="font-size:12px;font-weight:700;margin-top:2px"></div>
+            </div>
+            <div>
+              <div style="font-family:'Syne',sans-serif;font-size:36px;font-weight:800" id="goalTargetDisplay">—</div>
+              <div style="font-size:10px;color:var(--ink3);text-transform:uppercase;letter-spacing:.07em;font-weight:600">Target</div>
+            </div>
+          </div>
+          <div id="goalRequirement" style="border-radius:var(--rs);margin-bottom:10px;font-size:14px;line-height:1.65"></div>
+          <div id="goalVerdict" style="border-radius:var(--rs);font-size:13.5px;line-height:1.6"></div>
+          <div class="wa-row" style="margin-top:12px">
+            <button class="wa-btn" onclick="shareGoalWA()">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Share Goal
+            </button>
+            <button class="copy-btn" id="goalCopyBtn" onclick="copyGoal()">Copy</button>
           </div>
         </div>
       </div>
@@ -620,6 +686,133 @@ function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').
 });
 // Cumulative tab: start with 2 semesters
 addSem(7.8, 22); addSem(8.1, 22);
+
+
+// ── GOAL TRACKER ──────────────────────────────────────
+let lastGoal = null;
+
+function calcGoal() {
+  const current = parseFloat(document.getElementById('goalCurrent').value);
+  const target = parseFloat(document.getElementById('goalTarget').value);
+  const done = parseFloat(document.getElementById('goalCredits').value);
+  const remaining = parseFloat(document.getElementById('goalRemaining').value);
+
+  const box = document.getElementById('goalResult');
+
+  if (isNaN(current) || isNaN(target) || current < 0 || current > 10 || target < 0 || target > 10) {
+    box.classList.remove('show'); return;
+  }
+
+  box.classList.add('show');
+
+  const gap = (target - current).toFixed(2);
+  const gapNum = parseFloat(gap);
+
+  // Update displays
+  document.getElementById('goalCurrentDisplay').textContent = current.toFixed(2);
+  document.getElementById('goalTargetDisplay').textContent = target.toFixed(2);
+  document.getElementById('goalTargetDisplay').style.color = gapNum > 0 ? 'var(--accent2)' : gapNum < 0 ? 'var(--green)' : 'var(--ink)';
+
+  // Progress bars
+  document.getElementById('goalBarCurrent').style.width = Math.min(100,(current/10)*100)+'%';
+  document.getElementById('goalBarTarget').style.width = Math.min(100,(target/10)*100)+'%';
+
+  // Gap display
+  const gapEl = document.getElementById('goalGap');
+  if (gapNum > 0) {
+    gapEl.textContent = '+'+gap+' needed';
+    gapEl.style.color = 'var(--warn)';
+    document.getElementById('goalArrow').textContent = '🎯';
+  } else if (gapNum < 0) {
+    gapEl.textContent = gap+' above target';
+    gapEl.style.color = 'var(--green)';
+    document.getElementById('goalArrow').textContent = '✅';
+  } else {
+    gapEl.textContent = 'Already at goal';
+    gapEl.style.color = 'var(--green)';
+    document.getElementById('goalArrow').textContent = '🏆';
+  }
+
+  // Requirement calculation
+  const reqEl = document.getElementById('goalRequirement');
+  const verdictEl = document.getElementById('goalVerdict');
+
+  if (!isNaN(done) && !isNaN(remaining) && done >= 0 && remaining > 0) {
+    // CGPA needed in remaining credits:
+    // (current*done + needed*remaining) / (done+remaining) = target
+    // needed = (target*(done+remaining) - current*done) / remaining
+    const neededGPA = ((target * (done + remaining)) - (current * done)) / remaining;
+
+    let reqColor, reqMsg, verdictMsg, verdictColor;
+
+    if (neededGPA <= 0) {
+      reqColor = 'var(--success-l)';
+      reqMsg = `🎉 You've <strong>already achieved</strong> your target! Even scoring 0 in remaining credits won't drop you below ${target}.`;
+      verdictMsg = '✅ Target is already secured. Focus on maximising your overall CGPA.';
+      verdictColor = 'var(--success-l)';
+    } else if (neededGPA > 10) {
+      reqColor = 'var(--danger-l)';
+      reqMsg = `⚠️ <strong>Not mathematically possible</strong> with the remaining ${remaining} credits. Even a perfect 10 GPA won't bridge the gap.`;
+      verdictMsg = '❌ Consider revising your target downward, or check if you can add more credits.';
+      verdictColor = 'var(--danger-l)';
+    } else if (neededGPA >= 9) {
+      reqColor = 'var(--warn-l)';
+      reqMsg = `You need a <strong>${neededGPA.toFixed(2)} GPA</strong> in your remaining ${remaining} credits — that means mostly A/A+ grades (90%+ marks) every semester.`;
+      verdictMsg = '⚡ Ambitious but possible. Requires near-perfect performance with no slack.';
+      verdictColor = 'var(--warn-l)';
+    } else if (neededGPA >= 7.5) {
+      reqColor = 'var(--accent-l)';
+      reqMsg = `You need a <strong>${neededGPA.toFixed(2)} GPA</strong> in your remaining ${remaining} credits — solid A/B+ performance consistently.`;
+      verdictMsg = '💪 Achievable with consistent effort. No more low-scoring semesters.';
+      verdictColor = 'var(--accent-l)';
+    } else {
+      reqColor = 'var(--success-l)';
+      reqMsg = `You need a <strong>${neededGPA.toFixed(2)} GPA</strong> in your remaining ${remaining} credits — very manageable.`;
+      verdictMsg = '✅ Realistic target. Keep your current pace and you will get there.';
+      verdictColor = 'var(--success-l)';
+    }
+
+    reqEl.innerHTML = reqMsg;
+    reqEl.style.background = reqColor;
+    reqEl.style.border = '1px solid rgba(0,0,0,.06)';
+    reqEl.style.padding = '14px';
+    reqEl.style.fontSize = '14px';
+    reqEl.style.lineHeight = '1.65';
+
+    verdictEl.textContent = verdictMsg;
+    verdictEl.style.background = verdictColor;
+    verdictEl.style.border = '1px solid rgba(0,0,0,.06)';
+
+    lastGoal = { current, target, done, remaining, neededGPA };
+  } else {
+    reqEl.innerHTML = '';
+    reqEl.style.background = '';
+    reqEl.style.border = '';
+    verdictEl.textContent = '';
+    verdictEl.style.background = '';
+    lastGoal = { current, target };
+  }
+}
+
+function shareGoalWA() {
+  if (!lastGoal) return;
+  const { current, target, neededGPA } = lastGoal;
+  const gapStr = (target - current) >= 0 ? `+${(target-current).toFixed(2)}` : (target-current).toFixed(2);
+  let line = neededGPA ? `Need ${neededGPA.toFixed(2)} GPA in remaining credits.` : '';
+  const text = `🎯 My CGPA Goal\n\nCurrent: ${current.toFixed(2)} → Target: ${target.toFixed(2)} (${gapStr})\n${line}\n\n📈 Track yours:\nhttps://studenttoolkit.online/tools/cgpa.html`;
+  window.open('https://wa.me/?text='+encodeURIComponent(text),'_blank');
+}
+
+function copyGoal() {
+  if (!lastGoal) return;
+  const { current, target, neededGPA } = lastGoal;
+  const text = `CGPA Goal\nCurrent: ${current.toFixed(2)} | Target: ${target.toFixed(2)}\n${neededGPA ? 'Required GPA in remaining credits: '+neededGPA.toFixed(2) : ''}\nhttps://studenttoolkit.online/tools/cgpa.html`;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('goalCopyBtn');
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => { btn.innerHTML = '<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy'; }, 2000);
+  });
+}
 
 window.addEventListener('scroll',()=>{
   document.querySelector('nav').style.background = window.scrollY>20?'rgba(9,9,11,.98)':'rgba(9,9,11,.9)';
