@@ -18,6 +18,13 @@
        FREE TOOLS  (core product — high priority)
   ═══════════════════════════════════════ -->
   <url>
+    <loc>https://studenttoolkit.online/tools/attendance-dashboard.html</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+  </url>
+
+  <url>
     <loc>https://studenttoolkit.online/tools/attendance.html</loc>
     <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -266,18 +273,25 @@
   <!-- ═══════════════════════════════════════
        STANDALONE PAGES
   ═══════════════════════════════════════ -->
-  <url>
-    <loc>https://studenttoolkit.online/best-free-tools-for-students.html</loc>
-    <lastmod>2026-03-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
 
   <url>
     <loc>https://studenttoolkit.online/blog/brutal-resume-checker-guide.html</loc>
     <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://studenttoolkit.online/sitemap-tools.xml</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://studenttoolkit.online/llms.txt</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
