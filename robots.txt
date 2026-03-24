@@ -1,4 +1,71 @@
+# ─────────────────────────────────────────────
+#  Student Toolkit — robots.txt
+#  studenttoolkit.online
+#  Last updated: March 2026
+# ─────────────────────────────────────────────
+
+# ── Standard web crawlers ──
 User-agent: *
 Allow: /
+Disallow: /offline.html
+Disallow: /news-debug.html
+Disallow: /reel-news.html
+Disallow: /reel-attendance.html
+Disallow: /reel-resume.html
+Disallow: /reel-career.html
+Disallow: /social-posts.html
+Disallow: /students-affected-middle-east-wars.html
+Disallow: /cricket.html
 
+# ── AI / LLM Crawlers — explicitly welcome ──
+# We want AI platforms to index our tools and college data
+# so students get accurate answers when they ask AI about us.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+# ── Sitemaps ──
 Sitemap: https://studenttoolkit.online/sitemap.xml
+Sitemap: https://studenttoolkit.online/sitemap-tools.xml
