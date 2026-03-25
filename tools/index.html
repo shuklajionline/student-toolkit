@@ -1,182 +1,504 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Toolkit Tools | Academic & Career Utilities</title>
-<meta name="description" content="Explore powerful academic and career tools including Resume Checker, Attendance Calculator, CGPA Calculator and Bunk Meter.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Toolkit Tools | Academic & Career Utilities</title>
+  <meta
+    name="description"
+    content="Explore powerful academic and career tools including Resume Checker, Attendance & Bunk Meter, CGPA Calculator, AI Resume Builder, and Communication utilities for students."
+  />
 
-<link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style.css" />
 
-<style>
-body {
-  background: linear-gradient(135deg,#eef2ff,#f8fafc);
-}
+  <style>
+    body {
+      background:
+        radial-gradient(circle at top, #eef2ff 0, #e0f2fe 28%, #f8fafc 70%),
+        linear-gradient(135deg, #eef2ff, #f8fafc);
+      color: #0f172a;
+    }
 
-.tools-hero {
-  text-align:center;
-  padding:60px 20px 40px;
-}
+    .tools-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-.tools-hero h1 {
-  font-size:38px;
-  margin-bottom:10px;
-}
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(248, 250, 252, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.tools-hero p {
-  color:#555;
-  max-width:600px;
-  margin:auto;
-}
+    .navbar .logo img {
+      height: 40px;
+    }
 
-.tools-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
-  margin-top:50px;
-}
+    .tools-main {
+      flex: 1;
+      padding: 32px 18px 56px;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
 
-.tool-card {
-  background:#fff;
-  padding:30px;
-  border-radius:20px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.08);
-  transition:all 0.3s ease;
-  position:relative;
-  overflow:hidden;
-}
+    .tools-hero {
+      text-align: left;
+      padding: 32px 22px 32px;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at top left, rgba(129, 140, 248, 0.15), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(52, 211, 153, 0.15), transparent 55%),
+        #ffffff;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.10);
+      position: relative;
+      overflow: hidden;
+    }
 
-.tool-card:hover {
-  transform:translateY(-6px);
-  box-shadow:0 30px 60px rgba(0,0,0,0.12);
-}
+    .tools-hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(79, 70, 229, 0.08);
+      color: #4f46e5;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
 
-.tool-icon {
-  font-size:30px;
-  margin-bottom:15px;
-}
+    .tools-hero h1 {
+      font-size: clamp(28px, 3vw + 10px, 36px);
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
 
-.tool-card h3 {
-  margin-bottom:10px;
-}
+    .tools-hero h1 span {
+      color: #4f46e5;
+    }
 
-.tool-card p {
-  color:#666;
-  font-size:14px;
-  margin-bottom:20px;
-}
+    .tools-hero p {
+      color: #4b5563;
+      max-width: 520px;
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
 
-.tool-card a {
-  text-decoration:none;
-  font-weight:600;
-  color:#4f46e5;
-}
+    .tools-hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      color: #6b7280;
+      margin-top: 4px;
+    }
 
-.tool-badge {
-  position:absolute;
-  top:15px;
-  right:15px;
-  background:#4f46e5;
-  color:#fff;
-  padding:4px 10px;
-  font-size:12px;
-  border-radius:20px;
-}
+    .tools-hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(248, 250, 252, 0.9);
+      font-size: 12px;
+      color: #4b5563;
+    }
 
-.category-title {
-  margin-top:60px;
-  font-size:24px;
-  font-weight:600;
-}
+    .tools-hero-pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
+    }
 
-@media(max-width:768px){
-  .tools-hero h1 { font-size:28px; }
-}
-</style>
+    .tools-hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .tools-hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(120deg, #4f46e5, #22c55e);
+      color: #f9fafb;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 15px 40px rgba(15, 23, 42, 0.3);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+    }
+
+    .tools-hero-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 46px rgba(15, 23, 42, 0.35);
+      opacity: 0.96;
+    }
+
+    .tools-hero-link {
+      font-size: 13px;
+      color: #4b5563;
+      text-decoration: none;
+    }
+
+    .tools-hero-link span {
+      color: #4f46e5;
+      font-weight: 500;
+    }
+
+    .category-title {
+      margin-top: 40px;
+      font-size: 18px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #111827;
+    }
+
+    .category-title span {
+      font-size: 20px;
+    }
+
+    .category-subtitle {
+      font-size: 13px;
+      color: #6b7280;
+      margin-top: 4px;
+      margin-bottom: 6px;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .tool-card {
+      background: #ffffff;
+      padding: 22px 20px 20px;
+      border-radius: 18px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .tool-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.12), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.18s ease;
+      pointer-events: none;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
+      border-color: rgba(79, 70, 229, 0.7);
+    }
+
+    .tool-card:hover::before {
+      opacity: 1;
+    }
+
+    .tool-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #4f46e5;
+      color: #ffffff;
+      padding: 3px 9px;
+      font-size: 11px;
+      border-radius: 999px;
+      box-shadow: 0 12px 30px rgba(79, 70, 229, 0.55);
+    }
+
+    .tool-icon {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .tool-chip {
+      font-size: 11px;
+      color: #6b7280;
+      background: #eff6ff;
+      border-radius: 999px;
+      padding: 2px 9px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .tool-card h3 {
+      margin: 0 0 4px;
+      font-size: 16px;
+      color: #111827;
+    }
+
+    .tool-card p {
+      color: #6b7280;
+      font-size: 13px;
+      margin: 0 0 10px;
+    }
+
+    .tool-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    .tool-card a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #4f46e5;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .tool-card a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 14px 18px 22px;
+      text-align: center;
+      font-size: 12px;
+      color: #6b7280;
+      background: rgba(248, 250, 252, 0.9);
+      backdrop-filter: blur(8px);
+    }
+
+    @media (max-width: 768px) {
+      .tools-main {
+        padding-top: 24px;
+      }
+
+      .tools-hero {
+        padding: 22px 18px 24px;
+        text-align: left;
+      }
+
+      .tools-hero p {
+        max-width: none;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="tools-shell">
+    <header class="navbar">
+      <div class="logo">
+        <a href="../index.html">
+          <img src="../student-toolkit-logo.png" alt="Student Toolkit logo" />
+        </a>
+      </div>
+    </header>
 
-<header class="navbar">
-  <div class="logo">
-    <a href="../index.html">
-      <img src="../student-toolkit-logo.png" style="height:40px;">
-    </a>
+    <main class="tools-main">
+      <section class="tools-hero">
+        <div class="tools-hero-kicker">
+          <span>Student Toolkit</span>
+          <span>Tools Hub</span>
+        </div>
+        <h1>All your student <span>tools</span> in one place.</h1>
+        <p>
+          Smart academic calculators, brutal resume audits, and communication utilities built specifically for serious students in India.
+        </p>
+        <div class="tools-hero-cta-row">
+          <a href="#tools-list" class="tools-hero-cta">
+            Browse all tools
+            <span>↘</span>
+          </a>
+          <a href="../index.html" class="tools-hero-link">
+            Back to home <span>↗</span>
+          </a>
+        </div>
+        <div class="tools-hero-meta">
+          <div class="tools-hero-pill">
+            <span class="tools-hero-pill-dot"></span>
+            100% free · No sign up
+          </div>
+          <div>Attendance · CGPA · Resume · Letters · More</div>
+        </div>
+      </section>
+
+      <section id="tools-list" aria-label="Student Toolkit tools">
+        <!-- Academic -->
+        <h2 class="category-title">
+          <span>🎓</span> Academic Tools
+        </h2>
+        <p class="category-subtitle">
+          Plan your bunks safely and keep track of CGPA without Excel or complex formulas.
+        </p>
+
+        <div class="tools-grid">
+          <!-- Attendance & Bunk Meter -->
+          <article class="tool-card">
+            <div class="tool-icon">📊</div>
+            <div class="tool-chip">Attendance · Bunk Meter</div>
+            <h3>Attendance & Bunk Meter</h3>
+            <p>
+              Instantly check your attendance percentage, see how many classes you can safely bunk, and calculate how many you must attend to hit your target.
+            </p>
+            <div class="tool-footer">
+              <a href="attendance.html">
+                Open Tool →
+              </a>
+              <span>Daily class planning</span>
+            </div>
+          </article>
+
+          <!-- CGPA Calculator -->
+          <article class="tool-card">
+            <div class="tool-icon">📈</div>
+            <div class="tool-chip">CGPA · Credits</div>
+            <h3>CGPA Calculator</h3>
+            <p>
+              Simple credit-based CGPA calculator built for university students. Add your subjects, credits and grades — see your CGPA in seconds.
+            </p>
+            <div class="tool-footer">
+              <a href="cgpa.html">
+                Open Tool →
+              </a>
+              <span>Semester & overall CGPA</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Career -->
+        <h2 class="category-title">
+          <span>💼</span> Career Intelligence Tools
+        </h2>
+        <p class="category-subtitle">
+          Get recruiter-style feedback and prepare your resume for ATS before you hit apply.
+        </p>
+
+        <div class="tools-grid">
+          <!-- Brutal Resume Audit / AI Resume Checker -->
+          <article class="tool-card">
+            <div class="tool-badge">Flagship</div>
+            <div class="tool-icon">🧠</div>
+            <div class="tool-chip">AI Resume Checker</div>
+            <h3>Brutal Resume Audit</h3>
+            <p>
+              Run an ATS-style audit of your resume with a score out of 100, keyword analysis and a clear roadmap to fix issues and improve your profile.
+            </p>
+            <div class="tool-footer">
+              <a href="ai-resume-checker.html">
+                Run Audit →
+              </a>
+              <span>ATS-style scoring</span>
+            </div>
+          </article>
+
+          <!-- Guide: How Resume Audit Works -->
+          <article class="tool-card">
+            <div class="tool-icon">📘</div>
+            <div class="tool-chip">Guide</div>
+            <h3>How Resume Audit Works</h3>
+            <p>
+              Learn how the checker evaluates structure, metrics and industry alignment so you know exactly what the score means and how to increase it.
+            </p>
+            <div class="tool-footer">
+              <a href="../blog/brutal-resume-checker-guide.html">
+                Read Guide →
+              </a>
+              <span>Deep dive explainer</span>
+            </div>
+          </article>
+
+          <!-- AI Resume Builder (Coming soon) -->
+          <article class="tool-card">
+            <div class="tool-icon">🤖</div>
+            <div class="tool-chip">AI Resume Builder</div>
+            <h3>AI Resume Builder</h3>
+            <p>
+              Professional ATS-friendly resume generator to create polished resumes from scratch. Launching soon — watch this space.
+            </p>
+            <div class="tool-footer">
+              <a href="ai-resume-generator.html">
+                Coming Soon →
+              </a>
+              <span>Under development</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Communication -->
+        <h2 class="category-title">
+          <span>📩</span> Communication Tools
+        </h2>
+        <p class="category-subtitle">
+          Generate clean, professional letters and emails for professors, colleges and internships in seconds.
+        </p>
+
+        <div class="tools-grid">
+          <!-- Letter / Email / Internship Writer -->
+          <article class="tool-card">
+            <div class="tool-badge">Flagship</div>
+            <div class="tool-icon">✉️</div>
+            <div class="tool-chip">Letters · Emails · Applications</div>
+            <h3>Leave, Professor Email, Internship Writer</h3>
+            <p>
+              One communication tool for leave applications, professor emails, internship letters and more — formatted the way Indian colleges expect.
+            </p>
+            <div class="tool-footer">
+              <a href="letter-writer.html">
+                Open Tool →
+              </a>
+              <span>Ready-to-send drafts</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Student Toolkit · Built for serious students.</p>
+    </footer>
   </div>
-</header>
 
-<section class="container">
-
-<div class="tools-hero">
-  <h1>Student Toolkit – Tools Hub</h1>
-  <p>Smart academic calculators and career intelligence tools designed for serious students.</p>
-</div>
-
-<h2 class="category-title">🎓 Academic Tools</h2>
-
-<div class="tools-grid">
-
-  <div class="tool-card">
-    <div class="tool-icon">📊</div>
-    <h3>Attendance & Bunk Meter</h3>
-    <p>Track attendance percentage, predict bunk impact and calculate required lectures.</p>
-    <a href="attendance.html">Open Tool →</a>
-  </div>
-
-  <div class="tool-card">
-    <div class="tool-icon">📈</div>
-    <h3>CGPA Calculator</h3>
-    <p>Credit-based CGPA calculator built for university students.</p>
-    <a href="cgpa.html">Open Tool →</a>
-  </div>
-
-</div>
-
-<h2 class="category-title">💼 Career Intelligence Tools</h2>
-
-<div class="tools-grid">
-
-  <div class="tool-card">
-    <div class="tool-badge">Flagship</div>
-    <div class="tool-icon">🧠</div>
-    <h3>Brutal Resume Audit</h3>
-    <p>Strict recruiter-style resume analysis with industry benchmarking and improvement roadmap.</p>
-    <a href="ai-resume-checker.html">Run Audit →</a>
-  </div>
-
-<div class="tool-card">
-  <div class="tool-icon">📘</div>
-  <h3>How Resume Audit Works</h3>
-  <p>Understand how our ATS scoring system evaluates structure, metrics and industry alignment.</p>
-  <a href="../blog/brutal-resume-checker-guide.html">Read Guide →</a>
-</div>
-  
-  <div class="tool-card">
-    <div class="tool-icon">🤖</div>
-    <h3>AI Resume Builder</h3>
-    <p>Professional ATS-friendly resume generator. Launching soon.</p>
-    <a href="ai-resume-generator.html">Coming Soon →</a>
-  </div>
-
-</div>
-
-<h2 class="category-title">📩 Communcation Tools</h2>
-
-<div class="tools-grid">
-
-  <div class="tool-card">
-    <div class="tool-badge">Flagship</div>
-    <div class="tool-icon">✉️</div>
-    <h3>Leave, Professor Email, Internship Writer.</h3>
-    <p>Professional Communcation tool, academic letters and application</p>
-    <a href="letter-writer.html">Open Tool →</a>
-  </div> 
-  
-</section>
-
-<footer class="footer">
-  <p>© 2026 Student Toolkit | Built for serious students.</p>
-</footer>
-
+  <script>
+    // Smooth scroll for "Browse all tools"
+    document.querySelectorAll('a[href="#tools-list"]').forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const el = document.getElementById("tools-list");
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  </script>
 </body>
 </html>
