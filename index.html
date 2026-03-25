@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
 <title>Student Toolkit — Free Tools for Students + BBA & MBA College Directory India 2026</title>
-<meta name="description" content="India's #1 free student platform. Free attendance calculator, CGPA calculator, AI resume checker, letter writer, career path finder — PLUS India's most honest BBA & MBA college directory. 100+ colleges. 100% free. No sign-up."/>
+<meta name="description" content="India's #1 free student platform. Campus Insider: honest reviews of 160+ colleges — real salaries, attendance truth, hostel reality. Plus free attendance calc, CGPA calc, AI resume checker, career path finder, college predictor. 100% free, no sign-up."/>
 <meta name="keywords" content="free student tools India, attendance calculator, CGPA calculator, AI resume checker, letter writer students, BBA MBA college directory India 2026, IIM Ahmedabad review, FMS Delhi MBA, XLRI review, SSCBS BBA review, best MBA college India, NIRF 2025, student toolkit online, career path finder India, free tools college students India"/>
 <meta name="author" content="Student Toolkit"/>
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"/>
@@ -34,6 +34,12 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Free Student Tools","itemListElement":[{"@type":"ListItem","position":1,"name":"Attendance Calculator","url":"https://studenttoolkit.online/tools/attendance.html","description":"Free attendance percentage calculator for Indian college students"},{"@type":"ListItem","position":2,"name":"CGPA Calculator","url":"https://studenttoolkit.online/tools/cgpa.html","description":"Free CGPA calculator for all university grading systems"},{"@type":"ListItem","position":3,"name":"AI Resume Checker","url":"https://studenttoolkit.online/tools/ai-resume-checker.html","description":"Free AI-powered ATS resume score out of 100"},{"@type":"ListItem","position":4,"name":"Letter & Email Writer","url":"https://studenttoolkit.online/tools/letter-writer.html","description":"Free professional letter and email generator for students"},{"@type":"ListItem","position":5,"name":"AI Career Path Finder","url":"https://studenttoolkit.online/tools/career-path-finder.html","description":"Free AI career guidance for Indian students by stream and interest"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Student Toolkit?","acceptedAnswer":{"@type":"Answer","text":"Student Toolkit is India's free platform for college students — attendance calculator, CGPA calculator, AI resume checker, letter writer, AI career path finder, and India's most complete BBA & MBA college directory. Everything is 100% free with no sign-up required."}},{"@type":"Question","name":"How does the attendance calculator work?","acceptedAnswer":{"@type":"Answer","text":"Enter total classes held and classes attended. Instantly see your attendance percentage, how many classes you can safely skip while staying above 75%, or how many you need to attend."}},{"@type":"Question","name":"Which is India's #1 MBA college in 2026?","acceptedAnswer":{"@type":"Answer","text":"IIM Ahmedabad — NIRF 2025 #1, MBAUniverse 2026 #1, average placement ₹35+ LPA. FMS Delhi offers best ROI: ₹2.32L fees with ₹29–34 LPA placements."}},{"@type":"Question","name":"Which is India's best BBA college by ROI?","acceptedAnswer":{"@type":"Answer","text":"SSCBS Delhi — total fees ₹72,000 for 3 years, average placement ₹7–9 LPA. Payback under 2 months. No private college matches this value."}},{"@type":"Question","name":"Are Student Toolkit tools free forever?","acceptedAnswer":{"@type":"Answer","text":"Yes. All tools are permanently free — no paywalls, no premium tiers, no subscription, no sign-up. Ever."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://studenttoolkit.online/"},{"@type":"ListItem","position":2,"name":"Free Tools","item":"https://studenttoolkit.online/tools/"},{"@type":"ListItem","position":3,"name":"Blog","item":"https://studenttoolkit.online/blog/"}]}</script>
+
+<!-- AI Platform Discovery -->
+<link rel="llms" href="/llms.txt" type="text/plain"/>
+<meta name="ai-content-type" content="educational tools, college data, student resources"/>
+<meta name="ai-target-audience" content="Indian college students"/>
+<meta name="ai-platform" content="Student Toolkit India — free student tools and honest college reviews"/>
 
 <link rel="manifest" href="/manifest.json?v=3"/>
 <meta name="mobile-web-app-capable" content="yes"/>
@@ -348,7 +354,7 @@ body::after{
 /* Bottom quick links strip */
 .hero-strip{
   border-top:1px solid var(--fog);
-  display:grid;grid-template-columns:repeat(6,1fr);
+  display:grid;grid-template-columns:repeat(7,1fr);
   position:relative;z-index:1;
 }
 .strip-item{
@@ -910,6 +916,172 @@ footer{background:#050507;border-top:1px solid var(--fog)}
 .delay-1{transition-delay:.08s}
 .delay-2{transition-delay:.16s}
 .delay-3{transition-delay:.24s}
+
+/* ── CAMPUS INSIDER MEGA CARD ── */
+.ci-mega{
+  background:var(--ink);
+  border:1px solid rgba(255,255,255,.06);
+  border-bottom:3px solid var(--fire);
+  border-radius:var(--card-r,14px);
+  padding:0;overflow:hidden;
+  position:relative;
+  transition:transform .2s,box-shadow .2s;
+  text-decoration:none;display:block;
+}
+.ci-mega:hover{transform:translateY(-3px);box-shadow:0 16px 56px rgba(230,48,0,.2)}
+.ci-mega-top{
+  background:linear-gradient(135deg,#0d0d10 0%,#1a0f0a 40%,#0d0d10 100%);
+  padding:36px 36px 28px;
+  position:relative;overflow:hidden;
+}
+.ci-mega-top::before{
+  content:'';position:absolute;top:-80px;right:-80px;
+  width:360px;height:360px;
+  background:radial-gradient(circle,rgba(230,48,0,.22) 0%,transparent 65%);
+  pointer-events:none;
+}
+.ci-mega-top::after{
+  content:'';position:absolute;bottom:-60px;left:20%;
+  width:280px;height:280px;
+  background:radial-gradient(circle,rgba(240,165,0,.08) 0%,transparent 65%);
+  pointer-events:none;
+}
+.ci-mega-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(230,48,0,.12);
+  border:1px solid rgba(230,48,0,.25);
+  color:rgba(230,48,0,.9);
+  font-size:11px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:5px 14px;border-radius:20px;
+  margin-bottom:18px;position:relative;
+}
+.ci-mega-eyebrow::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--fire);
+  animation:ci-pulse 2s ease-in-out infinite;
+}
+@keyframes ci-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.ci-mega-grid{
+  display:grid;grid-template-columns:1fr auto;
+  gap:28px;align-items:start;position:relative;
+}
+@media(max-width:640px){.ci-mega-grid{grid-template-columns:1fr}.ci-mega-counter{display:none!important}}
+.ci-mega-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(40px,7vw,72px);
+  letter-spacing:-.01em;
+  color:var(--chalk);
+  line-height:.95;
+  margin-bottom:6px;
+}
+.ci-mega-title span{color:var(--fire)}
+.ci-mega-sub{
+  font-size:12px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;
+  color:rgba(242,237,230,.28);
+  font-family:'Fira Code',monospace;
+  margin-bottom:18px;
+}
+.ci-mega-desc{
+  font-size:15.5px;
+  color:rgba(242,237,230,.58);
+  line-height:1.72;
+  max-width:600px;
+  margin-bottom:22px;
+}
+.ci-mega-desc strong{color:var(--chalk)}
+.ci-mega-pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px}
+.ci-pill{
+  font-size:12px;font-weight:600;
+  padding:5px 13px;border-radius:20px;
+}
+.ci-pill-red{background:rgba(230,48,0,.1);border:1px solid rgba(230,48,0,.22);color:rgba(230,48,0,.9)}
+.ci-pill-green{background:rgba(127,255,110,.07);border:1px solid rgba(127,255,110,.18);color:var(--lime)}
+.ci-pill-cyan{background:rgba(0,229,212,.07);border:1px solid rgba(0,229,212,.15);color:var(--cyan)}
+.ci-pill-gold{background:rgba(240,165,0,.08);border:1px solid rgba(240,165,0,.18);color:var(--gold)}
+.ci-pill-muted{background:rgba(242,237,230,.05);border:1px solid rgba(242,237,230,.1);color:rgba(242,237,230,.45)}
+/* INSIGHT CARDS */
+.ci-insights{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:10px;margin-bottom:26px;
+}
+@media(max-width:700px){.ci-insights{grid-template-columns:1fr 1fr}}
+@media(max-width:440px){.ci-insights{grid-template-columns:1fr}}
+.ci-insight{
+  background:rgba(0,0,0,.35);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:10px;padding:13px 15px;
+  transition:border-color .15s;
+}
+.ci-insight:hover{border-color:rgba(230,48,0,.3)}
+.ci-insight-label{
+  font-size:10px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(230,48,0,.75);margin-bottom:6px;
+}
+.ci-insight-text{
+  font-size:13px;color:rgba(242,237,230,.58);line-height:1.55;
+}
+.ci-insight-text b{color:rgba(242,237,230,.85)}
+/* CTA ROW */
+.ci-cta-row{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.ci-cta-primary{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--fire);color:#fff;
+  padding:13px 24px;border-radius:9px;
+  font-size:14.5px;font-weight:700;
+  letter-spacing:.02em;
+  transition:background .15s,transform .12s;
+}
+.ci-mega:hover .ci-cta-primary{background:var(--ember,#ff4517);transform:translateX(2px)}
+.ci-cta-secondary{
+  font-size:13px;font-weight:600;
+  color:rgba(242,237,230,.4);
+  display:flex;align-items:center;gap:5px;
+}
+/* COUNTER */
+.ci-mega-counter{text-align:right}
+.ci-counter-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(60px,8vw,96px);
+  color:var(--fire);line-height:1;
+  letter-spacing:-.02em;
+}
+.ci-counter-label{
+  font-size:10px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(242,237,230,.25);
+  margin-top:2px;
+}
+/* STATS FOOTER */
+.ci-mega-stats{
+  background:rgba(0,0,0,.4);
+  border-top:1px solid rgba(255,255,255,.05);
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:0;
+}
+@media(max-width:600px){.ci-mega-stats{grid-template-columns:repeat(3,1fr)}}
+.ci-stat{
+  padding:14px 16px;
+  border-right:1px solid rgba(255,255,255,.05);
+  text-align:center;
+}
+.ci-stat:last-child{border-right:none}
+.ci-stat-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:22px;color:var(--chalk);
+  line-height:1;margin-bottom:3px;
+}
+.ci-stat-lbl{
+  font-size:9.5px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(242,237,230,.28);
+}
+
 </style>
 </head>
 
@@ -936,6 +1108,7 @@ footer{background:#050507;border-top:1px solid var(--fog)}
   </nav>
   <div class="mobile-nav" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
     <a href="#tools" onclick="closeMenu()">🛠 All Tools</a>
+    <a href="tools/campus-insider.html" onclick="closeMenu()" style="color:var(--fire);font-weight:700">👁 Campus Insider — Real Reviews<span class="m-tag" style="background:rgba(230,48,0,.15);color:var(--fire);border-color:rgba(230,48,0,.25)">NEW</span></a>
     <a href="tools/college-predictor.html" onclick="closeMenu()" style="color:var(--gold);font-weight:700">🏛 College Predictor — CUET, CAT, JEE<span class="m-tag" style="background:rgba(240,165,0,.2);color:var(--gold);border-color:rgba(240,165,0,.3)">NEW</span></a>
     <a href="colleges/" onclick="closeMenu()" style="color:var(--fire);font-weight:700">🏛 College Directory — BBA &amp; MBA<span class="m-tag">NEW</span></a>
     <a href="tools/career-path-finder.html" onclick="closeMenu()" style="color:var(--fire);font-weight:700">🎯 Career Path Finder<span class="m-tag">NEW</span></a>
@@ -943,6 +1116,7 @@ footer{background:#050507;border-top:1px solid var(--fog)}
     <a href="tools/cgpa.html" onclick="closeMenu()">📈 CGPA Calculator</a>
     <a href="tools/ai-resume-checker.html" onclick="closeMenu()">🧠 AI Resume Checker</a>
     <a href="tools/letter-writer.html" onclick="closeMenu()">✍️ Letter Writer</a>
+    <a href="tools/salary-calculator.html" onclick="closeMenu()" style="color:var(--lime);font-weight:700">💰 Salary Calculator — CTC to In-Hand<span class="m-tag" style="background:rgba(127,255,110,.08);color:var(--lime);border-color:rgba(127,255,110,.2)">NEW</span></a>
     <a href="blog/bba-mba-colleges-india-rankings.html" onclick="closeMenu()" style="color:var(--gold)">🏛 BBA &amp; MBA Rankings<span class="m-tag" style="background:rgba(240,165,0,.2);color:var(--gold);border-color:rgba(240,165,0,.3)">HOT</span></a>
     <a href="#blog" onclick="closeMenu()">📝 Blog</a>
     <a href="#suggest" onclick="closeMenu()">💡 Suggest a Tool</a>
@@ -994,7 +1168,7 @@ footer{background:#050507;border-top:1px solid var(--fog)}
         <div style="width:42px;height:42px;border-radius:8px;background:var(--ash);border:1px solid var(--fog);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">⚡</div>
         <div style="flex:1;min-width:0">
           <div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:var(--chalk);letter-spacing:-.02em">Free Student Tools</div>
-          <div style="font-family:'Fira Code',monospace;font-size:10px;color:rgba(242,237,230,.3);margin-top:2px">Attendance · CGPA · AI Resume · Letter Writer</div>
+          <div style="font-family:'Fira Code',monospace;font-size:10px;color:rgba(242,237,230,.3);margin-top:2px">Attendance · CGPA · Resume · Salary · Career</div>
         </div>
         <div style="font-size:14px;color:rgba(242,237,230,.25)">→</div>
       </a>
@@ -1018,6 +1192,7 @@ footer{background:#050507;border-top:1px solid var(--fog)}
     <a href="tools/ai-resume-checker.html" class="strip-item"><span class="strip-icon">🧠</span>AI Resume<span class="strip-badge sb-ai">AI</span></a>
     <a href="tools/career-path-finder.html" class="strip-item"><span class="strip-icon">🎯</span>Career Finder<span class="strip-badge sb-new">New</span></a>
     <a href="tools/college-predictor.html" class="strip-item"><span class="strip-icon">🏛</span>College Predictor<span class="strip-badge sb-new">New</span></a>
+    <a href="tools/campus-insider.html" class="strip-item"><span class="strip-icon">👁</span>Campus Insider<span class="strip-badge sb-hot">🔥</span></a>
     <a href="colleges/" class="strip-item"><span class="strip-icon">🏫</span>Colleges</a>
   </nav>
 </section>
@@ -1030,55 +1205,179 @@ footer{background:#050507;border-top:1px solid var(--fog)}
         <div class="sec-kicker" style="color:rgba(242,237,230,.3)"><span>▶</span> Free Student Tools</div>
         <h2 class="sec-h2" id="tools-h2">Tools that <em>actually</em><br/>solve student problems</h2>
       </div>
-      <a href="#tools" class="sec-link">6 free tools · Zero logins →</a>
+      <a href="tools/campus-insider.html" class="sec-link">Campus Insider — India's Honest College Reviews →</a>
     </div>
 
     <ul class="tools-grid" role="list">
+
+      <!-- ★ CAMPUS INSIDER — MEGA HERO CARD -->
+      <li style="grid-column:1/-1">
+        <a href="tools/campus-insider.html" class="ci-mega fade-up"
+           aria-label="Campus Insider — India's Honest College Review Platform"
+           title="Campus Insider — Real placement salaries, bunkability, hostel truth, 160+ colleges">
+
+          <!-- TOP SECTION -->
+          <div class="ci-mega-top">
+            <div class="ci-mega-eyebrow">👁 India's First Honest College Review Platform</div>
+
+            <div class="ci-mega-grid">
+              <!-- LEFT CONTENT -->
+              <div>
+                <h3 class="ci-mega-title">CAMPUS<br/><span>INSIDER</span></h3>
+                <div class="ci-mega-sub">Anonymous · Unfiltered · Research-Backed · 160+ Colleges</div>
+
+                <p class="ci-mega-desc">
+                  The truth about Indian colleges that <strong>no brochure, YouTube video, or paid ranking</strong> will ever tell you.
+                  Real in-hand salary data. Actual attendance enforcement (not the rule — the reality).
+                  Hostel conditions. Mess food. And the <strong>red flags you need to know before joining</strong>.
+                </p>
+
+                <div class="ci-mega-pills">
+                  <span class="ci-pill ci-pill-red">💰 Real In-Hand Salaries</span>
+                  <span class="ci-pill ci-pill-green">🎭 100% Anonymous</span>
+                  <span class="ci-pill ci-pill-cyan">📊 NIRF + Our Rankings</span>
+                  <span class="ci-pill ci-pill-gold">🏆 ROI-Based Rankings</span>
+                  <span class="ci-pill ci-pill-muted">🚩 Red Flag Directory</span>
+                  <span class="ci-pill ci-pill-muted">23 IITs · 19 NITs · 9 NLUs · 8 IIMs</span>
+                </div>
+
+                <!-- INSIGHT PREVIEW CARDS -->
+                <div class="ci-insights">
+                  <div class="ci-insight">
+                    <div class="ci-insight-label">💰 IIM-B Placement Truth</div>
+                    <div class="ci-insight-text">Median <b>₹32.5L</b> — only IIM to publish it. McKinsey BA: <b>₹2.8L/month</b> in-hand. 29 international placements (2024 record).</div>
+                  </div>
+                  <div class="ci-insight">
+                    <div class="ci-insight-label">📅 DTU CSE Reality</div>
+                    <div class="ci-insight-text"><b>RFID proxy detection since 2023.</b> 3 students debarred last semester. CSE: zero tolerance. Mechanical: reportedly relaxed.</div>
+                  </div>
+                  <div class="ci-insight">
+                    <div class="ci-insight-label">🏛 FMS Delhi ROI</div>
+                    <div class="ci-insight-text"><b>₹2.32L fees + ₹32L avg = 13.8x ROI.</b> But: zero hostel, tiny campus, 1950s infra. Best career outcome, worst campus life.</div>
+                  </div>
+                  <div class="ci-insight">
+                    <div class="ci-insight-label">⚠️ NMIMS Mumbai Warning</div>
+                    <div class="ci-insight-text">Published avg <b>₹19L</b> hides real median <b>₹12-14L.</b> Fees ₹24L = ROI below 1x. BFSI placement genuinely strong though.</div>
+                  </div>
+                  <div class="ci-insight">
+                    <div class="ci-insight-label">🔬 BITS Pilani Truth</div>
+                    <div class="ci-insight-text">Practice School is real gold. <b>40%+ batch → US MS/PhD.</b> Pilani isolation is brutal — Rajasthan desert, nothing outside campus.</div>
+                  </div>
+                  <div class="ci-insight">
+                    <div class="ci-insight-label">⚖️ NLU Jodhpur Rising</div>
+                    <div class="ci-insight-text">Highest NLU package <b>₹30L</b> (2023-24) — beat NLSIU that year. NIRF #4. Jodhpur remote but trajectory is strong.</div>
+                  </div>
+                </div>
+
+                <div class="ci-cta-row">
+                  <span class="ci-cta-primary">
+                    Read Honest Reviews
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </span>
+                  <span class="ci-cta-secondary">
+                    <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                    Write a Review
+                  </span>
+                </div>
+              </div>
+
+              <!-- RIGHT COUNTER -->
+              <div class="ci-mega-counter">
+                <div class="ci-counter-num">160+</div>
+                <div class="ci-counter-label">Colleges</div>
+                <div style="margin-top:16px;text-align:right">
+                  <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:rgba(242,237,230,.25);line-height:1">8+</div>
+                  <div style="font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(242,237,230,.18)">Honest Reviews</div>
+                </div>
+                <div style="margin-top:14px;text-align:right">
+                  <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:rgba(242,237,230,.25);line-height:1">12</div>
+                  <div style="font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(242,237,230,.18)">Categories</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STATS FOOTER -->
+          <div class="ci-mega-stats">
+            <div class="ci-stat"><div class="ci-stat-num">23</div><div class="ci-stat-lbl">IITs</div></div>
+            <div class="ci-stat"><div class="ci-stat-num">19</div><div class="ci-stat-lbl">NITs</div></div>
+            <div class="ci-stat"><div class="ci-stat-num">8</div><div class="ci-stat-lbl">IIMs</div></div>
+            <div class="ci-stat"><div class="ci-stat-num">9</div><div class="ci-stat-lbl">NLUs</div></div>
+            <div class="ci-stat"><div class="ci-stat-num">10</div><div class="ci-stat-lbl">AIIMS+Med</div></div>
+            <div class="ci-stat" style="background:rgba(230,48,0,.05)"><div class="ci-stat-num" style="color:var(--fire)">Free</div><div class="ci-stat-lbl">Always</div></div>
+          </div>
+
+        </a>
+      </li>
+
+      <!-- COLLEGE PREDICTOR — big card --> big card -->
       <li>
-        <a href="tools/career-path-finder.html" class="tool-card big fade-up" aria-label="Open AI Career Path Finder" title="Free AI Career Path Finder for Indian Students">
+        <a href="tools/college-predictor.html" class="tool-card big fade-up" aria-label="Open College Predictor" title="Free College Predictor India 2026 — CUET CAT JEE IPMAT XAT MH-CET CLAT NIFT">
           <div class="tc-top">
-            <div class="tc-ico">🎯</div>
+            <div class="tc-ico">🏛</div>
             <div class="tc-head">
-              <h3>AI Career Path Finder</h3>
-              <p>Tell us your stream, subjects &amp; interests → get personalised AI career recommendations with salary ranges, entrance exams, and step-by-step roadmaps. Made for India. Completely free.</p>
+              <h3>College Predictor</h3>
+              <p>Enter your CUET, CAT, JEE, MH-CET, CLAT, NMAT or NIFT percentile → see which 110+ colleges you can get into. Real 2026 cutoffs. Category-wise. Compare + save colleges.</p>
             </div>
           </div>
           <div class="tc-foot">
-            <div style="display:flex;gap:8px"><span class="tc-tag t-ai">AI-Powered</span></div>
+            <div style="display:flex;gap:8px">
+              <span class="tc-tag t-hot">🔥 9 Exams</span>
+              <span class="tc-tag t-free">110+ Colleges</span>
+            </div>
             <div class="tc-arr">→</div>
           </div>
         </a>
       </li>
+
+      <!-- AI CAREER PATH FINDER -->
       <li>
-        <a href="tools/ai-resume-checker.html" class="tool-card fade-up delay-1" aria-label="Open AI Resume Checker" title="Free AI Resume Checker ATS Score for Students">
-          <div class="tc-top"><div class="tc-ico">🧠</div><div class="tc-head"><h3>AI Resume Checker</h3><p>Score out of 100 + real recruiter-style feedback. Fix your resume before applying for internships and jobs.</p></div></div>
+        <a href="tools/career-path-finder.html" class="tool-card fade-up delay-1" aria-label="Open AI Career Path Finder" title="Free AI Career Path Finder for Indian Students">
+          <div class="tc-top"><div class="tc-ico">🎯</div><div class="tc-head"><h3>AI Career Path Finder</h3><p>Stream + interests → AI career recommendations with salary ranges, entrance exams, and step-by-step roadmaps. Made for India.</p></div></div>
           <div class="tc-foot"><span class="tc-tag t-ai">AI-Powered</span><div class="tc-arr">→</div></div>
         </a>
       </li>
+
+      <!-- AI RESUME CHECKER -->
       <li>
-        <a href="tools/attendance.html" class="tool-card fade-up delay-2" aria-label="Open Attendance Calculator" title="Free Attendance Calculator College Students India">
-          <div class="tc-top"><div class="tc-ico">📊</div><div class="tc-head"><h3>Attendance Calculator</h3><p>Instant attendance percentage. Know exactly how many classes you can skip without dropping below 75%.</p></div></div>
+        <a href="tools/ai-resume-checker.html" class="tool-card fade-up delay-2" aria-label="Open AI Resume Checker" title="Free AI Resume Checker ATS Score for Students">
+          <div class="tc-top"><div class="tc-ico">🧠</div><div class="tc-head"><h3>AI Resume Checker</h3><p>Score out of 100 + recruiter-style feedback. Fix your ATS issues before applying for internships and jobs.</p></div></div>
+          <div class="tc-foot"><span class="tc-tag t-ai">AI-Powered</span><div class="tc-arr">→</div></div>
+        </a>
+      </li>
+
+      <!-- ATTENDANCE -->
+      <li>
+        <a href="tools/attendance.html" class="tool-card fade-up" aria-label="Open Attendance Calculator" title="Free Attendance Calculator College Students India">
+          <div class="tc-top"><div class="tc-ico">📊</div><div class="tc-head"><h3>Attendance Calculator</h3><p>Instant attendance %. Know exactly how many classes you can skip and stay above 75%.</p></div></div>
           <div class="tc-foot"><span class="tc-tag t-free">Free</span><div class="tc-arr">→</div></div>
         </a>
       </li>
+
+      <!-- CGPA -->
       <li>
-        <a href="tools/cgpa.html" class="tool-card fade-up" aria-label="Open CGPA Calculator" title="Free CGPA Calculator University Students">
-          <div class="tc-top"><div class="tc-ico">📈</div><div class="tc-head"><h3>CGPA Calculator</h3><p>Semester CGPA from grades and credit hours. Supports all Indian university grading systems.</p></div></div>
+        <a href="tools/cgpa.html" class="tool-card fade-up delay-1" aria-label="Open CGPA Calculator" title="Free CGPA Calculator University Students">
+          <div class="tc-top"><div class="tc-ico">📈</div><div class="tc-head"><h3>CGPA Calculator</h3><p>Semester CGPA + Goal Tracker. All Indian university grading systems. Cumulative CGPA + conversion.</p></div></div>
           <div class="tc-foot"><span class="tc-tag t-free">Free</span><div class="tc-arr">→</div></div>
         </a>
       </li>
+
+      <!-- LETTER WRITER -->
       <li>
-        <a href="tools/letter-writer.html" class="tool-card fade-up delay-1" aria-label="Open Letter Writer" title="Free Student Letter Email Writer">
+        <a href="tools/letter-writer.html" class="tool-card fade-up delay-2" aria-label="Open Letter Writer" title="Free Student Letter Email Writer">
           <div class="tc-top"><div class="tc-ico">✍️</div><div class="tc-head"><h3>Letter &amp; Email Writer</h3><p>Leave applications, professor emails, internship request letters — professional output in seconds.</p></div></div>
           <div class="tc-foot"><span class="tc-tag t-free">Free</span><div class="tc-arr">→</div></div>
         </a>
       </li>
+
+      <!-- SALARY CALCULATOR -->
       <li>
-        <a href="tools/college-predictor.html" class="tool-card fade-up delay-2" aria-label="Open College Predictor" title="Free College Predictor India 2026 — CUET CAT JEE IPMAT XAT">
-          <div class="tc-top"><div class="tc-ico">🏛</div><div class="tc-head"><h3>College Predictor</h3><p>Enter your CUET, CAT, JEE, IPMAT or XAT percentile and see which colleges you can get into. Real 2026 cutoffs, category-wise.</p></div></div>
+        <a href="tools/salary-calculator.html" class="tool-card fade-up" aria-label="Open Salary Calculator" title="Free Salary Calculator India — CTC to In-Hand 2026">
+          <div class="tc-top"><div class="tc-ico">💰</div><div class="tc-head"><h3>Salary Calculator</h3><p>Enter your CTC — get your exact monthly in-hand salary. Calculates PF, HRA, income tax (new vs old regime), professional tax. Nothing hidden.</p></div></div>
           <div class="tc-foot"><div style="display:flex;gap:8px"><span class="tc-tag t-hot">🔥 New</span></div><div class="tc-arr">→</div></div>
         </a>
       </li>
+
     </ul>
   </div>
 </section>
@@ -1087,7 +1386,7 @@ footer{background:#050507;border-top:1px solid var(--fog)}
 <section class="stats-band" aria-label="Platform statistics">
   <div class="stats-inner">
     <div class="stat-block fade-up"><span class="s-num">10K<span class="s-fire">+</span></span><div class="s-lbl">Tools Used (Since 2025)</div></div>
-    <div class="stat-block fade-up delay-1"><span class="s-num">100<span class="s-fire">+</span></span><div class="s-lbl">Colleges Reviewed</div></div>
+    <div class="stat-block fade-up delay-1"><span class="s-num">160<span class="s-fire">+</span></span><div class="s-lbl">Colleges Listed</div></div>
     <div class="stat-block fade-up delay-2"><span class="s-num">0<span class="s-fire">₹</span></span><div class="s-lbl">Cost — Free Forever</div></div>
     <div class="stat-block fade-up delay-3"><span class="s-num">100<span class="s-fire">%</span></span><div class="s-lbl">No Sponsored Content</div></div>
   </div>
@@ -1293,6 +1592,7 @@ footer{background:#050507;border-top:1px solid var(--fog)}
       <a href="tools/ai-resume-checker.html">AI Resume Checker</a>
       <a href="tools/letter-writer.html">Letter &amp; Email Writer</a>
       <a href="tools/career-path-finder.html">Career Path Finder</a>
+          <a href="about.html">About Us</a>
     </div>
     <div class="foot-col">
       <h4>Blog &amp; Rankings</h4>
