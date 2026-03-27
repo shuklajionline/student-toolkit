@@ -279,7 +279,231 @@ const colleges = [
         pros: ["Great for Commerce", "Bangalore Location", "Good Placements"],
         cons: ["Very Strict Attendance", "Small Campus"],
         fees: "₹8-12L", placementAvg: "₹6-10 LPA"
-    }
+    },
+    {
+    id: "srm", name: "SRM Institute", city: "Chennai", rating: 7.2,
+    review: "80% placement rate sounds good but average is only 5-7 LPA. Infrastructure is excellent but feels like a factory. 30,000+ students means you're just a number. Good if you want placement security, bad if you want personal attention.",
+    placements: 7.5, infrastructure: 9.0, faculty: 6.0, campusLife: 7.0,
+    pros: ["80% Placement Rate with Mass Recruiters", "World-Class Infrastructure - AC Classrooms, Modern Labs", "Diverse Crowd from 30+ Countries", "Unlimited Placement Attempts - Sit for 50+ Companies"],
+    cons: ["₹18L Fees but Average Package Only ₹5-7 LPA - ROI Disaster", "30,000 Students - You're Invisible, No Personal Attention", "75% Attendance Mandatory - Can't Skip Even if Sick", "Faculty Mostly Fresh PhDs - No Industry Experience"],
+    fees: "₹18L total", placementAvg: "₹5-7 LPA"
+},
+{
+    id: "thapar", name: "Thapar Institute", city: "Others", rating: 8.0,
+    review: "Legacy institute with strong industry connections. Placements consistently 10-16 LPA. Patiala location sucks - nearest mall is 30km away. Academics are TOUGH - 40% attendance debarment rule. Alumni network is POWERFUL in PSUs and core companies.",
+    placements: 8.5, infrastructure: 7.5, faculty: 8.0, campusLife: 7.0,
+    pros: ["10-16 LPA Placements - Core + IT Both Strong", "Alumni in BHEL, IOCL, NTPC - PSU Placements Guaranteed", "Strong Industry Connect - 200+ Companies Visit", "Research Opportunities with Foreign Universities"],
+    cons: ["Patiala Location - Literally Nothing to Do, Nearest Mall 30km", "40% Attendance = Debarment - They KICK YOU OUT", "₹22L Fees - Very Expensive for Small Town", "Ragging Still Exists Despite Claims - Seniors Control Everything"],
+    fees: "₹22L total", placementAvg: "₹10-16 LPA"
+},
+{
+    id: "kiit", name: "KIIT University", city: "Others", rating: 7.2,
+    review: "Huge 500-acre campus in Bhubaneswar. Placements decent (5-9 LPA) but 85% attendance is BRUTAL - they debar 200+ students yearly. Infrastructure is top-notch but Bhubaneswar has ZERO internship opportunities. Good for East India students who want safety.",
+    placements: 7.0, infrastructure: 9.0, faculty: 6.5, campusLife: 7.0,
+    pros: ["500-Acre Campus - Own Bus Fleet, 10 Cafeterias, Olympic Pool", "Mass Recruiters Galore - TCS, Infosys, Wipro Hire 500+ Yearly", "100% Placement Assistance - Training Starts from 1st Year", "Safe Campus - 24/7 Security, CCTV Everywhere"],
+    cons: ["85% Attendance Mandatory - 200+ Students Debarred Every Year", "Bhubaneswar = Zero Internships - Can't Get Industry Exposure", "₹20L Fees but Average Package ₹5-9 LPA - Bad ROI", "Faculty Turnover High - Teachers Leave Every 2 Years"],
+    fees: "₹20L total", placementAvg: "₹5-9 LPA"
+},
+{
+    id: "upes", name: "UPES Dehradun", city: "Others", rating: 7.5,
+    review: "Specialized in Energy/Petroleum. Core placements good (6-10 LPA) but ONLY if you're in Petroleum/Aerospace. CSE gets average packages. Dehradun location is BEAUTIFUL but expensive - rent is ₹15k/month. Fees are INSANE for what you get.",
+    placements: 7.0, infrastructure: 8.5, faculty: 7.0, campusLife: 8.0,
+    pros: ["#1 for Petroleum Engineering - ONGC, Shell Recruit Directly", "Dehradun Location - Hill Station, Scenic Beauty, Pleasant Weather", "Industry Immersion - 6 Month Internships in Oil Companies", "Modern Infrastructure - Smart Classrooms, Advanced Labs"],
+    cons: ["₹20L Fees - One of Highest in India for Private College", "Core-Only Focus - CSE/IT Students Get Left Behind", "Dehradun is EXPENSIVE - ₹15k/month Rent, High Living Cost", "Placements Dropping - Oil Industry Downstream, Packages Fell 30%"],
+    fees: "₹20L total", placementAvg: "₹6-10 LPA"
+},
+{
+    id: "chitkara", name: "Chitkara University", city: "Others", rating: 7.0,
+    review: "Good infrastructure in Chandigarh region. Placements average (4-8 LPA) - mostly local Punjab companies. 75% attendance strict. Campus life is decent but fees don't justify placements. Good ONLY if you're from Punjab and want to stay there.",
+    placements: 6.5, infrastructure: 8.0, faculty: 6.5, campusLife: 7.0,
+    pros: ["Modern Infrastructure - AC Labs, Library with 50,000 Books", "Chandigarh Proximity - 30 Minutes to City", "Practical Learning - Less Theory, More Projects", "Decent for BCA/MCA - Good IT Placements"],
+    cons: ["₹14L Fees but Average Package ₹4-8 LPA - Worst ROI", "Regional Placements - Mostly Punjab Companies, No MNCs", "75% Attendance Strict - Can't Miss Classes", "Faculty Quality Poor - 60% Are Part-Time Teachers"],
+    fees: "₹14L total", placementAvg: "₹4-8 LPA"
+},
+{
+    id: "amrita", name: "Amrita Vishwa Vidyapeetham", city: "Chennai", rating: 7.5,
+    review: "Multiple campuses - Coimbatore is BEST, Bangalore is okay, Chennai is AVERAGE. Placements decent (5-9 LPA). Discipline is MILITARY-STRICT - no phones in class, no dating, no parties. Good for serious students, HELL for those who want freedom.",
+    placements: 7.0, infrastructure: 8.0, faculty: 7.0, campusLife: 6.0,
+    pros: ["NAAC A+ Accredited - Top Private University Status", "Strong Research - Funded Projects Worth ₹100+ Crores", "Discipline = Good Academics - 80% Students Get 8+ CGPA", "Placement Training from Day 1 - Aptitude, Coding, Soft Skills"],
+    cons: ["MILITARY Discipline - No Phones in Class, No Dating, No Parties", "80% Attendance MANDATORY - Less = Debarment + Parents Called", "₹16L Fees but Average Package ₹5-9 LPA - Mediocre ROI", "Campus Life = ZERO - No Fests, No Cultural Events, No Freedom"],
+    fees: "₹16L total", placementAvg: "₹5-9 LPA"
+},
+{
+    id: "sastra", name: "SASTRA University", city: "Chennai", rating: 7.8,
+    review: "Thanjavur location is REMOTE - 350km from Chennai, nearest city 50km away. Placements surprisingly good (6-10 LPA). Academics are RIGOROUS - you'll study 12 hours daily. Infrastructure is excellent. Good ONLY if you're serious about studying.",
+    placements: 7.5, infrastructure: 8.5, faculty: 7.5, campusLife: 6.5,
+    pros: ["Excellent Placements - Microsoft, Amazon, Google Visit", "Infrastructure - ₹500 Crore Campus, Best in Tamil Nadu", "Strong Academics - Alumni in Top PhD Programs Worldwide", "Research Opportunities - Undergrad Students Publish Papers"],
+    cons: ["Thanjavur Location - 350km from Chennai, Literally NOWHERE", "Academic Pressure - 12+ Hours Study Daily, No Social Life", "₹16L Fees - Expensive for Remote Location", "Strict Rules - No Outside Food, No Late Night Movement"],
+    fees: "₹16L total", placementAvg: "₹6-10 LPA"
+},
+{
+    id: "pict", name: "PICT Pune", city: "Pune", rating: 8.0,
+    review: "Top private in Pune after COEP. Placements good (7-12 LPA). Pune location is PERFECT - IT hub, startups, internships everywhere. Fees are HIGH but worth it for CSE. Campus is small but well-maintained. Competition is FIERCE - everyone is coding.",
+    placements: 8.0, infrastructure: 8.0, faculty: 7.5, campusLife: 7.5,
+    pros: ["Pune Location - IT Hub, 1000+ Tech Companies, Internships Easy", "Strong Coding Culture - ACM ICPC, Hackathons Weekly", "7-12 LPA Placements - Good for Private College", "Alumni in FAANG - Strong Network in Top Companies"],
+    cons: ["₹16L Fees - Very High for Pune Private College", "Small Campus - 2 Acres Only, No Sports Facilities", "Extreme Competition - 500 CSE Students Fighting for Same Jobs", "Faculty Average - Most Don't Have Industry Experience"],
+    fees: "₹16L total", placementAvg: "₹7-12 LPA"
+},
+{
+    id: "symbiosis-p", name: "Symbiosis Pune", city: "Pune", rating: 8.0,
+    review: "PREMIUM university for MBA/Media. Placements excellent for MBA (15-25 LPA) but average for BBA (6-10 LPA). Fees are INSANE - ₹20L+. Campus life is VIBRANT - fests, parties, networking. Good ONLY if you can afford it and want management career.",
+    placements: 8.0, infrastructure: 9.0, faculty: 8.0, campusLife: 9.0,
+    pros: ["MBA Placements 15-25 LPA - Top Recruiters: McKinsey, BCG, Amazon", "Pune Location - Perfect Weather, Great City, Endless Opportunities", "Vibrant Campus Life - Symbiosis Fests are LEGENDARY", "Strong Alumni Network - CEOs, Entrepreneurs Everywhere"],
+    cons: ["₹20-25L Fees - Among Highest in India", "BBA Placements Only 6-10 LPA - Not Worth the Fees", "Elite Crowd - Rich Kids, Show-Off Culture Everywhere", "Academics Secondary - Networking and Parties Priority"],
+    fees: "₹20-25L total", placementAvg: "₹6-10 LPA (BBA), ₹15-25 LPA (MBA)"
+},
+{
+    id: "nmims", name: "NMIMS Mumbai", city: "Mumbai", rating: 8.0,
+    review: "Top private MBA college. Placements EXCELLENT (15-25 LPA) but B.Tech is AVERAGE (6-10 LPA). Mumbai location = unmatched exposure but COST OF LIVING is brutal - ₹20k/month minimum. Fees are HIGH. Good for MBA, AVOID for B.Tech.",
+    placements: 8.5, infrastructure: 8.5, faculty: 8.0, campusLife: 8.0,
+    pros: ["MBA Placements 15-25 LPA - Top Finance/Consulting Companies", "Mumbai Location - Financial Capital, Unmatched Exposure", "Strong Industry Connect - Guest Lectures by CEOs", "Alumni in Top Positions - Powerful Network"],
+    cons: ["₹25L Fees - One of Highest in India", "B.Tech Placements Only 6-10 LPA - Not Worth Fees at All", "Mumbai Cost of Living - ₹20k/month Minimum for Basics", "Extreme Competition - 5000+ Students, Limited Seats in Top Companies"],
+    fees: "₹25L total", placementAvg: "₹6-10 LPA (B.Tech), ₹15-25 LPA (MBA)"
+},
+{
+    id: "vjti", name: "VJTI Mumbai", city: "Mumbai", rating: 8.3,
+    review: "Government college in Mumbai = GOLDEN TICKET. Fees only ₹1L but placements 8-13 LPA - BEST ROI in India. Campus is OLD and small but location in Matunga is PRIME. Mumbai exposure + low fees + good placements = DREAM COMBO.",
+    placements: 8.5, infrastructure: 6.5, faculty: 8.0, campusLife: 8.0,
+    pros: ["₹1L Fees but 8-13 LPA Placements - BEST ROI in India", "Mumbai Location - Matunga, Heart of City, Everything Accessible", "Government College Tag - Reserved Seats, Scholarships Easy", "Strong Alumni - VJTI Tag Respected in Mumbai Companies"],
+    cons: ["Old Infrastructure - Buildings from 1900s, No AC, Poor Labs", "Small Campus - 3 Acres Only, No Hostel for Most Students", "Crowded - 200 Students in One Classroom", "Mumbai Cost of Living - Rent ₹15-20k/month if No Hostel"],
+    fees: "₹1L total", placementAvg: "₹8-13 LPA"
+},
+{
+    id: "spce", name: "SPCE Mumbai", city: "Mumbai", rating: 8.0,
+    review: "Government college in Andheri = another GOLDEN TICKET. Fees ₹1L, placements 7-12 LPA. Location is PERFECT - Andheri is IT/Finance hub. Campus is TINY - 2 acres only. Good ROI but infrastructure is PATHETIC.",
+    placements: 8.0, infrastructure: 6.0, faculty: 7.5, campusLife: 7.5,
+    pros: ["₹1L Fees, 7-12 LPA Placements - Amazing ROI", "Andheri Location - IT Hub, 500+ Companies Nearby", "Government College - Scholarships, Reserved Seats", "Mumbai Exposure - Internships, Networking, Jobs Easy"],
+    cons: ["TINY Campus - 2 Acres, No Playground, No Hostel", "Old Infrastructure - Crumbling Buildings, No Modern Labs", "Crowded - 150 Students Per Class, No Personal Attention", "Mumbai Cost - Rent ₹15k/month, Travel ₹3k/month"],
+    fees: "₹1L total", placementAvg: "₹7-12 LPA"
+},
+{
+    id: "bms", name: "BMS College Bangalore", city: "Bangalore", rating: 8.0,
+    review: "Old reputed college in Basavanagudi. Placements good (7-12 LPA). Location is PRIME - South Bangalore, near everything. Campus is OLD but has character. Fees reasonable for Karnataka students. Good alternative to RVCE.",
+    placements: 8.0, infrastructure: 7.0, faculty: 7.5, campusLife: 7.5,
+    pros: ["Basavanagudi Location - Prime South Bangalore, Near Everything", "7-12 LPA Placements - Decent for Private College", "Legacy College - 60+ Years Old, Strong Alumni", "₹4L Fees (Govt Quota) - Affordable for Karnataka Students"],
+    cons: ["Old Infrastructure - Buildings from 1960s, No Modern Facilities", "Small Campus - 5 Acres Only, Limited Sports", "Crowded - 6000+ Students, Competition is Fierce", "Management Quota ₹16L - Very Expensive"],
+    fees: "₹4L (Govt) / ₹16L (Mgmt)", placementAvg: "₹7-12 LPA"
+},
+{
+    id: "msram", name: "MS Ramaiah Bangalore", city: "Bangalore", rating: 7.8,
+    review: "Reputed private college. Placements decent (6-11 LPA). Infrastructure is GOOD but fees are HIGH - ₹16L. Bangalore location is perfect. Faculty is AVERAGE - most are PhDs with no industry experience. Good backup if you don't get RVCE/BMS.",
+    placements: 7.5, infrastructure: 8.0, faculty: 7.0, campusLife: 7.5,
+    pros: ["Bangalore Location - IT Capital, 5000+ Tech Companies", "Good Infrastructure - Modern Labs, Digital Library", "6-11 LPA Placements - Decent for Private College", "Strong Alumni Network in Bangalore Companies"],
+    cons: ["₹16L Fees - Very High for Average Placements", "Faculty Mostly Fresh PhDs - Zero Industry Experience", "Extreme Competition - 3000+ Students Fighting for Jobs", "Ramaiah Group = Business First, Education Second"],
+    fees: "₹16L total", placementAvg: "₹6-11 LPA"
+},
+{
+    id: "cummins", name: "Cummins College Pune", city: "Pune", rating: 8.0,
+    review: "Women's ONLY engineering college. Placements good (6-10 LPA). Infrastructure is EXCELLENT - best in Pune. Fees are HIGH - ₹14L. SAFEST option for girls - no ragging, no harassment, strict security. Good if you're serious about engineering.",
+    placements: 8.0, infrastructure: 9.0, faculty: 7.5, campusLife: 7.0,
+    pros: ["Women's Only - 100% Safe, No Ragging, No Harassment", "Excellent Infrastructure - AC Classrooms, Modern Labs, Best in Pune", "6-10 LPA Placements - Good for Women's College", "Pune Location - Safe City, Good for Girls"],
+    cons: ["₹14L Fees - Very High", "Women's Only - No Co-ed Experience, Limited Networking", "Strict Rules - No Late Entry, No Boys in Campus", "Small Campus - 3 Acres Only, Limited Facilities"],
+    fees: "₹14L total", placementAvg: "₹6-10 LPA"
+},
+{
+    id: "nirma", name: "Nirma University", city: "Gujarat", rating: 7.8,
+    review: "Top private in Gujarat. Placements good (6-12 LPA). Infrastructure is EXCELLENT - modern, clean, organized. Ahmedabad location is great. Fees are HIGH - ₹16L. Good for Gujarat students who want to stay in state.",
+    placements: 7.5, infrastructure: 9.0, faculty: 7.5, campusLife: 8.0,
+    pros: ["Top Private in Gujarat - Best Option After IITs/NITs", "Excellent Infrastructure - ₹500 Crore Campus, Modern Everything", "6-12 LPA Placements - Good for Gujarat", "Ahmedabad Location - Developed City, Good Opportunities"],
+    cons: ["₹16L Fees - Very High for Gujarat", "Regional Focus - Mostly Gujarat Companies Recruit", "Less National Recognition - Outside Gujarat, Nobody Knows", "Faculty Average - Good Infrastructure, Poor Teaching"],
+    fees: "₹16L total", placementAvg: "₹6-12 LPA"
+},
+{
+    id: "ddu", name: "DDU Nadiad", city: "Gujarat", rating: 7.0,
+    review: "Government college in small town. Placements AVERAGE (5-8 LPA). Fees are LOW - ₹50K. Nadiad is TINY - population 2 lakh, nothing to do. Infrastructure is DECENT. Good ONLY if you're from Gujarat and want low fees.",
+    placements: 6.5, infrastructure: 7.0, faculty: 6.5, campusLife: 6.5,
+    pros: ["₹50K Fees - Cheapest Engineering in Gujarat", "Government College - Scholarships, Reserved Seats", "Decent Placements - 5-8 LPA for Government College", "Small Batch - 60 Students, Personal Attention Possible"],
+    cons: ["Nadiad Location - Tiny Town, Population 2 Lakh, NOTHING to Do", "Placements Only 5-8 LPA - Lowest in Gujarat", "Old Infrastructure - Buildings from 1990s, Poor Labs", "No Campus Life - No Fests, No Events, No Activities"],
+    fees: "₹50K total", placementAvg: "₹5-8 LPA"
+},
+{
+    id: "anna", name: "Anna University Chennai", city: "Chennai", rating: 7.8,
+    review: "Top state university. Placements decent (6-10 LPA). Fees are VERY LOW - ₹50K. Campus is OLD and crowded. Chennai location is good. Good for Tamil Nadu students who want affordable education. Competition is FIERCE - 50,000+ students.",
+    placements: 7.5, infrastructure: 6.5, faculty: 7.5, campusLife: 7.0,
+    pros: ["₹50K Fees - Cheapest in Tamil Nadu", "Government University - Recognition, Scholarships", "6-10 LPA Placements - Decent for State University", "Strong Alumni - Anna University Tag Respected in TN"],
+    cons: ["50,000+ Students - You're a Number, No Personal Attention", "Old Infrastructure - Buildings from 1970s, Poor Maintenance", "Extreme Competition - 5000 Students Per Branch", "Chennai Weather - Hot and Humid 10 Months a Year"],
+    fees: "₹50K total", placementAvg: "₹6-10 LPA"
+},
+{
+    id: "jntu", name: "JNTU Hyderabad", city: "Hyderabad", rating: 7.5,
+    review: "Top state university in Telangana. Placements average (5-9 LPA). Fees are LOW - ₹50K. Campus is HUGE but OLD. Hyderabad location is PERFECT - IT hub. Good for Telangana students. Faculty is AVERAGE - outdated syllabus.",
+    placements: 7.0, infrastructure: 6.5, faculty: 7.0, campusLife: 7.5,
+    pros: ["₹50K Fees - Very Affordable", "Hyderabad Location - IT Hub, 2000+ Tech Companies", "Government University - Recognition, Scholarships", "Large Alumni Network in Hyderabad Companies"],
+    cons: ["Outdated Syllabus - Teaching 20-Year-Old Technology", "Placements Only 5-9 LPA - Below Hyderabad Average", "Old Infrastructure - Poor Labs, No Modern Equipment", "50,000+ Students - No Personal Attention"],
+    fees: "₹50K total", placementAvg: "₹5-9 LPA"
+},
+{
+    id: "bits-hyderabad", name: "BITS Hyderabad", city: "Hyderabad", rating: 8.5,
+    review: "BITS Pilani Hyderabad campus. Placements EXCELLENT (18-24 LPA). Fees are VERY HIGH - ₹24L. Infrastructure is MODERN. Good alternative to Pilani campus. Hyderabad location is great. Same degree as Pilani but lower cutoff.",
+    placements: 8.5, infrastructure: 8.5, faculty: 8.5, campusLife: 8.0,
+    pros: ["18-24 LPA Placements - Same as BITS Pilani", "BITS Tag - Recognized Nationwide, Alumni in Top Companies", "Hyderabad Location - IT Hub, Great Opportunities", "Modern Infrastructure - New Campus, Best Facilities"],
+    cons: ["₹24L Fees - Among Highest in India", "Newer Campus - Less Alumni Network than Pilani", "Lower Cutoff than Pilani - Slightly Less Competitive", "Hyderabad Campus = Less Exposure than Pilani Campus"],
+    fees: "₹24L total", placementAvg: "₹18-24 LPA"
+},
+{
+    id: "iiit-bangalore", name: "IIIT Bangalore", city: "Bangalore", rating: 8.8,
+    review: "Premium IIIT. Placements EXCELLENT (15-22 LPA). Fees are HIGH - ₹18L. Bangalore location is PERFECT - Electronic City, 1000+ tech companies nearby. Small campus but great industry connect. Good for CSE/AI-ML.",
+    placements: 9.0, infrastructure: 8.0, faculty: 9.0, campusLife: 8.0,
+    pros: ["15-22 LPA Placements - Top Recruiters: Google, Microsoft, Amazon", "Bangalore Location - Electronic City, Unmatched Industry Connect", "Premium IIIT - Focused on CS, No Distractions", "Strong Research - AI/ML, Data Science Specializations"],
+    cons: ["₹18L Fees - Very High", "Small Campus - 10 Acres Only, Limited Facilities", "Only CSE/IT - No Other Branches, Limited Diversity", "Extreme Competition - 200 Students, All Fighting for Same Jobs"],
+    fees: "₹18L total", placementAvg: "₹15-22 LPA"
+},
+{
+    id: "iiit-pune", name: "IIIT Pune", city: "Pune", rating: 8.5,
+    review: "Premium IIIT in Pune. Placements EXCELLENT (12-18 LPA). Fees are HIGH - ₹18L. Pune location is GREAT - IT hub, good weather. Campus is NEW but growing. Good for CSE. Same model as IIIT Hyderabad but newer.",
+    placements: 9.0, infrastructure: 8.0, faculty: 8.5, campusLife: 8.0,
+    pros: ["12-18 LPA Placements - Top Tech Companies Visit", "Pune Location - IT Hub, Great Weather, Good City", "Premium IIIT - Focused on CS, Industry-Oriented", "New Campus - Modern Infrastructure, Latest Equipment"],
+    cons: ["₹18L Fees - Very High", "Newer Institute - Less Alumni Network", "Small Batch - 120 Students, Limited Diversity", "Campus Still Developing - Not Fully Built Yet"],
+    fees: "₹18L total", placementAvg: "₹12-18 LPA"
+},
+{
+    id: "nit-warangal", name: "NIT Warangal", city: "Others", rating: 8.5,
+    review: "Historic NIT with strong coding culture. Placements excellent (10-16 LPA). Campus is BEAUTIFUL - 200 acres, green, peaceful. Warangal location is okay - 150km from Hyderabad. Good ROI - fees ₹5L. Coding culture is INSANE - everyone codes.",
+    placements: 8.5, infrastructure: 8.0, faculty: 8.0, campusLife: 8.5,
+    pros: ["10-16 LPA Placements - On Par with Lower IITs", "₹5L Fees - Amazing ROI for NIT", "200-Acre Campus - Beautiful, Green, Peaceful", "Insane Coding Culture - ACM ICPC, Hackathons, Competitive Programming"],
+    cons: ["Warangal Location - 150km from Hyderabad, Small Town", "Old Infrastructure - Some Buildings from 1960s", "Extreme Competition - Everyone is a Coder, Pressure is High", "Less Industry Connect - Companies Don't Visit Often"],
+    fees: "₹5L total", placementAvg: "₹10-16 LPA"
+},
+{
+    id: "nit-surathkal", name: "NIT Surathkal", city: "Others", rating: 8.5,
+    review: "Beautiful coastal NIT. Placements excellent (10-16 LPA). Campus is STUNNING - beach view, 200 acres. Mangalore location is GREAT - coastal city, good weather. Fees ₹5L. Campus life is AMAZING - fests, clubs, beach. Best NIT for overall experience.",
+    placements: 8.5, infrastructure: 8.5, faculty: 8.0, campusLife: 9.0,
+    pros: ["10-16 LPA Placements - Excellent for NIT", "₹5L Fees - Great ROI", "Stunning Campus - Beach View, 200 Acres, Best in India", "Amazing Campus Life - Fests, Clubs, Beach, Parties"],
+    cons: ["Mangalore Weather - Heavy Rain 4 Months, Humid Rest of Year", "Coastal Location - Far from Major Cities, Limited Industry", "Tourist Destination - Campus Always Crowded with Visitors", "Less Academic Focus - Campus Life > Studies"],
+    fees: "₹5L total", placementAvg: "₹10-16 LPA"
+},
+{
+    id: "nit-calicut", name: "NIT Calicut", city: "Others", rating: 8.3,
+    review: "Good NIT in Kerala. Placements consistent (9-14 LPA). Campus is HUGE - 400 acres, green. Calicut location is okay - coastal city. Fees ₹5L. Academics are STRONG - good for higher studies. Campus life is peaceful - less partying, more studying.",
+    placements: 8.0, infrastructure: 8.0, faculty: 8.0, campusLife: 8.0,
+    pros: ["9-14 LPA Placements - Consistent Every Year", "₹5L Fees - Great ROI", "400-Acre Campus - One of Largest in India, Very Green", "Strong Academics - Good for GATE, Higher Studies"],
+    cons: ["Calicut Location - Coastal, Far from Major IT Hubs", "Less Industry Connect - Companies Prefer Bangalore/Chennai", "Peaceful = Boring - Less Campus Life, No Parties", "Kerala Weather - Heavy Rain 4 Months"],
+    fees: "₹5L total", placementAvg: "₹9-14 LPA"
+},
+{
+    id: "nit-allahabad", name: "NIT Allahabad (MNNIT)", city: "Others", rating: 8.0,
+    review: "Old NIT with good reputation. Placements decent (8-13 LPA). Allahabad location is okay - small city. Fees ₹5L. Strong in CSE and IT. Campus is decent but OLD. Good ROI. Faculty is AVERAGE - outdated teaching methods.",
+    placements: 8.0, infrastructure: 7.5, faculty: 7.5, campusLife: 7.5,
+    pros: ["8-13 LPA Placements - Good for NIT", "₹5L Fees - Excellent ROI", "Strong CSE/IT - Good Coding Culture", "Old NIT - Recognition, Alumni Network"],
+    cons: ["Allahabad Location - Small City, Limited Opportunities", "Old Infrastructure - Buildings from 1960s, Poor Maintenance", "Outdated Teaching - Professors Use 20-Year-Old Methods", "Less Campus Life - Boring City, Nothing to Do"],
+    fees: "₹5L total", placementAvg: "₹8-13 LPA"
+},
+{
+    id: "nit-rourkela", name: "NIT Rourkela", city: "Others", rating: 8.2,
+    review: "Old NIT in industrial town. Placements good (9-14 LPA). Campus is LARGE - 200 acres. Rourkela is INDUSTRIAL - Steel City, good for core branches. Fees ₹5L. Strong in Mechanical, Metallurgy. PSU placements are EXCELLENT.",
+    placements: 8.0, infrastructure: 8.0, faculty: 8.0, campusLife: 7.5,
+    pros: ["9-14 LPA Placements - Good for NIT", "₹5L Fees - Great ROI", "Strong Core Branches - Mechanical, Metallurgy, Civil", "PSU Placements - BHEL, SAIL, NTPC Recruit Directly"],
+    cons: ["Rourkela Location - Industrial Town, Polluted, Boring", "Less IT Focus - CSE Placements Below Average", "Old Infrastructure - Some Buildings Need Renovation", "Industrial Area - Not Good for Health, Air Pollution"],
+    fees: "₹5L total", placementAvg: "₹9-14 LPA"
+},
+{
+    id: "nit-jaipur", name: "NIT Jaipur (MNIT)", city: "Others", rating: 8.0,
+    review: "Good NIT in North India. Placements decent (8-12 LPA). Jaipur location is GREAT - tourist city, good weather, developed. Fees ₹5L. Campus is GOOD but not great. Good for North Indian students. Less competition than South NITs.",
+    placements: 7.5, infrastructure: 8.0, faculty: 7.5, campusLife: 8.0,
+    pros: ["8-12 LPA Placements - Decent for NIT", "₹5L Fees - Excellent ROI", "Jaipur Location - Tourist City, Great Weather, Developed", "Good for North Indians - No Language Barrier"],
+    cons: ["Lower Placements than South NITs - 8-12 vs 10-16 LPA", "Average Faculty - Less Qualified than Top NITs", "Less Research - Focus on Teaching Only", "Tourist City - Campus Always Crowded"],
+    fees: "₹5L total", placementAvg: "₹8-12 LPA"
+}
 ];
 
          // ===== FUNCTIONS =====
