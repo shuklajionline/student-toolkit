@@ -1360,10 +1360,9 @@
     </footer>
 
     <script>
-        // ===== COLLEGE DATABASE (160+ Colleges) =====
-        const colleges = [
-            // ===== REQUESTED COLLEGES =====
-          // ===== EXPANDED COLLEGE DATABASE (160+ Colleges) =====
+    // ===== COLLEGE DATABASE (160+ Colleges) =====
+    const colleges = [
+        // ===== EXPANDED COLLEGE DATABASE (160+ Colleges) =====
 // Copy this entire array and replace the existing 'colleges' array in your code
 
 const colleges = [
@@ -2346,302 +2345,264 @@ const colleges = [
 
 // Update stats display
 document.getElementById('collegeCount').textContent = colleges.length + '+';
-document.getElementById('reviewCount').textContent = Math.floor(colleges.length * 20) + '+'; 
-            // ===== TO ADD MORE: Copy a block above and modify =====
-            // Add colleges up to 160+ following the same structure
-        ];
+document.getElementById('reviewCount').textContent = Math.floor(colleges.length * 20) + '+';
+        // Add more colleges as needed...
+    ];
 
-        // ===== DOM ELEMENTS =====
-        const grid = document.getElementById('collegeGrid');
-        const searchInput = document.getElementById('searchInput');
-        const cityFilter = document.getElementById('cityFilter');
-        const ratingFilter = document.getElementById('ratingFilter');
-        const noResults = document.getElementById('noResults');
-        const reviewModal = document.getElementById('reviewModal');
-        const reviewForm = document.getElementById('reviewForm');
-        const reviewCollege = document.getElementById('reviewCollege');
-        const successMessage = document.getElementById('successMessage');
-        const collegeCount = document.getElementById('collegeCount');
-        const reviewCount = document.getElementById('reviewCount');
+    // ===== DOM ELEMENTS =====
+    const grid = document.getElementById('collegeGrid');
+    const searchInput = document.getElementById('searchInput');
+    const cityFilter = document.getElementById('cityFilter');
+    const ratingFilter = document.getElementById('ratingFilter');
+    const noResults = document.getElementById('noResults');
+    const reviewModal = document.getElementById('reviewModal');
+    const reviewForm = document.getElementById('reviewForm');
+    const reviewCollege = document.getElementById('reviewCollege');
+    const successMessage = document.getElementById('successMessage');
+    const collegeCount = document.getElementById('collegeCount');
+    const reviewCount = document.getElementById('reviewCount');
 
-        // ===== INITIALIZATION =====
-        document.addEventListener('DOMContentLoaded', () => {
-            // Update stats
-            collegeCount.textContent = colleges.length + '+';
-            reviewCount.textContent = Math.floor(colleges.length * 20) + '+';
+    // ===== INITIALIZATION =====
+    document.addEventListener('DOMContentLoaded', () => {
+        collegeCount.textContent = colleges.length + '+';
+        reviewCount.textContent = Math.floor(colleges.length * 20) + '+';
+        
+        ['overallRating', 'placementRating', 'infrastructureRating', 'facultyRating', 'campusLifeRating'].forEach(id => {
+            initRatingInputs(id);
+        });
+        
+        populateCollegeDropdown();
+        renderColleges(colleges);
+        setupEventListeners();
+        setupMobileMenu();
+    });
+
+    // ===== RATING INPUTS =====
+    function initRatingInputs(containerId) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        container.innerHTML = '';
+        for (let i = 1; i <= 10; i++) {
+            const option = document.createElement('button');
+            option.type = 'button';
+            option.className = 'rating-option';
+            option.textContent = i;
+            option.onclick = () => selectRating(containerId, i);
+            container.appendChild(option);
+        }
+    }
+
+    function selectRating(containerId, value) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        const options = container.querySelectorAll('.rating-option');
+        options.forEach((opt, idx) => {
+            opt.classList.toggle('selected', idx + 1 === value);
+        });
+        container.dataset.value = value;
+    }
+
+    function getRatingValue(containerId) {
+        return document.getElementById(containerId).dataset.value || 0;
+    }
+
+    // ===== POPULATE DROPDOWN =====
+    function populateCollegeDropdown() {
+        if (!reviewCollege) return;
+        colleges.forEach((college, index) => {
+            const option = document.createElement('option');
+            option.value = index;
+            option.textContent = college.name;
+            option.id = college.id;
+            reviewCollege.appendChild(option);
+        });
+    }
+
+    // ===== RENDER COLLEGES =====
+    function renderColleges(data) {
+        if (!grid) return;
+        grid.innerHTML = '';
+        
+        if (data.length === 0) {
+            if (noResults) noResults.style.display = 'block';
+            return;
+        } else {
+            if (noResults) noResults.style.display = 'none';
+        }
+
+        data.forEach((college, index) => {
+            const card = document.createElement('article');
+            card.className = 'college-card';
+            card.id = college.id;
             
-            // Initialize rating inputs
-            ['overallRating', 'placementRating', 'infrastructureRating', 'facultyRating', 'campusLifeRating'].forEach(id => {
-                initRatingInputs(id);
-            });
+            let ratingClass = 'low';
+            if (college.rating >= 8) ratingClass = 'high';
+            else if (college.rating >= 6) ratingClass = 'med';
             
-            // Populate college dropdown
-            populateCollegeDropdown();
+            const proTags = college.pros.map(pro => `<span class="tag pro">${pro}</span>`).join('');
+            const conTags = college.cons.map(con => `<span class="tag con">${con}</span>`).join('');
             
-            // Render colleges
-            renderColleges(colleges);
+            card.innerHTML = `
+                <div class="card-header">
+                    <div class="college-info">
+                        <h3>${college.name}</h3>
+                        <div class="college-location"><i class="fa-solid fa-location-dot"></i> ${college.city}</div>
+                    </div>
+                    <div class="rating-badge">
+                        <span class="rating-value ${ratingClass}">${college.rating}</span>
+                        <span class="rating-scale">/10</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="review-header">
+                        <div class="reviewer">
+                            <i class="fa-solid fa-user-secret"></i>
+                            <span>Anonymous Student</span>
+                        </div>
+                        <span style="font-size: 0.8rem; color: var(--text-muted);">${college.fees}</span>
+                    </div>
+                    <p class="review-text">${college.review}</p>
+                    <div class="rating-breakdown">
+                        <div class="rating-row"><span>Placements</span><span>${college.placements}/10</span></div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: ${college.placements * 10}%"></div></div>
+                        
+                        <div class="rating-row"><span>Infrastructure</span><span>${college.infrastructure}/10</span></div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: ${college.infrastructure * 10}%"></div></div>
+                        
+                        <div class="rating-row"><span>Faculty</span><span>${college.faculty}/10</span></div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: ${college.faculty * 10}%"></div></div>
+                        
+                        <div class="rating-row"><span>Campus Life</span><span>${college.campusLife}/10</span></div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: ${college.campusLife * 10}%"></div></div>
+                    </div>
+                    <div class="tags">${proTags}${conTags}</div>
+                </div>
+                <div class="card-footer">
+                    <div class="placement-badge">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <span>${college.placementAvg}</span>
+                    </div>
+                    <a href="#${college.id}" class="view-details">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+    // ===== FILTERING =====
+    function filterColleges() {
+        const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
+        const selectedCity = cityFilter ? cityFilter.value : 'all';
+        const selectedRating = ratingFilter ? ratingFilter.value : 'all';
+
+        const filtered = colleges.filter(college => {
+            const matchesSearch = !searchTerm || 
+                college.name.toLowerCase().includes(searchTerm) ||
+                college.review.toLowerCase().includes(searchTerm) ||
+                college.city.toLowerCase().includes(searchTerm);
             
-            // Setup event listeners
-            setupEventListeners();
+            const matchesCity = selectedCity === 'all' || 
+                college.city === selectedCity || 
+                (selectedCity === 'Others' && !['Delhi NCR', 'Mumbai', 'Bangalore', 'Pune', 'Chennai', 'Hyderabad', 'Gujarat'].includes(college.city));
             
-            // Setup mobile menu
-            setupMobileMenu();
+            let matchesRating = true;
+            if (selectedRating !== 'all') {
+                const [min, max] = selectedRating.split('-').map(Number);
+                matchesRating = college.rating >= min && college.rating <= max;
+            }
+            
+            return matchesSearch && matchesCity && matchesRating;
         });
 
-        // ===== RATING INPUTS =====
-        function initRatingInputs(containerId) {
-            const container = document.getElementById(containerId);
-            container.innerHTML = '';
-            for (let i = 1; i <= 10; i++) {
-                const option = document.createElement('button');
-                option.type = 'button';
-                option.className = 'rating-option';
-                option.textContent = i;
-                option.setAttribute('aria-label', `Rate ${i} out of 10`);
-                option.onclick = () => selectRating(containerId, i);
-                container.appendChild(option);
+        renderColleges(filtered);
+    }
+
+    function resetFilters() {
+        if (searchInput) searchInput.value = '';
+        if (cityFilter) cityFilter.value = 'all';
+        if (ratingFilter) ratingFilter.value = 'all';
+        renderColleges(colleges);
+    }
+
+    // ===== MODAL FUNCTIONS =====
+    function openReviewModal() {
+        if (!reviewModal) return;
+        reviewModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        if (reviewForm) reviewForm.reset();
+        if (successMessage) successMessage.style.display = 'none';
+        ['overallRating', 'placementRating', 'infrastructureRating', 'facultyRating', 'campusLifeRating'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.querySelectorAll('.rating-option').forEach(opt => opt.classList.remove('selected'));
+                el.dataset.value = '';
             }
-        }
+        });
+    }
 
-        function selectRating(containerId, value) {
-            const container = document.getElementById(containerId);
-            const options = container.querySelectorAll('.rating-option');
-            options.forEach((opt, idx) => {
-                opt.classList.toggle('selected', idx + 1 === value);
-            });
-            container.dataset.value = value;
-        }
+    function closeReviewModal() {
+        if (!reviewModal) return;
+        reviewModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
 
-        function getRatingValue(containerId) {
-            return document.getElementById(containerId).dataset.value || 0;
-        }
-
-        // ===== POPULATE DROPDOWN =====
-        function populateCollegeDropdown() {
-            colleges.forEach((college, index) => {
-                const option = document.createElement('option');
-                option.value = index;
-                option.textContent = college.name;
-                option.id = college.id;
-                reviewCollege.appendChild(option);
-            });
-        }
-
-        // ===== RENDER COLLEGES =====
-        function renderColleges(data) {
-            grid.innerHTML = '';
-            
-            if (data.length === 0) {
-                noResults.style.display = 'block';
-                return;
-            } else {
-                noResults.style.display = 'none';
-            }
-
-            data.forEach((college, index) => {
-                const card = document.createElement('article');
-                card.className = 'college-card';
-                card.style.setProperty('--i', index);
-                card.id = college.id;
-                
-                // Rating color class
-                let ratingClass = 'low';
-                if (college.rating >= 8) ratingClass = 'high';
-                else if (college.rating >= 6) ratingClass = 'med';
-                
-                // Generate tags
-                const proTags = college.pros.map(pro => `<span class="tag pro">${pro}</span>`).join('');
-                const conTags = college.cons.map(con => `<span class="tag con">${con}</span>`).join('');
-                
-                card.innerHTML = `
-                    <div class="card-header">
-                        <div class="college-info">
-                            <h3>${college.name}</h3>
-                            <div class="college-location"><i class="fa-solid fa-location-dot"></i> ${college.city}</div>
-                        </div>
-                        <div class="rating-badge">
-                            <span class="rating-value ${ratingClass}">${college.rating}</span>
-                            <span class="rating-scale">/10</span>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="review-header">
-                            <div class="reviewer">
-                                <i class="fa-solid fa-user-secret"></i>
-                                <span>Anonymous Student</span>
-                            </div>
-                            <span style="font-size: 0.8rem; color: var(--text-muted);">${college.fees}</span>
-                        </div>
-                        <p class="review-text">${college.review}</p>
-                        <div class="rating-breakdown">
-                            <div class="rating-row">
-                                <span>Placements</span>
-                                <span>${college.placements}/10</span>
-                            </div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: ${college.placements * 10}%"></div></div>
-                            
-                            <div class="rating-row">
-                                <span>Infrastructure</span>
-                                <span>${college.infrastructure}/10</span>
-                            </div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: ${college.infrastructure * 10}%"></div></div>
-                            
-                            <div class="rating-row">
-                                <span>Faculty</span>
-                                <span>${college.faculty}/10</span>
-                            </div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: ${college.faculty * 10}%"></div></div>
-                            
-                            <div class="rating-row">
-                                <span>Campus Life</span>
-                                <span>${college.campusLife}/10</span>
-                            </div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: ${college.campusLife * 10}%"></div></div>
-                        </div>
-                        <div class="tags">
-                            ${proTags}
-                            ${conTags}
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="placement-badge">
-                            <i class="fa-solid fa-briefcase"></i>
-                            <span>${college.placementAvg}</span>
-                        </div>
-                        <a href="#${college.id}" class="view-details">
-                            View Details <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        // ===== FILTERING =====
-        function filterColleges() {
-            const searchTerm = searchInput.value.toLowerCase().trim();
-            const selectedCity = cityFilter.value;
-            const selectedRating = ratingFilter.value;
-
-            const filtered = colleges.filter(college => {
-                const matchesSearch = !searchTerm || 
-                    college.name.toLowerCase().includes(searchTerm) ||
-                    college.review.toLowerCase().includes(searchTerm) ||
-                    college.city.toLowerCase().includes(searchTerm);
-                
-                const matchesCity = selectedCity === 'all' || 
-                    college.city === selectedCity || 
-                    (selectedCity === 'Others' && !['Delhi NCR', 'Mumbai', 'Bangalore', 'Pune', 'Chennai', 'Hyderabad', 'Gujarat'].includes(college.city));
-                
-                let matchesRating = true;
-                if (selectedRating !== 'all') {
-                    const [min, max] = selectedRating.split('-').map(Number);
-                    matchesRating = college.rating >= min && college.rating <= max;
-                }
-                
-                return matchesSearch && matchesCity && matchesRating;
-            });
-
-            renderColleges(filtered);
-        }
-
-        function resetFilters() {
-            searchInput.value = '';
-            cityFilter.value = 'all';
-            ratingFilter.value = 'all';
-            renderColleges(colleges);
-        }
-
-        // ===== MODAL FUNCTIONS =====
-        function openReviewModal() {
-            reviewModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            // Reset form
-            reviewForm.reset();
-            successMessage.style.display = 'none';
-            // Reset ratings
-            ['overallRating', 'placementRating', 'infrastructureRating', 'facultyRating', 'campusLifeRating'].forEach(id => {
-                document.getElementById(id).querySelectorAll('.rating-option').forEach(opt => opt.classList.remove('selected'));
-                document.getElementById(id).dataset.value = '';
-            });
-        }
-
-        function closeReviewModal() {
-            reviewModal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // ===== FORM SUBMISSION =====
-        function submitReview(e) {
-            e.preventDefault();
-            
-            // In production, send to backend here
-            // For demo, show success message
+    // ===== FORM SUBMISSION =====
+    function submitReview(e) {
+        if (e) e.preventDefault();
+        if (successMessage) {
             successMessage.style.display = 'block';
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            
-            // Reset form after delay
             setTimeout(() => {
                 closeReviewModal();
-                // Show toast notification
                 alert('✅ Review submitted anonymously! Thank you for helping fellow students. 🙏');
             }, 2500);
         }
+    }
 
-        // ===== LOAD MORE =====
-        function loadMoreColleges() {
-            // In production, load more from API
-            // For demo, show message
-            alert(`📚 All ${colleges.length} colleges are loaded! Use search and filters to find specific colleges.`);
-        }
+    // ===== LOAD MORE =====
+    function loadMoreColleges() {
+        alert(`📚 All ${colleges.length} colleges are loaded! Use search and filters to find specific colleges.`);
+    }
 
-        // ===== EVENT LISTENERS =====
-        function setupEventListeners() {
-            searchInput.addEventListener('input', filterColleges);
-            cityFilter.addEventListener('change', filterColleges);
-            ratingFilter.addEventListener('change', filterColleges);
-            
-            // Close modal on outside click
+    // ===== EVENT LISTENERS =====
+    function setupEventListeners() {
+        if (searchInput) searchInput.addEventListener('input', filterColleges);
+        if (cityFilter) cityFilter.addEventListener('change', filterColleges);
+        if (ratingFilter) ratingFilter.addEventListener('change', filterColleges);
+        
+        if (reviewModal) {
             reviewModal.addEventListener('click', (e) => {
                 if (e.target === reviewModal) closeReviewModal();
             });
-            
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && reviewModal.classList.contains('active')) {
-                    closeReviewModal();
-                }
-            });
         }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && reviewModal && reviewModal.classList.contains('active')) {
+                closeReviewModal();
+            }
+        });
+    }
 
-        // ===== MOBILE MENU =====
-        function setupMobileMenu() {
-            const toggle = document.getElementById('mobileToggle');
-            const nav = document.querySelector('.nav-links');
-            
+    // ===== MOBILE MENU =====
+    function setupMobileMenu() {
+        const toggle = document.getElementById('mobileToggle');
+        const nav = document.querySelector('.nav-links');
+        
+        if (toggle && nav) {
             toggle.addEventListener('click', () => {
                 const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
                 toggle.setAttribute('aria-expanded', !isExpanded);
                 nav.style.display = isExpanded ? 'none' : 'flex';
             });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!toggle.contains(e.target) && !nav.contains(e.target) && window.innerWidth <= 768) {
-                    nav.style.display = 'none';
-                    toggle.setAttribute('aria-expanded', 'false');
-                }
-            });
         }
+    }
 
-        // ===== SERVICE WORKER (PWA) =====
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js?v=3.1')
-                    .then(reg => console.log('[SW] Registered:', reg.scope))
-                    .catch(e => console.log('[SW] Registration failed:', e));
-            });
-        }
-    </script>
+    // Make functions globally accessible
+    window.openReviewModal = openReviewModal;
+    window.closeReviewModal = closeReviewModal;
+    window.loadMoreColleges = loadMoreColleges;
+    window.submitReview = submitReview;
+    window.resetFilters = resetFilters;
+</script>
+    
 </body>
 </html>
