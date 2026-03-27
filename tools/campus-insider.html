@@ -108,68 +108,181 @@
     </div>
 
     <script>
-        // ===== COLLEGE DATABASE (START WITH 4 COLLEGES) =====
-        const colleges = [
-            {
-                id: "bennett",
-                name: "Bennett University",
-                city: "Delhi NCR",
-                rating: 7.8,
-                review: "Infrastructure is top-notch. Placements are decent for CSE (15-20 LPA). Attendance is strict (75%). Fees are very high.",
-                placements: 7.5,
-                infrastructure: 9.5,
-                faculty: 7.0,
-                campusLife: 8.0,
-                pros: ["Great Infrastructure", "Good for CSE"],
-                cons: ["Very High Fees", "Strict Attendance"],
-                fees: "₹12-18L",
-                placementAvg: "₹15-20 LPA"
-            },
-            {
-                id: "amity",
-                name: "Amity University",
-                city: "Delhi NCR",
-                rating: 6.5,
-                review: "Huge campus. Placements vary by department. Fests are amazing. Academics are average.",
-                placements: 6.0,
-                infrastructure: 8.5,
-                faculty: 6.0,
-                campusLife: 8.5,
-                pros: ["Huge Campus", "Great Fests"],
-                cons: ["Inconsistent Placements", "Strict Attendance"],
-                fees: "₹10-15L",
-                placementAvg: "₹4-8 LPA"
-            },
-            {
-                id: "parul",
-                name: "Parul University",
-                city: "Gujarat",
-                rating: 7.2,
-                review: "Modern infrastructure. Placements are decent for Gujarat (4-9 LPA). Campus life is active.",
-                placements: 7.0,
-                infrastructure: 8.0,
-                faculty: 6.5,
-                campusLife: 7.5,
-                pros: ["Modern Infrastructure", "Active Campus"],
-                cons: ["Regional Placements", "Strict Attendance"],
-                fees: "₹6-10L",
-                placementAvg: "₹4-9 LPA"
-            },
-            {
-                id: "iit-delhi",
-                name: "IIT Delhi",
-                city: "Delhi NCR",
-                rating: 9.5,
-                review: "Best engineering college. Placements are insane (25+ LPA). Peer group is talented.",
-                placements: 9.8,
-                infrastructure: 9.0,
-                faculty: 9.5,
-                campusLife: 9.5,
-                pros: ["Top Tier", "Amazing Placements"],
-                cons: ["Very Competitive", "High Pressure"],
-                fees: "₹8-10L",
-                placementAvg: "₹22-30 LPA"
-            }
+        
+const colleges = [
+    // === ORIGINAL 4 ===
+    {
+        id: "bennett", name: "Bennett University", city: "Delhi NCR", rating: 7.8,
+        review: "Infrastructure is top-notch. Placements are decent for CSE (15-20 LPA). Attendance is strict (75%). Fees are very high.",
+        placements: 7.5, infrastructure: 9.5, faculty: 7.0, campusLife: 8.0,
+        pros: ["Great Infrastructure", "Good for CSE"],
+        cons: ["Very High Fees", "Strict Attendance"],
+        fees: "₹12-18L", placementAvg: "₹15-20 LPA"
+    },
+    {
+        id: "amity", name: "Amity University", city: "Delhi NCR", rating: 6.5,
+        review: "Huge campus. Placements vary by department. Fests are amazing. Academics are average.",
+        placements: 6.0, infrastructure: 8.5, faculty: 6.0, campusLife: 8.5,
+        pros: ["Huge Campus", "Great Fests"],
+        cons: ["Inconsistent Placements", "Strict Attendance"],
+        fees: "₹10-15L", placementAvg: "₹4-8 LPA"
+    },
+    {
+        id: "parul", name: "Parul University", city: "Gujarat", rating: 7.2,
+        review: "Modern infrastructure. Placements are decent for Gujarat (4-9 LPA). Campus life is active.",
+        placements: 7.0, infrastructure: 8.0, faculty: 6.5, campusLife: 7.5,
+        pros: ["Modern Infrastructure", "Active Campus"],
+        cons: ["Regional Placements", "Strict Attendance"],
+        fees: "₹6-10L", placementAvg: "₹4-9 LPA"
+    },
+    {
+        id: "iit-delhi", name: "IIT Delhi", city: "Delhi NCR", rating: 9.5,
+        review: "Best engineering college. Placements are insane (25+ LPA). Peer group is talented.",
+        placements: 9.8, infrastructure: 9.0, faculty: 9.5, campusLife: 9.5,
+        pros: ["Top Tier", "Amazing Placements"],
+        cons: ["Very Competitive", "High Pressure"],
+        fees: "₹8-10L", placementAvg: "₹22-30 LPA"
+    },
+    
+    // === BATCH 1: Add These 16 More ===
+    {
+        id: "iit-bombay", name: "IIT Bombay", city: "Mumbai", rating: 9.7,
+        review: "Best IIT in India. Placements are the best (30+ LPA). Campus is beautiful in Powai.",
+        placements: 10.0, infrastructure: 9.5, faculty: 9.8, campusLife: 9.5,
+        pros: ["Best Placements", "Prime Location", "Strong Alumni"],
+        cons: ["Extremely Competitive", "High Pressure"],
+        fees: "₹8-10L", placementAvg: "₹25-35 LPA"
+    },
+    {
+        id: "iit-madras", name: "IIT Madras", city: "Chennai", rating: 9.5,
+        review: "Top 3 IIT. Placements excellent (25+ LPA). Campus is huge and beautiful.",
+        placements: 9.8, infrastructure: 9.5, faculty: 9.5, campusLife: 9.0,
+        pros: ["Top IIT", "Excellent Placements", "Beautiful Campus"],
+        cons: ["Very Competitive", "Tough Academics"],
+        fees: "₹8-10L", placementAvg: "₹24-32 LPA"
+    },
+    {
+        id: "bits-pilani", name: "BITS Pilani", city: "Others", rating: 9.2,
+        review: "Pure merit, no reservation. Placements excellent (20+ LPA). Flexible curriculum.",
+        placements: 9.5, infrastructure: 8.5, faculty: 9.0, campusLife: 9.0,
+        pros: ["Pure Merit", "Flexible Curriculum", "Excellent Placements"],
+        cons: ["Very High Fees", "Remote Location"],
+        fees: "₹20-24L", placementAvg: "₹20-28 LPA"
+    },
+    {
+        id: "iiit-hyderabad", name: "IIIT Hyderabad", city: "Hyderabad", rating: 9.0,
+        review: "Best for CS outside IITs. Placements insane (18-25 LPA). Very rigorous.",
+        placements: 9.5, infrastructure: 8.0, faculty: 9.5, campusLife: 8.0,
+        pros: ["Best for CS", "Research Focus", "Amazing Placements"],
+        cons: ["Very Tough", "Small Campus"],
+        fees: "₹10-14L", placementAvg: "₹18-25 LPA"
+    },
+    {
+        id: "nit-trichy", name: "NIT Trichy", city: "Others", rating: 8.8,
+        review: "Top NIT in India. Placements excellent (12-18 LPA). Beautiful campus.",
+        placements: 9.0, infrastructure: 8.5, faculty: 8.5, campusLife: 8.5,
+        pros: ["Top NIT", "Strong Alumni", "Great Placements"],
+        cons: ["Remote Location", "Tough Academics"],
+        fees: "₹5-7L", placementAvg: "₹12-18 LPA"
+    },
+    {
+        id: "jadavpur", name: "Jadavpur University", city: "Others", rating: 8.8,
+        review: "Best ROI in India. Fees negligible, placements rival IITs (12-18 LPA).",
+        placements: 9.0, infrastructure: 7.0, faculty: 8.5, campusLife: 8.5,
+        pros: ["Best ROI", "Brilliant Crowd", "Low Fees"],
+        cons: ["Old Infrastructure", "Hostel Issues"],
+        fees: "₹10-20K", placementAvg: "₹12-18 LPA"
+    },
+    {
+        id: "dtu", name: "Delhi Technological University", city: "Delhi NCR", rating: 8.3,
+        review: "Prime Delhi location. Placements good (10-16 LPA). Active fests.",
+        placements: 8.5, infrastructure: 8.0, faculty: 7.5, campusLife: 9.0,
+        pros: ["Delhi Location", "Good Placements", "Active Fests"],
+        cons: ["Political", "Crowded"],
+        fees: "₹2-4L", placementAvg: "₹10-16 LPA"
+    },
+    {
+        id: "nsut", name: "NSUT", city: "Delhi NCR", rating: 8.2,
+        review: "Strong IT focus. Placements consistently high (10-15 LPA).",
+        placements: 8.5, infrastructure: 7.5, faculty: 8.0, campusLife: 7.5,
+        pros: ["IT Focus", "Good Placements", "Delhi"],
+        cons: ["Average Campus", "Crowded"],
+        fees: "₹2-4L", placementAvg: "₹10-15 LPA"
+    },
+    {
+        id: "iiit-delhi", name: "IIIT Delhi", city: "Delhi NCR", rating: 8.8,
+        review: "Pure IT focus. Placements very high (15-22 LPA). Great industry connect.",
+        placements: 9.0, infrastructure: 8.0, faculty: 9.0, campusLife: 8.0,
+        pros: ["IT Focus", "Great Placements", "Delhi Location"],
+        cons: ["Small Campus", "Only IT"],
+        fees: "₹12-16L", placementAvg: "₹15-22 LPA"
+    },
+    {
+        id: "manipal", name: "Manipal Institute", city: "Others", rating: 8.2,
+        review: "Legendary campus life. Placements good (8-12 LPA). Strong alumni.",
+        placements: 8.0, infrastructure: 8.5, faculty: 7.5, campusLife: 9.5,
+        pros: ["Amazing Campus Life", "Strong Alumni", "Great Fests"],
+        cons: ["High Fees", "Less Academic Rigor"],
+        fees: "₹18-22L", placementAvg: "₹8-12 LPA"
+    },
+    {
+        id: "vit-vellore", name: "VIT Vellore", city: "Others", rating: 7.8,
+        review: "Flexible FFCS system. Placements good (6-10 LPA). Huge campus.",
+        placements: 7.5, infrastructure: 8.0, faculty: 7.0, campusLife: 7.5,
+        pros: ["Flexible System", "Good Coding", "Large Campus"],
+        cons: ["Crowded", "Strict Rules"],
+        fees: "₹15-20L", placementAvg: "₹6-10 LPA"
+    },
+    {
+        id: "pes", name: "PES University", city: "Bangalore", rating: 8.5,
+        review: "Top for CSE in Bangalore. Placements excellent (10-18 LPA).",
+        placements: 9.0, infrastructure: 8.0, faculty: 8.0, campusLife: 8.0,
+        pros: ["Excellent for CSE", "Great Placements", "Tech Hub"],
+        cons: ["High Fees", "Academic Pressure"],
+        fees: "₹14-18L", placementAvg: "₹10-18 LPA"
+    },
+    {
+        id: "rvce", name: "RV College", city: "Bangalore", rating: 8.5,
+        review: "Oldest in Bangalore. Strong alumni. Placements good (8-14 LPA).",
+        placements: 8.5, infrastructure: 7.5, faculty: 8.0, campusLife: 8.0,
+        pros: ["Legacy", "Strong Alumni", "Good ROI"],
+        cons: ["Old Infrastructure", "Crowded"],
+        fees: "₹4-6L/₹12-16L", placementAvg: "₹8-14 LPA"
+    },
+    {
+        id: "coep", name: "COEP Pune", city: "Pune", rating: 8.5,
+        review: "One of oldest in India. Placements good (8-14 LPA). Heritage campus.",
+        placements: 8.5, infrastructure: 7.5, faculty: 8.0, campusLife: 8.0,
+        pros: ["Heritage", "Old & Reputed", "Great Alumni"],
+        cons: ["Old Infrastructure", "Less Modern"],
+        fees: "₹1-2L/₹8-12L", placementAvg: "₹8-14 LPA"
+    },
+    {
+        id: "sharda", name: "Sharda University", city: "Delhi NCR", rating: 6.8,
+        review: "Massive campus. Placements okay (5-8 LPA). Very strict attendance.",
+        placements: 6.5, infrastructure: 7.5, faculty: 6.5, campusLife: 7.0,
+        pros: ["Large Campus", "Good for Medical", "Disciplined"],
+        cons: ["Far from Delhi", "Strict Rules"],
+        fees: "₹8-12L", placementAvg: "₹5-8 LPA"
+    },
+    {
+        id: "lpu", name: "LPU", city: "Others", rating: 6.2,
+        review: "Massive infrastructure. Placements average (3-5 LPA). Good for sports.",
+        placements: 6.0, infrastructure: 8.5, faculty: 5.5, campusLife: 7.5,
+        pros: ["Huge Campus", "Diverse", "Good Sports"],
+        cons: ["Low Average Package", "Too Commercial"],
+        fees: "₹10-14L", placementAvg: "₹3-5 LPA"
+    },
+    {
+        id: "christ", name: "Christ University", city: "Bangalore", rating: 7.8,
+        review: "Excellent for Commerce. Bangalore location great. Very strict attendance.",
+        placements: 7.5, infrastructure: 7.5, faculty: 8.0, campusLife: 7.5,
+        pros: ["Great for Commerce", "Bangalore Location", "Good Placements"],
+        cons: ["Very Strict Attendance", "Small Campus"],
+        fees: "₹8-12L", placementAvg: "₹6-10 LPA"
+    }
+];
+            
         ];
 
         // ===== FUNCTIONS =====
