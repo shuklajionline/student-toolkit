@@ -12,22 +12,61 @@
   gtag('config', 'G-J60HJ54DY0');
 </script>
 
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel Code (with debugging) -->
 <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1248976636881567');
-  fbq('track', 'PageView');
+  (function() {
+    // Prevent duplicate initialization
+    if (window.fbq) {
+      console.log('✅ Meta Pixel already loaded');
+      return;
+    }
+    
+    // Initialize fbq
+    !function(f,b,e,v,n,t,s) {
+      if(f.fbq)return;
+      n=f.fbq=function(){
+        n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+      };
+      if(!f._fbq)f._fbq=n;
+      n.push=n;
+      n.loaded=!0;
+      n.version='2.0';
+      n.queue=[];
+      t=b.createElement(e);
+      t.async=!0;
+      t.src=v;
+      t.setAttribute('data-testid', 'facebook-pixel');
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s);
+      
+      // Debug: Log when script loads
+      t.onload = function() {
+        console.log('✅ Meta Pixel script loaded successfully');
+      };
+      t.onerror = function() {
+        console.error('❌ Meta Pixel script failed to load');
+      };
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // Initialize with your Pixel ID
+    fbq('init', '1248976636881567', {
+      em: 'advanced_matching_enabled' // Optional: enable advanced matching
+    });
+    
+    // Track PageView
+    fbq('track', 'PageView');
+    
+    // Debug confirmation
+    console.log('🎯 Meta Pixel initialized: 1248976636881567');
+    console.log('📊 Tracking: PageView');
+    
+  })();
 </script>
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1248976636881567&ev=PageView&noscript=1"
-/></noscript>
+<noscript>
+  <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1248976636881567&ev=PageView&noscript=1"
+    alt="Meta Pixel"/>
+</noscript>
 <!-- End Meta Pixel Code -->
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3901059847344907"
