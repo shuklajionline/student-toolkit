@@ -778,48 +778,129 @@ function buildGenPrompt(d) {
     `${e.degree} | ${e.college||''} | ${e.year||''} | ${e.cgpa||''} ${e.coursework?'| '+e.coursework:''}`
   ).join('\n');
 
-  return `You are India's top resume writer with 20+ years experience placing candidates at TCS, Infosys, Wipro, Deloitte, McKinsey, Goldman Sachs, HDFC Bank, HUL, Amazon, Google India, Bajaj Finance, and top Indian startups.
+  const industryKeywords = {
+    software: 'REST APIs, microservices, CI/CD, agile, system design, data structures, algorithms, version control, cloud computing, unit testing, code review, technical documentation',
+    consulting: 'stakeholder management, problem structuring, hypothesis-driven analysis, executive presentations, change management, process improvement, benchmarking, ROI analysis, client deliverables, data-driven insights',
+    finance: 'financial modelling, DCF valuation, equity research, portfolio management, risk assessment, Bloomberg, P&L analysis, variance analysis, due diligence, treasury management, credit analysis',
+    marketing: 'campaign management, SEO/SEM, conversion rate optimisation, A/B testing, customer segmentation, brand strategy, content marketing, performance marketing, CRM, customer acquisition cost, lifetime value',
+    product: 'product roadmap, user research, A/B testing, OKRs, go-to-market strategy, wireframing, product analytics, sprint planning, feature prioritisation, customer discovery, NPS, retention metrics',
+    data: 'predictive modelling, data pipeline, ETL, statistical analysis, hypothesis testing, data visualisation, machine learning, feature engineering, model deployment, business intelligence, A/B testing',
+    operations: 'supply chain optimisation, process improvement, SOP development, vendor management, inventory management, lean six sigma, capacity planning, logistics coordination, cost reduction, KPI tracking',
+    hr: 'talent acquisition, performance management, employee engagement, L&D, HRIS, succession planning, compensation benchmarking, organisational development, HR analytics, employer branding',
+    general: 'project management, cross-functional collaboration, stakeholder communication, data analysis, process improvement, strategic planning, problem solving, team leadership'
+  };
 
-Write a COMPLETE, PROFESSIONAL, ATS-OPTIMISED resume for the following candidate. 
+  const verbBank = {
+    software: 'Engineered, Architected, Developed, Deployed, Optimised, Automated, Refactored, Integrated, Implemented, Debugged, Scaled, Migrated, Designed, Built, Shipped',
+    consulting: 'Synthesised, Structured, Analysed, Presented, Delivered, Recommended, Modelled, Benchmarked, Facilitated, Led, Advised, Assessed, Developed, Orchestrated, Influenced',
+    finance: 'Analysed, Modelled, Valued, Forecasted, Managed, Assessed, Monitored, Executed, Structured, Reconciled, Evaluated, Optimised, Reported, Reviewed, Processed',
+    marketing: 'Launched, Grew, Optimised, Managed, Created, Drove, Increased, Executed, Spearheaded, Developed, A/B tested, Scaled, Generated, Boosted, Produced',
+    product: 'Launched, Prioritised, Defined, Shipped, Led, Drove, Increased, Improved, Reduced, Collaborated, Designed, Validated, Iterated, Delivered, Championed',
+    data: 'Developed, Built, Analysed, Deployed, Reduced, Increased, Modelled, Engineered, Automated, Identified, Visualised, Processed, Generated, Optimised, Predicted',
+    operations: 'Streamlined, Reduced, Improved, Managed, Coordinated, Implemented, Optimised, Led, Delivered, Negotiated, Standardised, Maintained, Achieved, Oversaw, Restructured',
+    hr: 'Recruited, Reduced, Improved, Managed, Developed, Led, Implemented, Designed, Facilitated, Increased, Onboarded, Partnered, Streamlined, Launched, Retained',
+    general: 'Led, Managed, Developed, Improved, Delivered, Achieved, Coordinated, Implemented, Increased, Reduced, Spearheaded, Organised, Executed, Facilitated, Built'
+  };
 
-CANDIDATE DETAILS:
+  const iVerbs = verbBank[d.industry] || verbBank.general;
+  const iKws = industryKeywords[d.industry] || industryKeywords.general;
+  const iLabel = IND[d.industry] || d.industry;
+
+  return `You are an elite Indian resume writer. You have written resumes that got candidates into McKinsey, Goldman Sachs, Google India, IIM, IIT research roles, top FMCG management trainee programmes, and Series B startups. Your resumes don't just list tasks — they tell a story of impact.
+
+CANDIDATE INPUT:
 Name: ${d.name}
 Phone: ${d.phone} | Email: ${d.email}
 LinkedIn: ${d.linkedin||'Not provided'} | GitHub/Portfolio: ${d.github||'Not provided'}
-Location: ${d.city||'India'}
-Target Industry: ${IND[d.industry]||d.industry}
-Target Role: ${d.role||'Not specified'}
+City: ${d.city||'India'}
+Target: ${iLabel}${d.role?' — specifically: '+d.role:''}
 
 EDUCATION:
 ${eduText||'Not provided'}
 
-EXPERIENCE / INTERNSHIPS:
-${expText||'No experience provided'}
+WORK EXPERIENCE / INTERNSHIPS:
+${expText||'No work experience — treat Projects as primary section'}
 
 PROJECTS:
 ${projText||'No projects provided'}
 
-SKILLS PROVIDED: ${d.skills.join(', ')||'Not specified'}
+CANDIDATE'S OWN SKILLS: ${d.skills.join(', ')||'Not specified'}
 CERTIFICATIONS: ${d.certs||'None'}
-ACHIEVEMENTS: ${d.achievements||'None'}
-EXTRA ACTIVITIES: ${d.activities||'None'}
-EXISTING SUMMARY: ${d.summary||'Write a strong professional summary'}
+ACHIEVEMENTS / AWARDS: ${d.achievements||'None'}
+EXTRA-CURRICULARS: ${d.activities||'None'}
+CANDIDATE'S DRAFT SUMMARY: ${d.summary||'None — write from scratch'}
 
-TEMPLATE STYLE: ${d.template} (${d.template==='classic'?'Traditional format, conservative':d.template==='modern'?'Clean modern with strong verbs':d.template==='compact'?'Compact, information-dense, 1 page focus':'Minimal whitespace, consulting style'})
+TEMPLATE: ${d.template} style
 
-INSTRUCTIONS — FOLLOW EXACTLY:
-1. Write every experience bullet starting with a STRONG action verb (Engineered, Architected, Spearheaded, Delivered, Optimised, Reduced, Increased, Built, Managed, Led, Developed, Automated, Streamlined, Implemented, Designed)
-2. QUANTIFY every achievement possible — use the numbers from the description, estimate realistic ones if not given (e.g. "team of 4", "reduced by ~30%", "used by 100+ users")
-3. Add 5-8 high-priority ATS keywords for ${IND[d.industry]||d.industry} industry — weave them naturally into bullets
-4. Write a strong 3-line Professional Summary highlighting career goals, key skills, and industry alignment for ${d.role||'their target role'}
-5. Skills section: categorise into Technical Skills, Tools & Platforms, Soft Skills
-6. If experience is weak (fresher/student), make Projects section prominent and detailed
-7. Format cleanly with clear section headers — CONTACT, PROFESSIONAL SUMMARY, EDUCATION, EXPERIENCE, PROJECTS, SKILLS, CERTIFICATIONS, ACHIEVEMENTS
-8. Keep to 1 page ideally — max 2 pages
-9. Use Indian formatting conventions: include CGPA (not GPA), mention board (CBSE/ICSE if applicable), use Indian company names naturally
-10. Make it genuinely impressive — this should be a resume that gets shortlisted
+━━━ MANDATORY WRITING RULES ━━━
 
-Output ONLY the resume text — no explanation, no markdown, no commentary. Start directly with the candidate's name.`;
+RULE 1 — ACTION VERBS (CRITICAL):
+Use ONLY these strong past-tense verbs to start bullets: ${iVerbs}
+NEVER use: helped, assisted, worked on, involved in, participated in, responsible for, tasked with, supported. These are automatic rejection triggers.
+
+RULE 2 — QUANTIFICATION (CRITICAL):
+Every single bullet MUST have a number. No exceptions.
+If the candidate gave a number: use it exactly.
+If no number given: make a realistic estimate and mark with ~ (e.g., ~30% improvement, ~200 users, team of ~5, ₹X lakhs value).
+Examples of how to add numbers:
+- "worked on dashboard" → "Engineered interactive Power BI dashboard tracking 15 KPIs across 3 business units, reducing reporting time by ~40%"
+- "helped in marketing" → "Executed email marketing campaigns reaching ~5,000 subscribers, achieving 28% open rate (industry avg: 21%)"
+- "built a website" → "Developed full-stack e-commerce website using React + Node.js, handling ~500 daily active users with 99.2% uptime"
+
+RULE 3 — INDUSTRY KEYWORDS:
+Naturally weave in at least 8 of these ${iLabel} keywords: ${iKws}
+Place keywords in bullets, not just in the skills section — ATS scores higher for keywords in context.
+
+RULE 4 — PROFESSIONAL SUMMARY:
+Write 3 sharp lines (NOT a paragraph):
+Line 1: Who they are + years of experience + specialisation
+Line 2: Top 2-3 technical/functional skills with one proof point
+Line 3: Career goal aligned to ${d.role||'their target role'}
+Example format: "Final-year B.Tech Computer Science student at [College] with hands-on experience in full-stack development and data engineering. Proficient in Python, React, and SQL; built 3 production-grade projects serving 1,000+ users. Seeking software engineering role at a high-growth product company where I can contribute to scalable backend systems."
+
+RULE 5 — SKILLS SECTION FORMAT:
+Organise into exactly these categories (include only if relevant):
+• Technical Skills: [languages, frameworks, tools]
+• Analytics & Tools: [data tools, platforms, software]  
+• Domain Knowledge: [industry-specific knowledge areas]
+• Soft Skills: [max 3, only if genuinely demonstrated — not just listed]
+
+RULE 6 — EDUCATION FORMAT (India-specific):
+- Use "CGPA: X.X/10" not "GPA"
+- Include "Board: CBSE/ICSE" for Class 10/12
+- Add "Relevant Coursework:" if provided
+- Put education AFTER experience if candidate has 1+ years work experience
+
+RULE 7 — PROJECT SECTION (if fresher):
+If no work experience, make Projects the MOST prominent section, immediately after summary.
+Each project needs: (a) strong 1-line title with tech stack, (b) 2-3 quantified bullets, (c) result/impact
+
+RULE 8 — FORMATTING:
+Template: ${d.template}
+${d.template==='classic'?'Use traditional section headers in ALL CAPS. Clean single column. Conservative.':
+  d.template==='modern'?'Use bold section headers with a divider line. Two-column skills section. Modern clean look.':
+  d.template==='compact'?'Dense but clean. Smaller bullet spacing. Fit maximum content in 1 page. No wasted whitespace.':
+  'Minimal. Single column. Clear hierarchy. Lots of breathing room. Consulting-firm style.'}
+
+RULE 9 — LENGTH:
+- Fresher / 0-1 year: strictly 1 page (max 550 words in resume body)
+- 1-3 years experience: 1-1.5 pages
+- 3+ years: up to 2 pages
+
+RULE 10 — INDIA-SPECIFIC CONVENTIONS:
+- Use ₹ for rupee amounts, not $
+- Use "Lakhs" not "millions" for large numbers unless international
+- Include "Pursuing" for ongoing degree, "Completed" for finished
+- Do NOT include photograph, date of birth, marital status, religion, nationality — these are outdated Indian resume conventions that modern ATS systems penalise
+- Use Indian English: "organisation" not "organization", "programme" not "program"
+
+━━━ OUTPUT FORMAT ━━━
+Output ONLY the resume text.
+No JSON. No markdown. No explanation. No commentary.
+Start directly with the candidate's full name on line 1.
+Use plain text with clean section headers.
+Use bullet points with • symbol.
+Contact info on one line separated by | symbols.`;
 }
 
 // ══════════════════════════════════════════════
@@ -847,8 +928,8 @@ async function generateResume() {
       headers: { 'Content-Type':'application/json', 'Authorization':'Bearer '+GROQ_KEY },
       body: JSON.stringify({
         model: 'llama-3.3-70b-versatile',
-        max_tokens: 3000,
-        temperature: 0.4,
+        max_tokens: 3500,
+        temperature: 0.25,
         messages: [
           { role:'system', content:'You are an expert Indian resume writer. Output only the resume text — no markdown, no commentary, no JSON. Start with the candidate name.' },
           { role:'user', content: prompt }
