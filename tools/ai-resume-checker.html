@@ -455,7 +455,7 @@ footer a:hover{color:var(--accent)}
 'use strict';
 
 // ⚠️ ROTATE THIS KEY AT console.groq.com/keys — never commit to public repos
-const GROQ_KEY = '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'; // Replace with your new key after rotating
+const GROQ_KEY = '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'; // Replace with your new key after rotating
 
 // ═══════════════════════════════════════════════════════════
 //  STATE
@@ -591,50 +591,70 @@ async function analyzeResume() {
 //  PROMPT BUILDER
 // ═══════════════════════════════════════════════════════════
 function buildPrompt(resumeText, industry) {
-  return `You are India's top ATS resume expert — you have reviewed 50,000+ resumes for Indian students applying to companies like TCS, Infosys, Wipro, Deloitte, McKinsey, Goldman Sachs, Amazon, Google, HDFC Bank, Bajaj Finance, HUL, and top startups.
+  return `You are a brutally honest senior recruiter at a top Indian company. You have rejected 90% of resumes you've seen. You do NOT give flattery. You tell candidates EXACTLY what is wrong, why a recruiter would skip their resume in 6 seconds, and what they must fix.
 
-Analyse this ${INDUSTRY_LABELS[industry]} resume for an Indian student/fresher and return ONLY valid JSON — no markdown, no explanation, no preamble.
+You are reviewing a resume for a ${INDUSTRY_LABELS[industry]} role in India. Be SPECIFIC — quote actual lines from the resume. Do NOT give generic advice like "add more details" — say exactly what details, what numbers, what words.
 
-RESUME:
-${resumeText.slice(0, 4000)}
+CRITICAL SCORING RULES:
+- A fresher with no internships and weak bullets should score 20-45, NOT 65+
+- A resume with vague bullets like "worked on projects" = 0 points for experience depth
+- Missing quantification on every bullet = score cap of 60 max
+- Weak action verbs (helped, assisted, worked, involved) = major penalty
+- Copy-paste generic skills without context = penalty
+- If the resume looks like a template with placeholders still in it = score 10-25
+- Only score 80+ if the resume would genuinely impress a recruiter at McKinsey, Goldman, or a top startup
+- Score 90+ is reserved for genuinely exceptional resumes
 
-Return this exact JSON structure:
+BRUTAL HONESTY RULES:
+- If the resume is weak, SAY IT clearly in the verdict — "This resume will be rejected by most ATS systems" or "A recruiter will spend 4 seconds on this and move on"
+- Quote the WORST line in the resume in the weaknesses
+- Do not soften criticism — students need to know the truth to improve
+- If there is NO quantification anywhere, the quantification score must be 0-2
+- If bullets start with weak verbs, impact_language score must be 2-4
+- The verdict and summary should sting if the resume is bad — that's what makes it useful
+
+RESUME TO ANALYSE:
+${resumeText.slice(0, 4500)}
+
+TARGET INDUSTRY: ${INDUSTRY_LABELS[industry]}
+
+Return ONLY valid JSON — no markdown, no preamble:
 {
-  "score": <integer 0-100>,
-  "grade": "<S/A/B/C/D>",
-  "percentile": "<e.g. top 15%>",
-  "verdict": "<2 sentence honest verdict — what this resume says about the candidate>",
-  "summary": "<3-4 sentences of overall analysis — specific to this resume, not generic>",
-  "tags": ["<3-4 short tags like 'Strong Quantification' or 'Missing Keywords'>"],
+  "score": <integer 0-100 — be ruthless>,
+  "grade": "<S=90+/A=80-89/B=65-79/C=45-64/D=below 45>",
+  "percentile": "<honest percentile — most students are in bottom 50%>",
+  "verdict": "<2 sentences — brutally honest. If bad: say it will get rejected and why. If good: say what specifically makes it strong. Quote an actual weakness or strength from the resume.>",
+  "summary": "<4 sentences. Sentence 1: overall quality assessment. Sentence 2: the single biggest problem holding this resume back. Sentence 3: what the recruiter's first impression would be. Sentence 4: the #1 thing to fix today.>",
+  "tags": ["<3-5 tags — be specific: 'Zero Quantification', 'Weak Verbs', 'Missing LinkedIn', 'Good Project Depth', 'No Industry Keywords'>"],
   "dimensions": {
-    "ats_compatibility": {"score": <0-10>, "label": "ATS Compatibility", "note": "<specific finding>"},
-    "impact_language": {"score": <0-10>, "label": "Impact Language", "note": "<specific finding>"},
-    "quantification": {"score": <0-10>, "label": "Quantified Results", "note": "<specific finding>"},
-    "section_structure": {"score": <0-10>, "label": "Section Structure", "note": "<specific finding>"},
-    "keyword_match": {"score": <0-10>, "label": "Industry Keywords", "note": "<specific finding>"},
-    "contact_info": {"score": <0-10>, "label": "Contact & Links", "note": "<specific finding>"},
-    "education": {"score": <0-10>, "label": "Education Section", "note": "<specific finding>"},
-    "skills_section": {"score": <0-10>, "label": "Skills Presentation", "note": "<specific finding>"},
-    "experience_depth": {"score": <0-10>, "label": "Experience Depth", "note": "<specific finding>"},
-    "overall_clarity": {"score": <0-10>, "label": "Clarity & Readability", "note": "<specific finding>"}
+    "ats_compatibility": {"score": <0-10>, "label": "ATS Compatibility", "note": "<specific: does it have proper section headers? Is formatting ATS-parseable? Any tables or columns that break parsing?>"},
+    "impact_language": {"score": <0-10>, "label": "Impact Language", "note": "<quote the weakest verb used. How many bullets start with strong verbs vs weak ones?>"},
+    "quantification": {"score": <0-10>, "label": "Quantified Results", "note": "<count how many bullets have numbers. If zero: score must be 0-1. Quote a bullet that needs a number.>"},
+    "section_structure": {"score": <0-10>, "label": "Section Structure", "note": "<which sections are present/missing? Is the order logical? Is the most impressive thing first?>"},
+    "keyword_match": {"score": <0-10>, "label": "Industry Keywords", "note": "<list the top 3 missing keywords for ${INDUSTRY_LABELS[industry]} that a recruiter would search for>"},
+    "contact_info": {"score": <0-10>, "label": "Contact & Links", "note": "<does it have LinkedIn? GitHub/portfolio if tech? City? Professional email?>"},
+    "education": {"score": <0-10>, "label": "Education Section", "note": "<CGPA present? Relevant coursework? Academic achievements? Is it formatted correctly?>"},
+    "skills_section": {"score": <0-10>, "label": "Skills Presentation", "note": "<are skills dumped in a list or categorised? Are proficiency levels mentioned? Any irrelevant/generic skills like 'MS Word'?>"},
+    "experience_depth": {"score": <0-10>, "label": "Experience Depth", "note": "<are bullets showing IMPACT or just TASKS? Quote the weakest bullet. How many bullets are pure task descriptions with no outcome?>"},
+    "overall_clarity": {"score": <0-10>, "label": "Clarity & Readability", "note": "<is it 1 page? Is there excessive whitespace or is it too dense? Font consistency? Length appropriate?>"}
   },
-  "strengths": ["<5-7 specific strengths — quote actual content from the resume>"],
+  "strengths": ["<3-5 GENUINE strengths only — quote the actual good content. If nothing is good, list only 1-2. Don't manufacture strengths.>"],
   "weaknesses": [
-    {"title": "<short title>", "priority": "high|medium|low", "issue": "<specific problem>", "before": "<actual weak line from resume or describe weakness>", "after": "<improved version>", "tip": "<actionable fix>"},
-    {"title": "<short title>", "priority": "high|medium|low", "issue": "<specific problem>", "before": "<actual weak line>", "after": "<improved version>", "tip": "<actionable fix>"},
-    {"title": "<short title>", "priority": "high|medium|low", "issue": "<specific problem>", "before": "<actual weak line>", "after": "<improved version>", "tip": "<actionable fix>"},
-    {"title": "<short title>", "priority": "high|medium|low", "issue": "<specific problem>", "before": "<actual weak line>", "after": "<improved version>", "tip": "<actionable fix>"},
-    {"title": "<short title>", "priority": "high|medium|low", "issue": "<specific problem>", "before": "<actual weak line>", "after": "<improved version>", "tip": "<actionable fix>"}
+    {"title": "<exact problem name>", "priority": "high", "issue": "<quote the actual weak line and explain why it will hurt>", "before": "<copy the exact weak line from resume>", "after": "<rewritten version with strong verb + number + outcome>", "tip": "<one specific actionable fix — not generic>"},
+    {"title": "<exact problem name>", "priority": "high", "issue": "<specific issue>", "before": "<weak version>", "after": "<strong version>", "tip": "<specific fix>"},
+    {"title": "<exact problem name>", "priority": "medium", "issue": "<specific issue>", "before": "<weak version>", "after": "<strong version>", "tip": "<specific fix>"},
+    {"title": "<exact problem name>", "priority": "medium", "issue": "<specific issue>", "before": "<weak version>", "after": "<strong version>", "tip": "<specific fix>"},
+    {"title": "<exact problem name>", "priority": "low", "issue": "<specific issue>", "before": "<weak version>", "after": "<strong version>", "tip": "<specific fix>"}
   ],
-  "keywords_present": ["<10-15 industry keywords found in the resume>"],
-  "keywords_missing": ["<10-15 high-priority ${INDUSTRY_LABELS[industry]} keywords not in resume>"],
-  "keyword_advice": "<2-3 sentences: which missing keywords to prioritise and where to add them>",
+  "keywords_present": ["<actual keywords found in the resume — only real ones, not invented>"],
+  "keywords_missing": ["<12-15 specific high-value ${INDUSTRY_LABELS[industry]} keywords missing — these are the exact terms a recruiter or ATS would search for>"],
+  "keyword_advice": "<3 sentences: which 3 missing keywords to add first, exactly which section to put them in, and one example sentence showing how to use them naturally>",
   "improvements": [
-    {"title": "<specific improvement>", "priority": "high|medium|low", "issue": "<what's wrong>", "before": "<weak version>", "after": "<strong version>", "tip": "<how to implement>"},
-    {"title": "<specific improvement>", "priority": "high|medium|low", "issue": "<what's wrong>", "before": "<weak version>", "after": "<strong version>", "tip": "<how to implement>"},
-    {"title": "<specific improvement>", "priority": "high|medium|low", "issue": "<what's wrong>", "before": "<weak version>", "after": "<strong version>", "tip": "<how to implement>"}
+    {"title": "<specific improvement>", "priority": "high", "issue": "<what is wrong and why it hurts>", "before": "<actual weak content>", "after": "<strong rewrite>", "tip": "<exact implementation step>"},
+    {"title": "<specific improvement>", "priority": "high", "issue": "<what is wrong>", "before": "<weak>", "after": "<strong>", "tip": "<exact step>"},
+    {"title": "<specific improvement>", "priority": "medium", "issue": "<what is wrong>", "before": "<weak>", "after": "<strong>", "tip": "<exact step>"}
   ],
-  "rewrite": "<Rewrite the EXPERIENCE and SKILLS sections only — use strong action verbs, quantify every achievement, add relevant ${INDUSTRY_LABELS[industry]} keywords. Format as clean plain text with section headers. If no experience, write a strong Projects section instead. Be specific to THIS person's background — don't invent fake companies.>"
+  "rewrite": "<Rewrite ONLY the Experience and Skills sections. Rules: (1) Every bullet MUST start with a strong past-tense action verb (Engineered, Reduced, Increased, Built, Deployed, Automated, Spearheaded, Achieved). (2) Every bullet MUST have a number/metric — estimate if not given (e.g. '~30% faster', 'team of 4', '200+ users'). (3) Add the top 5 missing keywords naturally. (4) If there is no experience, rewrite Projects as the centerpiece. (5) DO NOT invent fake companies or roles. Output clean plain text with section headers.>"
 }`;
 }
 
