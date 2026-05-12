@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check My College — Brutally Honest College Reviews | Student Toolkit</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #0a0c15 0%, #111827 100%);
+      color: #fff;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    
+    .nav {
+      background: rgba(10, 12, 21, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 16px 32px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      font-weight: 900;
+      text-decoration: none;
+      color: #fff;
+    }
+    
+    .logo span {
+      color: #ff3d00;
+    }
+    
+    .nav-links a {
+      color: #aaa;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    
+    .hero {
+      text-align: center;
+      padding: 60px 24px 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255, 61, 0, 0.15);
+      border: 1px solid rgba(255, 61, 0, 0.3);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #ff6b3d;
+      margin-bottom: 24px;
+    }
+    
+    h1 {
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff, #ff6b3d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hero p {
+      color: #aaa;
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+    
+    .search-container {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+    
+    .search-box {
+      display: flex;
+      gap: 12px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 60px;
+      padding: 6px 6px 6px 24px;
+    }
+    
+    .search-box input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 16px 0;
+      font-size: 16px;
+      color: #fff;
+      outline: none;
+    }
+    
+    .search-box input::placeholder {
+      color: #555;
+    }
+    
+    .search-box button {
+      background: #ff3d00;
+      border: none;
+      border-radius: 60px;
+      padding: 12px 28px;
+      color: white;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    
+    .search-box button:hover {
+      background: #ff5722;
+    }
+    
+    .search-examples {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    
+    .example-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    
+    .example-btn:hover {
+      background: rgba(255, 61, 0, 0.2);
+    }
+    
+    .loading {
+      text-align: center;
+      padding: 60px 20px;
+      display: none;
+    }
+    
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(255,61,0,0.2);
+      border-top-color: #ff3d00;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .results {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 24px 60px;
+      display: none;
+    }
+    
+    .college-header {
+      background: linear-gradient(135deg, rgba(255,61,0,0.15), rgba(255,61,0,0.05));
+      border-radius: 24px;
+      padding: 32px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255,61,0,0.2);
+    }
+    
+    .college-name {
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    
+    .verdict-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-top: 12px;
+    }
+    
+    .verdict-recommended {
+      background: rgba(0, 212, 123, 0.15);
+      border: 1px solid rgba(0, 212, 123, 0.3);
+      color: #00d47b;
+    }
+    
+    .verdict-avoid {
+      background: rgba(217, 45, 32, 0.15);
+      border: 1px solid rgba(217, 45, 32, 0.3);
+      color: #ff4a4a;
+    }
+    
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    
+    .info-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 24px;
+    }
+    
+    .card-icon {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #ff6b3d;
+    }
+    
+    .card-content {
+      color: #ccc;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    
+    .card-content ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+    
+    .red-flag {
+      color: #ff4a4a;
+    }
+    
+    .disclaimer {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 32px;
+      font-size: 12px;
+      color: #666;
+      text-align: center;
+    }
+    
+    .footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      color: #666;
+      font-size: 13px;
+    }
+    
+    .error-message {
+      background: rgba(217, 45, 32, 0.15);
+      border: 1px solid rgba(217, 45, 32, 0.3);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      color: #ff4a4a;
+    }
+    
+    @media (max-width: 768px) {
+      .nav-inner {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .search-box {
+        flex-direction: column;
+        border-radius: 24px;
+        padding: 16px;
+      }
+      .search-box button {
+        width: 100%;
+      }
+      .college-name {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">Student<span>Toolkit</span></a>
+    <div class="nav-links">
+      <a href="#">Tools</a>
+      <a href="#">Colleges</a>
+      <a href="#">Blog</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">🔍 Brutally Honest College Reviews</div>
+  <h1>Check My College</h1>
+  <p>Enter any Indian college name — get real placement data, student reviews, faculty truth, and red flags.</p>
+</section>
+
+<div class="search-container">
+  <div class="search-box">
+    <input type="text" id="collegeInput" placeholder="e.g., IIM Ahmedabad, VIT Vellore, LPU">
+    <button id="searchBtn">🔍 Analyze →</button>
+  </div>
+  <div class="search-examples">
+    <span class="example-btn" data-value="IIM Ahmedabad">IIM Ahmedabad</span>
+    <span class="example-btn" data-value="VIT Vellore">VIT Vellore</span>
+    <span class="example-btn" data-value="SSCBS Delhi">SSCBS Delhi</span>
+    <span class="example-btn" data-value="LPU Jalandhar">LPU Jalandhar</span>
+    <span class="example-btn" data-value="Amity University Noida">Amity University</span>
+  </div>
+</div>
+
+<div class="loading" id="loading">
+  <div class="loading-spinner"></div>
+  <p>🔍 Searching colleges...<br>📊 Gathering placement data...<br>🚩 Checking red flags...</p>
+</div>
+
+<div class="results" id="results"></div>
+
+<div class="footer">
+  <p>© 2026 Student Toolkit — Honest College Reviews for Indian Students</p>
+  <p>⚠️ AI-generated information. Always verify with official sources.</p>
+</div>
+
+<script>
+// ============================================
+// 👇 PASTE YOUR GROQ API KEY HERE 👇
+// Get it from: https://console.groq.com
+// ============================================
+const GROQ_API_KEY = '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';
+
+// ============================================
+// NO OTHER CHANGES NEEDED
+// ============================================
+
+const searchInput = document.getElementById('collegeInput');
+const searchBtn = document.getElementById('searchBtn');
+const loadingDiv = document.getElementById('loading');
+const resultsDiv = document.getElementById('results');
+
+let lastRequestTime = 0;
+const MIN_INTERVAL = 3000;
+
+document.querySelectorAll('.example-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    searchInput.value = btn.dataset.value;
+    searchCollege();
+  });
+});
+
+searchBtn.addEventListener('click', searchCollege);
+searchInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') searchCollege();
+});
+
+async function searchCollege() {
+  const collegeName = searchInput.value.trim();
+  
+  if (!collegeName) {
+    alert('Please enter a college name');
+    return;
+  }
+  
+  // Rate limiting
+  if (Date.now() - lastRequestTime < MIN_INTERVAL) {
+    alert('Please wait 3 seconds before searching again');
+    return;
+  }
+  lastRequestTime = Date.now();
+  
+  loadingDiv.style.display = 'block';
+  resultsDiv.style.display = 'none';
+  
+  try {
+    const data = await callGroq(collegeName);
+    displayResults(data, collegeName);
+  } catch (err) {
+    resultsDiv.innerHTML = `<div class="error-message"><strong>Error:</strong> ${err.message}<br><br>Check console for details (F12). Also verify your Groq API key is correct.</div>`;
+    resultsDiv.style.display = 'block';
+  } finally {
+    loadingDiv.style.display = 'none';
+  }
+}
+
+async function callGroq(collegeName) {
+  const prompt = `You are a brutally honest college reviewer for Indian students. 
+  
+Analyze ${collegeName} college and return ONLY valid JSON in this exact format (no other text):
+
+{
+  "collegeName": "${collegeName}",
+  "location": "City, State",
+  "type": "Government/Private",
+  "recognition": "UGC/AICTE/NAAC status",
+  "courses": ["Course 1", "Course 2"],
+  "faculty": "Faculty quality and student ratio",
+  "placements": "Real median salary (LPA), top recruiters, placement %",
+  "fees": "Total course fees in lakhs",
+  "hostel": "Hostel condition and food quality",
+  "rules": "Attendance requirement, dress code",
+  "reviews": "What students actually say",
+  "redFlags": ["Red flag 1", "Red flag 2"],
+  "verdict": "RECOMMENDED or AVOID"
+}
+
+Be honest. If the college has fake placements or bad ROI, say AVOID with reason.`;
+
+  const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${GROQ_API_KEY}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      model: 'llama3-70b-8192',
+      messages: [
+        { role: 'system', content: 'You return ONLY valid JSON. No explanations, no markdown, just the JSON object.' },
+        { role: 'user', content: prompt }
+      ],
+      temperature: 0.3,
+      max_tokens: 2000
+    })
+  });
+
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.error?.message || `HTTP ${response.status}`);
+  }
+
+  const data = await response.json();
+  const content = data.choices[0].message.content;
+  
+  // Clean the response (remove markdown code blocks if present)
+  let cleanJson = content.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
+  
+  try {
+    return JSON.parse(cleanJson);
+  } catch (e) {
+    console.error('Failed to parse JSON:', cleanJson);
+    throw new Error('Invalid response from AI');
+  }
+}
+
+function displayResults(data, collegeName) {
+  const verdictClass = data.verdict?.toLowerCase().includes('recommend') ? 'verdict-recommended' : 'verdict-avoid';
+  const verdictText = data.verdict?.toLowerCase().includes('recommend') ? '✅ RECOMMENDED' : '❌ AVOID / NOT RECOMMENDED';
+  
+  let html = `
+    <div class="college-header">
+      <div class="college-name">${escapeHtml(data.collegeName || collegeName)}</div>
+      <div>📍 ${escapeHtml(data.location || 'India')} | ${escapeHtml(data.type || 'College')}</div>
+      <div class="verdict-badge ${verdictClass}">${verdictText}</div>
+    </div>
+    
+    <div class="info-grid">
+      <div class="info-card"><div class="card-icon">✅</div><div class="card-title">Recognition</div><div class="card-content">${escapeHtml(data.recognition || 'N/A')}</div></div>
+      <div class="info-card"><div class="card-icon">📚</div><div class="card-title">Courses</div><div class="card-content">${formatList(data.courses)}</div></div>
+      <div class="info-card"><div class="card-icon">👨‍🏫</div><div class="card-title">Faculty</div><div class="card-content">${escapeHtml(data.faculty || 'N/A')}</div></div>
+      <div class="info-card"><div class="card-icon">💰</div><div class="card-title">Placements</div><div class="card-content">${escapeHtml(data.placements || 'N/A')}</div></div>
+      <div class="info-card"><div class="card-icon">💵</div><div class="card-title">Fees</div><div class="card-content">${escapeHtml(data.fees || 'N/A')}</div></div>
+      <div class="info-card"><div class="card-icon">🏠</div><div class="card-title">Hostel</div><div class="card-content">${escapeHtml(data.hostel || 'N/A')}</div></div>
+      <div class="info-card"><div class="card-icon">📋</div><div class="card-title">Rules</div><div class="card-content">${escapeHtml(data.rules || 'N/A')}</div></div>
+      <div class="info-card"><div class="card-icon">💬</div><div class="card-title">Student Reviews</div><div class="card-content">${escapeHtml(data.reviews || 'N/A')}</div></div>
+      <div class="info-card"><div class="card-icon">🚩</div><div class="card-title">Red Flags</div><div class="card-content">${formatRedFlags(data.redFlags)}</div></div>
+    </div>
+    
+    <div class="disclaimer">
+      ⚠️ AI-generated information. Verify with official AICTE/UGC sources before making decisions.
+    </div>
+  `;
+  
+  resultsDiv.innerHTML = html;
+  resultsDiv.style.display = 'block';
+  resultsDiv.scrollIntoView({ behavior: 'smooth' });
+}
+
+function formatList(items) {
+  if (!items) return 'N/A';
+  if (Array.isArray(items)) {
+    return `<ul>${items.map(i => `<li>${escapeHtml(i)}</li>`).join('')}</ul>`;
+  }
+  return escapeHtml(items);
+}
+
+function formatRedFlags(flags) {
+  if (!flags) return '✅ No major red flags reported';
+  if (Array.isArray(flags) && flags.length === 0) return '✅ No major red flags reported';
+  if (Array.isArray(flags)) {
+    return `<ul class="red-flag">${flags.map(f => `<li>🚩 ${escapeHtml(f)}</li>`).join('')}</ul>`;
+  }
+  return `<span class="red-flag">🚩 ${escapeHtml(flags)}</span>`;
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+</script>
+</body>
+</html>
