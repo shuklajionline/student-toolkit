@@ -22,11 +22,11 @@ fbq('init','1248976636881567');fbq('track','PageView');
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1248976636881567&ev=PageView&noscript=1"/></noscript>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>AI Resume Checker India — ATS Score, Deep Analysis & Rewrite | Student Toolkit</title>
-<meta name="description" content="India's most advanced free AI resume checker. Get ATS score out of 100, section-by-section analysis, industry-specific keyword gaps, rewrite suggestions. Powered by Groq + Llama 3.3 70B — results in under 2 seconds."/>
+<meta name="description" content="India's most advanced free AI resume checker. Get ATS score out of 100, section-by-section analysis, industry-specific keyword gaps, rewrite suggestions. Powered by Google Gemini AI — completely free."/>
 <meta name="keywords" content="AI resume checker India, ATS resume score, resume checker free India, resume analyzer India 2026, ATS score resume, resume feedback India, resume review free, best resume checker India, resume for Naukri Internshala LinkedIn India"/>
 <link rel="canonical" href="https://studenttoolkit.online/tools/ai-resume-checker.html"/>
 <meta property="og:title" content="AI Resume Checker India — Real ATS Score + AI Rewrite"/>
-<meta property="og:description" content="Free AI-powered resume checker for Indian students. Score out of 100, deep analysis, rewrite suggestions. Powered by Claude."/>
+<meta property="og:description" content="Free AI-powered resume checker for Indian students. Score out of 100, deep analysis, rewrite suggestions. Powered by Google Gemini."/>
 <meta property="og:type" content="website"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI Resume Checker India","applicationCategory":"UtilityApplication","operatingSystem":"Web","url":"https://studenttoolkit.online/tools/ai-resume-checker.html","description":"AI-powered resume checker for Indian students with ATS scoring, industry-specific analysis, and rewrite suggestions.","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"featureList":["ATS score out of 100","Section-by-section analysis","Industry-specific keyword gaps","AI-powered rewrite suggestions","Impact language upgrade","Quantification analysis","Indian recruiter perspective"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -215,7 +215,7 @@ nav{position:sticky;top:0;z-index:200;height:60px;display:flex;align-items:cente
 /* ══ REWRITE SECTION ══ */
 .rewrite-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:16px;margin-bottom:12px;position:relative}
 .rewrite-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:7px}
-.rewrite-text{font-size:13.5px;color:var(--ink2);line-height:1.75;white-space:pre-wrap}
+.rewrite-text{font-size:13.5px;color:var(--ink2);line-height:1.75;white-space:pre-wrap;font-family:'Inter',monospace}
 .copy-btn{position:absolute;top:14px;right:14px;padding:5px 11px;background:var(--surface3);border:1px solid var(--border2);border-radius:var(--rxs);font-size:12px;font-weight:600;color:var(--ink3);cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif}
 .copy-btn:hover{background:var(--accent-l);color:#a5b4fc;border-color:rgba(99,102,241,.3)}
 
@@ -254,7 +254,7 @@ footer a:hover{color:var(--accent)}
 
 <!-- HERO -->
 <div class="page-hero">
-  <div class="hero-badge"><span class="hero-dot"></span> Powered by Groq AI · Llama 3.3 70B · Ultra Fast</div>
+  <div class="hero-badge"><span class="hero-dot"></span> Powered by Google Gemini AI · Completely Free</div>
   <h1>AI Resume Checker<br/><em>Score. Analyse. Rewrite.</em></h1>
   <p class="hero-sub">India's most advanced free resume checker. Real ATS scoring, section-by-section AI analysis, keyword gaps by industry, and an actual rewrite — not just a generic tip.</p>
   <div class="hero-pills">
@@ -276,33 +276,15 @@ footer a:hover{color:var(--accent)}
   </div>
   <div class="card-body">
     <div class="ind-grid">
-      <button class="ind-btn active" data-ind="software" onclick="setIndustry('software',this)">
-        <span class="ind-ico">💻</span>Software & Tech
-      </button>
-      <button class="ind-btn" data-ind="consulting" onclick="setIndustry('consulting',this)">
-        <span class="ind-ico">📊</span>Consulting
-      </button>
-      <button class="ind-btn" data-ind="finance" onclick="setIndustry('finance',this)">
-        <span class="ind-ico">💰</span>Finance & Banking
-      </button>
-      <button class="ind-btn" data-ind="marketing" onclick="setIndustry('marketing',this)">
-        <span class="ind-ico">📢</span>Marketing
-      </button>
-      <button class="ind-btn" data-ind="product" onclick="setIndustry('product',this)">
-        <span class="ind-ico">🚀</span>Product Management
-      </button>
-      <button class="ind-btn" data-ind="data" onclick="setIndustry('data',this)">
-        <span class="ind-ico">🤖</span>Data & Analytics
-      </button>
-      <button class="ind-btn" data-ind="operations" onclick="setIndustry('operations',this)">
-        <span class="ind-ico">⚙️</span>Operations
-      </button>
-      <button class="ind-btn" data-ind="hr" onclick="setIndustry('hr',this)">
-        <span class="ind-ico">👥</span>HR & People
-      </button>
-      <button class="ind-btn" data-ind="general" onclick="setIndustry('general',this)">
-        <span class="ind-ico">🎯</span>General / Other
-      </button>
+      <button class="ind-btn active" data-ind="software" onclick="setIndustry('software',this)"><span class="ind-ico">💻</span>Software & Tech</button>
+      <button class="ind-btn" data-ind="consulting" onclick="setIndustry('consulting',this)"><span class="ind-ico">📊</span>Consulting</button>
+      <button class="ind-btn" data-ind="finance" onclick="setIndustry('finance',this)"><span class="ind-ico">💰</span>Finance & Banking</button>
+      <button class="ind-btn" data-ind="marketing" onclick="setIndustry('marketing',this)"><span class="ind-ico">📢</span>Marketing</button>
+      <button class="ind-btn" data-ind="product" onclick="setIndustry('product',this)"><span class="ind-ico">🚀</span>Product Management</button>
+      <button class="ind-btn" data-ind="data" onclick="setIndustry('data',this)"><span class="ind-ico">🤖</span>Data & Analytics</button>
+      <button class="ind-btn" data-ind="operations" onclick="setIndustry('operations',this)"><span class="ind-ico">⚙️</span>Operations</button>
+      <button class="ind-btn" data-ind="hr" onclick="setIndustry('hr',this)"><span class="ind-ico">👥</span>HR & People</button>
+      <button class="ind-btn" data-ind="general" onclick="setIndustry('general',this)"><span class="ind-ico">🎯</span>General / Other</button>
     </div>
   </div>
 </div>
@@ -333,7 +315,7 @@ footer a:hover{color:var(--accent)}
       <div class="spinner"></div>
     </div>
     <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:6px">Analysing your resume…</div>
-    <div style="font-size:13.5px;color:var(--ink3);margin-bottom:24px" id="loadingMsg">Claude AI is reading every line of your resume</div>
+    <div style="font-size:13.5px;color:var(--ink3);margin-bottom:24px" id="loadingMsg">Gemini AI is reading every line of your resume</div>
     <div class="loading-steps">
       <div class="ls-item" id="ls1"><span class="ls-icon">📖</span>Reading resume structure</div>
       <div class="ls-item" id="ls2"><span class="ls-icon">🔍</span>Scoring ATS compatibility</div>
@@ -388,40 +370,24 @@ footer a:hover{color:var(--accent)}
       <!-- STRENGTHS -->
       <div class="tab-panel active" id="tab-strengths">
         <div class="findings-grid">
-          <div class="finding-box fb-green">
-            <div class="finding-box-head">✓ What's Working</div>
-            <div class="finding-list" id="prosList"></div>
-          </div>
-          <div class="finding-box fb-red">
-            <div class="finding-box-head">✗ Critical Issues</div>
-            <div class="finding-list" id="consList"></div>
-          </div>
+          <div class="finding-box fb-green"><div class="finding-box-head">✓ What's Working</div><div class="finding-list" id="prosList"></div></div>
+          <div class="finding-box fb-red"><div class="finding-box-head">✗ Critical Issues</div><div class="finding-list" id="consList"></div></div>
         </div>
         <div id="summaryText" style="font-size:14px;color:var(--ink3);line-height:1.7;padding:14px;background:var(--bg3);border-radius:var(--rs);border:1px solid var(--border)"></div>
       </div>
 
       <!-- WEAKNESSES -->
-      <div class="tab-panel" id="tab-weaknesses">
-        <div class="improvement-list" id="weaknessList"></div>
-      </div>
+      <div class="tab-panel" id="tab-weaknesses"><div class="improvement-list" id="weaknessList"></div></div>
 
       <!-- KEYWORDS -->
       <div class="tab-panel" id="tab-keywords">
-        <div class="kw-section">
-          <div class="kw-section-title">✅ Keywords Found in Your Resume</div>
-          <div class="kw-grid" id="kwPresent"></div>
-        </div>
-        <div class="kw-section" style="margin-top:16px">
-          <div class="kw-section-title">❌ High-Priority Missing Keywords</div>
-          <div class="kw-grid" id="kwMissing"></div>
-        </div>
+        <div class="kw-section"><div class="kw-section-title">✅ Keywords Found in Your Resume</div><div class="kw-grid" id="kwPresent"></div></div>
+        <div class="kw-section" style="margin-top:16px"><div class="kw-section-title">❌ High-Priority Missing Keywords</div><div class="kw-grid" id="kwMissing"></div></div>
         <div id="kwAdvice" style="margin-top:14px;font-size:13.5px;color:var(--ink3);line-height:1.7;padding:14px;background:var(--bg3);border-radius:var(--rs);border:1px solid var(--border)"></div>
       </div>
 
       <!-- IMPROVEMENTS -->
-      <div class="tab-panel" id="tab-improvements">
-        <div class="improvement-list" id="impList"></div>
-      </div>
+      <div class="tab-panel" id="tab-improvements"><div class="improvement-list" id="impList"></div></div>
 
       <!-- REWRITE -->
       <div class="tab-panel" id="tab-rewrite">
@@ -436,10 +402,7 @@ footer a:hover{color:var(--accent)}
   <!-- ACTION BAR -->
   <div class="action-bar">
     <span class="action-lbl">Share:</span>
-    <button class="act-btn btn-wa" onclick="shareWA()">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Share on WhatsApp
-    </button>
+    <button class="act-btn btn-wa" onclick="shareWA()"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Share on WhatsApp</button>
     <button class="act-btn btn-copy" id="copyResultBtn" onclick="copyResult()">Copy Score</button>
     <button class="act-btn btn-reset" onclick="resetTool()" style="margin-left:auto">↺ Check Another</button>
   </div>
@@ -454,12 +417,16 @@ footer a:hover{color:var(--accent)}
 <script>
 'use strict';
 
-// ⚠️ ROTATE THIS KEY AT console.groq.com/keys — never commit to public repos
-const GROQ_KEY = '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'; // Replace with your new key after rotating
+// ============================================
+// 🔑 GOOGLE GEMINI API KEY
+// Get your free API key from: https://aistudio.google.com
+// ============================================
+const GEMINI_API_KEY = 'AIzaSyDuLmODH4uEVC3lXWbnB2V-LpVkt92WQFc'; // 👈 REPLACE WITH YOUR ACTUAL GEMINI API KEY
+const GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + GEMINI_API_KEY;
 
-// ═══════════════════════════════════════════════════════════
+// ============================================
 //  STATE
-// ═══════════════════════════════════════════════════════════
+// ============================================
 let selectedIndustry = 'software';
 let lastResult = null;
 
@@ -471,18 +438,18 @@ const INDUSTRY_LABELS = {
   general:'General / Other'
 };
 
-// ═══════════════════════════════════════════════════════════
+// ============================================
 //  INDUSTRY SELECTION
-// ═══════════════════════════════════════════════════════════
+// ============================================
 function setIndustry(ind, btn) {
   selectedIndustry = ind;
   document.querySelectorAll('.ind-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 }
 
-// ═══════════════════════════════════════════════════════════
+// ============================================
 //  WORD COUNT
-// ═══════════════════════════════════════════════════════════
+// ============================================
 function updateCount() {
   const text = document.getElementById('resumeText').value.trim();
   const wc = text ? text.split(/\s+/).length : 0;
@@ -491,9 +458,9 @@ function updateCount() {
   badge.className = 'wc-badge ' + (wc >= 300 && wc <= 750 ? 'wc-ok' : wc >= 150 ? 'wc-warn' : 'wc-bad');
 }
 
-// ═══════════════════════════════════════════════════════════
+// ============================================
 //  LOADING ANIMATION
-// ═══════════════════════════════════════════════════════════
+// ============================================
 let loadingTimer = null;
 function startLoadingAnimation() {
   const steps = [1,2,3,4,5];
@@ -526,70 +493,50 @@ function stopLoading() {
   });
 }
 
-// ═══════════════════════════════════════════════════════════
-//  MAIN ANALYSIS — Claude API
-// ═══════════════════════════════════════════════════════════
-async function analyzeResume() {
-  const text = document.getElementById('resumeText').value.trim();
-  if(text.length < 100) { showError('Please paste your full resume (at least 100 characters).'); return; }
-  hideError();
-
-  // UI: hide input, show loading
-  document.getElementById('submitBtn').disabled = true;
-  document.getElementById('resultsPanel').classList.remove('visible');
-  document.getElementById('loadingPanel').classList.add('visible');
-  document.getElementById('inputCard').style.opacity = '.5';
-  document.getElementById('textCard').style.opacity = '.5';
-  startLoadingAnimation();
-  window.scrollTo({top: document.getElementById('loadingPanel').offsetTop - 80, behavior:'smooth'});
-
-  const prompt = buildPrompt(text, selectedIndustry);
-
-  try {
-    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + GROQ_KEY
-      },
-      body: JSON.stringify({
-        model: 'llama-3.3-70b-versatile',
-        max_tokens: 2048,
-        temperature: 0.3,
-        response_format: { type: 'json_object' },
-        messages: [
-          { role: 'system', content: 'You are an expert Indian ATS resume analyst. Always respond with valid JSON only.' },
-          { role: 'user', content: prompt }
-        ]
-      })
-    });
-
-    if(!response.ok) {
-      const err = await response.json().catch(()=>({}));
-      throw new Error(err?.error?.message || `API error ${response.status}`);
+// ============================================
+//  GEMINI API CALL
+// ============================================
+async function callGeminiAPI(promptText) {
+  const requestBody = {
+    contents: [{
+      parts: [{ text: promptText }]
+    }],
+    generationConfig: {
+      temperature: 0.3,
+      maxOutputTokens: 8192,
+      topP: 0.95
     }
-    const data = await response.json();
-    const raw = data.choices?.[0]?.message?.content || '';
+  };
 
-    stopLoading();
-    const parsed = parseResponse(raw);
-    lastResult = parsed;
-    renderResults(parsed);
+  const response = await fetch(GEMINI_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(requestBody)
+  });
 
-  } catch(err) {
-    stopLoading();
-    document.getElementById('loadingPanel').classList.remove('visible');
-    document.getElementById('submitBtn').disabled = false;
-    document.getElementById('inputCard').style.opacity = '1';
-    document.getElementById('textCard').style.opacity = '1';
-    showError('Analysis failed — please try again. If the issue persists, check your internet connection.');
-    console.error('Resume API error:', err);
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.error?.message || `API error ${response.status}`);
   }
+
+  const data = await response.json();
+  const generatedText = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+  
+  // Extract JSON from response (Gemini might wrap in markdown)
+  let cleanJson = generatedText.replace(/```json\s*/gi, '').replace(/```\s*/g, '').trim();
+  
+  // Try to find JSON object if there's extra text
+  const jsonMatch = cleanJson.match(/\{[\s\S]*\}/);
+  if (jsonMatch) {
+    cleanJson = jsonMatch[0];
+  }
+  
+  return JSON.parse(cleanJson);
 }
 
-// ═══════════════════════════════════════════════════════════
+// ============================================
 //  PROMPT BUILDER
-// ═══════════════════════════════════════════════════════════
+// ============================================
 function buildPrompt(resumeText, industry) {
   return `You are a brutally honest senior recruiter at a top Indian company. You have rejected 90% of resumes you've seen. You do NOT give flattery. You tell candidates EXACTLY what is wrong, why a recruiter would skip their resume in 6 seconds, and what they must fix.
 
@@ -618,7 +565,8 @@ ${resumeText.slice(0, 4500)}
 
 TARGET INDUSTRY: ${INDUSTRY_LABELS[industry]}
 
-Return ONLY valid JSON — no markdown, no preamble:
+Return ONLY valid JSON — no markdown, no preamble, just the JSON object:
+
 {
   "score": <integer 0-100 — be ruthless>,
   "grade": "<S=90+/A=80-89/B=65-79/C=45-64/D=below 45>",
@@ -658,40 +606,50 @@ Return ONLY valid JSON — no markdown, no preamble:
 }`;
 }
 
-// ═══════════════════════════════════════════════════════════
-//  RESPONSE PARSER
-// ═══════════════════════════════════════════════════════════
-function parseResponse(raw) {
+// ============================================
+//  MAIN ANALYSIS — Gemini API
+// ============================================
+async function analyzeResume() {
+  const text = document.getElementById('resumeText').value.trim();
+  if(text.length < 100) { showError('Please paste your full resume (at least 100 characters).'); return; }
+  hideError();
+
+  // UI: hide input, show loading
+  document.getElementById('submitBtn').disabled = true;
+  document.getElementById('resultsPanel').classList.remove('visible');
+  document.getElementById('loadingPanel').classList.add('visible');
+  document.getElementById('inputCard').style.opacity = '.5';
+  document.getElementById('textCard').style.opacity = '.5';
+  startLoadingAnimation();
+  window.scrollTo({top: document.getElementById('loadingPanel').offsetTop - 80, behavior:'smooth'});
+
+  const prompt = buildPrompt(text, selectedIndustry);
+
   try {
-    const clean = raw.replace(/```json\s*/gi,'').replace(/```\s*/g,'').trim();
-    return JSON.parse(clean);
-  } catch(e) {
-    // Try extracting JSON
-    const m = raw.match(/\{[\s\S]*\}/);
-    if(m) {
-      try { return JSON.parse(m[0]); } catch(e2) {}
-    }
-    // Return fallback
-    return {
-      score: 50, grade: 'C', percentile: 'top 50%',
-      verdict: 'Unable to fully parse the analysis. Please try again.',
-      summary: raw.slice(0, 500),
-      tags: ['Analysis Partial'],
-      dimensions: {}, strengths: [], weaknesses: [],
-      keywords_present: [], keywords_missing: [],
-      keyword_advice: '', improvements: [],
-      rewrite: 'Please try the analysis again for full results.'
-    };
+    const parsed = await callGeminiAPI(prompt);
+    stopLoading();
+    lastResult = parsed;
+    renderResults(parsed);
+
+  } catch(err) {
+    stopLoading();
+    document.getElementById('loadingPanel').classList.remove('visible');
+    document.getElementById('submitBtn').disabled = false;
+    document.getElementById('inputCard').style.opacity = '1';
+    document.getElementById('textCard').style.opacity = '1';
+    showError('Analysis failed — ' + err.message + '. Please try again.');
+    console.error('Resume API error:', err);
   }
 }
 
-// ═══════════════════════════════════════════════════════════
+// ============================================
 //  RENDER RESULTS
-// ═══════════════════════════════════════════════════════════
+// ============================================
 function renderResults(r) {
   document.getElementById('loadingPanel').classList.remove('visible');
   document.getElementById('inputCard').style.opacity = '1';
   document.getElementById('textCard').style.opacity = '1';
+  document.getElementById('submitBtn').disabled = false;
 
   const panel = document.getElementById('resultsPanel');
   panel.classList.add('visible');
@@ -701,7 +659,7 @@ function renderResults(r) {
   const circumference = 326.7;
   const offset = circumference * (1 - score/100);
   const circle = document.getElementById('scoreCircle');
-  circle.style.strokeDashoffset = circumference; // start at 0
+  circle.style.strokeDashoffset = circumference;
   const color = score >= 85 ? '#22c55e' : score >= 70 ? '#86efac' : score >= 55 ? '#f59e0b' : score >= 40 ? '#fb923c' : '#ef4444';
   circle.style.stroke = color;
   setTimeout(() => { circle.style.strokeDashoffset = offset; }, 100);
@@ -718,7 +676,7 @@ function renderResults(r) {
   const tagsEl = document.getElementById('scoreTags');
   tagsEl.innerHTML = (r.tags || []).map(t => {
     const isPos = t.toLowerCase().includes('strong') || t.toLowerCase().includes('good') || t.toLowerCase().includes('clear') || t.toLowerCase().includes('quantif');
-    return `<span class="score-tag" style="background:${isPos?'var(--gl)':'var(--al)'};color:${isPos?'var(--green)':'var(--amber)'};font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:12px">${esc(t)}</span>`;
+    return `<span class="score-tag" style="background:${isPos?'var(--gl)':'var(--al)'};color:${isPos?'var(--green)':'var(--amber)'}">${esc(t)}</span>`;
   }).join('');
 
   // Dimensions
@@ -752,7 +710,6 @@ function renderDimensions(dims) {
       <div class="dim-note">${esc(d.note || '')}</div>
     </div>`;
   }).join('');
-  // Animate bars
   setTimeout(() => {
     grid.querySelectorAll('.dim-bar-fill').forEach(b => { b.style.width = b.dataset.w; });
   }, 150);
@@ -767,7 +724,7 @@ function renderStrengths(r) {
     ? cons.map(c => `<div class="finding-item">${esc(c)}</div>`).join('')
     : '<div class="finding-item">No critical issues found.</div>';
 
-  document.getElementById('summaryText').textContent = r.summary || '';
+  document.getElementById('summaryText').innerHTML = esc(r.summary || '');
 }
 
 function renderWeaknesses(weaknesses) {
@@ -797,7 +754,7 @@ function renderKeywords(r) {
   document.getElementById('kwMissing').innerHTML = (r.keywords_missing || []).map(k =>
     `<span class="kw-chip kw-missing">+ ${esc(k)}</span>`).join('') || '<span style="color:var(--ink4);font-size:13px">Great — no critical gaps</span>';
 
-  document.getElementById('kwAdvice').textContent = r.keyword_advice || '';
+  document.getElementById('kwAdvice').innerHTML = esc(r.keyword_advice || '');
 }
 
 function renderImprovements(improvements) {
@@ -824,18 +781,15 @@ function renderRewrite(rewrite) {
   const content = document.getElementById('rewriteContent');
   if(!rewrite) { content.innerHTML = '<div style="color:var(--ink4);padding:20px;text-align:center">No rewrite generated.</div>'; return; }
   content.innerHTML = `<div class="rewrite-box">
-    <div class="rewrite-label">
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-      AI-Improved Resume (Experience + Skills)
-    </div>
+    <div class="rewrite-label"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>AI-Improved Resume (Experience + Skills)</div>
     <button class="copy-btn" onclick="copyRewrite()">Copy</button>
     <pre class="rewrite-text">${esc(rewrite)}</pre>
   </div>`;
 }
 
-// ═══════════════════════════════════════════════════════════
+// ============================================
 //  HELPERS
-// ═══════════════════════════════════════════════════════════
+// ============================================
 function switchTab(tab, btn) {
   document.querySelectorAll('.at-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
@@ -850,7 +804,7 @@ function toggleImp(id) {
 
 function showError(msg) {
   const el = document.getElementById('errBox');
-  el.textContent = '⚠ ' + msg;
+  el.innerHTML = '⚠ ' + msg;
   el.classList.add('visible');
 }
 function hideError() {
