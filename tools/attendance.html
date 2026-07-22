@@ -3,8 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Attendance Calculator with Bunk Meter, College Rules & Recovery | Student Toolkit</title>
-<meta name="description" content="Advanced attendance calculator with 50+ Indian college rules database, bunk meter, recovery planner, and motivational tracking. Free for all students.">
+<title>Attendance Calculator with Bunk Meter, 100+ College Rules & Recovery Planner | Student Toolkit</title>
+<meta name="description" content="India's most advanced free attendance calculator. Features 100+ college rules database, bunk meter, plan-to-miss simulator, recovery planner, and motivational tracking. 75%, 80%, 85% rules. No signup.">
+<meta name="keywords" content="attendance calculator India, bunk meter, college attendance rules, 75% attendance calculator, plan to miss classes, ghost classes, recovery calculator, DU attendance, VTU attendance, Mumbai University attendance, IIT attendance rules">
+<meta name="author" content="Student Toolkit">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://studenttoolkit.online/tools/attendance.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Attendance Calculator — 100+ College Rules, Bunk Meter & Recovery | Student Toolkit">
+<meta property="og:description" content="Free attendance calculator with 100+ Indian college rules, bunk meter, plan-to-miss simulator, and recovery tracker. Supports 75%, 80%, 85% rules.">
+<meta property="og:site_name" content="Student Toolkit">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Attendance Calculator — 100+ College Rules | Student Toolkit">
+<meta name="twitter:description" content="Free attendance calculator with 100+ Indian college rules, bunk meter, plan-to-miss simulator, and recovery tracker.">
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Attendance Calculator with 100+ College Rules",
+  "url": "https://studenttoolkit.online/tools/attendance.html",
+  "description": "India's most advanced free attendance calculator featuring 100+ college-specific rules, bunk meter, plan-to-miss simulator, ghost class adjuster, and recovery tracker.",
+  "applicationCategory": "EducationalApplication",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the 75% attendance rule in Indian colleges?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The UGC mandates 75% minimum attendance for all undergraduate and postgraduate programs. Universities like DU require 66.67%, while IITs and NITs often require 80-85%. Our calculator supports all these thresholds and includes 100+ college-specific rules." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I plan future absences without dropping below attendance requirements?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use the 'Plan to Miss' feature in our calculator. Enter how many classes remain and how many you plan to skip. It instantly shows your projected final attendance percentage and whether your plan is safe or risky." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Indian colleges have the strictest attendance rules?",
+      "acceptedAnswer": { "@type": "Answer", "text": "IIT Madras and Christ University require 85% attendance. VTU Karnataka also mandates 85% for professional courses. IIT Bombay and IIT Delhi require 80%. Most state universities follow the UGC 75% rule with 5-10% medical condonation." }
+    }
+  ]
+}
+</script>
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J60HJ54DY0"></script>
@@ -14,82 +66,64 @@
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1248976636881567');fbq('track','PageView');</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 /* ═══════════════════════════════════════════
-   ULTRA PREMIUM DESIGN SYSTEM v2.0
+   PREMIUM DESIGN SYSTEM v3.0
 ═══════════════════════════════════════════ */
 :root {
   --bg-primary: #f8f7f4;
   --bg-secondary: #ffffff;
   --bg-tertiary: #f0eee8;
-  --bg-elevated: #ffffff;
   --border-primary: #e6e3dc;
   --border-secondary: #d9d5cc;
-  
   --text-primary: #1a1a1a;
   --text-secondary: #5c5c5c;
   --text-tertiary: #949494;
-  --text-placeholder: #bfbfbf;
-  
   --accent-primary: #ff6b35;
   --accent-hover: #e55a2b;
   --accent-light: #fff3ee;
   --accent-glow: rgba(255,107,53,0.15);
-  
   --green-primary: #0d9488;
   --green-light: #e6f7f5;
   --green-glow: rgba(13,148,136,0.12);
-  
   --red-primary: #ef4444;
   --red-light: #fef2f2;
   --red-glow: rgba(239,68,68,0.1);
-  
   --gold-primary: #f59e0b;
   --gold-light: #fffbeb;
   --gold-glow: rgba(245,158,11,0.12);
-  
   --blue-primary: #3b82f6;
   --blue-light: #eff6ff;
-  
+  --blue-glow: rgba(59,130,246,0.12);
   --purple-primary: #8b5cf6;
   --purple-light: #f5f3ff;
-  
-  --shadow-xs: 0 1px 2px rgba(0,0,0,0.03);
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
   --shadow-md: 0 8px 24px rgba(0,0,0,0.06);
   --shadow-lg: 0 16px 48px rgba(0,0,0,0.08);
-  --shadow-xl: 0 24px 64px rgba(0,0,0,0.1);
-  
-  --radius-xs: 8px;
   --radius-sm: 12px;
   --radius-md: 16px;
   --radius-lg: 20px;
   --radius-xl: 24px;
   --radius-2xl: 32px;
   --radius-full: 9999px;
-  
   --font-body: 'Plus Jakarta Sans', sans-serif;
   --font-display: 'Sora', sans-serif;
-  
+  --font-hindi: 'Noto Sans Devanagari', sans-serif;
   --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-spring: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .dark-mode {
   --bg-primary: #0a0a0f;
   --bg-secondary: #111118;
   --bg-tertiary: #1a1a24;
-  --bg-elevated: #16161f;
   --border-primary: rgba(255,255,255,0.06);
   --border-secondary: rgba(255,255,255,0.1);
   --text-primary: #f5f5f7;
   --text-secondary: #a1a1aa;
   --text-tertiary: #71717a;
-  --text-placeholder: #52525b;
-  --shadow-xs: 0 1px 2px rgba(0,0,0,0.2);
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
   --shadow-md: 0 8px 24px rgba(0,0,0,0.4);
   --shadow-lg: 0 16px 48px rgba(0,0,0,0.5);
@@ -108,818 +142,233 @@ body{
 }
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
 
-/* ═══════ AMBIENT BACKGROUND ═══════ */
-.ambient-bg{
-  position:fixed;top:0;left:0;right:0;bottom:0;
-  pointer-events:none;z-index:0;overflow:hidden;
-}
-.ambient-orb{
-  position:absolute;border-radius:50%;
-  filter:blur(120px);opacity:0.4;
-  animation:float 20s ease-in-out infinite;
-}
-.ambient-orb.orb-1{
-  width:600px;height:600px;
-  background:radial-gradient(circle,rgba(255,107,53,0.15),transparent 70%);
-  top:-200px;right:-100px;
-}
-.ambient-orb.orb-2{
-  width:500px;height:500px;
-  background:radial-gradient(circle,rgba(13,148,136,0.1),transparent 70%);
-  bottom:-150px;left:-100px;
-  animation-delay:-7s;
-}
-.ambient-orb.orb-3{
-  width:400px;height:400px;
-  background:radial-gradient(circle,rgba(139,92,246,0.08),transparent 70%);
-  top:50%;left:50%;transform:translate(-50%,-50%);
-  animation-delay:-14s;
-}
-@keyframes float{
-  0%,100%{transform:translate(0,0) scale(1)}
-  33%{transform:translate(30px,-30px) scale(1.05)}
-  66%{transform:translate(-20px,20px) scale(0.95)}
-}
+/* ═══════ AMBIENT ═══════ */
+.ambient-bg{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:0;overflow:hidden}
+.ambient-orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:0.4;animation:float 20s ease-in-out infinite}
+.ambient-orb.orb-1{width:600px;height:600px;background:radial-gradient(circle,rgba(255,107,53,0.15),transparent 70%);top:-200px;right:-100px}
+.ambient-orb.orb-2{width:500px;height:500px;background:radial-gradient(circle,rgba(13,148,136,0.1),transparent 70%);bottom:-150px;left:-100px;animation-delay:-7s}
+.ambient-orb.orb-3{width:400px;height:400px;background:radial-gradient(circle,rgba(139,92,246,0.08),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:-14s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-30px) scale(1.05)}66%{transform:translate(-20px,20px) scale(0.95)}}
 
 /* ═══════ NAV ═══════ */
-.glass-nav{
-  position:sticky;top:16px;z-index:100;
-  margin:0 auto;max-width:1200px;padding:0 24px;
-}
-.glass-nav-inner{
-  background:var(--bg-secondary);
-  border:1px solid var(--border-primary);
-  border-radius:var(--radius-xl);
-  padding:12px 20px;
-  display:flex;align-items:center;
-  justify-content:space-between;
-  backdrop-filter:blur(20px);
-  box-shadow:var(--shadow-sm);
-  transition:all var(--transition-smooth);
-}
-.nav-brand{
-  font-family:var(--font-display);
-  font-weight:800;font-size:20px;
-  display:flex;align-items:center;gap:10px;
-  text-decoration:none;color:var(--text-primary);
-}
-.nav-brand-dot{
-  width:10px;height:10px;
-  border-radius:50%;
-  background:var(--accent-primary);
-  box-shadow:0 0 12px var(--accent-glow);
-  animation:pulse-dot 2s ease-in-out infinite;
-}
-@keyframes pulse-dot{
-  0%,100%{box-shadow:0 0 0 0 var(--accent-glow)}
-  50%{box-shadow:0 0 0 12px transparent}
-}
+.glass-nav{position:sticky;top:16px;z-index:100;margin:0 auto;max-width:1200px;padding:0 24px}
+.glass-nav-inner{background:var(--bg-secondary);border:1px solid var(--border-primary);border-radius:var(--radius-xl);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(20px);box-shadow:var(--shadow-sm);transition:all var(--transition-smooth)}
+.nav-brand{font-family:var(--font-display);font-weight:800;font-size:20px;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text-primary)}
+.nav-brand-dot{width:10px;height:10px;border-radius:50%;background:var(--accent-primary);box-shadow:0 0 12px var(--accent-glow);animation:pulse-dot 2s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{box-shadow:0 0 0 0 var(--accent-glow)}50%{box-shadow:0 0 0 12px transparent}}
 .nav-brand span{color:var(--accent-primary)}
 .nav-actions{display:flex;align-items:center;gap:8px}
-.nav-btn{
-  padding:8px 16px;
-  border-radius:var(--radius-full);
-  font-size:13px;font-weight:600;
-  color:var(--text-secondary);
-  text-decoration:none;
-  transition:all var(--transition-fast);
-  border:none;background:none;cursor:pointer;
-  font-family:var(--font-body);
-}
+.nav-btn{padding:8px 16px;border-radius:var(--radius-full);font-size:13px;font-weight:600;color:var(--text-secondary);text-decoration:none;transition:all var(--transition-fast);border:none;background:none;cursor:pointer;font-family:var(--font-body)}
 .nav-btn:hover{background:var(--bg-tertiary);color:var(--text-primary)}
-.nav-btn.primary-btn{
-  background:var(--accent-primary);
-  color:#fff;padding:9px 20px;font-weight:700;
-  box-shadow:0 2px 8px var(--accent-glow);
-}
-.nav-btn.primary-btn:hover{
-  background:var(--accent-hover);
-  box-shadow:0 8px 24px var(--accent-glow);
-  transform:translateY(-1px);
-}
-.theme-toggle,.sound-toggle{
-  width:40px;height:40px;
-  border-radius:var(--radius-full);
-  border:1px solid var(--border-primary);
-  background:var(--bg-secondary);
-  font-size:16px;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:all var(--transition-fast);
-}
-.theme-toggle:hover,.sound-toggle:hover{
-  border-color:var(--border-secondary);
-  box-shadow:var(--shadow-sm);
-}
+.nav-btn.primary-btn{background:var(--accent-primary);color:#fff;padding:9px 20px;font-weight:700;box-shadow:0 2px 8px var(--accent-glow)}
+.nav-btn.primary-btn:hover{background:var(--accent-hover);transform:translateY(-1px)}
+.sound-toggle{width:40px;height:40px;border-radius:var(--radius-full);border:1px solid var(--border-primary);background:var(--bg-secondary);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--transition-fast)}
+.sound-toggle:hover{border-color:var(--border-secondary)}
+.theme-toggle{width:40px;height:40px;border-radius:var(--radius-full);border:1px solid var(--border-primary);background:var(--bg-secondary);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--transition-fast)}
+.theme-toggle:hover{border-color:var(--border-secondary)}
 
 /* ═══════ HERO ═══════ */
-.hero-section{
-  padding:48px 0 32px;text-align:center;
-  position:relative;z-index:1;
-}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:8px 18px;
-  background:var(--green-light);
-  border:1px solid rgba(13,148,136,0.2);
-  border-radius:var(--radius-full);
-  font-size:12px;font-weight:700;
-  color:var(--green-primary);
-  margin-bottom:20px;
-}
-.hero-badge-dot{
-  width:7px;height:7px;
-  border-radius:50%;
-  background:var(--green-primary);
-  animation:pulse-dot 2s ease-in-out infinite;
-}
-.hero-title{
-  font-family:var(--font-display);
-  font-size:clamp(32px,6vw,56px);
-  font-weight:800;
-  line-height:1.08;
-  letter-spacing:-1.5px;
-  margin-bottom:16px;
-}
-.hero-title .highlight{
-  background:linear-gradient(135deg,var(--accent-primary),#f97316,#fdba74);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-.hero-subtitle{
-  font-size:17px;color:var(--text-secondary);
-  max-width:500px;margin:0 auto 24px;line-height:1.7;
-}
+.hero-section{padding:48px 0 32px;text-align:center;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:var(--green-light);border:1px solid rgba(13,148,136,0.2);border-radius:var(--radius-full);font-size:12px;font-weight:700;color:var(--green-primary);margin-bottom:20px}
+.hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--green-primary);animation:pulse-dot 2s ease-in-out infinite}
+.hero-title{font-family:var(--font-display);font-size:clamp(32px,6vw,52px);font-weight:800;line-height:1.08;letter-spacing:-1.5px;margin-bottom:16px}
+.hero-title .highlight{background:linear-gradient(135deg,var(--accent-primary),#f97316,#fdba74);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-subtitle{font-size:17px;color:var(--text-secondary);max-width:550px;margin:0 auto 20px;line-height:1.7}
 
-/* ═══════ MOTIVATIONAL QUOTE BANNER ═══════ */
-.motivation-banner{
-  background:linear-gradient(135deg,var(--accent-light),var(--purple-light));
-  border:1px solid var(--border-primary);
-  border-radius:var(--radius-xl);
-  padding:20px 28px;
-  margin-bottom:24px;
-  display:flex;align-items:center;gap:16px;
-  position:relative;z-index:1;
-  transition:all var(--transition-smooth);
-  cursor:pointer;
-  box-shadow:var(--shadow-sm);
-}
-.motivation-banner:hover{
-  box-shadow:var(--shadow-md);
-  transform:translateY(-2px);
-}
-.motivation-icon{
-  font-size:36px;flex-shrink:0;
-  animation:float 4s ease-in-out infinite;
-}
+/* ═══════ MULTILINGUAL MOTIVATION ═══════ */
+.motivation-banner{background:linear-gradient(135deg,var(--accent-light),var(--purple-light),#fff7ed);border:1px solid var(--border-primary);border-radius:var(--radius-xl);padding:20px 28px;margin-bottom:24px;display:flex;align-items:center;gap:16px;position:relative;z-index:1;transition:all var(--transition-smooth);cursor:pointer;box-shadow:var(--shadow-sm);overflow:hidden}
+.motivation-banner:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.motivation-icon{font-size:40px;flex-shrink:0;animation:float 4s ease-in-out infinite}
 .motivation-content{flex:1}
-.motivation-quote{
-  font-family:var(--font-display);
-  font-size:16px;font-weight:700;
-  color:var(--text-primary);
-  margin-bottom:4px;letter-spacing:-0.3px;
-  line-height:1.4;
-}
-.motivation-author{
-  font-size:12px;color:var(--text-tertiary);
-  font-weight:500;
-}
-.motivation-refresh{
-  font-size:12px;color:var(--text-tertiary);
-  cursor:pointer;padding:4px;
-  transition:all var(--transition-fast);
-}
-.motivation-refresh:hover{color:var(--accent-primary)}
+.motivation-quote{font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--text-primary);margin-bottom:4px;letter-spacing:-0.3px;line-height:1.5}
+.motivation-quote.hindi{font-family:var(--font-hindi);font-size:16px}
+.motivation-author{font-size:12px;color:var(--text-tertiary);font-weight:500}
+.motivation-lang{display:inline-block;padding:2px 8px;border-radius:var(--radius-full);font-size:10px;font-weight:700;background:var(--accent-light);color:var(--accent-primary);margin-top:4px}
+.motivation-refresh{font-size:12px;color:var(--text-tertiary);cursor:pointer;padding:4px 8px;border-radius:var(--radius-full);transition:all var(--transition-fast);white-space:nowrap;flex-shrink:0}
+.motivation-refresh:hover{color:var(--accent-primary);background:var(--accent-light)}
 
-/* ═══════ COLLEGE RULES QUICK SELECT ═══════ */
-.college-rules-bar{
-  background:var(--bg-secondary);
-  border:1px solid var(--border-primary);
-  border-radius:var(--radius-xl);
-  padding:16px 20px;
-  margin-bottom:24px;
-  position:relative;z-index:1;
-  box-shadow:var(--shadow-sm);
-}
-.college-rules-header{
-  display:flex;align-items:center;
-  justify-content:space-between;
-  margin-bottom:12px;
-  flex-wrap:wrap;gap:8px;
-}
-.college-rules-title{
-  font-family:var(--font-display);
-  font-size:14px;font-weight:700;
-  display:flex;align-items:center;gap:8px;
-}
-.college-search{
-  padding:8px 14px;
-  border:1px solid var(--border-primary);
-  border-radius:var(--radius-full);
-  font-size:12px;font-weight:500;
-  font-family:var(--font-body);
-  background:var(--bg-tertiary);
-  color:var(--text-primary);
-  outline:none;
-  width:200px;
-  transition:all var(--transition-fast);
-}
-.college-search:focus{
-  border-color:var(--accent-primary);
-  box-shadow:0 0 0 3px var(--accent-glow);
-}
-.college-chips{
-  display:flex;gap:8px;
-  overflow-x:auto;
-  padding-bottom:4px;
-  scrollbar-width:none;
-}
+/* ═══════ COLLEGE RULES ═══════ */
+.college-rules-bar{background:var(--bg-secondary);border:1px solid var(--border-primary);border-radius:var(--radius-xl);padding:16px 20px;margin-bottom:24px;position:relative;z-index:1;box-shadow:var(--shadow-sm)}
+.college-rules-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.college-rules-title{font-family:var(--font-display);font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px}
+.college-search{padding:8px 14px;border:1px solid var(--border-primary);border-radius:var(--radius-full);font-size:12px;font-weight:500;font-family:var(--font-body);background:var(--bg-tertiary);color:var(--text-primary);outline:none;width:220px;transition:all var(--transition-fast)}
+.college-search:focus{border-color:var(--accent-primary);box-shadow:0 0 0 3px var(--accent-glow)}
+.college-chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;flex-wrap:wrap}
 .college-chips::-webkit-scrollbar{display:none}
-.college-chip{
-  padding:8px 16px;
-  border:1px solid var(--border-primary);
-  border-radius:var(--radius-full);
-  font-size:12px;font-weight:600;
-  white-space:nowrap;
-  cursor:pointer;
-  transition:all var(--transition-fast);
-  background:var(--bg-secondary);
-  color:var(--text-secondary);
-  flex-shrink:0;
-}
-.college-chip:hover{
-  border-color:var(--accent-primary);
-  background:var(--accent-light);
-  color:var(--accent-primary);
-}
-.college-chip.selected{
-  background:var(--accent-primary);
-  color:#fff;
-  border-color:var(--accent-primary);
-  box-shadow:0 2px 8px var(--accent-glow);
-}
+.college-chip{padding:8px 16px;border:1px solid var(--border-primary);border-radius:var(--radius-full);font-size:11px;font-weight:600;white-space:nowrap;cursor:pointer;transition:all var(--transition-fast);background:var(--bg-secondary);color:var(--text-secondary);flex-shrink:0}
+.college-chip:hover{border-color:var(--accent-primary);background:var(--accent-light);color:var(--accent-primary)}
+.college-chip.selected{background:var(--accent-primary);color:#fff;border-color:var(--accent-primary);box-shadow:0 2px 8px var(--accent-glow)}
+.college-count{font-size:11px;color:var(--text-tertiary);text-align:center;margin-top:8px}
 
 /* ═══════ MAIN GRID ═══════ */
-.main-grid{
-  display:grid;
-  grid-template-columns:400px 1fr;
-  gap:24px;align-items:start;
-  padding-bottom:48px;
-  position:relative;z-index:1;
-}
-@media(max-width:960px){
-  .main-grid{grid-template-columns:1fr;max-width:500px;margin:0 auto}
-}
+.main-grid{display:grid;grid-template-columns:420px 1fr;gap:24px;align-items:start;padding-bottom:48px;position:relative;z-index:1}
+@media(max-width:960px){.main-grid{grid-template-columns:1fr;max-width:500px;margin:0 auto}}
 
 /* ═══════ INPUT CARD ═══════ */
-.input-card{
-  background:var(--bg-secondary);
-  border:1px solid var(--border-primary);
-  border-radius:var(--radius-2xl);
-  padding:28px;
-  box-shadow:var(--shadow-sm);
-  position:sticky;top:100px;
-  transition:all var(--transition-smooth);
-}
+.input-card{background:var(--bg-secondary);border:1px solid var(--border-primary);border-radius:var(--radius-2xl);padding:28px;box-shadow:var(--shadow-sm);position:sticky;top:100px;transition:all var(--transition-smooth)}
 .input-card:hover{box-shadow:var(--shadow-md)}
 @media(max-width:960px){.input-card{position:static}}
 .input-card-header{margin-bottom:24px}
-.input-card-title{
-  font-family:var(--font-display);
-  font-size:20px;font-weight:700;
-  margin-bottom:4px;
-}
-.input-card-subtitle{
-  font-size:13px;color:var(--text-tertiary);
-}
+.input-card-title{font-family:var(--font-display);font-size:20px;font-weight:700;margin-bottom:4px}
+.input-card-subtitle{font-size:13px;color:var(--text-tertiary)}
 
-/* Streak counter */
-.streak-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:8px 14px;
-  background:var(--green-light);
-  border:1px solid rgba(13,148,136,0.2);
-  border-radius:var(--radius-full);
-  font-size:11px;font-weight:700;
-  color:var(--green-primary);
-  margin-bottom:16px;
-  animation:glowPulse 3s ease-in-out infinite;
-}
-@keyframes glowPulse{
-  0%,100%{box-shadow:0 0 0 0 rgba(13,148,136,0.2)}
-  50%{box-shadow:0 0 0 8px rgba(13,148,136,0)}
-}
+.streak-badge{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:var(--green-light);border:1px solid rgba(13,148,136,0.2);border-radius:var(--radius-full);font-size:11px;font-weight:700;color:var(--green-primary);margin-bottom:16px;animation:glowPulse 3s ease-in-out infinite}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 0 0 rgba(13,148,136,0.2)}50%{box-shadow:0 0 0 8px rgba(13,148,136,0)}}
 
-.quick-actions{
-  display:flex;gap:8px;margin-bottom:20px;
-}
-.quick-action{
-  flex:1;padding:10px;
-  border:1px solid var(--border-primary);
-  border-radius:var(--radius-sm);
-  background:var(--bg-tertiary);
-  font-size:11px;font-weight:600;
-  color:var(--text-secondary);
-  cursor:pointer;
-  transition:all var(--transition-fast);
-  font-family:var(--font-body);
-  display:flex;align-items:center;
-  justify-content:center;gap:5px;
-}
-.quick-action:hover{
-  background:var(--bg-secondary);
-  border-color:var(--accent-primary);
-  color:var(--accent-primary);
-}
+.quick-actions{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.quick-action{flex:1;min-width:80px;padding:10px;border:1px solid var(--border-primary);border-radius:var(--radius-sm);background:var(--bg-tertiary);font-size:11px;font-weight:600;color:var(--text-secondary);cursor:pointer;transition:all var(--transition-fast);font-family:var(--font-body);display:flex;align-items:center;justify-content:center;gap:5px}
+.quick-action:hover{background:var(--bg-secondary);border-color:var(--accent-primary);color:var(--accent-primary)}
 
-/* Form */
 .form-group{margin-bottom:18px}
-.form-label{
-  display:flex;justify-content:space-between;align-items:center;
-  font-size:12px;font-weight:700;
-  color:var(--text-secondary);
-  margin-bottom:8px;
-  text-transform:uppercase;
-  letter-spacing:0.8px;
-}
-.form-label .badge{
-  font-size:10px;font-weight:600;
-  padding:3px 8px;
-  border-radius:var(--radius-full);
-  background:var(--bg-tertiary);
-  color:var(--text-tertiary);
-  text-transform:none;letter-spacing:0;
-}
-.form-input{
-  width:100%;
-  padding:14px 16px;
-  background:var(--bg-tertiary);
-  border:2px solid transparent;
-  border-radius:var(--radius-md);
-  font-size:16px;font-weight:600;
-  color:var(--text-primary);
-  font-family:var(--font-body);
-  outline:none;
-  transition:all var(--transition-fast);
-}
-.form-input::placeholder{color:var(--text-placeholder);font-weight:400}
-.form-input:focus{
-  background:var(--bg-secondary);
-  border-color:var(--accent-primary);
-  box-shadow:0 0 0 4px var(--accent-glow);
-}
-.form-input.error{
-  border-color:var(--red-primary);
-  animation:shake 0.5s ease;
-}
-@keyframes shake{
-  0%,100%{transform:translateX(0)}
-  15%{transform:translateX(-6px)}
-  30%{transform:translateX(6px)}
-  45%{transform:translateX(-4px)}
-  60%{transform:translateX(4px)}
-  75%{transform:translateX(-2px)}
-  90%{transform:translateX(2px)}
-}
+.form-label{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;color:var(--text-secondary);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.8px}
+.form-label .badge{font-size:10px;font-weight:600;padding:3px 8px;border-radius:var(--radius-full);background:var(--bg-tertiary);color:var(--text-tertiary);text-transform:none;letter-spacing:0}
+.form-input{width:100%;padding:14px 16px;background:var(--bg-tertiary);border:2px solid transparent;border-radius:var(--radius-md);font-size:16px;font-weight:600;color:var(--text-primary);font-family:var(--font-body);outline:none;transition:all var(--transition-fast)}
+.form-input::placeholder{color:var(--text-placeholder, #bfbfbf);font-weight:400}
+.form-input:focus{background:var(--bg-secondary);border-color:var(--accent-primary);box-shadow:0 0 0 4px var(--accent-glow)}
+.form-input.error{border-color:var(--red-primary);animation:shake 0.5s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}15%{transform:translateX(-6px)}30%{transform:translateX(6px)}45%{transform:translateX(-4px)}60%{transform:translateX(4px)}75%{transform:translateX(-2px)}90%{transform:translateX(2px)}}
 
-/* Toggle */
-.toggle-card{
-  display:flex;align-items:center;
-  justify-content:space-between;
-  padding:14px 16px;
-  background:var(--bg-tertiary);
-  border:1px solid var(--border-primary);
-  border-radius:var(--radius-md);
-  cursor:pointer;margin-bottom:14px;
-  transition:all var(--transition-fast);
-  user-select:none;
-}
+.toggle-card{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:var(--bg-tertiary);border:1px solid var(--border-primary);border-radius:var(--radius-md);cursor:pointer;margin-bottom:14px;transition:all var(--transition-fast);user-select:none}
 .toggle-card:hover{background:var(--bg-secondary);border-color:var(--border-secondary)}
 .toggle-info{flex:1}
 .toggle-title{font-size:13px;font-weight:700}
 .toggle-desc{font-size:11px;color:var(--text-tertiary);margin-top:2px}
-.toggle-track{
-  width:48px;height:28px;
-  background:var(--border-secondary);
-  border-radius:14px;
-  position:relative;
-  transition:all var(--transition-smooth);
-  flex-shrink:0;margin-left:12px;
-}
-.toggle-track::after{
-  content:'';
-  position:absolute;top:3px;left:3px;
-  width:22px;height:22px;
-  background:#fff;
-  border-radius:50%;
-  transition:all var(--transition-spring);
-  box-shadow:0 2px 4px rgba(0,0,0,0.15);
-}
+.toggle-track{width:48px;height:28px;background:var(--border-secondary);border-radius:14px;position:relative;transition:all var(--transition-smooth);flex-shrink:0;margin-left:12px}
+.toggle-track::after{content:'';position:absolute;top:3px;left:3px;width:22px;height:22px;background:#fff;border-radius:50%;transition:all 0.5s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 2px 4px rgba(0,0,0,0.15)}
 .toggle-track.active{background:var(--green-primary)}
 .toggle-track.active::after{left:23px}
+.toggle-track.blue.active{background:var(--blue-primary)}
 .toggle-collapse{display:none;margin-bottom:14px;animation:slideDown 0.3s ease}
 .toggle-collapse.open{display:block}
-@keyframes slideDown{
-  from{opacity:0;transform:translateY(-8px)}
-  to{opacity:1;transform:translateY(0)}
-}
+@keyframes slideDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 
-/* Target */
-.target-selector{margin-bottom:20px}
-.target-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.target-option{
-  padding:12px 8px;
-  border:2px solid var(--border-primary);
-  border-radius:var(--radius-sm);
-  background:var(--bg-secondary);
-  font-size:14px;font-weight:700;
-  color:var(--text-secondary);
-  cursor:pointer;
-  transition:all var(--transition-fast);
-  font-family:var(--font-body);
-  text-align:center;
-}
+.plan-inputs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:480px){.plan-inputs{grid-template-columns:1fr}}
+
+.target-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px}
+.target-option{padding:12px 8px;border:2px solid var(--border-primary);border-radius:var(--radius-sm);background:var(--bg-secondary);font-size:14px;font-weight:700;color:var(--text-secondary);cursor:pointer;transition:all var(--transition-fast);font-family:var(--font-body);text-align:center}
 .target-option:hover{border-color:var(--border-secondary);background:var(--bg-tertiary)}
-.target-option.active{
-  border-color:var(--accent-primary);
-  background:var(--accent-light);
-  color:var(--accent-primary);
-  box-shadow:0 0 0 4px var(--accent-glow);
-}
+.target-option.active{border-color:var(--accent-primary);background:var(--accent-light);color:var(--accent-primary);box-shadow:0 0 0 4px var(--accent-glow)}
 .custom-target-wrap{display:none;margin-top:8px}
 .custom-target-wrap.open{display:block}
 
-/* Calculate button */
-.calculate-btn{
-  width:100%;padding:16px;
-  background:linear-gradient(135deg,var(--accent-primary),#f97316);
-  color:#fff;
-  border:none;
-  border-radius:var(--radius-md);
-  font-size:16px;font-weight:700;
-  cursor:pointer;
-  font-family:var(--font-body);
-  transition:all var(--transition-smooth);
-  position:relative;overflow:hidden;
-}
-.calculate-btn::before{
-  content:'';
-  position:absolute;inset:0;
-  background:linear-gradient(135deg,transparent,rgba(255,255,255,0.1),transparent);
-  transform:translateX(-100%);
-  transition:transform 0.6s ease;
-}
+.calculate-btn{width:100%;padding:16px;background:linear-gradient(135deg,var(--accent-primary),#f97316);color:#fff;border:none;border-radius:var(--radius-md);font-size:16px;font-weight:700;cursor:pointer;font-family:var(--font-body);transition:all var(--transition-smooth);position:relative;overflow:hidden}
+.calculate-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,0.1),transparent);transform:translateX(-100%);transition:transform 0.6s ease}
 .calculate-btn:hover::before{transform:translateX(100%)}
-.calculate-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 24px var(--accent-glow);
-}
-.reset-btn{
-  width:100%;padding:12px;
-  background:transparent;border:none;
-  color:var(--text-tertiary);
-  font-size:13px;font-weight:600;
-  cursor:pointer;font-family:var(--font-body);
-  margin-top:8px;transition:all var(--transition-fast);
-}
+.calculate-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px var(--accent-glow)}
+.reset-btn{width:100%;padding:12px;background:transparent;border:none;color:var(--text-tertiary);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--font-body);margin-top:8px;transition:all var(--transition-fast)}
 .reset-btn:hover{color:var(--accent-primary)}
 
 /* ═══════ RESULTS ═══════ */
 .results-area{display:none;flex-direction:column;gap:16px}
 .results-area.show{display:flex}
-
-.empty-state{
-  background:var(--bg-secondary);
-  border:2px dashed var(--border-primary);
-  border-radius:var(--radius-2xl);
-  padding:60px 30px;text-align:center;
-}
+.empty-state{background:var(--bg-secondary);border:2px dashed var(--border-primary);border-radius:var(--radius-2xl);padding:60px 30px;text-align:center}
 .empty-icon{font-size:64px;margin-bottom:16px;animation:float 6s ease-in-out infinite}
-.empty-title{
-  font-family:var(--font-display);
-  font-size:18px;font-weight:700;margin-bottom:6px;
-}
+.empty-title{font-family:var(--font-display);font-size:18px;font-weight:700;margin-bottom:6px}
 .empty-text{font-size:14px;color:var(--text-tertiary)}
 
-/* Gauge */
-.gauge-card{
-  background:var(--bg-secondary);
-  border:1px solid var(--border-primary);
-  border-radius:var(--radius-2xl);
-  padding:32px;text-align:center;
-  box-shadow:var(--shadow-sm);
-  position:relative;overflow:hidden;
-}
-.gauge-card::before{
-  content:'';position:absolute;
-  top:-100px;right:-100px;
-  width:300px;height:300px;
-  border-radius:50%;pointer-events:none;
-}
+.gauge-card{background:var(--bg-secondary);border:1px solid var(--border-primary);border-radius:var(--radius-2xl);padding:32px;text-align:center;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
+.gauge-card::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;border-radius:50%;pointer-events:none}
 .gauge-card.safe::before{background:radial-gradient(circle,var(--green-glow),transparent 70%)}
 .gauge-card.warning::before{background:radial-gradient(circle,var(--gold-glow),transparent 70%)}
 .gauge-card.danger::before{background:radial-gradient(circle,var(--red-glow),transparent 70%)}
 .gauge-container{width:160px;height:160px;margin:0 auto 18px;position:relative}
 .gauge-svg{transform:rotate(-90deg)}
 .gauge-bg{fill:none;stroke:var(--border-primary);stroke-width:8}
-.gauge-fill{
-  fill:none;stroke-width:8;stroke-linecap:round;
-  transition:stroke-dashoffset 1.2s cubic-bezier(0.25,0.46,0.45,0.94),stroke 0.3s;
-}
-.gauge-center{
-  position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%);text-align:center;
-}
-.gauge-percentage{
-  font-family:var(--font-display);
-  font-size:42px;font-weight:800;line-height:1;
-}
-.gauge-label{
-  font-size:11px;font-weight:600;
-  text-transform:uppercase;letter-spacing:1.5px;
-  color:var(--text-tertiary);margin-top:4px;
-}
-.status-chip{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:8px 18px;border-radius:var(--radius-full);
-  font-size:13px;font-weight:700;margin-bottom:10px;
-}
+.gauge-fill{fill:none;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1.2s cubic-bezier(0.25,0.46,0.45,0.94),stroke 0.3s}
+.gauge-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.gauge-percentage{font-family:var(--font-display);font-size:42px;font-weight:800;line-height:1}
+.gauge-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-tertiary);margin-top:4px}
+.status-chip{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:var(--radius-full);font-size:13px;font-weight:700;margin-bottom:10px}
 .status-chip.safe{background:var(--green-light);color:var(--green-primary)}
 .status-chip.warning{background:var(--gold-light);color:var(--gold-primary)}
 .status-chip.danger{background:var(--red-light);color:var(--red-primary)}
 
-/* Warning banner */
-.warning-banner{
-  background:var(--red-light);
-  border:1px solid rgba(239,68,68,0.2);
-  border-radius:var(--radius-md);
-  padding:12px 16px;
-  display:none;
-  align-items:center;gap:10px;
-  font-size:12px;font-weight:600;
-  color:var(--red-primary);
-  animation:slideDown 0.3s ease;
-}
+.warning-banner{background:var(--red-light);border:1px solid rgba(239,68,68,0.2);border-radius:var(--radius-md);padding:12px 16px;display:none;align-items:center;gap:10px;font-size:12px;font-weight:600;color:var(--red-primary);animation:slideDown 0.3s ease}
 .warning-banner.show{display:flex}
 
-/* Info cards */
-.info-card{
-  background:var(--bg-secondary);
-  border:1px solid var(--border-primary);
-  border-radius:var(--radius-2xl);
-  padding:26px;box-shadow:var(--shadow-sm);
-}
-.info-card-header{
-  display:flex;align-items:center;gap:12px;margin-bottom:16px;
-}
-.info-card-icon{
-  width:44px;height:44px;
-  border-radius:var(--radius-sm);
-  display:flex;align-items:center;
-  justify-content:center;font-size:20px;
-}
+.info-card{background:var(--bg-secondary);border:1px solid var(--border-primary);border-radius:var(--radius-2xl);padding:26px;box-shadow:var(--shadow-sm)}
+.info-card-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.info-card-icon{width:44px;height:44px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:20px}
 .info-card-icon.green{background:var(--green-light)}
 .info-card-icon.red{background:var(--red-light)}
-.info-card-title{
-  font-family:var(--font-display);
-  font-size:15px;font-weight:700;
-}
-.big-number{
-  font-family:var(--font-display);
-  font-size:clamp(42px,7vw,64px);
-  font-weight:800;line-height:1;
-  margin-bottom:4px;
-}
+.info-card-icon.blue{background:var(--blue-light)}
+.info-card-title{font-family:var(--font-display);font-size:15px;font-weight:700}
+.info-card-subtitle{font-size:11px;color:var(--text-tertiary);margin-top:1px}
+.big-number{font-family:var(--font-display);font-size:clamp(42px,7vw,64px);font-weight:800;line-height:1;margin-bottom:4px}
 .big-number.green{color:var(--green-primary)}
 .big-number.red{color:var(--red-primary)}
+.big-number.blue{color:var(--blue-primary)}
 .big-label{font-size:13px;color:var(--text-tertiary);margin-bottom:14px}
 
-/* Progress */
 .progress-wrap{margin:14px 0}
-.progress-header{
-  display:flex;justify-content:space-between;
-  font-size:11px;font-weight:600;
-  color:var(--text-tertiary);margin-bottom:6px;
-}
-.progress-track{
-  height:8px;background:var(--bg-tertiary);
-  border-radius:4px;overflow:hidden;
-}
-.progress-bar{
-  height:100%;border-radius:4px;
-  transition:width 1s cubic-bezier(0.25,0.46,0.45,0.94);
-}
+.progress-header{display:flex;justify-content:space-between;font-size:11px;font-weight:600;color:var(--text-tertiary);margin-bottom:6px}
+.progress-track{height:8px;background:var(--bg-tertiary);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;border-radius:4px;transition:width 1s cubic-bezier(0.25,0.46,0.45,0.94)}
 .progress-bar.green{background:linear-gradient(90deg,var(--green-primary),#14b8a6)}
+.progress-bar.gold{background:linear-gradient(90deg,var(--gold-primary),#fbbf24)}
 .progress-bar.red{background:linear-gradient(90deg,var(--red-primary),#f87171)}
+.progress-bar.blue{background:linear-gradient(90deg,var(--blue-primary),#60a5fa)}
 
-.tip-box{
-  display:flex;gap:10px;padding:14px 16px;
-  background:var(--bg-tertiary);
-  border:1px solid var(--border-primary);
-  border-radius:var(--radius-md);
-  font-size:12px;color:var(--text-secondary);
-  line-height:1.6;
-}
+.tip-box{display:flex;gap:10px;padding:14px 16px;background:var(--bg-tertiary);border:1px solid var(--border-primary);border-radius:var(--radius-md);font-size:12px;color:var(--text-secondary);line-height:1.6}
 
-/* Stats */
-.stats-mini{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
-}
-.stat-mini{
-  background:var(--bg-secondary);
-  border:1px solid var(--border-primary);
-  border-radius:var(--radius-lg);
-  padding:18px 14px;text-align:center;
-  box-shadow:var(--shadow-xs);
-  transition:all var(--transition-fast);
-}
-.stat-mini:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm)}
-.stat-mini-value{
-  font-family:var(--font-display);
-  font-size:28px;font-weight:800;margin-bottom:2px;
-}
-.stat-mini-label{
-  font-size:10px;font-weight:700;
-  text-transform:uppercase;letter-spacing:1px;
-  color:var(--text-tertiary);
-}
+.stats-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat-mini{background:var(--bg-secondary);border:1px solid var(--border-primary);border-radius:var(--radius-lg);padding:18px 14px;text-align:center;box-shadow:var(--shadow-sm);transition:all var(--transition-fast)}
+.stat-mini:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.stat-mini-value{font-family:var(--font-display);font-size:28px;font-weight:800;margin-bottom:2px}
+.stat-mini-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-tertiary)}
 
-/* Timeline */
-.timeline-card{
-  background:var(--bg-secondary);
-  border:1px solid var(--border-primary);
-  border-radius:var(--radius-2xl);
-  padding:26px;box-shadow:var(--shadow-sm);
-}
-.timeline-bar-wrap{
-  height:48px;
-  background:var(--bg-tertiary);
-  border-radius:var(--radius-sm);
-  position:relative;overflow:hidden;
-  margin:12px 0;display:flex;
-}
-.timeline-segment{
-  height:100%;
-  display:flex;align-items:center;
-  justify-content:center;
-  font-size:11px;font-weight:700;
-  color:#fff;
-  transition:width 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
-}
+.timeline-card{background:var(--bg-secondary);border:1px solid var(--border-primary);border-radius:var(--radius-2xl);padding:26px;box-shadow:var(--shadow-sm)}
+.timeline-bar-wrap{height:48px;background:var(--bg-tertiary);border-radius:var(--radius-sm);position:relative;overflow:hidden;margin:12px 0;display:flex}
+.timeline-segment{height:100%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;transition:width 0.8s cubic-bezier(0.25,0.46,0.45,0.94)}
 .timeline-segment.present{background:linear-gradient(135deg,var(--green-primary),#14b8a6)}
 .timeline-segment.absent{background:linear-gradient(135deg,var(--red-primary),#f87171)}
 .timeline-segment.remaining{background:var(--border-primary);color:var(--text-tertiary);flex:1}
 
-/* Share */
 .share-row{display:flex;gap:10px}
-.share-btn{
-  flex:1;padding:12px;
-  border:1px solid var(--border-primary);
-  border-radius:var(--radius-md);
-  background:var(--bg-secondary);
-  font-size:12px;font-weight:700;
-  cursor:pointer;
-  transition:all var(--transition-fast);
-  font-family:var(--font-body);
-  display:flex;align-items:center;
-  justify-content:center;gap:6px;
-  color:var(--text-secondary);
-}
-.share-btn:hover{
-  border-color:var(--border-secondary);
-  box-shadow:var(--shadow-sm);
-}
+.share-btn{flex:1;padding:12px;border:1px solid var(--border-primary);border-radius:var(--radius-md);background:var(--bg-secondary);font-size:12px;font-weight:700;cursor:pointer;transition:all var(--transition-fast);font-family:var(--font-body);display:flex;align-items:center;justify-content:center;gap:6px;color:var(--text-secondary)}
+.share-btn:hover{border-color:var(--border-secondary);box-shadow:var(--shadow-sm)}
 .share-btn.wa-btn{background:#dcf8c6;border-color:#25d366;color:#075e54}
 
 /* ═══════ CONFETTI ═══════ */
-.confetti-container{
-  position:fixed;top:0;left:0;
-  width:100%;height:100%;
-  pointer-events:none;z-index:999;
-}
-.confetti-piece{
-  position:absolute;
-  width:10px;height:10px;
-  animation:confetti-fall 3s ease-in forwards;
-}
-@keyframes confetti-fall{
-  0%{transform:translateY(-100vh) rotate(0deg);opacity:1}
-  100%{transform:translateY(100vh) rotate(720deg);opacity:0}
-}
+.confetti-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:999}
+.confetti-piece{position:absolute;animation:confetti-fall 3s ease-in forwards}
+@keyframes confetti-fall{0%{transform:translateY(-100vh) rotate(0deg);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
+
+/* ═══════ QUOTES SECTION ═══════ */
+.quotes-section{padding:60px 0;position:relative;z-index:1}
+.quotes-title{font-family:var(--font-display);font-size:clamp(24px,4vw,32px);font-weight:800;text-align:center;margin-bottom:12px}
+.quotes-subtitle{text-align:center;color:var(--text-secondary);margin-bottom:32px;font-size:14px}
+.quotes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.quote-card{background:var(--bg-secondary);border:1px solid var(--border-primary);border-radius:var(--radius-xl);padding:28px;position:relative;transition:all var(--transition-smooth);overflow:hidden}
+.quote-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+.quote-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent-primary),var(--purple-primary),var(--green-primary))}
+.quote-lang-badge{display:inline-block;padding:3px 10px;border-radius:var(--radius-full);font-size:10px;font-weight:700;margin-bottom:12px}
+.quote-lang-badge.en{background:var(--blue-light);color:var(--blue-primary)}
+.quote-lang-badge.hi{background:var(--accent-light);color:var(--accent-primary)}
+.quote-lang-badge.motivation{background:var(--purple-light);color:var(--purple-primary)}
+.quote-text{font-size:15px;font-weight:600;color:var(--text-primary);line-height:1.6;margin-bottom:12px}
+.quote-text.hindi{font-family:var(--font-hindi);font-size:16px;line-height:1.8}
+.quote-author{font-size:12px;color:var(--text-tertiary);font-weight:500}
 
 /* ═══════ SEO CONTENT ═══════ */
-.seo-section{
-  padding:60px 0;
-  position:relative;z-index:1;
-}
-.seo-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:24px;
-}
-.seo-card{
-  background:var(--bg-secondary);
-  border:1px solid var(--border-primary);
-  border-radius:var(--radius-xl);
-  padding:28px;
-  transition:all var(--transition-smooth);
-}
-.seo-card:hover{
-  box-shadow:var(--shadow-lg);
-  transform:translateY(-4px);
-}
+.seo-section{padding:60px 0;position:relative;z-index:1}
+.seo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.seo-card{background:var(--bg-secondary);border:1px solid var(--border-primary);border-radius:var(--radius-xl);padding:28px;transition:all var(--transition-smooth)}
+.seo-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
 .seo-card-icon{font-size:40px;margin-bottom:16px}
-.seo-card h3{
-  font-family:var(--font-display);
-  font-size:18px;font-weight:700;
-  margin-bottom:12px;
-}
-.seo-card p{
-  font-size:14px;color:var(--text-secondary);
-  line-height:1.7;
-}
+.seo-card h3{font-family:var(--font-display);font-size:18px;font-weight:700;margin-bottom:12px}
+.seo-card p{font-size:14px;color:var(--text-secondary);line-height:1.7}
+.seo-card ul{list-style:none;padding:0}
+.seo-card ul li{padding:6px 0;font-size:13px;color:var(--text-secondary);border-bottom:1px solid var(--border-primary)}
+.seo-card ul li:last-child{border-bottom:none}
+.seo-card ul li::before{content:'•';color:var(--accent-primary);font-weight:700;margin-right:8px}
 
-/* Quotes section */
-.quotes-section{
-  padding:40px 0;
-  position:relative;z-index:1;
-}
-.quotes-title{
-  font-family:var(--font-display);
-  font-size:28px;font-weight:800;
-  text-align:center;margin-bottom:32px;
-}
-.quotes-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:20px;
-}
-.quote-card{
-  background:var(--bg-secondary);
-  border:1px solid var(--border-primary);
-  border-radius:var(--radius-xl);
-  padding:28px;
-  position:relative;
-  transition:all var(--transition-smooth);
-}
-.quote-card:hover{
-  box-shadow:var(--shadow-lg);
-  transform:translateY(-4px);
-}
-.quote-mark{
-  font-size:60px;
-  font-family:Georgia,serif;
-  color:var(--accent-primary);
-  opacity:0.3;
-  position:absolute;
-  top:10px;left:16px;
-  line-height:1;
-}
-.quote-text{
-  font-size:15px;
-  font-weight:600;
-  color:var(--text-primary);
-  line-height:1.6;
-  position:relative;
-  z-index:1;
-  margin-bottom:12px;
-}
-.quote-author{
-  font-size:12px;
-  color:var(--text-tertiary);
-  font-weight:500;
-}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--text-primary);color:var(--bg-primary);padding:12px 24px;border-radius:var(--radius-full);font-size:13px;font-weight:600;z-index:1000;animation:toastIn 0.4s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 16px 48px rgba(0,0,0,0.2)}
+.dark-mode .toast{background:var(--bg-secondary);color:var(--text-primary);border:1px solid var(--border-primary)}
+@keyframes toastIn{from{opacity:0;transform:translateX(-50%) translateY(16px) scale(0.95)}to{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}}
 
-/* Toast */
-.toast{
-  position:fixed;bottom:24px;left:50%;
-  transform:translateX(-50%);
-  background:var(--text-primary);
-  color:var(--bg-primary);
-  padding:12px 24px;
-  border-radius:var(--radius-full);
-  font-size:13px;font-weight:600;
-  z-index:1000;
-  animation:toastIn 0.4s cubic-bezier(0.34,1.56,0.64,1);
-  box-shadow:var(--shadow-xl);
-}
-.dark-mode .toast{
-  background:var(--bg-secondary);
-  color:var(--text-primary);
-  border:1px solid var(--border-primary);
-}
-@keyframes toastIn{
-  from{opacity:0;transform:translateX(-50%) translateY(16px) scale(0.95)}
-  to{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}
-}
-
-/* Footer */
-.footer{
-  border-top:1px solid var(--border-primary);
-  padding:24px 0;text-align:center;
-  font-size:12px;color:var(--text-tertiary);
-  position:relative;z-index:1;
-}
+.footer{border-top:1px solid var(--border-primary);padding:24px 0;text-align:center;font-size:12px;color:var(--text-tertiary);position:relative;z-index:1}
 
 @media(max-width:640px){
   .container{padding:0 16px}
@@ -927,45 +376,36 @@ body{
   .gauge-container{width:130px;height:130px}
   .gauge-percentage{font-size:34px}
   .big-number{font-size:40px}
+  .plan-inputs{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- Ambient Background -->
 <div class="ambient-bg">
   <div class="ambient-orb orb-1"></div>
   <div class="ambient-orb orb-2"></div>
   <div class="ambient-orb orb-3"></div>
 </div>
 
-<!-- Confetti Container -->
 <div class="confetti-container" id="confettiContainer"></div>
 
-<!-- Navigation -->
 <nav class="glass-nav">
   <div class="glass-nav-inner">
-    <a href="/" class="nav-brand">
-      <div class="nav-brand-dot"></div>
-      Student<span>Toolkit</span>
-    </a>
+    <a href="/" class="nav-brand"><div class="nav-brand-dot"></div>Student<span>Toolkit</span></a>
     <div class="nav-actions">
-      <button class="sound-toggle" id="soundToggle" onclick="toggleSound()" title="Sound effects">🔊</button>
-      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">🌓</button>
+      <button class="sound-toggle" id="soundToggle" onclick="toggleSound()">🔊</button>
+      <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
       <a href="/tools/ai-resume-checker.html" class="nav-btn primary-btn">Resume Checker →</a>
     </div>
   </div>
 </nav>
 
-<!-- Hero -->
 <section class="hero-section">
   <div class="container">
-    <div class="hero-badge">
-      <div class="hero-badge-dot"></div>
-      50+ College Rules · Auto-Saves · Free Forever
-    </div>
+    <div class="hero-badge"><div class="hero-badge-dot"></div>100+ College Rules · Plan to Miss · Free Forever</div>
     <h1 class="hero-title">Your <span class="highlight">Attendance</span> Command Center</h1>
-    <p class="hero-subtitle">Bunk smarter, recover faster, and stay motivated with India's most advanced attendance calculator.</p>
+    <p class="hero-subtitle">Bunk smarter with India's most advanced calculator. Features 100+ college rules, plan-to-miss simulator, ghost classes, recovery mode & motivational tracking.</p>
   </div>
 </section>
 
@@ -975,42 +415,35 @@ body{
     <div class="motivation-icon" id="motivationIcon">💪</div>
     <div class="motivation-content">
       <div class="motivation-quote" id="motivationQuote">"Success is the sum of small efforts, repeated day in and day out."</div>
-      <div class="motivation-author" id="motivationAuthor">— Robert Collier</div>
+      <div class="motivation-author" id="motivationAuthor">— Robert Collier <span class="motivation-lang">English</span></div>
     </div>
-    <div class="motivation-refresh">🔄 New Quote</div>
+    <div class="motivation-refresh">🔄 New</div>
   </div>
 
-  <!-- College Rules Quick Select -->
+  <!-- College Rules -->
   <div class="college-rules-bar">
     <div class="college-rules-header">
-      <div class="college-rules-title">🏛️ Quick Select Your College Rules</div>
-      <input type="text" class="college-search" id="collegeSearch" placeholder="🔍 Search college..." oninput="filterColleges()">
+      <div class="college-rules-title">🏛️ 100+ Indian College Rules — Quick Select</div>
+      <input type="text" class="college-search" id="collegeSearch" placeholder="🔍 Search by name or state..." oninput="filterColleges()">
     </div>
     <div class="college-chips" id="collegeChips"></div>
-    <div style="font-size:11px;color:var(--text-tertiary);margin-top:8px;text-align:center;">
-      📌 Click a college to auto-set attendance rules · Data from official university guidelines
-    </div>
+    <div class="college-count" id="collegeCount">Showing 20 of 100+ colleges · Click to auto-set attendance rules</div>
   </div>
 
-  <!-- Main Grid -->
   <div class="main-grid">
-
     <!-- INPUT PANEL -->
     <div class="input-card">
       <div class="input-card-header">
         <div class="input-card-title">Class Details</div>
-        <div class="input-card-subtitle">Enter what you know — we'll handle the rest</div>
+        <div class="input-card-subtitle">Your attendance, your control</div>
       </div>
 
-      <!-- Streak Badge -->
-      <div class="streak-badge" id="streakBadge" style="display:none;">
-        🔥 <span id="streakCount">0</span> Days Since Last Bunk!
-      </div>
+      <div class="streak-badge" id="streakBadge" style="display:none;">🔥 <span id="streakCount">0</span> Days Since Last Bunk!</div>
 
       <div class="quick-actions">
-        <button class="quick-action" onclick="fillDemo()">📝 Demo Data</button>
+        <button class="quick-action" onclick="fillDemo()">📝 Demo</button>
         <button class="quick-action" onclick="clearAll()">🔄 Clear</button>
-        <button class="quick-action" onclick="markPresentToday()">✅ I Attended Today!</button>
+        <button class="quick-action" onclick="markPresentToday()">✅ Attended Today!</button>
       </div>
 
       <div class="form-group">
@@ -1025,17 +458,32 @@ body{
 
       <!-- Ghost Classes -->
       <div class="toggle-card" onclick="toggleGhost()">
-        <div class="toggle-info">
-          <div class="toggle-title">👻 Cancelled Classes</div>
-          <div class="toggle-desc">Lectures that never happened</div>
-        </div>
+        <div class="toggle-info"><div class="toggle-title">👻 Cancelled/Ghost Classes</div><div class="toggle-desc">Lectures that never happened</div></div>
         <div class="toggle-track" id="ghostSwitch"></div>
       </div>
       <div class="toggle-collapse" id="ghostCollapse">
         <input type="number" id="ghostInput" class="form-input" placeholder="How many cancelled? e.g. 5" min="0" inputmode="numeric">
       </div>
 
-      <!-- Target -->
+      <!-- Plan to Miss - NEW -->
+      <div class="toggle-card" onclick="togglePlan()">
+        <div class="toggle-info"><div class="toggle-title">📅 Plan to Miss</div><div class="toggle-desc">Simulate future absences</div></div>
+        <div class="toggle-track blue" id="planSwitch"></div>
+      </div>
+      <div class="toggle-collapse" id="planCollapse">
+        <div class="plan-inputs">
+          <div class="form-group">
+            <label class="form-label">Classes Remaining</label>
+            <input type="number" id="remainingInput" class="form-input" placeholder="e.g. 30" min="0" inputmode="numeric">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Plan to Skip</label>
+            <input type="number" id="skipInput" class="form-input" placeholder="e.g. 5" min="0" inputmode="numeric">
+          </div>
+        </div>
+        <div class="tip-box" style="margin-top:8px;border-color:rgba(59,130,246,0.15)"><span class="tip-icon">📊</span><span>Enter how many classes are left and how many you're thinking of skipping. We'll show your projected final attendance.</span></div>
+      </div>
+
       <div class="form-group">
         <label class="form-label">Minimum Required</label>
         <div class="target-grid">
@@ -1058,802 +506,568 @@ body{
       <div class="empty-state" id="emptyState">
         <div class="empty-icon">📊</div>
         <div class="empty-title">Ready to Calculate</div>
-        <p class="empty-text">Enter your numbers and hit Calculate to see your complete breakdown.</p>
+        <p class="empty-text">Enter your class numbers and hit Calculate to see your complete breakdown with bunk meter, projections, and recovery plan.</p>
       </div>
 
       <div class="results-area" id="resultsArea">
+        <div class="warning-banner" id="warningBanner"><span>⚠️</span><span id="warningText"></span></div>
 
-        <!-- Warning Banner -->
-        <div class="warning-banner" id="warningBanner">
-          <span>⚠️</span>
-          <span id="warningText"></span>
-        </div>
-
-        <!-- Gauge -->
         <div class="gauge-card" id="gaugeCard">
           <div class="gauge-container">
             <svg class="gauge-svg" viewBox="0 0 160 160" width="160" height="160">
               <circle cx="80" cy="80" r="68" class="gauge-bg"/>
-              <circle cx="80" cy="80" r="68" class="gauge-fill" id="gaugeProgress"
-                stroke-dasharray="427" stroke-dashoffset="427"/>
+              <circle cx="80" cy="80" r="68" class="gauge-fill" id="gaugeProgress" stroke-dasharray="427" stroke-dashoffset="427"/>
             </svg>
-            <div class="gauge-center">
-              <div class="gauge-percentage" id="gaugePct">0%</div>
-              <div class="gauge-label">Attendance</div>
-            </div>
+            <div class="gauge-center"><div class="gauge-percentage" id="gaugePct">0%</div><div class="gauge-label">Attendance</div></div>
           </div>
-          <div class="status-chip" id="statusChip">
-            <span id="statusEmoji">📊</span>
-            <span id="statusText">Enter data</span>
-          </div>
+          <div class="status-chip" id="statusChip"><span id="statusEmoji">📊</span><span id="statusText">Enter data</span></div>
           <div id="gaugeDetail" style="font-size:14px;color:var(--text-secondary);"></div>
         </div>
 
-        <!-- Stats -->
         <div class="stats-mini">
-          <div class="stat-mini">
-            <div class="stat-mini-value" id="statTotal">—</div>
-            <div class="stat-mini-label">Total</div>
-          </div>
-          <div class="stat-mini">
-            <div class="stat-mini-value" id="statPresent">—</div>
-            <div class="stat-mini-label">Present</div>
-          </div>
-          <div class="stat-mini">
-            <div class="stat-mini-value" id="statAbsent">—</div>
-            <div class="stat-mini-label">Absent</div>
-          </div>
+          <div class="stat-mini"><div class="stat-mini-value" id="statTotal">—</div><div class="stat-mini-label">Total</div></div>
+          <div class="stat-mini"><div class="stat-mini-value" id="statPresent">—</div><div class="stat-mini-label">Present</div></div>
+          <div class="stat-mini"><div class="stat-mini-value" id="statAbsent">—</div><div class="stat-mini-label">Absent</div></div>
         </div>
 
         <!-- Bunk Meter -->
         <div class="info-card">
-          <div class="info-card-header">
-            <div class="info-card-icon green">🎯</div>
-            <div><div class="info-card-title">Bunk Meter</div></div>
-          </div>
-          <div class="big-number green" id="bunkNumber">—</div>
-          <div class="big-label" id="bunkLabel">enter data</div>
-          <div class="progress-wrap">
-            <div class="progress-header"><span>Budget Used</span><span id="bunkPct">—</span></div>
-            <div class="progress-track"><div class="progress-bar green" id="bunkFill" style="width:0%"></div></div>
-          </div>
+          <div class="info-card-header"><div class="info-card-icon green">🎯</div><div><div class="info-card-title">Bunk Meter</div></div></div>
+          <div class="big-number green" id="bunkNumber">—</div><div class="big-label" id="bunkLabel">enter data</div>
+          <div class="progress-wrap"><div class="progress-header"><span>Budget Used</span><span id="bunkPct">—</span></div><div class="progress-track"><div class="progress-bar green" id="bunkFill" style="width:0%"></div></div></div>
           <div class="tip-box"><span class="tip-icon">💡</span><span id="bunkTip">Fill in numbers to see safe bunks.</span></div>
+        </div>
+
+        <!-- Plan Projection -->
+        <div class="info-card" id="planCard" style="display:none;">
+          <div class="info-card-header"><div class="info-card-icon blue">📅</div><div><div class="info-card-title" style="color:var(--blue-primary)">Plan to Miss — Projection</div><div class="info-card-subtitle">What happens if you follow your plan</div></div></div>
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px;flex-wrap:wrap;justify-content:center">
+            <div style="text-align:center"><div style="font-size:11px;color:var(--text-tertiary);text-transform:uppercase;font-weight:700;">Current</div><div style="font-family:var(--font-display);font-size:28px;font-weight:800;" id="planCurrentPct">0%</div></div>
+            <div style="font-size:24px;color:var(--text-tertiary)">→</div>
+            <div style="text-align:center"><div style="font-size:11px;color:var(--blue-primary);text-transform:uppercase;font-weight:700;">After Plan</div><div style="font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--blue-primary);" id="planFuturePct">0%</div></div>
+          </div>
+          <div class="progress-wrap"><div class="progress-header"><span>Projected Attendance</span><span id="planBarPct">0%</span></div><div class="progress-track"><div class="progress-bar blue" id="planBarFill" style="width:0%"></div></div></div>
+          <div id="planVerdict" style="padding:12px 16px;border-radius:var(--radius-md);font-size:13px;font-weight:600;margin-bottom:12px;"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div style="padding:10px;background:var(--bg-tertiary);border-radius:var(--radius-sm);"><div style="font-size:10px;color:var(--text-tertiary);font-weight:600;">You'll Attend</div><div style="font-family:var(--font-display);font-size:18px;font-weight:700;" id="planWillAttend">0</div></div>
+            <div style="padding:10px;background:var(--bg-tertiary);border-radius:var(--radius-sm);"><div style="font-size:10px;color:var(--text-tertiary);font-weight:600;">Max Safe to Skip</div><div style="font-family:var(--font-display);font-size:18px;font-weight:700;color:var(--green-primary);" id="planMaxSkip">0</div></div>
+          </div>
         </div>
 
         <!-- Recovery -->
         <div class="info-card" id="recoveryCard" style="display:none;">
-          <div class="info-card-header">
-            <div class="info-card-icon red">🚨</div>
-            <div><div class="info-card-title">Recovery Mode</div></div>
-          </div>
-          <div class="big-number red" id="recoveryNumber">0</div>
-          <div class="big-label">consecutive classes needed</div>
+          <div class="info-card-header"><div class="info-card-icon red">🚨</div><div><div class="info-card-title">Recovery Mode</div></div></div>
+          <div class="big-number red" id="recoveryNumber">0</div><div class="big-label">consecutive classes needed</div>
           <div class="tip-box"><span class="tip-icon">⚠️</span><span id="recoveryTip"></span></div>
         </div>
 
-        <!-- Timeline -->
         <div class="timeline-card">
           <h3 style="font-family:var(--font-display);font-size:15px;font-weight:700;margin-bottom:12px;">📈 Semester Progress</h3>
-          <div class="timeline-bar-wrap">
-            <div class="timeline-segment present" id="timelinePresent" style="width:0%"></div>
-            <div class="timeline-segment absent" id="timelineAbsent" style="width:0%"></div>
-            <div class="timeline-segment remaining" id="timelineRemaining">Remaining</div>
-          </div>
+          <div class="timeline-bar-wrap"><div class="timeline-segment present" id="timelinePresent" style="width:0%"></div><div class="timeline-segment absent" id="timelineAbsent" style="width:0%"></div><div class="timeline-segment remaining" id="timelineRemaining">Remaining</div></div>
         </div>
 
-        <!-- Share -->
         <div class="share-row">
           <button class="share-btn wa-btn" onclick="shareWhatsApp()">💬 WhatsApp</button>
           <button class="share-btn" onclick="copyResults()">📋 Copy</button>
         </div>
-
       </div>
     </div>
   </div>
 </div>
 
-<!-- Motivational Quotes Section -->
+<!-- Multilingual Quotes Section -->
 <section class="quotes-section">
   <div class="container">
-    <h2 class="quotes-title">💡 Motivation for Your <span style="color:var(--accent-primary);">Journey</span></h2>
+    <h2 class="quotes-title">🌟 Wisdom Across <span style="color:var(--accent-primary);">Languages</span></h2>
+    <p class="quotes-subtitle">Motivation, discipline & success — in English, Hindi, and timeless words from great minds</p>
     <div class="quotes-grid" id="quotesGrid"></div>
   </div>
 </section>
 
-<!-- SEO Content Section -->
+<!-- SEO Content -->
 <section class="seo-section">
   <div class="container">
     <h2 style="font-family:var(--font-display);font-size:clamp(24px,4vw,36px);font-weight:800;text-align:center;margin-bottom:16px;">
-      Everything You Need to Know About <span style="color:var(--accent-primary);">College Attendance in India</span>
+      Everything About <span style="color:var(--accent-primary);">College Attendance in India</span>
     </h2>
     <p style="text-align:center;color:var(--text-secondary);max-width:700px;margin:0 auto 40px;font-size:15px;line-height:1.7;">
-      From UGC guidelines to university-specific rules — understand how attendance affects your exams, placements, and degree.
+      Complete guide to attendance rules, state-wise variations, placement impact, and smart management strategies for Indian students.
     </p>
     <div class="seo-grid">
-      <div class="seo-card">
-        <div class="seo-card-icon">📋</div>
-        <h3>UGC 75% Attendance Rule</h3>
-        <p>The University Grants Commission mandates 75% minimum attendance for all undergraduate and postgraduate programs across Indian universities. Falling below can result in exam detention. Some universities offer 5-10% condonation with medical certificates.</p>
-      </div>
-      <div class="seo-card">
-        <div class="seo-card-icon">🏥</div>
-        <h3>Medical Condonation Policies</h3>
-        <p>Most Indian colleges allow 5-15% attendance relaxation for genuine medical reasons. You'll need certificates from registered medical practitioners. Some universities like DU and Mumbai University have specific forms for this process.</p>
-      </div>
-      <div class="seo-card">
-        <div class="seo-card-icon">🎓</div>
-        <h3>Placement & Attendance Link</h3>
-        <p>Many companies check attendance records during campus placements. Consistent attendance above 85% is viewed positively. Some colleges require minimum 75% attendance to be eligible for placement drives.</p>
-      </div>
-      <div class="seo-card">
-        <div class="seo-card-icon">⚖️</div>
-        <h3>State University Variations</h3>
-        <p>Different states have different rules: Maharashtra (75%), Tamil Nadu (75% with 10% condonation), Karnataka (85% for professional courses), Delhi (66% minimum). Always check your specific university guidelines.</p>
-      </div>
-      <div class="seo-card">
-        <div class="seo-card-icon">💡</div>
-        <h3>Smart Attendance Management</h3>
-        <p>Plan your absences strategically. Use our Bunk Meter to know exactly how many classes you can skip. Track multiple subjects separately. Set recovery goals when you fall behind. Small consistent attendance beats last-minute cramming.</p>
-      </div>
-      <div class="seo-card">
-        <div class="seo-card-icon">📱</div>
-        <h3>Digital Attendance Systems</h3>
-        <p>Modern colleges use biometric, RFID, or app-based attendance. These systems update in real-time. Our calculator works with any system — just enter your numbers from the portal or app to track your standing.</p>
-      </div>
+      <div class="seo-card"><div class="seo-card-icon">📋</div><h3>UGC 75% Attendance Mandate</h3><p>The University Grants Commission (UGC) mandates minimum 75% attendance for all undergraduate and postgraduate programs across Indian universities since 2017. This applies to regular, private, and deemed universities. Falling below can result in exam detention, though most universities offer 5-10% condonation with valid medical certificates.</p></div>
+      <div class="seo-card"><div class="seo-card-icon">🏛️</div><h3>State-wise Attendance Rules</h3><ul><li>Delhi University — 66.67% minimum</li><li>Mumbai University — 75% (10% condonation)</li><li>VTU Karnataka — 85% for professional courses</li><li>Anna University — 75% (10% condonation)</li><li>IIT Madras — 85% (very strict)</li><li>IIT Bombay/Delhi — 80% minimum</li><li>Christ University — 85% (limited condonation)</li><li>BITS Pilani — 80% (medical only)</li></ul></div>
+      <div class="seo-card"><div class="seo-card-icon">🏥</div><h3>Medical Condonation Policies</h3><p>Most Indian universities allow 5-15% attendance relaxation for genuine medical emergencies. Required documents include registered medical practitioner certificates, hospital discharge summaries, and a formal application. Some universities like DU have specific forms. Condonation is NOT automatic — you must apply before semester exams. Sports quota and NCC participation also qualify at many institutions.</p></div>
+      <div class="seo-card"><div class="seo-card-icon">💼</div><h3>Placements & Attendance Link</h3><p>Many companies check attendance during campus placements. Consistent 85%+ is viewed as a sign of discipline. Some colleges require minimum 75% to sit for placements. Top recruiters like TCS, Infosys, and Wipro have been known to ask for attendance records. Poor attendance can impact your placement opportunities even if you have good grades.</p></div>
+      <div class="seo-card"><div class="seo-card-icon">📊</div><h3>How to Use This Calculator</h3><p>1. Enter total classes held so far this semester. 2. Enter classes you actually attended. 3. Toggle Ghost Classes ON for cancelled lectures. 4. Use Plan to Miss to simulate future absences. 5. Select your college from 100+ database for auto-rules. 6. Set your target (75/80/85% or custom). 7. Click Calculate for complete breakdown with bunk meter and recovery plan.</p></div>
+      <div class="seo-card"><div class="seo-card-icon">🎯</div><h3>Smart Attendance Tips</h3><p>• Track attendance from day 1 — don't wait till semester end. • Save bunks for genuine emergencies, not casual skip days. • Use the Plan to Miss feature BEFORE bunking to check impact. • Medical certificates are your safety net — keep them ready. • Some professors track attendance separately — know your teacher's policy. • Group study sessions count as attendance in some colleges — check!</p></div>
     </div>
   </div>
 </section>
 
 <footer class="footer">
-  <p>© 2025 Student Toolkit · Free Tools for Indian Students 🇮🇳 · <a href="/" style="color:var(--accent-primary);">Home</a></p>
+  <p>© 2025 Student Toolkit · 100+ College Rules · Free for Indian Students 🇮🇳 · <a href="/" style="color:var(--accent-primary);">Home</a></p>
 </footer>
 
-<!-- Sound Effects (using Web Audio API) -->
 <script>
 // ═══════════════════════════════════════════
 // SOUND ENGINE
 // ═══════════════════════════════════════════
 let soundEnabled = true;
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-
 function playSound(type) {
   if (!soundEnabled) return;
-  
   const osc = audioCtx.createOscillator();
   const gain = audioCtx.createGain();
-  osc.connect(gain);
-  gain.connect(audioCtx.destination);
-  
+  osc.connect(gain); gain.connect(audioCtx.destination);
   switch(type) {
-    case 'click':
-      osc.frequency.setValueAtTime(800, audioCtx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(400, audioCtx.currentTime + 0.1);
-      gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.1);
-      osc.start(audioCtx.currentTime);
-      osc.stop(audioCtx.currentTime + 0.1);
-      break;
-    case 'success':
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(523, audioCtx.currentTime);
-      osc.frequency.setValueAtTime(659, audioCtx.currentTime + 0.1);
-      osc.frequency.setValueAtTime(784, audioCtx.currentTime + 0.2);
-      gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.4);
-      osc.start(audioCtx.currentTime);
-      osc.stop(audioCtx.currentTime + 0.4);
-      break;
-    case 'warning':
-      osc.type = 'square';
-      osc.frequency.setValueAtTime(200, audioCtx.currentTime);
-      gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
-      osc.start(audioCtx.currentTime);
-      osc.stop(audioCtx.currentTime + 0.3);
-      break;
-    case 'celebration':
-      [523, 659, 784, 1047].forEach((freq, i) => {
-        const o = audioCtx.createOscillator();
-        const g = audioCtx.createGain();
-        o.connect(g); g.connect(audioCtx.destination);
-        o.type = 'sine';
-        o.frequency.setValueAtTime(freq, audioCtx.currentTime + i * 0.1);
-        g.gain.setValueAtTime(0.1, audioCtx.currentTime + i * 0.1);
-        g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + i * 0.1 + 0.3);
-        o.start(audioCtx.currentTime + i * 0.1);
-        o.stop(audioCtx.currentTime + i * 0.1 + 0.3);
-      });
-      break;
+    case 'click': osc.frequency.setValueAtTime(800, audioCtx.currentTime); osc.frequency.exponentialRampToValueAtTime(400, audioCtx.currentTime+0.1); gain.gain.setValueAtTime(0.1, audioCtx.currentTime); gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime+0.1); osc.start(audioCtx.currentTime); osc.stop(audioCtx.currentTime+0.1); break;
+    case 'success': osc.type='sine'; osc.frequency.setValueAtTime(523, audioCtx.currentTime); osc.frequency.setValueAtTime(659, audioCtx.currentTime+0.1); osc.frequency.setValueAtTime(784, audioCtx.currentTime+0.2); gain.gain.setValueAtTime(0.15, audioCtx.currentTime); gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime+0.4); osc.start(audioCtx.currentTime); osc.stop(audioCtx.currentTime+0.4); break;
+    case 'warning': osc.type='square'; osc.frequency.setValueAtTime(200, audioCtx.currentTime); gain.gain.setValueAtTime(0.08, audioCtx.currentTime); gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime+0.3); osc.start(audioCtx.currentTime); osc.stop(audioCtx.currentTime+0.3); break;
+    case 'celebration': [523,659,784,1047].forEach((f,i)=>{const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.connect(g);g.connect(audioCtx.destination);o.type='sine';o.frequency.setValueAtTime(f,audioCtx.currentTime+i*0.1);g.gain.setValueAtTime(0.1,audioCtx.currentTime+i*0.1);g.gain.exponentialRampToValueAtTime(0.001,audioCtx.currentTime+i*0.1+0.3);o.start(audioCtx.currentTime+i*0.1);o.stop(audioCtx.currentTime+i*0.1+0.3);}); break;
   }
 }
-
-function toggleSound() {
-  soundEnabled = !soundEnabled;
-  document.getElementById('soundToggle').textContent = soundEnabled ? '🔊' : '🔇';
-  localStorage.setItem('soundEnabled', soundEnabled);
-  showToast(soundEnabled ? '🔊 Sound ON' : '🔇 Sound OFF');
-}
-
-// Load sound preference
-if (localStorage.getItem('soundEnabled') === 'false') {
-  soundEnabled = false;
-  document.getElementById('soundToggle').textContent = '🔇';
-}
+function toggleSound(){soundEnabled=!soundEnabled;document.getElementById('soundToggle').textContent=soundEnabled?'🔊':'🔇';localStorage.setItem('soundEnabled',soundEnabled);showToast(soundEnabled?'🔊 Sound ON':'🔇 Sound OFF');}
+if(localStorage.getItem('soundEnabled')==='false'){soundEnabled=false;document.getElementById('soundToggle').textContent='🔇';}
 
 // ═══════════════════════════════════════════
-// MOTIVATIONAL QUOTES DATABASE
+// MULTILINGUAL QUOTES (English + Hindi + Famous Speeches)
 // ═══════════════════════════════════════════
-const quotes = [
-  { text: "Success is the sum of small efforts, repeated day in and day out.", author: "Robert Collier", icon: "💪" },
-  { text: "The secret of getting ahead is getting started.", author: "Mark Twain", icon: "🚀" },
-  { text: "Don't watch the clock; do what it does. Keep going.", author: "Sam Levenson", icon: "⏰" },
-  { text: "Education is the passport to the future, for tomorrow belongs to those who prepare for it today.", author: "Malcolm X", icon: "📚" },
-  { text: "The beautiful thing about learning is that no one can take it away from you.", author: "B.B. King", icon: "🧠" },
-  { text: "Your future is created by what you do today, not tomorrow.", author: "Robert Kiyosaki", icon: "🎯" },
-  { text: "It always seems impossible until it's done.", author: "Nelson Mandela", icon: "✨" },
-  { text: "The only way to do great work is to love what you do.", author: "Steve Jobs", icon: "❤️" },
-  { text: "Small daily improvements over time lead to stunning results.", author: "Robin Sharma", icon: "📈" },
-  { text: "Discipline is the bridge between goals and accomplishment.", author: "Jim Rohn", icon: "🌉" },
-  { text: "The expert in anything was once a beginner.", author: "Helen Hayes", icon: "🌱" },
-  { text: "Wake up with determination. Go to bed with satisfaction.", author: "George Lorimer", icon: "☀️" },
-  { text: "Your attitude, not your aptitude, will determine your altitude.", author: "Zig Ziglar", icon: "🦅" },
-  { text: "The pain you feel today will be the strength you feel tomorrow.", author: "Arnold Schwarzenegger", icon: "💎" },
-  { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt", icon: "🌟" },
+const allQuotes = [
+  // English
+  {text:"Success is the sum of small efforts, repeated day in and day out.",author:"Robert Collier",lang:"en",icon:"💪"},
+  {text:"The secret of getting ahead is getting started.",author:"Mark Twain",lang:"en",icon:"🚀"},
+  {text:"Don't watch the clock; do what it does. Keep going.",author:"Sam Levenson",lang:"en",icon:"⏰"},
+  {text:"Education is the passport to the future, for tomorrow belongs to those who prepare for it today.",author:"Malcolm X",lang:"en",icon:"📚"},
+  {text:"The beautiful thing about learning is that no one can take it away from you.",author:"B.B. King",lang:"en",icon:"🧠"},
+  {text:"Your future is created by what you do today, not tomorrow.",author:"Robert Kiyosaki",lang:"en",icon:"🎯"},
+  {text:"It always seems impossible until it's done.",author:"Nelson Mandela",lang:"en",icon:"✨"},
+  {text:"The only way to do great work is to love what you do.",author:"Steve Jobs",lang:"en",icon:"❤️"},
+  {text:"Small daily improvements over time lead to stunning results.",author:"Robin Sharma",lang:"en",icon:"📈"},
+  {text:"Discipline is the bridge between goals and accomplishment.",author:"Jim Rohn",lang:"en",icon:"🌉"},
+  {text:"The expert in anything was once a beginner.",author:"Helen Hayes",lang:"en",icon:"🌱"},
+  {text:"Wake up with determination. Go to bed with satisfaction.",author:"George Lorimer",lang:"en",icon:"☀️"},
+  {text:"Your attitude, not your aptitude, will determine your altitude.",author:"Zig Ziglar",lang:"en",icon:"🦅"},
+  {text:"The pain you feel today will be the strength you feel tomorrow.",author:"Arnold Schwarzenegger",lang:"en",icon:"💎"},
+  {text:"Believe you can and you're halfway there.",author:"Theodore Roosevelt",lang:"en",icon:"🌟"},
+  {text:"Success is not final, failure is not fatal: it is the courage to continue that counts.",author:"Winston Churchill",lang:"en",icon:"🛡️"},
+  {text:"The future depends on what you do today.",author:"Mahatma Gandhi",lang:"en",icon:"🕊️"},
+  {text:"Arise, awake, and stop not till the goal is reached.",author:"Swami Vivekananda",lang:"en",icon:"🔥"},
+  // Hindi
+  {text:"कामयाबी छोटे-छोटे प्रयासों का नतीजा होती है, जो रोज़ दोहराए जाते हैं।",author:"रॉबर्ट कोलियर",lang:"hi",icon:"💪"},
+  {text:"मंज़िल उन्हीं को मिलती है, जिनके सपनों में जान होती है। पंखों से कुछ नहीं होता, हौसलों से उड़ान होती है।",author:"डॉ. एपीजे अब्दुल कलाम",lang:"hi",icon:"🚀"},
+  {text:"शिक्षा सबसे शक्तिशाली हथियार है जिससे आप दुनिया बदल सकते हैं।",author:"नेल्सन मंडेला",lang:"hi",icon:"📚"},
+  {text:"उठो, जागो और तब तक मत रुको जब तक लक्ष्य प्राप्त न हो जाए।",author:"स्वामी विवेकानंद",lang:"hi",icon:"🔥"},
+  {text:"सपने वो नहीं जो हम सोते वक्त देखते हैं, सपने वो हैं जो हमें सोने नहीं देते।",author:"डॉ. एपीजे अब्दुल कलाम",lang:"hi",icon:"✨"},
+  {text:"अगर आप अपनी कमजोरियों को जानते हैं, तो आप मजबूत बन सकते हैं।",author:"स्वामी विवेकानंद",lang:"hi",icon:"💎"},
+  {text:"मेहनत इतनी खामोशी से करो कि सफलता शोर मचा दे।",author:"अज्ञात",lang:"hi",icon:"🤫"},
+  {text:"जो जीतने के लिए पागल नहीं होता, वो कभी नहीं जीत सकता।",author:"महेंद्र सिंह धोनी",lang:"hi",icon:"🏆"},
+  // Famous Speeches & Motivation
+  {text:"You have to dream before your dreams can come true.",author:"Dr. APJ Abdul Kalam",lang:"en",icon:"💭"},
+  {text:"Don't take rest after your first victory because if you fail in second, more lips are waiting to say that your first victory was just luck.",author:"Dr. APJ Abdul Kalam",lang:"en",icon:"🏅"},
+  {text:"All of us do not have equal talent. But, all of us have an equal opportunity to develop our talents.",author:"Dr. APJ Abdul Kalam",lang:"en",icon:"⚖️"},
+  {text:"Excellence is a continuous process and not an accident.",author:"Dr. APJ Abdul Kalam",lang:"en",icon:"📈"},
+  {text:"Take up one idea. Make that one idea your life – think of it, dream of it, live on that idea.",author:"Swami Vivekananda",lang:"en",icon:"💡"},
+  {text:"We are what our thoughts have made us; so take care about what you think.",author:"Swami Vivekananda",lang:"en",icon:"🧠"},
+  {text:"In a gentle way, you can shake the world.",author:"Mahatma Gandhi",lang:"en",icon:"🌍"},
+  {text:"Be the change that you wish to see in the world.",author:"Mahatma Gandhi",lang:"en",icon:"🔄"},
+  {text:"अपने लक्ष्य को इतना बड़ा बनाओ कि उसे पाने के लिए खुद को बड़ा बनाना पड़े।",author:"संदीप माहेश्वरी",lang:"hi",icon:"🎯"},
+  {text:"जिंदगी में दो चीजें कभी मत छोड़ना – एक तुम्हारा सपना और दूसरा तुम्हारा आत्मविश्वास।",author:"अज्ञात",lang:"hi",icon:"💫"},
 ];
 
-const quoteIcons = ["💪","🚀","📚","🧠","🎯","✨","❤️","🌟","🔥","💎","🦅","🌈","⚡","🎓","🏆"];
+const bannerQuotes = allQuotes.slice(0, 25);
+const quoteIcons = ["💪","🚀","📚","🧠","🎯","✨","❤️","🌟","🔥","💎","🦅","🌈","⚡","🎓","🏆","🌻","🕊️","💡","🌍","🏅"];
 
-function refreshQuote() {
-  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-  const randomIcon = quoteIcons[Math.floor(Math.random() * quoteIcons.length)];
-  
-  document.getElementById('motivationQuote').textContent = `"${randomQuote.text}"`;
-  document.getElementById('motivationAuthor').textContent = `— ${randomQuote.author}`;
-  document.getElementById('motivationIcon').textContent = randomIcon;
-  
+function refreshQuote(){
+  const q = bannerQuotes[Math.floor(Math.random()*bannerQuotes.length)];
+  const icon = quoteIcons[Math.floor(Math.random()*quoteIcons.length)];
+  document.getElementById('motivationQuote').textContent = `"${q.text}"`;
+  document.getElementById('motivationQuote').className = 'motivation-quote' + (q.lang==='hi'?' hindi':'');
+  document.getElementById('motivationAuthor').innerHTML = `— ${q.author} <span class="motivation-lang">${q.lang==='hi'?'हिंदी':'English'}</span>`;
+  document.getElementById('motivationIcon').textContent = icon;
   playSound('click');
 }
 
-function renderQuotesGrid() {
+function renderQuotesGrid(){
   const grid = document.getElementById('quotesGrid');
-  const selectedQuotes = quotes.sort(() => Math.random() - 0.5).slice(0, 6);
-  
-  grid.innerHTML = selectedQuotes.map(q => `
+  const shuffled = [...allQuotes].sort(()=>Math.random()-0.5).slice(0, 9);
+  grid.innerHTML = shuffled.map(q=>`
     <div class="quote-card">
-      <div class="quote-mark">"</div>
-      <div class="quote-text">${q.text}</div>
+      <div class="quote-lang-badge ${q.lang==='hi'?'hi':q.lang==='en'?'en':'motivation'}">${q.lang==='hi'?'हिंदी':q.lang==='en'?'English':'Motivation'}</div>
+      <div class="quote-text${q.lang==='hi'?' hindi':''}">${q.text}</div>
       <div class="quote-author">— ${q.author}</div>
     </div>
   `).join('');
 }
 
 // ═══════════════════════════════════════════
-// COLLEGE RULES DATABASE (50+ Colleges)
+// 100+ COLLEGE RULES DATABASE
 // ═══════════════════════════════════════════
 const collegeRules = [
-  { name: "Delhi University (DU)", minAttendance: 66.67, condonation: "Up to 10% with medical", state: "Delhi" },
-  { name: "Mumbai University", minAttendance: 75, condonation: "Up to 10% with medical", state: "Maharashtra" },
-  { name: "VTU (Karnataka)", minAttendance: 85, condonation: "Up to 10% with medical", state: "Karnataka" },
-  { name: "Anna University", minAttendance: 75, condonation: "10% condonation available", state: "Tamil Nadu" },
-  { name: "JNTU Hyderabad", minAttendance: 75, condonation: "Up to 10% condonation", state: "Telangana" },
-  { name: "Calcutta University", minAttendance: 75, condonation: "5% with medical", state: "West Bengal" },
-  { name: "Gujarat University", minAttendance: 75, condonation: "10% with medical certificate", state: "Gujarat" },
-  { name: "Rajasthan University", minAttendance: 75, condonation: "Up to 15% with valid reason", state: "Rajasthan" },
-  { name: "Panjab University", minAttendance: 75, condonation: "10% for medical/sports", state: "Punjab" },
-  { name: "LPU (Lovely Professional)", minAttendance: 75, condonation: "Case-by-case basis", state: "Punjab" },
-  { name: "Amity University", minAttendance: 75, condonation: "Medical condonation available", state: "Uttar Pradesh" },
-  { name: "IIT Bombay", minAttendance: 80, condonation: "Strict - medical only", state: "Maharashtra" },
-  { name: "IIT Delhi", minAttendance: 80, condonation: "Dean's approval needed", state: "Delhi" },
-  { name: "IIT Madras", minAttendance: 85, condonation: "Very limited", state: "Tamil Nadu" },
-  { name: "BITS Pilani", minAttendance: 80, condonation: "Medical only", state: "Rajasthan" },
-  { name: "NIT Trichy", minAttendance: 75, condonation: "10% with medical", state: "Tamil Nadu" },
-  { name: "NIT Surathkal", minAttendance: 75, condonation: "Up to 10%", state: "Karnataka" },
-  { name: "VIT Vellore", minAttendance: 75, condonation: "Medical condonation", state: "Tamil Nadu" },
-  { name: "SRM University", minAttendance: 75, condonation: "10% condonation", state: "Tamil Nadu" },
-  { name: "Manipal University", minAttendance: 75, condonation: "Medical certificate needed", state: "Karnataka" },
-  { name: "Christ University", minAttendance: 85, condonation: "Very strict - limited", state: "Karnataka" },
-  { name: "Symbiosis Pune", minAttendance: 75, condonation: "Medical condonation", state: "Maharashtra" },
-  { name: "NMIMS Mumbai", minAttendance: 75, condonation: "10% with approval", state: "Maharashtra" },
-  { name: "Shivaji University", minAttendance: 75, condonation: "10% condonation", state: "Maharashtra" },
-  { name: "Osmania University", minAttendance: 75, condonation: "Up to 10%", state: "Telangana" },
-  { name: "MG University Kerala", minAttendance: 75, condonation: "Medical condonation", state: "Kerala" },
-  { name: "CUSAT Kochi", minAttendance: 75, condonation: "10% with valid reason", state: "Kerala" },
-  { name: "BHU Varanasi", minAttendance: 75, condonation: "Medical/sports condonation", state: "Uttar Pradesh" },
-  { name: "AMU Aligarh", minAttendance: 75, condonation: "Case-by-case", state: "Uttar Pradesh" },
-  { name: "Jamia Millia Islamia", minAttendance: 75, condonation: "10% with medical", state: "Delhi" },
-  { name: "JNU Delhi", minAttendance: 75, condonation: "Limited condonation", state: "Delhi" },
-  { name: "IGNOU", minAttendance: 0, condonation: "Distance learning - no attendance", state: "Delhi" },
-  { name: "SPPU Pune", minAttendance: 75, condonation: "10% with medical", state: "Maharashtra" },
-  { name: "AKTU Lucknow", minAttendance: 75, condonation: "10% condonation", state: "Uttar Pradesh" },
-  { name: "RGPV Bhopal", minAttendance: 75, condonation: "10% with valid reason", state: "Madhya Pradesh" },
-  { name: "BPUT Odisha", minAttendance: 75, condonation: "Medical condonation", state: "Odisha" },
-  { name: "MAKAUT West Bengal", minAttendance: 75, condonation: "10% condonation", state: "West Bengal" },
-  { name: "GGSIPU Delhi", minAttendance: 75, condonation: "10% with medical", state: "Delhi" },
-  { name: "SMVDU Jammu", minAttendance: 75, condonation: "10% with approval", state: "Jammu & Kashmir" },
-  { name: "NEHU Shillong", minAttendance: 75, condonation: "Medical condonation", state: "Meghalaya" },
-  { name: "Tezpur University", minAttendance: 75, condonation: "Case-by-case basis", state: "Assam" },
-  { name: "Goa University", minAttendance: 75, condonation: "10% with medical", state: "Goa" },
-  { name: "Himachal University", minAttendance: 75, condonation: "10% condonation", state: "Himachal Pradesh" },
-  { name: "Patna University", minAttendance: 75, condonation: "Medical condonation", state: "Bihar" },
-  { name: "Ranchi University", minAttendance: 75, condonation: "Up to 10%", state: "Jharkhand" },
-  { name: "Davv Indore", minAttendance: 75, condonation: "10% with medical", state: "Madhya Pradesh" },
-  { name: "Pondicherry University", minAttendance: 75, condonation: "Medical condonation", state: "Puducherry" },
-  { name: "NEHU Tura", minAttendance: 75, condonation: "Limited condonation", state: "Meghalaya" },
-  { name: "Sikkim University", minAttendance: 75, condonation: "Case-by-case", state: "Sikkim" },
-  { name: "Tripura University", minAttendance: 75, condonation: "Medical condonation", state: "Tripura" },
+  // Central Universities
+  {name:"Delhi University (DU)",min:66.67,condonation:"Up to 10% with medical",state:"Delhi"},
+  {name:"JNU Delhi",min:75,condonation:"Limited condonation",state:"Delhi"},
+  {name:"Jamia Millia Islamia",min:75,condonation:"10% with medical",state:"Delhi"},
+  {name:"BHU Varanasi",min:75,condonation:"Medical/sports condonation",state:"Uttar Pradesh"},
+  {name:"AMU Aligarh",min:75,condonation:"Case-by-case",state:"Uttar Pradesh"},
+  {name:"University of Hyderabad",min:75,condonation:"10% with medical",state:"Telangana"},
+  {name:"Pondicherry University",min:75,condonation:"Medical condonation",state:"Puducherry"},
+  {name:"Visva-Bharati Santiniketan",min:75,condonation:"10% condonation",state:"West Bengal"},
+  {name:"Tezpur University",min:75,condonation:"Case-by-case",state:"Assam"},
+  {name:"NEHU Shillong",min:75,condonation:"Medical condonation",state:"Meghalaya"},
+  {name:"Nagaland University",min:75,condonation:"Limited condonation",state:"Nagaland"},
+  {name:"Mizoram University",min:75,condonation:"Case-by-case",state:"Mizoram"},
+  {name:"Sikkim University",min:75,condonation:"Case-by-case",state:"Sikkim"},
+  {name:"Tripura University",min:75,condonation:"Medical condonation",state:"Tripura"},
+  {name:"Manipur University",min:75,condonation:"10% with medical",state:"Manipur"},
+  {name:"IGNOU",min:0,condonation:"Distance learning - no attendance",state:"Delhi"},
+  // IITs
+  {name:"IIT Bombay",min:80,condonation:"Strict - medical only",state:"Maharashtra"},
+  {name:"IIT Delhi",min:80,condonation:"Dean's approval needed",state:"Delhi"},
+  {name:"IIT Madras",min:85,condonation:"Very limited",state:"Tamil Nadu"},
+  {name:"IIT Kharagpur",min:80,condonation:"Medical condonation",state:"West Bengal"},
+  {name:"IIT Kanpur",min:80,condonation:"Dean's discretion",state:"Uttar Pradesh"},
+  {name:"IIT Roorkee",min:80,condonation:"Medical only",state:"Uttarakhand"},
+  {name:"IIT Guwahati",min:80,condonation:"Case-by-case",state:"Assam"},
+  {name:"IIT Hyderabad",min:80,condonation:"Limited",state:"Telangana"},
+  {name:"IIT BHU",min:80,condonation:"Medical condonation",state:"Uttar Pradesh"},
+  {name:"IIT Indore",min:80,condonation:"10% with medical",state:"Madhya Pradesh"},
+  // NITs
+  {name:"NIT Trichy",min:75,condonation:"10% with medical",state:"Tamil Nadu"},
+  {name:"NIT Surathkal",min:75,condonation:"Up to 10%",state:"Karnataka"},
+  {name:"NIT Warangal",min:75,condonation:"10% condonation",state:"Telangana"},
+  {name:"NIT Calicut",min:75,condonation:"Medical condonation",state:"Kerala"},
+  {name:"NIT Rourkela",min:75,condonation:"10% with medical",state:"Odisha"},
+  {name:"NIT Durgapur",min:75,condonation:"10% condonation",state:"West Bengal"},
+  {name:"NIT Kurukshetra",min:75,condonation:"Medical",state:"Haryana"},
+  {name:"NIT Silchar",min:75,condonation:"Case-by-case",state:"Assam"},
+  {name:"NIT Patna",min:75,condonation:"10% with medical",state:"Bihar"},
+  {name:"MNIT Jaipur",min:75,condonation:"Medical condonation",state:"Rajasthan"},
+  {name:"SVNIT Surat",min:75,condonation:"10% condonation",state:"Gujarat"},
+  {name:"VNIT Nagpur",min:75,condonation:"Medical",state:"Maharashtra"},
+  // IIITs
+  {name:"IIIT Hyderabad",min:80,condonation:"Limited",state:"Telangana"},
+  {name:"IIIT Bangalore",min:80,condonation:"Case-by-case",state:"Karnataka"},
+  {name:"IIIT Delhi",min:80,condonation:"Dean's approval",state:"Delhi"},
+  {name:"IIIT Allahabad",min:75,condonation:"10% with medical",state:"Uttar Pradesh"},
+  // State Universities - Maharashtra
+  {name:"Mumbai University",min:75,condonation:"Up to 10% with medical",state:"Maharashtra"},
+  {name:"SPPU Pune",min:75,condonation:"10% with medical",state:"Maharashtra"},
+  {name:"Shivaji University Kolhapur",min:75,condonation:"10% condonation",state:"Maharashtra"},
+  {name:"NMIMS Mumbai",min:75,condonation:"10% with approval",state:"Maharashtra"},
+  {name:"Symbiosis Pune",min:75,condonation:"Medical condonation",state:"Maharashtra"},
+  // State Universities - Karnataka
+  {name:"VTU Karnataka",min:85,condonation:"Up to 10% with medical",state:"Karnataka"},
+  {name:"Bangalore University",min:75,condonation:"10% condonation",state:"Karnataka"},
+  {name:"Mysore University",min:75,condonation:"Medical condonation",state:"Karnataka"},
+  {name:"Christ University",min:85,condonation:"Very strict - limited",state:"Karnataka"},
+  {name:"Manipal University",min:75,condonation:"Medical certificate needed",state:"Karnataka"},
+  // State Universities - Tamil Nadu
+  {name:"Anna University",min:75,condonation:"10% condonation available",state:"Tamil Nadu"},
+  {name:"Madras University",min:75,condonation:"Medical condonation",state:"Tamil Nadu"},
+  {name:"Bharathiar University",min:75,condonation:"10% with medical",state:"Tamil Nadu"},
+  {name:"VIT Vellore",min:75,condonation:"Medical condonation",state:"Tamil Nadu"},
+  {name:"SRM University",min:75,condonation:"10% condonation",state:"Tamil Nadu"},
+  // State Universities - Others
+  {name:"Calcutta University",min:75,condonation:"5% with medical",state:"West Bengal"},
+  {name:"MAKAUT West Bengal",min:75,condonation:"10% condonation",state:"West Bengal"},
+  {name:"Jadavpur University",min:75,condonation:"Medical condonation",state:"West Bengal"},
+  {name:"Gujarat University",min:75,condonation:"10% with medical certificate",state:"Gujarat"},
+  {name:"MSU Baroda",min:75,condonation:"10% condonation",state:"Gujarat"},
+  {name:"Rajasthan University",min:75,condonation:"Up to 15% with valid reason",state:"Rajasthan"},
+  {name:"JNTU Hyderabad",min:75,condonation:"Up to 10% condonation",state:"Telangana"},
+  {name:"Osmania University",min:75,condonation:"Up to 10%",state:"Telangana"},
+  {name:"Panjab University",min:75,condonation:"10% for medical/sports",state:"Punjab"},
+  {name:"GNDU Amritsar",min:75,condonation:"Medical condonation",state:"Punjab"},
+  {name:"LPU",min:75,condonation:"Case-by-case basis",state:"Punjab"},
+  {name:"AKTU Lucknow",min:75,condonation:"10% condonation",state:"Uttar Pradesh"},
+  {name:"CCS University Meerut",min:75,condonation:"Medical condonation",state:"Uttar Pradesh"},
+  {name:"RGPV Bhopal",min:75,condonation:"10% with valid reason",state:"Madhya Pradesh"},
+  {name:"Davv Indore",min:75,condonation:"10% with medical",state:"Madhya Pradesh"},
+  {name:"BPUT Odisha",min:75,condonation:"Medical condonation",state:"Odisha"},
+  {name:"Utkal University",min:75,condonation:"10% condonation",state:"Odisha"},
+  {name:"Patna University",min:75,condonation:"Medical condonation",state:"Bihar"},
+  {name:"Magadh University",min:75,condonation:"10% with medical",state:"Bihar"},
+  {name:"Ranchi University",min:75,condonation:"Up to 10%",state:"Jharkhand"},
+  {name:"MG University Kerala",min:75,condonation:"Medical condonation",state:"Kerala"},
+  {name:"CUSAT Kochi",min:75,condonation:"10% with valid reason",state:"Kerala"},
+  {name:"Goa University",min:75,condonation:"10% with medical",state:"Goa"},
+  {name:"Himachal Pradesh University",min:75,condonation:"10% condonation",state:"Himachal Pradesh"},
+  {name:"GGSIPU Delhi",min:75,condonation:"10% with medical",state:"Delhi"},
+  {name:"SMVDU Jammu",min:75,condonation:"10% with approval",state:"Jammu & Kashmir"},
+  {name:"Kashmir University",min:75,condonation:"Medical condonation",state:"Jammu & Kashmir"},
+  {name:"HNB Garhwal University",min:75,condonation:"10% condonation",state:"Uttarakhand"},
+  {name:"Kumaun University",min:75,condonation:"Medical condonation",state:"Uttarakhand"},
+  // Private/Deemed
+  {name:"BITS Pilani",min:80,condonation:"Medical only",state:"Rajasthan"},
+  {name:"Amity University",min:75,condonation:"Medical condonation available",state:"Uttar Pradesh"},
+  {name:"Shiv Nadar University",min:75,condonation:"Case-by-case",state:"Uttar Pradesh"},
+  {name:"Ashoka University",min:75,condonation:"Limited condonation",state:"Haryana"},
+  {name:"O.P. Jindal University",min:75,condonation:"Medical condonation",state:"Haryana"},
+  {name:"SASTRA University",min:75,condonation:"10% with medical",state:"Tamil Nadu"},
+  {name:"Thapar University",min:75,condonation:"Medical condonation",state:"Punjab"},
+  {name:"KIIT Bhubaneswar",min:75,condonation:"10% condonation",state:"Odisha"},
+  {name:"SOA University",min:75,condonation:"Medical condonation",state:"Odisha"},
 ];
 
 let selectedCollege = null;
+let filteredColleges = collegeRules;
 
-function renderCollegeChips(filter = '') {
-  const container = document.getElementById('collegeChips');
-  const filtered = filter ? 
-    collegeRules.filter(c => c.name.toLowerCase().includes(filter.toLowerCase()) || c.state.toLowerCase().includes(filter.toLowerCase())) :
-    collegeRules.slice(0, 12); // Show first 12 by default
+function renderCollegeChips(filter=''){
+  filteredColleges = filter ? 
+    collegeRules.filter(c=>c.name.toLowerCase().includes(filter.toLowerCase())||c.state.toLowerCase().includes(filter.toLowerCase())) :
+    collegeRules.slice(0, 20);
   
-  container.innerHTML = filtered.map(c => `
-    <div class="college-chip ${selectedCollege?.name === c.name ? 'selected' : ''}" 
+  const container = document.getElementById('collegeChips');
+  container.innerHTML = filteredColleges.map(c=>`
+    <div class="college-chip ${selectedCollege?.name===c.name?'selected':''}" 
          onclick="selectCollege('${c.name}')" 
-         title="${c.state} · Min: ${c.minAttendance}% · ${c.condonation}">
-      ${c.name} (${c.minAttendance}%)
+         title="${c.state} · Min: ${c.min}% · ${c.condonation}">
+      ${c.name} (${c.min}%)
     </div>
   `).join('');
+  document.getElementById('collegeCount').textContent = 
+    filter ? `Found ${filteredColleges.length} colleges matching your search` : 'Showing 20 of 100+ colleges · Click to auto-set rules · Search for more';
 }
 
-function filterColleges() {
+function filterColleges(){
   const search = document.getElementById('collegeSearch').value;
   renderCollegeChips(search);
 }
 
-function selectCollege(name) {
-  const college = collegeRules.find(c => c.name === name);
-  if (!college) return;
-  
+function selectCollege(name){
+  const college = collegeRules.find(c=>c.name===name);
+  if(!college) return;
   selectedCollege = college;
-  
-  // Auto-set target based on college rules
-  if (college.minAttendance === 66.67) {
-    setTarget('custom', document.querySelector('[onclick*="custom"]'));
-    document.getElementById('customTargetInput').value = 67;
-    document.getElementById('customTargetWrap').classList.add('open');
-    state.target = 'custom';
-    state.customTarget = 67;
-  } else {
-    const targetBtn = document.querySelector(`[onclick*="'${college.minAttendance}'"]`) ||
-                      document.querySelector(`[onclick*='${college.minAttendance}']`);
-    if (targetBtn) {
-      setTarget(college.minAttendance, targetBtn);
-    } else {
-      setTarget('custom', document.querySelector('[onclick*="custom"]'));
-      document.getElementById('customTargetInput').value = college.minAttendance;
-      document.getElementById('customTargetWrap').classList.add('open');
-      state.target = 'custom';
-      state.customTarget = college.minAttendance;
-    }
-  }
-  
-  renderCollegeChips();
+  const targetBtn = document.querySelector(`[onclick*="'${college.min}'"]`)||document.querySelector(`[onclick*='${college.min}']`);
+  if(targetBtn){setTarget(college.min,targetBtn);}
+  else{setTarget('custom',document.querySelector('[onclick*="custom"]'));document.getElementById('customTargetInput').value=college.min;document.getElementById('customTargetWrap').classList.add('open');state.target='custom';state.customTarget=college.min;}
+  renderCollegeChips(document.getElementById('collegeSearch').value);
   saveState();
-  showToast(`🏛️ ${college.name} · Min: ${college.minAttendance}% · ${college.condonation}`);
+  showToast(`🏛️ ${college.name} · Min: ${college.min}% · ${college.condonation}`);
   playSound('click');
-  
-  if (state.total > 0) calculate(true);
+  if(state.total>0)calculate(true);
 }
 
 // ═══════════════════════════════════════════
-// CONFETTI CELEBRATION
+// CONFETTI
 // ═══════════════════════════════════════════
-function triggerConfetti() {
+function triggerConfetti(){
   const container = document.getElementById('confettiContainer');
   const colors = ['#ff6b35','#0d9488','#f59e0b','#8b5cf6','#ef4444','#3b82f6','#ec4899','#10b981'];
-  
-  for (let i = 0; i < 60; i++) {
-    const piece = document.createElement('div');
-    piece.className = 'confetti-piece';
-    piece.style.left = Math.random() * 100 + '%';
-    piece.style.top = -(Math.random() * 20) + 'px';
-    piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-    piece.style.width = (Math.random() * 8 + 6) + 'px';
-    piece.style.height = (Math.random() * 8 + 6) + 'px';
-    piece.style.animationDuration = (Math.random() * 2 + 2) + 's';
-    piece.style.animationDelay = Math.random() * 0.5 + 's';
-    piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
-    container.appendChild(piece);
-    
-    setTimeout(() => piece.remove(), 3500);
+  for(let i=0;i<60;i++){
+    const piece=document.createElement('div');piece.className='confetti-piece';
+    piece.style.left=Math.random()*100+'%';piece.style.top=-(Math.random()*20)+'px';
+    piece.style.backgroundColor=colors[Math.floor(Math.random()*colors.length)];
+    piece.style.width=(Math.random()*8+6)+'px';piece.style.height=(Math.random()*8+6)+'px';
+    piece.style.animationDuration=(Math.random()*2+2)+'s';piece.style.animationDelay=Math.random()*0.5+'s';
+    container.appendChild(piece);setTimeout(()=>piece.remove(),3500);
   }
-  
   playSound('celebration');
 }
 
 // ═══════════════════════════════════════════
-// STATE MANAGEMENT
+// STATE
 // ═══════════════════════════════════════════
-let state = {
-  total: 0, attended: 0, ghost: 0,
-  target: 75, customTarget: null, ghostOn: false,
-  streakDays: 0, lastBunkDate: null,
-  calendarData: {}, calendarMonth: new Date().getMonth(), calendarYear: new Date().getFullYear()
-};
+let state={total:0,attended:0,ghost:0,remaining:0,planSkip:0,target:75,customTarget:null,ghostOn:false,planOn:false,streakDays:0,lastBunkDate:null,calendarData:{},calendarMonth:new Date().getMonth(),calendarYear:new Date().getFullYear()};
 
-function loadState() {
-  try {
-    const saved = localStorage.getItem('attendanceStateV2');
-    if (saved) state = { ...state, ...JSON.parse(saved) };
-    const cal = localStorage.getItem('attendanceCalendar');
-    if (cal) state.calendarData = JSON.parse(cal);
-  } catch(e) {}
+function loadState(){
+  try{const s=localStorage.getItem('attStateV3');if(s)state={...state,...JSON.parse(s)};const c=localStorage.getItem('attCalendar');if(c)state.calendarData=JSON.parse(c);}catch(e){}
+}
+function saveState(){
+  try{localStorage.setItem('attStateV3',JSON.stringify({total:state.total,attended:state.attended,ghost:state.ghost,remaining:state.remaining,planSkip:state.planSkip,target:state.target,customTarget:state.customTarget,ghostOn:state.ghostOn,planOn:state.planOn,streakDays:state.streakDays,lastBunkDate:state.lastBunkDate,calendarMonth:state.calendarMonth,calendarYear:state.calendarYear}));localStorage.setItem('attCalendar',JSON.stringify(state.calendarData));}catch(e){}
 }
 
-function saveState() {
-  try {
-    localStorage.setItem('attendanceStateV2', JSON.stringify({
-      total: state.total, attended: state.attended, ghost: state.ghost,
-      target: state.target, customTarget: state.customTarget, ghostOn: state.ghostOn,
-      streakDays: state.streakDays, lastBunkDate: state.lastBunkDate,
-      calendarMonth: state.calendarMonth, calendarYear: state.calendarYear
-    }));
-    localStorage.setItem('attendanceCalendar', JSON.stringify(state.calendarData));
-  } catch(e) {}
+function init(){
+  if(localStorage.getItem('theme')==='dark')document.body.classList.add('dark-mode');
+  loadState();syncUI();renderCollegeChips();renderQuotesGrid();updateStreakDisplay();
+  if(state.total>0)calculate(true);
 }
 
-// ═══════════════════════════════════════════
-// INIT
-// ═══════════════════════════════════════════
-function init() {
-  if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
-  loadState();
-  syncUI();
-  renderCollegeChips();
-  renderQuotesGrid();
-  updateStreakDisplay();
-  
-  if (state.total > 0) calculate(true);
+function syncUI(){
+  document.getElementById('totalInput').value=state.total||'';
+  document.getElementById('attendedInput').value=state.attended||'';
+  if(state.ghostOn){document.getElementById('ghostSwitch').classList.add('active');document.getElementById('ghostCollapse').classList.add('open');document.getElementById('ghostInput').value=state.ghost||'';}
+  if(state.planOn){document.getElementById('planSwitch').classList.add('active');document.getElementById('planCollapse').classList.add('open');document.getElementById('remainingInput').value=state.remaining||'';document.getElementById('skipInput').value=state.planSkip||'';}
+  document.querySelectorAll('.target-option').forEach(b=>b.classList.remove('active'));
+  if(state.target==='custom'&&state.customTarget){document.querySelector('[onclick*="custom"]').classList.add('active');document.getElementById('customTargetWrap').classList.add('open');document.getElementById('customTargetInput').value=state.customTarget;}
+  else{const btn=document.querySelector(`[onclick*="'${state.target}'"]`)||document.querySelector(`[onclick*='${state.target}']`);if(btn)btn.classList.add('active');document.getElementById('customTargetWrap').classList.remove('open');}
 }
 
-function syncUI() {
-  document.getElementById('totalInput').value = state.total || '';
-  document.getElementById('attendedInput').value = state.attended || '';
-  
-  if (state.ghostOn) {
-    document.getElementById('ghostSwitch').classList.add('active');
-    document.getElementById('ghostCollapse').classList.add('open');
-    document.getElementById('ghostInput').value = state.ghost || '';
-  }
-  
-  document.querySelectorAll('.target-option').forEach(b => b.classList.remove('active'));
-  if (state.target === 'custom' && state.customTarget) {
-    document.querySelector('[onclick*="custom"]').classList.add('active');
-    document.getElementById('customTargetWrap').classList.add('open');
-    document.getElementById('customTargetInput').value = state.customTarget;
-  } else {
-    const btn = document.querySelector(`[onclick*="'${state.target}'"]`) || 
-                document.querySelector(`[onclick*='${state.target}']`);
-    if (btn) btn.classList.add('active');
-    document.getElementById('customTargetWrap').classList.remove('open');
-  }
-}
-
-function updateStreakDisplay() {
-  const badge = document.getElementById('streakBadge');
-  if (state.streakDays > 0) {
-    badge.style.display = 'inline-flex';
-    document.getElementById('streakCount').textContent = state.streakDays;
-  } else {
-    badge.style.display = 'none';
-  }
+function updateStreakDisplay(){
+  const b=document.getElementById('streakBadge');
+  if(state.streakDays>0){b.style.display='inline-flex';document.getElementById('streakCount').textContent=state.streakDays;}
+  else{b.style.display='none';}
 }
 
 // ═══════════════════════════════════════════
-// QUICK ACTIONS
+// ACTIONS
 // ═══════════════════════════════════════════
-function markPresentToday() {
-  const today = new Date();
-  const todayKey = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
-  
-  state.calendarData[todayKey] = 'present';
-  state.total += 1;
-  state.attended += 1;
-  
-  // Update streak
-  if (state.lastBunkDate) {
-    const bunkDate = new Date(state.lastBunkDate);
-    const diffDays = Math.floor((today - bunkDate) / (1000 * 60 * 60 * 24));
-    state.streakDays = diffDays;
-  } else {
-    state.streakDays += 1;
-  }
-  
-  syncUI();
-  saveState();
-  updateStreakDisplay();
-  calculate(true);
-  playSound('success');
-  showToast('✅ Marked present for today! +1 attendance');
+function markPresentToday(){
+  const today=new Date();
+  const todayKey=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+  state.calendarData[todayKey]='present';state.total+=1;state.attended+=1;
+  if(state.lastBunkDate){state.streakDays=Math.floor((today-new Date(state.lastBunkDate))/(1000*60*60*24));}
+  else{state.streakDays+=1;}
+  syncUI();saveState();updateStreakDisplay();calculate(true);playSound('success');showToast('✅ Marked present for today!');
 }
 
-// ═══════════════════════════════════════════
-// TOGGLES & TARGETS
-// ═══════════════════════════════════════════
-function toggleGhost() {
-  state.ghostOn = !state.ghostOn;
-  document.getElementById('ghostSwitch').classList.toggle('active', state.ghostOn);
-  document.getElementById('ghostCollapse').classList.toggle('open', state.ghostOn);
-  if (!state.ghostOn) { state.ghost = 0; document.getElementById('ghostInput').value = ''; }
-  saveState();
-  playSound('click');
-  if (state.total > 0) calculate(true);
+function toggleGhost(){state.ghostOn=!state.ghostOn;document.getElementById('ghostSwitch').classList.toggle('active',state.ghostOn);document.getElementById('ghostCollapse').classList.toggle('open',state.ghostOn);if(!state.ghostOn){state.ghost=0;document.getElementById('ghostInput').value='';}saveState();playSound('click');if(state.total>0)calculate(true);}
+
+function togglePlan(){state.planOn=!state.planOn;document.getElementById('planSwitch').classList.toggle('active',state.planOn);document.getElementById('planCollapse').classList.toggle('open',state.planOn);if(!state.planOn){state.remaining=0;state.planSkip=0;document.getElementById('remainingInput').value='';document.getElementById('skipInput').value='';}saveState();playSound('click');if(state.total>0)calculate(true);}
+
+function setTarget(target,btn){
+  document.querySelectorAll('.target-option').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+  if(target==='custom'){document.getElementById('customTargetWrap').classList.add('open');document.getElementById('customTargetInput').focus();state.target='custom';}
+  else{document.getElementById('customTargetWrap').classList.remove('open');state.target=target;state.customTarget=null;}
+  playSound('click');saveState();if(state.total>0)calculate(true);
 }
 
-function setTarget(target, btn) {
-  document.querySelectorAll('.target-option').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  
-  if (target === 'custom') {
-    document.getElementById('customTargetWrap').classList.add('open');
-    document.getElementById('customTargetInput').focus();
-    state.target = 'custom';
-  } else {
-    document.getElementById('customTargetWrap').classList.remove('open');
-    state.target = target;
-    state.customTarget = null;
-  }
-  playSound('click');
-  saveState();
-  if (state.total > 0) calculate(true);
-}
+document.getElementById('customTargetInput')?.addEventListener('input',function(){const v=parseInt(this.value);if(v>0&&v<=100){state.customTarget=v;state.target='custom';saveState();if(state.total>0)calculate(true);}});
 
-document.getElementById('customTargetInput')?.addEventListener('input', function() {
-  const v = parseInt(this.value);
-  if (v > 0 && v <= 100) { state.customTarget = v; state.target = 'custom'; saveState(); if (state.total > 0) calculate(true); }
+// ═══════════════════════════════════════════
+// INPUTS
+// ═══════════════════════════════════════════
+let db;
+['totalInput','attendedInput','ghostInput','remainingInput','skipInput'].forEach(id=>{
+  document.getElementById(id).addEventListener('input',function(){
+    const v=parseInt(this.value)||0;
+    if(id==='totalInput')state.total=v;else if(id==='attendedInput')state.attended=v;else if(id==='ghostInput')state.ghost=v;else if(id==='remainingInput')state.remaining=v;else if(id==='skipInput')state.planSkip=v;
+    saveState();clearTimeout(db);if(state.total>0)db=setTimeout(()=>calculate(true),400);
+  });
+  document.getElementById(id).addEventListener('keydown',function(e){if(e.key==='Enter'){clearTimeout(db);calculate();}});
 });
 
 // ═══════════════════════════════════════════
-// INPUT HANDLERS
+// CALCULATION
 // ═══════════════════════════════════════════
-let debounce;
-['totalInput','attendedInput','ghostInput'].forEach(id => {
-  document.getElementById(id).addEventListener('input', function() {
-    const val = parseInt(this.value) || 0;
-    if (id === 'totalInput') state.total = val;
-    else if (id === 'attendedInput') state.attended = val;
-    else if (id === 'ghostInput') state.ghost = val;
-    saveState();
-    clearTimeout(debounce);
-    if (state.total > 0) debounce = setTimeout(() => calculate(true), 400);
-  });
-  document.getElementById(id).addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') { clearTimeout(debounce); calculate(); }
-  });
-});
-
-// ═══════════════════════════════════════════
-// CALCULATION ENGINE
-// ═══════════════════════════════════════════
-function calculate(silent = false) {
-  state.total = parseInt(document.getElementById('totalInput').value) || 0;
-  state.attended = parseInt(document.getElementById('attendedInput').value) || 0;
-  state.ghost = state.ghostOn ? (parseInt(document.getElementById('ghostInput').value) || 0) : 0;
+function calculate(silent=false){
+  state.total=parseInt(document.getElementById('totalInput').value)||0;
+  state.attended=parseInt(document.getElementById('attendedInput').value)||0;
+  state.ghost=state.ghostOn?(parseInt(document.getElementById('ghostInput').value)||0):0;
+  state.remaining=state.planOn?(parseInt(document.getElementById('remainingInput').value)||0):0;
+  state.planSkip=state.planOn?(parseInt(document.getElementById('skipInput').value)||0):0;
   
-  const effectiveTotal = state.total - state.ghost;
+  const effTotal=state.total-state.ghost;
+  if(state.total<=0){if(!silent)showError('totalInput');return;}
+  if(state.attended<0||state.attended>state.total){if(!silent)showError('attendedInput');return;}
+  if(effTotal<=0){if(!silent)showToast('⚠️ Ghost classes cannot exceed total');return;}
+  if(state.planOn&&state.planSkip>state.remaining){if(!silent)showError('skipInput');return;}
   
-  if (state.total <= 0) { if(!silent) showError('totalInput'); return; }
-  if (state.attended < 0 || state.attended > state.total) { if(!silent) showError('attendedInput'); return; }
-  if (effectiveTotal <= 0) { if(!silent) showToast('⚠️ Ghost classes cannot exceed total'); return; }
+  const td=getTargetDecimal();
+  const pct=(state.attended/effTotal)*100;
+  const pctR=Math.round(pct*100)/100;
+  const absent=effTotal-state.attended;
   
-  const td = getTargetDecimal();
-  const pct = (state.attended / effectiveTotal) * 100;
-  const pctR = Math.round(pct * 100) / 100;
-  const absent = effectiveTotal - state.attended;
-  
-  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('emptyState').style.display='none';
   document.getElementById('resultsArea').classList.add('show');
   
-  updateGauge(pctR, td);
-  document.getElementById('statTotal').textContent = effectiveTotal;
-  document.getElementById('statPresent').textContent = state.attended;
-  document.getElementById('statAbsent').textContent = absent;
-  document.getElementById('gaugeDetail').textContent = 
-    `${state.attended} present of ${effectiveTotal}${state.ghost>0?' ('+state.ghost+' cancelled)':''} · ${absent} absent`;
+  updateGauge(pctR,td);
+  document.getElementById('statTotal').textContent=effTotal;
+  document.getElementById('statPresent').textContent=state.attended;
+  document.getElementById('statAbsent').textContent=absent;
+  document.getElementById('gaugeDetail').textContent=`${state.attended} present of ${effTotal}${state.ghost>0?' ('+state.ghost+' cancelled)':''} · ${absent} absent`;
   
-  updateBunkMeter(effectiveTotal, td);
-  updateWarningBanner(pctR, td);
-  
-  if (pctR < (td * 100)) updateRecovery(effectiveTotal, td);
-  else document.getElementById('recoveryCard').style.display = 'none';
-  
-  updateTimeline(effectiveTotal);
+  updateBunkMeter(effTotal,td);
+  updateWarningBanner(pctR,td);
+  updatePlanProjection(effTotal,pctR,td);
+  if(pctR<(td*100))updateRecovery(effTotal,td);else document.getElementById('recoveryCard').style.display='none';
+  updateTimeline(effTotal);
   saveState();
+  if(pctR>=90&&!silent){triggerConfetti();showToast('🎉 Amazing! 90%+ attendance!');}
+}
+
+function getTargetDecimal(){return state.target==='custom'&&state.customTarget?state.customTarget/100:(typeof state.target==='number'?state.target:75)/100;}
+
+function updateGauge(pct,td){
+  const circle=document.getElementById('gaugeProgress');
+  const circ=2*Math.PI*68;
+  circle.style.strokeDasharray=circ;
+  circle.style.strokeDashoffset=circ-(Math.min(pct,100)/100)*circ;
+  const card=document.getElementById('gaugeCard'),chip=document.getElementById('statusChip'),pctEl=document.getElementById('gaugePct');
+  card.className='gauge-card';chip.className='status-chip';
+  const tp=td*100;
+  if(pct>=tp){card.classList.add('safe');chip.classList.add('safe');circle.style.stroke='#0d9488';pctEl.style.color='#0d9488';document.getElementById('statusEmoji').textContent='✅';document.getElementById('statusText').textContent='Above Target — Safe!';}
+  else if(pct>=tp-5){card.classList.add('warning');chip.classList.add('warning');circle.style.stroke='#f59e0b';pctEl.style.color='#f59e0b';document.getElementById('statusEmoji').textContent='⚠️';document.getElementById('statusText').textContent='Borderline — Be Careful';playSound('warning');}
+  else{card.classList.add('danger');chip.classList.add('danger');circle.style.stroke='#ef4444';pctEl.style.color='#ef4444';document.getElementById('statusEmoji').textContent='🚨';document.getElementById('statusText').textContent='Below Target!';playSound('warning');}
+  animateValue(pctEl,pct,'%');
+}
+
+function updateWarningBanner(pct,td){
+  const banner=document.getElementById('warningBanner'),tp=td*100;
+  if(pct<tp&&pct>=tp-3){banner.classList.add('show');document.getElementById('warningText').textContent=`⚠️ Danger zone! You're at ${pct.toFixed(1)}% — just ${(tp-pct).toFixed(1)}% away from dropping below ${tp}%. Attend every class!`;}
+  else if(pct<tp-3){banner.classList.add('show');document.getElementById('warningText').textContent=`🚨 You're below ${tp}%! Focus on recovery — attend all classes from now on.`;}
+  else if(pct>=tp&&pct<=tp+2){banner.classList.add('show');document.getElementById('warningText').textContent=`⚡ Barely above ${tp}%. Missing even ONE class could drop you below. Be very careful!`;}
+  else{banner.classList.remove('show');}
+}
+
+function updateBunkMeter(total,td){
+  const bunkable=Math.floor((state.attended/td)-total);
+  const el=document.getElementById('bunkNumber'),label=document.getElementById('bunkLabel'),fill=document.getElementById('bunkFill'),pctLbl=document.getElementById('bunkPct'),tip=document.getElementById('bunkTip');
+  if(bunkable>0){el.className='big-number green';el.textContent=bunkable;label.textContent=bunkable===1?'class you can safely skip':'classes you can safely skip';
+    const maxB=Math.floor((total/td)-total),used=Math.max(0,maxB-bunkable),usedP=maxB>0?Math.round((used/maxB)*100):100;
+    fill.style.width=usedP+'%';fill.className='progress-bar '+(usedP<50?'green':usedP<80?'gold':'red');pctLbl.textContent=usedP+'% budget used';
+    tip.textContent=bunkable>=15?'🎉 Lots of room! Plan wisely.':bunkable>=8?'👍 Good buffer. Save for real needs.':bunkable>=4?'⚠️ Limited. Think before skipping.':'🔥 Almost gone! Only for emergencies.';}
+  else{el.className='big-number red';el.textContent='0';label.textContent='No safe bunks remaining';fill.style.width='100%';fill.className='progress-bar red';pctLbl.textContent='100% used';
+    tip.textContent=state.attended/total*100<td*100?'🚨 Already below target! Attend every class.':'🚨 On the edge. Zero margin for error.';}
+}
+
+function updatePlanProjection(effTotal,currentPct,td){
+  const card=document.getElementById('planCard');
+  if(!state.planOn||state.remaining<=0){card.style.display='none';return;}
+  card.style.display='block';
+  const futureTotal=effTotal+state.remaining;
+  const willAttend=state.remaining-state.planSkip;
+  const futureAttended=state.attended+willAttend;
+  const futurePct=(futureAttended/futureTotal)*100;
+  const futurePctR=Math.round(futurePct*100)/100;
+  const minNeeded=Math.max(0,Math.ceil((td*futureTotal)-state.attended));
+  const maxSkip=Math.max(0,state.remaining-minNeeded);
   
-  // Celebrate if attendance is excellent
-  if (pctR >= 90 && !silent) {
-    triggerConfetti();
-    showToast('🎉 Amazing! 90%+ attendance — you\'re crushing it!');
-  }
-}
-
-function getTargetDecimal() {
-  if (state.target === 'custom' && state.customTarget) return state.customTarget / 100;
-  return (typeof state.target === 'number' ? state.target : 75) / 100;
-}
-
-function updateGauge(pct, td) {
-  const circle = document.getElementById('gaugeProgress');
-  const circ = 2 * Math.PI * 68;
-  const offset = circ - (Math.min(pct, 100) / 100) * circ;
-  circle.style.strokeDasharray = circ;
-  circle.style.strokeDashoffset = offset;
+  document.getElementById('planCurrentPct').textContent=currentPct.toFixed(1)+'%';
+  document.getElementById('planCurrentPct').style.color=currentPct>=td*100?'#0d9488':currentPct>=td*100-5?'#f59e0b':'#ef4444';
+  document.getElementById('planFuturePct').textContent=futurePctR+'%';
+  document.getElementById('planFuturePct').style.color=futurePct>=td*100?'#0d9488':futurePct>=td*100-5?'#f59e0b':'#ef4444';
+  document.getElementById('planBarFill').style.width=Math.min(futurePct,100)+'%';
+  document.getElementById('planBarPct').textContent=futurePctR+'%';
+  document.getElementById('planWillAttend').textContent=willAttend;
+  document.getElementById('planMaxSkip').textContent=maxSkip;
   
-  const card = document.getElementById('gaugeCard');
-  const chip = document.getElementById('statusChip');
-  const pctEl = document.getElementById('gaugePct');
-  card.className = 'gauge-card';
-  chip.className = 'status-chip';
-  
-  const tp = td * 100;
-  if (pct >= tp) {
-    card.classList.add('safe'); chip.classList.add('safe');
-    circle.style.stroke = '#0d9488'; pctEl.style.color = '#0d9488';
-    document.getElementById('statusEmoji').textContent = '✅';
-    document.getElementById('statusText').textContent = 'Above Target — Safe!';
-    if (pct >= 90) playSound('celebration');
-  } else if (pct >= tp - 5) {
-    card.classList.add('warning'); chip.classList.add('warning');
-    circle.style.stroke = '#f59e0b'; pctEl.style.color = '#f59e0b';
-    document.getElementById('statusEmoji').textContent = '⚠️';
-    document.getElementById('statusText').textContent = 'Borderline — Be Careful';
-    playSound('warning');
-  } else {
-    card.classList.add('danger'); chip.classList.add('danger');
-    circle.style.stroke = '#ef4444'; pctEl.style.color = '#ef4444';
-    document.getElementById('statusEmoji').textContent = '🚨';
-    document.getElementById('statusText').textContent = 'Below Target!';
-    playSound('warning');
-  }
-  animateValue(pctEl, pct, '%');
+  const verdict=document.getElementById('planVerdict');
+  if(futurePct>=td*100){verdict.style.background='var(--green-light)';verdict.style.color='var(--green-primary)';verdict.style.border='1px solid rgba(13,148,136,0.2)';verdict.textContent='✅ SAFE! Your plan keeps you above '+Math.round(td*100)+'%. You can skip up to '+maxSkip+' classes.';}
+  else if(futurePct>=td*100-5){verdict.style.background='var(--gold-light)';verdict.style.color='var(--gold-primary)';verdict.style.border='1px solid rgba(245,158,11,0.2)';verdict.textContent='⚠️ RISKY! You\'ll be at '+futurePctR+'% — very close to '+Math.round(td*100)+'%. Reduce by '+(state.planSkip-maxSkip)+' to be safe.';}
+  else{verdict.style.background='var(--red-light)';verdict.style.color='var(--red-primary)';verdict.style.border='1px solid rgba(239,68,68,0.2)';verdict.textContent='🚨 NOT SAFE! You\'ll drop to '+futurePctR+'% — below '+Math.round(td*100)+'%. Only skip max '+maxSkip+' classes.';}
 }
 
-function updateWarningBanner(pct, td) {
-  const banner = document.getElementById('warningBanner');
-  const targetPct = td * 100;
-  
-  if (pct < targetPct && pct >= targetPct - 3) {
-    banner.classList.add('show');
-    document.getElementById('warningText').textContent = 
-      `⚠️ Danger zone! You're at ${pct.toFixed(1)}% — just ${(targetPct - pct).toFixed(1)}% away from dropping below ${targetPct}%. Attend every class!`;
-  } else if (pct < targetPct - 3) {
-    banner.classList.add('show');
-    document.getElementById('warningText').textContent = 
-      `🚨 You're below ${targetPct}%! You need to attend classes to recover. Check the Recovery section below.`;
-  } else if (pct >= targetPct && pct <= targetPct + 2) {
-    banner.classList.add('show');
-    document.getElementById('warningText').textContent = 
-      `⚡ You're just barely above ${targetPct}%. Missing even ONE class could drop you below. Be very careful!`;
-  } else {
-    banner.classList.remove('show');
-  }
+function updateRecovery(total,td){
+  document.getElementById('recoveryCard').style.display='block';
+  const needed=Math.ceil((td*total-state.attended)/(1-td));
+  document.getElementById('recoveryNumber').textContent=needed;
+  const nT=total+needed,nA=state.attended+needed;
+  document.getElementById('recoveryTip').textContent=`Attend next ${needed} classes without missing ANY. After: ${nA}/${nT}=${Math.round((nA/nT)*10000)/100}% ✓`;
 }
 
-function updateBunkMeter(total, td) {
-  const bunkable = Math.floor((state.attended / td) - total);
-  const el = document.getElementById('bunkNumber');
-  const label = document.getElementById('bunkLabel');
-  const fill = document.getElementById('bunkFill');
-  const pctLbl = document.getElementById('bunkPct');
-  const tip = document.getElementById('bunkTip');
-  
-  if (bunkable > 0) {
-    el.className = 'big-number green'; el.textContent = bunkable;
-    label.textContent = bunkable === 1 ? 'class you can safely skip' : 'classes you can safely skip';
-    const maxB = Math.floor((total / td) - total);
-    const used = Math.max(0, maxB - bunkable);
-    const usedP = maxB > 0 ? Math.round((used / maxB) * 100) : 100;
-    fill.style.width = usedP + '%';
-    fill.className = 'progress-bar ' + (usedP < 50 ? 'green' : usedP < 80 ? 'gold' : 'red');
-    pctLbl.textContent = usedP + '% budget used';
-    tip.textContent = bunkable >= 15 ? '🎉 Lots of room! Plan your off-days wisely.' :
-      bunkable >= 8 ? '👍 Good buffer. Save bunks for when you really need them.' :
-      bunkable >= 4 ? '⚠️ Limited. Think carefully before skipping.' :
-      '🔥 Almost gone! Only skip for emergencies.';
-  } else {
-    el.className = 'big-number red'; el.textContent = '0';
-    label.textContent = 'No safe bunks remaining';
-    fill.style.width = '100%'; fill.className = 'progress-bar red';
-    pctLbl.textContent = '100% used';
-    tip.textContent = state.attended/total*100 < td*100 ?
-      '🚨 Already below target! Focus on recovery — attend every class.' :
-      '🚨 On the edge. Even one miss drops you below. Zero margin for error.';
-  }
-}
-
-function updateRecovery(total, td) {
-  document.getElementById('recoveryCard').style.display = 'block';
-  const needed = Math.ceil((td * total - state.attended) / (1 - td));
-  document.getElementById('recoveryNumber').textContent = needed;
-  const nTotal = total + needed, nAtt = state.attended + needed;
-  const nPct = Math.round((nAtt / nTotal) * 10000) / 100;
-  document.getElementById('recoveryTip').textContent = 
-    `Attend the next ${needed} classes without missing ANY. After that: ${nAtt}/${nTotal} = ${nPct}% ✓`;
-}
-
-function updateTimeline(total) {
-  const abs = total - state.attended;
-  const pPct = (state.attended / total) * 100;
-  const aPct = (abs / total) * 100;
-  document.getElementById('timelinePresent').style.width = pPct + '%';
-  document.getElementById('timelinePresent').textContent = pPct > 8 ? Math.round(pPct) + '%' : '';
-  document.getElementById('timelineAbsent').style.width = aPct + '%';
-  document.getElementById('timelineAbsent').textContent = aPct > 8 ? Math.round(aPct) + '%' : '';
+function updateTimeline(total){
+  const abs=total-state.attended;
+  const pPct=(state.attended/total)*100,aPct=(abs/total)*100;
+  document.getElementById('timelinePresent').style.width=pPct+'%';
+  document.getElementById('timelinePresent').textContent=pPct>8?Math.round(pPct)+'%':'';
+  document.getElementById('timelineAbsent').style.width=aPct+'%';
+  document.getElementById('timelineAbsent').textContent=aPct>8?Math.round(aPct)+'%':'';
 }
 
 // ═══════════════════════════════════════════
 // UTILITIES
 // ═══════════════════════════════════════════
-function fillDemo() {
-  state.total=120; state.attended=94; state.ghost=3; state.ghostOn=true; state.target=75; state.customTarget=null;
-  syncUI(); saveState(); updateStreakDisplay(); calculate(true);
-  showToast('📝 Demo data loaded! Try changing numbers.');
-  playSound('click');
-}
+function fillDemo(){state.total=120;state.attended=94;state.ghost=3;state.ghostOn=true;state.remaining=30;state.planSkip=5;state.planOn=true;state.target=75;state.customTarget=null;syncUI();saveState();updateStreakDisplay();calculate(true);showToast('📝 Demo loaded! 120 total, 94 attended, 3 cancelled, planning to skip 5 of 30 remaining');playSound('click');}
+function clearAll(){state.total=0;state.attended=0;state.ghost=0;state.remaining=0;state.planSkip=0;state.ghostOn=false;state.planOn=false;state.target=75;state.customTarget=null;state.streakDays=0;state.lastBunkDate=null;syncUI();document.getElementById('resultsArea').classList.remove('show');document.getElementById('emptyState').style.display='';document.getElementById('recoveryCard').style.display='none';document.getElementById('planCard').style.display='none';document.getElementById('warningBanner').classList.remove('show');document.getElementById('streakBadge').style.display='none';document.getElementById('gaugeProgress').style.strokeDashoffset='427';document.getElementById('ghostSwitch').classList.remove('active');document.getElementById('ghostCollapse').classList.remove('open');document.getElementById('planSwitch').classList.remove('active');document.getElementById('planCollapse').classList.remove('open');saveState();showToast('🔄 All cleared!');playSound('click');}
+function showError(id){const el=document.getElementById(id);el.classList.add('error');el.focus();setTimeout(()=>el.classList.remove('error'),600);}
+function animateValue(el,target,suffix){let c=0,step=0,steps=25,inc=target/steps;const int=setInterval(()=>{step++;c=inc*step;if(step>=steps){c=target;clearInterval(int);}el.textContent=(target%1===0?Math.round(c):c.toFixed(1))+suffix;},16);}
+function shareWhatsApp(){const p=document.getElementById('gaugePct').textContent,b=document.getElementById('bunkNumber').textContent;window.open('https://wa.me/?text='+encodeURIComponent(`📊 My Attendance: ${p}\n🎯 Can bunk: ${b} classes\n\nCheck yours: studenttoolkit.online`),'_blank');}
+function copyResults(){const p=document.getElementById('gaugePct').textContent,b=document.getElementById('bunkNumber').textContent;navigator.clipboard.writeText(`📊 ${p} | Bunks: ${b} | studenttoolkit.online`).then(()=>showToast('📋 Copied!'));}
+function toggleTheme(){document.body.classList.toggle('dark-mode');localStorage.setItem('theme',document.body.classList.contains('dark-mode')?'dark':'light');playSound('click');}
+function showToast(msg){const ex=document.querySelector('.toast');if(ex)ex.remove();const t=document.createElement('div');t.className='toast';t.textContent=msg;document.body.appendChild(t);setTimeout(()=>t.remove(),2500);}
+document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();calculate();}});
 
-function clearAll() {
-  state.total=0; state.attended=0; state.ghost=0; state.ghostOn=false; state.target=75; state.customTarget=null;
-  state.streakDays=0; state.lastBunkDate=null;
-  syncUI();
-  document.getElementById('resultsArea').classList.remove('show');
-  document.getElementById('emptyState').style.display='';
-  document.getElementById('recoveryCard').style.display='none';
-  document.getElementById('warningBanner').classList.remove('show');
-  document.getElementById('streakBadge').style.display='none';
-  document.getElementById('gaugeProgress').style.strokeDashoffset='427';
-  saveState(); showToast('🔄 All cleared!'); playSound('click');
-}
-
-function showError(id) {
-  const el = document.getElementById(id);
-  el.classList.add('error'); el.focus();
-  setTimeout(() => el.classList.remove('error'), 600);
-}
-
-function animateValue(el, target, suffix) {
-  let c=0, step=0, steps=25, inc=target/steps;
-  const int = setInterval(() => {
-    step++; c=inc*step;
-    if(step>=steps){c=target;clearInterval(int);}
-    el.textContent=(target%1===0?Math.round(c):c.toFixed(1))+suffix;
-  }, 16);
-}
-
-function shareWhatsApp() {
-  const p = document.getElementById('gaugePct').textContent;
-  const b = document.getElementById('bunkNumber').textContent;
-  window.open('https://wa.me/?text='+encodeURIComponent(`📊 My Attendance: ${p}\n🎯 Can bunk: ${b} classes\n\nCheck yours: studenttoolkit.online`),'_blank');
-}
-
-function copyResults() {
-  const p = document.getElementById('gaugePct').textContent;
-  const b = document.getElementById('bunkNumber').textContent;
-  navigator.clipboard.writeText(`📊 ${p} | Bunks: ${b} | studenttoolkit.online`).then(()=>showToast('📋 Copied!'));
-}
-
-function toggleTheme() {
-  document.body.classList.toggle('dark-mode');
-  localStorage.setItem('theme', document.body.classList.contains('dark-mode')?'dark':'light');
-  playSound('click');
-}
-
-function showToast(msg) {
-  const ex = document.querySelector('.toast'); if(ex) ex.remove();
-  const t = document.createElement('div'); t.className='toast'; t.textContent=msg;
-  document.body.appendChild(t); setTimeout(()=>t.remove(),2500);
-}
-
-// Keyboard shortcut
-document.addEventListener('keydown', e => { 
-  if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();calculate();} 
-});
-
-// Start the app
 init();
 </script>
 </body>
