@@ -15,15 +15,15 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blog — Student Toolkit | Free Guides for Indian Students</title>
-  <meta name="description" content="Free guides, career advice, and practical resources for Indian college students. Covering attendance, CGPA, resume tips, career paths, and more — all free."/>
+  <meta name="description" content="Free guides, career advice, and practical resources for Indian college students. Covering attendance, CGPA, career paths, how to earn with AI, and more — all free."/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://studenttoolkit.online/blog/"/>
   <meta property="og:title" content="Blog — Student Toolkit | Free Guides for Indian Students"/>
-  <meta property="og:description" content="Practical, research-backed guides for Indian college students. Career paths, resume tips, study tools and more — all completely free."/>
+  <meta property="og:description" content="Practical, research-backed guides for Indian college students. Career paths, earning with AI, study tools and more — all completely free."/>
   <meta property="og:url" content="https://studenttoolkit.online/blog/"/>
   <meta property="og:type" content="website"/>
   <meta property="og:image" content="https://studenttoolkit.online/logo-icon.png"/>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Student Toolkit Blog","description":"Free guides, career advice and practical resources for Indian college students.","url":"https://studenttoolkit.online/blog/","publisher":{"@type":"Organization","name":"Student Toolkit","url":"https://studenttoolkit.online"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"Student Toolkit Blog","description":"Free guides, career advice and practical resources for Indian college students.","url":"https://studenttoolkit.online/blog/","blogPost":[{"@type":"BlogPosting","headline":"Earn With AI Before It's Too Late: 55 Ways in India (2026)","url":"https://studenttoolkit.online/blog/earn-with-ai-before-its-too-late.html","datePublished":"2026-10-08"}],"publisher":{"@type":"Organization","name":"Student Toolkit","url":"https://studenttoolkit.online"}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -224,8 +224,8 @@
     <div>
       <p class="mh-desc">Practical, research-backed guides for Indian college and university students. Career paths, resume tips, attendance hacks — written honestly, no fluff, always free.</p>
       <div class="mh-stats">
-        <div><div class="mstat-num">7</div><div class="mstat-label">Articles</div></div>
-        <div><div class="mstat-num">6</div><div class="mstat-label">Topics</div></div>
+        <div><div class="mstat-num">10</div><div class="mstat-label">Articles</div></div>
+        <div><div class="mstat-num">7</div><div class="mstat-label">Topics</div></div>
         <div><div class="mstat-num">100%</div><div class="mstat-label">Free</div></div>
       </div>
     </div>
@@ -240,6 +240,7 @@
     <button class="fbtn" onclick="filterPosts('resume',this)">Resume</button>
     <button class="fbtn" onclick="filterPosts('tools',this)">Tools</button>
     <button class="fbtn" onclick="filterPosts('world',this)">World</button>
+    <button class="fbtn" data-f="earn" onclick="filterPosts('earn',this)">Earn With AI</button>
   </div>
 </div>
 
@@ -249,6 +250,24 @@
   <!-- FEATURED -->
   <section class="featured-section" id="featuredSection">
     <div class="sec-label">Featured Article</div>
+    <a href="earn-with-ai-before-its-too-late.html" class="featured-card fade-up" data-category="earn">
+      <div class="fc-body">
+        <div>
+          <div class="fc-tag">🔥 Earn With AI — New</div>
+          <h2>Earn With AI<br/><em>Before It's Too Late</em></h2>
+          <p>55 ways to make money with AI in India, none of them basic editing or writing lists. Every way has the rupee math, a step-by-step start guide and a copy-paste Claude prompt. 43 start at ₹0. Filter by cost and time, then build your own income stack.</p>
+        </div>
+        <div class="fc-foot">
+          <div class="fc-meta">15 min read · Earn With AI · 2026</div>
+          <div class="read-btn">Read the Guide →</div>
+        </div>
+      </div>
+      <div class="fc-visual" style="background:linear-gradient(135deg,#0b0e14,#1e1b4b);">
+        🤖
+        <div class="vis-label" style="color:rgba(255,255,255,.45);">55 Ways · 2026</div>
+      </div>
+    </a>
+
     <a href="cuet-ug-2026-complete-guide.html" class="featured-card fade-up" data-category="exam">
       <div class="fc-body">
         <div>
@@ -301,6 +320,14 @@ MBA success roadmap</p>
   <section class="articles-section">
     <div class="sec-label">All Articles</div>
     <div class="articles-grid" id="articlesGrid">
+
+      <a href="earn-with-ai-before-its-too-late.html" class="acard fade-up" data-category="earn" style="border-top:3px solid var(--red)">
+        <div class="acard-ico" style="background:#fff0ed;">🤖</div>
+        <div class="acard-tag" style="color:var(--red);">Earn With AI · 2026 🔥 New</div>
+        <h3>Earn With AI Before It's Too Late — 55 Ways With Real ₹ Numbers</h3>
+        <p>Rupee math, start guides and a copy-paste Claude prompt for every way. 43 start at ₹0.</p>
+        <div class="acard-meta">15 min read · Earn With AI</div>
+      </a>
 
      <a href="fraud-bba-colleges-india-2026.html" class="acard fade-up" data-category="college">
         <div class="acard-ico" style="background:#fef3c7;">🏛</div>
@@ -376,6 +403,11 @@ Whether BBA is worth it or not</p>
   <section class="topics-section">
     <div class="sec-label">Browse by Topic</div>
     <div class="topics-grid">
+      <div class="topic-item" onclick="filterPosts('earn', document.querySelector('.fbtn[data-f=earn]'))">
+        <div class="topic-ico" style="background:#fff0ed;">🤖</div>
+        <div><div class="topic-name">Earn With AI</div><div class="topic-count">1 article</div></div>
+        <div class="topic-arrow">→</div>
+      </div>
       <div class="topic-item" onclick="filterPosts('exam', document.querySelectorAll('.fbtn')[1])">
         <div class="topic-ico" style="background:#fff7ed;">📅</div>
         <div><div class="topic-name">Exam Guides</div><div class="topic-count">1 article</div></div>
@@ -486,8 +518,13 @@ Whether BBA is worth it or not</p>
 
     // Featured section
     const fs = document.getElementById('featuredSection');
-    const fc = fs.querySelector('.featured-card');
-    fs.style.display = (cat === 'all' || fc.dataset.category === cat) ? 'block' : 'none';
+    let anyFeat = false;
+    fs.querySelectorAll('.featured-card').forEach(c => {
+      const show = (cat === 'all' || c.dataset.category === cat);
+      c.style.display = show ? '' : 'none';
+      if (show) anyFeat = true;
+    });
+    fs.style.display = anyFeat ? 'block' : 'none';
 
     // Scroll to articles
     document.getElementById('articlesGrid').scrollIntoView({behavior:'smooth', block:'start'});
