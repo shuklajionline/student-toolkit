@@ -1,0 +1,98 @@
+{
+ "exam": "ailet",
+ "schemaVersion": 1,
+ "legacy": true,
+ "generatedAt": "2026-10-10",
+ "colleges": [
+  {
+   "id": "legacy-ailet-nlu-delhi-nlu-d-ba-llb-hons",
+   "name": "NLU Delhi (NLU-D)",
+   "course": "BA LLB (Hons)",
+   "exam": "ailet",
+   "city": "Delhi",
+   "state": "delhi",
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 50,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 120,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 250,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 350,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 2.1,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 12,
+    "internalUrl": null,
+    "oldNote": "CLAT uses rank (lower = better). NLU Delhi top NLU."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  }
+ ]
+}
