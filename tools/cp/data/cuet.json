@@ -1,0 +1,1988 @@
+{
+ "exam": "cuet",
+ "schemaVersion": 1,
+ "legacy": true,
+ "generatedAt": "2026-10-10",
+ "colleges": [
+  {
+   "id": "legacy-cuet-sscbs-delhi-bba-fia",
+   "name": "SSCBS Delhi",
+   "course": "BBA (FIA)",
+   "exam": "cuet",
+   "city": "Delhi",
+   "state": "delhi",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 95,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 88,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 78,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 72,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 0.072,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 8,
+    "internalUrl": "../colleges/bba/sscbs-delhi.html",
+    "oldNote": "Maths required. India's best BBA ROI."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-sri-ram-college-of-commerce-b-com-hons",
+   "name": "Sri Ram College of Commerce",
+   "course": "B.Com (Hons)",
+   "exam": "cuet",
+   "city": "Delhi",
+   "state": "delhi",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 97,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 91,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 82,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 76,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 0.12,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 7,
+    "internalUrl": null,
+    "oldNote": "Most competitive B.Com in India."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-jdmc-delhi-b-com-hons",
+   "name": "JDMC Delhi",
+   "course": "B.Com (Hons)",
+   "exam": "cuet",
+   "city": "Delhi",
+   "state": "delhi",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 93,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 86,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 75,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 68,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 0.09,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 5.5,
+    "internalUrl": null,
+    "oldNote": "Jesus & Mary College, DU."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-hansraj-college-du-b-com-hons",
+   "name": "Hansraj College DU",
+   "course": "B.Com (Hons)",
+   "exam": "cuet",
+   "city": "Delhi",
+   "state": "delhi",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 94,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 88,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 78,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 72,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 0.1,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 5.5,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-gargi-college-du-b-com-hons",
+   "name": "Gargi College DU",
+   "course": "B.Com (Hons)",
+   "exam": "cuet",
+   "city": "Delhi",
+   "state": "delhi",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 88,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 80,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 70,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 64,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 0.08,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 5,
+    "internalUrl": null,
+    "oldNote": "Women only college."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-miranda-house-du-b-com-hons",
+   "name": "Miranda House DU",
+   "course": "B.Com (Hons)",
+   "exam": "cuet",
+   "city": "Delhi",
+   "state": "delhi",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 90,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 83,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 73,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 67,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 0.09,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 5,
+    "internalUrl": null,
+    "oldNote": "Women only. NAAC A++."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-kirori-mal-college-du-b-com-hons",
+   "name": "Kirori Mal College DU",
+   "course": "B.Com (Hons)",
+   "exam": "cuet",
+   "city": "Delhi",
+   "state": "delhi",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 89,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 82,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 72,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 66,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 0.09,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 5,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-ddu-delhi-bba",
+   "name": "DDU Delhi",
+   "course": "BBA",
+   "exam": "cuet",
+   "city": "Delhi",
+   "state": "delhi",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 90,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 83,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 74,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 68,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 0.177,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 6,
+    "internalUrl": "../colleges/bba/ddu-delhi.html",
+    "oldNote": "No Maths required."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-ip-college-for-women-du-b-com-hons",
+   "name": "IP College for Women DU",
+   "course": "B.Com (Hons)",
+   "exam": "cuet",
+   "city": "Delhi",
+   "state": "delhi",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 88,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 81,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 71,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 65,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 0.08,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 4.8,
+    "internalUrl": null,
+    "oldNote": "Women only."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-jamia-millia-islamia-bba",
+   "name": "Jamia Millia Islamia",
+   "course": "BBA",
+   "exam": "cuet",
+   "city": "Delhi",
+   "state": "delhi",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 80,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 72,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 62,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 55,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 0.05,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 4.5,
+    "internalUrl": null,
+    "oldNote": "Central university."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-bhu-varanasi-bba",
+   "name": "BHU Varanasi",
+   "course": "BBA",
+   "exam": "cuet",
+   "city": "Varanasi",
+   "state": "up",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 82,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 74,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 65,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 58,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 0.06,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 5,
+    "internalUrl": null,
+    "oldNote": "Central university. BHU campus experience."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-hyderabad-central-university-mba-5-yr-integrated",
+   "name": "Hyderabad Central University",
+   "course": "MBA (5-yr Integrated)",
+   "exam": "cuet",
+   "city": "Hyderabad",
+   "state": null,
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 78,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 70,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 60,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 53,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 0.08,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 5,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-pondicherry-university-bba",
+   "name": "Pondicherry University",
+   "course": "BBA",
+   "exam": "cuet",
+   "city": "Puducherry",
+   "state": null,
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 72,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 64,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 55,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 48,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 0.05,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 4,
+    "internalUrl": null,
+    "oldNote": "Central university."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-tezpur-university-bba",
+   "name": "Tezpur University",
+   "course": "BBA",
+   "exam": "cuet",
+   "city": "Tezpur",
+   "state": null,
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 68,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 60,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 52,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 45,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 0.04,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 3.5,
+    "internalUrl": null,
+    "oldNote": "NE India — low competition."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-nmims-asmsoc-mumbai-bba",
+   "name": "NMIMS ASMSOC Mumbai",
+   "course": "BBA",
+   "exam": "cuet",
+   "city": "Mumbai",
+   "state": "maharashtra",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 85,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 78,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 68,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 60,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 12,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 6.8,
+    "internalUrl": "../colleges/bba/nmims-bba.html",
+    "oldNote": "Also accepts NPAT."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-christ-university-bba",
+   "name": "Christ University",
+   "course": "BBA",
+   "exam": "cuet",
+   "city": "Bangalore",
+   "state": "karnataka",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 80,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 73,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 63,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 56,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 8.74,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 6,
+    "internalUrl": "../colleges/bba/christ-university-bba.html",
+    "oldNote": "NAAC A+."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-symbiosis-scms-pune-bba",
+   "name": "Symbiosis SCMS Pune",
+   "course": "BBA",
+   "exam": "cuet",
+   "city": "Pune",
+   "state": "maharashtra",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 78,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 70,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 60,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 53,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 9.1,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 6.5,
+    "internalUrl": "../colleges/bba/symbiosis-scms-pune.html",
+    "oldNote": "SET exam also accepted."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-st-xavier-s-college-mumbai-bms",
+   "name": "St. Xavier's College Mumbai",
+   "course": "BMS",
+   "exam": "cuet",
+   "city": "Mumbai",
+   "state": "maharashtra",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 76,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 68,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 58,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 52,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 2.3,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 5.5,
+    "internalUrl": "../colleges/bba/st-xaviers-mumbai.html",
+    "oldNote": "Prestigious Mumbai college."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-loyola-college-chennai-bba",
+   "name": "Loyola College Chennai",
+   "course": "BBA",
+   "exam": "cuet",
+   "city": "Chennai",
+   "state": "tamil-nadu",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 75,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 68,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 58,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 52,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 0.07,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 4.5,
+    "internalUrl": "../colleges/bba/loyola-chennai.html",
+    "oldNote": "NAAC A++. Best value South India."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-amity-university-noida-bba",
+   "name": "Amity University Noida",
+   "course": "BBA",
+   "exam": "cuet",
+   "city": "Noida",
+   "state": "up",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 70,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 62,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 52,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 45,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 9,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 4,
+    "internalUrl": null,
+    "oldNote": "Large campus, NCR location."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-kiit-bhubaneswar-bba",
+   "name": "KIIT Bhubaneswar",
+   "course": "BBA",
+   "exam": "cuet",
+   "city": "Bhubaneswar",
+   "state": null,
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 72,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 64,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 54,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 47,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 7.5,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 5,
+    "internalUrl": "../colleges/bba/kiit-bba.html",
+    "oldNote": "NAAC A++."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-cuet-presidency-university-bangalore-bba",
+   "name": "Presidency University Bangalore",
+   "course": "BBA",
+   "exam": "cuet",
+   "city": "Bangalore",
+   "state": "karnataka",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 65,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 58,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 48,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 42,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 5,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 4,
+    "internalUrl": null,
+    "oldNote": "Growing private university."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  }
+ ]
+}
