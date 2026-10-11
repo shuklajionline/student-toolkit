@@ -1,0 +1,908 @@
+{
+ "exam": "mah-mba-cet",
+ "schemaVersion": 1,
+ "legacy": true,
+ "generatedAt": "2026-10-10",
+ "colleges": [
+  {
+   "id": "legacy-mah-mba-cet-jbims-mumbai-mms-mba",
+   "name": "JBIMS Mumbai",
+   "course": "MMS (MBA)",
+   "exam": "mah-mba-cet",
+   "city": "Mumbai",
+   "state": "maharashtra",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 99.9,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 99.5,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 97,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 94,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 2.5,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 20,
+    "internalUrl": null,
+    "oldNote": "Maharashtra domicile preferred. Best ROI MBA."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-mah-mba-cet-simsree-mumbai-mms-mba",
+   "name": "SIMSREE Mumbai",
+   "course": "MMS (MBA)",
+   "exam": "mah-mba-cet",
+   "city": "Mumbai",
+   "state": "maharashtra",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 99.5,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 99,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 96,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 92,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 1.5,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 14,
+    "internalUrl": null,
+    "oldNote": "Sydenham. Maharashtra students."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-mah-mba-cet-kj-somaiya-mumbai-mba",
+   "name": "KJ Somaiya Mumbai",
+   "course": "MBA",
+   "exam": "mah-mba-cet",
+   "city": "Mumbai",
+   "state": "maharashtra",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 97,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 94,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 88,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 83,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 14,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 12,
+    "internalUrl": null,
+    "oldNote": "No domicile requirement."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-mah-mba-cet-welingkar-mumbai-pgdm",
+   "name": "Welingkar Mumbai",
+   "course": "PGDM",
+   "exam": "mah-mba-cet",
+   "city": "Mumbai",
+   "state": "maharashtra",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 95,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 91,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 85,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 80,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 14,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 10,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-mah-mba-cet-pumba-pune-mba",
+   "name": "PUMBA Pune",
+   "course": "MBA",
+   "exam": "mah-mba-cet",
+   "city": "Pune",
+   "state": "maharashtra",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 95,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 91,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 84,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 79,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 1.6,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 8,
+    "internalUrl": null,
+    "oldNote": "Pune University Dept MBA. Affordable."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-mah-mba-cet-nibm-pune-pgdm",
+   "name": "NIBM Pune",
+   "course": "PGDM",
+   "exam": "mah-mba-cet",
+   "city": "Pune",
+   "state": "maharashtra",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 85,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 80,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 72,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 66,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 13,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 9,
+    "internalUrl": null,
+    "oldNote": "National Institute of Bank Management."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-mah-mba-cet-imdr-pune-pgdm",
+   "name": "IMDR Pune",
+   "course": "PGDM",
+   "exam": "mah-mba-cet",
+   "city": "Pune",
+   "state": "maharashtra",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 80,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 74,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 65,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 58,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 11,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 8,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-mah-mba-cet-indira-institute-pune-mba",
+   "name": "Indira Institute Pune",
+   "course": "MBA",
+   "exam": "mah-mba-cet",
+   "city": "Pune",
+   "state": "maharashtra",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 75,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 68,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 60,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 53,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 6,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 6,
+    "internalUrl": null,
+    "oldNote": "Large campus, affordable."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-mah-mba-cet-sies-mumbai-mms-mba",
+   "name": "SIES Mumbai",
+   "course": "MMS (MBA)",
+   "exam": "mah-mba-cet",
+   "city": "Mumbai",
+   "state": "maharashtra",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 88,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 82,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 74,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 68,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 4,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 8,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-mah-mba-cet-chetana-s-mumbai-mms",
+   "name": "Chetana's Mumbai",
+   "course": "MMS",
+   "exam": "mah-mba-cet",
+   "city": "Mumbai",
+   "state": "maharashtra",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 78,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 72,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 63,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 57,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 3,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 6,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  }
+ ]
+}
