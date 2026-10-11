@@ -1,0 +1,728 @@
+{
+ "exam": "nift",
+ "schemaVersion": 1,
+ "legacy": true,
+ "generatedAt": "2026-10-10",
+ "colleges": [
+  {
+   "id": "legacy-nift-nift-new-delhi-fashion-design-b-des-fashion-design",
+   "name": "NIFT New Delhi (Fashion Design)",
+   "course": "B.Des (Fashion Design)",
+   "exam": "nift",
+   "city": "Delhi",
+   "state": "delhi",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 95,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 88,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 78,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 72,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 3.2,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 7,
+    "internalUrl": null,
+    "oldNote": "India's #1 fashion institute. Most competitive NIFT."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-nift-nift-mumbai-b-des-fashion-design",
+   "name": "NIFT Mumbai",
+   "course": "B.Des (Fashion Design)",
+   "exam": "nift",
+   "city": "Mumbai",
+   "state": "maharashtra",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 92,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 85,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 75,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 69,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 3.2,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 7,
+    "internalUrl": null,
+    "oldNote": "Fashion capital location advantage."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-nift-nift-bangalore-b-des-fashion-design",
+   "name": "NIFT Bangalore",
+   "course": "B.Des (Fashion Design)",
+   "exam": "nift",
+   "city": "Bangalore",
+   "state": "karnataka",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 88,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 81,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 71,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 65,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 3.2,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 6.5,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-nift-nift-chennai-b-des-fashion-design",
+   "name": "NIFT Chennai",
+   "course": "B.Des (Fashion Design)",
+   "exam": "nift",
+   "city": "Chennai",
+   "state": "tamil-nadu",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 85,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 78,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 68,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 62,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 3.2,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 6.5,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-nift-nift-hyderabad-b-des-fashion-design",
+   "name": "NIFT Hyderabad",
+   "course": "B.Des (Fashion Design)",
+   "exam": "nift",
+   "city": "Hyderabad",
+   "state": null,
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 83,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 76,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 66,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 60,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 3.2,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 6,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-nift-nift-new-delhi-knitwear-b-des-knitwear",
+   "name": "NIFT New Delhi (Knitwear)",
+   "course": "B.Des (Knitwear)",
+   "exam": "nift",
+   "city": "Delhi",
+   "state": "delhi",
+   "type": "govt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 85,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 78,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 68,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 62,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 3.2,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 6,
+    "internalUrl": null,
+    "oldNote": "Specialised programme."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-nift-pearl-academy-delhi-b-des",
+   "name": "Pearl Academy Delhi",
+   "course": "B.Des",
+   "exam": "nift",
+   "city": "Delhi",
+   "state": "delhi",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 78,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 71,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 61,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 55,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 14,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 5.5,
+    "internalUrl": null,
+    "oldNote": "Private alternative to NIFT."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-nift-symbiosis-school-of-design-pune-b-des",
+   "name": "Symbiosis School of Design Pune",
+   "course": "B.Des",
+   "exam": "nift",
+   "city": "Pune",
+   "state": "maharashtra",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 75,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 68,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 58,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 52,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 11,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 5,
+    "internalUrl": null,
+    "oldNote": "SET design exam also accepted."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  }
+ ]
+}
