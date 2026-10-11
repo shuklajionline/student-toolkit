@@ -1,0 +1,548 @@
+{
+ "exam": "ipmat",
+ "schemaVersion": 1,
+ "legacy": true,
+ "generatedAt": "2026-10-10",
+ "colleges": [
+  {
+   "id": "legacy-ipmat-iim-indore-ipm-ipm-5-year-bba-mba",
+   "name": "IIM Indore (IPM)",
+   "course": "IPM (5-year BBA+MBA)",
+   "exam": "ipmat",
+   "city": "Indore",
+   "state": null,
+   "type": "iim",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 90,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 83,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 73,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 67,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 18,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 22,
+    "internalUrl": null,
+    "oldNote": "Best 5-year integrated MBA in India."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-ipmat-iim-rohtak-ipm-ipm-5-year",
+   "name": "IIM Rohtak (IPM)",
+   "course": "IPM (5-year)",
+   "exam": "ipmat",
+   "city": "Rohtak",
+   "state": null,
+   "type": "iim",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 82,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 75,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 65,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 59,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 14,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 15,
+    "internalUrl": null,
+    "oldNote": "More accessible than Indore."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-ipmat-iim-ranchi-ipm-ipm-5-year",
+   "name": "IIM Ranchi (IPM)",
+   "course": "IPM (5-year)",
+   "exam": "ipmat",
+   "city": "Ranchi",
+   "state": null,
+   "type": "iim",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 80,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 72,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 62,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 56,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 13,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 14,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-ipmat-iim-jammu-ipm-ipm-5-year",
+   "name": "IIM Jammu (IPM)",
+   "course": "IPM (5-year)",
+   "exam": "ipmat",
+   "city": "Jammu",
+   "state": null,
+   "type": "iim",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 75,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 68,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 58,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 52,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 12,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 12,
+    "internalUrl": null,
+    "oldNote": "Newer IIM."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-ipmat-iim-bodhgaya-ipm-ipm-5-year",
+   "name": "IIM Bodhgaya (IPM)",
+   "course": "IPM (5-year)",
+   "exam": "ipmat",
+   "city": "Bodh Gaya",
+   "state": null,
+   "type": "iim",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 72,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 65,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 55,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 49,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 11,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 11,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-ipmat-iim-nagpur-ipm-ipm-5-year",
+   "name": "IIM Nagpur (IPM)",
+   "course": "IPM (5-year)",
+   "exam": "ipmat",
+   "city": "Nagpur",
+   "state": "maharashtra",
+   "type": "iim",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 74,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 67,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 57,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 51,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 11,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 11,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  }
+ ]
+}
