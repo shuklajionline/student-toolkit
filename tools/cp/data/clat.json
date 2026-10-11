@@ -1,0 +1,2069 @@
+{
+ "exam": "clat",
+ "schemaVersion": 1,
+ "generatedAt": "2026-10-10",
+ "colleges": [
+  {
+   "id": "clat-nlsiu-bengaluru",
+   "name": "National Law School of India University (NLSIU), Bengaluru",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Bengaluru",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 101,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1018,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 3072,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 5000,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-nalsar-hyderabad",
+   "name": "NALSAR University of Law (NALSAR), Hyderabad",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Hyderabad",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 148,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 915,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 3259,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 5200,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-nliu-bhopal",
+   "name": "National Law Institute University (NLIU), Bhopal",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Bhopal",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 432,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1714,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 5407,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 9461,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-wbnujs-kolkata",
+   "name": "West Bengal National University of Juridical Sciences (WBNUJS), Kolkata",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Kolkata",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 284,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 6076,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 3833,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 6010,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected. Anomaly: the source shows OBC (6076) worse than SC (3833); re-check against the Consortium list.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-nlu-jodhpur",
+   "name": "NLU Jodhpur",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Jodhpur",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 310,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1273,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 4042,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 5907,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-hnlu-raipur",
+   "name": "Hidayatullah National Law University (HNLU), Raipur",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Raipur",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 736,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1994,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 6464,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 11239,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-gnlu-gandhinagar",
+   "name": "Gujarat National Law University (GNLU), Gandhinagar",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Gandhinagar",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 376,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1834,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 5340,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 7913,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-gnlu-silvassa",
+   "name": "Gujarat National Law University (GNLU), Silvassa",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Silvassa",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1259,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 2541,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 9215,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 14278,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-rmlnlu-lucknow",
+   "name": "Dr. Ram Manohar Lohiya National Law University (RMLNLU), Lucknow",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Lucknow",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 747,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 3077,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 10380,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 23550,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-rgnul-punjab",
+   "name": "Rajiv Gandhi National University of Law (RGNUL), Punjab",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": null,
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1059,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 9118,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 13152,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-cnlu-patna",
+   "name": "Chanakya National Law University (CNLU), Patna",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Patna",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1141,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 2517,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 12822,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 18875,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-nuals-kochi",
+   "name": "National University of Advanced Legal Studies (NUALS), Kochi",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Kochi",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1076,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 16941,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 53163,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-national-law-university-odisha-nluo",
+   "name": "National Law University Odisha (NLUO)",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": null,
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 800,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 7833,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 14196,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-nusrl-ranchi",
+   "name": "National University of Study and Research in Law (NUSRL), Ranchi",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Ranchi",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1297,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 2585,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 9826,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 15765,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-nluja-assam",
+   "name": "National Law University and Judicial Academy (NLUJA), Assam",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": null,
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1764,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 3527,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 11539,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 17399,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-dsnlu-visakhapatnam",
+   "name": "Damodaram Sanjivayya National Law University (DSNLU), Visakhapatnam",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Visakhapatnam",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1281,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 2508,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 10433,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 15199,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-tnnlu-tiruchirappalli",
+   "name": "Tamil Nadu National Law University (TNNLU), Tiruchirappalli",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Tiruchirappalli",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1370,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 2713,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 11222,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-mnlu-mumbai",
+   "name": "Maharashtra National Law University (MNLU), Mumbai",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Mumbai",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 481,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 5835,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 10994,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 30887,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-mnlu-nagpur",
+   "name": "Maharashtra National Law University (MNLU), Nagpur",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Nagpur",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1225,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 12425,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 18014,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 52882,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-mnlu-chhatrapati-sambhajinagar",
+   "name": "Maharashtra National Law University (MNLU), Chhatrapati Sambhajinagar",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Chhatrapati Sambhajinagar",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1518,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 14588,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 20072,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 60165,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-hpnlu-shimla",
+   "name": "Himachal Pradesh National Law University (HPNLU), Shimla",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Shimla",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1824,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 10935,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 19833,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-mpdnlu-jabalpur",
+   "name": "Dharmashastra National Law University (MPDNLU), Jabalpur",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Jabalpur",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1740,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 3056,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 11792,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 21749,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-dbranlu-sonepat",
+   "name": "National Law University (DBRANLU), Sonepat",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Sonepat",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1665,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 3409,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 11562,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 20080,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-nlut-agartala",
+   "name": "National Law University Tripura (NLUT), Agartala",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Agartala",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 2015,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 57711,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 65576,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-rpnlup-prayagraj",
+   "name": "Dr. Rajendra Prasad National Law University (RPNLUP), Prayagraj",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": "Prayagraj",
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 1930,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 4002,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 13474,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 32325,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "clat-india-international-university-of-legal-education-and-research-goa",
+   "name": "India International University of Legal Education and Research Goa",
+   "course": "Five-year integrated law programmes (as listed by the source)",
+   "exam": "clat",
+   "city": null,
+   "state": null,
+   "type": "nlu",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "GEN",
+     "gender": "any",
+     "quota": "AI",
+     "value": 2127,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 4093,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 13475,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    },
+    {
+     "year": 2026,
+     "round": "R1",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 22702,
+     "scale": {
+      "type": "rank",
+      "max": null
+     },
+     "source_url": "https://news.careers360.com/clat-2026-cutoff-first-allotment-list-nlsiu-bengaluru-highest-cut-offs-5-year-llb-nalsar-category-wise-closing-ranks-out",
+     "verified": false,
+     "status": "cited"
+    }
+   ],
+   "notes": "CLAT 2026 round-1 figure from a secondary source; it does not say whether domicile or horizontal-reservation seats are excluded. Opening rank, later rounds, fees and placements not yet collected.",
+   "officialUrl": "https://consortiumofnlus.ac.in",
+   "lastChecked": "2026-10-10"
+  }
+ ]
+}
