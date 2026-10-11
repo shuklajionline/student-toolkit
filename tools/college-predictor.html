@@ -22,16 +22,15 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2693980750987569');
+fbq('init', '1248976636881567');
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2693980750987569&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=1248976636881567&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
   
 <meta charset="UTF-8"/>
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>College Predictor India 2026 — CUET, CAT, JEE, MH-CET, CLAT, NIFT | Free Tool | Student Toolkit</title>
 <meta name="description" content="India's most advanced free college predictor. Enter your CUET, CAT, JEE, IPMAT, XAT, MH-CET, NMAT, CLAT or NIFT percentile — see 120+ colleges with real 2026 cutoffs, fees, average package, ROI ranking. Compare colleges, save favourites, sort by ROI. No login."/>
@@ -318,29 +317,182 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 footer{border-top:1px solid var(--border);padding:22px 20px;text-align:center;font-size:12px;color:var(--ink4)}
 footer a{color:var(--ink3);text-decoration:none;margin:0 8px}
 footer a:hover{color:var(--ink)}
+
+/* ═══ PHASE 4 ADDITIONS ═══ */
+/* Accessibility: text tokens raised to pass WCAG AA (4.5:1) on every surface; dark text on orange/green buttons */
+:root{--ink3:rgba(255,255,255,.64);--ink4:rgba(255,255,255,.56);--c-unlikely:#a1a1aa}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:absolute;left:12px;top:-60px;background:var(--accent);color:#09090b;padding:10px 16px;border-radius:8px;font-weight:700;z-index:300;text-decoration:none}
+.skip-link:focus{top:12px}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.inp-group select:focus-visible,.inp-group input:focus-visible,.sort-select:focus-visible{outline:3px solid var(--blue);outline-offset:1px;border-color:var(--accent)}
+input[type=range]:focus-visible{outline:3px solid var(--blue);outline-offset:6px}
+.predict-btn,.nav-cta,.view-btn.active,.compare-btn,.seo-cta a{color:#09090b!important}
+.btn-wa{color:#09090b}.predict-btn:hover{box-shadow:0 8px 32px rgba(249,115,22,.35)}
+.muted{color:var(--ink3);font-weight:400;font-size:11px}
+.exam-tab{background:transparent;border:0;border-right:1px solid var(--border);font-family:inherit;min-height:56px}
+.exam-tab .tab-sub{font-size:11px}
+.exam-tab[aria-selected=true]{background:var(--bg3);color:var(--accent);border-bottom:2px solid var(--accent);margin-bottom:-1px}
+.range-hints{font-size:11px}
+.data-status{margin:0 20px 12px;font-size:12.5px;color:var(--ink2);min-height:0}
+.data-status:empty{display:none}
+.data-status .pill{display:inline-block;padding:2px 9px;border-radius:12px;font-weight:700;font-size:11.5px;margin-right:6px}
+.pill-ok{background:var(--gbg);color:var(--green);border:1px solid var(--gborder)}
+.pill-cited{background:var(--bbg);color:var(--blue);border:1px solid rgba(96,165,250,.3)}
+.pill-est{background:var(--ybg);color:var(--yellow);border:1px solid rgba(251,191,36,.3)}
+.pill-none{background:var(--bg4);color:var(--ink2);border:1px solid var(--border2)}
+.inputs-grid{grid-template-columns:1fr}
+@media(min-width:520px){.inputs-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:820px){.inputs-grid{grid-template-columns:repeat(3,1fr)}}
+.inp-check{display:flex;align-items:flex-end}
+.check-label{display:flex!important;align-items:center;gap:10px;text-transform:none!important;letter-spacing:0!important;font-size:13.5px!important;color:var(--ink2)!important;min-height:44px;cursor:pointer}
+.check-label input{width:22px;height:22px;accent-color:var(--accent)}
+.adv-toggle{background:none;border:0;font-family:inherit;min-height:44px;width:100%;text-align:left}
+.adv-filters{grid-template-columns:1fr}
+@media(min-width:600px){.adv-filters{grid-template-columns:repeat(3,1fr)}}
+.inp-group select,.inp-group input[type=number],.inp-group input[type=text],.inp-group input[type=date]{min-height:44px}
+.score-mode-row{margin-bottom:12px;max-width:360px}
+.score-entry{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:620px){.score-entry{grid-template-columns:180px 1fr;align-items:center}}
+#scoreInput{background:var(--bg3);border:1.5px solid var(--border2);border-radius:var(--rs);padding:10px 13px;font-size:16px;font-weight:700;color:var(--ink);font-family:'DM Sans',sans-serif;min-height:44px;width:100%}
+input[type=range]{height:6px;touch-action:pan-y}
+input[type=range]::-webkit-slider-thumb{width:26px;height:26px}
+input[type=range]::-moz-range-thumb{width:26px;height:26px}
+.field-help{font-size:12.5px;color:var(--ink3);margin:8px 0 0}
+.form-error{font-size:13px;color:var(--red);margin:8px 0 0;min-height:0;font-weight:600}
+.form-error:empty{display:none}
+.predict-btn{min-height:52px}
+.whatif-note{font-size:12.5px;color:var(--ink3);margin:-6px 0 12px}
+.ctl-label{font-size:12px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.07em}
+.view-toggle{margin-left:auto;display:flex;gap:6px}
+.view-btn,.compare-clear,.compare-btn,.compare-close,.cc-action-btn,.share-btn{min-height:44px}
+.compare-names{font-weight:600;color:var(--accent)}
+.results-title{font-size:17px;margin:0}
+.results-wrap:focus{outline:none}
+.chip-target{background:var(--abg);border:1px solid var(--aborder);color:var(--accent2)}
+.chip-unlikely{background:var(--bg4);border:1px solid var(--border2);color:var(--ink2)}
+.chance-target{background:var(--abg);color:var(--accent2)}
+.chance-unlikely{background:var(--bg4);color:var(--ink2)}
+.chance-target-card{border-left:3px solid var(--accent)}
+.chance-unlikely-card{border-left:3px solid var(--c-unlikely)}
+.tier-details{margin-bottom:20px}
+.tier-details>summary{cursor:pointer;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);padding:12px 0;min-height:44px}
+.tag-official{background:var(--gbg);color:var(--green)}
+.tag-cited{background:var(--bbg);color:var(--blue)}
+.tag-est{background:var(--ybg);color:var(--yellow)}
+.tag-iit{background:var(--pbg);color:var(--purple)}
+.cc-main{grid-template-columns:auto 1fr;grid-template-areas:"rank body" "right right";gap:8px 12px}
+.cc-rank{grid-area:rank}.cc-body{grid-area:body;min-width:0}.cc-right{grid-area:right;text-align:left;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.cc-right .cc-cutoff-lbl{margin:0}
+@media(min-width:620px){.cc-main{grid-template-columns:auto 1fr auto;grid-template-areas:"rank body right"}.cc-right{display:block;text-align:right}}
+.cc-prob{font-size:12.5px;font-weight:700;color:var(--ink)}
+.cc-why{font-size:12.5px;color:var(--ink2);line-height:1.55;margin-top:6px}
+.cc-need{font-size:12px;color:var(--ink3);margin-top:3px}
+.cc-card-actions{display:flex;gap:8px;flex-wrap:wrap;padding:0 14px 12px}
+.cc-action-btn[aria-pressed=true]{border-color:var(--yellow);color:var(--yellow)}
+.cc-action-btn.compare-add[aria-pressed=true]{border-color:var(--accent);color:var(--accent)}
+.no-results .icon{font-size:36px}
+.no-results a{color:var(--accent2)}
+.no-results button{margin-top:12px}
+.skeleton{background:linear-gradient(90deg,var(--bg3),var(--bg4),var(--bg3));background-size:200% 100%;animation:sk 1.2s linear infinite;border-radius:var(--rs);height:84px;margin-bottom:8px}
+@keyframes sk{to{background-position:-200% 0}}
+/* shortlist */
+.saved-panel{margin:0 20px 16px}
+.saved-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.saved-item{display:grid;grid-template-columns:auto auto 1fr auto;gap:10px;align-items:center;background:var(--bg4);border:1px solid rgba(251,191,36,.25);border-radius:var(--rs);padding:8px 10px}
+.saved-item.drag-over{border-color:var(--blue);box-shadow:0 0 0 2px var(--blue)}
+.saved-item[draggable=true]{cursor:grab}
+.saved-n{font-family:'Syne',sans-serif;font-weight:800;color:var(--yellow);min-width:22px;text-align:center}
+.drag-handle{color:var(--ink3);font-size:18px;line-height:1;user-select:none}
+.saved-name{font-size:13.5px;font-weight:600;color:var(--ink);min-width:0}
+.saved-name small{display:block;font-weight:400;color:var(--ink3);font-size:11.5px}
+.saved-btns{display:flex;gap:4px}
+.saved-btns button{background:var(--bg3);border:1px solid var(--border2);color:var(--ink2);border-radius:var(--rxs);min-width:44px;min-height:44px;cursor:pointer;font-size:15px}
+.saved-btns button:disabled{opacity:.35;cursor:default}
+.saved-btns button:hover:not(:disabled){color:var(--ink);background:var(--bg5)}
+.saved-actions{display:flex;gap:8px;flex-wrap:wrap}
+/* tool panels */
+.tool-panels{padding:0 20px 8px}
+.tool-panel{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);margin-bottom:10px}
+.tool-panel>summary{cursor:pointer;padding:14px 16px;font-weight:700;font-size:14px;min-height:48px;display:flex;align-items:center}
+.tool-body{padding:4px 16px 16px}
+.calc-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:12px 0}
+@media(min-width:560px){.calc-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:860px){.calc-grid{grid-template-columns:repeat(3,1fr)}}
+.calc-out{display:grid;grid-template-columns:1fr auto;gap:6px 16px;margin-top:12px;font-size:13.5px}
+.calc-out dt{color:var(--ink3)}.calc-out dd{font-weight:700;text-align:right}
+.calc-out .calc-note{grid-column:1/-1;font-size:12px;color:var(--ink3);font-weight:400;text-align:left}
+.rem-list{list-style:none;margin-top:12px}
+.rem-list li{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:8px 0;border-top:1px solid var(--border);font-size:13px}
+#toolPanels textarea,.tool-body textarea{width:100%;background:var(--bg2);border:1.5px solid var(--border2);border-radius:var(--rs);padding:10px 12px;color:var(--ink);font:inherit;margin-bottom:10px}
+.ai-out{white-space:pre-wrap;margin-top:12px;font-size:13.5px;color:var(--ink2);line-height:1.65}
+.ai-out:empty{display:none}
+/* drawer */
+.drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:210}
+.drawer{position:fixed;z-index:220;background:var(--bg2);border:1px solid var(--border2);display:flex;flex-direction:column;
+  left:0;right:0;bottom:0;max-height:92vh;border-radius:16px 16px 0 0;box-shadow:0 -12px 60px rgba(0,0,0,.6)}
+@media(min-width:760px){.drawer{left:auto;top:0;bottom:0;width:480px;max-height:none;border-radius:16px 0 0 16px}}
+.drawer[hidden],.drawer-backdrop[hidden],.compare-modal[hidden]{display:none}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;border-bottom:1px solid var(--border)}
+.drawer-head h2{font-family:'Syne',sans-serif;font-size:17px;line-height:1.25}
+.drawer-body{overflow-y:auto;padding:16px 18px 28px}
+.drawer-body h3{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin:20px 0 8px}
+.drawer-body p{font-size:13.5px;color:var(--ink2);line-height:1.6;margin-bottom:8px}
+.chart-wrap{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:10px}
+.chart-wrap svg{width:100%;height:auto;display:block}
+.chart-axis{stroke:var(--border3);stroke-width:1}
+.chart-line{fill:none;stroke:var(--blue);stroke-width:2}
+.chart-dot{fill:var(--blue)}.chart-dot.est{fill:var(--bg3);stroke:var(--yellow);stroke-width:2}
+.chart-you{stroke:var(--accent);stroke-width:1.5;stroke-dasharray:5 4}
+.chart-fc{fill:var(--bg3);stroke:var(--green);stroke-width:2}
+.chart-txt{fill:rgba(255,255,255,.7);font-size:10px;font-family:'DM Sans',sans-serif}
+.chart-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--ink3);margin-top:8px}
+.hist-table{width:100%;border-collapse:collapse;font-size:12.5px}
+.hist-table th{text-align:left;font-size:10.5px;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;padding:6px 6px;border-bottom:1px solid var(--border)}
+.hist-table td{padding:7px 6px;border-bottom:1px solid var(--border);color:var(--ink2);vertical-align:top}
+.hist-table a{color:var(--blue)}
+.drawer-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.table-scroll{overflow-x:auto}
+.compare-modal{padding:12px}
+.compare-inner{padding:18px}
+.legacy-notice{background:#fff7ed;border-top:3px solid #fb923c;padding:14px 20px}
+.legacy-notice p{color:#7c2d12;font-size:14px;margin:0;line-height:1.6}
+.seo-cta a{color:#09090b}
+#printArea{display:none}
+@media print{
+  body>*:not(#printArea){display:none!important}
+  #printArea{display:block!important;color:#000;background:#fff;padding:0;font-family:Arial,sans-serif}
+  #printArea h1{font-size:20px;margin-bottom:4px}#printArea p{font-size:12px;margin:2px 0 10px}
+  #printArea table{width:100%;border-collapse:collapse;font-size:12px}
+  #printArea th,#printArea td{border:1px solid #888;padding:6px;text-align:left;vertical-align:top}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(max-width:480px){.hero{padding-top:88px}.hero-stats{gap:18px}.results-header{flex-direction:column}.view-toggle{margin-left:0}}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#predictorPanel">Skip to the predictor</a>
 
-<nav>
+<nav aria-label="Main">
   <a href="../index.html" class="nav-logo">Student<span>Toolkit</span></a>
   <div class="nav-links">
     <a href="../index.html#tools" class="nh">Tools</a>
     <a href="../colleges/" class="nh">Colleges</a>
     <a href="../blog/index.html" class="nh">Blog</a>
-    <a href="ai-resume-checker.html" class="nav-cta">Resume Check →</a>
+    <a href="/blog/cuet-ug-2026-complete-guide.html" class="nav-cta">CUET Guide →</a>
   </div>
 </nav>
 
+<main id="main">
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-badge">🎯 Free · No Sign-Up · 2026 Cutoffs · 110+ Colleges</div>
-  <h1>College Predictor<br/><span class="hl">India 2026</span></h1>
-  <p>Enter your exam percentile and category. Instantly see which colleges you can get into — with real 2026 cutoffs, fees, average packages, and ROI rankings. Compare colleges side by side.</p>
+  <div class="hero-badge">🎯 Free · No sign-up · Every cutoff labelled Official, Cited or Estimated</div>
+  <h1>College Predictor<br/><span class="hl">India 2027</span></h1>
+  <p>Enter your score and category. See Safe, Target and Reach colleges with a probability range, the score you would need, and where each number comes from.</p>
   <div class="hero-stats">
-    <div><strong>110+</strong>Colleges</div>
-    <div><strong>9</strong>Exams</div>
-    <div><strong>4</strong>Categories</div>
+    <div><strong>13</strong>Entrance exams</div>
+    <div><strong>6</strong>Categories + PwD</div>
+    <div><strong>Source</strong>shown on every cutoff</div>
     <div><strong>Free</strong>Always</div>
   </div>
 </div>
@@ -349,74 +501,90 @@ footer a:hover{color:var(--ink)}
 <div class="predictor-wrap">
 <div class="pred-card">
 
-  <!-- EXAM TABS -->
   <div class="exam-tabs-wrap">
-  <div class="exam-tabs" id="examTabs">
-    <div class="exam-tab active" data-exam="cuet" onclick="switchExam('cuet',this)">
-      <span class="tab-icon">📚</span><span class="tab-name">CUET</span><span class="tab-sub">BBA · B.Com</span>
-    </div>
-    <div class="exam-tab" data-exam="cat" onclick="switchExam('cat',this)">
-      <span class="tab-icon">🎓</span><span class="tab-name">CAT</span><span class="tab-sub">MBA · PGDM</span>
-    </div>
-    <div class="exam-tab" data-exam="ipmat" onclick="switchExam('ipmat',this)">
-      <span class="tab-icon">🏛</span><span class="tab-name">IPMAT</span><span class="tab-sub">IIM 5-yr</span>
-    </div>
-    <div class="exam-tab" data-exam="xat" onclick="switchExam('xat',this)">
-      <span class="tab-icon">✨</span><span class="tab-name">XAT</span><span class="tab-sub">XLRI · MBA</span>
-    </div>
-    <div class="exam-tab" data-exam="mhcet" onclick="switchExam('mhcet',this)">
-      <span class="tab-icon">🌀</span><span class="tab-name">MH-CET</span><span class="tab-sub">Maharashtra MBA</span>
-    </div>
-    <div class="exam-tab" data-exam="nmat" onclick="switchExam('nmat',this)">
-      <span class="tab-icon">📊</span><span class="tab-name">NMAT</span><span class="tab-sub">NMIMS · MBA</span>
-    </div>
-    <div class="exam-tab" data-exam="clat" onclick="switchExam('clat',this)">
-      <span class="tab-icon">⚖️</span><span class="tab-name">CLAT</span><span class="tab-sub">NLU · Law</span>
-    </div>
-    <div class="exam-tab" data-exam="jee" onclick="switchExam('jee',this)">
-      <span class="tab-icon">⚙️</span><span class="tab-name">JEE Mains</span><span class="tab-sub">B.Tech · NIT</span>
-    </div>
-    <div class="exam-tab" data-exam="nift" onclick="switchExam('nift',this)">
-      <span class="tab-icon">🎨</span><span class="tab-name">NIFT</span><span class="tab-sub">Design</span>
-    </div>
+  <div class="exam-tabs" id="examTabs" role="tablist" aria-label="Choose your entrance exam">
+    <button type="button" class="exam-tab active" role="tab" id="tab-cuet" data-exam="cuet" aria-selected="true" aria-controls="predictorPanel" tabindex="0"><span class="tab-icon" aria-hidden="true">📚</span><span class="tab-name">CUET</span><span class="tab-sub">BBA · B.Com</span></button>
+    <button type="button" class="exam-tab" role="tab" id="tab-jee" data-exam="jee" aria-selected="false" aria-controls="predictorPanel" tabindex="-1"><span class="tab-icon" aria-hidden="true">⚙️</span><span class="tab-name">JEE Main</span><span class="tab-sub">NIT · IIIT · GFTI</span></button>
+    <button type="button" class="exam-tab" role="tab" id="tab-jeeadv" data-exam="jeeadv" aria-selected="false" aria-controls="predictorPanel" tabindex="-1"><span class="tab-icon" aria-hidden="true">🚀</span><span class="tab-name">JEE Adv</span><span class="tab-sub">IIT</span></button>
+    <button type="button" class="exam-tab" role="tab" id="tab-cat" data-exam="cat" aria-selected="false" aria-controls="predictorPanel" tabindex="-1"><span class="tab-icon" aria-hidden="true">🎓</span><span class="tab-name">CAT</span><span class="tab-sub">MBA · PGDM</span></button>
+    <button type="button" class="exam-tab" role="tab" id="tab-ipmat" data-exam="ipmat" aria-selected="false" aria-controls="predictorPanel" tabindex="-1"><span class="tab-icon" aria-hidden="true">🏛</span><span class="tab-name">IPMAT</span><span class="tab-sub">IIM Indore · Rohtak</span></button>
+    <button type="button" class="exam-tab" role="tab" id="tab-jipmat" data-exam="jipmat" aria-selected="false" aria-controls="predictorPanel" tabindex="-1"><span class="tab-icon" aria-hidden="true">🏫</span><span class="tab-name">JIPMAT</span><span class="tab-sub">IIM Jammu · Bodh Gaya</span></button>
+    <button type="button" class="exam-tab" role="tab" id="tab-xat" data-exam="xat" aria-selected="false" aria-controls="predictorPanel" tabindex="-1"><span class="tab-icon" aria-hidden="true">✨</span><span class="tab-name">XAT</span><span class="tab-sub">XLRI · MBA</span></button>
+    <button type="button" class="exam-tab" role="tab" id="tab-nmat" data-exam="nmat" aria-selected="false" aria-controls="predictorPanel" tabindex="-1"><span class="tab-icon" aria-hidden="true">📊</span><span class="tab-name">NMAT</span><span class="tab-sub">NMIMS · MBA</span></button>
+    <button type="button" class="exam-tab" role="tab" id="tab-mhcet" data-exam="mhcet" aria-selected="false" aria-controls="predictorPanel" tabindex="-1"><span class="tab-icon" aria-hidden="true">🌀</span><span class="tab-name">MAH-MBA CET</span><span class="tab-sub">Maharashtra MBA</span></button>
+    <button type="button" class="exam-tab" role="tab" id="tab-mhtcet" data-exam="mhtcet" aria-selected="false" aria-controls="predictorPanel" tabindex="-1"><span class="tab-icon" aria-hidden="true">🔧</span><span class="tab-name">MHT-CET</span><span class="tab-sub">Maharashtra B.Tech</span></button>
+    <button type="button" class="exam-tab" role="tab" id="tab-clat" data-exam="clat" aria-selected="false" aria-controls="predictorPanel" tabindex="-1"><span class="tab-icon" aria-hidden="true">⚖️</span><span class="tab-name">CLAT</span><span class="tab-sub">NLUs · Law</span></button>
+    <button type="button" class="exam-tab" role="tab" id="tab-ailet" data-exam="ailet" aria-selected="false" aria-controls="predictorPanel" tabindex="-1"><span class="tab-icon" aria-hidden="true">📜</span><span class="tab-name">AILET</span><span class="tab-sub">NLU Delhi</span></button>
+    <button type="button" class="exam-tab" role="tab" id="tab-nift" data-exam="nift" aria-selected="false" aria-controls="predictorPanel" tabindex="-1"><span class="tab-icon" aria-hidden="true">🎨</span><span class="tab-name">NIFT</span><span class="tab-sub">Design</span></button>
   </div>
   </div>
 
-  <!-- EXAM INFO -->
-  <div class="exam-info" id="examInfo">
-    <strong>CUET (Common University Entrance Test)</strong> — For BBA and B.Com admissions at Delhi University (SSCBS, DDU, SRCC) and central universities nationwide. Percentile is NTA composite score. Cutoffs are 2025-26 admissions cycle.
-  </div>
+  <div class="exam-info" id="examInfo"></div>
+  <div class="data-status" id="dataStatus" role="status"></div>
 
-  <!-- INPUTS -->
+  <div id="predictorPanel" role="tabpanel" aria-labelledby="tab-cuet" tabindex="-1">
   <div class="inputs-section">
     <div class="inputs-grid">
       <div class="inp-group">
-        <label>Category</label>
+        <label for="category">Category</label>
         <select id="category">
           <option value="general">General (UR)</option>
           <option value="obc">OBC-NCL</option>
           <option value="sc">SC</option>
           <option value="st">ST</option>
           <option value="ews">EWS</option>
-          <option value="pwd">PwD</option>
         </select>
       </div>
       <div class="inp-group">
-        <label>Preferred Location</label>
+        <label for="gender">Gender</label>
+        <select id="gender">
+          <option value="other">Male / other</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="inp-group">
+        <label for="homeState">Home state</label>
         <select id="homeState">
-          <option value="any">All India</option>
+          <option value="any">Not sure / all India</option>
           <option value="delhi">Delhi / NCR</option>
-          <option value="maharashtra">Maharashtra</option>
+          <option value="andhra-pradesh">Andhra Pradesh</option>
+          <option value="arunachal-pradesh">Arunachal Pradesh</option>
+          <option value="assam">Assam</option>
+          <option value="bihar">Bihar</option>
+          <option value="chandigarh">Chandigarh</option>
+          <option value="chhattisgarh">Chhattisgarh</option>
+          <option value="goa">Goa</option>
+          <option value="gujarat">Gujarat</option>
+          <option value="haryana">Haryana</option>
+          <option value="himachal-pradesh">Himachal Pradesh</option>
+          <option value="jammu-kashmir">Jammu &amp; Kashmir</option>
+          <option value="jharkhand">Jharkhand</option>
           <option value="karnataka">Karnataka</option>
+          <option value="kerala">Kerala</option>
+          <option value="madhya-pradesh">Madhya Pradesh</option>
+          <option value="maharashtra">Maharashtra</option>
+          <option value="manipur">Manipur</option>
+          <option value="meghalaya">Meghalaya</option>
+          <option value="mizoram">Mizoram</option>
+          <option value="nagaland">Nagaland</option>
+          <option value="odisha">Odisha</option>
+          <option value="puducherry">Puducherry</option>
+          <option value="punjab">Punjab</option>
+          <option value="rajasthan">Rajasthan</option>
+          <option value="sikkim">Sikkim</option>
           <option value="tamil-nadu">Tamil Nadu</option>
+          <option value="telangana">Telangana</option>
+          <option value="tripura">Tripura</option>
           <option value="up">Uttar Pradesh</option>
-          <option value="other">Other State</option>
+          <option value="uttarakhand">Uttarakhand</option>
+          <option value="west-bengal">West Bengal</option>
+          <option value="other">Other / not listed</option>
         </select>
       </div>
       <div class="inp-group">
-        <label>Course Type</label>
+        <label for="courseFilter">Course type</label>
         <select id="courseFilter">
-          <option value="all">All Courses</option>
+          <option value="all">All courses</option>
           <option value="bba">BBA</option>
           <option value="bcom">B.Com</option>
           <option value="mba">MBA / PGDM</option>
@@ -426,39 +594,43 @@ footer a:hover{color:var(--ink)}
           <option value="design">Design</option>
         </select>
       </div>
+      <div class="inp-group inp-check">
+        <label for="pwd" class="check-label"><input type="checkbox" id="pwd"/> I have a PwD certificate</label>
+      </div>
     </div>
 
-    <!-- ADVANCED FILTERS TOGGLE -->
-    <div class="adv-toggle" id="advToggle" onclick="toggleAdv()">
-      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      Advanced Filters
-    </div>
+    <button type="button" class="adv-toggle" id="advToggle" aria-expanded="false" aria-controls="advFilters">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      Advanced filters
+    </button>
     <div class="adv-filters" id="advFilters">
       <div class="inp-group">
-        <label>College Type</label>
+        <label for="typeFilter">College type</label>
         <select id="typeFilter">
-          <option value="all">All Types</option>
-          <option value="govt">Government Only</option>
-          <option value="pvt">Private Only</option>
-          <option value="iim">IIMs Only</option>
-          <option value="nit">NITs Only</option>
-          <option value="nlu">NLUs Only</option>
+          <option value="all">All types</option>
+          <option value="govt">Government</option>
+          <option value="pvt">Private</option>
+          <option value="iim">IIMs</option>
+          <option value="iit">IITs</option>
+          <option value="nit">NITs</option>
+          <option value="iiit">IIITs</option>
+          <option value="nlu">NLUs</option>
         </select>
       </div>
       <div class="inp-group">
-        <label>Max Fees (₹ Lakh total)</label>
+        <label for="feesFilter">Max fees (₹ lakh, unverified)</label>
         <select id="feesFilter">
-          <option value="any">Any Fees</option>
-          <option value="1">Under ₹1L (Govt)</option>
+          <option value="any">Any fees</option>
+          <option value="1">Under ₹1L</option>
           <option value="10">Under ₹10L</option>
           <option value="20">Under ₹20L</option>
           <option value="30">Under ₹30L</option>
         </select>
       </div>
       <div class="inp-group">
-        <label>Min Avg Package (LPA)</label>
+        <label for="pkgFilter">Min avg package (LPA, unverified)</label>
         <select id="pkgFilter">
-          <option value="0">Any Package</option>
+          <option value="0">Any package</option>
           <option value="5">5+ LPA</option>
           <option value="10">10+ LPA</option>
           <option value="15">15+ LPA</option>
@@ -468,105 +640,175 @@ footer a:hover{color:var(--ink)}
     </div>
   </div>
 
-  <!-- PERCENTILE SLIDER -->
   <div class="slider-section">
+    <div class="inp-group score-mode-row" id="scoreModeRow" hidden>
+      <label for="scoreMode">Which score do you have?</label>
+      <select id="scoreMode"></select>
+    </div>
     <div class="slider-top">
-      <label>Your Percentile / Score</label>
-      <div class="percentile-display">
-        <span class="percentile-big" id="sliderVal">85.0</span>
-        <span class="percentile-unit">%ile</span>
+      <label for="scoreInput" id="scoreLabel">Your percentile</label>
+      <div class="percentile-display" aria-hidden="true">
+        <span class="percentile-big" id="sliderVal">90.0</span>
+        <span class="percentile-unit" id="scoreUnit">%ile</span>
       </div>
     </div>
-    <input type="range" id="percentileSlider" min="50" max="100" step="0.5" value="85" oninput="updateSlider(this.value)"/>
-    <div class="range-hints"><span>50</span><span>65</span><span>75</span><span>85</span><span>95</span><span>100</span></div>
+    <div class="score-entry">
+      <input type="number" id="scoreInput" inputmode="decimal" autocomplete="off" aria-describedby="formError scoreHelp"/>
+      <input type="range" id="percentileSlider" min="50" max="100" step="0.1" value="90" aria-label="Score slider (moves the number above)"/>
+    </div>
+    <div class="range-hints" id="rangeHints" aria-hidden="true"></div>
+    <p class="field-help" id="scoreHelp"></p>
+    <p class="form-error" id="formError" role="alert"></p>
   </div>
 
-  <!-- PREDICT BUTTON -->
   <div class="predict-row">
-    <button class="predict-btn" id="predictBtn" onclick="runPredictor()">
-      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-      <span id="predictBtnText">Predict My Colleges</span>
+    <button type="button" class="predict-btn" id="predictBtn">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <span id="predictBtnText">Predict my colleges</span>
     </button>
   </div>
+  </div><!-- /predictorPanel -->
 
-  <!-- SAVED PANEL -->
-  <div class="saved-panel" id="savedPanel">
-    <div class="saved-panel-head">⭐ Saved Colleges <span id="savedCount" style="color:var(--ink3);font-weight:400;font-size:11px"></span></div>
-    <div class="saved-list" id="savedList"></div>
-  </div>
+  <!-- SHORTLIST -->
+  <section class="saved-panel" id="savedPanel" aria-labelledby="savedHead">
+    <div class="saved-panel-head" id="savedHead">⭐ My shortlist <span id="savedCount" class="muted"></span></div>
+    <p class="field-help">Order = your preference. Drag a row, or use the arrows.</p>
+    <ol class="saved-list" id="savedList"></ol>
+    <div class="saved-actions">
+      <button type="button" class="cc-action-btn" id="shortlistPrint">⬇ Save as PDF</button>
+      <button type="button" class="cc-action-btn" id="shortlistCopy">Copy list</button>
+      <button type="button" class="cc-action-btn" id="shortlistClear">Clear all</button>
+    </div>
+  </section>
 
   <!-- RESULTS -->
-  <div class="results-wrap" id="resultsWrap">
+  <section class="results-wrap" id="resultsWrap" aria-labelledby="resultsTitle" tabindex="-1">
     <div class="results-header">
       <div>
-        <div class="results-title" id="resultsTitle">Your College Matches</div>
+        <h2 class="results-title" id="resultsTitle">Your college matches</h2>
         <div class="results-meta" id="resultsMeta"></div>
       </div>
       <div class="results-chips" id="resultsChips"></div>
     </div>
+    <p class="whatif-note" id="whatIfNote">What-if: move the score slider above and these results update straight away.</p>
 
-    <!-- CONTROLS -->
     <div class="controls-bar">
-      <label style="font-size:11px;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.07em">Sort:</label>
-      <select class="sort-select" id="sortSelect" onchange="sortAndRender()">
-        <option value="chance">Best Chance First</option>
-        <option value="cutoff">Cutoff (High→Low)</option>
-        <option value="pkg">Avg Package</option>
-        <option value="fees">Fees (Low→High)</option>
-        <option value="roi">Best ROI</option>
-        <option value="name">Name A-Z</option>
+      <label for="sortSelect" class="ctl-label">Sort</label>
+      <select class="sort-select" id="sortSelect">
+        <option value="chance">Best chance first</option>
+        <option value="cutoff">Cutoff (hardest first)</option>
+        <option value="pkg">Avg package (unverified)</option>
+        <option value="fees">Fees (unverified)</option>
+        <option value="roi">Best ROI (unverified)</option>
+        <option value="name">Name A–Z</option>
       </select>
-      <div style="margin-left:auto;display:flex;gap:6px">
-        <button class="view-btn active" id="viewList" onclick="setView('list')">≡ List</button>
-        <button class="view-btn" id="viewCompact" onclick="setView('compact')">⊞ Compact</button>
+      <div class="view-toggle">
+        <button type="button" class="view-btn active" id="viewList" aria-pressed="true">≡ List</button>
+        <button type="button" class="view-btn" id="viewCompact" aria-pressed="false">⊞ Compact</button>
       </div>
     </div>
 
-    <!-- COMPARE BAR -->
     <div class="compare-bar" id="compareBar">
-      <span>⚖️ Compare selected colleges:</span>
-      <span id="compareNames" style="font-weight:600;color:var(--accent)"></span>
-      <button class="compare-btn" onclick="openCompare()">Compare Now</button>
-      <button class="compare-clear" onclick="clearCompare()">Clear</button>
+      <span>⚖️ Compare (max 4):</span>
+      <span id="compareNames" class="compare-names"></span>
+      <button type="button" class="compare-btn" id="compareNow">Compare now</button>
+      <button type="button" class="compare-clear" id="compareClear">Clear</button>
     </div>
 
-    <!-- COLLEGE LIST -->
-    <div id="collegeList"></div>
+    <div id="collegeList" aria-live="off"></div>
+  </section>
+
+  <p class="sr-only" id="liveStatus" role="status" aria-live="polite"></p>
+
+  <!-- TOOLS -->
+  <div class="tool-panels">
+    <details class="tool-panel" id="toolCalc">
+      <summary>💰 ROI &amp; education-loan EMI calculator</summary>
+      <div class="tool-body">
+        <p class="field-help" id="calcSource">Enter your own numbers. College fees and packages in this tool are unverified, so check them on the college site first.</p>
+        <div class="calc-grid">
+          <div class="inp-group"><label for="calcCost">Total cost of the course (₹)</label><input type="number" id="calcCost" inputmode="numeric" min="0" step="1000" placeholder="e.g. 1200000"/></div>
+          <div class="inp-group"><label for="calcLoan">Loan amount (₹)</label><input type="number" id="calcLoan" inputmode="numeric" min="0" step="1000" placeholder="e.g. 800000"/></div>
+          <div class="inp-group"><label for="calcRate">Interest rate (% a year)</label><input type="number" id="calcRate" inputmode="decimal" min="0" step="0.1" value="10"/></div>
+          <div class="inp-group"><label for="calcTenure">Repayment (years)</label><input type="number" id="calcTenure" inputmode="decimal" min="1" step="1" value="7"/></div>
+          <div class="inp-group"><label for="calcStudy">Study years (interest builds up)</label><input type="number" id="calcStudy" inputmode="decimal" min="0" step="0.5" value="3"/></div>
+          <div class="inp-group"><label for="calcPkg">Expected package (LPA)</label><input type="number" id="calcPkg" inputmode="decimal" min="0" step="0.5" placeholder="e.g. 6"/></div>
+        </div>
+        <button type="button" class="cc-action-btn" id="calcRun">Calculate</button>
+        <p class="form-error" id="calcError" role="alert"></p>
+        <dl class="calc-out" id="calcOut" aria-live="polite"></dl>
+      </div>
+    </details>
+
+    <details class="tool-panel" id="toolRem">
+      <summary>🔔 Counselling date reminders</summary>
+      <div class="tool-body">
+        <p class="field-help">Counselling dates change every year. Copy the date from the official notice, then download a calendar reminder.</p>
+        <div class="calc-grid">
+          <div class="inp-group"><label for="remTitle">What is it for?</label><input type="text" id="remTitle" maxlength="80" placeholder="e.g. JoSAA round 1 choice filling"/></div>
+          <div class="inp-group"><label for="remDate">Date</label><input type="date" id="remDate"/></div>
+          <div class="inp-group"><label for="remDays">Remind me</label>
+            <select id="remDays"><option value="1">1 day before</option><option value="3">3 days before</option><option value="7">7 days before</option><option value="0">On the day</option></select></div>
+        </div>
+        <p class="field-help" id="remOfficial"></p>
+        <button type="button" class="cc-action-btn" id="remAdd">Add and download .ics</button>
+        <p class="form-error" id="remError" role="alert"></p>
+        <ul class="rem-list" id="remList"></ul>
+      </div>
+    </details>
+
+    <details class="tool-panel" id="toolAI">
+      <summary>🤖 Explain my options (experimental AI)</summary>
+      <div class="tool-body">
+        <p class="field-help" id="aiNote">Sends only your exam, score band, category and the results shown above, never your name or contact details. The AI can be wrong. It is not an official source.</p>
+        <label for="aiQ" class="sr-only">Optional question</label>
+        <textarea id="aiQ" rows="2" maxlength="300" placeholder="Optional: e.g. which of these is best if I want a government college?"></textarea>
+        <button type="button" class="cc-action-btn" id="aiBtn">Explain my options</button>
+        <p class="ai-out" id="aiOut" aria-live="polite"></p>
+      </div>
+    </details>
   </div>
 
-  <!-- INFO STRIP -->
   <div class="info-strip">
-    <div class="info-item"><div class="val">110+</div><div class="lbl">Colleges</div></div>
-    <div class="info-item"><div class="val">9</div><div class="lbl">Exams</div></div>
-    <div class="info-item"><div class="val">2026</div><div class="lbl">Cutoff Data</div></div>
+    <div class="info-item"><div class="val">13</div><div class="lbl">Exams</div></div>
+    <div class="info-item"><div class="val">3</div><div class="lbl">Data labels</div></div>
+    <div class="info-item"><div class="val">2027</div><div class="lbl">Admission cycle</div></div>
     <div class="info-item"><div class="val">Free</div><div class="lbl">Always</div></div>
   </div>
 
-  <!-- SHARE ROW -->
   <div class="share-row" id="shareRow">
-    <button class="share-btn btn-wa" onclick="shareWA()">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Share on WhatsApp
-    </button>
-    <button class="share-btn btn-copy" id="copyBtn" onclick="copyResults()">
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-      Copy List
-    </button>
-    <button class="share-btn btn-recalc" onclick="recalculate()">↩ Change Score</button>
+    <button type="button" class="share-btn btn-wa" id="shareWA">Share on WhatsApp</button>
+    <button type="button" class="share-btn btn-copy" id="copyLinkBtn">Copy result link</button>
+    <button type="button" class="share-btn btn-copy" id="copyBtn">Copy list</button>
+    <button type="button" class="share-btn btn-recalc" id="recalcBtn">↩ Change score</button>
   </div>
 
 </div><!-- /pred-card -->
 </div><!-- /predictor-wrap -->
 
+<!-- DRAWER -->
+<div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" hidden>
+  <div class="drawer-head">
+    <h2 id="drawerTitle">College details</h2>
+    <button type="button" class="compare-close" id="drawerClose">Close ✕</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+</aside>
+
 <!-- COMPARE MODAL -->
-<div class="compare-modal" id="compareModal">
+<div class="compare-modal" id="compareModal" role="dialog" aria-modal="true" aria-labelledby="compareTitle" hidden>
   <div class="compare-inner">
-    <h3>College Comparison <button class="compare-close" onclick="closeCompare()">Close ✕</button></h3>
-    <div style="overflow-x:auto"><table class="compare-table" id="compareTable"></table></div>
+    <h3 id="compareTitle">College comparison <button type="button" class="compare-close" id="compareClose">Close ✕</button></h3>
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Comparison table, scrolls sideways"><table class="compare-table" id="compareTable"></table></div>
   </div>
 </div>
 
+<div id="printArea" aria-hidden="true"></div>
+
 <!-- SEO CONTENT -->
+<div class="legacy-notice"><div class="seo-inner"><p><strong>Note:</strong> the cutoff tables and figures in the guide below come from the previous version of this tool and are not sourced. They are being replaced with cited data. Use the predictor above, which labels every number as Official, Cited or Estimated.</p></div></div>
+
 <div class="seo-section">
 <div class="seo-inner">
 
@@ -695,630 +937,57 @@ footer a:hover{color:var(--ink)}
 <h3 style="margin-bottom:16px">Frequently Asked Questions</h3>
 
 <div class="faq-item-seo">
-  <div class="faq-q-seo" onclick="this.parentElement.classList.toggle('open')">Which BBA college can I get with CUET 85 percentile?</div>
+  <div class="faq-q-seo" role="button" tabindex="0" aria-expanded="false">Which BBA college can I get with CUET 85 percentile?</div>
   <div class="faq-ans-seo"><p>With CUET 85 percentile General category: Gargi College DU (B.Com, 88 cutoff — slightly above but worth trying), DDU Delhi (BBA, 90 cutoff — reach), Jamia Millia Islamia (BBA, 80 cutoff — safe), Christ University Bangalore (BBA, 80 cutoff — safe), NMIMS Mumbai via NPAT (separate exam), and many other central universities. Use the predictor above for exact results by category.</p></div>
 </div>
 
 <div class="faq-item-seo">
-  <div class="faq-q-seo" onclick="this.parentElement.classList.toggle('open')">What is the CAT percentile required for IIM Ahmedabad, Bangalore, and Calcutta?</div>
+  <div class="faq-q-seo" role="button" tabindex="0" aria-expanded="false">What is the CAT percentile required for IIM Ahmedabad, Bangalore, and Calcutta?</div>
   <div class="faq-ans-seo"><p>All three IIMs (ABC) require 99+ percentile for General category shortlisting. However, the percentile is just the first filter — final selection also considers academic profile (10th, 12th, graduation marks), work experience (2–4 years preferred), gender diversity, and academic diversity (non-engineering graduates get preference). Many 99+ percentile candidates don't receive calls due to academic background. OBC cutoff is 95+, SC is 85+, ST is 80+.</p></div>
 </div>
 
 <div class="faq-item-seo">
-  <div class="faq-q-seo" onclick="this.parentElement.classList.toggle('open')">Which MBA college has the best ROI in India?</div>
+  <div class="faq-q-seo" role="button" tabindex="0" aria-expanded="false">Which MBA college has the best ROI in India?</div>
   <div class="faq-ans-seo"><p>FMS Delhi has the best MBA ROI in India — total fees ₹2.32 lakh for the full 2-year programme, with average placement of ₹29–34 LPA. Payback period is under 2 months of salary. JBIMS Mumbai is second-best ROI — ₹2.5L fees, ₹20L+ placement. Both require high percentiles (FMS: CAT 98+, JBIMS: MH-CET 99.9+ for Maharashtra domicile). Among IIMs, IIM Indore has the lowest fees at ₹18L with ₹25L average placement.</p></div>
 </div>
 
 <div class="faq-item-seo">
-  <div class="faq-q-seo" onclick="this.parentElement.classList.toggle('open')">Which NLU should I target with CLAT rank 500?</div>
+  <div class="faq-q-seo" role="button" tabindex="0" aria-expanded="false">Which NLU should I target with CLAT rank 500?</div>
   <div class="faq-ans-seo"><p>With CLAT rank 500 General category: NLU Jodhpur (closing rank ~400 — reach), NUJS Kolkata (~300 — reach), NLU Bhopal (~700 — safe), NLU Patna (~800 — safe), NLU Raipur (~1000 — safe). Top 3 NLUs (NLSIU Bangalore, NLU Delhi, NALSAR Hyderabad) need ranks under 100–200. For OBC category, rank 500 opens NLU Jodhpur and NUJS Kolkata more comfortably. Use our CLAT predictor for category-specific results.</p></div>
 </div>
 
 <div class="faq-item-seo">
-  <div class="faq-q-seo" onclick="this.parentElement.classList.toggle('open')">Can I apply to multiple exams for MBA admissions?</div>
+  <div class="faq-q-seo" role="button" tabindex="0" aria-expanded="false">Can I apply to multiple exams for MBA admissions?</div>
   <div class="faq-ans-seo"><p>Yes — this is strongly recommended. Most top B-schools accept multiple exam scores. NMIMS Mumbai accepts both NMAT and CAT. XLRI accepts XAT (primary) and also considers GMAT. Many B-schools accept CAT, XAT, NMAT, CMAT, ATMA, and MAT. Appearing in CAT + XAT + NMAT significantly expands your college options and increases your chances of getting a good call even if one exam doesn't go as planned.</p></div>
 </div>
 
 <div class="faq-item-seo">
-  <div class="faq-q-seo" onclick="this.parentElement.classList.toggle('open')">Is the college predictor accurate for 2026 admissions?</div>
+  <div class="faq-q-seo" role="button" tabindex="0" aria-expanded="false">Is the college predictor accurate for 2026 admissions?</div>
   <div class="faq-ans-seo"><p>The predictor uses actual cutoff data from the 2025–26 admissions cycle. Cutoffs typically change by 1–3 percentile points each year based on exam difficulty and application volume. Treat the results as a realistic guide, not a guarantee. Always verify with official college websites before applying. For the most competitive colleges (99+ percentile), even small fluctuations can affect results — always apply to a mix of Safe, Moderate, and Reach options.</p></div>
 </div>
 </div>
 
 <div class="rel-tools">
   <a href="career-path-finder.html" class="rel-tool">🎯 Career Path Finder</a>
-  <a href="ai-resume-checker.html" class="rel-tool">🧠 Resume Checker</a>
   <a href="cgpa.html" class="rel-tool">📈 CGPA Calculator</a>
   <a href="attendance.html" class="rel-tool">📊 Attendance Calculator</a>
   <a href="../colleges/" class="rel-tool">🏛 College Directory</a>
-  <a href="../blog/bba-mba-colleges-india-complete-rankings.html" class="rel-tool">📋 MBA Rankings Guide</a>
+  <a href="/blog/bba-mba-colleges-india.html" class="rel-tool">📋 BBA &amp; MBA Colleges Guide</a>
+  <a href="/blog/cuet-ug-2026-complete-guide.html" class="rel-tool">📚 CUET UG Guide</a>
+  <a href="/blog/first-internship-zero-experience.html" class="rel-tool">💼 First Internship Guide</a>
 </div>
 
 </div>
 </div>
 
+</main>
 <footer>
-  <p>© 2026 Student Toolkit · <a href="../index.html">Home</a> · <a href="../colleges/">Colleges</a> · <a href="../blog/index.html">Blog</a> · <a href="ai-resume-checker.html">Resume Checker</a> · <a href="career-path-finder.html">Career Finder</a></p>
-  <p style="margin-top:4px">College Predictor India 2026 — CUET · CAT · JEE · MH-CET · CLAT · NIFT cutoffs</p>
+  <p>© 2026 Student Toolkit · <a href="../index.html">Home</a> · <a href="../colleges/">Colleges</a> · <a href="../blog/index.html">Blog</a> · <a href="career-path-finder.html">Career Finder</a></p>
+  <p style="margin-top:4px">College Predictor India 2027 — CUET · CAT · JEE · MH-CET · CLAT · NIFT cutoffs</p>
 </footer>
-
-<script>
-'use strict';
-
-// ═══════════════════════════════════════════════════════════════════
-//  COLLEGE DATABASE — 120+ colleges, real 2025-26 cutoffs
-// ═══════════════════════════════════════════════════════════════════
-const COLLEGES = [
-
-// ── CUET ────────────────────────────────────────────────────────
-{name:'SSCBS Delhi',course:'BBA (FIA)',exam:'cuet',cutoffG:95,cutoffOBC:88,cutoffSC:78,cutoffST:72,city:'Delhi',state:'delhi',avgPkg:8,fees:0.072,tag:'govt',note:'Maths required. India\'s best BBA ROI.',url:'../colleges/bba/sscbs-delhi.html'},
-{name:'Sri Ram College of Commerce',course:'B.Com (Hons)',exam:'cuet',cutoffG:97,cutoffOBC:91,cutoffSC:82,cutoffST:76,city:'Delhi',state:'delhi',avgPkg:7,fees:0.12,tag:'govt',note:'Most competitive B.Com in India.'},
-{name:'JDMC Delhi',course:'B.Com (Hons)',exam:'cuet',cutoffG:93,cutoffOBC:86,cutoffSC:75,cutoffST:68,city:'Delhi',state:'delhi',avgPkg:5.5,fees:0.09,tag:'govt',note:'Jesus & Mary College, DU.'},
-{name:'Hansraj College DU',course:'B.Com (Hons)',exam:'cuet',cutoffG:94,cutoffOBC:88,cutoffSC:78,cutoffST:72,city:'Delhi',state:'delhi',avgPkg:5.5,fees:0.10,tag:'govt',note:''},
-{name:'Gargi College DU',course:'B.Com (Hons)',exam:'cuet',cutoffG:88,cutoffOBC:80,cutoffSC:70,cutoffST:64,city:'Delhi',state:'delhi',avgPkg:5,fees:0.08,tag:'govt',note:'Women only college.'},
-{name:'Miranda House DU',course:'B.Com (Hons)',exam:'cuet',cutoffG:90,cutoffOBC:83,cutoffSC:73,cutoffST:67,city:'Delhi',state:'delhi',avgPkg:5,fees:0.09,tag:'govt',note:'Women only. NAAC A++.'},
-{name:'Kirori Mal College DU',course:'B.Com (Hons)',exam:'cuet',cutoffG:89,cutoffOBC:82,cutoffSC:72,cutoffST:66,city:'Delhi',state:'delhi',avgPkg:5,fees:0.09,tag:'govt',note:''},
-{name:'DDU Delhi',course:'BBA',exam:'cuet',cutoffG:90,cutoffOBC:83,cutoffSC:74,cutoffST:68,city:'Delhi',state:'delhi',avgPkg:6,fees:0.177,tag:'govt',note:'No Maths required.',url:'../colleges/bba/ddu-delhi.html'},
-{name:'IP College for Women DU',course:'B.Com (Hons)',exam:'cuet',cutoffG:88,cutoffOBC:81,cutoffSC:71,cutoffST:65,city:'Delhi',state:'delhi',avgPkg:4.8,fees:0.08,tag:'govt',note:'Women only.'},
-{name:'Jamia Millia Islamia',course:'BBA',exam:'cuet',cutoffG:80,cutoffOBC:72,cutoffSC:62,cutoffST:55,city:'Delhi',state:'delhi',avgPkg:4.5,fees:0.05,tag:'govt',note:'Central university.'},
-{name:'BHU Varanasi',course:'BBA',exam:'cuet',cutoffG:82,cutoffOBC:74,cutoffSC:65,cutoffST:58,city:'Varanasi',state:'up',avgPkg:5,fees:0.06,tag:'govt',note:'Central university. BHU campus experience.'},
-{name:'Hyderabad Central University',course:'MBA (5-yr Integrated)',exam:'cuet',cutoffG:78,cutoffOBC:70,cutoffSC:60,cutoffST:53,city:'Hyderabad',state:'other',avgPkg:5,fees:0.08,tag:'govt',note:''},
-{name:'Pondicherry University',course:'BBA',exam:'cuet',cutoffG:72,cutoffOBC:64,cutoffSC:55,cutoffST:48,city:'Puducherry',state:'other',avgPkg:4,fees:0.05,tag:'govt',note:'Central university.'},
-{name:'Tezpur University',course:'BBA',exam:'cuet',cutoffG:68,cutoffOBC:60,cutoffSC:52,cutoffST:45,city:'Tezpur',state:'other',avgPkg:3.5,fees:0.04,tag:'govt',note:'NE India — low competition.'},
-{name:'NMIMS ASMSOC Mumbai',course:'BBA',exam:'cuet',cutoffG:85,cutoffOBC:78,cutoffSC:68,cutoffST:60,city:'Mumbai',state:'maharashtra',avgPkg:6.8,fees:12,tag:'pvt',note:'Also accepts NPAT.',url:'../colleges/bba/nmims-bba.html'},
-{name:'Christ University',course:'BBA',exam:'cuet',cutoffG:80,cutoffOBC:73,cutoffSC:63,cutoffST:56,city:'Bangalore',state:'karnataka',avgPkg:6,fees:8.74,tag:'pvt',note:'NAAC A+.',url:'../colleges/bba/christ-university-bba.html'},
-{name:'Symbiosis SCMS Pune',course:'BBA',exam:'cuet',cutoffG:78,cutoffOBC:70,cutoffSC:60,cutoffST:53,city:'Pune',state:'maharashtra',avgPkg:6.5,fees:9.1,tag:'pvt',note:'SET exam also accepted.',url:'../colleges/bba/symbiosis-scms-pune.html'},
-{name:'St. Xavier\'s College Mumbai',course:'BMS',exam:'cuet',cutoffG:76,cutoffOBC:68,cutoffSC:58,cutoffST:52,city:'Mumbai',state:'maharashtra',avgPkg:5.5,fees:2.3,tag:'pvt',note:'Prestigious Mumbai college.',url:'../colleges/bba/st-xaviers-mumbai.html'},
-{name:'Loyola College Chennai',course:'BBA',exam:'cuet',cutoffG:75,cutoffOBC:68,cutoffSC:58,cutoffST:52,city:'Chennai',state:'tamil-nadu',avgPkg:4.5,fees:0.07,tag:'govt',note:'NAAC A++. Best value South India.',url:'../colleges/bba/loyola-chennai.html'},
-{name:'Amity University Noida',course:'BBA',exam:'cuet',cutoffG:70,cutoffOBC:62,cutoffSC:52,cutoffST:45,city:'Noida',state:'up',avgPkg:4,fees:9,tag:'pvt',note:'Large campus, NCR location.'},
-{name:'KIIT Bhubaneswar',course:'BBA',exam:'cuet',cutoffG:72,cutoffOBC:64,cutoffSC:54,cutoffST:47,city:'Bhubaneswar',state:'other',avgPkg:5,fees:7.5,tag:'pvt',note:'NAAC A++.',url:'../colleges/bba/kiit-bba.html'},
-{name:'Presidency University Bangalore',course:'BBA',exam:'cuet',cutoffG:65,cutoffOBC:58,cutoffSC:48,cutoffST:42,city:'Bangalore',state:'karnataka',avgPkg:4,fees:5,tag:'pvt',note:'Growing private university.'},
-
-// ── CAT ─────────────────────────────────────────────────────────
-{name:'IIM Ahmedabad',course:'MBA (PGP)',exam:'cat',cutoffG:99,cutoffOBC:95,cutoffSC:85,cutoffST:80,city:'Ahmedabad',state:'other',avgPkg:35,fees:35,tag:'iim',note:'NIRF #1. India\'s most prestigious.',url:'../colleges/mba/iim-ahmedabad.html'},
-{name:'IIM Bangalore',course:'MBA (PGP)',exam:'cat',cutoffG:99,cutoffOBC:95,cutoffSC:85,cutoffST:80,city:'Bangalore',state:'karnataka',avgPkg:34.8,fees:26.5,tag:'iim',note:'NIRF #2. Tech & consulting powerhouse.',url:'../colleges/mba/iim-bangalore.html'},
-{name:'IIM Calcutta',course:'MBA (PGP)',exam:'cat',cutoffG:99,cutoffOBC:94,cutoffSC:84,cutoffST:79,city:'Kolkata',state:'other',avgPkg:34.2,fees:33.5,tag:'iim',note:'NIRF #7. Finance #1.',url:'../colleges/mba/iim-calcutta.html'},
-{name:'FMS Delhi',course:'MBA',exam:'cat',cutoffG:98,cutoffOBC:92,cutoffSC:82,cutoffST:76,city:'Delhi',state:'delhi',avgPkg:32,fees:2.3,tag:'govt',note:'Best MBA ROI India. ₹2.3L fees.',url:'../colleges/mba/fms-delhi.html'},
-{name:'IIM Lucknow',course:'MBA (PGP)',exam:'cat',cutoffG:97,cutoffOBC:90,cutoffSC:80,cutoffST:74,city:'Lucknow',state:'up',avgPkg:28,fees:20,tag:'iim',note:'NIRF #5. FMCG & marketing #1.',url:'../colleges/mba/iim-lucknow.html'},
-{name:'IIM Kozhikode',course:'MBA (PGP)',exam:'cat',cutoffG:96,cutoffOBC:90,cutoffSC:80,cutoffST:74,city:'Kozhikode',state:'other',avgPkg:26,fees:21,tag:'iim',note:'NIRF #3.',url:'../colleges/mba/iim-kozhikode.html'},
-{name:'IIM Indore',course:'MBA (PGP)',exam:'cat',cutoffG:95,cutoffOBC:88,cutoffSC:78,cutoffST:72,city:'Indore',state:'other',avgPkg:25,fees:18,tag:'iim',note:'NIRF #8. Lowest-fee old IIM.',url:'../colleges/mba/iim-indore.html'},
-{name:'MDI Gurgaon',course:'PGDM',exam:'cat',cutoffG:95,cutoffOBC:88,cutoffSC:78,cutoffST:72,city:'Gurgaon',state:'delhi',avgPkg:25,fees:23,tag:'pvt',note:'NIRF #9. Highest-ranked non-IIM.',url:'../colleges/mba/mdi-gurgaon.html'},
-{name:'SPJIMR Mumbai',course:'PGDM',exam:'cat',cutoffG:95,cutoffOBC:88,cutoffSC:78,cutoffST:72,city:'Mumbai',state:'maharashtra',avgPkg:28,fees:27,tag:'pvt',note:'MBAUniverse #4. FMCG focus.',url:'../colleges/mba/spjimr-mumbai.html'},
-{name:'JBIMS Mumbai',course:'MMS (MBA)',exam:'cat',cutoffG:98,cutoffOBC:92,cutoffSC:82,cutoffST:76,city:'Mumbai',state:'maharashtra',avgPkg:20,fees:2.5,tag:'govt',note:'MH-CET primary. CAT also accepted. Best ROI Mumbai.',url:'../colleges/mba/jbims-mumbai.html'},
-{name:'NMIMS Mumbai',course:'MBA',exam:'cat',cutoffG:85,cutoffOBC:78,cutoffSC:68,cutoffST:62,city:'Mumbai',state:'maharashtra',avgPkg:19,fees:24,tag:'pvt',note:'NIRF #24. Also accepts NMAT.',url:'../colleges/mba/nmims-mumbai.html'},
-{name:'IIM Amritsar',course:'MBA (PGP)',exam:'cat',cutoffG:90,cutoffOBC:83,cutoffSC:73,cutoffST:67,city:'Amritsar',state:'other',avgPkg:14,fees:15,tag:'iim',note:'Newer IIM. Growing placements.'},
-{name:'IIM Bodh Gaya',course:'MBA (PGP)',exam:'cat',cutoffG:88,cutoffOBC:80,cutoffSC:70,cutoffST:64,city:'Bodh Gaya',state:'other',avgPkg:12,fees:14,tag:'iim',note:'Newer IIM.'},
-{name:'IIM Sirmaur',course:'MBA (PGP)',exam:'cat',cutoffG:85,cutoffOBC:77,cutoffSC:67,cutoffST:61,city:'Sirmaur',state:'other',avgPkg:11,fees:12,tag:'iim',note:'Newer IIM.'},
-{name:'IIM Nagpur',course:'MBA (PGP)',exam:'cat',cutoffG:87,cutoffOBC:79,cutoffSC:69,cutoffST:63,city:'Nagpur',state:'maharashtra',avgPkg:12,fees:13,tag:'iim',note:'Newer IIM.'},
-{name:'IIM Visakhapatnam',course:'MBA (PGP)',exam:'cat',cutoffG:86,cutoffOBC:78,cutoffSC:68,cutoffST:62,city:'Visakhapatnam',state:'other',avgPkg:12,fees:13,tag:'iim',note:'Newer IIM.'},
-{name:'IIM Jammu',course:'MBA (PGP)',exam:'cat',cutoffG:84,cutoffOBC:76,cutoffSC:66,cutoffST:60,city:'Jammu',state:'other',avgPkg:11,fees:12,tag:'iim',note:'Newer IIM.'},
-{name:'Great Lakes Chennai',course:'PGPM (1-yr)',exam:'cat',cutoffG:80,cutoffOBC:73,cutoffSC:63,cutoffST:57,city:'Chennai',state:'tamil-nadu',avgPkg:12,fees:18,tag:'pvt',note:'1-year programme for experienced professionals.'},
-{name:'IMT Ghaziabad',course:'PGDM',exam:'cat',cutoffG:85,cutoffOBC:78,cutoffSC:68,cutoffST:62,city:'Ghaziabad',state:'up',avgPkg:14,fees:18,tag:'pvt',note:'NIRF #30.'},
-{name:'FORE School of Mgmt',course:'PGDM',exam:'cat',cutoffG:80,cutoffOBC:73,cutoffSC:63,cutoffST:57,city:'Delhi',state:'delhi',avgPkg:11,fees:16,tag:'pvt',note:'Delhi location advantage.'},
-{name:'LBSIM Delhi',course:'PGDM',exam:'cat',cutoffG:78,cutoffOBC:70,cutoffSC:60,cutoffST:54,city:'Delhi',state:'delhi',avgPkg:10,fees:12,tag:'pvt',note:'Lal Bahadur Shastri. Good ROI.'},
-{name:'BIMTECH Greater Noida',course:'PGDM',exam:'cat',cutoffG:75,cutoffOBC:68,cutoffSC:58,cutoffST:52,city:'Greater Noida',state:'up',avgPkg:9,fees:13,tag:'pvt',note:''},
-{name:'IPE Hyderabad',course:'MBA',exam:'cat',cutoffG:72,cutoffOBC:65,cutoffSC:55,cutoffST:49,city:'Hyderabad',state:'other',avgPkg:8,fees:8,tag:'pvt',note:'Institute of Public Enterprise.'},
-{name:'Xavier University Bhubaneswar',course:'MBA (HRM)',exam:'cat',cutoffG:85,cutoffOBC:78,cutoffSC:68,cutoffST:62,city:'Bhubaneswar',state:'other',avgPkg:13,fees:16,tag:'pvt',note:'Strong HR focus. XUB.'},
-
-// ── IPMAT ────────────────────────────────────────────────────────
-{name:'IIM Indore (IPM)',course:'IPM (5-year BBA+MBA)',exam:'ipmat',cutoffG:90,cutoffOBC:83,cutoffSC:73,cutoffST:67,city:'Indore',state:'other',avgPkg:22,fees:18,tag:'iim',note:'Best 5-year integrated MBA in India.'},
-{name:'IIM Rohtak (IPM)',course:'IPM (5-year)',exam:'ipmat',cutoffG:82,cutoffOBC:75,cutoffSC:65,cutoffST:59,city:'Rohtak',state:'other',avgPkg:15,fees:14,tag:'iim',note:'More accessible than Indore.'},
-{name:'IIM Ranchi (IPM)',course:'IPM (5-year)',exam:'ipmat',cutoffG:80,cutoffOBC:72,cutoffSC:62,cutoffST:56,city:'Ranchi',state:'other',avgPkg:14,fees:13,tag:'iim',note:''},
-{name:'IIM Jammu (IPM)',course:'IPM (5-year)',exam:'ipmat',cutoffG:75,cutoffOBC:68,cutoffSC:58,cutoffST:52,city:'Jammu',state:'other',avgPkg:12,fees:12,tag:'iim',note:'Newer IIM.'},
-{name:'IIM Bodhgaya (IPM)',course:'IPM (5-year)',exam:'ipmat',cutoffG:72,cutoffOBC:65,cutoffSC:55,cutoffST:49,city:'Bodh Gaya',state:'other',avgPkg:11,fees:11,tag:'iim',note:''},
-{name:'IIM Nagpur (IPM)',course:'IPM (5-year)',exam:'ipmat',cutoffG:74,cutoffOBC:67,cutoffSC:57,cutoffST:51,city:'Nagpur',state:'maharashtra',avgPkg:11,fees:11,tag:'iim',note:''},
-{name:'NMIMS Mumbai (NPAT)',course:'BBA',exam:'ipmat',cutoffG:75,cutoffOBC:68,cutoffSC:58,cutoffST:52,city:'Mumbai',state:'maharashtra',avgPkg:6.8,fees:12,tag:'pvt',note:'NPAT exam. Different from CAT/IPMAT.'},
-{name:'Christ University (CUET/Direct)',course:'BBA (Hons)',exam:'ipmat',cutoffG:70,cutoffOBC:63,cutoffSC:53,cutoffST:47,city:'Bangalore',state:'karnataka',avgPkg:6,fees:8.74,tag:'pvt',note:'Entrance test based. Multiple intakes.'},
-
-// ── XAT ─────────────────────────────────────────────────────────
-{name:'XLRI Jamshedpur (BM)',course:'PGDM (Business Mgmt)',exam:'xat',cutoffG:95,cutoffOBC:88,cutoffSC:78,cutoffST:72,city:'Jamshedpur',state:'other',avgPkg:31,fees:26,tag:'pvt',note:'NIRF #10. India\'s top private MBA.',url:'../colleges/mba/xlri-jamshedpur.html'},
-{name:'XLRI Jamshedpur (HRM)',course:'PGDM (HR Mgmt)',exam:'xat',cutoffG:93,cutoffOBC:86,cutoffSC:76,cutoffST:70,city:'Jamshedpur',state:'other',avgPkg:28,fees:26,tag:'pvt',note:'HR #1 India.',url:'../colleges/mba/xlri-jamshedpur.html'},
-{name:'XIMB Bhubaneswar',course:'MBA (BM)',exam:'xat',cutoffG:85,cutoffOBC:78,cutoffSC:68,cutoffST:62,city:'Bhubaneswar',state:'other',avgPkg:14,fees:18,tag:'pvt',note:'Xavier\'s Bhubaneswar.'},
-{name:'TAPMI Manipal',course:'PGDM',exam:'xat',cutoffG:78,cutoffOBC:70,cutoffSC:60,cutoffST:54,city:'Manipal',state:'karnataka',avgPkg:11,fees:16,tag:'pvt',note:''},
-{name:'GIM Goa',course:'PGDM',exam:'xat',cutoffG:75,cutoffOBC:68,cutoffSC:58,cutoffST:52,city:'Goa',state:'other',avgPkg:10,fees:15,tag:'pvt',note:'Goa International Business School.'},
-{name:'LIBA Chennai',course:'PGDM',exam:'xat',cutoffG:70,cutoffOBC:63,cutoffSC:53,cutoffST:47,city:'Chennai',state:'tamil-nadu',avgPkg:9,fees:12,tag:'pvt',note:'Loyola Institute.'},
-{name:'XIME Bangalore',course:'PGDM',exam:'xat',cutoffG:65,cutoffOBC:58,cutoffSC:48,cutoffST:42,city:'Bangalore',state:'karnataka',avgPkg:8,fees:10,tag:'pvt',note:'Xavier Institute Mgmt & Ent.'},
-{name:'IMI New Delhi',course:'PGDM',exam:'xat',cutoffG:82,cutoffOBC:75,cutoffSC:65,cutoffST:59,city:'Delhi',state:'delhi',avgPkg:12,fees:18,tag:'pvt',note:'International Mgmt Institute.'},
-
-// ── MH-CET ──────────────────────────────────────────────────────
-{name:'JBIMS Mumbai',course:'MMS (MBA)',exam:'mhcet',cutoffG:99.9,cutoffOBC:99.5,cutoffSC:97,cutoffST:94,city:'Mumbai',state:'maharashtra',avgPkg:20,fees:2.5,tag:'govt',note:'Maharashtra domicile preferred. Best ROI MBA.'},
-{name:'SIMSREE Mumbai',course:'MMS (MBA)',exam:'mhcet',cutoffG:99.5,cutoffOBC:99,cutoffSC:96,cutoffST:92,city:'Mumbai',state:'maharashtra',avgPkg:14,fees:1.5,tag:'govt',note:'Sydenham. Maharashtra students.'},
-{name:'KJ Somaiya Mumbai',course:'MBA',exam:'mhcet',cutoffG:97,cutoffOBC:94,cutoffSC:88,cutoffST:83,city:'Mumbai',state:'maharashtra',avgPkg:12,fees:14,tag:'pvt',note:'No domicile requirement.'},
-{name:'Welingkar Mumbai',course:'PGDM',exam:'mhcet',cutoffG:95,cutoffOBC:91,cutoffSC:85,cutoffST:80,city:'Mumbai',state:'maharashtra',avgPkg:10,fees:14,tag:'pvt',note:''},
-{name:'PUMBA Pune',course:'MBA',exam:'mhcet',cutoffG:95,cutoffOBC:91,cutoffSC:84,cutoffST:79,city:'Pune',state:'maharashtra',avgPkg:8,fees:1.6,tag:'govt',note:'Pune University Dept MBA. Affordable.'},
-{name:'NIBM Pune',course:'PGDM',exam:'mhcet',cutoffG:85,cutoffOBC:80,cutoffSC:72,cutoffST:66,city:'Pune',state:'maharashtra',avgPkg:9,fees:13,tag:'pvt',note:'National Institute of Bank Management.'},
-{name:'IMDR Pune',course:'PGDM',exam:'mhcet',cutoffG:80,cutoffOBC:74,cutoffSC:65,cutoffST:58,city:'Pune',state:'maharashtra',avgPkg:8,fees:11,tag:'pvt',note:''},
-{name:'Indira Institute Pune',course:'MBA',exam:'mhcet',cutoffG:75,cutoffOBC:68,cutoffSC:60,cutoffST:53,city:'Pune',state:'maharashtra',avgPkg:6,fees:6,tag:'pvt',note:'Large campus, affordable.'},
-{name:'SIES Mumbai',course:'MMS (MBA)',exam:'mhcet',cutoffG:88,cutoffOBC:82,cutoffSC:74,cutoffST:68,city:'Mumbai',state:'maharashtra',avgPkg:8,fees:4,tag:'pvt',note:''},
-{name:'Chetana\'s Mumbai',course:'MMS',exam:'mhcet',cutoffG:78,cutoffOBC:72,cutoffSC:63,cutoffST:57,city:'Mumbai',state:'maharashtra',avgPkg:6,fees:3,tag:'pvt',note:''},
-
-// ── NMAT ────────────────────────────────────────────────────────
-{name:'NMIMS Mumbai',course:'MBA',exam:'nmat',cutoffG:210,cutoffOBC:195,cutoffSC:175,cutoffST:162,city:'Mumbai',state:'maharashtra',avgPkg:19,fees:24,tag:'pvt',note:'NMAT score out of 360. Primary exam for NMIMS.'},
-{name:'NMIMS Bangalore',course:'MBA',exam:'nmat',cutoffG:200,cutoffOBC:185,cutoffSC:165,cutoffST:152,city:'Bangalore',state:'karnataka',avgPkg:14,fees:18,tag:'pvt',note:''},
-{name:'NMIMS Hyderabad',course:'MBA',exam:'nmat',cutoffG:195,cutoffOBC:180,cutoffSC:160,cutoffST:147,city:'Hyderabad',state:'other',avgPkg:12,fees:16,tag:'pvt',note:''},
-{name:'Xavier University Bhubaneswar',course:'MBA',exam:'nmat',cutoffG:190,cutoffOBC:175,cutoffSC:155,cutoffST:142,city:'Bhubaneswar',state:'other',avgPkg:13,fees:16,tag:'pvt',note:'Accepts NMAT + GMAT.'},
-{name:'Alliance University Bangalore',course:'MBA',exam:'nmat',cutoffG:180,cutoffOBC:165,cutoffSC:145,cutoffST:132,city:'Bangalore',state:'karnataka',avgPkg:9,fees:12,tag:'pvt',note:''},
-{name:'Woxsen Hyderabad',course:'MBA',exam:'nmat',cutoffG:175,cutoffOBC:160,cutoffSC:140,cutoffST:127,city:'Hyderabad',state:'other',avgPkg:8,fees:14,tag:'pvt',note:''},
-
-// ── CLAT ─────────────────────────────────────────────────────────
-{name:'NLU Delhi (NLU-D)',course:'BA LLB (Hons)',exam:'clat',cutoffG:50,cutoffOBC:120,cutoffSC:250,cutoffST:350,city:'Delhi',state:'delhi',avgPkg:12,fees:2.1,tag:'nlu',note:'CLAT uses rank (lower = better). NLU Delhi top NLU.'},
-{name:'NLSIU Bangalore',course:'BA LLB (Hons)',exam:'clat',cutoffG:80,cutoffOBC:180,cutoffSC:350,cutoffST:500,city:'Bangalore',state:'karnataka',avgPkg:13,fees:2.3,tag:'nlu',note:'India\'s oldest NLU. Highest ranked.'},
-{name:'NALSAR Hyderabad',course:'BA LLB (Hons)',exam:'clat',cutoffG:200,cutoffOBC:400,cutoffSC:700,cutoffST:950,city:'Hyderabad',state:'other',avgPkg:11,fees:2,tag:'nlu',note:''},
-{name:'NUJS Kolkata',course:'BA LLB (Hons)',exam:'clat',cutoffG:300,cutoffOBC:600,cutoffSC:1000,cutoffST:1400,city:'Kolkata',state:'other',avgPkg:10,fees:1.9,tag:'nlu',note:''},
-{name:'NLU Jodhpur',course:'BA LLB (Hons)',exam:'clat',cutoffG:400,cutoffOBC:800,cutoffSC:1400,cutoffST:1900,city:'Jodhpur',state:'other',avgPkg:9,fees:2,tag:'nlu',note:''},
-{name:'NLIU Bhopal',course:'BA LLB (Hons)',exam:'clat',cutoffG:700,cutoffOBC:1400,cutoffSC:2200,cutoffST:3000,city:'Bhopal',state:'other',avgPkg:8,fees:1.8,tag:'nlu',note:''},
-{name:'RGNUL Patiala',course:'BA LLB (Hons)',exam:'clat',cutoffG:900,cutoffOBC:1700,cutoffSC:2800,cutoffST:3800,city:'Patiala',state:'other',avgPkg:7,fees:1.6,tag:'nlu',note:''},
-{name:'GNLU Gandhinagar',course:'BA LLB (Hons)',exam:'clat',cutoffG:600,cutoffOBC:1200,cutoffSC:2000,cutoffST:2700,city:'Gandhinagar',state:'other',avgPkg:8.5,fees:1.9,tag:'nlu',note:''},
-{name:'NLU Odisha (NLUO)',course:'BA LLB (Hons)',exam:'clat',cutoffG:1100,cutoffOBC:2000,cutoffSC:3200,cutoffST:4500,city:'Cuttack',state:'other',avgPkg:7,fees:1.5,tag:'nlu',note:''},
-{name:'NUALS Kochi',course:'BA LLB (Hons)',exam:'clat',cutoffG:1500,cutoffOBC:2500,cutoffSC:3800,cutoffST:5000,city:'Kochi',state:'other',avgPkg:6.5,fees:1.4,tag:'nlu',note:'Kerala NLU.'},
-
-// ── JEE MAINS ───────────────────────────────────────────────────
-{name:'NIT Trichy',course:'B.Tech (CSE)',exam:'jee',cutoffG:99,cutoffOBC:97,cutoffSC:92,cutoffST:88,city:'Trichy',state:'tamil-nadu',avgPkg:18,fees:5.6,tag:'nit',note:'India\'s top NIT. NIRF #9 Engineering.'},
-{name:'NIT Warangal',course:'B.Tech (CSE)',exam:'jee',cutoffG:98.5,cutoffOBC:96,cutoffSC:91,cutoffST:87,city:'Warangal',state:'other',avgPkg:16,fees:5.4,tag:'nit',note:''},
-{name:'NIT Surathkal (NITK)',course:'B.Tech (CSE)',exam:'jee',cutoffG:98,cutoffOBC:95,cutoffSC:90,cutoffST:86,city:'Mangalore',state:'karnataka',avgPkg:16,fees:5.4,tag:'nit',note:''},
-{name:'NIT Calicut',course:'B.Tech (CSE)',exam:'jee',cutoffG:97.5,cutoffOBC:94,cutoffSC:89,cutoffST:85,city:'Calicut',state:'other',avgPkg:15,fees:5.4,tag:'nit',note:''},
-{name:'NIT Rourkela',course:'B.Tech (CSE)',exam:'jee',cutoffG:97,cutoffOBC:93,cutoffSC:88,cutoffST:83,city:'Rourkela',state:'other',avgPkg:14,fees:5.3,tag:'nit',note:''},
-{name:'NIT Delhi',course:'B.Tech (CSE)',exam:'jee',cutoffG:95,cutoffOBC:91,cutoffSC:85,cutoffST:80,city:'Delhi',state:'delhi',avgPkg:14,fees:5.5,tag:'nit',note:'Delhi location advantage.'},
-{name:'NIT Jaipur (MNIT)',course:'B.Tech (CSE)',exam:'jee',cutoffG:93,cutoffOBC:88,cutoffSC:82,cutoffST:77,city:'Jaipur',state:'other',avgPkg:13,fees:5.2,tag:'nit',note:''},
-{name:'NIT Allahabad (MNNIT)',course:'B.Tech (CSE)',exam:'jee',cutoffG:94,cutoffOBC:90,cutoffSC:83,cutoffST:78,city:'Allahabad',state:'up',avgPkg:13,fees:5.1,tag:'nit',note:''},
-{name:'NIT Patna',course:'B.Tech (CSE)',exam:'jee',cutoffG:88,cutoffOBC:82,cutoffSC:75,cutoffST:70,city:'Patna',state:'other',avgPkg:11,fees:5.0,tag:'nit',note:''},
-{name:'NIT Hamirpur',course:'B.Tech (CSE)',exam:'jee',cutoffG:85,cutoffOBC:79,cutoffSC:72,cutoffST:67,city:'Hamirpur',state:'other',avgPkg:10,fees:5.0,tag:'nit',note:''},
-{name:'VIT Vellore',course:'B.Tech (CSE)',exam:'jee',cutoffG:75,cutoffOBC:68,cutoffSC:58,cutoffST:52,city:'Vellore',state:'tamil-nadu',avgPkg:8,fees:8,tag:'pvt',note:'Also uses VITEEE. Top private.'},
-{name:'SRM Chennai',course:'B.Tech (CSE)',exam:'jee',cutoffG:70,cutoffOBC:63,cutoffSC:53,cutoffST:47,city:'Chennai',state:'tamil-nadu',avgPkg:7,fees:7,tag:'pvt',note:'Also uses SRMJEEE.'},
-{name:'Manipal Institute of Tech',course:'B.Tech (CSE)',exam:'jee',cutoffG:72,cutoffOBC:65,cutoffSC:55,cutoffST:49,city:'Manipal',state:'karnataka',avgPkg:8,fees:9,tag:'pvt',note:'Also uses MET.'},
-{name:'Thapar University',course:'B.Tech (CSE)',exam:'jee',cutoffG:80,cutoffOBC:73,cutoffSC:63,cutoffST:57,city:'Patiala',state:'other',avgPkg:9,fees:10,tag:'pvt',note:'Strong placement in Tier 2 private.'},
-{name:'LPU Jalandhar',course:'B.Tech (CSE)',exam:'jee',cutoffG:65,cutoffOBC:58,cutoffSC:48,cutoffST:42,city:'Jalandhar',state:'other',avgPkg:6,fees:7,tag:'pvt',note:'Large university. Diverse campus.'},
-{name:'Amity Noida',course:'B.Tech (CSE)',exam:'jee',cutoffG:62,cutoffOBC:55,cutoffSC:45,cutoffST:39,city:'Noida',state:'up',avgPkg:5.5,fees:8,tag:'pvt',note:'NCR location. Many specialisations.'},
-
-// ── NIFT ─────────────────────────────────────────────────────────
-{name:'NIFT New Delhi (Fashion Design)',course:'B.Des (Fashion Design)',exam:'nift',cutoffG:95,cutoffOBC:88,cutoffSC:78,cutoffST:72,city:'Delhi',state:'delhi',avgPkg:7,fees:3.2,tag:'govt',note:'India\'s #1 fashion institute. Most competitive NIFT.'},
-{name:'NIFT Mumbai',course:'B.Des (Fashion Design)',exam:'nift',cutoffG:92,cutoffOBC:85,cutoffSC:75,cutoffST:69,city:'Mumbai',state:'maharashtra',avgPkg:7,fees:3.2,tag:'govt',note:'Fashion capital location advantage.'},
-{name:'NIFT Bangalore',course:'B.Des (Fashion Design)',exam:'nift',cutoffG:88,cutoffOBC:81,cutoffSC:71,cutoffST:65,city:'Bangalore',state:'karnataka',avgPkg:6.5,fees:3.2,tag:'govt',note:''},
-{name:'NIFT Chennai',course:'B.Des (Fashion Design)',exam:'nift',cutoffG:85,cutoffOBC:78,cutoffSC:68,cutoffST:62,city:'Chennai',state:'tamil-nadu',avgPkg:6.5,fees:3.2,tag:'govt',note:''},
-{name:'NIFT Hyderabad',course:'B.Des (Fashion Design)',exam:'nift',cutoffG:83,cutoffOBC:76,cutoffSC:66,cutoffST:60,city:'Hyderabad',state:'other',avgPkg:6,fees:3.2,tag:'govt',note:''},
-{name:'NIFT New Delhi (Knitwear)',course:'B.Des (Knitwear)',exam:'nift',cutoffG:85,cutoffOBC:78,cutoffSC:68,cutoffST:62,city:'Delhi',state:'delhi',avgPkg:6,fees:3.2,tag:'govt',note:'Specialised programme.'},
-{name:'Pearl Academy Delhi',course:'B.Des',exam:'nift',cutoffG:78,cutoffOBC:71,cutoffSC:61,cutoffST:55,city:'Delhi',state:'delhi',avgPkg:5.5,fees:14,tag:'pvt',note:'Private alternative to NIFT.'},
-{name:'Symbiosis School of Design Pune',course:'B.Des',exam:'nift',cutoffG:75,cutoffOBC:68,cutoffSC:58,cutoffST:52,city:'Pune',state:'maharashtra',avgPkg:5,fees:11,tag:'pvt',note:'SET design exam also accepted.'},
-];
-
-// ═══════════════════════════════════════════════════════════════════
-//  EXAM CONFIG
-// ═══════════════════════════════════════════════════════════════════
-const EXAM_INFO = {
-  cuet:{label:'CUET',info:'<strong>CUET (Common University Entrance Test)</strong> — For BBA and B.Com admissions at Delhi University (SSCBS, DDU, SRCC) and central universities. Percentile is NTA composite score. Cutoffs are 2025-26 cycle.',unit:'%ile',min:50,max:100,default:88},
-  cat:{label:'CAT',info:'<strong>CAT (Common Admission Test)</strong> — For MBA/PGDM at IIMs and top B-schools. IIM calls also depend on academics, work experience, and diversity. Composite percentile.',unit:'%ile',min:50,max:100,default:90},
-  ipmat:{label:'IPMAT',info:'<strong>IPMAT (Integrated Programme Aptitude Test)</strong> — For IIM 5-year BBA+MBA programmes. Each IIM conducts separately. Score shown is approximate percentile equivalent. Final merit also considers Class 10/12 marks.',unit:'%ile',min:50,max:100,default:80},
-  xat:{label:'XAT',info:'<strong>XAT (Xavier Aptitude Test)</strong> — Conducted by XLRI. Accepted by 160+ B-schools. Unique Decision Making section. Harder to score high vs CAT.',unit:'%ile',min:50,max:100,default:82},
-  mhcet:{label:'MH-CET',info:'<strong>MH-CET (Maharashtra CET)</strong> — For MBA in Maharashtra government and aided colleges. JBIMS Mumbai (best MBA ROI India) and SIMSREE are MH-CET primary. Maharashtra domicile students get preference in government colleges.',unit:'%ile',min:50,max:100,default:90},
-  nmat:{label:'NMAT',info:'<strong>NMAT by GMAC</strong> — Primarily for NMIMS Mumbai and campuses. Score is out of 360 (not percentile). Enter your NMAT score in the slider field. Can be attempted 3 times.',unit:'score',min:140,max:360,default:210},
-  clat:{label:'CLAT',info:'<strong>CLAT (Common Law Admission Test)</strong> — For 24 NLUs across India. Uses RANK not percentile — lower rank = better. Enter your expected rank. NLU Delhi requires rank ~50, top NLUs need under 200.',unit:'rank',min:1,max:10000,default:500},
-  jee:{label:'JEE Mains',info:'<strong>JEE Mains (NTA)</strong> — For NITs, IIITs, GFTIs and private engineering colleges. Percentile shown. JEE Advanced (for IITs) has separate cutoffs not shown here. CSE is the most competitive branch.',unit:'%ile',min:50,max:100,default:82},
-  nift:{label:'NIFT',info:'<strong>NIFT Entrance Exam</strong> — National Institute of Fashion Technology entrance. Two stages: written test + situation test. Percentile shown is approximate combined score percentile. Creativity portfolio matters.',unit:'%ile',min:50,max:100,default:80},
-};
-
-// ═══════════════════════════════════════════════════════════════════
-//  STATE
-// ═══════════════════════════════════════════════════════════════════
-let currentExam = 'cuet';
-let lastResults = [];
-let savedColleges = new Set();
-let compareSet = new Set();
-let currentView = 'list';
-
-// Load saved from localStorage
-try { savedColleges = new Set(JSON.parse(localStorage.getItem('cp_saved')||'[]')); } catch(e){}
-
-// ═══════════════════════════════════════════════════════════════════
-//  UI HELPERS
-// ═══════════════════════════════════════════════════════════════════
-function switchExam(exam, el){
-  currentExam = exam;
-  document.querySelectorAll('.exam-tab').forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');
-  const cfg = EXAM_INFO[exam];
-  document.getElementById('examInfo').innerHTML = cfg.info;
-  const slider = document.getElementById('percentileSlider');
-  slider.min = cfg.min; slider.max = cfg.max; slider.value = cfg.default;
-  updateSlider(cfg.default);
-  // Update range hints
-  const hints = document.querySelector('.range-hints');
-  if(cfg.unit==='rank') hints.innerHTML = `<span>1</span><span>500</span><span>2000</span><span>5000</span><span>7500</span><span>10000</span>`;
-  else if(cfg.unit==='score') hints.innerHTML = `<span>140</span><span>175</span><span>210</span><span>250</span><span>300</span><span>360</span>`;
-  else hints.innerHTML = `<span>50</span><span>65</span><span>75</span><span>85</span><span>95</span><span>100</span>`;
-  // Update label
-  document.querySelector('.slider-top label').textContent =
-    cfg.unit==='rank' ? 'Your Expected Rank (lower = better)' :
-    cfg.unit==='score' ? 'Your NMAT Score (out of 360)' :
-    'Your Percentile';
-  document.querySelector('.percentile-unit').textContent =
-    cfg.unit==='rank' ? 'rank' : cfg.unit==='score' ? '/360' : '%ile';
-  // Reset results
-  document.getElementById('resultsWrap').classList.remove('show');
-  document.getElementById('shareRow').classList.remove('show');
-  clearCompare();
-}
-
-function updateSlider(val){
-  document.getElementById('sliderVal').textContent = parseFloat(val).toFixed(1);
-}
-
-function toggleAdv(){
-  const t = document.getElementById('advToggle');
-  const f = document.getElementById('advFilters');
-  t.classList.toggle('open');
-  f.classList.toggle('open');
-}
-
-function setView(v){
-  currentView = v;
-  document.getElementById('viewList').classList.toggle('active', v==='list');
-  document.getElementById('viewCompact').classList.toggle('active', v==='compact');
-  if(lastResults.length) renderColleges(lastResults);
-}
-
-// ═══════════════════════════════════════════════════════════════════
-//  CUTOFF HELPER (CLAT uses rank — lower is better)
-// ═══════════════════════════════════════════════════════════════════
-function getCutoff(college, category){
-  const raw = {
-    general:college.cutoffG, obc:college.cutoffOBC,
-    sc:college.cutoffSC, st:college.cutoffST,
-    ews:college.cutoffOBC||college.cutoffG,
-    pwd:Math.max((college.cutoffST||0)-5, 1)
-  };
-  return raw[category] || college.cutoffG;
-}
-
-function getChance(score, cutoff, exam){
-  const isRank = exam === 'clat'; // CLAT: lower rank = better
-  let diff = isRank ? cutoff - score : score - cutoff; // positive = above cutoff
-  if(diff >= 3) return {label:'✅ Safe', cls:'chance-safe', tier:'safe', cardCls:'chance-safe-card'};
-  if(diff >= 0) return {label:'⚡ Moderate', cls:'chance-mod', tier:'moderate', cardCls:'chance-mod-card'};
-  if(diff >= -3) return {label:'🎯 Reach', cls:'chance-reach', tier:'reach', cardCls:'chance-reach-card'};
-  return null;
-}
-
-// ═══════════════════════════════════════════════════════════════════
-//  PREDICTOR
-// ═══════════════════════════════════════════════════════════════════
-function runPredictor(){
-  const btn = document.getElementById('predictBtn');
-  btn.classList.add('loading');
-  document.getElementById('predictBtnText').textContent = 'Searching…';
-  setTimeout(()=>{ showResults(); btn.classList.remove('loading'); document.getElementById('predictBtnText').textContent='Predict My Colleges'; }, 500);
-}
-
-function showResults(){
-  const score = parseFloat(document.getElementById('percentileSlider').value);
-  const category = document.getElementById('category').value;
-  const stateFilter = document.getElementById('homeState').value;
-  const courseFilter = document.getElementById('courseFilter').value;
-  const typeFilter = document.getElementById('typeFilter').value;
-  const feesFilter = document.getElementById('feesFilter').value;
-  const pkgFilter = parseFloat(document.getElementById('pkgFilter').value)||0;
-
-  let filtered = COLLEGES.filter(c => {
-    if(c.exam !== currentExam) return false;
-    // Course filter
-    if(courseFilter !== 'all'){
-      const cl = c.course.toLowerCase();
-      const cf = courseFilter;
-      if(cf==='bba' && !cl.includes('bba') && !cl.includes('bms')) return false;
-      if(cf==='bcom' && !cl.includes('b.com') && !cl.includes('bcom')) return false;
-      if(cf==='mba' && !cl.includes('mba') && !cl.includes('pgdm') && !cl.includes('pgpm') && !cl.includes('mms')) return false;
-      if(cf==='btech' && !cl.includes('b.tech') && !cl.includes('be ')) return false;
-      if(cf==='ipm' && !cl.includes('ipm') && !cl.includes('5-year')) return false;
-      if(cf==='law' && !cl.includes('llb') && !cl.includes('law')) return false;
-      if(cf==='design' && !cl.includes('des') && !cl.includes('design')) return false;
-    }
-    // Type filter
-    if(typeFilter !== 'all' && c.tag !== typeFilter) return false;
-    // Fees filter
-    if(feesFilter !== 'any' && c.fees > parseFloat(feesFilter)) return false;
-    // Package filter
-    if(pkgFilter > 0 && c.avgPkg < pkgFilter) return false;
-    return true;
-  });
-
-  const results = [];
-  filtered.forEach(c => {
-    const cutoff = getCutoff(c, category);
-    const chance = getChance(score, cutoff, currentExam);
-    if(chance) results.push({...c, cutoff, chance, score});
-  });
-
-  // Sort
-  const order = {safe:0, moderate:1, reach:2};
-  results.sort((a,b) => {
-    if(order[a.chance.tier] !== order[b.chance.tier]) return order[a.chance.tier]-order[b.chance.tier];
-    const isRank = currentExam === 'clat';
-    return isRank ? a.cutoff - b.cutoff : b.cutoff - a.cutoff;
-  });
-
-  lastResults = results;
-  renderResults(results, score, category);
-}
-
-function renderResults(results, score, category){
-  const wrap = document.getElementById('resultsWrap');
-  const exam = EXAM_INFO[currentExam];
-  const unit = exam.unit === 'rank' ? 'rank' : exam.unit === 'score' ? '/360' : '%ile';
-  document.getElementById('resultsTitle').textContent = `${exam.label} ${parseFloat(score).toFixed(1)}${unit} — Your College Matches`;
-  document.getElementById('resultsMeta').textContent = `${document.getElementById('category').options[document.getElementById('category').selectedIndex].text} category`;
-
-  const safe = results.filter(r=>r.chance.tier==='safe').length;
-  const mod = results.filter(r=>r.chance.tier==='moderate').length;
-  const reach = results.filter(r=>r.chance.tier==='reach').length;
-  document.getElementById('resultsChips').innerHTML =
-    `<span class="results-chip chip-count">✓ ${results.length} colleges</span>` +
-    (safe ? `<span class="results-chip chip-safe">✅ ${safe} Safe</span>` : '') +
-    (mod ? `<span class="results-chip chip-mod">⚡ ${mod} Moderate</span>` : '') +
-    (reach ? `<span class="results-chip chip-reach">🎯 ${reach} Reach</span>` : '');
-
-  wrap.classList.add('show');
-  renderColleges(results);
-  document.getElementById('shareRow').classList.add('show');
-  updateSavedPanel();
-  wrap.scrollIntoView({behavior:'smooth', block:'start'});
-}
-
-function sortAndRender(){
-  if(!lastResults.length) return;
-  const sortBy = document.getElementById('sortSelect').value;
-  const sorted = [...lastResults];
-  const isRank = currentExam === 'clat';
-
-  if(sortBy==='chance'){
-    const order = {safe:0,moderate:1,reach:2};
-    sorted.sort((a,b)=>order[a.chance.tier]-order[b.chance.tier]||(isRank?a.cutoff-b.cutoff:b.cutoff-a.cutoff));
-  } else if(sortBy==='cutoff') sorted.sort((a,b)=>isRank?a.cutoff-b.cutoff:b.cutoff-a.cutoff);
-  else if(sortBy==='pkg') sorted.sort((a,b)=>b.avgPkg-a.avgPkg);
-  else if(sortBy==='fees') sorted.sort((a,b)=>a.fees-b.fees);
-  else if(sortBy==='roi') sorted.sort((a,b)=>(b.avgPkg/Math.max(b.fees,0.1))-(a.avgPkg/Math.max(a.fees,0.1)));
-  else if(sortBy==='name') sorted.sort((a,b)=>a.name.localeCompare(b.name));
-
-  renderColleges(sorted);
-}
-
-function renderColleges(results){
-  const el = document.getElementById('collegeList');
-  if(!results.length){
-    el.innerHTML = `<div class="no-results"><span class="icon">😔</span><strong style="color:var(--ink);font-size:16px;display:block;margin-bottom:8px">No matches found</strong><span>Try adjusting filters or lowering the cutoff. Check a different exam or category.</span></div>`;
-    return;
-  }
-
-  if(currentView==='compact'){
-    el.innerHTML = results.map((c,i)=>compactRow(c,i+1)).join('');
-    return;
-  }
-
-  const safe=results.filter(r=>r.chance.tier==='safe');
-  const mod=results.filter(r=>r.chance.tier==='moderate');
-  const reach=results.filter(r=>r.chance.tier==='reach');
-  let html='';
-  if(safe.length) html+=`<div class="tier-group"><div class="tier-label">✅ Safe Choices — ${safe.length} college${safe.length>1?'s':''}</div>${safe.map((c,i)=>collegeCard(c,i+1)).join('')}</div>`;
-  if(mod.length) html+=`<div class="tier-group"><div class="tier-label">⚡ Moderate — Apply Strategically — ${mod.length} college${mod.length>1?'s':''}</div>${mod.map((c,i)=>collegeCard(c,i+1)).join('')}</div>`;
-  if(reach.length) html+=`<div class="tier-group"><div class="tier-label">🎯 Reach — Worth Trying — ${reach.length} college${reach.length>1?'s':''}</div>${reach.map((c,i)=>collegeCard(c,i+1)).join('')}</div>`;
-  el.innerHTML = html;
-}
-
-function collegeCard(c, rank){
-  const tagMap={govt:'<span class="cc-tag tag-govt">Govt</span>',iim:'<span class="cc-tag tag-iim">IIM</span>',pvt:'<span class="cc-tag tag-pvt">Private</span>',nit:'<span class="cc-tag tag-nit">NIT</span>',nlu:'<span class="cc-tag tag-nlu">NLU</span>'};
-  const tag=tagMap[c.tag]||'';
-  const fee=c.fees<1?`₹${(c.fees*100).toFixed(0)}K total`:c.fees<10?`₹${c.fees.toFixed(1)}L total`:`₹${c.fees}L total`;
-  const isSaved=savedColleges.has(c.name);
-  const isCompare=compareSet.has(c.name);
-  const roi=(c.avgPkg/Math.max(c.fees,0.1)).toFixed(1);
-  const roiPct=Math.min(100,Math.round((c.avgPkg/Math.max(c.fees,0.1))*5));
-  const isRank=currentExam==='clat';
-  const cutoffLabel=isRank?`Rank ~${c.cutoff}`:`${c.cutoff}%ile`;
-  const nameEl=c.url?`<a href="${esc(c.url)}" target="_blank">${esc(c.name)}</a>`:esc(c.name);
-  const id=`card-${c.name.replace(/[^a-z0-9]/gi,'_')}`;
-
-  return `<div class="college-card ${c.chance.cardCls} ${isSaved?'saved-card':''} ${isCompare?'selected':''}" id="${id}">
-    <div class="cc-main">
-      <div class="cc-rank">${rank}</div>
-      <div class="cc-body">
-        <div class="cc-name">${nameEl}${tag}</div>
-        <div class="cc-sub">
-          <span>${esc(c.course)}</span>
-          <span>📍 ${esc(c.city)}</span>
-          <span>💰 ₹${c.avgPkg}L avg</span>
-          <span>🎓 ${fee}</span>
-          ${c.nirf?`<span style="color:var(--ink4);font-size:10.5px">${esc(c.nirf)}</span>`:''}
-        </div>
-      </div>
-      <div class="cc-right">
-        <div class="cc-cutoff">${cutoffLabel.replace('%ile','')}<span style="font-size:11px;color:var(--ink4)">${isRank?' rank':'%ile'}</span></div>
-        <div class="cc-cutoff-lbl">Cutoff</div>
-        <div class="cc-chance ${c.chance.cls}">${c.chance.label}</div>
-      </div>
-    </div>
-    <div class="cc-detail" id="detail-${id}">
-      <div class="cc-detail-grid">
-        <div class="cc-stat"><div class="cc-stat-val">₹${c.avgPkg}L</div><div class="cc-stat-lbl">Avg Package</div></div>
-        <div class="cc-stat"><div class="cc-stat-val">${fee}</div><div class="cc-stat-lbl">Total Fees</div></div>
-        <div class="cc-stat"><div class="cc-stat-val">${roi}x</div><div class="cc-stat-lbl">ROI Ratio</div></div>
-        <div class="cc-stat"><div class="cc-stat-val">${esc(c.city)}</div><div class="cc-stat-lbl">Location</div></div>
-      </div>
-      <div class="cc-roi-bar">
-        <div class="cc-roi-label"><span>Return on Investment</span><span>${roi}x (pkg/fees)</span></div>
-        <div class="cc-roi-track"><div class="cc-roi-fill" style="width:${roiPct}%"></div></div>
-      </div>
-      ${c.note?`<div class="cc-note">ℹ️ ${esc(c.note)}</div>`:''}
-      <div class="cc-actions">
-        ${c.url?`<a href="${esc(c.url)}" target="_blank" class="cc-action-btn">🏛 Full Review →</a>`:''}
-        <button class="cc-action-btn ${isSaved?'saved':''}" onclick="toggleSave('${esc(c.name)}')" id="save-${id}">
-          ${isSaved?'★ Saved':'☆ Save College'}
-        </button>
-        <button class="cc-action-btn ${isCompare?'compare-add':''}" onclick="toggleCompare('${esc(c.name)}')" id="cmp-${id}">
-          ${isCompare?'✓ In Compare':'⚖️ Compare'}
-        </button>
-      </div>
-    </div>
-    <button class="cc-expand" id="exp-${id}" onclick="toggleDetail('${id}')">
-      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-      Details — fees, ROI, package
-    </button>
-  </div>`;
-}
-
-function compactRow(c, rank){
-  const fee=c.fees<1?`₹${(c.fees*100).toFixed(0)}K`:c.fees<10?`₹${c.fees.toFixed(1)}L`:`₹${c.fees}L`;
-  const isRank=currentExam==='clat';
-  return `<div class="college-card ${c.chance.cardCls}" style="padding:10px 14px;display:grid;grid-template-columns:28px 1fr auto;gap:8px;align-items:center;margin-bottom:5px">
-    <span style="font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:var(--ink4)">${rank}</span>
-    <div>
-      <div style="font-size:13.5px;font-weight:700;color:var(--ink)">${esc(c.name)}</div>
-      <div style="font-size:11px;color:var(--ink3)">${esc(c.course)} · ${esc(c.city)} · ${fee} · ₹${c.avgPkg}L avg</div>
-    </div>
-    <div style="text-align:right">
-      <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:var(--ink)">${c.cutoff}${isRank?' rank':'%'}</div>
-      <div class="cc-chance ${c.chance.cls}" style="font-size:9.5px">${c.chance.label}</div>
-    </div>
-  </div>`;
-}
-
-// ═══════════════════════════════════════════════════════════════════
-//  EXPAND / SAVE / COMPARE
-// ═══════════════════════════════════════════════════════════════════
-function toggleDetail(id){
-  const det=document.getElementById(`detail-${id}`);
-  const btn=document.getElementById(`exp-${id}`);
-  const open=det.classList.toggle('open');
-  btn.classList.toggle('open',open);
-  btn.innerHTML=open
-    ? `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg> Hide details`
-    : `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg> Details — fees, ROI, package`;
-}
-
-function toggleSave(name){
-  if(savedColleges.has(name)) savedColleges.delete(name);
-  else savedColleges.add(name);
-  try { localStorage.setItem('cp_saved', JSON.stringify([...savedColleges])); } catch(e){}
-  if(lastResults.length) renderColleges(lastResults);
-  updateSavedPanel();
-}
-
-function updateSavedPanel(){
-  const panel=document.getElementById('savedPanel');
-  const list=document.getElementById('savedList');
-  if(!savedColleges.size){ panel.classList.remove('show'); return; }
-  panel.classList.add('show');
-  document.getElementById('savedCount').textContent = `(${savedColleges.size} college${savedColleges.size>1?'s':''})`;
-  list.innerHTML=[...savedColleges].map(n=>`<span class="saved-pill">${esc(n)}<button onclick="toggleSave('${esc(n)}')" title="Remove">×</button></span>`).join('');
-}
-
-function toggleCompare(name){
-  if(compareSet.has(name)){ compareSet.delete(name); }
-  else if(compareSet.size<3){ compareSet.add(name); }
-  else { alert('You can compare up to 3 colleges at once. Remove one first.'); return; }
-  updateCompareBar();
-  if(lastResults.length) renderColleges(lastResults);
-}
-
-function updateCompareBar(){
-  const bar=document.getElementById('compareBar');
-  if(!compareSet.size){ bar.classList.remove('show'); return; }
-  bar.classList.add('show');
-  document.getElementById('compareNames').textContent=[...compareSet].join(' vs ');
-}
-
-function clearCompare(){ compareSet.clear(); updateCompareBar(); if(lastResults.length) renderColleges(lastResults); }
-
-function openCompare(){
-  if(compareSet.size<2){ alert('Select at least 2 colleges to compare.'); return; }
-  const cols=[...compareSet].map(n=>lastResults.find(r=>r.name===n)).filter(Boolean);
-  if(!cols.length) return;
-  const isRank=currentExam==='clat';
-  const rows=[
-    {label:'Course',fn:c=>c.course},
-    {label:'City',fn:c=>c.city},
-    {label:'Type',fn:c=>({govt:'Government',iim:'IIM',pvt:'Private',nit:'NIT',nlu:'NLU'}[c.tag]||c.tag)},
-    {label:'Cutoff',fn:c=>isRank?`Rank ~${c.cutoff}`:`${c.cutoff}%ile`},
-    {label:'Your Chance',fn:c=>c.chance.label},
-    {label:'Avg Package',fn:c=>`₹${c.avgPkg}L`,val:c=>c.avgPkg,higher:true},
-    {label:'Total Fees',fn:c=>c.fees<1?`₹${(c.fees*100).toFixed(0)}K`:`₹${c.fees}L`,val:c=>c.fees,higher:false},
-    {label:'ROI (pkg/fees)',fn:c=>`${(c.avgPkg/Math.max(c.fees,0.1)).toFixed(1)}x`,val:c=>c.avgPkg/Math.max(c.fees,0.1),higher:true},
-    {label:'Notes',fn:c=>c.note||'—'},
-  ];
-
-  let thead=`<thead><tr><th>Metric</th>${cols.map(c=>`<th>${esc(c.name)}</th>`).join('')}</tr></thead>`;
-  let tbody='<tbody>'+rows.map(row=>{
-    const vals=row.val?cols.map(c=>row.val(c)):null;
-    const best=vals?Math.max(...vals):null;
-    const worst=vals?Math.min(...vals):null;
-    const tds=cols.map((c,i)=>{
-      let cls='';
-      if(vals){
-        if(row.higher && vals[i]===best) cls='best-val';
-        else if(row.higher && vals[i]===worst) cls='worst-val';
-        else if(!row.higher && vals[i]===worst) cls='best-val';
-        else if(!row.higher && vals[i]===best) cls='worst-val';
-      }
-      return `<td class="${cls}">${esc(String(row.fn(c)))}</td>`;
-    }).join('');
-    return `<tr><td class="row-label">${row.label}</td>${tds}</tr>`;
-  }).join('')+'</tbody>';
-
-  document.getElementById('compareTable').innerHTML=thead+tbody;
-  document.getElementById('compareModal').classList.add('open');
-}
-
-function closeCompare(){ document.getElementById('compareModal').classList.remove('open'); }
-
-// ═══════════════════════════════════════════════════════════════════
-//  SHARE / COPY
-// ═══════════════════════════════════════════════════════════════════
-function shareWA(){
-  if(!lastResults.length) return;
-  const exam=EXAM_INFO[currentExam];
-  const score=parseFloat(document.getElementById('percentileSlider').value).toFixed(1);
-  const safe=lastResults.filter(r=>r.chance.tier==='safe');
-  const total=lastResults.length;
-  const topSafe=safe.slice(0,3).map(c=>c.name).join(', ');
-  const text=`🎓 My College Predictor Results — ${exam.label} ${score}${exam.unit==='rank'?' rank':exam.unit==='score'?'/360':'%ile'}\n\n✅ Safe colleges: ${safe.length}\n📋 Total matches: ${total}\n${topSafe?`🏛 Top safe: ${topSafe}`:''}\n\n🔍 Check yours free (no login):\nhttps://studenttoolkit.online/tools/college-predictor.html`;
-  window.open('https://wa.me/?text='+encodeURIComponent(text),'_blank');
-}
-
-function copyResults(){
-  if(!lastResults.length) return;
-  const lines=lastResults.map(r=>`${r.chance.tier.toUpperCase()}: ${r.name} (${r.course}) — Cutoff: ${r.cutoff}`);
-  const text=`College Predictor — ${EXAM_INFO[currentExam].label} | ${document.getElementById('percentileSlider').value}\nCategory: ${document.getElementById('category').options[document.getElementById('category').selectedIndex].text}\n\n${lines.join('\n')}\n\nhttps://studenttoolkit.online/tools/college-predictor.html`;
-  navigator.clipboard.writeText(text).then(()=>{
-    const btn=document.getElementById('copyBtn');
-    btn.textContent='✓ Copied!';
-    setTimeout(()=>{ btn.innerHTML='<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy List'; },2000);
-  });
-}
-
-function recalculate(){
-  document.getElementById('resultsWrap').classList.remove('show');
-  document.getElementById('shareRow').classList.remove('show');
-  clearCompare();
-  document.querySelector('.pred-card').scrollIntoView({behavior:'smooth'});
-}
-
-function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-
-// ── INIT ────────────────────────────────────────────────────────
-updateSlider(88);
-updateSavedPanel();
-
-// Close compare modal on overlay click
-document.getElementById('compareModal').addEventListener('click',e=>{ if(e.target===document.getElementById('compareModal'))closeCompare(); });
-
-// Nav shadow
-window.addEventListener('scroll',()=>{ document.querySelector('nav').style.background=window.scrollY>20?'rgba(9,9,11,.98)':'rgba(9,9,11,.92)'; },{passive:true});
-
-// FAQ accordion in SEO section
-document.querySelectorAll('.faq-item-seo').forEach(item=>{
-  item.querySelector('.faq-q-seo').addEventListener('click',()=>{
-    const open=item.classList.contains('open');
-    document.querySelectorAll('.faq-item-seo.open').forEach(i=>i.classList.remove('open'));
-    if(!open) item.classList.add('open');
-  });
-});
-</script>
+<script src="cp/engine.js"></script>
+<script src="cp/finance.js"></script>
+<script>window.CP_CONFIG={dataBase:'cp/data/',groqKey:'YOUR_GROQ_KEY_HERE',cycle:2027};</script>
+<script src="cp/app.js"></script>
 </body>
 </html>
