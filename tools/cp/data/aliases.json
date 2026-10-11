@@ -1,0 +1,15 @@
+{
+ "note": "legacy id -> sourced id that replaces it. The page hides the legacy row when the sourced one is loaded.",
+ "supersededBy": {
+  "legacy-clat-nlsiu-bangalore-ba-llb-hons": "clat-nlsiu-bengaluru",
+  "legacy-clat-nalsar-hyderabad-ba-llb-hons": "clat-nalsar-hyderabad",
+  "legacy-clat-nujs-kolkata-ba-llb-hons": "clat-wbnujs-kolkata",
+  "legacy-clat-nlu-jodhpur-ba-llb-hons": "clat-nlu-jodhpur",
+  "legacy-clat-nliu-bhopal-ba-llb-hons": "clat-nliu-bhopal",
+  "legacy-clat-rgnul-patiala-ba-llb-hons": "clat-rgnul-punjab",
+  "legacy-clat-gnlu-gandhinagar-ba-llb-hons": "clat-gnlu-gandhinagar",
+  "legacy-clat-nlu-odisha-nluo-ba-llb-hons": "clat-national-law-university-odisha-nluo",
+  "legacy-clat-nuals-kochi-ba-llb-hons": "clat-nuals-kochi",
+  "legacy-cuet-sri-ram-college-of-commerce-b-com-hons": "du-srcc-bcom-hons"
+ }
+}
