@@ -1,0 +1,1448 @@
+{
+ "exam": "jee-main",
+ "schemaVersion": 1,
+ "legacy": true,
+ "generatedAt": "2026-10-10",
+ "colleges": [
+  {
+   "id": "legacy-jee-main-nit-trichy-b-tech-cse",
+   "name": "NIT Trichy",
+   "course": "B.Tech (CSE)",
+   "exam": "jee-main",
+   "city": "Trichy",
+   "state": "tamil-nadu",
+   "type": "nit",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 99,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 97,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 92,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 88,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 5.6,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 18,
+    "internalUrl": null,
+    "oldNote": "India's top NIT. NIRF #9 Engineering."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-jee-main-nit-warangal-b-tech-cse",
+   "name": "NIT Warangal",
+   "course": "B.Tech (CSE)",
+   "exam": "jee-main",
+   "city": "Warangal",
+   "state": null,
+   "type": "nit",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 98.5,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 96,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 91,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 87,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 5.4,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 16,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-jee-main-nit-surathkal-nitk-b-tech-cse",
+   "name": "NIT Surathkal (NITK)",
+   "course": "B.Tech (CSE)",
+   "exam": "jee-main",
+   "city": "Mangalore",
+   "state": "karnataka",
+   "type": "nit",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 98,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 95,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 90,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 86,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 5.4,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 16,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-jee-main-nit-calicut-b-tech-cse",
+   "name": "NIT Calicut",
+   "course": "B.Tech (CSE)",
+   "exam": "jee-main",
+   "city": "Calicut",
+   "state": null,
+   "type": "nit",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 97.5,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 94,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 89,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 85,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 5.4,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 15,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-jee-main-nit-rourkela-b-tech-cse",
+   "name": "NIT Rourkela",
+   "course": "B.Tech (CSE)",
+   "exam": "jee-main",
+   "city": "Rourkela",
+   "state": null,
+   "type": "nit",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 97,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 93,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 88,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 83,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 5.3,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 14,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-jee-main-nit-delhi-b-tech-cse",
+   "name": "NIT Delhi",
+   "course": "B.Tech (CSE)",
+   "exam": "jee-main",
+   "city": "Delhi",
+   "state": "delhi",
+   "type": "nit",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 95,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 91,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 85,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 80,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 5.5,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 14,
+    "internalUrl": null,
+    "oldNote": "Delhi location advantage."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-jee-main-nit-jaipur-mnit-b-tech-cse",
+   "name": "NIT Jaipur (MNIT)",
+   "course": "B.Tech (CSE)",
+   "exam": "jee-main",
+   "city": "Jaipur",
+   "state": null,
+   "type": "nit",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 93,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 88,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 82,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 77,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 5.2,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 13,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-jee-main-nit-allahabad-mnnit-b-tech-cse",
+   "name": "NIT Allahabad (MNNIT)",
+   "course": "B.Tech (CSE)",
+   "exam": "jee-main",
+   "city": "Allahabad",
+   "state": "up",
+   "type": "nit",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 94,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 90,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 83,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 78,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 5.1,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 13,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-jee-main-nit-patna-b-tech-cse",
+   "name": "NIT Patna",
+   "course": "B.Tech (CSE)",
+   "exam": "jee-main",
+   "city": "Patna",
+   "state": null,
+   "type": "nit",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 88,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 82,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 75,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 70,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 5,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 11,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-jee-main-nit-hamirpur-b-tech-cse",
+   "name": "NIT Hamirpur",
+   "course": "B.Tech (CSE)",
+   "exam": "jee-main",
+   "city": "Hamirpur",
+   "state": null,
+   "type": "nit",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 85,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 79,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 72,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 67,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 5,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 10,
+    "internalUrl": null,
+    "oldNote": ""
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-jee-main-vit-vellore-b-tech-cse",
+   "name": "VIT Vellore",
+   "course": "B.Tech (CSE)",
+   "exam": "jee-main",
+   "city": "Vellore",
+   "state": "tamil-nadu",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 75,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 68,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 58,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 52,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 8,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 8,
+    "internalUrl": null,
+    "oldNote": "Also uses VITEEE. Top private."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-jee-main-srm-chennai-b-tech-cse",
+   "name": "SRM Chennai",
+   "course": "B.Tech (CSE)",
+   "exam": "jee-main",
+   "city": "Chennai",
+   "state": "tamil-nadu",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 70,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 63,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 53,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 47,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 7,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 7,
+    "internalUrl": null,
+    "oldNote": "Also uses SRMJEEE."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-jee-main-manipal-institute-of-tech-b-tech-cse",
+   "name": "Manipal Institute of Tech",
+   "course": "B.Tech (CSE)",
+   "exam": "jee-main",
+   "city": "Manipal",
+   "state": "karnataka",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 72,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 65,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 55,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 49,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 9,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 8,
+    "internalUrl": null,
+    "oldNote": "Also uses MET."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-jee-main-thapar-university-b-tech-cse",
+   "name": "Thapar University",
+   "course": "B.Tech (CSE)",
+   "exam": "jee-main",
+   "city": "Patiala",
+   "state": null,
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 80,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 73,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 63,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 57,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 10,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 9,
+    "internalUrl": null,
+    "oldNote": "Strong placement in Tier 2 private."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-jee-main-lpu-jalandhar-b-tech-cse",
+   "name": "LPU Jalandhar",
+   "course": "B.Tech (CSE)",
+   "exam": "jee-main",
+   "city": "Jalandhar",
+   "state": null,
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 65,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 58,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 48,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 42,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 7,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 6,
+    "internalUrl": null,
+    "oldNote": "Large university. Diverse campus."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  },
+  {
+   "id": "legacy-jee-main-amity-noida-b-tech-cse",
+   "name": "Amity Noida",
+   "course": "B.Tech (CSE)",
+   "exam": "jee-main",
+   "city": "Noida",
+   "state": "up",
+   "type": "pvt",
+   "seats": null,
+   "fees": null,
+   "avgPackage": null,
+   "medianPackage": null,
+   "placementRate": null,
+   "cutoffHistory": [
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "UR",
+     "gender": "any",
+     "quota": "AI",
+     "value": 62,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "OBC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 55,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "SC",
+     "gender": "any",
+     "quota": "AI",
+     "value": 45,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    },
+    {
+     "year": 2025,
+     "round": "unknown",
+     "stage": "closing",
+     "category": "ST",
+     "gender": "any",
+     "quota": "AI",
+     "value": 39,
+     "scale": {
+      "type": "percentile",
+      "max": 100
+     },
+     "verified": false,
+     "status": "estimated",
+     "legacy": true
+    }
+   ],
+   "legacyClaims": {
+    "feesLakh": 8,
+    "feesNote": "unit and basis unverified; may be per year or total",
+    "avgPackageLpa": 5.5,
+    "internalUrl": null,
+    "oldNote": "NCR location. Many specialisations."
+   },
+   "notes": "Estimated: carried over from the previous version of this tool with no source. Year and round are unknown (2025 is a placeholder).",
+   "officialUrl": "",
+   "lastChecked": "2026-10-10"
+  }
+ ]
+}
