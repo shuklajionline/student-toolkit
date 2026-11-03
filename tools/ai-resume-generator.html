@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <!-- ═══════════ SEO ═══════════ -->
-  <title>Free AI Resume Generator for Students & Freshers India | Student Toolkit</title>
+  <title>Free AI Resume Generator for Students & Freshers India</title>
   <meta name="description" content="Free AI resume generator for Indian students and freshers. Choose from 10+ industries, 3 ATS-friendly templates, live preview. Build a professional resume in 5 minutes. No signup required."/>
   <meta name="keywords" content="ai resume generator, free resume builder India, resume generator for freshers, ATS resume builder, resume maker for students India"/>
   <meta name="author" content="Student Toolkit"/>
@@ -284,6 +284,7 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:36px
 .notif{position:fixed;bottom:24px;right:24px;padding:11px 18px;background:var(--green);color:#fff;border-radius:10px;font-size:13px;font-weight:600;animation:slideUp .3s ease;z-index:9999}
 @keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
 </style>
+<script src="/ai-config.js"></script>
 </head>
 <body>
 
@@ -583,13 +584,13 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:36px
 
 <footer>
   <div class="footer-inner">
-    <p class="footer-copy">© 2025 Student Toolkit · Free Tools for Indian Students · 🇮🇳</p>
+    <p class="footer-copy">© 2026 Student Toolkit · Free Tools for Indian Students · 🇮🇳</p>
     <div class="footer-links">
       <a href="/">Home</a><a href="/blog/">Blog</a><a href="/about.html">About</a>
-      <a href="https://t.me/studenttoolkitonline" target="_blank" rel="noopener">Telegram</a>
+      
     </div>
   </div>
-</footer>
+<div style="font-size:12px;opacity:.75;text-align:center;padding:14px 16px;clear:both"><a href="/tools/" style="color:inherit">All Tools</a> · <a href="/colleges/" style="color:inherit">Colleges</a> · <a href="/blog/" style="color:inherit">Blog</a> · <a href="/about.html" style="color:inherit">About</a> · <a href="/contact.html" style="color:inherit">Contact</a> · <a href="/editorial-policy.html" style="color:inherit">Editorial Policy</a> · <a href="/privacy.html" style="color:inherit">Privacy</a></div></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
@@ -603,8 +604,6 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:36px
 // ══════════════════════════════════════════════
 // STATE
 // ══════════════════════════════════════════════
-const GROQ_KEY = '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';
-
 let state = {
   fname:'', lname:'', role:'', email:'', phone:'', location:'', linkedin:'', github:'',
   summary:'', industry:'software',
@@ -931,14 +930,7 @@ function useSummary(text,el){
 // GROQ API
 // ══════════════════════════════════════════════
 async function callGroq(prompt, maxTokens=500){
-  const res = await fetch('https://api.groq.com/openai/v1/chat/completions',{
-    method:'POST',
-    headers:{'Authorization':'Bearer '+GROQ_KEY,'Content-Type':'application/json'},
-    body:JSON.stringify({model:'llama-3.3-70b-versatile',messages:[{role:'user',content:prompt}],max_tokens:maxTokens,temperature:0.7})
-  });
-  const data=await res.json();
-  if(data.error) throw new Error(data.error.message);
-  return data.choices[0].message.content;
+  return window.stAiChat({messages:[{role:'user',content:prompt}],max_tokens:maxTokens,temperature:0.7});
 }
 
 // ══════════════════════════════════════════════

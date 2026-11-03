@@ -100,16 +100,6 @@ p{font-size:15px;color:var(--ink3);line-height:1.7;margin-bottom:28px;max-width:
   </div>
 </div>
 
-<script>
-// Auto-suggest based on what they were trying to access
-const path = window.location.pathname.toLowerCase();
-if(path.includes('attend')) window.location='/tools/attendance.html';
-else if(path.includes('cgpa') || path.includes('gpa')) window.location='/tools/cgpa.html';
-else if(path.includes('resume') || path.includes('ats')) window.location='/tools/ai-resume-checker.html';
-else if(path.includes('college') || path.includes('predict')) window.location='/tools/college-predictor.html';
-else if(path.includes('career') || path.includes('path')) window.location='/tools/career-path-finder.html';
-else if(path.includes('letter') || path.includes('email')) window.location='/tools/letter-writer.html';
-else if(path.includes('news') || path.includes('cricket')) window.location='/index.html';
-</script>
+
 </body>
 </html>

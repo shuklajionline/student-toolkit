@@ -4,7 +4,7 @@
 //  Auto-update: forces reload when new version detected
 // ═══════════════════════════════════════════════════
 
-const CACHE_VERSION = 'studenttoolkit-v3';
+const CACHE_VERSION = 'studenttoolkit-v4';
 const OFFLINE_PAGE  = '/offline.html';
 
 // Core files to pre-cache on install
