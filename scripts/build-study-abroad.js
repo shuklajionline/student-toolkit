@@ -95,7 +95,8 @@ ${extra}</head>
 const footer = `
 <footer class="site">
   <div class="flinks"><strong style="color:var(--ink2)">Study abroad guides:</strong>${MAIN.slice(0, 12).map(c => `<a href="/study-abroad/${c.page}">${esc(c.short)}</a>`).join('')}<a href="/study-abroad/">All countries →</a></div>
-  <div class="flinks"><a href="/tools/">All Tools</a><a href="/tools/salary-calculator.html">Salary Calculator</a><a href="/tools/cgpa.html">CGPA Calculator</a><a href="/tools/ai-resume-checker.html">AI Resume Checker</a><a href="/tools/letter-writer.html">SOP &amp; Letter Writer</a><a href="/colleges/">Colleges</a><a href="/blog/">Blog</a></div>
+  <div class="flinks"><a href="/tools/">All Tools</a><a href="/tools/salary-calculator.html">Salary Calculator</a><a href="/tools/cgpa.html">CGPA Calculator</a><a href="/tools/college-predictor.html">College Predictor</a><a href="/tools/letter-writer.html">SOP &amp; Letter Writer</a><a href="/colleges/">Colleges</a><a href="/blog/">Blog</a></div>
+  <div class="flinks"><a href="/blog/education-loan-for-study-abroad.html">Education loan guide</a><a href="/blog/what-to-do-after-12th.html">After 12th guide</a><a href="/blog/how-to-check-college-is-genuine.html">Check a college</a></div>
   <div class="flinks"><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/editorial-policy.html">Editorial Policy</a><a href="/privacy.html">Privacy</a></div>
   <p style="margin:8px 0 0">© ${new Date(REVIEWED).getFullYear()} Student Toolkit · Free tools for Indian students · Figures are estimates — always confirm with the official source before you pay or apply.</p>
 </footer>`;
@@ -290,7 +291,7 @@ ${MAIN.map(c => `<tr><td><a href="/study-abroad/${c.page}">${esc(c.name)}</a></t
     <div class="card"><h3>2. Check work rights after graduation</h3><p>A post-study work visa is how most students repay loans and gain international experience. ${byPsw.slice(0, 5).map(c => `${c.short}: ${pswShort(c)}`).join('; ')}. Singapore and Malaysia have no dedicated post-study work visa.</p></div>
     <div class="card"><h3>3. Be honest about language</h3><p>English-taught degrees are common across Europe and Asia, but part-time and graduate jobs in Germany, France, Italy, Japan or Korea usually need the local language. Start learning (A2–B1) before you fly if you want to work there.</p></div>
     <div class="card"><h3>4. Match the country to your course</h3><p>Engineering and research → Germany, Netherlands, Sweden, Switzerland. Business and finance → UK, USA, France, Singapore, Hong Kong. Health and nursing → Canada, Australia, UK, Ireland. Design → Italy, UK, Netherlands. Use the “Strong in” filter.</p></div>
-    <div class="card"><h3>5. Plan money rules from India</h3>${D.INDIA_NOTES.map(([h, t]) => `<p><strong>${esc(h)}.</strong> ${esc(t)}</p>`).join('')}</div>
+    <div class="card"><h3>5. Plan money rules from India</h3>${D.INDIA_NOTES.map(([h, t]) => `<p><strong>${esc(h)}.</strong> ${esc(t)}</p>`).join('')}<p><a href="/blog/education-loan-for-study-abroad.html">Full education loan guide: banks vs NBFCs, rates, EMI →</a></p></div>
     <div class="card"><h3>6. Avoid common traps</h3><ul><li>Never pay for “guaranteed” admission or visas.</li><li>Check the university is recognised (and NMC-compliant for MBBS).</li><li>Older blogs say Norway is free — it isn’t for non-EU students since 2023.</li><li>Rules change every year; confirm on the official links in each guide.</li></ul></div>
   </div>
 </div></section>
@@ -439,7 +440,7 @@ function guide(c) {
   <section aria-labelledby="visa"><h2 id="visa">${esc(c.short)} student visa for Indian students</h2>
   <div class="grid g2">
     <div class="card"><h3>Visa &amp; fees</h3><p><b>${esc(c.visa.name)}.</b> ${esc(c.visa.feeText)}</p><p>${esc(c.visa.time)}</p></div>
-    <div class="card"><h3>Money you must show</h3><p>${esc(c.funds.text)}</p><p>Education loan sanction letters are usually accepted as proof of funds.</p></div>
+    <div class="card"><h3>Money you must show</h3><p>${esc(c.funds.text)}</p><p>Education loan sanction letters are usually accepted as proof of funds. Compare lenders in our <a href="/blog/education-loan-for-study-abroad.html">education loan guide</a>.</p></div>
   </div>
   <h3 style="margin-top:16px">Steps</h3>
   <ol>

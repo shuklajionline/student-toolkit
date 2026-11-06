@@ -8,6 +8,8 @@
 User-agent: *
 Allow: /
 Disallow: /workers/
+Disallow: /scripts/
+Disallow: /docs/
 
 # ── AI / LLM Crawlers — explicitly welcome ──
 # We want AI platforms to index our tools and college data

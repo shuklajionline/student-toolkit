@@ -4,7 +4,7 @@
 //  Auto-update: forces reload when new version detected
 // ═══════════════════════════════════════════════════
 
-const CACHE_VERSION = 'studenttoolkit-v4';
+const CACHE_VERSION = 'studenttoolkit-v5';
 const OFFLINE_PAGE  = '/offline.html';
 
 // Core files to pre-cache on install
@@ -18,9 +18,9 @@ const PRECACHE = [
   '/logo-icon.png',
   '/tools/attendance.html',
   '/tools/cgpa.html',
-  '/tools/ai-resume-checker.html',
   '/tools/letter-writer.html',
   '/tools/career-path-finder.html',
+  '/tools/study-abroad-finder.html',
 ];
 
 // HTML pages — always network-first (never serve stale HTML)
@@ -29,7 +29,6 @@ const HTML_PAGES = [
   '/index.html',
   '/tools/attendance.html',
   '/tools/cgpa.html',
-  '/tools/ai-resume-checker.html',
   '/tools/letter-writer.html',
   '/tools/career-path-finder.html',
   '/colleges/',

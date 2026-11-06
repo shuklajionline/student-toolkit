@@ -28,10 +28,6 @@
 - URL: https://studenttoolkit.online/tools/cgpa.html
 - What it does: Calculates Semester CGPA, Cumulative CGPA, and CGPA-to-percentage conversion. Supports VTU, Mumbai University, Anna University, 10-point, 4-point grading systems. Also has Goal CGPA tracker (current vs target CGPA with required performance in remaining credits).
 
-## AI Resume Checker
-- URL: https://studenttoolkit.online/tools/ai-resume-checker.html
-- What it does: Scores a student's resume out of 100 across 9 ATS dimensions — keywords, action verbs, quantified achievements, structure, contact info, buzzword penalty. 8 industry profiles (IT, Finance, Marketing, Consulting, Data, Product, HR, Operations). Provides rewrite suggestions.
-
 ## Letter & Email Writer
 - URL: https://studenttoolkit.online/tools/letter-writer.html
 - What it does: Generates professional letters and emails for students — leave applications, professor emails, internship requests, NOC letters, bonafide requests. AI-powered, instant output.
@@ -79,9 +75,25 @@
 #  BLOG — Key Articles
 # ─────────────────────────────────────────────────────────────
 
-## ATS Resume Guide India
-- URL: https://studenttoolkit.online/blog/brutal-resume-checker-guide.html
-- Topic: How ATS works at TCS, Infosys, Deloitte, HDFC. Resume format for freshers. Keywords by industry. Naukri/LinkedIn/Internshala tips.
+## ATS-Friendly Resume for Freshers (2027)
+- URL: https://studenttoolkit.online/blog/ats-resume-for-freshers-india.html
+- Topic: One-page ATS-friendly resume format for Indian freshers, section order, bullet formula, stream-wise examples, keyword tailoring and a 20-point self-check.
+
+## What to Do After 12th (2027)
+- URL: https://studenttoolkit.online/blog/what-to-do-after-12th.html
+- Topic: Courses and entrance exams for PCM, PCB, Commerce and Arts students (JEE, NEET-UG, CUET-UG, CLAT, IPMAT, NIFT, NCHM JEE, NDA), costs, timeline and a decision framework.
+
+## CTC vs In-Hand Salary for Freshers
+- URL: https://studenttoolkit.online/blog/ctc-vs-in-hand-salary-freshers.html
+- Topic: Salary components (basic, HRA, PF, gratuity, variable pay, bonuses), new tax regime slabs (Budget 2025), worked in-hand examples for 6, 12 and 18 LPA, and questions to ask HR.
+
+## Education Loan for Study Abroad
+- URL: https://studenttoolkit.online/blog/education-loan-for-study-abroad.html
+- Topic: Secured vs unsecured loans, banks vs NBFCs vs global lenders, typical rates, moratorium interest, EMI examples, section 80E (old regime only) and TCS rules on education remittances.
+
+## Is Your College Genuine? 21-Point Checklist
+- URL: https://studenttoolkit.online/blog/how-to-check-college-is-genuine.html
+- Topic: Verifying UGC recognition and the fake-universities list, AICTE/NMC/BCI/PCI/INC/NCTE/COA approvals, NAAC/NBA/NIRF data, fake placement claims, refunds and grievance routes.
 
 ## CGPA vs Percentage India
 - URL: https://studenttoolkit.online/blog/cgpa-vs-percentage-india.html

@@ -48,13 +48,6 @@
       "icons": [{ "src": "/logo-icon.png", "sizes": "192x192" }]
     },
     {
-      "name": "Resume Checker",
-      "short_name": "Resume",
-      "description": "Free ATS resume checker",
-      "url": "/tools/ai-resume-checker.html",
-      "icons": [{ "src": "/logo-icon.png", "sizes": "192x192" }]
-    },
-    {
       "name": "Letter Writer",
       "short_name": "Letters",
       "description": "Generate student letters and emails",
