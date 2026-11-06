@@ -30,7 +30,7 @@
 
 ## Letter & Email Writer
 - URL: https://studenttoolkit.online/tools/letter-writer.html
-- What it does: Generates professional letters and emails for students — leave applications, professor emails, internship requests, NOC letters, bonafide requests. AI-powered, instant output.
+- What it does: Writes 36 student applications and emails in Indian formats — sick/urgent/duty leave, attendance condonation, bonafide, TC/migration, character certificate, NOC, fee concession/refund, hostel letters, anti-ragging complaint, professor emails (extension, LOR, research internship), internship/referral/follow-up/offer emails, resignation, education loan letter, admission queries — plus 5 Hindi formats. Tone and length control, saved profile, live editing, export to Word/PDF/Gmail/Outlook. Runs in the browser; no AI and no data sent anywhere.
 
 ## AI Career Path Finder
 - URL: https://studenttoolkit.online/tools/career-path-finder.html
