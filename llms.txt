@@ -41,6 +41,10 @@
 - What it does: Students enter their exam percentile and category (General/OBC/SC/ST) to see which colleges they qualify for. Covers 110+ colleges across 9 exams: CUET, CAT, JEE Mains, IPMAT, XAT, MH-CET, NMAT, CLAT, NIFT. Shows 2026 cutoffs, fees, average packages, ROI.
 - Key data: Real 2025-26 cutoffs. Category-wise. Shows Safe / Moderate / Reach chances. Compare mode. Save colleges.
 
+## Grand College Directory
+- URL: https://studenttoolkit.online/colleges/directory/
+- What it does: Searchable directory of Indian colleges and universities (326+ institutions at launch: all IITs, NITs, IIMs, operational AIIMS, NLUs, central universities, IISERs, plus leading state, private, autonomous, design and business schools). Filter by state, type and stream. Profiles list type, recognition, entrance exams, streams, official website, admission route and fee guidance by institution type, and link to in-depth reviews where available. Growing in batches toward all Indian colleges.
+
 ## Study Abroad Finder
 - URL: https://studenttoolkit.online/tools/study-abroad-finder.html
 - What it does: Helps Indian students choose a study abroad destination. Matches 24 countries + 4 MBBS destinations to budget (in INR), course and priorities; calculates total course cost in rupees and education-loan EMI; compares countries side by side; builds an application timeline; lists scholarships and visa document checklists.
