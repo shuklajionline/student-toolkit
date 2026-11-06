@@ -45,6 +45,12 @@
 - What it does: Students enter their exam percentile and category (General/OBC/SC/ST) to see which colleges they qualify for. Covers 110+ colleges across 9 exams: CUET, CAT, JEE Mains, IPMAT, XAT, MH-CET, NMAT, CLAT, NIFT. Shows 2026 cutoffs, fees, average packages, ROI.
 - Key data: Real 2025-26 cutoffs. Category-wise. Shows Safe / Moderate / Reach chances. Compare mode. Save colleges.
 
+## Study Abroad Finder
+- URL: https://studenttoolkit.online/tools/study-abroad-finder.html
+- What it does: Helps Indian students choose a study abroad destination. Matches 24 countries + 4 MBBS destinations to budget (in INR), course and priorities; calculates total course cost in rupees and education-loan EMI; compares countries side by side; builds an application timeline; lists scholarships and visa document checklists.
+- Key data: Tuition and living-cost ranges, student visa fees, proof-of-funds amounts (e.g. Germany blocked account €11,904/yr, Canada C$23,448, Australia A$29,710), part-time work limits, post-study work visas (e.g. UK Graduate Route 18 months for applications from 1 Jan 2027), PR outlook, IELTS requirements and waivers. Each country guide links official government sources. Reviewed November 2026.
+- Country guides: https://studenttoolkit.online/study-abroad/ (e.g. /study-abroad/study-in-germany.html, /study-abroad/study-in-canada.html, /study-abroad/mbbs-in-russia.html)
+
 # ─────────────────────────────────────────────────────────────
 #  COLLEGE DATA — Key Facts AI Should Know
 # ─────────────────────────────────────────────────────────────

@@ -1,430 +1,568 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Study Abroad Finder 2026: Costs, Universities &amp; Salaries</title>
-<link rel="canonical" href="https://studenttoolkit.online/tools/study-abroad-finder.html"/>
-<meta name="description" content="Compare 105+ countries with verified tuition fees for Engineering, MBA, Medicine, CS, Law. Real university names, locations, IELTS scores, post‑study work visas and average graduate salaries. All data verified 4x against official sources.">
-<meta name="keywords" content="study abroad, verified tuition fees, top universities, real university costs, MBA abroad cost, medicine overseas fees, CS tuition, engineering abroad, IELTS requirements, post-study salary, international student">
-<meta property="og:title" content="Study Abroad Finder — Verified Costs & Real University Data">
-<meta property="og:description" content="105+ countries with authentic tuition fees and top universities. Data verified 4x — accurate, reliable, free.">
-<meta property="og:type" content="website">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Study Abroad Finder","url":"https://studenttoolkit.online/tools/study-abroad-finder.html","description":"Comprehensive study abroad comparison tool with 105+ countries, verified university data, tuition fees, post‑study salaries, and visa rules.","applicationCategory":"EducationalApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"author":{"@type":"Organization","name":"Student Toolkit"},"isAccessibleForFree":true}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate are the tuition fees shown in this tool?","acceptedAnswer":{"@type":"Answer","text":"All tuition fees for top universities (MIT, Oxford, etc.) are verified 4x against official university websites and government education portals."}},{"@type":"Question","name":"Which country is cheapest for studying abroad?","acceptedAnswer":{"@type":"Answer","text":"Germany offers tuition‑free education at public universities. Norway, Poland, and Malaysia are also very affordable."}},{"@type":"Question","name":"Can I work while studying abroad?","acceptedAnswer":{"@type":"Answer","text":"Most countries allow part‑time work (typically 20 hours/week). Our tool shows exact rules for each country."}}]}</script>
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-J60HJ54DY0"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-J60HJ54DY0');</script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
-<style>
-:root {
-  --bg: #f8f9fa; --card: #ffffff; --card2: #f1f3f5; --border: #dee2e6; --text: #212529;
-  --text2: #495057; --text3: #868e96; --accent: #e85d04; --green: #099268; --blue: #1c7ed6;
-  --gold: #f59f00; --red: #e03131; --radius: 16px; --shadow: 0 1px 4px rgba(0,0,0,0.04);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.06); --font: 'Inter', sans-serif; --font-display: 'Outfit', sans-serif;
-}
-.dark-mode {
-  --bg: #0f1117; --card: #1a1d26; --card2: #232733; --border: rgba(255,255,255,0.07);
-  --text: #f1f3f5; --text2: #adb5bd; --text3: #6c757d;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;transition:.3s}
-.container{max-width:1320px;margin:0 auto;padding:0 24px}
-.nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:14px 0;display:flex;align-items:center;justify-content:space-between}
-.dark-mode .nav{background:rgba(15,17,23,0.95)}
-.nav-brand{font-family:var(--font-display);font-weight:800;font-size:20px;text-decoration:none;color:var(--text);display:flex;align-items:center;gap:8px}
-.nav-brand span{color:var(--accent)}
-.theme-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:var(--card);font-size:18px;cursor:pointer;transition:.2s}
-.theme-btn:hover{background:var(--card2)}
-.hero{padding:48px 0 24px;text-align:center}
-.hero h1{font-family:var(--font-display);font-size:clamp(32px,6vw,48px);font-weight:800;line-height:1.12;margin-bottom:12px}
-.hero h1 span{color:var(--accent)}
-.hero p{font-size:17px;color:var(--text2);max-width:750px;margin:0 auto 24px}
-.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;align-items:center;justify-content:center}
-.filter-input,.filter-select{padding:12px 16px;border:1px solid var(--border);border-radius:var(--radius);background:var(--card);font-size:14px;color:var(--text);font-family:var(--font);outline:none;min-width:200px;transition:.2s}
-.filter-input:focus,.filter-select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(232,93,4,0.1)}
-.budget-slider{display:flex;align-items:center;gap:10px;padding:0 8px}
-.budget-slider input[type=range]{width:160px}
-.country-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-bottom:48px}
-.country-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);transition:.2s;cursor:pointer}
-.country-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--accent)}
-.card-header{display:flex;align-items:center;gap:14px;margin-bottom:16px}
-.flag-svg{width:40px;height:28px;border-radius:4px;object-fit:cover;box-shadow:0 1px 3px rgba(0,0,0,0.1);flex-shrink:0}
-.country-name{font-family:var(--font-display);font-size:18px;font-weight:700}
-.region{font-size:12px;color:var(--text3);text-transform:uppercase;letter-spacing:.6px}
-.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px}
-.metric-label{color:var(--text2)}.metric-value{font-weight:600;color:var(--text)}
-.rating-bar{display:flex;align-items:center;gap:6px;margin-top:8px;font-size:13px;color:var(--gold)}
-.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.6);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
-.modal-overlay.show{display:flex}
-.modal-content{background:var(--card);border-radius:var(--radius);max-width:860px;width:100%;max-height:85vh;overflow-y:auto;padding:32px;position:relative}
-.modal-close{position:absolute;top:12px;right:16px;font-size:24px;cursor:pointer;background:none;border:none;color:var(--text2)}
-.tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
-.tab{padding:10px 20px;border-radius:24px;font-size:13px;font-weight:700;cursor:pointer;border:1px solid var(--border);background:var(--card);color:var(--text2);transition:.2s}
-.tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-.tab-content{display:none}.tab-content.active{display:block}
-.university-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0}
-.university-table th{background:var(--card2);padding:10px 14px;text-align:left;font-weight:700;border-bottom:2px solid var(--border)}
-.university-table td{padding:10px 14px;border-bottom:1px solid var(--border)}
-.compare-bar{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--border);padding:14px 24px;display:none;align-items:center;gap:12px;z-index:100}
-.compare-bar.show{display:flex}
-.compare-pill{background:rgba(232,93,4,0.1);color:var(--accent);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px}
-.btn{background:var(--accent);color:#fff;padding:12px 24px;border:none;border-radius:24px;font-weight:700;cursor:pointer;font-family:var(--font);transition:.2s}
-.btn:hover{opacity:0.9}
-.seo-section{padding:64px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-.seo-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:.2s}
-.seo-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
-.seo-card h3{font-family:var(--font-display);font-size:18px;margin-bottom:12px}
-.seo-card p{font-size:14px;color:var(--text2);line-height:1.7}
-.footer{background:var(--card2);border-top:1px solid var(--border);padding:48px 0 24px;margin-top:48px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;max-width:1200px;margin:0 auto;padding:0 24px}
-.footer-col h4{font-family:var(--font-display);font-size:16px;margin-bottom:16px;color:var(--text)}
-.footer-col a,.footer-col p{font-size:14px;color:var(--text2);text-decoration:none;display:block;margin-bottom:8px;transition:.2s}
-.footer-col a:hover{color:var(--accent)}
-.footer-bottom{text-align:center;padding:16px 24px 0;font-size:13px;color:var(--text3);border-top:1px solid var(--border);margin-top:32px}
-</style>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-J60HJ54DY0');</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Study Abroad Finder 2027: Compare Countries &amp; Costs in ₹</title>
+<meta name="description" content="Free tool for Indian students: match 28 countries to your budget, see total cost in ₹, visa rules, post-study work, PR, IELTS waivers, scholarships &amp; loan EMI."/>
+<meta name="keywords" content="study abroad finder, study abroad for indian students, cheapest country to study abroad for indian students, study abroad cost calculator in rupees, best country to study abroad, study abroad without ielts, post study work visa by country, education loan emi calculator study abroad, compare countries for masters abroad"/>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"/>
+<link rel="canonical" href="https://studenttoolkit.online/tools/study-abroad-finder.html"/>
+<link rel="alternate" hreflang="en-IN" href="https://studenttoolkit.online/tools/study-abroad-finder.html"/>
+<link rel="alternate" hreflang="x-default" href="https://studenttoolkit.online/tools/study-abroad-finder.html"/>
+<meta property="og:title" content="Study Abroad Finder 2027: Compare Countries &amp; Costs in ₹"/>
+<meta property="og:description" content="Free tool for Indian students: match 28 countries to your budget, see total cost in ₹, visa rules, post-study work, PR, IELTS waivers, scholarships &amp; loan EMI."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://studenttoolkit.online/tools/study-abroad-finder.html"/>
+<meta property="og:site_name" content="Student Toolkit"/>
+<meta property="og:locale" content="en_IN"/>
+<meta property="og:image" content="https://studenttoolkit.online/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@StudentToolkitIN"/>
+<meta name="twitter:title" content="Study Abroad Finder 2027: Compare Countries &amp; Costs in ₹"/>
+<meta name="twitter:description" content="Free tool for Indian students: match 28 countries to your budget, see total cost in ₹, visa rules, post-study work, PR, IELTS waivers, scholarships &amp; loan EMI."/>
+<meta name="twitter:image" content="https://studenttoolkit.online/og-image.png"/>
+<meta name="theme-color" content="#09090b"/>
+<link rel="icon" href="/logo-icon.png"/>
+<link rel="manifest" href="/manifest.json"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Study Abroad Finder for Indian Students","url":"https://studenttoolkit.online/tools/study-abroad-finder.html","description":"Free tool for Indian students: match 28 countries to your budget, see total cost in ₹, visa rules, post-study work, PR, IELTS waivers, scholarships & loan EMI.","applicationCategory":"EducationalApplication","operatingSystem":"Any (web browser)","inLanguage":"en-IN","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"dateModified":"2026-11-06","publisher":{"@type":"Organization","name":"Student Toolkit","url":"https://studenttoolkit.online/","logo":"https://studenttoolkit.online/logo-icon.png"},"featureList":["Country matcher by budget, course and priorities","Total study abroad cost calculator in INR","Education loan EMI calculator with moratorium","Side-by-side country comparison","Application timeline planner","Scholarship finder","Visa document checklist","IELTS / TOEFL / PTE / Duolingo score converter"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which is the cheapest country to study abroad for Indian students?","acceptedAnswer":{"@type":"Answer","text":"Counting tuition, living costs and insurance, the cheapest options for a master’s are Poland (from about ₹8.9 lakh a year), Italy (from about ₹9.2 lakh a year), Japan (from about ₹9.5 lakh a year), Malaysia (from about ₹9.7 lakh a year). Germany’s public universities charge little or no tuition, but you must show €11,904 in a blocked account for living costs."}},{"@type":"Question","name":"How much does it cost to study abroad from India in total?","acceptedAnswer":{"@type":"Answer","text":"A 1–2 year master’s typically costs ₹8–25 lakh in low-tuition Europe (Germany, Italy, France, Poland, Austria), ₹25–50 lakh in the UK, Ireland, Canada or Australia, and ₹40–90 lakh+ in the USA, including living costs. Use the cost calculator above to get a figure for your exact course, city and scholarship."}},{"@type":"Question","name":"Which countries give the longest post-study work visa?","acceptedAnswer":{"@type":"Answer","text":"United States (3 years), Canada (3 years), New Zealand (3 years), Denmark (3 years), Australia (2 years), Ireland (2 years). From 1 January 2027 the UK Graduate Route drops from 2 years to 18 months for new applications."}},{"@type":"Question","name":"Can I study abroad without IELTS?","acceptedAnswer":{"@type":"Answer","text":"Yes, in many cases. Universities in UK, Germany, Ireland, France, Italy, Spain, Poland, Singapore and others can waive IELTS if your Class 12 English marks are high or you studied in English (MOI letter). Others accept Duolingo, PTE or TOEFL instead. Visa rules can still require a test (Australia, for example), so check each university and visa page."}},{"@type":"Question","name":"Which country is best for PR after studying?","acceptedAnswer":{"@type":"Answer","text":"Canada and Germany currently offer the clearest study-to-permanent-residence routes for Indian students, followed by Australia, New Zealand and Ireland. Rules tightened in 2024–2026 everywhere, so PR is never guaranteed."}},{"@type":"Question","name":"Can I work part-time while studying abroad?","acceptedAnswer":{"@type":"Answer","text":"Most countries allow about 20 hours a week during term: UK 20, USA 20 (on-campus), Canada 24, Australia 48 per fortnight, New Zealand 25, Germany 140 full days a year, France 964 hours a year, Spain 30 hours a week. Part-time income helps with living costs but rarely covers tuition."}},{"@type":"Question","name":"How much money do I need to show for a student visa?","acceptedAnswer":{"@type":"Answer","text":"Examples for 2027 intakes: Germany €11,904 per year in a blocked account; Canada C$23,448 plus tuition; Australia A$29,710 plus tuition and travel; UK £1,483/month in London or £1,136/month elsewhere (up to 9 months) plus fees; Ireland €10,000 plus fees. Education loan sanction letters are accepted as proof in most countries."}},{"@type":"Question","name":"Is MBBS abroad valid in India?","acceptedAnswer":{"@type":"Answer","text":"Only if the course meets the National Medical Commission’s Foreign Medical Graduate Licentiate rules: at least 54 months of study in English, a 12-month internship at the same institution, and eligibility for a medical licence in that country. You must have qualified NEET-UG, and you must pass the screening/licensing exam (FMGE/NExT) back in India."}},{"@type":"Question","name":"Is this data accurate?","acceptedAnswer":{"@type":"Answer","text":"Every country is compiled from official visa and government pages (linked on each guide) and reviewed on 6 November 2026. Where official sources disagree or rules are changing, we say so. Rupee figures use approximate exchange rates that you can edit in the calculator. Always confirm on the official page before paying any fee."}},{"@type":"Question","name":"Do I need a consultant to study abroad?","acceptedAnswer":{"@type":"Answer","text":"No. Every step — university applications, scholarships, visa, blocked account, loans — can be done yourself using the official links on each country guide. If you do use an agent, check what commission they earn from universities and never pay for “guaranteed” admission or visas."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://studenttoolkit.online/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://studenttoolkit.online/tools/"},{"@type":"ListItem","position":3,"name":"Study Abroad Finder","item":"https://studenttoolkit.online/tools/study-abroad-finder.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Study abroad country guides for Indian students 2027","itemListElement":[{"@type":"ListItem","position":1,"name":"Study in USA for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-usa.html"},{"@type":"ListItem","position":2,"name":"Study in UK for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-uk.html"},{"@type":"ListItem","position":3,"name":"Study in Canada for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-canada.html"},{"@type":"ListItem","position":4,"name":"Study in Australia for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-australia.html"},{"@type":"ListItem","position":5,"name":"Study in Germany for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-germany.html"},{"@type":"ListItem","position":6,"name":"Study in Ireland for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-ireland.html"},{"@type":"ListItem","position":7,"name":"Study in New Zealand for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-new-zealand.html"},{"@type":"ListItem","position":8,"name":"Study in France for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-france.html"},{"@type":"ListItem","position":9,"name":"Study in Netherlands for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-netherlands.html"},{"@type":"ListItem","position":10,"name":"Study in Italy for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-italy.html"},{"@type":"ListItem","position":11,"name":"Study in Spain for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-spain.html"},{"@type":"ListItem","position":12,"name":"Study in Sweden for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-sweden.html"},{"@type":"ListItem","position":13,"name":"Study in Finland for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-finland.html"},{"@type":"ListItem","position":14,"name":"Study in Denmark for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-denmark.html"},{"@type":"ListItem","position":15,"name":"Study in Norway for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-norway.html"},{"@type":"ListItem","position":16,"name":"Study in Poland for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-poland.html"},{"@type":"ListItem","position":17,"name":"Study in Austria for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-austria.html"},{"@type":"ListItem","position":18,"name":"Study in Switzerland for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-switzerland.html"},{"@type":"ListItem","position":19,"name":"Study in Singapore for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-singapore.html"},{"@type":"ListItem","position":20,"name":"Study in Japan for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-japan.html"},{"@type":"ListItem","position":21,"name":"Study in South Korea for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-south-korea.html"},{"@type":"ListItem","position":22,"name":"Study in UAE (Dubai) for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-uae.html"},{"@type":"ListItem","position":23,"name":"Study in Malaysia for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-malaysia.html"},{"@type":"ListItem","position":24,"name":"Study in Hong Kong for Indian Students 2027: Cost & Visa","url":"https://studenttoolkit.online/study-abroad/study-in-hong-kong.html"},{"@type":"ListItem","position":25,"name":"MBBS in Russia for Indian Students 2027: Fees & NMC","url":"https://studenttoolkit.online/study-abroad/mbbs-in-russia.html"},{"@type":"ListItem","position":26,"name":"MBBS in Georgia for Indian Students 2027: Fees & NMC","url":"https://studenttoolkit.online/study-abroad/mbbs-in-georgia.html"},{"@type":"ListItem","position":27,"name":"MBBS in Kazakhstan for Indian Students 2027: Fees & NMC","url":"https://studenttoolkit.online/study-abroad/mbbs-in-kazakhstan.html"},{"@type":"ListItem","position":28,"name":"MBBS in Uzbekistan for Indian Students 2027: Fees & NMC","url":"https://studenttoolkit.online/study-abroad/mbbs-in-uzbekistan.html"}]}</script>
+<!-- Meta Pixel -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1248976636881567');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1248976636881567&ev=PageView&noscript=1" alt=""/></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/study-abroad/sa.css?v=20261106"/>
 </head>
 <body>
-<nav class="nav container"><a href="/" class="nav-brand">🌍 Student<span>Toolkit</span></a><button class="theme-btn" onclick="toggleTheme()">🌓</button></nav>
-<section class="hero container"><h1>Your <span>Study Abroad</span> Roadmap Starts Here</h1><p>Real university names. Verified tuition fees. Real graduate salaries. Compare 105+ countries across Engineering, Business, Medicine, CS, and more — data verified 4x against official sources.</p></section>
-<div class="container">
-  <div class="filters">
-    <input type="text" class="filter-input" id="searchInput" placeholder="🔍 Country name..." oninput="applyFilters()">
-    <select class="filter-select" id="regionFilter" onchange="applyFilters()">
-      <option value="">🌍 All Regions</option>
-      <option value="Europe">Europe</option>
-      <option value="Asia">Asia</option>
-      <option value="North America">North America</option>
-      <option value="Oceania">Oceania</option>
-      <option value="South America">South America</option>
-      <option value="Africa">Africa</option>
-    </select>
-    <select class="filter-select" id="courseFilter" onchange="applyFilters()">
-      <option value="">📚 All Courses</option>
-      <option value="engineering">Engineering</option>
-      <option value="business">Business/MBA</option>
-      <option value="medicine">Medicine</option>
-      <option value="cs">Computer Science</option>
-      <option value="arts">Arts/Humanities</option>
-      <option value="law">Law</option>
-    </select>
-    <div class="budget-slider"><span style="font-size:14px;">Max Annual Cost:</span><input type="range" id="budgetSlider" min="5000" max="80000" value="80000" step="1000" oninput="applyFilters()"><span id="budgetDisplay" style="font-weight:600;">$80,000+</span></div>
+<nav class="top" aria-label="Main">
+  <a href="/" class="nav-logo">Student<span>Toolkit</span></a>
+  <div class="nav-links">
+    <a href="/tools/">Tools</a>
+    <a href="/study-abroad/">Country Guides</a>
+    <a href="/colleges/">Colleges</a>
+    <a href="/blog/">Blog</a>
+    <a href="/tools/study-abroad-finder.html" class="nav-cta">Study Abroad Finder</a>
   </div>
-  <div class="country-grid" id="countryGrid"></div>
+</nav>
+<main>
+<div class="wrap">
+  <div class="crumbs"><a href="/">Home</a> › <a href="/tools/">Tools</a> › Study Abroad Finder</div>
+  <header class="hero">
+    <div class="badge">🌍 Free · No sign-up · Built for Indian students · Reviewed 6 November 2026</div>
+    <h1>Study Abroad Finder 2027: <span>Which Country Fits You?</span></h1>
+    <p class="lead">Match 28 destinations to your budget, course and goals. See the real cost in rupees, visa and proof-of-funds rules, part-time and post-study work rights, PR routes, IELTS waivers and scholarships — then plan your loan and deadlines.</p>
+    <div class="stats"><span class="stat"><b>24</b> study destinations</span><span class="stat"><b>4</b> MBBS destinations</span><span class="stat"><b>₹</b> costs in rupees</span><span class="stat"><b>0</b> sign-ups or API calls</span></div>
+  </header>
+
+  <div class="answer"><p><strong>Quick answer:</strong> For the lowest total cost, look at <a href="/study-abroad/study-in-poland.html">Poland</a>, <a href="/study-abroad/study-in-italy.html">Italy</a>, <a href="/study-abroad/study-in-japan.html">Japan</a>, <a href="/study-abroad/study-in-malaysia.html">Malaysia</a> (public universities with low tuition). For the longest work rights after graduation, look at <a href="/study-abroad/study-in-usa.html">USA</a>, <a href="/study-abroad/study-in-canada.html">Canada</a>, <a href="/study-abroad/study-in-new-zealand.html">New Zealand</a>, <a href="/study-abroad/study-in-denmark.html">Denmark</a>. For a permanent-residence route, <a href="/study-abroad/study-in-canada.html">Canada</a> and <a href="/study-abroad/study-in-germany.html">Germany</a> are the clearest today. Use the finder below to rank countries for <em>your</em> budget and course.</p></div>
 </div>
-<div class="compare-bar" id="compareBar"><span style="font-weight:700;">Compare countries:</span><div id="compareList" style="display:flex;gap:8px;flex-wrap:wrap;"></div><button class="btn" onclick="compareNow()" style="margin-left:auto;">Compare Selected</button></div>
-<div class="modal-overlay" id="detailModal"><div class="modal-content" id="modalContent"></div></div>
-<section class="container seo-section"><div class="seo-card"><h3>🌏 Why Study Abroad?</h3><p>International students gain global perspective, build professional networks, and access world‑class education.</p></div><div class="seo-card"><h3>📊 Tuition Fees Compared</h3><p>Tuition ranges from €0 in Germany to $50,000+ in the US — our tool shows real figures.</p></div><div class="seo-card"><h3>💼 Graduate Salaries</h3><p>CS grads in the US earn $95k, engineers in Germany €45k. See country data inside.</p></div><div class="seo-card"><h3>🛂 Visa & Work Rights</h3><p>Part‑time rules, post‑study visas, and insurance for every country — all in one place.</p></div></section>
-<footer class="footer"><div class="footer-grid"><div class="footer-col"><h4>🌍 Student Toolkit</h4><p>Free tools for students.</p></div><div class="footer-col"><h4>Tools</h4><a href="/tools/attendance.html">Attendance Calculator</a><a href="/tools/salary-calculator.html">Salary Calculator</a><a href="/tools/study-abroad-finder.html">Study Abroad Finder</a></div><div class="footer-col"><h4>Resources</h4><a href="/blog/">Student Blog</a><a href="/colleges/">College Directory</a><a href="/about.html">About Us</a></div><div class="footer-col"><h4>Connect</h4><a href="mailto:hello@studenttoolkit.online">Email Us</a></div></div><div class="footer-bottom">© 2026 Student Toolkit · Helping students worldwide · 🇮🇳 Made in India</div><div style="font-size:12px;opacity:.75;text-align:center;padding:14px 16px;clear:both"><a href="/tools/" style="color:inherit">All Tools</a> · <a href="/colleges/" style="color:inherit">Colleges</a> · <a href="/blog/" style="color:inherit">Blog</a> · <a href="/about.html" style="color:inherit">About</a> · <a href="/contact.html" style="color:inherit">Contact</a> · <a href="/editorial-policy.html" style="color:inherit">Editorial Policy</a> · <a href="/privacy.html" style="color:inherit">Privacy</a></div></footer>
 
-<script>
-const flagCDN = (code) => `https://flagcdn.com/w80/${code.toLowerCase()}.png`;
+<section id="tool" aria-label="Study abroad tools"><div class="wrap">
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" data-tab="match" aria-selected="true">🎯 Find my country</button>
+    <button class="tab" role="tab" data-tab="calc" aria-selected="false">₹ Cost &amp; loan</button>
+    <button class="tab" role="tab" data-tab="compare" aria-selected="false">⚖️ Compare</button>
+    <button class="tab" role="tab" data-tab="plan" aria-selected="false">🗓 Timeline</button>
+    <button class="tab" role="tab" data-tab="schol" aria-selected="false">🎓 Scholarships</button>
+    <button class="tab" role="tab" data-tab="docs" aria-selected="false">✅ Documents</button>
+  </div>
 
-// ==================== 105 REAL COUNTRIES (FULL DATABASE) ====================
-const countries = [
-  // ---------- NORTH AMERICA (3) ----------
-  { id:'us',name:'United States',region:'North America',flagCode:'us',currency:'USD',rating:4.5,
-    courses:{engineering:{tuitionMin:25000,tuitionMax:50000,universities:[{name:'MIT',location:'Cambridge, MA',fee:57590},{name:'Stanford University',location:'Stanford, CA',fee:56169},{name:'UC Berkeley',location:'Berkeley, CA',fee:48465},{name:'Caltech',location:'Pasadena, CA',fee:56364},{name:'Georgia Tech',location:'Atlanta, GA',fee:33794}],avgSalary:85000},business:{tuitionMin:40000,tuitionMax:75000,universities:[{name:'Harvard Business School',location:'Boston, MA',fee:73440},{name:'Stanford GSB',location:'Stanford, CA',fee:76020},{name:'Wharton (UPenn)',location:'Philadelphia, PA',fee:78360},{name:'MIT Sloan',location:'Cambridge, MA',fee:75612},{name:'Columbia Business School',location:'New York, NY',fee:74400}],avgSalary:95000},medicine:{tuitionMin:35000,tuitionMax:60000,universities:[{name:'Harvard Medical School',location:'Boston, MA',fee:63400},{name:'Johns Hopkins Medicine',location:'Baltimore, MD',fee:58000},{name:'Stanford Medicine',location:'Stanford, CA',fee:61740},{name:'Perelman (UPenn)',location:'Philadelphia, PA',fee:60360},{name:'UCLA Medical School',location:'Los Angeles, CA',fee:55320}],avgSalary:120000},cs:{tuitionMin:25000,tuitionMax:50000,universities:[{name:'MIT',location:'Cambridge, MA',fee:57590},{name:'Stanford',location:'Stanford, CA',fee:56169},{name:'Carnegie Mellon',location:'Pittsburgh, PA',fee:55465},{name:'UC Berkeley',location:'Berkeley, CA',fee:48465},{name:'UIUC',location:'Champaign, IL',fee:36100}],avgSalary:95000},arts:{tuitionMin:20000,tuitionMax:45000,universities:[{name:'Yale',location:'New Haven, CT',fee:52250},{name:'Columbia',location:'New York, NY',fee:55700},{name:'NYU',location:'New York, NY',fee:50464},{name:'UCLA',location:'Los Angeles, CA',fee:44652},{name:'UChicago',location:'Chicago, IL',fee:56946}],avgSalary:45000},law:{tuitionMin:30000,tuitionMax:60000,universities:[{name:'Yale Law School',location:'New Haven, CT',fee:62600},{name:'Harvard Law School',location:'Cambridge, MA',fee:65875},{name:'Stanford Law',location:'Stanford, CA',fee:63360},{name:'Columbia Law',location:'New York, NY',fee:64288},{name:'UChicago Law',location:'Chicago, IL',fee:61400}],avgSalary:90000}},
-    livingCost:{monthly:1200,breakdown:{accommodation:600,food:300,transport:100,other:200}},ielts:6.5,toefl:80,pte:58,visaFee:'$160',partTime:'20h/week, avg $12/h',postStudyWork:'OPT 1-3 years (STEM)',healthInsurance:'$1,500/year',scholarships:['Fulbright','Hubert Humphrey']
-  },
-  { id:'ca',name:'Canada',region:'North America',flagCode:'ca',currency:'CAD',rating:4.6,
-    courses:{engineering:{tuitionMin:20000,tuitionMax:35000,universities:[{name:'University of Toronto',location:'Toronto, ON',fee:38340},{name:'UBC',location:'Vancouver, BC',fee:35418},{name:'McGill University',location:'Montreal, QC',fee:34450},{name:'University of Waterloo',location:'Waterloo, ON',fee:33600},{name:'University of Alberta',location:'Edmonton, AB',fee:28400}],avgSalary:70000},business:{tuitionMin:25000,tuitionMax:45000,universities:[{name:'Rotman (UofT)',location:'Toronto, ON',fee:48300},{name:'Ivey (Western)',location:'London, ON',fee:46500},{name:'Schulich (York)',location:'Toronto, ON',fee:42500},{name:'Desautels (McGill)',location:'Montreal, QC',fee:44000},{name:'Sauder (UBC)',location:'Vancouver, BC',fee:41200}],avgSalary:75000},medicine:{tuitionMin:30000,tuitionMax:50000,universities:[{name:'UofT Medicine',location:'Toronto, ON',fee:52500},{name:'McGill Medicine',location:'Montreal, QC',fee:49000},{name:'UBC Medicine',location:'Vancouver, BC',fee:51000},{name:'McMaster Medicine',location:'Hamilton, ON',fee:48500},{name:'UdeM Medicine',location:'Montreal, QC',fee:45600}],avgSalary:100000},cs:{tuitionMin:20000,tuitionMax:35000,universities:[{name:'UofT',location:'Toronto, ON',fee:38340},{name:'Waterloo',location:'Waterloo, ON',fee:36200},{name:'UBC',location:'Vancouver, BC',fee:35418},{name:'McGill',location:'Montreal, QC',fee:34450},{name:'SFU',location:'Burnaby, BC',fee:28700}],avgSalary:80000},arts:{tuitionMin:15000,tuitionMax:25000,universities:[{name:'UofT',location:'Toronto, ON',fee:27240},{name:'McGill',location:'Montreal, QC',fee:26100},{name:'UBC',location:'Vancouver, BC',fee:25300},{name:'UdeM',location:'Montreal, QC',fee:22400},{name:'York',location:'Toronto, ON',fee:23800}],avgSalary:35000},law:{tuitionMin:25000,tuitionMax:40000,universities:[{name:'UofT Law',location:'Toronto, ON',fee:42400},{name:'Osgoode (York)',location:'Toronto, ON',fee:40300},{name:'McGill Law',location:'Montreal, QC',fee:39100},{name:'Allard (UBC)',location:'Vancouver, BC',fee:38500},{name:'UVic Law',location:'Victoria, BC',fee:35600}],avgSalary:70000}},
-    livingCost:{monthly:1000,breakdown:{accommodation:500,food:250,transport:80,other:170}},ielts:6.5,toefl:88,pte:60,visaFee:'$150',partTime:'20h/week, avg C$15/h',postStudyWork:'PGWP up to 3 years',healthInsurance:'C$600/year',scholarships:['Vanier','Banting']
-  },
-  { id:'mx',name:'Mexico',region:'North America',flagCode:'mx',currency:'MXN',rating:3.9,
-    courses:{engineering:{tuitionMin:2000,tuitionMax:8000,universities:[{name:'UNAM',location:'Mexico City',fee:4000},{name:'Tec de Monterrey',location:'Monterrey',fee:7500}],avgSalary:18000},business:{tuitionMin:3000,tuitionMax:10000,universities:[{name:'Tec de Monterrey',location:'Monterrey',fee:9000},{name:'ITAM',location:'Mexico City',fee:8500}],avgSalary:22000},medicine:{tuitionMin:2500,tuitionMax:9000,universities:[{name:'UNAM Medicine',location:'Mexico City',fee:5000}],avgSalary:25000},cs:{tuitionMin:2000,tuitionMax:8000,universities:[{name:'Tec de Monterrey',location:'Monterrey',fee:7500}],avgSalary:20000}},
-    livingCost:{monthly:500,breakdown:{accommodation:200,food:150,transport:50,other:100}},ielts:5.5,toefl:70,pte:50,visaFee:'$36',partTime:'20h/week',postStudyWork:'1 year',healthInsurance:'$500/year',scholarships:['CONACYT']
-  },
-  // ---------- EUROPE (50 countries) ----------
-  { id:'gb',name:'United Kingdom',region:'Europe',flagCode:'gb',currency:'GBP',rating:4.4,
-    courses:{engineering:{tuitionMin:18000,tuitionMax:30000,universities:[{name:'Imperial College London',location:'London',fee:31250},{name:'University of Cambridge',location:'Cambridge',fee:32000},{name:'University of Oxford',location:'Oxford',fee:33050},{name:'University of Manchester',location:'Manchester',fee:24000},{name:'University of Bristol',location:'Bristol',fee:25200}],avgSalary:45000},business:{tuitionMin:20000,tuitionMax:40000,universities:[{name:'London Business School',location:'London',fee:42000},{name:'Oxford Saïd',location:'Oxford',fee:45000},{name:'Cambridge Judge',location:'Cambridge',fee:43000},{name:'Warwick Business School',location:'Coventry',fee:35000},{name:'Imperial College Business School',location:'London',fee:38000}],avgSalary:55000},medicine:{tuitionMin:25000,tuitionMax:45000,universities:[{name:'Oxford Medical School',location:'Oxford',fee:47000},{name:'Cambridge School of Clinical Medicine',location:'Cambridge',fee:46000},{name:'UCL Medical School',location:'London',fee:44000},{name:'Imperial College School of Medicine',location:'London',fee:45000},{name:"King's College London School of Medicine",location:'London',fee:42000}],avgSalary:60000},cs:{tuitionMin:18000,tuitionMax:30000,universities:[{name:'Imperial College London',location:'London',fee:31250},{name:'University of Cambridge',location:'Cambridge',fee:32000},{name:'University of Oxford',location:'Oxford',fee:33050},{name:'University of Edinburgh',location:'Edinburgh',fee:27200},{name:'University College London',location:'London',fee:29400}],avgSalary:50000},arts:{tuitionMin:15000,tuitionMax:25000,universities:[{name:'University of Oxford',location:'Oxford',fee:28000},{name:'University of Cambridge',location:'Cambridge',fee:27000},{name:'UCL',location:'London',fee:24000},{name:'University of Edinburgh',location:'Edinburgh',fee:22000},{name:"King's College London",location:'London',fee:23000}],avgSalary:30000},law:{tuitionMin:20000,tuitionMax:35000,universities:[{name:'University of Oxford Faculty of Law',location:'Oxford',fee:36000},{name:'University of Cambridge Faculty of Law',location:'Cambridge',fee:35000},{name:'London School of Economics',location:'London',fee:34000},{name:"King's College London Dickson Poon School of Law",location:'London',fee:32000},{name:'University of Edinburgh School of Law',location:'Edinburgh',fee:29000}],avgSalary:55000}},
-    livingCost:{monthly:1100,breakdown:{accommodation:550,food:250,transport:80,other:220}},ielts:6.5,toefl:90,pte:62,visaFee:'£363',partTime:'20h/week, avg £10/h',postStudyWork:'Graduate Route 2 years',healthInsurance:'£470/year (IHS)',scholarships:['Chevening','Commonwealth']
-  },
-  { id:'de',name:'Germany',region:'Europe',flagCode:'de',currency:'EUR',rating:4.3,
-    courses:{engineering:{tuitionMin:0,tuitionMax:3000,universities:[{name:'Technical University of Munich',location:'Munich',fee:0},{name:'RWTH Aachen University',location:'Aachen',fee:0},{name:'Karlsruhe Institute of Technology',location:'Karlsruhe',fee:1500},{name:'TU Berlin',location:'Berlin',fee:0},{name:'University of Stuttgart',location:'Stuttgart',fee:1500}],avgSalary:48000},business:{tuitionMin:0,tuitionMax:5000,universities:[{name:'Mannheim Business School',location:'Mannheim',fee:3800},{name:'Frankfurt School of Finance & Management',location:'Frankfurt',fee:4500},{name:'University of Cologne',location:'Cologne',fee:0},{name:'ESMT Berlin',location:'Berlin',fee:5000},{name:'WHU – Otto Beisheim School of Management',location:'Vallendar',fee:4800}],avgSalary:55000},medicine:{tuitionMin:0,tuitionMax:2000,universities:[{name:'Heidelberg University',location:'Heidelberg',fee:1500},{name:'Charité – Universitätsmedizin Berlin',location:'Berlin',fee:0},{name:'LMU Munich',location:'Munich',fee:0},{name:'University of Tübingen',location:'Tübingen',fee:1500},{name:'University of Freiburg',location:'Freiburg',fee:1500}],avgSalary:60000},cs:{tuitionMin:0,tuitionMax:3000,universities:[{name:'TUM',location:'Munich',fee:0},{name:'RWTH Aachen',location:'Aachen',fee:0},{name:'KIT',location:'Karlsruhe',fee:1500},{name:'TU Berlin',location:'Berlin',fee:0},{name:'University of Bonn',location:'Bonn',fee:0}],avgSalary:52000}},
-    livingCost:{monthly:850,breakdown:{accommodation:350,food:200,transport:80,other:220}},ielts:6.0,toefl:80,pte:56,visaFee:'€75',partTime:'20h/week, avg €10/h',postStudyWork:'18 months job search',healthInsurance:'€110/month',scholarships:['DAAD']
-  },
-  { id:'fr',name:'France',region:'Europe',flagCode:'fr',currency:'EUR',rating:4.2,
-    courses:{engineering:{tuitionMin:2000,tuitionMax:8000,universities:[{name:'École Polytechnique',location:'Palaiseau',fee:7500},{name:'CentraleSupélec',location:'Gif-sur-Yvette',fee:6000},{name:'Sorbonne University',location:'Paris',fee:2500}],avgSalary:42000},business:{tuitionMin:5000,tuitionMax:15000,universities:[{name:'HEC Paris',location:'Jouy-en-Josas',fee:15000},{name:'INSEAD',location:'Fontainebleau',fee:14000},{name:'ESSEC Business School',location:'Cergy',fee:13000}],avgSalary:55000},medicine:{tuitionMin:1000,tuitionMax:5000,universities:[{name:'Université Paris Cité',location:'Paris',fee:3000}],avgSalary:50000},cs:{tuitionMin:2000,tuitionMax:8000,universities:[{name:'École Polytechnique',location:'Palaiseau',fee:7500},{name:'Sorbonne University',location:'Paris',fee:2500}],avgSalary:45000}},
-    livingCost:{monthly:950,breakdown:{accommodation:400,food:250,transport:60,other:240}},ielts:6.0,toefl:83,pte:58,visaFee:'€99',partTime:'20h/week, avg €10/h',postStudyWork:'1-2 years',healthInsurance:'€40/month',scholarships:['Eiffel']
-  },
-  // ... (remaining 95+ countries follow same structure; for brevity, they are generated programmatically)
-];
-
-// Fill up to 105 countries with real names and ISO codes
-const moreCountries = [
-  {name:'Italy',region:'Europe',flagCode:'it',currency:'EUR'},
-  {name:'Spain',region:'Europe',flagCode:'es',currency:'EUR'},
-  {name:'Netherlands',region:'Europe',flagCode:'nl',currency:'EUR'},
-  {name:'Sweden',region:'Europe',flagCode:'se',currency:'SEK'},
-  {name:'Norway',region:'Europe',flagCode:'no',currency:'NOK'},
-  {name:'Denmark',region:'Europe',flagCode:'dk',currency:'DKK'},
-  {name:'Finland',region:'Europe',flagCode:'fi',currency:'EUR'},
-  {name:'Ireland',region:'Europe',flagCode:'ie',currency:'EUR'},
-  {name:'Portugal',region:'Europe',flagCode:'pt',currency:'EUR'},
-  {name:'Greece',region:'Europe',flagCode:'gr',currency:'EUR'},
-  {name:'Czech Republic',region:'Europe',flagCode:'cz',currency:'CZK'},
-  {name:'Hungary',region:'Europe',flagCode:'hu',currency:'HUF'},
-  {name:'Austria',region:'Europe',flagCode:'at',currency:'EUR'},
-  {name:'Switzerland',region:'Europe',flagCode:'ch',currency:'CHF'},
-  {name:'Belgium',region:'Europe',flagCode:'be',currency:'EUR'},
-  {name:'Poland',region:'Europe',flagCode:'pl',currency:'PLN'},
-  {name:'Romania',region:'Europe',flagCode:'ro',currency:'RON'},
-  {name:'Bulgaria',region:'Europe',flagCode:'bg',currency:'BGN'},
-  {name:'Serbia',region:'Europe',flagCode:'rs',currency:'RSD'},
-  {name:'Croatia',region:'Europe',flagCode:'hr',currency:'EUR'},
-  {name:'Slovakia',region:'Europe',flagCode:'sk',currency:'EUR'},
-  {name:'Slovenia',region:'Europe',flagCode:'si',currency:'EUR'},
-  {name:'Lithuania',region:'Europe',flagCode:'lt',currency:'EUR'},
-  {name:'Latvia',region:'Europe',flagCode:'lv',currency:'EUR'},
-  {name:'Estonia',region:'Europe',flagCode:'ee',currency:'EUR'},
-  {name:'Ukraine',region:'Europe',flagCode:'ua',currency:'UAH'},
-  {name:'Turkey',region:'Asia',flagCode:'tr',currency:'TRY'},
-  {name:'Russia',region:'Europe',flagCode:'ru',currency:'RUB'},
-  {name:'Japan',region:'Asia',flagCode:'jp',currency:'JPY'},
-  {name:'South Korea',region:'Asia',flagCode:'kr',currency:'KRW'},
-  {name:'China',region:'Asia',flagCode:'cn',currency:'CNY'},
-  {name:'India',region:'Asia',flagCode:'in',currency:'INR'},
-  {name:'Indonesia',region:'Asia',flagCode:'id',currency:'IDR'},
-  {name:'Malaysia',region:'Asia',flagCode:'my',currency:'MYR'},
-  {name:'Singapore',region:'Asia',flagCode:'sg',currency:'SGD'},
-  {name:'Thailand',region:'Asia',flagCode:'th',currency:'THB'},
-  {name:'Vietnam',region:'Asia',flagCode:'vn',currency:'VND'},
-  {name:'Philippines',region:'Asia',flagCode:'ph',currency:'PHP'},
-  {name:'Pakistan',region:'Asia',flagCode:'pk',currency:'PKR'},
-  {name:'Bangladesh',region:'Asia',flagCode:'bd',currency:'BDT'},
-  {name:'Sri Lanka',region:'Asia',flagCode:'lk',currency:'LKR'},
-  {name:'Nepal',region:'Asia',flagCode:'np',currency:'NPR'},
-  {name:'Saudi Arabia',region:'Asia',flagCode:'sa',currency:'SAR'},
-  {name:'UAE',region:'Asia',flagCode:'ae',currency:'AED'},
-  {name:'Qatar',region:'Asia',flagCode:'qa',currency:'QAR'},
-  {name:'Kuwait',region:'Asia',flagCode:'kw',currency:'KWD'},
-  {name:'Israel',region:'Asia',flagCode:'il',currency:'ILS'},
-  {name:'Australia',region:'Oceania',flagCode:'au',currency:'AUD'},
-  {name:'New Zealand',region:'Oceania',flagCode:'nz',currency:'NZD'},
-  {name:'Brazil',region:'South America',flagCode:'br',currency:'BRL'},
-  {name:'Argentina',region:'South America',flagCode:'ar',currency:'ARS'},
-  {name:'Chile',region:'South America',flagCode:'cl',currency:'CLP'},
-  {name:'Colombia',region:'South America',flagCode:'co',currency:'COP'},
-  {name:'Peru',region:'South America',flagCode:'pe',currency:'PEN'},
-  {name:'South Africa',region:'Africa',flagCode:'za',currency:'ZAR'},
-  {name:'Egypt',region:'Africa',flagCode:'eg',currency:'EGP'},
-  {name:'Nigeria',region:'Africa',flagCode:'ng',currency:'NGN'},
-  {name:'Kenya',region:'Africa',flagCode:'ke',currency:'KES'},
-  {name:'Morocco',region:'Africa',flagCode:'ma',currency:'MAD'},
-  {name:'Ghana',region:'Africa',flagCode:'gh',currency:'GHS'},
-  {name:'Ethiopia',region:'Africa',flagCode:'et',currency:'ETB'},
-  {name:'Tanzania',region:'Africa',flagCode:'tz',currency:'TZS'},
-  {name:'Uganda',region:'Africa',flagCode:'ug',currency:'UGX'},
-  {name:'Algeria',region:'Africa',flagCode:'dz',currency:'DZD'},
-  {name:'Tunisia',region:'Africa',flagCode:'tn',currency:'TND'},
-  {name:'Angola',region:'Africa',flagCode:'ao',currency:'AOA'},
-  {name:'Zimbabwe',region:'Africa',flagCode:'zw',currency:'ZWL'},
-  {name:'Zambia',region:'Africa',flagCode:'zm',currency:'ZMW'},
-  {name:'Senegal',region:'Africa',flagCode:'sn',currency:'XOF'},
-  {name:'Ivory Coast',region:'Africa',flagCode:'ci',currency:'XOF'},
-  {name:'Cameroon',region:'Africa',flagCode:'cm',currency:'XAF'},
-  {name:'DR Congo',region:'Africa',flagCode:'cd',currency:'CDF'},
-  {name:'Sudan',region:'Africa',flagCode:'sd',currency:'SDG'},
-  {name:'Libya',region:'Africa',flagCode:'ly',currency:'LYD'},
-  {name:'Rwanda',region:'Africa',flagCode:'rw',currency:'RWF'},
-  {name:'Burundi',region:'Africa',flagCode:'bi',currency:'BIF'},
-  {name:'Botswana',region:'Africa',flagCode:'bw',currency:'BWP'},
-  {name:'Namibia',region:'Africa',flagCode:'na',currency:'NAD'},
-  {name:'Mozambique',region:'Africa',flagCode:'mz',currency:'MZN'},
-  {name:'Madagascar',region:'Africa',flagCode:'mg',currency:'MGA'},
-  {name:'Malawi',region:'Africa',flagCode:'mw',currency:'MWK'},
-  {name:'Sierra Leone',region:'Africa',flagCode:'sl',currency:'SLL'},
-  {name:'Liberia',region:'Africa',flagCode:'lr',currency:'LRD'},
-  {name:'Central African Republic',region:'Africa',flagCode:'cf',currency:'XAF'},
-  {name:'Gabon',region:'Africa',flagCode:'ga',currency:'XAF'},
-  {name:'Congo',region:'Africa',flagCode:'cg',currency:'XAF'},
-  {name:'Equatorial Guinea',region:'Africa',flagCode:'gq',currency:'XAF'},
-  {name:'Guinea',region:'Africa',flagCode:'gn',currency:'GNF'},
-  {name:'Mali',region:'Africa',flagCode:'ml',currency:'XOF'},
-  {name:'Niger',region:'Africa',flagCode:'ne',currency:'XOF'},
-  {name:'Chad',region:'Africa',flagCode:'td',currency:'XAF'},
-  {name:'Somalia',region:'Africa',flagCode:'so',currency:'SOS'},
-  {name:'South Sudan',region:'Africa',flagCode:'ss',currency:'SSP'},
-  {name:'Eritrea',region:'Africa',flagCode:'er',currency:'ERN'},
-  {name:'Djibouti',region:'Africa',flagCode:'dj',currency:'DJF'},
-  {name:'Eswatini',region:'Africa',flagCode:'sz',currency:'SZL'},
-  {name:'Lesotho',region:'Africa',flagCode:'ls',currency:'LSL'},
-  {name:'Comoros',region:'Africa',flagCode:'km',currency:'KMF'},
-  {name:'Cape Verde',region:'Africa',flagCode:'cv',currency:'CVE'},
-  {name:'Seychelles',region:'Africa',flagCode:'sc',currency:'SCR'},
-  {name:'Mauritius',region:'Africa',flagCode:'mu',currency:'MUR'}
-];
-
-moreCountries.forEach(c => {
-  let baseTuition = c.region === 'Europe' ? 2000 : (c.region === 'Asia' ? 3000 : 4000);
-  if (c.name === 'Norway') baseTuition = 0;
-  if (c.name === 'Poland') baseTuition = 2000;
-  const engAvgSal = baseTuition * 5 + 20000;
-  countries.push({
-    id: c.flagCode,
-    name: c.name,
-    region: c.region,
-    flagCode: c.flagCode,
-    currency: c.currency,
-    rating: (3.6 + Math.random() * 1.2).toFixed(1),
-    courses: {
-      engineering: { tuitionMin: baseTuition, tuitionMax: baseTuition * 2.5, universities: [{ name: `${c.name} University`, location: `${c.name} Capital`, fee: baseTuition * 1.8 }], avgSalary: engAvgSal },
-      business: { tuitionMin: baseTuition * 1.5, tuitionMax: baseTuition * 3, universities: [{ name: `${c.name} Business School`, location: `${c.name} City`, fee: baseTuition * 2.5 }], avgSalary: engAvgSal * 1.2 }
-    },
-    livingCost: { monthly: 400 + Math.floor(Math.random() * 600), breakdown: { accommodation: 200, food: 150, transport: 50, other: 100 } },
-    ielts: 5.5 + Math.floor(Math.random() * 2), toefl: 60 + Math.floor(Math.random() * 30), pte: 50 + Math.floor(Math.random() * 15),
-    visaFee: '$' + (30 + Math.floor(Math.random() * 150)), partTime: '20h/week', postStudyWork: 'varies',
-    healthInsurance: 'varies', scholarships: []
-  });
-});
-
-// Ensure exactly 105 (remove possible duplicates from moreCountries overlap)
-const unique = [];
-const ids = new Set();
-countries.forEach(c => { if (!ids.has(c.id)) { ids.add(c.id); unique.push(c); } });
-const finalCountries = unique.slice(0, 105);
-
-// ==================== FILTERS & RENDERING ====================
-let filtered = [...finalCountries];
-let compareList = [];
-
-function applyFilters() {
-  const search = document.getElementById('searchInput').value.toLowerCase();
-  const region = document.getElementById('regionFilter').value;
-  const course = document.getElementById('courseFilter').value;
-  const maxBudget = parseInt(document.getElementById('budgetSlider').value);
-  document.getElementById('budgetDisplay').textContent = '$' + maxBudget.toLocaleString();
-
-  filtered = finalCountries.filter(c => {
-    if (search && !c.name.toLowerCase().includes(search)) return false;
-    if (region && c.region !== region) return false;
-    if (course) {
-      const cd = c.courses[course];
-      if (!cd) return false;
-      const avgTuition = (cd.tuitionMin + cd.tuitionMax) / 2;
-      if (avgTuition + c.livingCost.monthly * 12 > maxBudget) return false;
-    } else {
-      const eng = c.courses.engineering;
-      if (!eng) return false;
-      const avgTuition = (eng.tuitionMin + eng.tuitionMax) / 2;
-      if (avgTuition + c.livingCost.monthly * 12 > maxBudget) return false;
-    }
-    return true;
-  });
-  renderGrid();
-}
-
-function renderGrid() {
-  const grid = document.getElementById('countryGrid');
-  grid.innerHTML = filtered.map(c => {
-    const eng = c.courses.engineering || { tuitionMin: 10000, avgSalary: 40000 };
-    return `<div class="country-card" onclick="showDetail('${c.id}')">
-      <div class="card-header">
-        <img src="${flagCDN(c.flagCode)}" class="flag-svg" alt="${c.name} flag" onerror="this.style.display='none'">
-        <div><div class="country-name">${c.name}</div><div class="region">${c.region}</div></div>
+  <div class="panel on card" id="p-match" role="tabpanel">
+    <h2 style="font-size:22px">Find the best country for you</h2>
+    <form id="matchForm">
+      <div class="row">
+        <div class="field"><label for="mLevel">I want to study</label><select id="mLevel"><option value="pg">Master’s / MS / MBA</option><option value="ug">Bachelor’s (after Class 12)</option><option value="mbbs">MBBS / Medicine</option></select></div>
+        <div class="field"><label for="mField">Course / field</label><select id="mField"><option value="">Any field</option><option value="cs">Computer Science / IT</option><option value="data">Data Science / AI</option><option value="eng">Engineering</option><option value="biz">Business / MBA</option><option value="fin">Finance / Accounting</option><option value="health">Public Health / Nursing / Pharmacy</option><option value="med">Medicine (MBBS)</option><option value="sci">Natural Sciences / Biotech</option><option value="design">Design / Arts / Media</option><option value="law">Law</option><option value="hosp">Hospitality / Tourism</option><option value="hum">Humanities / Social Sciences</option></select></div>
+        <div class="field"><label for="mIelts">English test</label><select id="mIelts"><option value="">Not decided</option><option value="none">No IELTS — want a waiver</option><option value="5.5">IELTS 5.5</option><option value="6">IELTS 6.0</option><option value="6.5">IELTS 6.5</option><option value="7">IELTS 7.0+</option></select></div>
       </div>
-      <div class="metrics">
-        <div><span class="metric-label">Engineering</span><br><span class="metric-value">${c.currency} ${eng.tuitionMin.toLocaleString()}/yr</span></div>
-        <div><span class="metric-label">Avg Salary</span><br><span class="metric-value">${c.currency} ${eng.avgSalary.toLocaleString()}</span></div>
-        <div><span class="metric-label">Living/mo</span><br><span class="metric-value">${c.currency} ${c.livingCost.monthly.toLocaleString()}</span></div>
-        <div><span class="metric-label">IELTS</span><br><span class="metric-value">${c.ielts}</span></div>
-      </div>
-      <div class="rating-bar">${'★'.repeat(Math.round(c.rating))} ${c.rating}</div>
-    </div>`;
-  }).join('');
-}
+      <div class="field"><label for="mBudget">Budget per year (tuition + living): <span id="mBudgetOut" style="color:var(--a2)">₹25 lakh</span></label><input type="range" id="mBudget" min="3" max="80" step="1" value="25"></div>
+      <div class="field"><label>What matters most? (pick any)</label><div class="chips">
+        <label class="chip"><input type="checkbox" name="pri" value="cost"> Lowest cost</label>
+        <label class="chip"><input type="checkbox" name="pri" value="psw" checked> Work visa after study</label>
+        <label class="chip"><input type="checkbox" name="pri" value="pr"> PR / settle abroad</label>
+        <label class="chip"><input type="checkbox" name="pri" value="work"> Part-time job while studying</label>
+        <label class="chip"><input type="checkbox" name="pri" value="english"> English-speaking country</label>
+        <label class="chip"><input type="checkbox" name="pri" value="near"> Close to India</label>
+        <label class="chip"><input type="checkbox" name="pri" value="schol"> Scholarships</label>
+      </div></div>
+      <button class="btn" type="submit">Show my best countries →</button>
+    </form>
+    <div id="matchOut" class="res" style="margin-top:18px" aria-live="polite"></div>
+  </div>
 
-function showDetail(id) {
-  const c = finalCountries.find(x => x.id === id);
-  if (!c) return;
-  const content = document.getElementById('modalContent');
-  const hasCourseData = Object.keys(c.courses).length > 0;
-  let html = `<button class="modal-close" onclick="closeModal()">✕</button>
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
-      <img src="${flagCDN(c.flagCode)}" style="width:48px;height:32px;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,0.1);" alt="">
-      <div><h2 style="font-family:var(--font-display);font-size:24px;">${c.name}</h2><span style="color:var(--text3);">${c.region} · Quality ${'★'.repeat(Math.round(c.rating))} ${c.rating}</span></div>
+  <div class="panel card" id="p-calc" role="tabpanel">
+    <h2 style="font-size:22px">Study abroad cost &amp; education loan calculator (₹)</h2>
+    <div class="row">
+      <div class="field"><label for="cCountry">Country</label><select id="cCountry" data-countries="all"></select></div>
+      <div class="field"><label for="cLevel">Level</label><select id="cLevel"><option value="pg">Master’s</option><option value="ug">Bachelor’s / MBBS</option></select></div>
+      <div class="field"><label for="cCity">City / university type</label><select id="cCity"><option value="budget">Budget (cheaper city, public uni)</option><option value="typical" selected>Typical</option><option value="expensive">Expensive (big city, top private uni)</option></select></div>
+      <div class="field"><label for="cYears">Course length (years)</label><input id="cYears" type="number" min="0.5" max="7" step="0.5"></div>
     </div>
-    <div class="tabs">
-      <button class="tab active" onclick="switchTab(event,'overview')">📋 Overview</button>
-      ${hasCourseData ? '<button class="tab" onclick="switchTab(event,\'courses\')">🎓 Courses & Fees</button>' : ''}
-      <button class="tab" onclick="switchTab(event,'visa')">🛂 Visa & Work</button>
+    <div class="row">
+      <div class="field"><label for="cTuition">Tuition / year (<span class="curr"></span>)</label><input id="cTuition" type="number" min="0" step="100"></div>
+      <div class="field"><label for="cLiving">Living / month (<span class="curr"></span>)</label><input id="cLiving" type="number" min="0" step="10"></div>
+      <div class="field"><label for="cRate">₹ per 1 <span class="curr"></span></label><input id="cRate" type="number" min="0" step="0.01"></div>
+      <div class="field"><label for="cSchol">Scholarship / year (₹ lakh)</label><input id="cSchol" type="number" min="0" step="0.5" value="0"></div>
     </div>
-    <div class="tab-content active" id="tab-overview">
-      <p><b>Living Cost/mo:</b> ${c.currency} ${c.livingCost.monthly} (Accommodation: ${c.livingCost.breakdown.accommodation}, Food: ${c.livingCost.breakdown.food})</p>
-      <p><b>Language:</b> IELTS ${c.ielts}, TOEFL ${c.toefl}, PTE ${c.pte}</p>
-      <p><b>Scholarships:</b> ${c.scholarships.join(', ') || 'Check university websites'}</p>
-      <button class="btn" onclick="addToCompare('${c.id}')">➕ Add to Compare</button>
-    </div>`;
-  if (hasCourseData) {
-    html += `<div class="tab-content" id="tab-courses">
-      ${Object.entries(c.courses).map(([key,val]) => {
-        const courseName = key.charAt(0).toUpperCase() + key.slice(1);
-        return `<h3>${courseName}</h3>
-        <p>Tuition: ${c.currency} ${val.tuitionMin.toLocaleString()} – ${val.tuitionMax.toLocaleString()}/year · Avg Salary: ${c.currency} ${val.avgSalary.toLocaleString()}</p>
-        <table class="university-table"><tr><th>University</th><th>Location</th><th>Fee</th></tr>
-        ${(val.universities||[]).map(u => `<tr><td>${u.name}</td><td>${u.location}</td><td>${c.currency} ${u.fee.toLocaleString()}</td></tr>`).join('')}
-        </table>`;
-      }).join('')}
-    </div>`;
-  }
-  html += `<div class="tab-content" id="tab-visa">
-    <p><b>Visa Fee:</b> ${c.visaFee}</p>
-    <p><b>Part‑time Work:</b> ${c.partTime}</p>
-    <p><b>Post‑Study Work:</b> ${c.postStudyWork}</p>
-    <p><b>Health Insurance:</b> ${c.healthInsurance}</p>
-  </div>`;
-  content.innerHTML = html;
-  document.getElementById('detailModal').classList.add('show');
-}
+    <div class="row">
+      <div class="field"><label for="cApps">No. of applications</label><input id="cApps" type="number" min="0" max="20" value="5"></div>
+      <div class="field"><label for="cOwn">Own funds (₹ lakh)</label><input id="cOwn" type="number" min="0" step="1" value="5"></div>
+      <div class="field"><label for="cInt">Loan interest (% p.a.)</label><input id="cInt" type="number" min="0" max="20" step="0.1" value="10.5"></div>
+      <div class="field"><label for="cTenure">Repayment (years)</label><input id="cTenure" type="number" min="1" max="15" value="10"></div>
+      <div class="field"><label for="cSalary">Expected take-home / month (<span class="curr"></span>)</label><input id="cSalary" type="number" min="0" step="100" placeholder="optional"></div>
+    </div>
+    <div id="calcOut" aria-live="polite"></div>
+  </div>
 
-function switchTab(e, tab) {
-  const modal = e.target.closest('.modal-content');
-  modal.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  e.target.classList.add('active');
-  modal.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-  modal.querySelector(`#tab-${tab}`).classList.add('active');
-}
-function closeModal() { document.getElementById('detailModal').classList.remove('show'); }
-window.onclick = function(e) { if (e.target === document.getElementById('detailModal')) closeModal(); };
+  <div class="panel card" id="p-compare" role="tabpanel">
+    <h2 style="font-size:22px">Compare countries side by side</h2>
+    <div class="row" id="cmpSel">
+      <div class="field"><label for="cmp1">Country 1</label><select id="cmp1" data-countries="blank"></select></div>
+      <div class="field"><label for="cmp2">Country 2</label><select id="cmp2" data-countries="blank"></select></div>
+      <div class="field"><label for="cmp3">Country 3</label><select id="cmp3" data-countries="blank"></select></div>
+    </div>
+    <div id="cmpOut"></div>
+  </div>
 
-function addToCompare(id) { if (compareList.length >= 3 || compareList.includes(id)) return; compareList.push(id); updateCompareBar(); }
-function removeCompare(id) { compareList = compareList.filter(x => x !== id); updateCompareBar(); }
-function updateCompareBar() {
-  const bar = document.getElementById('compareBar');
-  bar.classList.toggle('show', compareList.length > 0);
-  document.getElementById('compareList').innerHTML = compareList.map(id => {
-    const c = finalCountries.find(x => x.id === id);
-    return `<span class="compare-pill"><img src="${flagCDN(c.flagCode)}" style="width:18px;height:12px;margin-right:4px;">${c.name} <span onclick="removeCompare('${id}')" style="cursor:pointer;">✕</span></span>`;
-  }).join('');
-}
-function compareNow() {
-  if (compareList.length < 2) return;
-  const selected = compareList.map(id => finalCountries.find(x => x.id === id));
-  let html = '<button class="modal-close" onclick="closeModal()">✕</button><h2>Comparison</h2><table class="university-table"><tr><th>Metric</th>';
-  selected.forEach(c => html += `<th><img src="${flagCDN(c.flagCode)}" width="24"> ${c.name}</th>`);
-  html += '</tr>';
-  ['Avg Engineering Tuition','Living Cost/month','IELTS'].forEach(metric => {
-    html += '<tr><td>'+metric+'</td>';
-    selected.forEach(c => {
-      if (metric.includes('Engineering')) html += `<td>${c.currency} ${c.courses.engineering.tuitionMin.toLocaleString()}</td>`;
-      else if (metric.includes('Living')) html += `<td>${c.currency} ${c.livingCost.monthly.toLocaleString()}</td>`;
-      else html += `<td>${c.ielts}</td>`;
-    });
-    html += '</tr>';
-  });
-  html += '</table>';
-  document.getElementById('modalContent').innerHTML = html;
-  document.getElementById('detailModal').classList.add('show');
-  compareList = [];
-  updateCompareBar();
-}
+  <div class="panel card" id="p-plan" role="tabpanel">
+    <h2 style="font-size:22px">Application timeline planner</h2>
+    <div class="row">
+      <div class="field"><label for="tCountry">Country</label><select id="tCountry" data-countries="all"></select></div>
+      <div class="field"><label for="tStart">Course starts</label><select id="tStart"></select></div>
+    </div>
+    <div id="tOut"></div>
+  </div>
 
-function toggleTheme() { document.body.classList.toggle('dark-mode'); localStorage.setItem('theme', document.body.classList.contains('dark-mode')?'dark':'light'); }
-if (localStorage.getItem('theme')==='dark') document.body.classList.add('dark-mode');
+  <div class="panel card" id="p-schol" role="tabpanel">
+    <h2 style="font-size:22px">Scholarships for Indian students</h2>
+    <div class="row">
+      <div class="field"><label for="sQ">Search</label><input id="sQ" placeholder="e.g. Germany, fully funded, DAAD"></div>
+      <div class="field"><label for="sLvl">Level</label><select id="sLvl"><option value="">All levels</option><option value="UG">Bachelor’s</option><option value="PG">Master’s</option><option value="PHD">PhD</option></select></div>
+    </div>
+    <div id="sOut"></div>
+  </div>
 
-// Init
-renderGrid();
-applyFilters();
-</script>
-</body>
-</html>
+  <div class="panel card" id="p-docs" role="tabpanel">
+    <h2 style="font-size:22px">Student visa document checklist</h2>
+    <div class="field" style="max-width:320px"><label for="kCountry">Country</label><select id="kCountry" data-countries="all"></select></div>
+    <div id="kOut"></div>
+  </div>
+</div></section>
+
+<section aria-labelledby="all-h"><div class="wrap">
+  <h2 id="all-h">All study abroad destinations</h2>
+  <div class="card" style="margin-bottom:14px"><div class="row">
+    <div class="field"><label for="gQ">Search country or university</label><input id="gQ" placeholder="e.g. Canada, TU Munich"></div>
+    <div class="field"><label for="gRegion">Region</label><select id="gRegion"><option value="">All regions</option><option>Europe</option><option>North America</option><option>Asia</option><option>Oceania</option><option value="mbbs">MBBS abroad</option></select></div>
+    <div class="field"><label for="gField">Strong in</label><select id="gField"><option value="">Any field</option><option value="cs">Computer Science / IT</option><option value="data">Data Science / AI</option><option value="eng">Engineering</option><option value="biz">Business / MBA</option><option value="fin">Finance / Accounting</option><option value="health">Public Health / Nursing / Pharmacy</option><option value="med">Medicine (MBBS)</option><option value="sci">Natural Sciences / Biotech</option><option value="design">Design / Arts / Media</option><option value="law">Law</option><option value="hosp">Hospitality / Tourism</option><option value="hum">Humanities / Social Sciences</option></select></div>
+    <div class="field"><label for="gMax">Max cost: <span id="gMaxOut">Any</span></label><input id="gMax" type="range" min="5" max="80" value="80"></div>
+  </div>
+  <div class="chips"><label class="chip"><input type="checkbox" id="gEng"> English-speaking</label><label class="chip"><input type="checkbox" id="gPsw"> 2+ years post-study work</label><label class="chip"><input type="checkbox" id="gSaved"> My saved <span id="starCount"></span></label><span class="meta-line" id="gCount" style="align-self:center"></span></div></div>
+  <div class="cgrid">
+<article class="cc" data-slug="usa">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/us.png" alt="United States flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-usa.html">United States</a></h3><small>North America</small></div></div>
+  <p>Top-ranked universities, STEM OPT up to 3 years, highest costs</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹29.9 lakh – ₹81.0 lakh</b>
+    <span>Work after study</span><b>3 years</b>
+    <span>Part-time</span><b>20 hrs/wk</b>
+    <span>IELTS</span><b>6–7</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-usa.html">Full guide</a><button class="btn sm ghost" data-calc="usa">Cost in ₹</button><button class="btn sm ghost" data-cmp="usa" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="usa" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="uk">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/gb.png" alt="United Kingdom flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-uk.html">United Kingdom</a></h3><small>Europe</small></div></div>
+  <p>1-year master’s, Graduate Route work visa, strong global brand</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹35.1 lakh – ₹71.6 lakh</b>
+    <span>Work after study</span><b>18 months</b>
+    <span>Part-time</span><b>20 hrs/wk</b>
+    <span>IELTS</span><b>6–7 · waivers</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-uk.html">Full guide</a><button class="btn sm ghost" data-calc="uk">Cost in ₹</button><button class="btn sm ghost" data-cmp="uk" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="uk" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="canada">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/ca.png" alt="Canada flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-canada.html">Canada</a></h3><small>North America</small></div></div>
+  <p>PGWP up to 3 years and established PR routes — now with study-permit caps</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹24.5 lakh – ₹51.0 lakh</b>
+    <span>Work after study</span><b>3 years</b>
+    <span>Part-time</span><b>24 hrs/wk</b>
+    <span>IELTS</span><b>6–7</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-canada.html">Full guide</a><button class="btn sm ghost" data-calc="canada">Cost in ₹</button><button class="btn sm ghost" data-cmp="canada" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="canada" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="australia">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/au.png" alt="Australia flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-australia.html">Australia</a></h3><small>Oceania</small></div></div>
+  <p>Generous work hours, 2–3 year graduate visa, high visa fees</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹31.5 lakh – ₹51.8 lakh</b>
+    <span>Work after study</span><b>2 years</b>
+    <span>Part-time</span><b>24 hrs/wk</b>
+    <span>IELTS</span><b>6–7</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-australia.html">Full guide</a><button class="btn sm ghost" data-calc="australia">Cost in ₹</button><button class="btn sm ghost" data-cmp="australia" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="australia" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="germany">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/de.png" alt="Germany flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-germany.html">Germany</a></h3><small>Europe</small></div></div>
+  <p>Little or no tuition at public universities, 18-month job-seeker permit</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹12.7 lakh – ₹23.7 lakh</b>
+    <span>Work after study</span><b>18 months</b>
+    <span>Part-time</span><b>20 hrs/wk</b>
+    <span>IELTS</span><b>6–6.5 · waivers</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-germany.html">Full guide</a><button class="btn sm ghost" data-calc="germany">Cost in ₹</button><button class="btn sm ghost" data-cmp="germany" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="germany" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="ireland">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/ie.png" alt="Ireland flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-ireland.html">Ireland</a></h3><small>Europe</small></div></div>
+  <p>English-speaking EU country with big tech and pharma employers</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹25.2 lakh – ₹51.9 lakh</b>
+    <span>Work after study</span><b>2 years</b>
+    <span>Part-time</span><b>20 hrs/wk</b>
+    <span>IELTS</span><b>6–6.5 · waivers</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-ireland.html">Full guide</a><button class="btn sm ghost" data-calc="ireland">Cost in ₹</button><button class="btn sm ghost" data-cmp="ireland" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="ireland" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="new-zealand">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/nz.png" alt="New Zealand flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-new-zealand.html">New Zealand</a></h3><small>Oceania</small></div></div>
+  <p>Safe, smaller country with up to 3 years post-study work</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹24.4 lakh – ₹40.5 lakh</b>
+    <span>Work after study</span><b>3 years</b>
+    <span>Part-time</span><b>25 hrs/wk</b>
+    <span>IELTS</span><b>6–6.5</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-new-zealand.html">Full guide</a><button class="btn sm ghost" data-calc="new-zealand">Cost in ₹</button><button class="btn sm ghost" data-cmp="new-zealand" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="new-zealand" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="france">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/fr.png" alt="France flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-france.html">France</a></h3><small>Europe</small></div></div>
+  <p>Low public fees, top business schools, special post-study terms for Indians</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹13.8 lakh – ₹57.9 lakh</b>
+    <span>Work after study</span><b>2 years</b>
+    <span>Part-time</span><b>20 hrs/wk</b>
+    <span>IELTS</span><b>6–6.5 · waivers</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-france.html">Full guide</a><button class="btn sm ghost" data-calc="france">Cost in ₹</button><button class="btn sm ghost" data-cmp="france" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="france" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="netherlands">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/nl.png" alt="Netherlands flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-netherlands.html">Netherlands</a></h3><small>Europe</small></div></div>
+  <p>Hundreds of English-taught degrees and a 1-year orientation visa</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹25.1 lakh – ₹44.5 lakh</b>
+    <span>Work after study</span><b>1 year</b>
+    <span>Part-time</span><b>16 hrs/wk</b>
+    <span>IELTS</span><b>6–7</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-netherlands.html">Full guide</a><button class="btn sm ghost" data-calc="netherlands">Cost in ₹</button><button class="btn sm ghost" data-cmp="netherlands" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="netherlands" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="italy">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/it.png" alt="Italy flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-italy.html">Italy</a></h3><small>Europe</small></div></div>
+  <p>Income-based public fees and regional scholarships that can cover living costs</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹9.2 lakh – ₹18.9 lakh</b>
+    <span>Work after study</span><b>1 year</b>
+    <span>Part-time</span><b>20 hrs/wk</b>
+    <span>IELTS</span><b>5.5–6.5 · waivers</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-italy.html">Full guide</a><button class="btn sm ghost" data-calc="italy">Cost in ₹</button><button class="btn sm ghost" data-cmp="italy" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="italy" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="spain">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/es.png" alt="Spain flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-spain.html">Spain</a></h3><small>Europe</small></div></div>
+  <p>Affordable Europe with work rights up to 30 hrs/week</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹12.3 lakh – ₹41.9 lakh</b>
+    <span>Work after study</span><b>1 year</b>
+    <span>Part-time</span><b>30 hrs/wk</b>
+    <span>IELTS</span><b>5.5–6.5 · waivers</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-spain.html">Full guide</a><button class="btn sm ghost" data-calc="spain">Cost in ₹</button><button class="btn sm ghost" data-cmp="spain" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="spain" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="sweden">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/se.png" alt="Sweden flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-sweden.html">Sweden</a></h3><small>Europe</small></div></div>
+  <p>Innovation-focused universities and a 12-month job-seeker permit</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹18.4 lakh – ₹41.9 lakh</b>
+    <span>Work after study</span><b>1 year</b>
+    <span>Part-time</span><b>20 hrs/wk</b>
+    <span>IELTS</span><b>6.5–6.5</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-sweden.html">Full guide</a><button class="btn sm ghost" data-calc="sweden">Cost in ₹</button><button class="btn sm ghost" data-cmp="sweden" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="sweden" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="finland">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/fi.png" alt="Finland flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-finland.html">Finland</a></h3><small>Europe</small></div></div>
+  <p>High-quality education, 2-year post-study permit, scholarships common</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹18.4 lakh – ₹35.5 lakh</b>
+    <span>Work after study</span><b>2 years</b>
+    <span>Part-time</span><b>30 hrs/wk</b>
+    <span>IELTS</span><b>6–6.5</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-finland.html">Full guide</a><button class="btn sm ghost" data-calc="finland">Cost in ₹</button><button class="btn sm ghost" data-cmp="finland" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="finland" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="denmark">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/dk.png" alt="Denmark flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-denmark.html">Denmark</a></h3><small>Europe</small></div></div>
+  <p>Practical, project-based learning and a 3-year job-search card</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹20.6 lakh – ₹38.6 lakh</b>
+    <span>Work after study</span><b>3 years</b>
+    <span>Part-time</span><b>20 hrs/wk</b>
+    <span>IELTS</span><b>6.5–6.5</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-denmark.html">Full guide</a><button class="btn sm ghost" data-calc="denmark">Cost in ₹</button><button class="btn sm ghost" data-cmp="denmark" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="denmark" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="norway">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/no.png" alt="Norway flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-norway.html">Norway</a></h3><small>Europe</small></div></div>
+  <p>No longer tuition-free for non-EU students; very high living costs</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹25.6 lakh – ₹51.5 lakh</b>
+    <span>Work after study</span><b>1 year</b>
+    <span>Part-time</span><b>20 hrs/wk</b>
+    <span>IELTS</span><b>6–6.5</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-norway.html">Full guide</a><button class="btn sm ghost" data-calc="norway">Cost in ₹</button><button class="btn sm ghost" data-cmp="norway" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="norway" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="poland">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/pl.png" alt="Poland flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-poland.html">Poland</a></h3><small>Europe</small></div></div>
+  <p>One of the cheapest EU destinations for both tuition and living</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹8.9 lakh – ₹17.8 lakh</b>
+    <span>Work after study</span><b>9 months</b>
+    <span>Part-time</span><b>No weekly cap</b>
+    <span>IELTS</span><b>5.5–6.5 · waivers</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-poland.html">Full guide</a><button class="btn sm ghost" data-calc="poland">Cost in ₹</button><button class="btn sm ghost" data-cmp="poland" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="poland" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="austria">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/at.png" alt="Austria flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-austria.html">Austria</a></h3><small>Europe</small></div></div>
+  <p>Low public tuition (about €1,450/year) and high quality of life</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹13.9 lakh – ₹18.3 lakh</b>
+    <span>Work after study</span><b>1 year</b>
+    <span>Part-time</span><b>20 hrs/wk</b>
+    <span>IELTS</span><b>6–6.5</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-austria.html">Full guide</a><button class="btn sm ghost" data-calc="austria">Cost in ₹</button><button class="btn sm ghost" data-cmp="austria" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="austria" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="switzerland">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/ch.png" alt="Switzerland flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-switzerland.html">Switzerland</a></h3><small>Europe</small></div></div>
+  <p>World-class ETH/EPFL at modest fees — but the highest living costs</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹26.7 lakh – ₹44.4 lakh</b>
+    <span>Work after study</span><b>6 months</b>
+    <span>Part-time</span><b>15 hrs/wk</b>
+    <span>IELTS</span><b>6.5–7</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-switzerland.html">Full guide</a><button class="btn sm ghost" data-calc="switzerland">Cost in ₹</button><button class="btn sm ghost" data-cmp="switzerland" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="switzerland" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="singapore">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/sg.png" alt="Singapore flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-singapore.html">Singapore</a></h3><small>Asia</small></div></div>
+  <p>Asia’s top universities 4 hours from India — no post-study work visa</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹31.2 lakh – ₹65.8 lakh</b>
+    <span>Work after study</span><b>None</b>
+    <span>Part-time</span><b>16 hrs/wk</b>
+    <span>IELTS</span><b>6.5–7 · waivers</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-singapore.html">Full guide</a><button class="btn sm ghost" data-calc="singapore">Cost in ₹</button><button class="btn sm ghost" data-cmp="singapore" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="singapore" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="japan">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/jp.png" alt="Japan flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-japan.html">Japan</a></h3><small>Asia</small></div></div>
+  <p>Low national-university fees, MEXT scholarships and a tech job market short of talent</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹9.5 lakh – ₹19.3 lakh</b>
+    <span>Work after study</span><b>1 year</b>
+    <span>Part-time</span><b>28 hrs/wk</b>
+    <span>IELTS</span><b>6–6.5 · waivers</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-japan.html">Full guide</a><button class="btn sm ghost" data-calc="japan">Cost in ₹</button><button class="btn sm ghost" data-cmp="japan" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="japan" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="south-korea">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/kr.png" alt="South Korea flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-south-korea.html">South Korea</a></h3><small>Asia</small></div></div>
+  <p>Affordable tuition, fully funded GKS scholarships, strong tech universities</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹12.2 lakh – ₹24.3 lakh</b>
+    <span>Work after study</span><b>2 years</b>
+    <span>Part-time</span><b>25 hrs/wk</b>
+    <span>IELTS</span><b>5.5–6.5 · waivers</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-south-korea.html">Full guide</a><button class="btn sm ghost" data-calc="south-korea">Cost in ₹</button><button class="btn sm ghost" data-cmp="south-korea" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="south-korea" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="uae">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/ae.png" alt="United Arab Emirates flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-uae.html">United Arab Emirates</a></h3><small>Asia</small></div></div>
+  <p>Branch campuses of UK, Australian and Indian universities, 3 hours from home</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹21.0 lakh – ₹45.0 lakh</b>
+    <span>Work after study</span><b>1 year</b>
+    <span>Part-time</span><b>15 hrs/wk</b>
+    <span>IELTS</span><b>5.5–6.5 · waivers</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-uae.html">Full guide</a><button class="btn sm ghost" data-calc="uae">Cost in ₹</button><button class="btn sm ghost" data-cmp="uae" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="uae" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="malaysia">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/my.png" alt="Malaysia flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-malaysia.html">Malaysia</a></h3><small>Asia</small></div></div>
+  <p>Low-cost UK/Australian branch-campus degrees in an English-friendly country</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹9.7 lakh – ₹19.8 lakh</b>
+    <span>Work after study</span><b>None</b>
+    <span>Part-time</span><b>20 hrs/wk</b>
+    <span>IELTS</span><b>5.5–6 · waivers</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-malaysia.html">Full guide</a><button class="btn sm ghost" data-calc="malaysia">Cost in ₹</button><button class="btn sm ghost" data-cmp="malaysia" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="malaysia" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="hong-kong">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/hk.png" alt="Hong Kong flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/study-in-hong-kong.html">Hong Kong</a></h3><small>Asia</small></div></div>
+  <p>Top-ranked universities and a 2-year IANG post-study visa</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹28.0 lakh – ₹64.4 lakh</b>
+    <span>Work after study</span><b>2 years</b>
+    <span>Part-time</span><b>20 hrs/wk</b>
+    <span>IELTS</span><b>6–7</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/study-in-hong-kong.html">Full guide</a><button class="btn sm ghost" data-calc="hong-kong">Cost in ₹</button><button class="btn sm ghost" data-cmp="hong-kong" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="hong-kong" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="mbbs-in-russia">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/ru.png" alt="Russia flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/mbbs-in-russia.html">Russia (MBBS)</a></h3><small>Europe · Medicine</small></div></div>
+  <p>Low-cost 6-year MBBS with long history of Indian students — check NMC compliance</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹5.3 lakh – ₹10.4 lakh</b>
+    <span>Work after study</span><b>None</b>
+    <span>Part-time</span><b>Very limited</b>
+    <span>IELTS</span><b>NEET instead</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/mbbs-in-russia.html">Full guide</a><button class="btn sm ghost" data-calc="mbbs-in-russia">Cost in ₹</button><button class="btn sm ghost" data-cmp="mbbs-in-russia" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="mbbs-in-russia" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="mbbs-in-georgia">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/ge.png" alt="Georgia flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/mbbs-in-georgia.html">Georgia (MBBS)</a></h3><small>Europe · Medicine</small></div></div>
+  <p>English-medium MD programs in a safe, Europe-facing country</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹7.3 lakh – ₹12.0 lakh</b>
+    <span>Work after study</span><b>None</b>
+    <span>Part-time</span><b>Very limited</b>
+    <span>IELTS</span><b>NEET instead</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/mbbs-in-georgia.html">Full guide</a><button class="btn sm ghost" data-calc="mbbs-in-georgia">Cost in ₹</button><button class="btn sm ghost" data-cmp="mbbs-in-georgia" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="mbbs-in-georgia" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="mbbs-in-kazakhstan">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/kz.png" alt="Kazakhstan flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/mbbs-in-kazakhstan.html">Kazakhstan (MBBS)</a></h3><small>Asia · Medicine</small></div></div>
+  <p>Affordable MBBS — but verify program length and internship meet NMC rules</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹5.3 lakh – ₹9.1 lakh</b>
+    <span>Work after study</span><b>None</b>
+    <span>Part-time</span><b>Very limited</b>
+    <span>IELTS</span><b>NEET instead</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/mbbs-in-kazakhstan.html">Full guide</a><button class="btn sm ghost" data-calc="mbbs-in-kazakhstan">Cost in ₹</button><button class="btn sm ghost" data-cmp="mbbs-in-kazakhstan" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="mbbs-in-kazakhstan" aria-pressed="false">☆ Save</button></div>
+</article>
+<article class="cc" data-slug="mbbs-in-uzbekistan">
+  <div class="cc-h"><img class="flag" src="https://flagcdn.com/w80/uz.png" alt="Uzbekistan flag" width="34" height="24" loading="lazy" decoding="async"><div><h3><a href="/study-abroad/mbbs-in-uzbekistan.html">Uzbekistan (MBBS)</a></h3><small>Asia · Medicine</small></div></div>
+  <p>Fast-growing low-cost MBBS destination — check NMC rules and clinical exposure</p>
+  <div class="kv">
+    <span>Master’s / yr</span><b>₹4.4 lakh – ₹8.1 lakh</b>
+    <span>Work after study</span><b>None</b>
+    <span>Part-time</span><b>Very limited</b>
+    <span>IELTS</span><b>NEET instead</b>
+  </div>
+  <div class="cc-a"><a class="btn sm" href="/study-abroad/mbbs-in-uzbekistan.html">Full guide</a><button class="btn sm ghost" data-calc="mbbs-in-uzbekistan">Cost in ₹</button><button class="btn sm ghost" data-cmp="mbbs-in-uzbekistan" aria-pressed="false">Compare</button><button class="btn sm ghost star" data-star="mbbs-in-uzbekistan" aria-pressed="false">☆ Save</button></div>
+</article></div>
+</div></section>
+
+<section aria-labelledby="tbl-h"><div class="wrap">
+  <h2 id="tbl-h">Study abroad cost comparison for Indian students (2027)</h2>
+  <p>Yearly cost for one student, in rupees, for every destination — tuition, living and health insurance included. Click a country for the full guide with visa steps, universities and scholarships.</p>
+  <div class="tbl-wrap"><table>
+<caption class="sr">Study abroad comparison for Indian students, 2027</caption>
+<thead><tr><th>Country</th><th>Master’s cost / year (₹)</th><th>Bachelor’s cost / year (₹)</th><th>Post-study work</th><th>Part-time work</th><th>Visa fee</th><th>IELTS</th><th>PR outlook</th></tr></thead><tbody>
+<tr><td><a href="/study-abroad/study-in-usa.html">United States</a></td><td class="num">₹29.9 lakh – ₹81.0 lakh</td><td class="num">₹34.3 lakh – ₹85.4 lakh</td><td>3 years</td><td>20 hrs/wk</td><td>$185</td><td>6–7</td><td>Possible</td></tr>
+<tr><td><a href="/study-abroad/study-in-uk.html">United Kingdom</a></td><td class="num">₹35.1 lakh – ₹71.6 lakh</td><td class="num">₹33.9 lakh – ₹69.2 lakh</td><td>18 months</td><td>20 hrs/wk</td><td>£558</td><td>6–7</td><td>Possible</td></tr>
+<tr><td><a href="/study-abroad/study-in-canada.html">Canada</a></td><td class="num">₹24.5 lakh – ₹51.0 lakh</td><td class="num">₹27.7 lakh – ₹54.1 lakh</td><td>3 years</td><td>24 hrs/wk</td><td>C$150</td><td>6–7</td><td>Strong</td></tr>
+<tr><td><a href="/study-abroad/study-in-australia.html">Australia</a></td><td class="num">₹31.5 lakh – ₹51.8 lakh</td><td class="num">₹30.3 lakh – ₹48.9 lakh</td><td>2 years</td><td>24 hrs/wk</td><td>A$2,000</td><td>6–7</td><td>Moderate</td></tr>
+<tr><td><a href="/study-abroad/study-in-germany.html">Germany</a></td><td class="num">₹12.7 lakh – ₹23.7 lakh</td><td class="num">₹12.7 lakh – ₹20.7 lakh</td><td>18 months</td><td>20 hrs/wk</td><td>€75</td><td>6–6.5</td><td>Strong</td></tr>
+<tr><td><a href="/study-abroad/study-in-ireland.html">Ireland</a></td><td class="num">₹25.2 lakh – ₹51.9 lakh</td><td class="num">₹24.2 lakh – ₹46.8 lakh</td><td>2 years</td><td>20 hrs/wk</td><td>€60</td><td>6–6.5</td><td>Moderate</td></tr>
+<tr><td><a href="/study-abroad/study-in-new-zealand.html">New Zealand</a></td><td class="num">₹24.4 lakh – ₹40.5 lakh</td><td class="num">₹22.9 lakh – ₹38.0 lakh</td><td>3 years</td><td>25 hrs/wk</td><td>NZ$850</td><td>6–6.5</td><td>Moderate</td></tr>
+<tr><td><a href="/study-abroad/study-in-france.html">France</a></td><td class="num">₹13.8 lakh – ₹57.9 lakh</td><td class="num">₹12.7 lakh – ₹32.4 lakh</td><td>2 years</td><td>20 hrs/wk</td><td>€99</td><td>6–6.5</td><td>Moderate</td></tr>
+<tr><td><a href="/study-abroad/study-in-netherlands.html">Netherlands</a></td><td class="num">₹25.1 lakh – ₹44.5 lakh</td><td class="num">₹22.0 lakh – ₹39.4 lakh</td><td>1 year</td><td>16 hrs/wk</td><td>Varies</td><td>6–7</td><td>Moderate</td></tr>
+<tr><td><a href="/study-abroad/study-in-italy.html">Italy</a></td><td class="num">₹9.2 lakh – ₹18.9 lakh</td><td class="num">₹9.2 lakh – ₹18.9 lakh</td><td>1 year</td><td>20 hrs/wk</td><td>€50</td><td>5.5–6.5</td><td>Possible</td></tr>
+<tr><td><a href="/study-abroad/study-in-spain.html">Spain</a></td><td class="num">₹12.3 lakh – ₹41.9 lakh</td><td class="num">₹11.3 lakh – ₹26.6 lakh</td><td>1 year</td><td>30 hrs/wk</td><td>€80</td><td>5.5–6.5</td><td>Possible</td></tr>
+<tr><td><a href="/study-abroad/study-in-sweden.html">Sweden</a></td><td class="num">₹18.4 lakh – ₹41.9 lakh</td><td class="num">₹17.5 lakh – ₹28.0 lakh</td><td>1 year</td><td>20 hrs/wk</td><td>SEK 1,500</td><td>6.5–6.5</td><td>Moderate</td></tr>
+<tr><td><a href="/study-abroad/study-in-finland.html">Finland</a></td><td class="num">₹18.4 lakh – ₹35.5 lakh</td><td class="num">₹18.4 lakh – ₹33.5 lakh</td><td>2 years</td><td>30 hrs/wk</td><td>€350</td><td>6–6.5</td><td>Moderate</td></tr>
+<tr><td><a href="/study-abroad/study-in-denmark.html">Denmark</a></td><td class="num">₹20.6 lakh – ₹38.6 lakh</td><td class="num">₹18.5 lakh – ₹34.5 lakh</td><td>3 years</td><td>20 hrs/wk</td><td>DKK 2,600</td><td>6.5–6.5</td><td>Possible</td></tr>
+<tr><td><a href="/study-abroad/study-in-norway.html">Norway</a></td><td class="num">₹25.6 lakh – ₹51.5 lakh</td><td class="num">₹25.6 lakh – ₹42.8 lakh</td><td>1 year</td><td>20 hrs/wk</td><td>NOK 5,900</td><td>6–6.5</td><td>Possible</td></tr>
+<tr><td><a href="/study-abroad/study-in-poland.html">Poland</a></td><td class="num">₹8.9 lakh – ₹17.8 lakh</td><td class="num">₹8.4 lakh – ₹16.8 lakh</td><td>9 months</td><td>No cap</td><td>€80</td><td>5.5–6.5</td><td>Possible</td></tr>
+<tr><td><a href="/study-abroad/study-in-austria.html">Austria</a></td><td class="num">₹13.9 lakh – ₹18.3 lakh</td><td class="num">₹13.9 lakh – ₹18.3 lakh</td><td>1 year</td><td>20 hrs/wk</td><td>€160</td><td>6–6.5</td><td>Possible</td></tr>
+<tr><td><a href="/study-abroad/study-in-switzerland.html">Switzerland</a></td><td class="num">₹26.7 lakh – ₹44.4 lakh</td><td class="num">₹26.7 lakh – ₹44.4 lakh</td><td>6 months</td><td>15 hrs/wk</td><td>CHF 88</td><td>6.5–7</td><td>Limited</td></tr>
+<tr><td><a href="/study-abroad/study-in-singapore.html">Singapore</a></td><td class="num">₹31.2 lakh – ₹65.8 lakh</td><td class="num">₹31.2 lakh – ₹59.0 lakh</td><td>None</td><td>16 hrs/wk</td><td>S$120</td><td>6.5–7</td><td>Possible</td></tr>
+<tr><td><a href="/study-abroad/study-in-japan.html">Japan</a></td><td class="num">₹9.5 lakh – ₹19.3 lakh</td><td class="num">₹9.5 lakh – ₹19.3 lakh</td><td>1 year</td><td>28 hrs/wk</td><td>Varies</td><td>6–6.5</td><td>Possible</td></tr>
+<tr><td><a href="/study-abroad/study-in-south-korea.html">South Korea</a></td><td class="num">₹12.2 lakh – ₹24.3 lakh</td><td class="num">₹12.2 lakh – ₹24.3 lakh</td><td>2 years</td><td>25 hrs/wk</td><td>Varies</td><td>5.5–6.5</td><td>Possible</td></tr>
+<tr><td><a href="/study-abroad/study-in-uae.html">United Arab Emirates</a></td><td class="num">₹21.0 lakh – ₹45.0 lakh</td><td class="num">₹18.6 lakh – ₹40.2 lakh</td><td>1 year</td><td>15 hrs/wk</td><td>Varies</td><td>5.5–6.5</td><td>Limited</td></tr>
+<tr><td><a href="/study-abroad/study-in-malaysia.html">Malaysia</a></td><td class="num">₹9.7 lakh – ₹19.8 lakh</td><td class="num">₹8.7 lakh – ₹19.8 lakh</td><td>None</td><td>20 hrs/wk</td><td>RM 2,500</td><td>5.5–6</td><td>Limited</td></tr>
+<tr><td><a href="/study-abroad/study-in-hong-kong.html">Hong Kong</a></td><td class="num">₹28.0 lakh – ₹64.4 lakh</td><td class="num">₹28.0 lakh – ₹47.5 lakh</td><td>2 years</td><td>20 hrs/wk</td><td>HK$230</td><td>6–7</td><td>Moderate</td></tr>
+</tbody></table></div>
+<p class="meta-line" style="margin-top:8px">Cost per year = tuition + living + health insurance for one student, at approximate exchange rates (1 USD ≈ ₹88, 1 GBP ≈ ₹117, 1 EUR ≈ ₹102, 1 CAD ≈ ₹63, 1 AUD ≈ ₹58). Reviewed 6 November 2026.</p>
+</div></section>
+
+<section aria-labelledby="guide-h"><div class="wrap">
+  <h2 id="guide-h">How to choose a country to study abroad</h2>
+  <div class="grid g2">
+    <div class="card"><h3>1. Start with total cost, not tuition</h3><p>Tuition is only part of the bill. Living costs, health insurance, visa fees and flights often equal or exceed tuition — in Germany tuition can be near zero but you still need €11,904 a year for living. Compare the yearly totals in rupees above.</p></div>
+    <div class="card"><h3>2. Check work rights after graduation</h3><p>A post-study work visa is how most students repay loans and gain international experience. USA: 3 years; Canada: 3 years; New Zealand: 3 years; Denmark: 3 years; Australia: 2 years. Singapore and Malaysia have no dedicated post-study work visa.</p></div>
+    <div class="card"><h3>3. Be honest about language</h3><p>English-taught degrees are common across Europe and Asia, but part-time and graduate jobs in Germany, France, Italy, Japan or Korea usually need the local language. Start learning (A2–B1) before you fly if you want to work there.</p></div>
+    <div class="card"><h3>4. Match the country to your course</h3><p>Engineering and research → Germany, Netherlands, Sweden, Switzerland. Business and finance → UK, USA, France, Singapore, Hong Kong. Health and nursing → Canada, Australia, UK, Ireland. Design → Italy, UK, Netherlands. Use the “Strong in” filter.</p></div>
+    <div class="card"><h3>5. Plan money rules from India</h3><p><strong>Education loan interest is tax-deductible.</strong> Interest on an education loan can be deducted under Section 80E of the Income Tax Act for up to 8 years (no upper limit on the amount).</p><p><strong>TCS on money sent abroad for education.</strong> Under LRS, remittances for education funded by a loan from a specified financial institution attract no TCS. Self-funded education remittances above ₹10 lakh a year attract TCS (5% on the amount above ₹10 lakh). TCS can be claimed back when you file your ITR.</p><p><strong>Collateral-free loan limits.</strong> Public-sector banks typically lend up to about ₹7.5 lakh without collateral; NBFCs and some banks offer more (often ₹40–75 lakh+) for top universities, at higher interest.</p><p><strong>Register on MADAD.</strong> The Government of India’s MADAD portal lets Indian students abroad register and request consular help.</p><p><strong>Forex &amp; cards.</strong> Use a forex card or student account for living costs; wire tuition through your bank (A2 form) for lower charges.</p></div>
+    <div class="card"><h3>6. Avoid common traps</h3><ul><li>Never pay for “guaranteed” admission or visas.</li><li>Check the university is recognised (and NMC-compliant for MBBS).</li><li>Older blogs say Norway is free — it isn’t for non-EU students since 2023.</li><li>Rules change every year; confirm on the official links in each guide.</li></ul></div>
+  </div>
+</div></section>
+
+<section aria-labelledby="cheap-h"><div class="wrap grid g2">
+  <div class="card"><h2 id="cheap-h" style="font-size:21px">Cheapest countries to study abroad for Indian students</h2><ol><li><a href="/study-abroad/study-in-poland.html">Poland</a> — from ₹8.9 lakh/year for a master’s</li><li><a href="/study-abroad/study-in-italy.html">Italy</a> — from ₹9.2 lakh/year for a master’s</li><li><a href="/study-abroad/study-in-japan.html">Japan</a> — from ₹9.5 lakh/year for a master’s</li><li><a href="/study-abroad/study-in-malaysia.html">Malaysia</a> — from ₹9.7 lakh/year for a master’s</li><li><a href="/study-abroad/study-in-south-korea.html">South Korea</a> — from ₹12.2 lakh/year for a master’s</li><li><a href="/study-abroad/study-in-spain.html">Spain</a> — from ₹12.3 lakh/year for a master’s</li></ol></div>
+  <div class="card"><h2 style="font-size:21px">Countries with the longest post-study work visas</h2><ol><li><a href="/study-abroad/study-in-usa.html">United States</a> — 3 years</li><li><a href="/study-abroad/study-in-canada.html">Canada</a> — 3 years</li><li><a href="/study-abroad/study-in-new-zealand.html">New Zealand</a> — 3 years</li><li><a href="/study-abroad/study-in-denmark.html">Denmark</a> — 3 years</li><li><a href="/study-abroad/study-in-australia.html">Australia</a> — 2 years</li><li><a href="/study-abroad/study-in-ireland.html">Ireland</a> — 2 years</li><li><a href="/study-abroad/study-in-france.html">France</a> — 2 years</li><li><a href="/study-abroad/study-in-finland.html">Finland</a> — 2 years</li></ol></div>
+  <div class="card"><h2 style="font-size:21px">Study abroad without IELTS</h2><p>Universities in these countries often accept a waiver (high Class 12 English or MOI) or an alternative test: <a href="/study-abroad/study-in-uk.html">UK</a>, <a href="/study-abroad/study-in-germany.html">Germany</a>, <a href="/study-abroad/study-in-ireland.html">Ireland</a>, <a href="/study-abroad/study-in-france.html">France</a>, <a href="/study-abroad/study-in-italy.html">Italy</a>, <a href="/study-abroad/study-in-spain.html">Spain</a>, <a href="/study-abroad/study-in-poland.html">Poland</a>, <a href="/study-abroad/study-in-singapore.html">Singapore</a>, <a href="/study-abroad/study-in-japan.html">Japan</a>, <a href="/study-abroad/study-in-south-korea.html">South Korea</a>, <a href="/study-abroad/study-in-uae.html">UAE (Dubai)</a>, <a href="/study-abroad/study-in-malaysia.html">Malaysia</a>.</p><p class="meta-line">Waivers are decided by each university and some visas still need a test score.</p></div>
+  <div class="card"><h2 style="font-size:21px">MBBS abroad for Indian students</h2><p><a href="/study-abroad/mbbs-in-russia.html">Russia</a> (₹5.3 lakh – ₹10.4 lakh/yr), <a href="/study-abroad/mbbs-in-georgia.html">Georgia</a> (₹7.3 lakh – ₹12.0 lakh/yr), <a href="/study-abroad/mbbs-in-kazakhstan.html">Kazakhstan</a> (₹5.3 lakh – ₹9.1 lakh/yr), <a href="/study-abroad/mbbs-in-uzbekistan.html">Uzbekistan</a> (₹4.4 lakh – ₹8.1 lakh/yr). Only choose programs that meet NMC’s rules: 54+ months in English, 12-month internship at the same university, licence-eligible in that country, and NEET-UG qualified.</p></div>
+</div></section>
+
+<section aria-labelledby="eng-h"><div class="wrap">
+  <h2 id="eng-h">IELTS vs TOEFL vs PTE vs Duolingo score converter</h2>
+  <div class="tbl-wrap"><table><thead><tr><th>IELTS</th><th>TOEFL iBT</th><th>PTE Academic</th><th>Duolingo English Test</th></tr></thead><tbody><tr><td class="num">5.5</td><td class="num">46–59</td><td class="num">43–50</td><td class="num">95–100</td></tr><tr><td class="num">6.0</td><td class="num">60–78</td><td class="num">50–57</td><td class="num">100–105</td></tr><tr><td class="num">6.5</td><td class="num">79–93</td><td class="num">58–64</td><td class="num">110–115</td></tr><tr><td class="num">7.0</td><td class="num">94–101</td><td class="num">65–72</td><td class="num">120–125</td></tr><tr><td class="num">7.5</td><td class="num">102–109</td><td class="num">73–78</td><td class="num">130</td></tr><tr><td class="num">8.0</td><td class="num">110–114</td><td class="num">79–83</td><td class="num">135–140</td></tr></tbody></table></div>
+  <p class="meta-line" style="margin-top:8px">Approximate equivalences based on published test-maker concordance tables. Each university sets its own accepted scores — check the program page.</p>
+</div></section>
+
+<section aria-labelledby="faq-h"><div class="wrap" style="max-width:900px">
+  <h2 id="faq-h">Study abroad FAQs for Indian students</h2>
+  <details><summary>Which is the cheapest country to study abroad for Indian students?</summary><p>Counting tuition, living costs and insurance, the cheapest options for a master’s are Poland (from about ₹8.9 lakh a year), Italy (from about ₹9.2 lakh a year), Japan (from about ₹9.5 lakh a year), Malaysia (from about ₹9.7 lakh a year). Germany’s public universities charge little or no tuition, but you must show €11,904 in a blocked account for living costs.</p></details>
+<details><summary>How much does it cost to study abroad from India in total?</summary><p>A 1–2 year master’s typically costs ₹8–25 lakh in low-tuition Europe (Germany, Italy, France, Poland, Austria), ₹25–50 lakh in the UK, Ireland, Canada or Australia, and ₹40–90 lakh+ in the USA, including living costs. Use the cost calculator above to get a figure for your exact course, city and scholarship.</p></details>
+<details><summary>Which countries give the longest post-study work visa?</summary><p>United States (3 years), Canada (3 years), New Zealand (3 years), Denmark (3 years), Australia (2 years), Ireland (2 years). From 1 January 2027 the UK Graduate Route drops from 2 years to 18 months for new applications.</p></details>
+<details><summary>Can I study abroad without IELTS?</summary><p>Yes, in many cases. Universities in UK, Germany, Ireland, France, Italy, Spain, Poland, Singapore and others can waive IELTS if your Class 12 English marks are high or you studied in English (MOI letter). Others accept Duolingo, PTE or TOEFL instead. Visa rules can still require a test (Australia, for example), so check each university and visa page.</p></details>
+<details><summary>Which country is best for PR after studying?</summary><p>Canada and Germany currently offer the clearest study-to-permanent-residence routes for Indian students, followed by Australia, New Zealand and Ireland. Rules tightened in 2024–2026 everywhere, so PR is never guaranteed.</p></details>
+<details><summary>Can I work part-time while studying abroad?</summary><p>Most countries allow about 20 hours a week during term: UK 20, USA 20 (on-campus), Canada 24, Australia 48 per fortnight, New Zealand 25, Germany 140 full days a year, France 964 hours a year, Spain 30 hours a week. Part-time income helps with living costs but rarely covers tuition.</p></details>
+<details><summary>How much money do I need to show for a student visa?</summary><p>Examples for 2027 intakes: Germany €11,904 per year in a blocked account; Canada C$23,448 plus tuition; Australia A$29,710 plus tuition and travel; UK £1,483/month in London or £1,136/month elsewhere (up to 9 months) plus fees; Ireland €10,000 plus fees. Education loan sanction letters are accepted as proof in most countries.</p></details>
+<details><summary>Is MBBS abroad valid in India?</summary><p>Only if the course meets the National Medical Commission’s Foreign Medical Graduate Licentiate rules: at least 54 months of study in English, a 12-month internship at the same institution, and eligibility for a medical licence in that country. You must have qualified NEET-UG, and you must pass the screening/licensing exam (FMGE/NExT) back in India.</p></details>
+<details><summary>Is this data accurate?</summary><p>Every country is compiled from official visa and government pages (linked on each guide) and reviewed on 6 November 2026. Where official sources disagree or rules are changing, we say so. Rupee figures use approximate exchange rates that you can edit in the calculator. Always confirm on the official page before paying any fee.</p></details>
+<details><summary>Do I need a consultant to study abroad?</summary><p>No. Every step — university applications, scholarships, visa, blocked account, loans — can be done yourself using the official links on each country guide. If you do use an agent, check what commission they earn from universities and never pay for “guaranteed” admission or visas.</p></details>
+</div></section>
+
+<section aria-labelledby="src-h"><div class="wrap" style="max-width:900px">
+  <h2 id="src-h">Sources &amp; how we keep this accurate</h2>
+  <p>Each country guide lists its official sources — immigration departments (GOV.UK, IRCC, Home Affairs, USCIS/State Department, German Federal Foreign Office, Immigration New Zealand, Irish Immigration Service and others) and official study portals (DAAD, Campus France, EduCanada, Study Australia). Tuition ranges come from university fee pages. Rupee amounts are estimates using editable exchange rates. Where sources disagree or rules are changing, the guide says so. Read our <a href="/editorial-policy.html">editorial policy</a>, and <a href="/contact.html">tell us</a> if you spot an outdated figure.</p>
+  <p class="meta-line">Last reviewed: 6 November 2026. This tool does not provide immigration or financial advice.</p>
+</div></section>
+</main>
+
+<div class="cbar" id="cbar" role="region" aria-label="Compare tray"><span style="font-size:13px;color:var(--ink3)">Compare:</span><span id="cbarList"></span><button class="btn sm" id="cbarGo">Compare now</button></div>
+
+<footer class="site">
+  <div class="flinks"><strong style="color:var(--ink2)">Study abroad guides:</strong><a href="/study-abroad/study-in-usa.html">USA</a><a href="/study-abroad/study-in-uk.html">UK</a><a href="/study-abroad/study-in-canada.html">Canada</a><a href="/study-abroad/study-in-australia.html">Australia</a><a href="/study-abroad/study-in-germany.html">Germany</a><a href="/study-abroad/study-in-ireland.html">Ireland</a><a href="/study-abroad/study-in-new-zealand.html">New Zealand</a><a href="/study-abroad/study-in-france.html">France</a><a href="/study-abroad/study-in-netherlands.html">Netherlands</a><a href="/study-abroad/study-in-italy.html">Italy</a><a href="/study-abroad/study-in-spain.html">Spain</a><a href="/study-abroad/study-in-sweden.html">Sweden</a><a href="/study-abroad/">All countries →</a></div>
+  <div class="flinks"><a href="/tools/">All Tools</a><a href="/tools/salary-calculator.html">Salary Calculator</a><a href="/tools/cgpa.html">CGPA Calculator</a><a href="/tools/ai-resume-checker.html">AI Resume Checker</a><a href="/tools/letter-writer.html">SOP &amp; Letter Writer</a><a href="/colleges/">Colleges</a><a href="/blog/">Blog</a></div>
+  <div class="flinks"><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/editorial-policy.html">Editorial Policy</a><a href="/privacy.html">Privacy</a></div>
+  <p style="margin:8px 0 0">© 2026 Student Toolkit · Free tools for Indian students · Figures are estimates — always confirm with the official source before you pay or apply.</p>
+</footer>
+<script src="/study-abroad/data.js?v=20261106" defer></script>
+<script src="/study-abroad/finder.js?v=20261106" defer></script>
+</body></html>
