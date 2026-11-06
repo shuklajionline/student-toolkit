@@ -1,551 +1,349 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1248976636881567');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1248976636881567&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-  
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Student Toolkit Tools | Academic & Career Utilities</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J60HJ54DY0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-J60HJ54DY0');</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Free Student Tools India: CGPA, Attendance, Resume &amp; More</title>
+<meta name="description" content="10 free tools for Indian students: CGPA & attendance calculators, college predictor, AI resume checker, salary calculator, study abroad finder & more. No sign-up."/>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"/>
 <link rel="canonical" href="https://studenttoolkit.online/tools/"/>
-  <meta
-    name="description"
-    content="Explore powerful academic and career tools including Resume Checker, Attendance & Bunk Meter, CGPA Calculator, AI Resume Builder, and Communication utilities for students."
-  />
-
-  <link rel="stylesheet" href="../style.css" />
-
-  <style>
-    body {
-      background:
-        radial-gradient(circle at top, #eef2ff 0, #e0f2fe 28%, #f8fafc 70%),
-        linear-gradient(135deg, #eef2ff, #f8fafc);
-      color: #0f172a;
-    }
-
-    .tools-shell {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(248, 250, 252, 0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
-      padding: 10px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .navbar .logo img {
-      height: 40px;
-    }
-
-    .tools-main {
-      flex: 1;
-      padding: 32px 18px 56px;
-      max-width: 1120px;
-      margin: 0 auto;
-    }
-
-    .tools-hero {
-      text-align: left;
-      padding: 32px 22px 32px;
-      border-radius: 24px;
-      background:
-        radial-gradient(circle at top left, rgba(129, 140, 248, 0.15), transparent 55%),
-        radial-gradient(circle at bottom right, rgba(52, 211, 153, 0.15), transparent 55%),
-        #ffffff;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.10);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .tools-hero-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(79, 70, 229, 0.08);
-      color: #4f46e5;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 10px;
-    }
-
-    .tools-hero h1 {
-      font-size: clamp(28px, 3vw + 10px, 36px);
-      margin-bottom: 8px;
-      letter-spacing: 0.02em;
-    }
-
-    .tools-hero h1 span {
-      color: #4f46e5;
-    }
-
-    .tools-hero p {
-      color: #4b5563;
-      max-width: 520px;
-      margin-bottom: 16px;
-      font-size: 15px;
-    }
-
-    .tools-hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 12px;
-      color: #6b7280;
-      margin-top: 4px;
-    }
-
-    .tools-hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(248, 250, 252, 0.9);
-      font-size: 12px;
-      color: #4b5563;
-    }
-
-    .tools-hero-pill-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
-    }
-
-    .tools-hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .tools-hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
-      border-radius: 999px;
-      border: none;
-      background: linear-gradient(120deg, #4f46e5, #22c55e);
-      color: #f9fafb;
-      font-size: 13px;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 15px 40px rgba(15, 23, 42, 0.3);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
-    }
-
-    .tools-hero-cta:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 46px rgba(15, 23, 42, 0.35);
-      opacity: 0.96;
-    }
-
-    .tools-hero-link {
-      font-size: 13px;
-      color: #4b5563;
-      text-decoration: none;
-    }
-
-    .tools-hero-link span {
-      color: #4f46e5;
-      font-weight: 500;
-    }
-
-    .category-title {
-      margin-top: 40px;
-      font-size: 18px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #111827;
-    }
-
-    .category-title span {
-      font-size: 20px;
-    }
-
-    .category-subtitle {
-      font-size: 13px;
-      color: #6b7280;
-      margin-top: 4px;
-      margin-bottom: 6px;
-    }
-
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 20px;
-    }
-
-    .tool-card {
-      background: #ffffff;
-      padding: 22px 20px 20px;
-      border-radius: 18px;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .tool-card::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.12), transparent 60%);
-      opacity: 0;
-      transition: opacity 0.18s ease;
-      pointer-events: none;
-    }
-
-    .tool-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
-      border-color: rgba(79, 70, 229, 0.7);
-    }
-
-    .tool-card:hover::before {
-      opacity: 1;
-    }
-
-    .tool-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: #4f46e5;
-      color: #ffffff;
-      padding: 3px 9px;
-      font-size: 11px;
-      border-radius: 999px;
-      box-shadow: 0 12px 30px rgba(79, 70, 229, 0.55);
-    }
-
-    .tool-icon {
-      font-size: 22px;
-      margin-bottom: 4px;
-    }
-
-    .tool-chip {
-      font-size: 11px;
-      color: #6b7280;
-      background: #eff6ff;
-      border-radius: 999px;
-      padding: 2px 9px;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      margin-bottom: 4px;
-    }
-
-    .tool-card h3 {
-      margin: 0 0 4px;
-      font-size: 16px;
-      color: #111827;
-    }
-
-    .tool-card p {
-      color: #6b7280;
-      font-size: 13px;
-      margin: 0 0 10px;
-    }
-
-    .tool-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-      margin-top: auto;
-      font-size: 12px;
-      color: #9ca3af;
-    }
-
-    .tool-card a {
-      text-decoration: none;
-      font-weight: 600;
-      color: #4f46e5;
-      font-size: 13px;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .tool-card a:hover {
-      text-decoration: underline;
-    }
-
-    .footer {
-      border-top: 1px solid rgba(148, 163, 184, 0.25);
-      padding: 14px 18px 22px;
-      text-align: center;
-      font-size: 12px;
-      color: #6b7280;
-      background: rgba(248, 250, 252, 0.9);
-      backdrop-filter: blur(8px);
-    }
-
-    @media (max-width: 768px) {
-      .tools-main {
-        padding-top: 24px;
-      }
-
-      .tools-hero {
-        padding: 22px 18px 24px;
-        text-align: left;
-      }
-
-      .tools-hero p {
-        max-width: none;
-      }
-    }
-  </style>
+<meta property="og:title" content="Free Student Tools India: CGPA, Attendance, Resume &amp; More"/>
+<meta property="og:description" content="10 free tools for Indian students: CGPA & attendance calculators, college predictor, AI resume checker, salary calculator, study abroad finder & more. No sign-up."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://studenttoolkit.online/tools/"/>
+<meta property="og:site_name" content="Student Toolkit"/>
+<meta property="og:locale" content="en_IN"/>
+<meta property="og:image" content="https://studenttoolkit.online/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@StudentToolkitIN"/>
+<meta name="twitter:title" content="Free Student Tools India: CGPA, Attendance, Resume &amp; More"/>
+<meta name="twitter:description" content="10 free tools for Indian students — calculators, college predictor, AI resume checker, study abroad finder. No sign-up."/>
+<meta name="twitter:image" content="https://studenttoolkit.online/og-image.png"/>
+<meta name="theme-color" content="#09090b"/>
+<link rel="icon" href="/logo-icon.png"/>
+<link rel="manifest" href="/manifest.json"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Student Tools for Indian Students","url":"https://studenttoolkit.online/tools/","description":"Free calculators, predictors and AI tools for Indian college students: CGPA, attendance, college predictor, resume checker, salary calculator, study abroad finder and more.","inLanguage":"en-IN","isPartOf":{"@type":"WebSite","name":"Student Toolkit","url":"https://studenttoolkit.online/"},"mainEntity":{"@type":"ItemList","numberOfItems":10,"itemListElement":[
+{"@type":"ListItem","position":1,"name":"Bunk Meter: Attendance Calculator","url":"https://studenttoolkit.online/tools/attendance.html"},
+{"@type":"ListItem","position":2,"name":"CGPA Calculator","url":"https://studenttoolkit.online/tools/cgpa.html"},
+{"@type":"ListItem","position":3,"name":"College Predictor","url":"https://studenttoolkit.online/tools/college-predictor.html"},
+{"@type":"ListItem","position":4,"name":"AI Resume Checker","url":"https://studenttoolkit.online/tools/ai-resume-checker.html"},
+{"@type":"ListItem","position":5,"name":"AI Resume Generator","url":"https://studenttoolkit.online/tools/ai-resume-generator.html"},
+{"@type":"ListItem","position":6,"name":"Salary Calculator","url":"https://studenttoolkit.online/tools/salary-calculator.html"},
+{"@type":"ListItem","position":7,"name":"Career Path Finder","url":"https://studenttoolkit.online/tools/career-path-finder.html"},
+{"@type":"ListItem","position":8,"name":"Study Abroad Finder","url":"https://studenttoolkit.online/tools/study-abroad-finder.html"},
+{"@type":"ListItem","position":9,"name":"Letter & Email Writer","url":"https://studenttoolkit.online/tools/letter-writer.html"},
+{"@type":"ListItem","position":10,"name":"College Directory","url":"https://studenttoolkit.online/colleges/"}]}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://studenttoolkit.online/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://studenttoolkit.online/tools/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Are Student Toolkit tools really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every tool is free to use with no sign-up or login. Calculators run in your browser, so your marks and attendance are not stored on our servers."}},
+{"@type":"Question","name":"How do I calculate how many classes I can bunk?","acceptedAnswer":{"@type":"Answer","text":"Use the Bunk Meter attendance calculator. Enter classes attended and total classes held, choose your college's minimum (usually 75%), and it shows how many classes you can skip safely or how many you must attend to recover."}},
+{"@type":"Question","name":"How do I convert CGPA to percentage?","acceptedAnswer":{"@type":"Answer","text":"Most Indian universities use CGPA × 9.5 for a 10-point scale, but some (such as VTU, Mumbai University and Anna University) use their own formulas. The CGPA Calculator supports these grading systems and converts automatically."}},
+{"@type":"Question","name":"Which tool helps me choose a college?","acceptedAnswer":{"@type":"Answer","text":"The College Predictor takes your CUET, CAT, JEE, IPMAT, XAT, MH-CET, NMAT, CLAT or NIFT score and shows colleges you can get, with cutoffs, fees and placements. The College Directory has honest reviews of individual colleges."}},
+{"@type":"Question","name":"Is the AI Resume Checker safe to use?","acceptedAnswer":{"@type":"Answer","text":"Your resume text is sent to an AI model only to generate the analysis. AI feedback can be wrong, so review its suggestions before you change your resume. Read our privacy policy for details."}},
+{"@type":"Question","name":"Which tool should I use to plan studying abroad?","acceptedAnswer":{"@type":"Answer","text":"Use the Study Abroad Finder. It matches 28 destinations to your budget and course, shows total cost in rupees, visa and proof-of-funds rules, post-study work rights, scholarships and an education-loan EMI estimate."}}]}</script>
+<!-- Meta Pixel -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1248976636881567');fbq('track','PageView');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1248976636881567&ev=PageView&noscript=1" alt=""/></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#09090b;--bg2:#111113;--bg3:#18181b;--bg4:#27272a;--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);
+--ink:#fafafa;--ink2:rgba(255,255,255,.74);--ink3:rgba(255,255,255,.5);--ink4:rgba(255,255,255,.28);
+--accent:#f97316;--a2:#fb923c;--abg:rgba(249,115,22,.12);--green:#22c55e;--gbg:rgba(34,197,94,.12);--blue:#60a5fa;--bbg:rgba(96,165,250,.12);
+--purple:#c084fc;--pbg:rgba(192,132,252,.12);--gold:#facc15;--ybg:rgba(250,204,21,.12);--r:16px}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:'Syne',system-ui,sans-serif;letter-spacing:-.01em;line-height:1.15}
+.wrap{max-width:1160px;margin:0 auto;padding:0 18px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+nav.top{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:rgba(9,9,11,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:17px}.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:18px;align-items:center}.nav-links a{font-size:13px;font-weight:500;color:var(--ink3)}.nav-links a:hover,.nav-links a[aria-current]{color:var(--ink)}
+.nav-cta{background:var(--accent);color:#fff!important;padding:7px 14px;border-radius:8px;font-weight:600!important}
+.nav-cta{white-space:nowrap}
+@media(max-width:640px){.nav-links a:not(.nav-cta){display:none}.nav-cta{font-size:12px!important;padding:6px 11px!important}}
+.crumbs{font-size:12.5px;color:var(--ink3);padding:16px 0 0}.crumbs a:hover{color:var(--ink)}
+.hero{position:relative;text-align:center;padding:42px 0 26px;max-width:820px;margin:0 auto}
+.hero::before{content:'';position:absolute;inset:-40px 0 auto;height:320px;background:radial-gradient(closest-side,rgba(249,115,22,.16),transparent);z-index:-1;pointer-events:none}
+.badge{display:inline-flex;gap:8px;align-items:center;font-size:12px;font-weight:600;color:var(--a2);background:var(--abg);border:1px solid rgba(249,115,22,.25);padding:5px 12px;border-radius:99px;margin-bottom:16px}
+.badge i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px var(--gbg)}
+.hero h1{font-size:clamp(30px,5.6vw,52px);font-weight:800;margin-bottom:14px}.hero h1 span{color:var(--accent)}
+.hero p{font-size:clamp(15px,2vw,17.5px);color:var(--ink2);max-width:640px;margin:0 auto 22px}
+.search{position:relative;max-width:620px;margin:0 auto}
+.search input{width:100%;background:var(--bg2);border:1px solid var(--border2);color:var(--ink);padding:15px 52px 15px 46px;border-radius:14px;font:inherit;font-size:16px;outline:none;transition:border-color .15s,box-shadow .15s}
+.search input:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--abg)}
+.search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--ink3)}
+.search kbd{position:absolute;right:14px;top:50%;transform:translateY(-50%);font:600 11px 'DM Sans',sans-serif;color:var(--ink3);border:1px solid var(--border2);border-radius:6px;padding:2px 7px}
+@media(hover:none){.search kbd{display:none}}
+.stats{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;margin-top:18px;font-size:13px;color:var(--ink3)}.stats b{color:var(--ink);font-family:'Syne',sans-serif}
+.chips{display:flex;gap:8px;padding:4px 0 2px;justify-content:center;flex-wrap:wrap}
+.chip{flex:0 0 auto;background:var(--bg2);border:1px solid var(--border2);color:var(--ink2);padding:8px 14px;border-radius:99px;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer}
+.chip:hover{border-color:var(--ink4);color:var(--ink)}.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#fff}
+.chip small{opacity:.7;font-weight:500;margin-left:4px}
+section{padding:26px 0}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.sec-h h2{font-size:clamp(20px,3vw,26px)}.sec-h p{font-size:13.5px;color:var(--ink3)}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.tool{position:relative;display:flex;flex-direction:column;gap:10px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:20px;transition:border-color .15s,transform .15s,background .15s}
+.tool:hover{border-color:var(--border2);transform:translateY(-3px);background:#141416}
+.tool:focus-within{border-color:var(--accent)}
+.tool.feat{grid-column:span 2;background:linear-gradient(135deg,rgba(249,115,22,.1),rgba(96,165,250,.05)) var(--bg2);border-color:rgba(249,115,22,.28)}
+@media(max-width:700px){.tool.feat{grid-column:auto}}
+.t-top{display:flex;align-items:center;gap:12px}
+.ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:22px;background:var(--bg4);flex-shrink:0}
+.ico.o{background:var(--abg)}.ico.g{background:var(--gbg)}.ico.b{background:var(--bbg)}.ico.p{background:var(--pbg)}.ico.y{background:var(--ybg)}
+.tool h3{font-size:17.5px}.tool h3 a::after{content:'';position:absolute;inset:0;border-radius:var(--r)}
+.t-cat{font-size:11.5px;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.tool p{font-size:14px;color:var(--ink2)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:99px;background:var(--bg4);color:var(--ink2)}
+.tag.new{background:var(--gbg);color:var(--green)}.tag.ai{background:var(--pbg);color:var(--purple)}.tag.hot{background:var(--abg);color:var(--a2)}
+.t-foot{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:6px;font-size:13px}
+.t-foot b{color:var(--a2);font-weight:600}.t-foot span{color:var(--ink3)}
+.t-extra{position:relative;z-index:1;font-size:12.5px;color:var(--ink3)}.t-extra a{color:var(--a2)}.t-extra a:hover{color:var(--ink)}
+.empty{display:none;text-align:center;padding:30px;color:var(--ink3);border:1px dashed var(--border2);border-radius:var(--r)}
+.recent{display:none;margin-bottom:14px;text-align:center}.recent.on{display:block}
+.recent h2{font:600 12px 'DM Sans',sans-serif;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.recent .row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.recent a{display:inline-flex;gap:6px;align-items:center;background:var(--bg2);border:1px solid var(--border2);border-radius:10px;padding:8px 12px;font-size:13.5px;color:var(--ink2)}.recent a:hover{color:var(--ink);border-color:var(--accent)}
+.tasks{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.task{display:flex;gap:10px;align-items:center;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:13px 14px;font-size:14px;color:var(--ink2);transition:border-color .15s}
+.task:hover{border-color:var(--accent);color:var(--ink)}.task span{font-size:18px}.task em{margin-left:auto;font-style:normal;color:var(--ink4)}
+.guides{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.guide{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:14px 16px}.guide:hover{border-color:var(--border2)}
+.guide small{display:block;font-size:11.5px;color:var(--a2);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
+.guide b{font-weight:600;font-size:14.5px}
+.why{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.why div{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px}.why h3{font-size:15.5px;margin-bottom:4px}.why p{font-size:13.5px;color:var(--ink2)}.why a{color:var(--a2)}
+details{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:8px}
+summary{cursor:pointer;font-weight:600;list-style:none}summary::-webkit-details-marker{display:none}summary::after{content:'+';float:right;color:var(--accent);font-weight:800}details[open] summary::after{content:'−'}
+details p{margin-top:10px;color:var(--ink2);font-size:14.5px}details a{color:var(--a2)}
+.cta{text-align:center;background:linear-gradient(135deg,rgba(249,115,22,.14),rgba(192,132,252,.08));border:1px solid rgba(249,115,22,.25);border-radius:20px;padding:28px 20px}
+.cta h2{font-size:22px;margin-bottom:6px}.cta p{color:var(--ink2);font-size:14.5px;margin-bottom:14px}
+.btn{display:inline-flex;gap:6px;align-items:center;background:var(--accent);color:#fff;padding:11px 18px;border-radius:10px;font-weight:600;font-size:14px;margin:4px}.btn:hover{background:var(--a2)}
+.btn.ghost{background:transparent;border:1px solid var(--border2);color:var(--ink2)}.btn.ghost:hover{border-color:var(--accent);color:var(--ink)}
+footer.site{border-top:1px solid var(--border);padding:28px 18px;text-align:center;font-size:12.5px;color:var(--ink3);margin-top:30px}
+.flinks{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;margin:8px 0}.flinks a:hover{color:var(--ink)}
+[hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
 </head>
 <body>
-  <div class="tools-shell">
-    <header class="navbar">
-      <div class="logo">
-        <a href="../index.html">
-          <img src="../student-toolkit-logo.png" alt="Student Toolkit logo" />
-        </a>
-      </div>
-    </header>
+<nav class="top" aria-label="Main">
+  <a href="/" class="nav-logo">Student<span>Toolkit</span></a>
+  <div class="nav-links">
+    <a href="/tools/" aria-current="page">Tools</a>
+    <a href="/colleges/">Colleges</a>
+    <a href="/study-abroad/">Study Abroad</a>
+    <a href="/blog/">Blog</a>
+    <a href="/tools/ai-resume-checker.html" class="nav-cta">Free Resume Check →</a>
+  </div>
+</nav>
 
-    <main class="tools-main">
-      <section class="tools-hero">
-        <div class="tools-hero-kicker">
-          <span>Student Toolkit</span>
-          <span>Tools Hub</span>
-        </div>
-        <h1>All your student <span>tools</span> in one place.</h1>
-        <p>
-          Smart academic calculators, brutal resume audits, and communication utilities built specifically for serious students in India.
-        </p>
-        <div class="tools-hero-cta-row">
-          <a href="#tools-list" class="tools-hero-cta">
-            Browse all tools
-            <span>↘</span>
-          </a>
-          <a href="../index.html" class="tools-hero-link">
-            Back to home <span>↗</span>
-          </a>
-        </div>
-        <div class="tools-hero-meta">
-          <div class="tools-hero-pill">
-            <span class="tools-hero-pill-dot"></span>
-            100% free · No sign up
-          </div>
-          <div>Attendance · CGPA · Resume · Letters · More</div>
-        </div>
-      </section>
+<main>
+<div class="wrap">
+  <div class="crumbs"><a href="/">Home</a> › Tools</div>
+  <header class="hero">
+    <div class="badge"><i></i> 100% free · No sign-up · Made for Indian students</div>
+    <h1>Free tools for <span>every student problem</span></h1>
+    <p>Attendance, CGPA, college admissions, resumes, salary offers and study abroad — answered in seconds, without spreadsheets or sign-ups.</p>
+    <div class="search" role="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <label for="q" class="sr">Search tools</label>
+      <input id="q" type="search" placeholder="Try “bunk”, “CGPA to percentage”, “CAT”, “Germany”…" autocomplete="off"/>
+      <kbd aria-hidden="true">/</kbd>
+    </div>
+    <div class="stats"><span><b>10</b> free tools</span><span><b>0</b> sign-ups</span><span><b>120+</b> colleges in the predictor</span><span><b>28</b> study abroad countries</span></div>
+  </header>
 
-      <section id="tools-list" aria-label="Student Toolkit tools">
-        <!-- Academic -->
-        <h2 class="category-title">
-          <span>🎓</span> Academic Tools
-        </h2>
-        <p class="category-subtitle">
-          Plan your bunks safely and keep track of CGPA without Excel or complex formulas.
-        </p>
+  <div class="recent" id="recent" aria-label="Recently used tools"><h2>Recently used</h2><div class="row" id="recentRow"></div></div>
 
-        <div class="tools-grid">
-          <!-- Attendance & Bunk Meter -->
-          <article class="tool-card">
-            <div class="tool-icon">📊</div>
-            <div class="tool-chip">Attendance · Bunk Meter</div>
-            <h3>Attendance & Bunk Meter</h3>
-            <p>
-              Instantly check your attendance percentage, see how many classes you can safely bunk, and calculate how many you must attend to hit your target.
-            </p>
-            <div class="tool-footer">
-              <a href="attendance.html">
-                Open Tool →
-              </a>
-              <span>Daily class planning</span>
-            </div>
-          </article>
-
-          <!-- CGPA Calculator -->
-          <article class="tool-card">
-            <div class="tool-icon">📈</div>
-            <div class="tool-chip">CGPA · Credits</div>
-            <h3>CGPA Calculator</h3>
-            <p>
-              Simple credit-based CGPA calculator built for university students. Add your subjects, credits and grades — see your CGPA in seconds.
-            </p>
-            <div class="tool-footer">
-              <a href="cgpa.html">
-                Open Tool →
-              </a>
-              <span>Semester & overall CGPA</span>
-            </div>
-          </article>
-        </div>
-
-        <!-- Career -->
-        <h2 class="category-title">
-          <span>💼</span> Career Intelligence Tools
-        </h2>
-        <p class="category-subtitle">
-          Get recruiter-style feedback and prepare your resume for ATS before you hit apply.
-        </p>
-
-        <div class="tools-grid">
-          <!-- Brutal Resume Audit / AI Resume Checker -->
-          <article class="tool-card">
-            <div class="tool-badge">Flagship</div>
-            <div class="tool-icon">🧠</div>
-            <div class="tool-chip">AI Resume Checker</div>
-            <h3>Brutal Resume Audit</h3>
-            <p>
-              Run an ATS-style audit of your resume with a score out of 100, keyword analysis and a clear roadmap to fix issues and improve your profile.
-            </p>
-            <div class="tool-footer">
-              <a href="ai-resume-checker.html">
-                Run Audit →
-              </a>
-              <span>ATS-style scoring</span>
-            </div>
-          </article>
-
-          <!-- Guide: How Resume Audit Works -->
-          <article class="tool-card">
-            <div class="tool-icon">📘</div>
-            <div class="tool-chip">Guide</div>
-            <h3>How Resume Audit Works</h3>
-            <p>
-              Learn how the checker evaluates structure, metrics and industry alignment so you know exactly what the score means and how to increase it.
-            </p>
-            <div class="tool-footer">
-              <a href="../blog/brutal-resume-checker-guide.html">
-                Read Guide →
-              </a>
-              <span>Deep dive explainer</span>
-            </div>
-          </article>
-
-          <!-- AI Resume Builder (Coming soon) -->
-          <article class="tool-card">
-            <div class="tool-icon">🤖</div>
-            <div class="tool-chip">AI Resume Builder</div>
-            <h3>AI Resume Builder</h3>
-            <p>
-              Professional ATS-friendly resume generator to create polished resumes from scratch. Launching soon — watch this space.
-            </p>
-            <div class="tool-footer">
-              <a href="ai-resume-generator.html">
-                Coming Soon →
-              </a>
-              <span>Under development</span>
-            </div>
-          </article>
-        </div>
-
-        <!-- Communication -->
-        <h2 class="category-title">
-          <span>📩</span> Communication Tools
-        </h2>
-        <p class="category-subtitle">
-          Generate clean, professional letters and emails for professors, colleges and internships in seconds.
-        </p>
-
-        <div class="tools-grid">
-          <!-- Letter / Email / Internship Writer -->
-          <article class="tool-card">
-            <div class="tool-badge">Flagship</div>
-            <div class="tool-icon">✉️</div>
-            <div class="tool-chip">Letters · Emails · Applications</div>
-            <h3>Leave, Professor Email, Internship Writer</h3>
-            <p>
-              One communication tool for leave applications, professor emails, internship letters and more — formatted the way Indian colleges expect.
-            </p>
-            <div class="tool-footer">
-              <a href="letter-writer.html">
-                Open Tool →
-              </a>
-              <span>Ready-to-send drafts</span>
-            </div>
-          </article>
-        </div>
-
-        <!-- Study Abroad -->
-        <h2 class="category-title">
-          <span>🌍</span> Study Abroad Tools
-        </h2>
-        <p class="category-subtitle">
-          Compare countries, costs in rupees, visas, work rights and scholarships before you apply abroad.
-        </p>
-
-        <div class="tools-grid">
-          <article class="tool-card">
-            <div class="tool-badge">New</div>
-            <div class="tool-icon">🌍</div>
-            <div class="tool-chip">28 Countries · Costs in ₹ · Loan EMI</div>
-            <h3>Study Abroad Finder</h3>
-            <p>
-              Find the best country for your budget and course. Total cost in rupees, visa and proof-of-funds rules, post-study work, PR, IELTS waivers, scholarships and an application timeline.
-            </p>
-            <div class="tool-footer">
-              <a href="study-abroad-finder.html">
-                Open Tool →
-              </a>
-              <span><a href="/study-abroad/">Country guides</a></span>
-            </div>
-          </article>
-        </div>
-      </section>
-    </main>
-
-    <section style="max-width:900px;margin:32px auto;padding:0 16px"><h2>More free tools</h2><ul style="line-height:2"><li><a href="salary-calculator.html">Salary Calculator: CTC to in-hand</a></li><li><a href="college-predictor.html">College Predictor</a></li><li><a href="career-path-finder.html">Career Path Finder</a></li><li><a href="study-abroad-finder.html">Study Abroad Finder</a></li></ul></section>
-<footer class="footer">
-      <p>© 2026 Student Toolkit · Built for serious students.</p>
-    <div style="font-size:12px;opacity:.75;text-align:center;padding:14px 16px;clear:both"><a href="/tools/" style="color:inherit">All Tools</a> · <a href="/colleges/" style="color:inherit">Colleges</a> · <a href="/blog/" style="color:inherit">Blog</a> · <a href="/about.html" style="color:inherit">About</a> · <a href="/contact.html" style="color:inherit">Contact</a> · <a href="/editorial-policy.html" style="color:inherit">Editorial Policy</a> · <a href="/privacy.html" style="color:inherit">Privacy</a></div></footer>
+  <div class="chips" role="toolbar" aria-label="Filter tools by category">
+    <button class="chip" data-cat="all" aria-pressed="true">All <small>10</small></button>
+    <button class="chip" data-cat="academic" aria-pressed="false">🎓 Academics <small>2</small></button>
+    <button class="chip" data-cat="admissions" aria-pressed="false">🏛 Admissions <small>3</small></button>
+    <button class="chip" data-cat="career" aria-pressed="false">💼 Career &amp; Jobs <small>4</small></button>
+    <button class="chip" data-cat="abroad" aria-pressed="false">🌍 Study Abroad <small>1</small></button>
+    <button class="chip" data-cat="writing" aria-pressed="false">✍️ Writing <small>1</small></button>
   </div>
 
-  <script>
-    // Smooth scroll for "Browse all tools"
-    document.querySelectorAll('a[href="#tools-list"]').forEach(function (link) {
-      link.addEventListener("click", function (e) {
-        e.preventDefault();
-        const el = document.getElementById("tools-list");
-        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
+  <section id="tools" aria-labelledby="tools-h">
+    <div class="sec-h"><h2 id="tools-h">All student tools</h2><p id="count" aria-live="polite">Showing all 10 tools</p></div>
+    <div class="grid" id="grid">
+
+      <article class="tool feat" data-cat="admissions" data-k="college predictor cuet cat jee ipmat xat mh-cet nmat clat nift cutoff percentile admission mba bba engineering law design roi placement">
+        <div class="t-top"><div class="ico y">🏛</div><div><div class="t-cat">Admissions</div><h3><a href="/tools/college-predictor.html" data-tool="college-predictor">College Predictor 2026</a></h3></div></div>
+        <p>Enter your CUET, CAT, JEE, IPMAT, XAT, MH-CET, NMAT, CLAT or NIFT score and see 120+ colleges you can get — with real cutoffs, fees, average package and ROI ranking. Compare and save colleges.</p>
+        <div class="tags"><span class="tag hot">Most used</span><span class="tag">9 exams</span><span class="tag">Category-wise cutoffs</span></div>
+        <div class="t-foot"><b>Predict my colleges →</b><span>No login</span></div>
+      </article>
+
+      <article class="tool" data-cat="academic" data-k="attendance bunk meter 75 percent classes skip detain debarred lecture shortage">
+        <div class="t-top"><div class="ico g">📊</div><div><div class="t-cat">Academics</div><h3><a href="/tools/attendance.html" data-tool="attendance">Bunk Meter: Attendance Calculator</a></h3></div></div>
+        <p>See exactly how many classes you can skip and still stay above 75% — or how many you must attend to recover. Includes a plan-to-miss simulator.</p>
+        <div class="tags"><span class="tag">75% rule</span><span class="tag">Recovery plan</span></div>
+        <div class="t-foot"><b>Check my attendance →</b><span>10 seconds</span></div>
+      </article>
+
+      <article class="tool" data-cat="academic" data-k="cgpa sgpa gpa percentage convert calculator semester cumulative vtu mumbai anna university grade credits">
+        <div class="t-top"><div class="ico o">📈</div><div><div class="t-cat">Academics</div><h3><a href="/tools/cgpa.html" data-tool="cgpa">CGPA Calculator &amp; Percentage Converter</a></h3></div></div>
+        <p>Semester SGPA, cumulative CGPA and CGPA-to-percentage for 10-point, 4-point, VTU, Mumbai, Delhi and Anna University grading.</p>
+        <div class="tags"><span class="tag">SGPA → CGPA</span><span class="tag">CGPA → %</span></div>
+        <div class="t-foot"><b>Calculate CGPA →</b><span>All universities</span></div>
+      </article>
+
+      <article class="tool" data-cat="career" data-k="ai resume checker ats score cv review keywords rewrite job internship placement">
+        <div class="t-top"><div class="ico p">🧠</div><div><div class="t-cat">Career &amp; Jobs</div><h3><a href="/tools/ai-resume-checker.html" data-tool="ai-resume-checker">AI Resume Checker (ATS Score)</a></h3></div></div>
+        <p>Get an ATS-style score out of 100, section-by-section feedback, missing keywords for your industry and rewrite suggestions.</p>
+        <div class="tags"><span class="tag ai">AI</span><span class="tag">ATS score</span></div>
+        <div class="t-foot"><b>Audit my resume →</b><span>Free</span></div>
+        <div class="t-extra">How scoring works: <a href="/blog/brutal-resume-checker-guide.html">ATS guide</a></div>
+      </article>
+
+      <article class="tool" data-cat="career" data-k="ai resume generator builder cv maker template fresher ats">
+        <div class="t-top"><div class="ico p">🤖</div><div><div class="t-cat">Career &amp; Jobs</div><h3><a href="/tools/ai-resume-generator.html" data-tool="ai-resume-generator">AI Resume Generator</a></h3></div></div>
+        <p>Build an ATS-friendly resume in about 5 minutes: 10+ industries, 3 templates and a live preview. Made for students and freshers.</p>
+        <div class="tags"><span class="tag ai">AI</span><span class="tag">3 templates</span></div>
+        <div class="t-foot"><b>Build my resume →</b><span>No sign-up</span></div>
+      </article>
+
+      <article class="tool" data-cat="career" data-k="salary calculator ctc in hand take home tax regime new old pf hra offer increment payslip job">
+        <div class="t-top"><div class="ico g">💰</div><div><div class="t-cat">Career &amp; Jobs</div><h3><a href="/tools/salary-calculator.html" data-tool="salary-calculator">Salary Calculator: CTC to In-Hand</a></h3></div></div>
+        <p>Turn a CTC offer into monthly in-hand pay. Compare new vs old tax regime, PF, HRA and professional tax, and compare two job offers side by side.</p>
+        <div class="tags"><span class="tag">Offer comparison</span><span class="tag">Tax regimes</span></div>
+        <div class="t-foot"><b>Calculate in-hand →</b><span>Free</span></div>
+      </article>
+
+      <article class="tool" data-cat="career admissions" data-k="career path finder after 12th pcm pcb commerce arts stream options jobs courses what to do">
+        <div class="t-top"><div class="ico b">🎯</div><div><div class="t-cat">Career &amp; Admissions</div><h3><a href="/tools/career-path-finder.html" data-tool="career-path-finder">Career Path Finder</a></h3></div></div>
+        <p>Answer a few questions and compare career options for PCM, PCB, Commerce and Arts students — entrance exams, salaries and step-by-step roadmaps.</p>
+        <div class="tags"><span class="tag">After 12th</span><span class="tag">Roadmaps</span></div>
+        <div class="t-foot"><b>Find my path →</b><span>Free</span></div>
+      </article>
+
+      <article class="tool feat" data-cat="abroad" data-k="study abroad finder country cost rupees visa ielts germany canada uk usa australia ireland masters ms mbbs abroad scholarship education loan emi">
+        <div class="t-top"><div class="ico b">🌍</div><div><div class="t-cat">Study Abroad</div><h3><a href="/tools/study-abroad-finder.html" data-tool="study-abroad-finder">Study Abroad Finder 2027</a></h3></div></div>
+        <p>Match 28 destinations to your budget and course. Total cost in rupees, visa and proof-of-funds rules, post-study work, PR routes, IELTS waivers, scholarships, education-loan EMI and an application timeline.</p>
+        <div class="tags"><span class="tag new">New</span><span class="tag">Costs in ₹</span><span class="tag">Loan EMI</span><span class="tag">MBBS abroad</span></div>
+        <div class="t-foot"><b>Find my country →</b><span>No sign-up</span></div>
+        <div class="t-extra">Country guides: <a href="/study-abroad/study-in-germany.html">Germany</a> · <a href="/study-abroad/study-in-canada.html">Canada</a> · <a href="/study-abroad/study-in-uk.html">UK</a> · <a href="/study-abroad/study-in-usa.html">USA</a> · <a href="/study-abroad/">all 28 →</a></div>
+      </article>
+
+      <article class="tool" data-cat="writing" data-k="letter writer email leave application professor email internship request bonafide noc format">
+        <div class="t-top"><div class="ico o">✍️</div><div><div class="t-cat">Writing</div><h3><a href="/tools/letter-writer.html" data-tool="letter-writer">Letter &amp; Email Writer</a></h3></div></div>
+        <p>Leave applications, professor emails, internship requests and other student letters — formatted the way Indian colleges expect.</p>
+        <div class="tags"><span class="tag">Ready to send</span></div>
+        <div class="t-foot"><b>Write a letter →</b><span>Free</span></div>
+      </article>
+
+      <article class="tool" data-cat="admissions" data-k="college directory reviews iim fms xlri bba mba colleges honest review fees placement">
+        <div class="t-top"><div class="ico y">📚</div><div><div class="t-cat">Admissions</div><h3><a href="/colleges/" data-tool="colleges">College Directory &amp; Reviews</a></h3></div></div>
+        <p>Honest pages on BBA and MBA colleges — fees, placements, verdicts and red flags — plus our full BBA &amp; MBA tier list.</p>
+        <div class="tags"><span class="tag">IIMs · FMS · XLRI</span></div>
+        <div class="t-foot"><b>Browse colleges →</b><span>Free</span></div>
+        <div class="t-extra">See also: <a href="/blog/bba-mba-colleges-india.html">BBA &amp; MBA rankings 2026</a></div>
+      </article>
+    </div>
+    <div class="empty" id="empty">No tool matches “<span id="emptyQ"></span>”. <a href="/contact.html" style="color:var(--a2)">Suggest a tool →</a></div>
+  </section>
+
+  <section aria-labelledby="tasks-h">
+    <div class="sec-h"><h2 id="tasks-h">What do you need to do today?</h2><p>Jump straight to the right tool</p></div>
+    <div class="tasks">
+      <a class="task" href="/tools/attendance.html"><span>😴</span>Can I bunk tomorrow’s class?<em>→</em></a>
+      <a class="task" href="/tools/cgpa.html"><span>🔢</span>Convert my CGPA to percentage<em>→</em></a>
+      <a class="task" href="/tools/college-predictor.html"><span>🎯</span>Which college can I get with my CUET/CAT score?<em>→</em></a>
+      <a class="task" href="/tools/salary-calculator.html"><span>💸</span>How much is my CTC in hand?<em>→</em></a>
+      <a class="task" href="/tools/ai-resume-checker.html"><span>📄</span>Will my resume pass ATS?<em>→</em></a>
+      <a class="task" href="/tools/letter-writer.html"><span>📨</span>Write a leave application<em>→</em></a>
+      <a class="task" href="/tools/career-path-finder.html"><span>🧭</span>What should I do after 12th?<em>→</em></a>
+      <a class="task" href="/tools/study-abroad-finder.html"><span>✈️</span>Which country can I afford to study in?<em>→</em></a>
+    </div>
+  </section>
+
+  <section aria-labelledby="guides-h">
+    <div class="sec-h"><h2 id="guides-h">Guides that go with these tools</h2><p><a href="/blog/" style="color:var(--a2)">All guides →</a></p></div>
+    <div class="guides">
+      <a class="guide" href="/blog/attendance-guide-india.html"><small>Attendance</small><b>How to never get detained: attendance guide for Indian students</b></a>
+      <a class="guide" href="/blog/cgpa-vs-percentage-india.html"><small>CGPA</small><b>CGPA vs percentage: which matters more to recruiters?</b></a>
+      <a class="guide" href="/blog/cuet-ug-2026-complete-guide.html"><small>Admissions</small><b>CUET UG 2027 guide: dates, syllabus and 5-year data</b></a>
+      <a class="guide" href="/blog/bba-mba-colleges-india.html"><small>Colleges</small><b>Best BBA &amp; MBA colleges 2026: tier list and ones to avoid</b></a>
+      <a class="guide" href="/blog/brutal-resume-checker-guide.html"><small>Resume</small><b>ATS resume guide: how to score 80+ and get shortlisted</b></a>
+      <a class="guide" href="/blog/first-internship-zero-experience.html"><small>Internships</small><b>Internship with no experience: 30-day plan + scripts</b></a>
+      <a class="guide" href="/blog/career-path-finder-india.html"><small>Careers</small><b>Career path guide for Indian students</b></a>
+      <a class="guide" href="/study-abroad/"><small>Study abroad</small><b>Country guides: cost in ₹, visas, work rights, scholarships</b></a>
+    </div>
+  </section>
+
+  <section aria-labelledby="why-h">
+    <div class="sec-h"><h2 id="why-h">Why students use Student Toolkit</h2></div>
+    <div class="why">
+      <div><h3>🔓 Free, no sign-up</h3><p>Open a tool and get your answer. No login walls, no phone number, no “talk to a counsellor”.</p></div>
+      <div><h3>🇮🇳 Built for Indian rules</h3><p>75% attendance, Indian university CGPA formulas, Indian tax regimes, CUET/CAT/JEE cutoffs, costs in rupees.</p></div>
+      <div><h3>🔒 Private by default</h3><p>Calculators run in your browser — your marks and attendance stay on your device. <a href="/privacy.html">Privacy</a></p></div>
+      <div><h3>📌 Sourced and dated</h3><p>We cite sources and show review dates, and fix errors you report. <a href="/editorial-policy.html">Editorial policy</a></p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="faq-h" style="max-width:860px;margin:0 auto">
+    <h2 id="faq-h" style="font-size:clamp(20px,3vw,26px);margin-bottom:14px">Frequently asked questions</h2>
+    <details><summary>Are Student Toolkit tools really free?</summary><p>Yes. Every tool is free to use with no sign-up or login. Calculators run in your browser, so your marks and attendance are not stored on our servers.</p></details>
+    <details><summary>How do I calculate how many classes I can bunk?</summary><p>Use the <a href="/tools/attendance.html">Bunk Meter</a>. Enter classes attended and total classes held, choose your college’s minimum (usually 75%), and it shows how many classes you can skip safely or how many you must attend to recover.</p></details>
+    <details><summary>How do I convert CGPA to percentage?</summary><p>Most Indian universities use CGPA × 9.5 for a 10-point scale, but some (such as VTU, Mumbai University and Anna University) use their own formulas. The <a href="/tools/cgpa.html">CGPA Calculator</a> supports these grading systems and converts automatically.</p></details>
+    <details><summary>Which tool helps me choose a college?</summary><p>The <a href="/tools/college-predictor.html">College Predictor</a> takes your CUET, CAT, JEE, IPMAT, XAT, MH-CET, NMAT, CLAT or NIFT score and shows colleges you can get, with cutoffs, fees and placements. The <a href="/colleges/">College Directory</a> has honest reviews of individual colleges.</p></details>
+    <details><summary>Is the AI Resume Checker safe to use?</summary><p>Your resume text is sent to an AI model only to generate the analysis. AI feedback can be wrong, so review its suggestions before you change your resume. Read our <a href="/privacy.html">privacy policy</a> for details.</p></details>
+    <details><summary>Which tool should I use to plan studying abroad?</summary><p>Use the <a href="/tools/study-abroad-finder.html">Study Abroad Finder</a>. It matches 28 destinations to your budget and course, shows total cost in rupees, visa and proof-of-funds rules, post-study work rights, scholarships and an education-loan EMI estimate.</p></details>
+  </section>
+
+  <section>
+    <div class="cta">
+      <h2>Need a tool we don’t have?</h2>
+      <p>Most of our tools started as a student’s request. Tell us what would save you time.</p>
+      <a class="btn" href="/contact.html">Suggest a tool →</a><a class="btn ghost" href="/">Back to home</a>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer class="site">
+  <div class="flinks"><a href="/tools/attendance.html">Attendance Calculator</a><a href="/tools/cgpa.html">CGPA Calculator</a><a href="/tools/college-predictor.html">College Predictor</a><a href="/tools/ai-resume-checker.html">AI Resume Checker</a><a href="/tools/ai-resume-generator.html">AI Resume Generator</a><a href="/tools/salary-calculator.html">Salary Calculator</a><a href="/tools/career-path-finder.html">Career Path Finder</a><a href="/tools/study-abroad-finder.html">Study Abroad Finder</a><a href="/tools/letter-writer.html">Letter Writer</a></div>
+  <div class="flinks"><a href="/tools/">All Tools</a><a href="/colleges/">Colleges</a><a href="/study-abroad/">Study Abroad</a><a href="/blog/">Blog</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/editorial-policy.html">Editorial Policy</a><a href="/privacy.html">Privacy</a></div>
+  <p>© 2026 Student Toolkit · Free tools for Indian students · 🇮🇳 Made in India</p>
+</footer>
+
+<script>
+(function(){
+  var q=document.getElementById('q'),tools=[].slice.call(document.querySelectorAll('.tool')),chips=[].slice.call(document.querySelectorAll('.chip')),
+      count=document.getElementById('count'),empty=document.getElementById('empty'),cat='all',t;
+  function norm(s){return (s||'').toLowerCase().replace(/[^a-z0-9₹ ]+/g,' ').trim();}
+  function apply(){
+    var words=norm(q.value).split(/\s+/).filter(Boolean),n=0;
+    tools.forEach(function(el){
+      var hay=norm(el.dataset.k+' '+el.textContent),
+          okCat=cat==='all'||el.dataset.cat.split(' ').indexOf(cat)>-1,
+          okQ=words.every(function(w){return w.length<4?(' '+hay+' ').indexOf(' '+w+' ')>-1:(' '+hay).indexOf(' '+w)>-1;});
+      el.hidden=!(okCat&&okQ); if(!el.hidden)n++;
     });
-  </script>
+    count.textContent=n===tools.length?'Showing all '+n+' tools':'Showing '+n+' of '+tools.length+' tools';
+    empty.style.display=n?'none':'block'; document.getElementById('emptyQ').textContent=q.value;
+  }
+  q.addEventListener('input',function(){apply();clearTimeout(t);t=setTimeout(function(){if(q.value.trim().length>2&&window.gtag)gtag('event','search',{search_term:q.value.trim(),page:'tools_hub'});},900);});
+  chips.forEach(function(c){c.addEventListener('click',function(){cat=c.dataset.cat;chips.forEach(function(x){x.setAttribute('aria-pressed',String(x===c));});apply();});});
+  document.addEventListener('keydown',function(e){if(e.key==='/'&&document.activeElement!==q){e.preventDefault();q.focus();}if(e.key==='Escape'&&document.activeElement===q){q.value='';apply();}});
+  // Recently used tools (stored on this device only)
+  var KEY='st_recent_tools',recent=[];try{recent=JSON.parse(localStorage.getItem(KEY))||[];}catch(e){}
+  document.addEventListener('click',function(e){var a=e.target.closest('a[data-tool]');if(!a)return;
+    var item={h:a.getAttribute('href'),n:a.textContent.trim()};recent=[item].concat(recent.filter(function(r){return r.h!==item.h;})).slice(0,4);
+    try{localStorage.setItem(KEY,JSON.stringify(recent));}catch(e){} if(window.gtag)gtag('event','select_tool',{tool:a.dataset.tool,page:'tools_hub'});});
+  if(recent.length){var row=document.getElementById('recentRow');recent.forEach(function(r){var a=document.createElement('a');a.href=r.h;a.textContent='↺ '+r.n;row.appendChild(a);});document.getElementById('recent').classList.add('on');}
+  var p=new URLSearchParams(location.search).get('q');if(p)q.value=p;
+  apply();
+})();
+</script>
 </body>
 </html>

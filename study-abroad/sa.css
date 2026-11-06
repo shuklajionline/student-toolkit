@@ -29,7 +29,8 @@ nav.top{position:sticky;top:0;z-index:100;display:flex;align-items:center;justif
 .nav-links a{font-size:13px;font-weight:500;color:var(--ink3);text-decoration:none}
 .nav-links a:hover{color:var(--ink)}
 .nav-cta{background:var(--accent);color:#fff!important;padding:7px 14px;border-radius:8px;font-weight:600!important}
-@media(max-width:640px){.nav-links a:not(.nav-cta){display:none}}
+.nav-cta{white-space:nowrap}
+@media(max-width:640px){.nav-links a:not(.nav-cta){display:none}.nav-cta{font-size:12px!important;padding:6px 11px!important}}
 
 /* BREADCRUMB + HERO */
 .crumbs{font-size:12.5px;color:var(--ink3);padding:16px 0 0}
