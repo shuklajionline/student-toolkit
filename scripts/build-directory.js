@@ -121,13 +121,15 @@ ${body}
 }
 
 // ═══════════ HUB ═══════════
+let AI = null; // all-India AISHE section, built in WRITE below
+const fmtN = n => n.toLocaleString('en-IN');
 function hub() {
   const url = `${SITE}/colleges/directory/`;
-  const title = `Indian College Directory 2027: Search ${C.length}+ Colleges`;
-  const desc = `Search ${C.length}+ Indian colleges — IITs, NITs, IIMs, AIIMS, NLUs, central universities and top private colleges — by state, stream and exam, with honest guidance.`;
+  const title = AI ? `Indian College Directory: All ${fmtN(AI.total)} Institutions` : `Indian College Directory 2027: Search ${C.length}+ Colleges`;
+  const desc = AI ? `Search all ${fmtN(AI.total)} Indian universities, colleges and institutes by state and district (official AISHE data), plus detailed profiles of IITs, NITs, IIMs, AIIMS and NLUs.` : `Search ${C.length}+ Indian colleges — IITs, NITs, IIMs, AIIMS, NLUs, central universities and top private colleges — by state, stream and exam, with honest guidance.`;
   const faqs = [
     ['What is the Grand College Directory?', `A free, searchable directory of Indian colleges and universities — currently ${C.length}+ institutions including all IITs, NITs, IIMs, operational AIIMS, NLUs and central universities, plus leading state, private and autonomous colleges. Each profile shows the type of institution, recognition, entrance exams, courses and how to verify fees and placements.`],
-    ['Will every college in India be listed?', 'That is the goal. India has more than 45,000 colleges and over 1,100 universities. We are adding institutions in batches using official data, starting with the most-searched institutions.'],
+    ['Will every college in India be listed?', AI ? `Yes. The directory lists all ${fmtN(AI.total)} institutions in the official AISHE directory of the Ministry of Education — ${fmtN(AI.counts.u)} universities, ${fmtN(AI.counts.c)} colleges and ${fmtN(AI.counts.s)} standalone institutions — searchable by name, state and district. Detailed profiles are being added in batches, starting with the most-searched institutions.` : 'That is the goal. India has more than 45,000 colleges and over 1,100 universities. We are adding institutions in batches using official data, starting with the most-searched institutions.'],
     ['Where does the data come from?', 'Institution facts (location, type, year of establishment, recognition) come from official and public sources such as the institutions’ own websites and government lists. Fees, cutoffs and placements change every year, so profiles point you to the official fee page and the institution’s NIRF data instead of printing numbers that go out of date.'],
     ['Are these profiles reviews?', 'Profiles give type-level strengths and weaknesses (for example, what is common to IITs or NLUs). In-depth, college-specific reviews are marked with a “Full review” link. Profiles are reviewed by our editors before they are shown in search engines.'],
     ['How do I check if a college is genuine?', 'Check the university on UGC’s lists, the course on its regulator’s approved list (AICTE, NMC, BCI and others), and the NAAC grade on the NAAC website. Our 21-point checklist walks you through it.']
@@ -141,7 +143,7 @@ function hub() {
   ];
   const body = `
   <header class="hero">
-    <div class="badge">🏛 ${C.length}+ institutions · ${STATES.length} states & UTs · Updated ${UPD_H}</div>
+    <div class="badge">🏛 ${AI ? fmtN(AI.total) + ' institutions (AISHE)' : C.length + '+ institutions'} · ${AI ? AI.states : STATES.length} states & UTs · Updated ${UPD_H}</div>
     <h1>The Grand <span>College Directory</span></h1>
     <p class="lead">Search Indian colleges and universities by name, city, state, stream or type. Every profile tells you how admission works, what the institution is recognised as, and how to verify fees and placements — honestly.</p>
   </header>
@@ -159,15 +161,16 @@ ${cards}
   </div>
   <p class="note" id="dnone" style="display:none">No institution matches. We are adding colleges every week — <a href="/contact.html">request your college</a>.</p>
 
-  <section aria-labelledby="bt"><h2 id="bt">Browse by type</h2><div class="grid g3">${groupCounts.map(([id, n, k]) => `<a class="card" href="#" data-group="${id}" style="text-decoration:none"><b style="color:var(--ink)">${esc(n)}</b><p style="margin:4px 0 0">${k} institutions</p></a>`).join('')}</div></section>
-  <section aria-labelledby="bs"><h2 id="bs">Browse by state</h2><div class="statelist">${STATES.map(s => `<a href="#" data-state="${esc(s)}">${esc(s)} (${C.filter(c => c.state === s).length})</a>`).join('')}</div></section>
+  ${AI ? AI.hubSection : ''}
+  <section aria-labelledby="bt"><h2 id="bt">Browse detailed profiles by type</h2><div class="grid g3">${groupCounts.map(([id, n, k]) => `<a class="card" href="#" data-group="${id}" style="text-decoration:none"><b style="color:var(--ink)">${esc(n)}</b><p style="margin:4px 0 0">${k} institutions</p></a>`).join('')}</div></section>
+  <section aria-labelledby="bs"><h2 id="bs">Detailed profiles by state</h2><div class="statelist">${STATES.map(s => `<a href="#" data-state="${esc(s)}">${esc(s)} (${C.filter(c => c.state === s).length})</a>`).join('')}</div></section>
 
   <section aria-labelledby="how"><h2 id="how">How this directory works</h2>
   <div class="grid g2">
     <div class="card"><h3>Facts that don’t go out of date</h3><p>Each profile lists stable facts — location, type, recognition, year established, streams and the entrance exams used for admission — and links to the official website.</p></div>
     <div class="card"><h3>No made-up numbers</h3><p>Fees, cutoffs and placements change every year. Instead of printing stale figures, every profile tells you exactly where to find the official fee page and the institution’s NIRF data (median salary, students placed).</p></div>
     <div class="card"><h3>Honest strengths and weaknesses</h3><p>Profiles explain what’s generally true for that kind of institution. Colleges with a <span class="pill g">Full review</span> badge have in-depth, sourced reviews written by our editors.</p></div>
-    <div class="card"><h3>Growing to every college</h3><p>India has 45,000+ colleges. We add institutions in batches from official sources. <a href="/contact.html">Request your college</a> or <a href="/contact.html">send a correction</a> with a source.</p></div>
+    <div class="card"><h3>Every college, from official data</h3><p>${AI ? `All ${fmtN(AI.total)} institutions in the Ministry of Education’s AISHE directory are listed by state and district, and detailed profiles are added in batches.` : 'India has 45,000+ colleges. We add institutions in batches from official sources.'} <a href="/contact.html">Request your college</a> or <a href="/contact.html">send a correction</a> with a source.</p></div>
   </div></section>
 
   <section aria-labelledby="faq"><h2 id="faq">FAQs</h2>${faqs.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('')}</section>
@@ -253,6 +256,8 @@ fs.mkdirSync(OUT, { recursive: true });
 // remove profiles for institutions no longer in the dataset
 const keep = new Set(C.map(c => c.s + '.html').concat(['index.html']));
 fs.readdirSync(OUT).filter(f => f.endsWith('.html') && !keep.has(f)).forEach(f => fs.unlinkSync(path.join(OUT, f)));
+AI = require('./build-aishe-pages.js')({ ROOT, OUT, SITE, UPD, UPD_H, shell, curated: C });
+if (AI) console.log(`AISHE: ${AI.total} institutions → ${AI.states} state pages, ${AI.districts} district pages (${AI.indexable.length} indexable)`);
 fs.writeFileSync(path.join(OUT, 'index.html'), hub());
 C.forEach(c => fs.writeFileSync(path.join(OUT, c.s + '.html'), profile(c)));
 console.log(`wrote colleges/directory/index.html + ${C.length} profiles (${REVIEWED.size} indexable)`);
@@ -261,7 +266,7 @@ console.log(`wrote colleges/directory/index.html + ${C.length} profiles (${REVIE
 const sp = path.join(ROOT, 'sitemap.xml');
 let xml = fs.readFileSync(sp, 'utf8');
 xml = xml.replace(/\s*<url><loc>https:\/\/studenttoolkit\.online\/colleges\/directory\/[^<]*<\/loc>.*?<\/url>/g, '');
-const urls = [`${SITE}/colleges/directory/`, ...C.filter(c => REVIEWED.has(c.s)).map(c => `${SITE}/colleges/directory/${c.s}.html`)];
+const urls = [`${SITE}/colleges/directory/`, ...C.filter(c => REVIEWED.has(c.s)).map(c => `${SITE}/colleges/directory/${c.s}.html`), ...(AI ? AI.indexable : [])];
 xml = xml.replace('</urlset>', urls.map(u => `  <url><loc>${u}</loc><lastmod>${UPD}</lastmod></url>`).join('\n') + '\n</urlset>');
 fs.writeFileSync(sp, xml);
 console.log('sitemap: +' + urls.length + ' directory URLs');

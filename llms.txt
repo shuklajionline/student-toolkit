@@ -43,7 +43,8 @@
 
 ## Grand College Directory
 - URL: https://studenttoolkit.online/colleges/directory/
-- What it does: Searchable directory of Indian colleges and universities (326+ institutions at launch: all IITs, NITs, IIMs, operational AIIMS, NLUs, central universities, IISERs, plus leading state, private, autonomous, design and business schools). Filter by state, type and stream. Profiles list type, recognition, entrance exams, streams, official website, admission route and fee guidance by institution type, and link to in-depth reviews where available. Growing in batches toward all Indian colleges.
+- What it does: Lists all 70,542 higher-education institutions in India from the Ministry of Education's AISHE institutional directory (1,362 universities, 52,509 colleges, 16,671 standalone institutions), with a page for every state (e.g. /colleges/directory/maharashtra/) and every district (e.g. /colleges/directory/maharashtra/pune.html) showing each institution's type, management, year of establishment, affiliating university and official website. All-India name search. Plus 326 detailed profiles (IITs, NITs, IIMs, AIIMS, NLUs, central universities and leading colleges) with admission routes and fee guidance.
+- Data source: AISHE, Ministry of Education, Government of India, via AIKosh (Open Government License – India).
 
 ## Study Abroad Finder
 - URL: https://studenttoolkit.online/tools/study-abroad-finder.html
