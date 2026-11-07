@@ -135,57 +135,105 @@ function hub() {
     ['How do I check if a college is genuine?', 'Check the university on UGC’s lists, the course on its regulator’s approved list (AICTE, NMC, BCI and others), and the NAAC grade on the NAAC website. Our 21-point checklist walks you through it.']
   ];
   const groupCounts = GROUPS.map(([id, name, types]) => [id, name, C.filter(c => types.includes(c.type)).length]);
-  const cards = C.slice().sort((a, b) => a.n.localeCompare(b.n)).map(c => `<a class="dc" href="/colleges/directory/${c.s}.html" data-n="${esc((c.n + ' ' + c.alias + ' ' + c.city).toLowerCase())}" data-st="${esc(c.state)}" data-g="${groupOf(c.type)}" data-sm="${c.streams.join(' ')}"><b>${esc(c.n)}</b><small>${esc(c.city)}, ${esc(c.state)}${c.est ? ' · Est. ' + c.est : ''}</small><span class="pill">${esc(typeName(c.type).replace(/ \(.*\)/, ''))}</span>${c.review ? '<span class="pill g">Full review</span>' : ''}</a>`).join('\n');
+  const byN = (a, b) => a.n.localeCompare(b.n, 'en');
+  const shortType = t => typeName(t).replace(/ \(.*\)/, '');
+  const CUR = C.slice().sort(byN).map(c => [c.n, c.alias || '', c.city, c.state, shortType(c.type), c.s]);
   const schema = [
     { '@context': 'https://schema.org', '@type': 'CollectionPage', name: 'Grand College Directory — Indian colleges and universities', url, description: desc, inLanguage: 'en-IN', dateModified: UPD, isPartOf: { '@type': 'WebSite', name: 'Student Toolkit', url: SITE + '/' } },
     { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
     { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: 'Colleges', item: SITE + '/colleges/' }, { '@type': 'ListItem', position: 3, name: 'Directory', item: url }] }
   ];
+  const states = AI ? AI.stateSummary.slice().sort((a, b) => a[0].localeCompare(b[0], 'en')) : [];
+  const totalDistricts = states.reduce((s, x) => s + x[6], 0);
   const body = `
-  <header class="hero">
-    <div class="badge">🏛 ${AI ? fmtN(AI.total) + ' institutions (AISHE)' : C.length + '+ institutions'} · ${AI ? AI.states : STATES.length} states & UTs · Updated ${UPD_H}</div>
+<style>
+.hub-search{background:var(--bg2);border:1px solid var(--border2);border-radius:18px;padding:18px;margin:6px 0 18px}
+.hub-search .big{position:relative}.hub-search .big input{font-size:17px;padding:14px 16px 14px 44px;border-radius:12px}
+.hub-search .big svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--ink3)}
+.hub-search .row{margin-top:10px}
+.res{margin-top:12px}.res h3{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink3);font-family:'DM Sans',sans-serif;margin:14px 0 6px}
+.ri{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--border);border-radius:10px;margin-bottom:6px;text-decoration:none;color:var(--ink2);background:var(--bg3)}
+.ri:hover{border-color:var(--accent);color:var(--ink)}.ri b{color:var(--ink);font-weight:600;display:block;line-height:1.35}.ri small{font-size:12.5px;color:var(--ink3)}
+.ri .pill{flex-shrink:0}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:0 0 8px}.stats-row div{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px 14px}.stats-row b{display:block;font-family:'Syne',sans-serif;font-size:22px;color:var(--ink)}.stats-row span{font-size:12.5px;color:var(--ink3)}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}.dgrid a{display:flex;justify-content:space-between;gap:8px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;text-decoration:none;color:var(--ink2);font-size:14px}.dgrid a:hover{border-color:var(--accent);color:var(--ink)}.dgrid a span{color:var(--ink3);font-variant-numeric:tabular-nums;white-space:nowrap}
+details.grp{padding:0;overflow:hidden}details.grp summary{padding:14px 16px;display:flex;align-items:center;gap:10px}details.grp summary::after{margin-left:auto}details.grp .dgrid{padding:0 14px 14px}
+.cnt{font:600 13px 'DM Sans',sans-serif;background:var(--abg);color:var(--a2);padding:3px 10px;border-radius:99px}
+.src{font-size:12.5px;color:var(--ink3);margin-top:10px}
+</style>
+  <header class="hero" style="padding-bottom:14px">
+    <div class="badge">🏛 Official AISHE data · Updated ${UPD_H}</div>
     <h1>The Grand <span>College Directory</span></h1>
-    <p class="lead">Search Indian colleges and universities by name, city, state, stream or type. Every profile tells you how admission works, what the institution is recognised as, and how to verify fees and placements — honestly.</p>
+    <p class="lead">Every university, college and institute in India — ${AI ? fmtN(AI.total) : C.length + '+'} of them — searchable by name, state and district, with detailed profiles of the institutions students ask about most.</p>
   </header>
-  <div class="card" style="margin-bottom:14px">
-    <div class="row">
-      <div class="field"><label for="dq">Search</label><input id="dq" type="search" placeholder="e.g. IIT, NIT Trichy, SRCC, Pune, law…" autocomplete="off"></div>
-      <div class="field"><label for="dst">State / UT</label><select id="dst"><option value="">All states</option>${STATES.map(s => `<option>${esc(s)}</option>`).join('')}</select></div>
-      <div class="field"><label for="dg">Type</label><select id="dg"><option value="">All types</option>${groupCounts.map(([id, n, k]) => `<option value="${id}">${esc(n)} (${k})</option>`).join('')}</select></div>
-      <div class="field"><label for="dsm">Stream</label><select id="dsm"><option value="">All streams</option>${Object.entries(D.STREAMS).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join('')}</select></div>
-    </div>
-    <p class="meta-line" id="dcount" aria-live="polite">${C.length} institutions</p>
-  </div>
-  <div class="dir-res" id="dres">
-${cards}
-  </div>
-  <p class="note" id="dnone" style="display:none">No institution matches. We are adding colleges every week — <a href="/contact.html">request your college</a>.</p>
 
-  ${AI ? AI.hubSection : ''}
-  <section aria-labelledby="bt"><h2 id="bt">Browse detailed profiles by type</h2><div class="grid g3">${groupCounts.map(([id, n, k]) => `<a class="card" href="#" data-group="${id}" style="text-decoration:none"><b style="color:var(--ink)">${esc(n)}</b><p style="margin:4px 0 0">${k} institutions</p></a>`).join('')}</div></section>
-  <section aria-labelledby="bs"><h2 id="bs">Detailed profiles by state</h2><div class="statelist">${STATES.map(s => `<a href="#" data-state="${esc(s)}">${esc(s)} (${C.filter(c => c.state === s).length})</a>`).join('')}</div></section>
+  <section class="hub-search" aria-label="Search institutions">
+    <div class="big"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><label for="q" class="sr">Search colleges</label><input id="q" type="search" placeholder="Search any college — e.g. IIT Madras, SRCC, government polytechnic Lucknow" autocomplete="off"></div>
+    <div class="row">
+      <div class="field" style="margin:0"><label for="st">State / UT</label><select id="st"><option value="">All of India</option>${states.map(s => `<option>${esc(s[0])}</option>`).join('')}</select></div>
+      <div class="field" style="margin:0"><label for="kind">Show</label><select id="kind"><option value="">Everything</option><option value="P">Detailed profiles only</option><option value="U">Universities</option><option value="C">Colleges</option><option value="S">Standalone (polytechnic, nursing, B.Ed…)</option></select></div>
+    </div>
+    <div class="res" id="res" aria-live="polite"><p class="meta-line">Type at least 2 letters, or pick a state.</p></div>
+  </section>
+
+  ${AI ? `<div class="stats-row"><div><b>${fmtN(AI.total)}</b><span>institutions</span></div><div><b>${fmtN(AI.counts.u)}</b><span>universities</span></div><div><b>${fmtN(AI.counts.c)}</b><span>colleges</span></div><div><b>${fmtN(AI.counts.s)}</b><span>standalone institutions</span></div><div><b>${states.length}</b><span>states &amp; UTs</span></div><div><b>${fmtN(totalDistricts)}</b><span>districts</span></div></div>` : ''}
+
+  ${AI ? `<section aria-labelledby="bs"><h2 id="bs">Browse by state (A–Z)</h2><div class="dgrid">${states.map(s => `<a href="/colleges/directory/${s[1]}/">${esc(s[0])}<span>${fmtN(s[2])}</span></a>`).join('')}</div></section>` : ''}
+
+  <section aria-labelledby="bt"><h2 id="bt">Detailed profiles <span class="cnt">${C.length}</span></h2>
+    <p>Admission route, entrance exams, fee guidance and honest strengths for the institutions students search most — grouped by type and sorted A–Z.</p>
+    ${GROUPS.map(([id, name, types], i) => { const list = C.filter(c => types.includes(c.type)).sort(byN); return list.length ? `<details class="grp"${i < 1 ? ' open' : ''}><summary>${esc(name)} <span class="cnt">${list.length}</span></summary><div class="dgrid">${list.map(c => `<a href="/colleges/directory/${c.s}.html">${esc(c.n)}<span>${esc(c.city)}</span></a>`).join('')}</div></details>` : ''; }).join('')}
+  </section>
 
   <section aria-labelledby="how"><h2 id="how">How this directory works</h2>
   <div class="grid g2">
-    <div class="card"><h3>Facts that don’t go out of date</h3><p>Each profile lists stable facts — location, type, recognition, year established, streams and the entrance exams used for admission — and links to the official website.</p></div>
-    <div class="card"><h3>No made-up numbers</h3><p>Fees, cutoffs and placements change every year. Instead of printing stale figures, every profile tells you exactly where to find the official fee page and the institution’s NIRF data (median salary, students placed).</p></div>
-    <div class="card"><h3>Honest strengths and weaknesses</h3><p>Profiles explain what’s generally true for that kind of institution. Colleges with a <span class="pill g">Full review</span> badge have in-depth, sourced reviews written by our editors.</p></div>
-    <div class="card"><h3>Every college, from official data</h3><p>${AI ? `All ${fmtN(AI.total)} institutions in the Ministry of Education’s AISHE directory are listed by state and district, and detailed profiles are added in batches.` : 'India has 45,000+ colleges. We add institutions in batches from official sources.'} <a href="/contact.html">Request your college</a> or <a href="/contact.html">send a correction</a> with a source.</p></div>
+    <div class="card"><h3>Every institution, from official data</h3><p>${AI ? `All ${fmtN(AI.total)} institutions in the Ministry of Education’s AISHE directory, organised into state and district pages and sorted A–Z.` : 'Institutions are added in batches from official sources.'}</p></div>
+    <div class="card"><h3>Detailed profiles</h3><p>For ${C.length} leading institutions: type, recognition, entrance exams, admission route and fee guidance. A <span class="pill g">Full review</span> badge marks colleges with in-depth reviews.</p></div>
+    <div class="card"><h3>No made-up numbers</h3><p>Fees, cutoffs and placements change every year, so we point you to the official fee page and the institution’s NIRF data instead of printing stale figures.</p></div>
+    <div class="card"><h3>Corrections welcome</h3><p>Spotted something wrong? <a href="/contact.html">Send a correction with a source</a> or <a href="/contact.html">request a detailed profile</a>.</p></div>
   </div></section>
 
   <section aria-labelledby="faq"><h2 id="faq">FAQs</h2>${faqs.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('')}</section>
-  <section><div class="answer"><p><strong>Before you pay any fee:</strong> run our <a href="/blog/how-to-check-college-is-genuine.html">21-point college check</a>, see which colleges your score can get with the <a href="/tools/college-predictor.html">College Predictor</a>, and read in-depth <a href="/colleges/">BBA &amp; MBA college reviews</a>.</p></div></section>
+  <section><div class="answer"><p><strong>Before you pay any fee:</strong> run our <a href="/blog/how-to-check-college-is-genuine.html">21-point college check</a>, see which colleges your score can get with the <a href="/tools/college-predictor.html">College Predictor</a>, and read in-depth <a href="/colleges/">BBA &amp; MBA college reviews</a>.</p></div>
+  ${AI ? `<p class="src">${AI.SRC}</p>` : ''}</section>
 <script>
 (function(){
-  var q=document.getElementById('dq'),st=document.getElementById('dst'),g=document.getElementById('dg'),sm=document.getElementById('dsm'),cards=[].slice.call(document.querySelectorAll('#dres .dc')),cnt=document.getElementById('dcount'),none=document.getElementById('dnone');
-  function apply(){var w=q.value.toLowerCase().trim().split(/\\s+/).filter(Boolean),n=0;
-    cards.forEach(function(c){var ok=(!st.value||c.dataset.st===st.value)&&(!g.value||c.dataset.g===g.value)&&(!sm.value||(' '+c.dataset.sm+' ').indexOf(' '+sm.value+' ')>-1)&&w.every(function(x){return c.dataset.n.indexOf(x)>-1;});c.hidden=!ok;if(ok)n++;});
-    cnt.textContent=n+' of '+cards.length+' institutions';none.style.display=n?'none':'block';
-    var p=new URLSearchParams();if(q.value)p.set('q',q.value);if(st.value)p.set('state',st.value);if(g.value)p.set('type',g.value);if(sm.value)p.set('stream',sm.value);history.replaceState(null,'',p.toString()?'?'+p:location.pathname);}
-  [q,st,g,sm].forEach(function(el){el.addEventListener('input',apply);el.addEventListener('change',apply);});
-  document.querySelectorAll('[data-group]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();g.value=a.dataset.group;apply();q.scrollIntoView({behavior:'smooth'});});});
-  document.querySelectorAll('[data-state]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();st.value=a.dataset.state;apply();q.scrollIntoView({behavior:'smooth'});});});
-  var p=new URLSearchParams(location.search);q.value=p.get('q')||'';st.value=p.get('state')||'';g.value=p.get('type')||'';sm.value=p.get('stream')||'';apply();
+  var CUR=${JSON.stringify(CUR).replace(/</g, '\\u003c')};
+  var STATES=${JSON.stringify(states.map(s => [s[0], s[1], s[2]])).replace(/</g, '\\u003c')};
+  var q=document.getElementById('q'),st=document.getElementById('st'),kind=document.getElementById('kind'),res=document.getElementById('res');
+  var idx=null,loading=false,t,K=['University','College','Standalone'];
+  function esc(s){return String(s).replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];});}
+  function rank(name,raw){var n=name.toLowerCase();return n.indexOf(raw)===0?0:(' '+n).indexOf(' '+raw)>-1?1:2;}
+  function item(href,name,meta,pill,green){return '<a class="ri" href="'+href+'"><span><b>'+esc(name)+'</b><small>'+esc(meta)+'</small></span><span class="pill'+(green?' g':'')+'">'+esc(pill)+'</span></a>';}
+  function load(){if(loading)return;loading=true;fetch('/colleges/directory/search-index.json?v=${AI ? AI.VER : ''}').then(function(r){return r.json();}).then(function(j){idx=j;idx.rows.forEach(function(r){r[6]=(r[0]+' '+(r[5]||'')).toLowerCase();});run();}).catch(function(){loading=false;res.innerHTML='<p class="note">Could not load the national list. Please try again.</p>';});}
+  function run(){
+    var raw=q.value.trim().toLowerCase(),w=raw.split(/\\s+/).filter(Boolean),sv=st.value,k=kind.value,html='';
+    var p=new URLSearchParams();if(q.value)p.set('q',q.value);if(sv)p.set('state',sv);if(k)p.set('kind',k);history.replaceState(null,'',p.toString()?'?'+p:location.pathname);
+    if(raw.length<2){
+      if(sv){var s=STATES.find(function(x){return x[0]===sv;});res.innerHTML=s?item('/colleges/directory/'+s[1]+'/','Browse all '+s[2].toLocaleString('en-IN')+' institutions in '+s[0],'District-by-district lists, sorted A–Z','Open',true):'';}
+      else res.innerHTML='<p class="meta-line">Type at least 2 letters, or pick a state.</p>';
+      return;}
+    var shown={};
+    if(k===''||k==='P'){
+      var pr=CUR.filter(function(c){var h=(c[0]+' '+c[1]+' '+c[2]).toLowerCase();return (!sv||c[3]===sv)&&w.every(function(x){return h.indexOf(x)>-1;});});
+      pr.sort(function(a,b){return rank(a[0],raw)-rank(b[0],raw)||a[0].localeCompare(b[0]);});
+      if(pr.length){html+='<h3>Detailed profiles ('+pr.length+')</h3>'+pr.slice(0,8).map(function(c){shown[c[5]]=1;return item('/colleges/directory/'+c[5]+'.html',c[0],c[2]+', '+c[3]+' · '+c[4],'Profile',true);}).join('');}
+    }
+    if(k!=='P'){
+      if(raw.length<3){html+='<p class="meta-line" style="margin-top:8px">Type one more letter to search all ${AI ? fmtN(AI.total) : ''} institutions.</p>';}
+      else if(!idx){load();html+='<p class="meta-line" style="margin-top:8px">Loading the national list…</p>';}
+      else{
+        var b=[[],[],[]],total=0,ki=k?'UCS'.indexOf(k):-1;
+        for(var i=0;i<idx.rows.length;i++){var r=idx.rows[i];if(ki>-1&&r[1]!==ki)continue;var d=idx.districts[r[2]],s=idx.states[d[0]];if(sv&&s[0]!==sv)continue;if(r[4]&&shown[r[4]])continue;var hay=r[6]+' '+d[1].toLowerCase();if(!w.every(function(x){return hay.indexOf(x)>-1;}))continue;total++;var g=rank(r[0],raw);if(b[g].length<40)b[g].push(r);}
+        var list=b[0].concat(b[1],b[2]).slice(0,40);
+        if(!total&&html){}else html+='<h3>All institutions ('+total.toLocaleString('en-IN')+')</h3>'+(list.length?list.map(function(r){var d=idx.districts[r[2]],s=idx.states[d[0]];var href=r[4]?'/colleges/directory/'+r[4]+'.html':'/colleges/directory/'+s[1]+'/'+d[2]+'.html#'+r[3];return item(href,r[0],d[1]+', '+s[0],r[4]?'Profile':K[r[1]],!!r[4]);}).join('')+(total>40?'<p class="meta-line">Showing the 40 closest matches — add a word or pick a state to narrow down.</p>':''):'<p class="note">No institution found. Try fewer words, or browse by state below.</p>');
+      }
+    }
+    res.innerHTML=html||'<p class="note">No detailed profile matches. Choose “Everything” to search all institutions.</p>';
+  }
+  q.addEventListener('input',function(){clearTimeout(t);t=setTimeout(run,160);});
+  st.addEventListener('change',run);kind.addEventListener('change',run);
+  var p=new URLSearchParams(location.search);q.value=p.get('q')||'';st.value=p.get('state')||'';kind.value=p.get('kind')||'';if(q.value||st.value)run();
 })();
 </script>`;
   return shell({ title, desc, url, robots: 'index,follow,max-snippet:-1', schema, body, crumbs: '<a href="/">Home</a> › <a href="/colleges/">Colleges</a> › Directory' });
@@ -198,8 +246,8 @@ function profile(c) {
   const reviewed = REVIEWED.has(c.s);
   const title = `${c.n} — Admission & Fees`;
   const desc = `${c.n} (${c.city}, ${c.state}) — ${typeName(c.type)}. How admission works, entrance exams, courses, fee guidance and how to verify placements.`;
-  const similar = C.filter(x => x.s !== c.s && x.type === c.type).sort((a, b) => (a.state === c.state ? -1 : 0) - (b.state === c.state ? -1 : 0)).slice(0, 6);
-  const nearby = C.filter(x => x.s !== c.s && x.state === c.state && x.type !== c.type).slice(0, 6);
+  const similar = C.filter(x => x.s !== c.s && x.type === c.type).sort((a, b) => ((b.state === c.state) - (a.state === c.state)) || a.n.localeCompare(b.n, 'en')).slice(0, 6);
+  const nearby = C.filter(x => x.s !== c.s && x.state === c.state && x.type !== c.type).sort((a, b) => a.n.localeCompare(b.n, 'en')).slice(0, 6);
   const schema = [
     { '@context': 'https://schema.org', '@type': 'CollegeOrUniversity', name: c.n, alternateName: c.alias || undefined, foundingDate: c.est ? String(c.est) : undefined, url: c.web ? `https://${c.web}` : undefined, address: { '@type': 'PostalAddress', addressLocality: c.city, addressRegion: c.state, addressCountry: 'IN' } },
     { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: 'College Directory', item: SITE + '/colleges/directory/' }, { '@type': 'ListItem', position: 3, name: c.n, item: url }] }
